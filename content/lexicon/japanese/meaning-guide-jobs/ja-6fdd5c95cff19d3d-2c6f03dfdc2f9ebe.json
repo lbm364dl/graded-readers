@@ -1,0 +1,32 @@
+{
+  "id": "ja-6fdd5c95cff19d3d-2c6f03dfdc2f9ebe",
+  "entry_id": "ja-6fdd5c95cff19d3d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6fdd5c95cff19d3d",
+      "headword": "与える",
+      "reading": "あたえる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6fdd5c95cff19d3d-1",
+          "definition": "to give; to provide"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "did not give",
+        "sense_id": "ja-6fdd5c95cff19d3d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "41b3d1f696153c18cbc07b26451fe4ccef147fa0721f2155cab9012650673a5f"
+}

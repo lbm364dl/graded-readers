@@ -1,0 +1,36 @@
+{
+  "id": "zh-b8e5e03288d7-1-a7bb1493457b199b",
+  "entry_id": "zh-b8e5e03288d7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b8e5e03288d7-1",
+      "headword": "刚",
+      "kind": "word",
+      "reading": "gāng",
+      "senses": [
+        {
+          "id": "zh-b8e5e03288d7-1-s1",
+          "definition": "just; only a short time before"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刚过山岭，刘备鸣金发出信号，两边的人一起冲下。",
+        "gloss": "just",
+        "sense_id": "zh-b8e5e03288d7-1-s1"
+      },
+      {
+        "sentence": "张角刚打败董卓，正追赶汉军，却遇到三人攻击。",
+        "gloss": "just; only just",
+        "sense_id": "zh-b8e5e03288d7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f58db606d94f84e146521c7d2105111bef036a364b4e8374c1429fccb5192469"
+}

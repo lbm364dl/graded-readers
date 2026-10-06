@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_104-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1425,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了司马懿最终返回洛阳面君等次要情节。",
+      "classification": "material",
+      "reason": "The omission removes the final stage of Sima Yi’s movement and his return to Luoyang to see the emperor, changing the scene’s chronology and endpoint.",
+      "required_fix": "补充司马懿分调众将把守隘口后，返回洛阳面君。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了司马懿最终返回洛阳面君等次要情节。",
+      "classification": "material",
+      "reason": "The omission removes the final stage of Sima Yi’s movement and his return to Luoyang to see the emperor, changing the scene’s chronology and endpoint.",
+      "required_fix": "补充司马懿分调众将把守隘口后，返回洛阳面君。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1425,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

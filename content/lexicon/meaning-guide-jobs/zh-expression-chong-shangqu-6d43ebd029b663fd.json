@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-chong-shangqu-6d43ebd029b663fd",
+  "entry_id": "zh-expression-chong-shangqu",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-chong-shangqu",
+      "headword": "冲上去",
+      "reading": "chōng shàngqu",
+      "base_entry_id": "zh-c7d1e85e396e-1",
+      "components": [
+        {
+          "entry_id": "zh-c7d1e85e396e-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-bd86a28aa0ff-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-chong-shangqu-s1",
+          "definition": "rush forward to a position"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "三人立刻冲上去，把黄巾军打退，救下董卓。",
+        "gloss": "rush forward to a position",
+        "sense_id": "zh-expression-chong-shangqu-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "冲",
+        "role": "verb"
+      },
+      {
+        "headword": "上去",
+        "role": "directional complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "63aff7cffdb783304d6503f7cc8c3a37ed598358e6401f12427ad539349163f9"
+}

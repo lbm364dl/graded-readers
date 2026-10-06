@@ -1,0 +1,116 @@
+{
+  "id": "ja-ecabccd29dcc7d77-31f1d37e57adbe79",
+  "entry_id": "ja-ecabccd29dcc7d77",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-ecabccd29dcc7d77",
+      "headword": "家",
+      "reading": "いえ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ecabccd29dcc7d77-1",
+          "definition": "House; home."
+        },
+        {
+          "id": "ja-ecabccd29dcc7d77-2",
+          "definition": "Household; the people or things belonging to a household."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "house; home",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "house; home",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      },
+      {
+        "sentence": "吾輩はこの家に住むことにしました。",
+        "gloss": "house; home",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      },
+      {
+        "sentence": "人のにおいがする家を見つけ、こわれた竹垣の穴から中へ入った。",
+        "gloss": "house; home",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「では、家の内に置いてやれ」と言った。",
+        "gloss": "house; home",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      },
+      {
+        "sentence": "それで吾輩は、この家に住むことにしたのである。",
+        "gloss": "house; home",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      },
+      {
+        "sentence": "吾輩の家の裏には、小さな茶園がある。",
+        "gloss": "house; home",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      },
+      {
+        "sentence": "やがて人間の家らしい所へ着き、竹垣の穴から中へ入った。",
+        "gloss": "house; home",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      },
+      {
+        "sentence": "明るく暖かい方へ進むと、いつの間にか家の中にいた。",
+        "gloss": "house; home",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      },
+      {
+        "sentence": "おさんは不満そうだったが、吾輩はこの家を自分の住家と決めた。",
+        "gloss": "house",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      },
+      {
+        "sentence": "家のものは勉強家だと思っているが、実際はそうでもない。",
+        "gloss": "house; household",
+        "sense_id": "ja-ecabccd29dcc7d77-2"
+      },
+      {
+        "sentence": "吾輩はこの家で、主人以外のものには不人望だった。",
+        "gloss": "house; home",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      },
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "the house",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      },
+      {
+        "sentence": "吾輩の家の裏には、十坪ほどの茶園がある。",
+        "gloss": "house; home",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-ecabccd29dcc7d77",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "家 (いえ) means a house or home: the dwelling building or the place where someone lives. It can refer to the physical structure or to the home as a place of residence.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "9506579a79a0ac63601ddea74740f5b46c861b44babcb280f6bf42da5894ed54",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "919ce054bbab53134b5e4e87b5289e320445e15718c4935d6b439f545d8bbb54"
+}

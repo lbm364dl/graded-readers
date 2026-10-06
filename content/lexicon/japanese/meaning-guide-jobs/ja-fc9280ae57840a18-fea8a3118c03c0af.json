@@ -1,0 +1,32 @@
+{
+  "id": "ja-fc9280ae57840a18-fea8a3118c03c0af",
+  "entry_id": "ja-fc9280ae57840a18",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fc9280ae57840a18",
+      "headword": "増す",
+      "reading": "ます",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fc9280ae57840a18-1",
+          "definition": "to increase or grow stronger"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "すぐに暗くなり、腹は減り、寒さは増し、雨まで降ってきた。",
+        "gloss": "increasing",
+        "sense_id": "ja-fc9280ae57840a18-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e86a323111816a9776375b314bd9f8be30cde27d51a2828c715a83aec36af782"
+}

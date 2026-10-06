@@ -1,0 +1,31 @@
+{
+  "id": "zh-da4fca1231b8-1-e2df84c8cbcaee4d",
+  "entry_id": "zh-da4fca1231b8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-da4fca1231b8-1",
+      "headword": "掌权",
+      "kind": "word",
+      "reading": "zhǎngquán",
+      "senses": [
+        {
+          "id": "zh-da4fca1231b8-1-s1",
+          "definition": "to hold or exercise power"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "宦官掌权，皇帝信任他们。",
+        "gloss": "hold power",
+        "sense_id": "zh-da4fca1231b8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b9a09b344f5aad0c4609c6daf5f22684ad609c9b457f8dec23e59f809f556c84"
+}

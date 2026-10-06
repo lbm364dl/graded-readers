@@ -1,0 +1,32 @@
+{
+  "id": "ja-ce9c27b6bf0d325c-37f4543b5197fcc9",
+  "entry_id": "ja-ce9c27b6bf0d325c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ce9c27b6bf0d325c",
+      "headword": "犬",
+      "reading": "いぬ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ce9c27b6bf0d325c-1",
+          "definition": "dog"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "声には犬も怖がるほどの力があったので、吾輩は少し怖かったが、「吾輩は猫である。",
+        "gloss": "dog",
+        "sense_id": "ja-ce9c27b6bf0d325c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "400090428be635fcacdea4cad5ba2b98ca5e558ad8398d7513d7c1333a6a14ce"
+}

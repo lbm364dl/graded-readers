@@ -1,0 +1,39 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["segments", "grammar_overlays"],
+  "properties": {
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["index", "text", "type", "pinyin", "meaning_en"],
+        "properties": {
+          "index": {"type": "integer", "minimum": 0},
+          "text": {"type": "string", "minLength": 1},
+          "type": {"type": "string", "enum": ["word", "particle", "name", "idiom", "punctuation"]},
+          "pinyin": {"type": "string"},
+          "meaning_en": {"type": "string"}
+        }
+      }
+    },
+    "grammar_overlays": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["start", "end", "text", "grammar_candidate_key", "pattern", "meaning_en"],
+        "properties": {
+          "start": {"type": "integer", "minimum": 0},
+          "end": {"type": "integer", "minimum": 1},
+          "text": {"type": "string", "minLength": 1},
+          "grammar_candidate_key": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]*$"},
+          "pattern": {"type": "string", "minLength": 1},
+          "meaning_en": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-c4112e462dc7-1-277ce7ec7f3351da",
+  "entry_id": "zh-c4112e462dc7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c4112e462dc7-1",
+      "headword": "画符念咒",
+      "kind": "expression",
+      "reading": "huà fú niàn zhòu",
+      "senses": [
+        {
+          "id": "zh-c4112e462dc7-1-s1",
+          "definition": "to draw talismans and recite spells"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他的徒弟有五百多人，云游四方，都会画符念咒。",
+        "gloss": "draw talismans and recite spells",
+        "sense_id": "zh-c4112e462dc7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b7596307802e13e7b9f0a84fca7a0e5c8d6b3df5b4b17cfa88b7e1e3ed33cedf"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-b9a3836e8867-1-0d79bd324dc96b50",
+  "entry_id": "zh-b9a3836e8867-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b9a3836e8867-1",
+      "headword": "那时",
+      "kind": "word",
+      "reading": "nàshí",
+      "senses": [
+        {
+          "id": "zh-b9a3836e8867-1-s1",
+          "definition": "that time"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "那时张梁、张宝已经败退，曹操率军拦住他们，立即发动攻击。",
+        "gloss": "at that time",
+        "sense_id": "zh-b9a3836e8867-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ea31af88736ff61a42730a8144f981a9bdc1156c11c1b95f6991f2cd25e8f732"
+}

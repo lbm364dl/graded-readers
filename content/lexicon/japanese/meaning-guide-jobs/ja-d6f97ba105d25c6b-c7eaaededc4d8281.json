@@ -1,0 +1,32 @@
+{
+  "id": "ja-d6f97ba105d25c6b-c7eaaededc4d8281",
+  "entry_id": "ja-d6f97ba105d25c6b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d6f97ba105d25c6b",
+      "headword": "ことはない",
+      "reading": "ことはない",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-d6f97ba105d25c6b-1",
+          "definition": "Used after a verb to say that there has never been an occasion to do something."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が鼠をとったことはないと言うと、黒は、人間が猫のとった鼠を取り上げて交番へ持って行き、五銭をもらうという話をした。",
+        "gloss": "have never done; there has been no occasion to",
+        "sense_id": "ja-d6f97ba105d25c6b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3fb6e4cc9b2dda656a69f43a76734c2dde45b465826b1347c31238864583af92"
+}

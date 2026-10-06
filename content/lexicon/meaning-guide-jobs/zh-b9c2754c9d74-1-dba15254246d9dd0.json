@@ -1,0 +1,31 @@
+{
+  "id": "zh-b9c2754c9d74-1-dba15254246d9dd0",
+  "entry_id": "zh-b9c2754c9d74-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b9c2754c9d74-1",
+      "headword": "钱财",
+      "kind": "word",
+      "reading": "qiáncái",
+      "senses": [
+        {
+          "id": "zh-b9c2754c9d74-1-s1",
+          "definition": "money and property"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞愿意拿出钱财，招募乡勇，和刘备一起做大事。",
+        "gloss": "money and property",
+        "sense_id": "zh-b9c2754c9d74-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "edf09a8ceb7b53fdb483646897cc7987f370504a27e4a0563a84e9855b9ba953"
+}

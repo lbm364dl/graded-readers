@@ -1,0 +1,32 @@
+{
+  "id": "ja-475f2b03451e6f4e-0f8556294033f1f6",
+  "entry_id": "ja-475f2b03451e6f4e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-475f2b03451e6f4e",
+      "headword": "先ず",
+      "reading": "まず",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-475f2b03451e6f4e-1",
+          "definition": "first; to begin with"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "まず、毛でおおわれているはずの顔が、つるつるしていて、まるで薬缶のようだった。",
+        "gloss": "first; to begin with",
+        "sense_id": "ja-475f2b03451e6f4e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4be540d873662161ff977f469daab7e4be7463df493c53dbd5f6d47f1f39e7a8"
+}

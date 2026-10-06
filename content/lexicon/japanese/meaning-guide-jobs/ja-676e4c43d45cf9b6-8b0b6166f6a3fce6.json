@@ -1,0 +1,56 @@
+{
+  "id": "ja-676e4c43d45cf9b6-8b0b6166f6a3fce6",
+  "entry_id": "ja-676e4c43d45cf9b6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-676e4c43d45cf9b6",
+      "headword": "から",
+      "reading": "から",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-676e4c43d45cf9b6-1",
+          "definition": "from a place or source; out of; through"
+        },
+        {
+          "id": "ja-676e4c43d45cf9b6-2",
+          "definition": "after a point in time"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "from; out of",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "とても明るい所で、痛いので出てみると、吾輩はわらの上から笹原へ捨てられていた。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "人のにおいがする家を見つけ、こわれた竹垣の穴から中へ入った。",
+        "gloss": "from; through",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "女の人に台所から外へ何回も投げられたが、吾輩はまた入った。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "ある暖かい日の午後、昼ごはんの後で寝てから、吾輩は茶園を歩いた。",
+        "gloss": "after",
+        "sense_id": "ja-676e4c43d45cf9b6-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c8331f33baba0fdcf62d1abdb91bac2192de7f9c53223fcd6080e3c31b435201"
+}

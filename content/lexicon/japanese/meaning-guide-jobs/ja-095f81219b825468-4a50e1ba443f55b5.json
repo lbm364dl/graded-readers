@@ -1,0 +1,37 @@
+{
+  "id": "ja-095f81219b825468-4a50e1ba443f55b5",
+  "entry_id": "ja-095f81219b825468",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-095f81219b825468",
+      "headword": "掌",
+      "reading": "てのひら",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-095f81219b825468-1",
+          "definition": "palm of the hand"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ただ、書生の掌の上に乗せられ、ふわりと持ち上げられた感じが残っている。",
+        "gloss": "palm of the hand",
+        "sense_id": "ja-095f81219b825468-1"
+      },
+      {
+        "sentence": "掌の上で少し落ち着き、書生の顔を見たことが、人間というものの見始めだったのだろう。",
+        "gloss": "palm of the hand",
+        "sense_id": "ja-095f81219b825468-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3a834a4fa0dfb37d016d3afbb38798e2db52b65597b1de42e325f15cca2b4b0d"
+}

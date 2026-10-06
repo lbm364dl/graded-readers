@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff378-69af-7b42-bb00-7620391edbe3"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.97,\"readability\":0.97,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将东吴的火攻笼统归于徐盛或吴军，原文实际由丁奉等执行火攻，徐盛主要负责设置假楼和疑兵。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":35382,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":615,"reasoning_output_tokens":516}}

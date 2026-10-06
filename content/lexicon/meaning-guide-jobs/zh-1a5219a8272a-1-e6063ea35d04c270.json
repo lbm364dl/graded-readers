@@ -1,0 +1,46 @@
+{
+  "id": "zh-1a5219a8272a-1-e6063ea35d04c270",
+  "entry_id": "zh-1a5219a8272a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1a5219a8272a-1",
+      "headword": "不足",
+      "kind": "word",
+      "reading": "bùzú",
+      "senses": [
+        {
+          "id": "zh-1a5219a8272a-1-s1",
+          "definition": "not enough; insufficient"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备说自己姓刘，名备，是汉室宗亲，想打败黄巾军，救民于苦难，只是力量不足。",
+        "gloss": "insufficient; lacking",
+        "sense_id": "zh-1a5219a8272a-1-s1"
+      },
+      {
+        "sentence": "卢植拒绝说，军粮尚且不足，哪有钱奉承他。",
+        "gloss": "insufficient",
+        "sense_id": "zh-1a5219a8272a-1-s1"
+      },
+      {
+        "sentence": "”刘备说自己是汉室宗亲，姓刘，名备，有志破贼救民，只恨力量不足。",
+        "gloss": "to be insufficient",
+        "sense_id": "zh-1a5219a8272a-1-s1"
+      },
+      {
+        "sentence": "卢植说军粮尚且不足，哪有钱讨好使者？",
+        "gloss": "to be insufficient; lack",
+        "sense_id": "zh-1a5219a8272a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "678d66322b2b666fdce1ab4814363921b2afa3354ba5e3826b1ab238a260a4f0"
+}

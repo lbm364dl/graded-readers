@@ -1,0 +1,31 @@
+{
+  "id": "zh-31507a56be30-1-76205fa86cfa18cd",
+  "entry_id": "zh-31507a56be30-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-31507a56be30-1",
+      "headword": "索贿",
+      "kind": "word",
+      "reading": "suǒhuì",
+      "senses": [
+        {
+          "id": "zh-31507a56be30-1-s1",
+          "definition": "to demand or solicit a bribe"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷派宦官左丰来查问军情，并向卢植索贿。",
+        "gloss": "to demand bribes",
+        "sense_id": "zh-31507a56be30-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a58771664402a657548da8ead4c082ed98d2199ca69188258c175270f407bb1a"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-19d6259cb733503b-a7d4cd018314bdd4",
+  "entry_id": "ja-19d6259cb733503b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-19d6259cb733503b",
+      "headword": "けれど",
+      "reading": "けれど",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-19d6259cb733503b-1",
+          "definition": "but; however; although"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "けれど、その時の吾輩にはそんな考えはなく、別に怖いとも思わなかった。",
+        "gloss": "but; however",
+        "sense_id": "ja-19d6259cb733503b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0050f9b74fc1f6be335fa2056e4a534a6e693dd38a17293b8f02ad58cce53d55"
+}

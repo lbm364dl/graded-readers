@@ -1,0 +1,31 @@
+{
+  "id": "zh-5ba1e3c0eb63-1-f7173e3a23acee98",
+  "entry_id": "zh-5ba1e3c0eb63-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5ba1e3c0eb63-1",
+      "headword": "会",
+      "kind": "word",
+      "reading": "huì",
+      "senses": [
+        {
+          "id": "zh-5ba1e3c0eb63-1-s1",
+          "definition": "will; be likely or expected to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇甫嵩说张梁、张宝会去广宗投靠张角，于是让刘备连夜前往。",
+        "gloss": "will",
+        "sense_id": "zh-5ba1e3c0eb63-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c31092d925e7af7fe96bf47efe1e2789c283758f6d40e252b87ebd465d6e0a14"
+}

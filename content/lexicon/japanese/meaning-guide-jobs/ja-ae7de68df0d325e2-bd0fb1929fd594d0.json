@@ -1,0 +1,32 @@
+{
+  "id": "ja-ae7de68df0d325e2-bd0fb1929fd594d0",
+  "entry_id": "ja-ae7de68df0d325e2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ae7de68df0d325e2",
+      "headword": "学ぶ",
+      "reading": "まなぶ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ae7de68df0d325e2-1",
+          "definition": "to learn; to study"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある日、美学を学んでいる友人が来た。",
+        "gloss": "is studying",
+        "sense_id": "ja-ae7de68df0d325e2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f4c359741c928a8a1fee28df586633bf2925b5d96650043db9555509b2d26ba5"
+}

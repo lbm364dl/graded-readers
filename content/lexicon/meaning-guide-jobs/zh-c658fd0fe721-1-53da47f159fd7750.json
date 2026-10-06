@@ -1,0 +1,36 @@
+{
+  "id": "zh-c658fd0fe721-1-53da47f159fd7750",
+  "entry_id": "zh-c658fd0fe721-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c658fd0fe721-1",
+      "headword": "痛饮",
+      "kind": "word",
+      "reading": "tòngyǐn",
+      "senses": [
+        {
+          "id": "zh-c658fd0fe721-1-s1",
+          "definition": "to drink heartily"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "祭罢天地，三人杀牛设酒，聚集乡勇三百多人，在桃园中痛饮。",
+        "gloss": "to drink heartily",
+        "sense_id": "zh-c658fd0fe721-1-s1"
+      },
+      {
+        "sentence": "祭礼后，他们杀牛设酒，聚集三百多名乡勇，在桃园痛饮。",
+        "gloss": "drink one's fill",
+        "sense_id": "zh-c658fd0fe721-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0654cd67b4c22d3c8a574c2d0ed6d4cf98be4df0909011423cc6158424011d3b"
+}

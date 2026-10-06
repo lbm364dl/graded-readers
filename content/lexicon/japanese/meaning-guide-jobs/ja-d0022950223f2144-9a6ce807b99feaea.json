@@ -1,0 +1,32 @@
+{
+  "id": "ja-d0022950223f2144-9a6ce807b99feaea",
+  "entry_id": "ja-d0022950223f2144",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d0022950223f2144",
+      "headword": "あれこれ",
+      "reading": "あれこれ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d0022950223f2144-1",
+          "definition": "this and that; various things"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "友達が来るたびに、あれこれ不平を言っている。",
+        "gloss": "this and that; various things",
+        "sense_id": "ja-d0022950223f2144-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2c67378042cdc558a576068f9f0fd838c565622cd2d047445a8d4ed15839b0cc"
+}

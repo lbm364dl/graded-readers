@@ -1,0 +1,31 @@
+{
+  "id": "zh-36cf7bf7d4e8-1-0ddf3ed8523a8a03",
+  "entry_id": "zh-36cf7bf7d4e8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-36cf7bf7d4e8-1",
+      "headword": "下山",
+      "kind": "construction",
+      "reading": "xiàshān",
+      "senses": [
+        {
+          "id": "zh-36cf7bf7d4e8-1-s1",
+          "definition": "to go down a mountain"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备认出是张角，马上带关羽、张飞冲下山。",
+        "gloss": "charge down the mountain",
+        "sense_id": "zh-36cf7bf7d4e8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ba0cd29776c39283188f320b6e491a8aea6d69f1dfc6a700e9d366283cc6a0a6"
+}

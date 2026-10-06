@@ -1,0 +1,31 @@
+{
+  "id": "zh-d8cc7f09e295-1-7c0cceb977bf8a53",
+  "entry_id": "zh-d8cc7f09e295-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d8cc7f09e295-1",
+      "headword": "重视",
+      "kind": "word",
+      "reading": "zhòngshì",
+      "senses": [
+        {
+          "id": "zh-d8cc7f09e295-1-s1",
+          "definition": "to regard as important; to pay attention to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操以前做官时，也很重视城里的规矩。",
+        "gloss": "to attach importance to",
+        "sense_id": "zh-d8cc7f09e295-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5eab7370ec954df5b363b8f0f2e4e146685dbcaba7d45f2abb5475e8ca2fbc2a"
+}

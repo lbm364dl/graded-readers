@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_111-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1207,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了姜维撤退时命诸军前进、自己断后的过程，以及张嶷死后姜维表赠其子孙的情节。",
+      "classification": "material",
+      "reason": "姜维亲自断后体现其撤退部署，张嶷死后表赠其子孙则补充了姜维对部将忠勇的回应与后果，均属于有意义的行动和人物刻画。",
+      "required_fix": "补回姜维命诸军前进、自己断后的过程，以及张嶷战死后因感其忠勇而上表赠其子孙的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了姜维撤退时命诸军前进、自己断后的过程，以及张嶷死后姜维表赠其子孙的情节。",
+      "classification": "material",
+      "reason": "姜维亲自断后体现其撤退部署，张嶷死后表赠其子孙则补充了姜维对部将忠勇的回应与后果，均属于有意义的行动和人物刻画。",
+      "required_fix": "补回姜维命诸军前进、自己断后的过程，以及张嶷战死后因感其忠勇而上表赠其子孙的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1207,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

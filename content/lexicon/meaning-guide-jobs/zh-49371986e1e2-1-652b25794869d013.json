@@ -1,0 +1,45 @@
+{
+  "id": "zh-49371986e1e2-1-652b25794869d013",
+  "entry_id": "zh-49371986e1e2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-49371986e1e2-1",
+      "headword": "靠",
+      "kind": "word",
+      "reading": "kào",
+      "senses": [
+        {
+          "id": "zh-49371986e1e2-1-s1",
+          "definition": "to rely on; to depend on"
+        },
+        {
+          "id": "zh-49371986e1e2-1-s2",
+          "definition": "to be beside; to be next to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备家贫，平时靠卖鞋、织席生活，但心里有大志。",
+        "gloss": "rely on",
+        "sense_id": "zh-49371986e1e2-1-s1"
+      },
+      {
+        "sentence": "黄巾军退到长社，靠着草地扎营。",
+        "gloss": "be beside",
+        "sense_id": "zh-49371986e1e2-1-s2"
+      },
+      {
+        "sentence": "刘备家里很穷，靠卖草鞋、织席生活。",
+        "gloss": "rely on",
+        "sense_id": "zh-49371986e1e2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "12eb86e38d8d40c366eae3e7f78f7ce996ee7be63aadd507e69e7ed3f23c3a48"
+}

@@ -1,0 +1,65 @@
+{
+  "id": "ja-122673c619fc846d-7dd4296559886b34",
+  "entry_id": "ja-122673c619fc846d",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-122673c619fc846d",
+      "headword": "見える",
+      "reading": "みえる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-122673c619fc846d-1",
+          "definition": "to be visible; to appear in sight or be perceptible"
+        },
+        {
+          "id": "ja-122673c619fc846d-2",
+          "definition": "to be able to see"
+        },
+        {
+          "id": "ja-122673c619fc846d-3",
+          "definition": "to seem or look a certain way"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は動かずにいたが、絵は妙な色で、目もなく、目の見えない猫なのか、寝ている猫なのか分からない。",
+        "gloss": "unable to see; blind",
+        "sense_id": "ja-122673c619fc846d-2"
+      },
+      {
+        "sentence": "たくさんいた兄弟も一匹も見えず、母親まで姿を消していた。",
+        "gloss": "not visible; unable to be seen",
+        "sense_id": "ja-122673c619fc846d-1"
+      },
+      {
+        "sentence": "主人は胃が弱く、顔の色も黄色く、元気がないように見える。",
+        "gloss": "looks; appears",
+        "sense_id": "ja-122673c619fc846d-3"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-122673c619fc846d",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "見える describes something as visible or perceptible, or as coming into sight. It focuses on what can be seen rather than on the act of looking.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "84059c6d7a225f92f3c361dec9d5afbf0699a77d0332d0f07868bb2cea2c1332",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "405fc03784a0807464bf8122e707d797fef377310c74f4fa23d012640f3235fe"
+}

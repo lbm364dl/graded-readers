@@ -1,0 +1,31 @@
+{
+  "id": "zh-b7488a2d40a3-1-f9a2f3bb34baca78",
+  "entry_id": "zh-b7488a2d40a3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b7488a2d40a3-1",
+      "headword": "兄",
+      "kind": "word",
+      "reading": "xiōng",
+      "senses": [
+        {
+          "id": "zh-b7488a2d40a3-1-s1",
+          "definition": "elder brother"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "誓毕，刘备为兄，关羽次之，张飞为弟。",
+        "gloss": "elder brother",
+        "sense_id": "zh-b7488a2d40a3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "844b343a017d1dac858f2b4d5b7b1c3d80f16c7f3f41646f80aa6ce75b6f5590"
+}

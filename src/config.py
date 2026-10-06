@@ -3,11 +3,18 @@ import json
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
+CHINESE_DATA_DIR = DATA_DIR / "chinese"
 OUTPUT_DIR = PROJECT_ROOT / "output"
 READERS_DIR = PROJECT_ROOT / "readers"
 
 # The 95/5 rule: at most 5% of tokens may be above the target level
 MAX_ABOVE_LEVEL_RATIO = 0.05
+
+# Provisional band-fit heuristics. Coverage answers whether a text is no harder
+# than its target. These additionally flag texts that contain too little of the
+# target band and may therefore be better labelled one level lower.
+MIN_TARGET_BAND_RATIO = 0.05
+MAX_LOWER_LEVEL_COVERAGE_RATIO = 0.95
 
 # HSK 3.0 has levels 1-6 individually, plus 7-9 combined
 LEVELS = [1, 2, 3, 4, 5, 6, 7]
@@ -29,5 +36,5 @@ ALL_PUNCTUATION = CHINESE_PUNCTUATION | GENERAL_PUNCTUATION
 
 
 def load_level_metadata() -> dict:
-    with open(DATA_DIR / "hsk_levels.json", encoding="utf-8") as f:
+    with open(CHINESE_DATA_DIR / "hsk_levels.json", encoding="utf-8") as f:
         return json.load(f)

@@ -1,0 +1,32 @@
+{
+  "id": "ja-937c1a233b623157-b895335b97b9fc52",
+  "entry_id": "ja-937c1a233b623157",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-937c1a233b623157",
+      "headword": "しか",
+      "reading": "しか",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-937c1a233b623157-1",
+          "definition": "only; nothing but, used with a negative predicate"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は人を罵る時、いつもこの言葉しか使わない。",
+        "gloss": "only; nothing but",
+        "sense_id": "ja-937c1a233b623157-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a6dc4e7476fdd311b6d18f57d20f0ec2c7dcc7be63acc28220ea02a8443fb14c"
+}

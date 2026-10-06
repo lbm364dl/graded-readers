@@ -1,0 +1,31 @@
+{
+  "id": "zh-c03483045076-1-11a6f21f07549220",
+  "entry_id": "zh-c03483045076-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c03483045076-1",
+      "headword": "追击",
+      "kind": "word",
+      "reading": "zhuījī",
+      "senses": [
+        {
+          "id": "zh-c03483045076-1-s1",
+          "definition": "to pursue and attack"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操见过皇甫嵩和朱隽，便带兵继续追击张梁、张宝。",
+        "gloss": "to pursue and attack",
+        "sense_id": "zh-c03483045076-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d39fddae625c4a1a826743c6c8bebdb3d56d35e2b0116f0f776462f196b6cfe3"
+}

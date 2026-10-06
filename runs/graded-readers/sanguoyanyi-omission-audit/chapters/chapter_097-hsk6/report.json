@@ -1,0 +1,91 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_097-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1233,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称蜀军“射箭攻城”，原文主要写云梯、火箭、飞石、冲车和地道攻防，未明确写蜀军射箭攻城。",
+      "classification": "material",
+      "reason": "这是原文未支持的具体攻城行为，属于真实的无依据新增。",
+      "required_fix": "删除“射箭攻城”，改为原文支持的云梯、火箭、飞石、冲车和地道攻防。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“只擒住费耀”容易造成孔明诱敌计成功擒获费耀的误解；原文中费耀自刎，并非被擒。",
+      "classification": "material",
+      "reason": "把费耀自刎的结局改成被擒，改变了关键人物的事件结果。",
+      "required_fix": "改为“只逼死费耀”或明确写“费耀突围不成后自刎”，不要写成被擒。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称蜀军“射箭攻城”，原文主要写云梯、火箭、飞石、冲车和地道攻防，未明确写蜀军射箭攻城。",
+      "classification": "material",
+      "reason": "这是原文未支持的具体攻城行为，属于真实的无依据新增。",
+      "required_fix": "删除“射箭攻城”，改为原文支持的云梯、火箭、飞石、冲车和地道攻防。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“只擒住费耀”容易造成孔明诱敌计成功擒获费耀的误解；原文中费耀自刎，并非被擒。",
+      "classification": "material",
+      "reason": "把费耀自刎的结局改成被擒，改变了关键人物的事件结果。",
+      "required_fix": "改为“只逼死费耀”或明确写“费耀突围不成后自刎”，不要写成被擒。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1423,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“两次入城劝降”不准确：鄞祥第二次只在城下向城楼上的郝昭劝降，并未入城。",
+          "《出师表》第一点将“陛下未及高帝，谋臣不如良、平”改成了“自己的才略不如先帝和良、平”，改变了原文的主语和论旨。",
+          "原文由孙礼、辛毗连夜上表奏报，修复稿却写成曹真与郭淮急忙上奏，人物行动归属有误。"
+        ],
+        "language_problems": [
+          "“自己的才略不如先帝和良、平”表达不自然且语义关系错误，宜改为“陛下不及高帝，群臣谋略也不如良、平”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1233,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

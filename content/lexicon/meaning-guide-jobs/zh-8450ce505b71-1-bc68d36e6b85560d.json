@@ -1,0 +1,31 @@
+{
+  "id": "zh-8450ce505b71-1-bc68d36e6b85560d",
+  "entry_id": "zh-8450ce505b71-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8450ce505b71-1",
+      "headword": "打造",
+      "kind": "word",
+      "reading": "dǎzào",
+      "senses": [
+        {
+          "id": "zh-8450ce505b71-1-s1",
+          "definition": "to make by shaping or working a material; forge"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人请人打造兵器。",
+        "gloss": "forge",
+        "sense_id": "zh-8450ce505b71-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a239dc28f8a43fb9ef2560dde69931149146e116d119197f122d8a701f4bd538"
+}

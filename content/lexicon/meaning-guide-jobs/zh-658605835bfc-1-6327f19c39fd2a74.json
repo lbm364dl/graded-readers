@@ -1,0 +1,140 @@
+{
+  "id": "zh-658605835bfc-1-6327f19c39fd2a74",
+  "entry_id": "zh-658605835bfc-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-658605835bfc-1",
+      "headword": "也",
+      "kind": "word",
+      "reading": "yě",
+      "senses": [
+        {
+          "id": "zh-658605835bfc-1-s1",
+          "definition": "also; too"
+        },
+        {
+          "id": "zh-658605835bfc-1-s2",
+          "definition": "even"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "可是他没有钱，也没有人。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "关羽也想救人。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "他也愿意和有志的人交朋友。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "关羽也很高兴。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "三路夹攻，黄巾军大败，青州也安全了。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "有人直言批评，也被定罪。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "”他家有田，也有钱，愿意出钱招募乡勇，和刘备一起做大事。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "青州城里的人也出来帮忙，青州之围终于解开。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "火光照亮天空，黄巾军来不及披上铠甲，也来不及给马装好马鞍，只好四处逃跑。",
+        "gloss": "also; likewise",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "”董卓听后便轻视他们，连礼貌也没有。",
+        "gloss": "even; also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "这个结果导致宦官从此更加专横，做事也更不受限制，朝廷中的正直之士更加危险。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "他很早失去父亲，依靠手艺养家，也一直孝顺母亲。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "他十五岁时曾外出学习，也交了几个好友。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "大汉叫张飞，住在涿郡，有田，卖酒杀猪，也喜爱结交豪杰。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "之后，刘备、关羽、张飞一起到张飞庄上商议大事，三人也因共同志向相识。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "黄巾军追过山岭时，刘备军中发出信号，两边伏兵立即杀出，刘备也转身反击。",
+        "gloss": "also; too",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "曹操以前做官时，也很重视城里的规矩。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "于是，城内城外的人都不敢犯法，曹操也获得了很大的威名。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，只听见喊杀声，也看见火光照亮天空。",
+        "gloss": "also",
+        "sense_id": "zh-658605835bfc-1-s1"
+      },
+      {
+        "sentence": "”董卓听后轻视他们，连礼也不行。",
+        "gloss": "even",
+        "sense_id": "zh-658605835bfc-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-658605835bfc-1",
+    "structure": "single_component",
+    "explanation_en": "也 adds a person, thing, or point to what is already included: it means that this one is included as well, or that the same statement applies too.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "b445f1e1e214fc4dc73ec363295894119554ba507c88757f2c43104cef02f3b4",
+    "revision": 1,
+    "editorial_policy": 2,
+    "evidence_status": "legacy_unresearched"
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c1ac104994b0c51f1d9e24a9ce226c20d2ee2ed2e850973041b6a663e5b5e34c"
+}

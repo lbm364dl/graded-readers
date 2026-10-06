@@ -1,0 +1,52 @@
+{
+  "id": "ja-5a3faf1d2f144180-1895ed177b5dc38f",
+  "entry_id": "ja-5a3faf1d2f144180",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5a3faf1d2f144180",
+      "headword": "の",
+      "reading": "の",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-5a3faf1d2f144180-1",
+          "definition": "Links nouns to show possession, association, or a noun modifying another noun; of, belonging to, or one's."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "of; linking noun modifier",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "my",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩は笹原の中へ捨てられました。",
+        "gloss": "of; in",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "of",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "of; belonging to",
+        "sense_id": "ja-5a3faf1d2f144180-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "33aa926d0b688951583555006d466c965a1c9aa20ae1c335e2dbb095e19d55bf"
+}

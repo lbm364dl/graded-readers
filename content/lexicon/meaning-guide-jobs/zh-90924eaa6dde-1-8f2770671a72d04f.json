@@ -1,0 +1,31 @@
+{
+  "id": "zh-90924eaa6dde-1-8f2770671a72d04f",
+  "entry_id": "zh-90924eaa6dde-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-90924eaa6dde-1",
+      "headword": "哪里",
+      "kind": "word",
+      "reading": "nǎlǐ",
+      "senses": [
+        {
+          "id": "zh-90924eaa6dde-1-s1",
+          "definition": "where; used rhetorically to express that something is absent or impossible"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "我说军粮还不够，哪里有钱送给他？",
+        "gloss": "where; how could there be",
+        "sense_id": "zh-90924eaa6dde-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "47ba282703b9cf24d4be82c63f5fdb9c8fe927e8fb56d4bbbf6013d9f6280342"
+}

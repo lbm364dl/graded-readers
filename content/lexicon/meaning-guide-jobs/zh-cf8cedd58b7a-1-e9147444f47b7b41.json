@@ -1,0 +1,31 @@
+{
+  "id": "zh-cf8cedd58b7a-1-e9147444f47b7b41",
+  "entry_id": "zh-cf8cedd58b7a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cf8cedd58b7a-1",
+      "headword": "像",
+      "kind": "word",
+      "reading": "xiàng",
+      "senses": [
+        {
+          "id": "zh-cf8cedd58b7a-1-s1",
+          "definition": "resemble; look like"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "家旁有一棵大桑树，远远看去，像一把车盖。",
+        "gloss": "to resemble",
+        "sense_id": "zh-cf8cedd58b7a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "70467d5db116caa63cffeaf8d4d05c3daf3e25c8379d401a726115f3c5f2e25b"
+}

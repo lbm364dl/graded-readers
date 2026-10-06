@@ -1,0 +1,31 @@
+{
+  "id": "zh-621e104b9a7a-1-89bfbba787ab769e",
+  "entry_id": "zh-621e104b9a7a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-621e104b9a7a-1",
+      "headword": "山左",
+      "kind": "word",
+      "reading": "shānzuǒ",
+      "senses": [
+        {
+          "id": "zh-621e104b9a7a-1-s1",
+          "definition": "the left side of a mountain"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备让关羽带一千人到山左，张飞带一千人到山右，在那里埋伏，以鸣金为号。",
+        "gloss": "left side of mountain",
+        "sense_id": "zh-621e104b9a7a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7c3a9b50c2adf22366505a2ed096ead3a94f8b11c1a3fe2c6c5780f6264406dd"
+}

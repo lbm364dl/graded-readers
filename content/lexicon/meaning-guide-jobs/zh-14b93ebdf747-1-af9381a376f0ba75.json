@@ -1,0 +1,31 @@
+{
+  "id": "zh-14b93ebdf747-1-af9381a376f0ba75",
+  "entry_id": "zh-14b93ebdf747-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-14b93ebdf747-1",
+      "headword": "旗号",
+      "kind": "word",
+      "reading": "qíhào",
+      "senses": [
+        {
+          "id": "zh-14b93ebdf747-1-s1",
+          "definition": "flag or banner used as a sign or identifying mark"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备根据旗号判断来军是张角，便带兵冲杀。",
+        "gloss": "banner; insignia",
+        "sense_id": "zh-14b93ebdf747-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fba086fd4a33f48947e6e5ed1adb0af36eca1ab689203221a512b3eb37dd2555"
+}

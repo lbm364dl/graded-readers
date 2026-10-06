@@ -1,0 +1,31 @@
+{
+  "id": "zh-aa98317793b4-1-92ca05d6abcf55b6",
+  "entry_id": "zh-aa98317793b4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-aa98317793b4-1",
+      "headword": "以前",
+      "kind": "word",
+      "reading": "yǐqián",
+      "senses": [
+        {
+          "id": "zh-aa98317793b4-1-s1",
+          "definition": "before; formerly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操以前做官时，也很重视城里的规矩。",
+        "gloss": "formerly",
+        "sense_id": "zh-aa98317793b4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7dba3ccaa6a3ec3a235427ff8a5a6b1fd3f3fc61047c45cb77fbdc9672c1ea9f"
+}

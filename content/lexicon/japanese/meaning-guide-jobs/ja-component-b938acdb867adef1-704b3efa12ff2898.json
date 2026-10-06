@@ -1,0 +1,26 @@
+{
+  "id": "ja-component-b938acdb867adef1-704b3efa12ff2898",
+  "entry_id": "ja-component-b938acdb867adef1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-component-b938acdb867adef1",
+      "headword": "写す",
+      "reading": "うつす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-component-b938acdb867adef1-1",
+          "definition": "To copy or reproduce something."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c08a1bc3b63ad2e9fcdc1aca0f556a90d6ea781fd64575ec3d9ca4ea671f23c1"
+}

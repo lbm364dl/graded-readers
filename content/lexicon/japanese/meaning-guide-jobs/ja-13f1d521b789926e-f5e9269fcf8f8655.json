@@ -1,0 +1,42 @@
+{
+  "id": "ja-13f1d521b789926e-f5e9269fcf8f8655",
+  "entry_id": "ja-13f1d521b789926e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-13f1d521b789926e",
+      "headword": "として",
+      "reading": "として",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-13f1d521b789926e-1",
+          "definition": "as; in the role or capacity of"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、猫が親子の愛を守り、家族として生きるには、人間と戦うべきだと主張した。",
+        "gloss": "as; in the role of",
+        "sense_id": "ja-13f1d521b789926e-1"
+      },
+      {
+        "sentence": "吾輩は猫として、決して立派な姿ではない。",
+        "gloss": "as; in the capacity of",
+        "sense_id": "ja-13f1d521b789926e-1"
+      },
+      {
+        "sentence": "この教師の家で、生涯、無名の猫として終わるつもりである。",
+        "gloss": "as; in the role of",
+        "sense_id": "ja-13f1d521b789926e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0d829fe410f2b9fff0a4107e992f45646c9b3f393f7f00b5a5e655ea2f7a13c4"
+}

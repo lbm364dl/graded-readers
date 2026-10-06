@@ -1,0 +1,14 @@
+{
+  "id": "wagahai",
+  "title_native": "吾輩は猫である",
+  "title_en": "I Am a Cat",
+  "author_native": "夏目漱石",
+  "smoke_scope": "chapter_01_all_jlpt_levels",
+  "enabled_levels": [
+    "n5",
+    "n4",
+    "n3",
+    "n2",
+    "n1"
+  ]
+}

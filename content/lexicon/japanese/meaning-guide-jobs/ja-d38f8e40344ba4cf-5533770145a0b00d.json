@@ -1,0 +1,32 @@
+{
+  "id": "ja-d38f8e40344ba4cf-5533770145a0b00d",
+  "entry_id": "ja-d38f8e40344ba4cf",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d38f8e40344ba4cf",
+      "headword": "書物",
+      "reading": "しょもつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d38f8e40344ba4cf-1",
+          "definition": "a book; a written work"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "飯を食べた後で薬を飲み、書物を開く。",
+        "gloss": "book",
+        "sense_id": "ja-d38f8e40344ba4cf-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "605e0af4852e5c27e9987146a52ebf516fae96464618796cef86f864b9b727df"
+}

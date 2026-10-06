@@ -1,0 +1,47 @@
+{
+  "id": "ja-5a1e86ca664e879e-07b1dc6e16cae047",
+  "entry_id": "ja-5a1e86ca664e879e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5a1e86ca664e879e",
+      "headword": "仕事",
+      "reading": "しごと",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5a1e86ca664e879e-1",
+          "definition": "work; a job or task"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "教師というものは、ずいぶん楽な仕事だ。",
+        "gloss": "job; work",
+        "sense_id": "ja-5a1e86ca664e879e-1"
+      },
+      {
+        "sentence": "こんなに寝ていても仕事が続くなら、猫にだって出来ないことはない、と。",
+        "gloss": "work; one's job",
+        "sense_id": "ja-5a1e86ca664e879e-1"
+      },
+      {
+        "sentence": "ところが主人に言わせると、教師ほどつらい仕事はないらしい。",
+        "gloss": "work; job",
+        "sense_id": "ja-5a1e86ca664e879e-1"
+      },
+      {
+        "sentence": "友達が来るたびに、主人は仕事の不平をいろいろ言っている。",
+        "gloss": "work; job",
+        "sense_id": "ja-5a1e86ca664e879e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "16dd1066ac94e02549fddfad40923c1846707e8e7a942b38c84d36367b635d0d"
+}

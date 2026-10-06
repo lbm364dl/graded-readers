@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-xiang-ju-fb4b65a85b114786",
+  "entry_id": "zh-expression-xiang-ju",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-xiang-ju",
+      "headword": "相拒",
+      "reading": "xiāngjù",
+      "kind": "expression",
+      "base_entry_id": "zh-89bf5aeae158-1",
+      "components": [
+        {
+          "entry_id": "zh-89bf5aeae158-1",
+          "role": "reciprocal adverb"
+        },
+        {
+          "entry_id": "zh-830a2850e8e4-1",
+          "role": "verb"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-xiang-ju-s1",
+          "definition": "resist one another"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "当时张角有十五万黄巾军，卢植有五万兵，双方在广宗相拒，尚未分出胜负。",
+        "gloss": "resist one another",
+        "sense_id": "zh-expression-xiang-ju-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "相",
+        "role": "reciprocal adverb"
+      },
+      {
+        "headword": "拒",
+        "role": "verb"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d813ea6958dff885b094e7f66f6b9e1628d2d6e89729e7b3fa6a9df6b7724552"
+}

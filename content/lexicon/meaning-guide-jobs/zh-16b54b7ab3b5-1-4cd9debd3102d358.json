@@ -1,0 +1,61 @@
+{
+  "id": "zh-16b54b7ab3b5-1-4cd9debd3102d358",
+  "entry_id": "zh-16b54b7ab3b5-1",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "zh-16b54b7ab3b5-1",
+      "headword": "大家",
+      "kind": "word",
+      "reading": "dàjiā",
+      "senses": [
+        {
+          "id": "zh-16b54b7ab3b5-1-s1",
+          "definition": "everyone; everybody"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大家一起喝酒。",
+        "gloss": "everyone",
+        "sense_id": "zh-16b54b7ab3b5-1-s1"
+      },
+      {
+        "sentence": "大家一起去打黄巾军。",
+        "gloss": "everyone",
+        "sense_id": "zh-16b54b7ab3b5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-16b54b7ab3b5-1",
+    "structure": "lexicalized",
+    "explanation_en": "大家 is the conventional word for everyone or everybody in a group. 家 can suggest a household or group of people, but the whole meaning is established and cannot be worked out precisely as “big household.”",
+    "caveat_en": "The everyday meaning “everyone” is conventional; the parts do not define exactly which people are included.",
+    "parts": [
+      {
+        "text": "大",
+        "contribution_en": "part of the established word; it does not simply mean “big” in this expression"
+      },
+      {
+        "text": "家",
+        "contribution_en": "can suggest a household or group, but does not independently mean “everyone”"
+      }
+    ],
+    "input_fingerprint": "62c4e571a80990e6e8a2b17b5aab467a254dcddb1658c104ae3a12ad073e5981",
+    "revision": 1,
+    "editorial_policy": 2,
+    "evidence_status": "legacy_unresearched"
+  },
+  "requests": [
+    {
+      "entry_id": "zh-16b54b7ab3b5-1",
+      "reason": "Research what 家 and 大 contribute to the everyone sense. Explain supported lexical development if available; do not substitute an invented big-family story or an unsupported claim of opacity.",
+      "id": "edit-dafe65d3dc91e5c8"
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "8e97a7f27eda723e687532fa1eb384ad7c07f04db709e0bf11dfc8f08a1e7cd7"
+}

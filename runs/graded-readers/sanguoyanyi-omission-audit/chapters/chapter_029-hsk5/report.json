@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_029-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 816,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了孙策临终嘱托中部分细节，如父兄旧人不可轻怠、孙权具体接受印绶等。",
+      "classification": "material",
+      "reason": "“父兄旧人不可轻怠”是孙策对孙权继承江东后用人的具体政治嘱托，构成临终遗命的重要内容；孙权哭拜受印虽属动作细节，但强化了权力交接的明确性。",
+      "required_fix": "补入孙策嘱咐孙权不可轻怠父兄旧人，并写明孙权大哭、拜受印绶。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了孙策临终嘱托中部分细节，如父兄旧人不可轻怠、孙权具体接受印绶等。",
+      "classification": "material",
+      "reason": "“父兄旧人不可轻怠”是孙策对孙权继承江东后用人的具体政治嘱托，构成临终遗命的重要内容；孙权哭拜受印虽属动作细节，但强化了权力交接的明确性。",
+      "required_fix": "补入孙策嘱咐孙权不可轻怠父兄旧人，并写明孙权大哭、拜受印绶。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8.5,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 816,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

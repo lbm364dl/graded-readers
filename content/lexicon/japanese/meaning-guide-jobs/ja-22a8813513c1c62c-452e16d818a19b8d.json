@@ -1,0 +1,32 @@
+{
+  "id": "ja-22a8813513c1c62c-452e16d818a19b8d",
+  "entry_id": "ja-22a8813513c1c62c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-22a8813513c1c62c",
+      "headword": "ため息をつく",
+      "reading": "ためいきをつく",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-22a8813513c1c62c-1",
+          "definition": "To sigh; to let out a sigh."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "鼠をたくさん食べるから、そんなに太って毛つやもよいのだろう」と言うと、黒は急にため息をついた。",
+        "gloss": "sighed",
+        "sense_id": "ja-22a8813513c1c62c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "76505723308ce9c48c5c9f374cd8576a78f2d1ce4496c3de95ff643d21dd14e2"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-31b4c8bc268f-1-80eb04b7b5f1e1b6",
+  "entry_id": "zh-31b4c8bc268f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-31b4c8bc268f-1",
+      "headword": "任命",
+      "kind": "word",
+      "reading": "rènmìng",
+      "senses": [
+        {
+          "id": "zh-31b4c8bc268f-1-s1",
+          "definition": "appoint someone to an official position"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾起义后，他被任命为骑都尉，带领五千名骑兵和步兵赶到颍川。",
+        "gloss": "to appoint",
+        "sense_id": "zh-31b4c8bc268f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c78c9777eb96cce6873e3dd62fe96ffb0a7c7ba8057e0b48376220b36df66887"
+}

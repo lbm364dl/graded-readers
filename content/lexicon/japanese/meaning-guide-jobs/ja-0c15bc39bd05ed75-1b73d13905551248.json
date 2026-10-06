@@ -1,0 +1,32 @@
+{
+  "id": "ja-0c15bc39bd05ed75-1b73d13905551248",
+  "entry_id": "ja-0c15bc39bd05ed75",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0c15bc39bd05ed75",
+      "headword": "ではないか",
+      "reading": "ではないか",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-0c15bc39bd05ed75-1",
+          "definition": "A sentence-ending pattern that asserts something while inviting agreement or emphasizing the speaker’s realization."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "いやにやせてるじゃねえか」\n",
+        "gloss": "aren’t you?",
+        "sense_id": "ja-0c15bc39bd05ed75-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "521eabbf6bb8a625cd244596c607cb8fa380cef58f33dec00aa251b93337de62"
+}

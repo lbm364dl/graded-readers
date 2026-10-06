@@ -1,0 +1,31 @@
+{
+  "id": "zh-150617a89b44-1-058356a4c8122a81",
+  "entry_id": "zh-150617a89b44-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-150617a89b44-1",
+      "headword": "最",
+      "kind": "word",
+      "reading": "zuì",
+      "senses": [
+        {
+          "id": "zh-150617a89b44-1-s1",
+          "definition": "most; to the greatest degree"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他对两个弟弟说，最难得到的就是民心，如今民心已经归顺，若不趁势夺取天下，实在可惜。",
+        "gloss": "most",
+        "sense_id": "zh-150617a89b44-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cad9689ffaa9fc52dd43bc890d8ce4dc5991d2090630fefbc118bc60382e4792"
+}

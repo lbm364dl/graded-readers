@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff3d2-0f2c-7262-9a55-3a8b404b0fe7"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.96,\"naturalness\":0.97,\"readability\":0.97,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“把木桥移走，让来犯的军队走进深处”略显因果简化，原文是拆桥并移到下游以接应蜀军。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":31292,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":802,"reasoning_output_tokens":701}}

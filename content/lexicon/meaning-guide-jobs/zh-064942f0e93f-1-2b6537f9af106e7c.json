@@ -1,0 +1,31 @@
+{
+  "id": "zh-064942f0e93f-1-2b6537f9af106e7c",
+  "entry_id": "zh-064942f0e93f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-064942f0e93f-1",
+      "headword": "置",
+      "kind": "word",
+      "reading": "zhì",
+      "senses": [
+        {
+          "id": "zh-064942f0e93f-1-s1",
+          "definition": "to provide or equip with"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人各置全身铠甲，又聚集五百多名乡勇。",
+        "gloss": "equip",
+        "sense_id": "zh-064942f0e93f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5c5d79319930f3fb1c2970aa9038ba8617275d9c3ab0f9cb851a7586f444bad9"
+}

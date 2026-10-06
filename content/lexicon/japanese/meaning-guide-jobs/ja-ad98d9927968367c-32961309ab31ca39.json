@@ -1,0 +1,32 @@
+{
+  "id": "ja-ad98d9927968367c-32961309ab31ca39",
+  "entry_id": "ja-ad98d9927968367c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ad98d9927968367c",
+      "headword": "藁",
+      "reading": "わら",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ad98d9927968367c-1",
+          "definition": "straw"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は藁の上から笹原へ捨てられていた。",
+        "gloss": "straw",
+        "sense_id": "ja-ad98d9927968367c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "321928aab907e2d67bc10d5c4faa4815a370cd7ce32fab08672ad222f306cb56"
+}

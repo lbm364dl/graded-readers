@@ -1,0 +1,32 @@
+{
+  "id": "ja-e1322da3914a68eb-aebce0b68d02fdf3",
+  "entry_id": "ja-e1322da3914a68eb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e1322da3914a68eb",
+      "headword": "真ん中",
+      "reading": "まんなか",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e1322da3914a68eb-1",
+          "definition": "the middle; the center"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "middle; center",
+        "sense_id": "ja-e1322da3914a68eb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0855fc77cba76380a3a09c2d849d7276a2d18c31569468721c37aeb6cae24c1f"
+}

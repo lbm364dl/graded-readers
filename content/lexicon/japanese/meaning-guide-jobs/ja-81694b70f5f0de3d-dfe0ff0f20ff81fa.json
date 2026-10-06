@@ -1,0 +1,32 @@
+{
+  "id": "ja-81694b70f5f0de3d-dfe0ff0f20ff81fa",
+  "entry_id": "ja-81694b70f5f0de3d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-81694b70f5f0de3d",
+      "headword": "ニャーニャー",
+      "reading": "にゃーにゃー",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-81694b70f5f0de3d-1",
+          "definition": "The sound of a cat meowing; meow-meow."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "暗い所でニャーニャー泣いていました。",
+        "gloss": "meow-meow",
+        "sense_id": "ja-81694b70f5f0de3d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5357b75428c56893612d122f81570cfadba2c6079bea147b2cda22725cf4df04"
+}

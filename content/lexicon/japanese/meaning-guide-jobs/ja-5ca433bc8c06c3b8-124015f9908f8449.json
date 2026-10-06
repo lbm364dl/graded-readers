@@ -1,0 +1,32 @@
+{
+  "id": "ja-5ca433bc8c06c3b8-124015f9908f8449",
+  "entry_id": "ja-5ca433bc8c06c3b8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5ca433bc8c06c3b8",
+      "headword": "琥珀",
+      "reading": "こはく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5ca433bc8c06c3b8-1",
+          "definition": "amber"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その目は琥珀より美しかった。",
+        "gloss": "amber",
+        "sense_id": "ja-5ca433bc8c06c3b8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "06362dcec41bd6979c2b9b504c3264df6dace1553ffe9d4d8e18b2b5f2018726"
+}

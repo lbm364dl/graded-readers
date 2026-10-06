@@ -1,0 +1,46 @@
+{
+  "id": "zh-2118cbc10988-1-446cd40b438cc779",
+  "entry_id": "zh-2118cbc10988-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2118cbc10988-1",
+      "headword": "学习",
+      "kind": "word",
+      "reading": "xuéxí",
+      "senses": [
+        {
+          "id": "zh-2118cbc10988-1-s1",
+          "definition": "study; learn"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他对邹靖说：“我曾经跟卢植学习，现在愿意去帮助他。",
+        "gloss": "study",
+        "sense_id": "zh-2118cbc10988-1-s1"
+      },
+      {
+        "sentence": "张角日夜学习，学会呼风唤雨，自称太平道人。",
+        "gloss": "to study",
+        "sense_id": "zh-2118cbc10988-1-s1"
+      },
+      {
+        "sentence": "他十五岁时曾外出学习，也交了几个好友。",
+        "gloss": "to study",
+        "sense_id": "zh-2118cbc10988-1-s1"
+      },
+      {
+        "sentence": "刘备之前跟卢植学习，听说老师正在广宗和黄巾军作战，便想去帮助他。",
+        "gloss": "study",
+        "sense_id": "zh-2118cbc10988-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "183906aeb1fc0b962938d9d09be797b5ffac48900f5f21ac74bd5f6ef63c8ee4"
+}

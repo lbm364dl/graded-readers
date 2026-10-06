@@ -1,0 +1,17 @@
+{
+  "id": "honggildong",
+  "title_native": "홍길동전",
+  "title_en": "The Tale of Hong Gildong",
+  "author_native": "허균",
+  "author_attribution": "traditional; scholarly discussion continues",
+  "source_edition": "Wikisource/Jikji 30-sheet Gyeongpan edition, revision 460078",
+  "scope": "reviewed TOPIK-aligned curriculum pipeline chapters",
+  "enabled_levels": [
+    "l1",
+    "l2",
+    "l5"
+  ],
+  "curriculum_source": "https://m.korean.go.kr/front/reportData/reportDataView.do?mn_id=45&report_seq=932",
+  "curriculum_source_sha256": "881d9aa0e2a262f81b7a0be4b301bf607134ce071b123db0e15638869793bf33",
+  "level_system": "NIKL International Standard Curriculum levels 1–6; not an exhaustive TOPIK exam word list"
+}

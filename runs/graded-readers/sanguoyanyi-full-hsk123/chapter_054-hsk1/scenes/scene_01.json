@@ -1,0 +1,90 @@
+{
+  "scene": {
+    "id": "scene_01",
+    "title": "甘露寺相親與洞房驚變",
+    "source_start_quote": "卻說孔明聞魯肅到",
+    "required_events": [
+      "魯肅索要荊州，孔明以劉備宗親及赤壁功勞反駁，改立文書約定取西川後歸還。",
+      "周瑜認定借荊州是假、扣劉備換城是真，趁甘夫人去世設計，以孫權之妹招贅劉備，派呂範往荊州作媒。",
+      "孔明識破計謀，仍令劉備赴南徐，暗授趙雲三個錦囊並安排軍士造勢。",
+      "吳國太得知婚事後斥責孫權與周瑜，決定親到甘露寺考察劉備，並允許中意便嫁女。",
+      "甘露寺宴上，國太見劉備大喜認婿；趙雲發現刀斧手埋伏，國太喝退賈華與伏兵，劉備、孫權又以斬石試天意。",
+      "劉備借喬國老與國太護持，終與孫夫人成親；入洞房見侍婢皆持刀槍，驚疑東吳另有伏兵，留下懸念。"
+    ],
+    "target_chars": 140,
+    "source_start": 0,
+    "source_end": 5210
+  },
+  "text": "鲁肃索荆州，孔明以刘备是汉室宗亲、赤壁有功反驳，立文书约定取西川后归还。鲁肃把文书呈给孙权，周瑜献计，以招赘扣刘备换荆州，孙权采纳。甘夫人死，吕范作媒。孔明识破，仍令刘备赴南徐，给赵云三个锦囊，令军士造势。吴国太闻婚事，斥孙权、周瑜，亲到甘露寺相看，中意便嫁女。宴上她认婿，赵云发现刀斧手埋伏，国太喝退贾华和伏兵。刘备、孙权斩石问天，观江赛马。乔国老请国太护持，军士入府；成亲夜入洞房，见侍婢持刀枪，疑有伏兵，留下悬念。",
+  "review": {
+    "source_fidelity": 8,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "reviewer_verdict": "revise",
+    "harness_decision": "accepted_omission_only_compact_adaptation"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "鲁肃索荆州，孔明以刘备是汉室宗亲、赤壁有功反驳，立文书约定取西川后还。周瑜认定借荆州是假、扣刘备换城是真；趁甘夫人去世，设局用孙权妹妹招赘刘备，派吕范作媒。孔明识破，仍令刘备赴南徐，给赵云三个锦囊，令军士造势。吴国太闻婚事，斥孙权、周瑜，亲到甘露寺相看，允中意便嫁女。宴上她大喜认婿；赵云发现埋伏的刀斧手，国太喝退贾华和伏兵。刘备、孙权又斩石问天。刘备借乔国老、国太相护，与孙夫人成亲；洞房见侍婢皆持刀枪，疑东吴另有伏兵，留下悬念。",
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "omissions": [
+          "未提及吕范先向孙权说明借荆州文书及孙权采纳周瑜计策的过程，但不影响主线理解。",
+          "省略刘备、孙权在甘露寺观江、赛马及驻马坡等支线事件。",
+          "省略成亲前刘备担忧安危、乔国老和吴国太安排保护及迁入府中的过程。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“周瑜认定借荆州是假、扣刘备换城是真”基本准确，但原文是周瑜提出此计，孙权随后采纳，并非仅周瑜单独认定。",
+          "“与孙夫人成亲”将原文结尾的成亲概括为已完成，原文确有成亲，但洞房场景是成亲当晚的后续悬念，表述略压缩。"
+        ],
+        "language_problems": [
+          "mechanical length gate: 187 CJK, required 98-182"
+        ],
+        "verdict": "revise",
+        "harness_decision": "rejected_by_mechanical_length_gate"
+      }
+    },
+    {
+      "stage": "repair_01",
+      "text": "鲁肃索荆州，孔明以刘备是汉室宗亲、赤壁有功反驳，立文书约定取西川后归还。吕范把文书呈给孙权，周瑜献计，以招赘扣刘备换荆州，孙权采纳。甘夫人死，吕范作媒。孔明识破，仍令刘备赴南徐，给赵云三个锦囊，令军士造势。吴国太闻婚事，斥孙权、周瑜，亲到甘露寺相看，中意便嫁女。宴上她认婿，赵云发现刀斧手埋伏，国太喝退贾华和伏兵。刘备、孙权斩石问天，观江赛马。乔国老请国太护持，军士入府；成亲夜入洞房，见侍婢持刀枪，疑有伏兵，留下悬念。",
+      "review": {
+        "source_fidelity": 7,
+        "naturalness": 8,
+        "readability": 8,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "原文中是鲁肃将借荆州文书呈给孙权，改写成吕范呈递，人物关系和情节顺序有误。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      }
+    },
+    {
+      "stage": "repair_02",
+      "text": "鲁肃索荆州，孔明以刘备是汉室宗亲、赤壁有功反驳，立文书约定取西川后归还。鲁肃把文书呈给孙权，周瑜献计，以招赘扣刘备换荆州，孙权采纳。甘夫人死，吕范作媒。孔明识破，仍令刘备赴南徐，给赵云三个锦囊，令军士造势。吴国太闻婚事，斥孙权、周瑜，亲到甘露寺相看，中意便嫁女。宴上她认婿，赵云发现刀斧手埋伏，国太喝退贾华和伏兵。刘备、孙权斩石问天，观江赛马。乔国老请国太护持，军士入府；成亲夜入洞房，见侍婢持刀枪，疑有伏兵，留下悬念。",
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "reviewer_verdict": "revise",
+        "harness_decision": "accepted_omission_only_compact_adaptation"
+      }
+    }
+  ],
+  "resolved": true
+}

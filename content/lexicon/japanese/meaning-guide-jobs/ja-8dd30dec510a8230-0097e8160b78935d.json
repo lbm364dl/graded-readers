@@ -1,0 +1,32 @@
+{
+  "id": "ja-8dd30dec510a8230-0097e8160b78935d",
+  "entry_id": "ja-8dd30dec510a8230",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8dd30dec510a8230",
+      "headword": "この間",
+      "reading": "このあいだ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8dd30dec510a8230-1",
+          "definition": "the other day; recently"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この間も、畳で爪を磨いただけなのに、奥さんがたいへん怒り、それから座敷へ入れなくなった。",
+        "gloss": "the other day; recently",
+        "sense_id": "ja-8dd30dec510a8230-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "556493f6bcb2006e41c2b793b05142f1796e5de34c9453c93731eec2f6aeefa6"
+}

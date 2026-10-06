@@ -1,0 +1,31 @@
+{
+  "id": "zh-b031a23374f4-1-011b9368d7b3a522",
+  "entry_id": "zh-b031a23374f4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b031a23374f4-1",
+      "headword": "倒下",
+      "kind": "construction",
+      "reading": "dǎoxià",
+      "senses": [
+        {
+          "id": "zh-b031a23374f4-1-s1",
+          "definition": "fall down; collapse to the ground"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞举起长矛，刺中邓茂，邓茂倒下。",
+        "gloss": "fall down",
+        "sense_id": "zh-b031a23374f4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "271f74e0712ae35aad2a74c4e408a867e9d4749caca33781b692a0eae24bae0b"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-2a7758594766fb35-379186f5814bb962",
+  "entry_id": "ja-2a7758594766fb35",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2a7758594766fb35",
+      "headword": "体裁",
+      "reading": "ていさい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2a7758594766fb35-1",
+          "definition": "outward appearance; respectability; form"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "「人間は、体裁のよい泥棒だ」と黒は怒った。",
+        "gloss": "outward respectability; appearance",
+        "sense_id": "ja-2a7758594766fb35-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8013668fe7a2b6ff176c37e26be93a079a2c9459cda1dadfab47891e62ecd859"
+}

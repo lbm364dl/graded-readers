@@ -1,0 +1,31 @@
+{
+  "id": "zh-87291f2b64f4-1-b9abd4f23aacfaf9",
+  "entry_id": "zh-87291f2b64f4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-87291f2b64f4-1",
+      "headword": "力气",
+      "kind": "word",
+      "reading": "lìqi",
+      "senses": [
+        {
+          "id": "zh-87291f2b64f4-1-s1",
+          "definition": "physical strength"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备说自己是汉室宗亲，想打败作乱的黄巾军，让百姓平安，只是力气不够。",
+        "gloss": "physical strength",
+        "sense_id": "zh-87291f2b64f4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "61db939ba4ea2d88024e8e569aa63feda20d413a29908f3dbf2f93b48490f444"
+}

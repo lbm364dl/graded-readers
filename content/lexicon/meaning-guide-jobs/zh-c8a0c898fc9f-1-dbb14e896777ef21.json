@@ -1,0 +1,31 @@
+{
+  "id": "zh-c8a0c898fc9f-1-dbb14e896777ef21",
+  "entry_id": "zh-c8a0c898fc9f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c8a0c898fc9f-1",
+      "headword": "飞马冲",
+      "kind": "construction",
+      "reading": "fēimǎ chōng",
+      "senses": [
+        {
+          "id": "zh-c8a0c898fc9f-1-s1",
+          "definition": "to charge forward on horseback at a gallop"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备认出张角，便带关羽、张飞飞马冲去。",
+        "gloss": "to charge at full gallop",
+        "sense_id": "zh-c8a0c898fc9f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a8508f09f5cca72f5509e2a3bb4ecbe8a012427b52cba0a73c69a96929b075cd"
+}

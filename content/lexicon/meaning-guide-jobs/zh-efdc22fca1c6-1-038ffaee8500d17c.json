@@ -1,0 +1,36 @@
+{
+  "id": "zh-efdc22fca1c6-1-038ffaee8500d17c",
+  "entry_id": "zh-efdc22fca1c6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-efdc22fca1c6-1",
+      "headword": "出发",
+      "kind": "word",
+      "reading": "chūfā",
+      "senses": [
+        {
+          "id": "zh-efdc22fca1c6-1-s1",
+          "definition": "set out on a journey"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉让邹靖带刘备、关羽、张飞和五百人出发。",
+        "gloss": "set out",
+        "sense_id": "zh-efdc22fca1c6-1-s1"
+      },
+      {
+        "sentence": "”于是，邹靖带五千人，和刘备、关羽、张飞一起出发。",
+        "gloss": "set off",
+        "sense_id": "zh-efdc22fca1c6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "950bc889143d6356bfe5e1991f818fd66c427186a732bdae08e9d97187f16cc5"
+}

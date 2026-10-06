@@ -1,0 +1,31 @@
+{
+  "id": "zh-5d2cfac9e0b5-1-43b9585576d066aa",
+  "entry_id": "zh-5d2cfac9e0b5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5d2cfac9e0b5-1",
+      "headword": "不怎么",
+      "kind": "word",
+      "reading": "bù zěnme",
+      "senses": [
+        {
+          "id": "zh-5d2cfac9e0b5-1-s1",
+          "definition": "not very; not much"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备不怎么读书，性情宽和，少言而有大志，喜欢结交天下豪杰。",
+        "gloss": "not very",
+        "sense_id": "zh-5d2cfac9e0b5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7f23a023f8d4a0c6ac757b5494639e005e9458fde39ecaaeb017d392d0ac461d"
+}

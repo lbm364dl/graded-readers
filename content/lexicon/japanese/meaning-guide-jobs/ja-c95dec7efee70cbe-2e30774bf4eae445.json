@@ -1,0 +1,32 @@
+{
+  "id": "ja-c95dec7efee70cbe-2e30774bf4eae445",
+  "entry_id": "ja-c95dec7efee70cbe",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c95dec7efee70cbe",
+      "headword": "日差し",
+      "reading": "ひざし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c95dec7efee70cbe-1",
+          "definition": "sunlight; sunshine"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "冬の日差しが早く傾き、吾輩の昼寝の時間も短くなった。",
+        "gloss": "sunlight",
+        "sense_id": "ja-c95dec7efee70cbe-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "61b6f151e03f511b4ad2801972953a6ebb86b5bdea4c70b6247288c13b1be967"
+}

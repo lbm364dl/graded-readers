@@ -1,0 +1,32 @@
+{
+  "id": "ja-f6d55073f5fd878a-3e03b08a1f35f321",
+  "entry_id": "ja-f6d55073f5fd878a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f6d55073f5fd878a",
+      "headword": "静か",
+      "reading": "しずか",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f6d55073f5fd878a-1",
+          "definition": "quiet; peaceful"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "広くはないが、日がよく入り、静かで気持ちのよい所だ。",
+        "gloss": "quiet and",
+        "sense_id": "ja-f6d55073f5fd878a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "616004d5bfb01f647256926a0339990f87fae0b50162f1ba57d840aa54c7ff66"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-72eaab5334dc-1-1e8b00fc8790e49f",
+  "entry_id": "zh-72eaab5334dc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-72eaab5334dc-1",
+      "headword": "围",
+      "kind": "word",
+      "reading": "wéi",
+      "senses": [
+        {
+          "id": "zh-72eaab5334dc-1-s1",
+          "definition": "a siege; the act of surrounding a place to capture it"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "青州城里的人也出来帮忙，青州之围终于解开。",
+        "gloss": "siege",
+        "sense_id": "zh-72eaab5334dc-1-s1"
+      },
+      {
+        "sentence": "龚景又带乡勇出城相助，青州之围终于解开。",
+        "gloss": "siege",
+        "sense_id": "zh-72eaab5334dc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0bc800fbaf3253d65511e7a48ec1d5c475230580a0fbfcd6fe24574ece12e73d"
+}

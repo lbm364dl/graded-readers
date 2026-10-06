@@ -1,0 +1,31 @@
+{
+  "id": "zh-051d985b233f-1-7fcecd6271125775",
+  "entry_id": "zh-051d985b233f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-051d985b233f-1",
+      "headword": "侄子",
+      "kind": "word",
+      "reading": "zhízi",
+      "senses": [
+        {
+          "id": "zh-051d985b233f-1-s1",
+          "definition": "nephew"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "邹靖带他们见刘焉，刘焉认刘备为侄子。",
+        "gloss": "nephew",
+        "sense_id": "zh-051d985b233f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3ce072e6fdd2e5f33f80b1e9f08657fa996f65e3fd479d2a8103dcac7d231e0d"
+}

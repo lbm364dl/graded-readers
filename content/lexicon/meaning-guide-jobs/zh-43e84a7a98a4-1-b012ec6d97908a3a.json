@@ -1,0 +1,41 @@
+{
+  "id": "zh-43e84a7a98a4-1-b012ec6d97908a3a",
+  "entry_id": "zh-43e84a7a98a4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-43e84a7a98a4-1",
+      "headword": "岁",
+      "kind": "word",
+      "reading": "suì",
+      "senses": [
+        {
+          "id": "zh-43e84a7a98a4-1-s1",
+          "definition": "year; years of age"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他让人传播“苍天已死，黄天当立”和“岁在甲子，天下大吉”，还用白土在家门上写“甲子”。",
+        "gloss": "year",
+        "sense_id": "zh-43e84a7a98a4-1-s1"
+      },
+      {
+        "sentence": "他十五岁时曾外出学习，也交了几个好友。",
+        "gloss": "years old",
+        "sense_id": "zh-43e84a7a98a4-1-s1"
+      },
+      {
+        "sentence": "招军榜发布时，刘备已经二十八岁。",
+        "gloss": "years old",
+        "sense_id": "zh-43e84a7a98a4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c33fa90b07c028ce1f2a660c26aa6f32d793ae4a58fea236776b0347c92e25a1"
+}

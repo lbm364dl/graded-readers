@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_049-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 156,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操采纳程昱建议、派文聘拦截黄盖船，以及文聘中箭。",
+      "classification": "material",
+      "reason": "“曹操采纳程昱建议”与原文相反：程昱明确建议拦截，但曹操没有采纳，随后文聘自请拦截并被箭射中。文聘的拦截和中箭是黄盖火船识破与突入水寨前的关键事件，省略会削弱因果链并造成情节失真。",
+      "required_fix": "应改为：程昱明确判断来船有诈并建议阻止，曹操未采纳；文聘随后奉命拦截黄盖船，并被箭射中左臂。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“周瑜怕孔明坏事”弱化并改变了原文中周瑜认为孔明是东吴祸根、决意除掉他的动机。",
+      "classification": "material",
+      "reason": "原文明确将孔明视为东吴祸根并立即下令杀之；改为单纯担心孔明坏事，实质弱化并改变了周瑜追杀的动机。",
+      "required_fix": "应明确写为：周瑜认为孔明是东吴祸根，为免后患，立即命人前往七星坛将他杀掉。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“程昱虽疑也没阻止”表述不够准确；程昱实际上明确劝曹操阻止来船，只是曹操没有采纳。",
+      "classification": "material",
+      "reason": "该表述把程昱明确劝阻的行为错误归为没有阻止，并改变了曹操未采纳建议这一因果关系。",
+      "required_fix": "应改为：程昱识破黄盖船有诈，明确劝曹操阻止来船，但曹操没有采纳，仍派文聘前去拦截。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操采纳程昱建议、派文聘拦截黄盖船，以及文聘中箭。",
+      "classification": "material",
+      "reason": "“曹操采纳程昱建议”与原文相反：程昱明确建议拦截，但曹操没有采纳，随后文聘自请拦截并被箭射中。文聘的拦截和中箭是黄盖火船识破与突入水寨前的关键事件，省略会削弱因果链并造成情节失真。",
+      "required_fix": "应改为：程昱明确判断来船有诈并建议阻止，曹操未采纳；文聘随后奉命拦截黄盖船，并被箭射中左臂。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“周瑜怕孔明坏事”弱化并改变了原文中周瑜认为孔明是东吴祸根、决意除掉他的动机。",
+      "classification": "material",
+      "reason": "原文明确将孔明视为东吴祸根并立即下令杀之；改为单纯担心孔明坏事，实质弱化并改变了周瑜追杀的动机。",
+      "required_fix": "应明确写为：周瑜认为孔明是东吴祸根，为免后患，立即命人前往七星坛将他杀掉。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“程昱虽疑也没阻止”表述不够准确；程昱实际上明确劝曹操阻止来船，只是曹操没有采纳。",
+      "classification": "material",
+      "reason": "该表述把程昱明确劝阻的行为错误归为没有阻止，并改变了曹操未采纳建议这一因果关系。",
+      "required_fix": "应改为：程昱识破黄盖船有诈，明确劝曹操阻止来船，但曹操没有采纳，仍派文聘前去拦截。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 156,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

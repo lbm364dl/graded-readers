@@ -1,0 +1,31 @@
+{
+  "id": "zh-8b0409e612ae-1-9b6f21e478c49964",
+  "entry_id": "zh-8b0409e612ae-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8b0409e612ae-1",
+      "headword": "百官",
+      "kind": "word",
+      "reading": "bǎiguān",
+      "senses": [
+        {
+          "id": "zh-8b0409e612ae-1-s1",
+          "definition": "all the officials"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝受惊，百官立即纷纷躲开。",
+        "gloss": "all the officials",
+        "sense_id": "zh-8b0409e612ae-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a95ed4d71cc03d2ec00435666bbfc3e20e61164e1ff8bdeb9545edde4c81f7b4"
+}

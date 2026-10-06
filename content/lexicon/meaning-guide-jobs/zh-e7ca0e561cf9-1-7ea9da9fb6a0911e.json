@@ -1,0 +1,31 @@
+{
+  "id": "zh-e7ca0e561cf9-1-7ea9da9fb6a0911e",
+  "entry_id": "zh-e7ca0e561cf9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e7ca0e561cf9-1",
+      "headword": "殿角",
+      "kind": "word",
+      "reading": "diànjiǎo",
+      "senses": [
+        {
+          "id": "zh-e7ca0e561cf9-1-s1",
+          "definition": "corner of a palace hall"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "殿角忽起狂风，一条大青蛇从梁上飞下，盘在椅上。",
+        "gloss": "corner of the hall",
+        "sense_id": "zh-e7ca0e561cf9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "520197bfa2c0156d20ad252cde2e1e6aa606c59ae34345f3324dc05395153be4"
+}

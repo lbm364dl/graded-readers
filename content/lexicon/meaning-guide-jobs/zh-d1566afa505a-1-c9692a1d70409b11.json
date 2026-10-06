@@ -1,0 +1,31 @@
+{
+  "id": "zh-d1566afa505a-1-c9692a1d70409b11",
+  "entry_id": "zh-d1566afa505a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d1566afa505a-1",
+      "headword": "国",
+      "kind": "word",
+      "reading": "guó",
+      "senses": [
+        {
+          "id": "zh-d1566afa505a-1-s1",
+          "definition": "country; state"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他因为没有办法为国出力，长长地叹气。",
+        "gloss": "country",
+        "sense_id": "zh-d1566afa505a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d0a031beb2800f1c87c68adf75f5460ea0ae5c55adad55b9da069a7397e256bb"
+}

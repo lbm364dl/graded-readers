@@ -1,0 +1,32 @@
+{
+  "id": "ja-03df38686b66c967-8abe6ec215790744",
+  "entry_id": "ja-03df38686b66c967",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-03df38686b66c967",
+      "headword": "これから",
+      "reading": "これから",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-03df38686b66c967-1",
+          "definition": "from now onward; from this point forward"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は池の前に座り、これからどうすればよいか考えた。",
+        "gloss": "from now; from this point onward",
+        "sense_id": "ja-03df38686b66c967-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ee14d12e6227395d68d8d49c0cc085aa5a46c2d5f0e86912fa42554f4acfd04f"
+}

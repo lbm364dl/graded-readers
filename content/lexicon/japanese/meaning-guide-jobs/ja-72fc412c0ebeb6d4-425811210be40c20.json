@@ -1,0 +1,32 @@
+{
+  "id": "ja-72fc412c0ebeb6d4-425811210be40c20",
+  "entry_id": "ja-72fc412c0ebeb6d4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-72fc412c0ebeb6d4",
+      "headword": "物になる",
+      "reading": "ものになる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-72fc412c0ebeb6d4-1",
+          "definition": "to amount to something; to come to fruition"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし、どれも物にはならなかった。",
+        "gloss": "did not amount to anything; did not come to fruition",
+        "sense_id": "ja-72fc412c0ebeb6d4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "01af1316b2f9e7f057f348f23668470c77c62e46477efb4d998121e8afd1f07d"
+}

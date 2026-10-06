@@ -1,0 +1,32 @@
+{
+  "id": "ja-295bd720520da53e-b32d6751687d1517",
+  "entry_id": "ja-295bd720520da53e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-295bd720520da53e",
+      "headword": "金魚",
+      "reading": "きんぎょ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-295bd720520da53e-1",
+          "definition": "goldfish"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、絵をかくなら自然そのものを写すべきだ、空には星、地には露、池には金魚、枯れ木には鳥がいる、自然全体が大きな絵なのだ、と語った。",
+        "gloss": "goldfish",
+        "sense_id": "ja-295bd720520da53e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4b45e7db973cf4859e86be4cb5da18fe44c66d70dcc4c492dc2915611fcd4be5"
+}

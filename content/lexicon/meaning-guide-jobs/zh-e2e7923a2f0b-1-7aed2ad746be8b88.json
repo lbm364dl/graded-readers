@@ -1,0 +1,36 @@
+{
+  "id": "zh-e2e7923a2f0b-1-7aed2ad746be8b88",
+  "entry_id": "zh-e2e7923a2f0b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e2e7923a2f0b-1",
+      "headword": "汉朝",
+      "kind": "name",
+      "reading": "Hàncháo",
+      "senses": [
+        {
+          "id": "zh-e2e7923a2f0b-1-s1",
+          "definition": "the Han dynasty"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝末年，朝廷很乱，灾害和不祥的事不断发生。",
+        "gloss": "Han dynasty",
+        "sense_id": "zh-e2e7923a2f0b-1-s1"
+      },
+      {
+        "sentence": "他大声骂敌人背叛汉朝，叫他们早些投降。",
+        "gloss": "Han Dynasty",
+        "sense_id": "zh-e2e7923a2f0b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0d6075c1cc244953f50c95aae75f084e15410e8c77ff53a8e7fcbf17029c8aed"
+}

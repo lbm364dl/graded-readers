@@ -1,0 +1,32 @@
+{
+  "id": "ja-2152720a29a376ea-db997350f3d1231d",
+  "entry_id": "ja-2152720a29a376ea",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2152720a29a376ea",
+      "headword": "一つ一つ",
+      "reading": "ひとつひとつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2152720a29a376ea-1",
+          "definition": "one by one; each individually"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "茶の木の根を一つ一つ嗅ぎながら西側の杉の垣根へ行くと、枯れた菊を押し倒し、その上で大きな猫が眠っていた。",
+        "gloss": "one by one",
+        "sense_id": "ja-2152720a29a376ea-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4cf10b289ef84e7eb319702f43b47ba99c4df1732beab1ca1a586a6d75d02831"
+}

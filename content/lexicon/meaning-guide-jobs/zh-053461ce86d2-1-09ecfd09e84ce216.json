@@ -1,0 +1,31 @@
+{
+  "id": "zh-053461ce86d2-1-09ecfd09e84ce216",
+  "entry_id": "zh-053461ce86d2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-053461ce86d2-1",
+      "headword": "成功",
+      "kind": "word",
+      "reading": "chénggōng",
+      "senses": [
+        {
+          "id": "zh-053461ce86d2-1-s1",
+          "definition": "to succeed; success"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备下马询问，卢植说，他围攻张角时本来快要取胜，却因张角使用法术而未能成功。",
+        "gloss": "to succeed",
+        "sense_id": "zh-053461ce86d2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0cdd40f42030366ee1b04480601e03d3c21db62fbb80889af6270ba59c02c450"
+}

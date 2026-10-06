@@ -1,0 +1,31 @@
+{
+  "id": "zh-ec9bbc8139d8-1-4dc809bbae39e407",
+  "entry_id": "zh-ec9bbc8139d8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ec9bbc8139d8-1",
+      "headword": "专",
+      "kind": "word",
+      "reading": "zhuān",
+      "senses": [
+        {
+          "id": "zh-ec9bbc8139d8-1-s1",
+          "definition": "especially; particularly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "那人回答：“我姓张，名飞，字翼德，世居涿郡，颇有庄田，卖酒屠猪，专好结交天下豪杰。",
+        "gloss": "especially",
+        "sense_id": "zh-ec9bbc8139d8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4af38557703c640d51ee74e9393ba49a58d5f79e53b66ce19f7b94d292099a1e"
+}

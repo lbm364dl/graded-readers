@@ -1,0 +1,31 @@
+{
+  "id": "zh-e771b2d65eac-1-5cca2db2362c12e8",
+  "entry_id": "zh-e771b2d65eac-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e771b2d65eac-1",
+      "headword": "不得不",
+      "kind": "construction",
+      "reading": "bùdébù",
+      "senses": [
+        {
+          "id": "zh-e771b2d65eac-1-s1",
+          "definition": "have no choice but to; be forced to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷不得不下令各地招兵，抵抗黄巾军。",
+        "gloss": "have no choice but to",
+        "sense_id": "zh-e771b2d65eac-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "94f42157e189d15d89012771767ca10ce1a27c74d832558c1e54352cf0ed8128"
+}

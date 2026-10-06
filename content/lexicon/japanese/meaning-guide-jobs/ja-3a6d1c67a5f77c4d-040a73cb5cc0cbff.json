@@ -1,0 +1,37 @@
+{
+  "id": "ja-3a6d1c67a5f77c4d-040a73cb5cc0cbff",
+  "entry_id": "ja-3a6d1c67a5f77c4d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3a6d1c67a5f77c4d",
+      "headword": "一匹",
+      "reading": "いっぴき",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-3a6d1c67a5f77c4d-1",
+          "definition": "one animal; a single animal"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "たくさんいた兄弟も一匹も見えず、母親まで姿を消していた。",
+        "gloss": "one animal",
+        "sense_id": "ja-3a6d1c67a5f77c4d-1"
+      },
+      {
+        "sentence": "吾輩が「とろうと思ったが、まだ一匹もとっていない」と答えると、黒は大声で笑った。",
+        "gloss": "one animal",
+        "sense_id": "ja-3a6d1c67a5f77c4d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "833ce81f282adec44d7fb6a123bd0636c30024a07fdbb90e443e60fb822bc51d"
+}

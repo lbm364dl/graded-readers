@@ -1,0 +1,32 @@
+{
+  "id": "ja-1e1461f5610b779f-be1a287b1848f60f",
+  "entry_id": "ja-1e1461f5610b779f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1e1461f5610b779f",
+      "headword": "真っ黒",
+      "reading": "まっくろ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1e1461f5610b779f-1",
+          "definition": "completely black; jet-black"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "全身が真っ黒で、体は吾輩の倍もある。",
+        "gloss": "being completely black",
+        "sense_id": "ja-1e1461f5610b779f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "75204a68ace6b3a2304a5842faff845173a45a9a3a4af51b44b50af41a605df8"
+}

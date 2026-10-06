@@ -1,0 +1,36 @@
+{
+  "id": "ja-d96c47cfb0deb2a2-c54a334e52df720d",
+  "entry_id": "ja-d96c47cfb0deb2a2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d96c47cfb0deb2a2",
+      "headword": "時節",
+      "reading": "じせつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d96c47cfb0deb2a2-1",
+          "definition": "the proper or opportune time"
+        },
+        {
+          "id": "ja-d96c47cfb0deb2a2-2",
+          "definition": "an era; a period of time"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "気を長くして、猫の時節を待つことにしよう。",
+        "gloss": "the proper time; an era",
+        "sense_id": "ja-d96c47cfb0deb2a2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9272f2f01430d813bc0a0e2dc1019ff9c48e0ade0d5b5e1a7180d7dd451edc80"
+}

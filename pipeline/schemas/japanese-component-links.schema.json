@@ -1,0 +1,15 @@
+{
+  "type":"object","additionalProperties":false,"required":["entries","bindings"],
+  "properties":{
+    "entries":{"type":"array","items":{"type":"object","additionalProperties":false,
+      "required":["headword","reading","kind","definitions"],"properties":{
+        "headword":{"type":"string","minLength":1},"reading":{"type":"string","minLength":1},
+        "kind":{"enum":["word","name","expression"]},
+        "definitions":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}}}}},
+    "bindings":{"type":"array","items":{"type":"object","additionalProperties":false,
+      "required":["candidate_id","entry_id","new_headword","new_reading","grammar_entry_ids"],
+      "properties":{"candidate_id":{"type":"string"},"entry_id":{"type":"string"},
+        "new_headword":{"type":"string"},"new_reading":{"type":"string"},
+        "grammar_entry_ids":{"type":"array","items":{"type":"string"}}}}}
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-f004f1d84cf9-1-73272e4b180d71d1",
+  "entry_id": "zh-f004f1d84cf9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f004f1d84cf9-1",
+      "headword": "条",
+      "kind": "word",
+      "reading": "tiáo",
+      "senses": [
+        {
+          "id": "zh-f004f1d84cf9-1-s1",
+          "definition": "classifier for long, narrow, or flexible things"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "殿角忽然刮起狂风，一条大青蛇从房梁上飞下来，盘在座椅上。",
+        "gloss": "classifier for long flexible things",
+        "sense_id": "zh-f004f1d84cf9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6e320d74ef2ba1262aeac2ffffffdb11aa13957b9d6ac3d22df1662df915680a"
+}

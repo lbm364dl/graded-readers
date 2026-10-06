@@ -1,0 +1,56 @@
+{
+  "id": "zh-0cc659a9f57c-1-b999441e73d03433",
+  "entry_id": "zh-0cc659a9f57c-1",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "zh-0cc659a9f57c-1",
+      "headword": "国家",
+      "kind": "word",
+      "reading": "guójiā",
+      "senses": [
+        {
+          "id": "zh-0cc659a9f57c-1-s1",
+          "definition": "country; nation"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”刘备说：“国家有难。",
+        "gloss": "country",
+        "sense_id": "zh-0cc659a9f57c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-0cc659a9f57c-1",
+    "structure": "lexicalized",
+    "explanation_en": "国家 is the conventional word for a country or nation understood as a political community. 国 points to the country or polity; 家’s contribution to the whole is not fully predictable from its usual sense of “home” or “household.”",
+    "caveat_en": "Do not interpret 国家 as a literal “country-household”; it functions as a conventional word for a nation or country.",
+    "parts": [
+      {
+        "text": "国",
+        "contribution_en": "the country or political realm"
+      },
+      {
+        "text": "家",
+        "contribution_en": "part of the conventional word; its usual sense of “home” or “household” does not fully explain the whole"
+      }
+    ],
+    "input_fingerprint": "26b2d2a736b777258654f951abf4f47cfa681cb73a5f3db2682e148c52363f8d",
+    "revision": 1,
+    "editorial_policy": 2,
+    "evidence_status": "legacy_unresearched"
+  },
+  "requests": [
+    {
+      "entry_id": "zh-0cc659a9f57c-1",
+      "reason": "Research and explain what 家 contributes to 国家. The current not-predictable caveat may reflect missing research; distinguish historical attested senses from a supported account of development.",
+      "id": "edit-074b136f2b3047a3"
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "91cc2db4a88e2cc9ada92c7b16bee85468932354d35451f522c6087e14707147"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-09c3713b6b48-1-1c79128c4ef2ab3b",
+  "entry_id": "zh-09c3713b6b48-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-09c3713b6b48-1",
+      "headword": "双股剑",
+      "kind": "word",
+      "reading": "shuāng gǔ jiàn",
+      "senses": [
+        {
+          "id": "zh-09c3713b6b48-1-s1",
+          "definition": "a sword made with two parallel blades"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，刘备请工匠打造双股剑，关羽打造青龙偃月刀，重八十二斤，张飞打造丈八点钢矛，并各自准备全身铠甲。",
+        "gloss": "double-bladed sword",
+        "sense_id": "zh-09c3713b6b48-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3377aa9f8e62d617c659a8415c4f89e88a811ee1ee4543a0c1de0b2090d04151"
+}

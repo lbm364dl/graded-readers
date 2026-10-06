@@ -1,0 +1,42 @@
+{
+  "id": "ja-803fdb6f38418735-6867587a4c5ac096",
+  "entry_id": "ja-803fdb6f38418735",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-803fdb6f38418735",
+      "headword": "一番",
+      "reading": "いちばん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-803fdb6f38418735-1",
+          "definition": "the highest degree or rank; most; best"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかも、あとで聞いた話では、それは書生という、人間の中でも一番乱暴な種類の人だった。",
+        "gloss": "the most",
+        "sense_id": "ja-803fdb6f38418735-1"
+      },
+      {
+        "sentence": "人間に生まれたなら、教師になるのが一番よい。",
+        "gloss": "the most; best",
+        "sense_id": "ja-803fdb6f38418735-1"
+      },
+      {
+        "sentence": "しかし、夜になると、家の小供の寝床へもぐり込み、いっしょに寝るのが一番気持ちよい。",
+        "gloss": "the most; best",
+        "sense_id": "ja-803fdb6f38418735-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6e23db09706caab2509e3f2d221990e562a1c5e07e92956e0862d37fb34d232c"
+}

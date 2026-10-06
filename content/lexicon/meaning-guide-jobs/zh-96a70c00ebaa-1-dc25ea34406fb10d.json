@@ -1,0 +1,31 @@
+{
+  "id": "zh-96a70c00ebaa-1-dc25ea34406fb10d",
+  "entry_id": "zh-96a70c00ebaa-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-96a70c00ebaa-1",
+      "headword": "去世",
+      "kind": "word",
+      "reading": "qùshì",
+      "senses": [
+        {
+          "id": "zh-96a70c00ebaa-1-s1",
+          "definition": "die; pass away"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他的父亲刘弘曾做过官，却很早去世。",
+        "gloss": "to pass away",
+        "sense_id": "zh-96a70c00ebaa-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f10f595aceb4fdae05500412344605b92c2d75c857e21a561d57ad816d93fc71"
+}

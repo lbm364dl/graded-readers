@@ -1,0 +1,31 @@
+{
+  "id": "zh-927a9d4d6e77-1-00bf3b42f4095f2b",
+  "entry_id": "zh-927a9d4d6e77-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-927a9d4d6e77-1",
+      "headword": "分为",
+      "kind": "construction",
+      "reading": "fēnwéi",
+      "senses": [
+        {
+          "id": "zh-927a9d4d6e77-1-s1",
+          "definition": "divide into"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝自高祖斩白蛇起义，一统天下；后来光武中兴，传到献帝，终于分为三国。",
+        "gloss": "to divide into",
+        "sense_id": "zh-927a9d4d6e77-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8c68b844438d06613a347fd63260880f0bacac75c5787c0088178b1baaf6229f"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-5bf7b71571213d2a-07d0e5622bba4417",
+  "entry_id": "ja-5bf7b71571213d2a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5bf7b71571213d2a",
+      "headword": "動く",
+      "reading": "うごく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5bf7b71571213d2a-1",
+          "definition": "to move"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが、しばらくすると、書生が急に速く動き始めたのか、吾輩だけが動いたのか分からないまま、目が回り、胸が悪くなった。",
+        "gloss": "moved",
+        "sense_id": "ja-5bf7b71571213d2a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c04a366ae0fca272428a95d7d442b6edcbb3c09af55599cd845ffe2b27df7eae"
+}

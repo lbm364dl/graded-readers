@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_022-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1451,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了刘岱、王忠争执出战以及部分军队调度细节。",
+      "classification": "material",
+      "reason": "原场景中二人争执并拈鬮，决定由王忠先率一半兵马出战、刘岱留守；这一过程解释了王忠单独迎战及刘岱随后坚守不出的因果，删去后相关行动衔接不完整。",
+      "required_fix": "补回刘岱、王忠争执谁先出战、拈鬮决定王忠先行，以及王忠分领一半军马攻打徐州的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了刘岱、王忠争执出战以及部分军队调度细节。",
+      "classification": "material",
+      "reason": "原场景中二人争执并拈鬮，决定由王忠先率一半兵马出战、刘岱留守；这一过程解释了王忠单独迎战及刘岱随后坚守不出的因果，删去后相关行动衔接不完整。",
+      "required_fix": "补回刘岱、王忠争执谁先出战、拈鬮决定王忠先行，以及王忠分领一半军马攻打徐州的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1451,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

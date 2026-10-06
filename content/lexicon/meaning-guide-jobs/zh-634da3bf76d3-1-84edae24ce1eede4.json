@@ -1,0 +1,31 @@
+{
+  "id": "zh-634da3bf76d3-1-84edae24ce1eede4",
+  "entry_id": "zh-634da3bf76d3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-634da3bf76d3-1",
+      "headword": "传给",
+      "kind": "construction",
+      "reading": "chuángěi",
+      "senses": [
+        {
+          "id": "zh-634da3bf76d3-1-s1",
+          "definition": "pass or convey something to someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝看后叹息，曹节却偷偷看了奏章，并传给身边的人。",
+        "gloss": "pass to",
+        "sense_id": "zh-634da3bf76d3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2f28a8dbfc388403d70d4d1766d69657cb194843c42ead81e5dd56bba10bb44c"
+}

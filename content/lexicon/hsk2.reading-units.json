@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "policy_version": 3,
+  "source_fingerprint": "b478d3f223d56dd7ab842ea7c7f78b8aeb33bef6db1a2a6b48c4501fd7ce43b2",
+  "reviewed": true,
+  "model": "gpt-6-luna",
+  "proposal_effort": "low",
+  "review_effort": "high",
+  "chapters": {
+    "1": [
+      {
+        "first_segment": 5,
+        "last_segment": 6,
+        "text": "聚集了",
+        "pinyin": "jùjíle",
+        "meaning_en": "gathered",
+        "explanation_en": "聚集 means “gather”; the attached aspect marker 了 presents the gathering as a completed event."
+      },
+      {
+        "first_segment": 210,
+        "last_segment": 213,
+        "text": "越说越高兴",
+        "pinyin": "yuè shuō yuè gāoxìng",
+        "meaning_en": "the more they talked, the happier they became",
+        "explanation_en": "The paired 越…越… construction links two increasing states: as the amount of talking increases, happiness increases."
+      },
+      {
+        "first_segment": 225,
+        "last_segment": 226,
+        "text": "结为兄弟",
+        "pinyin": "jié wéi xiōngdì",
+        "meaning_en": "become brothers",
+        "explanation_en": "结为 introduces a resulting status, and 兄弟 names that status: the three men form a brotherhood."
+      },
+      {
+        "first_segment": 344,
+        "last_segment": 345,
+        "text": "杀了",
+        "pinyin": "shāle",
+        "meaning_en": "killed",
+        "explanation_en": "杀 means “kill”; the attached 了 marks the killing as completed. The person killed remains outside the unit."
+      },
+      {
+        "first_segment": 409,
+        "last_segment": 410,
+        "text": "打了",
+        "pinyin": "dǎle",
+        "meaning_en": "fought",
+        "explanation_en": "打 means “fight”; the attached 了 marks the action as completed. The duration phrase 一会儿 remains separate."
+      },
+      {
+        "first_segment": 499,
+        "last_segment": 500,
+        "text": "有没有",
+        "pinyin": "yǒu méiyǒu",
+        "meaning_en": "whether one has",
+        "explanation_en": "The positive-negative pattern 有没有 asks whether possession holds; the thing asked about, 官职, remains separate."
+      },
+      {
+        "first_segment": 515,
+        "last_segment": 518,
+        "text": "又气又不满",
+        "pinyin": "yòu qì yòu búmǎn",
+        "meaning_en": "both angry and dissatisfied",
+        "explanation_en": "The paired 又…又… construction links two states, presenting them together: 气 means “angry” here, and 不满 means “dissatisfied.”"
+      },
+      {
+        "first_segment": 530,
+        "last_segment": 531,
+        "text": "活下来",
+        "pinyin": "huó xiàlai",
+        "meaning_en": "survive",
+        "explanation_en": "活 means “live”; 下来 acts as a result complement, conveying continuing into the resulting state of being alive."
+      },
+      {
+        "first_segment": 534,
+        "last_segment": 535,
+        "text": "留下了",
+        "pinyin": "liúxiàle",
+        "meaning_en": "left behind",
+        "explanation_en": "留 means “leave,” 下 marks the result of something remaining behind, and the attached 了 presents that result as completed. 悬念 remains separate."
+      }
+    ]
+  },
+  "review_digest": "93fd6707531510cec697bd91abe0dd5f6186c20022a04a5633f7a58413160b7d"
+}

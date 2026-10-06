@@ -1,0 +1,37 @@
+{
+  "id": "ja-d48ca6c3fc9073d4-393831d015eeb253",
+  "entry_id": "ja-d48ca6c3fc9073d4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d48ca6c3fc9073d4",
+      "headword": "聞く",
+      "reading": "きく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d48ca6c3fc9073d4-1",
+          "definition": "to hear; listen; learn by hearing"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で聞くとその人間は書生で、猫をつかまえて煮て食べることもあるそうだ。",
+        "gloss": "hear; learn",
+        "sense_id": "ja-d48ca6c3fc9073d4-1"
+      },
+      {
+        "sentence": "吾輩はその話を聞き、決して鼠をとるまいと決めた。",
+        "gloss": "hearing; listening to",
+        "sense_id": "ja-d48ca6c3fc9073d4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "84b57a197b593f7c451d5b8994b89528de71ad1729852e59a7ff369381f07a5e"
+}

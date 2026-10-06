@@ -1,0 +1,32 @@
+{
+  "job": "chapter_064-hsk1/chapter_repair_round_04",
+  "model": "gpt-5.6-luna",
+  "effort": "xhigh",
+  "fingerprint": "f80ffc1555c7feafb153867cb66b64f714ec733db8d3dd8a03b183612fd20c93",
+  "started_at": "2026-08-07T08:46:01.435964+00:00",
+  "ended_at": "2026-08-07T09:15:48.705076+00:00",
+  "return_code": 0,
+  "attempt_count": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-08-07T08:46:01.435982+00:00",
+      "ended_at": "2026-08-07T09:01:01.763549+00:00",
+      "return_code": null,
+      "throttled": false,
+      "process_timeout": true,
+      "error": "codex process timed out",
+      "events": "events.attempt-01.jsonl",
+      "stderr": "stderr.attempt-01.log"
+    },
+    {
+      "attempt": 2,
+      "started_at": "2026-08-07T09:01:01.763837+00:00",
+      "ended_at": "2026-08-07T09:15:48.704813+00:00",
+      "return_code": 0,
+      "throttled": false,
+      "events": "events.attempt-02.jsonl",
+      "stderr": "stderr.attempt-02.log"
+    }
+  ]
+}

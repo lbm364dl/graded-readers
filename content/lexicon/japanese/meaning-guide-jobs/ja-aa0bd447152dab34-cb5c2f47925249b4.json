@@ -1,0 +1,32 @@
+{
+  "id": "ja-aa0bd447152dab34-cb5c2f47925249b4",
+  "entry_id": "ja-aa0bd447152dab34",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-aa0bd447152dab34",
+      "headword": "一部始終",
+      "reading": "いちぶしじゅう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-aa0bd447152dab34-1",
+          "definition": "the whole sequence of events from beginning to end"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "白君は涙を流しながら、その一部始終を話した。",
+        "gloss": "the entire sequence of events",
+        "sense_id": "ja-aa0bd447152dab34-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "91448b9a5091fa09d422995d3a37ca40a0bb8890d9762f2b907df23e947d0200"
+}

@@ -1,0 +1,70 @@
+{
+  "id": "zh-c7d1e85e396e-1-29e7a14ae8441828",
+  "entry_id": "zh-c7d1e85e396e-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-c7d1e85e396e-1",
+      "headword": "冲",
+      "kind": "word",
+      "reading": "chōng",
+      "senses": [
+        {
+          "id": "zh-c7d1e85e396e-1-s1",
+          "definition": "rush or charge forward"
+        },
+        {
+          "id": "zh-c7d1e85e396e-1-s2",
+          "definition": "rise or surge upward"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人立刻冲上去，把黄巾军打退，救下董卓。",
+        "gloss": "rush",
+        "sense_id": "zh-c7d1e85e396e-1-s1"
+      },
+      {
+        "sentence": "刘备认出是张角，马上带关羽、张飞冲下山。",
+        "gloss": "charge",
+        "sense_id": "zh-c7d1e85e396e-1-s1"
+      },
+      {
+        "sentence": "张飞挺矛直冲，一矛刺中邓茂心窝，邓茂翻身落马。",
+        "gloss": "to charge",
+        "sense_id": "zh-c7d1e85e396e-1-s1"
+      },
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，听见喊杀声，又看见仿佛冲天的火光。",
+        "gloss": "to rise or surge",
+        "sense_id": "zh-c7d1e85e396e-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-c7d1e85e396e-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "冲 means to rush forward: to move ahead quickly and forcefully.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "冲",
+        "contribution_en": "rush forward",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "6ad72887a613e4f25dce013c06562e48a51a86e7fc96615aa52b7f1a176b2dfc",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d2835b60adb0acba57a2fe844e801b987c2f6241036a7dbfeea6fb4815a791ba"
+}

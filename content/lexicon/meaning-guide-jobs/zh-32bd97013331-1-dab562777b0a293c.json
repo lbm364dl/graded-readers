@@ -1,0 +1,31 @@
+{
+  "id": "zh-32bd97013331-1-dab562777b0a293c",
+  "entry_id": "zh-32bd97013331-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-32bd97013331-1",
+      "headword": "村",
+      "kind": "word",
+      "reading": "cūn",
+      "senses": [
+        {
+          "id": "zh-32bd97013331-1-s1",
+          "definition": "village; rural settlement"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”刘备十分高兴，于是和他进村店喝酒。",
+        "gloss": "village",
+        "sense_id": "zh-32bd97013331-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "01fbb01c972c16a4ab6a1c9c6778548164da88f01eee92567bb8671ac860b0e8"
+}

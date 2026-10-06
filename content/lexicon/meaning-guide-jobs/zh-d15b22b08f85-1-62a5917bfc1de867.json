@@ -1,0 +1,36 @@
+{
+  "id": "zh-d15b22b08f85-1-62a5917bfc1de867",
+  "entry_id": "zh-d15b22b08f85-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d15b22b08f85-1",
+      "headword": "异姓",
+      "kind": "word",
+      "reading": "yìxìng",
+      "senses": [
+        {
+          "id": "zh-d15b22b08f85-1-s1",
+          "definition": "of different surnames"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们发誓，虽是异姓，既已结为兄弟，就要同心救民。",
+        "gloss": "different surnames",
+        "sense_id": "zh-d15b22b08f85-1-s1"
+      },
+      {
+        "sentence": "第二天，三人备好乌牛、白马等祭礼，焚香再拜，发誓虽是异姓，也要报效国家、安定百姓。",
+        "gloss": "different surnames",
+        "sense_id": "zh-d15b22b08f85-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9dd5306b96817c3b973f1d34b9cd201e94ad8087ac7c12a3f6560553d159a336"
+}

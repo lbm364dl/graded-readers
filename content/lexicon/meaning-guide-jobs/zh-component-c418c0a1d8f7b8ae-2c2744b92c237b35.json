@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-c418c0a1d8f7b8ae-2c2744b92c237b35",
+  "entry_id": "zh-component-c418c0a1d8f7b8ae",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-c418c0a1d8f7b8ae",
+      "headword": "家门",
+      "reading": "jiāmén",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-c418c0a1d8f7b8ae-s1",
+          "definition": "The entrance or gate of a home."
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "825dea9d1c18cab8a5332dad8389b8ee7e0078f798c035fd26b4904a40a8d849"
+}

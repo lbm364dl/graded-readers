@@ -1,0 +1,41 @@
+{
+  "id": "zh-d0858c18b5d6-1-1ed88ccf81fbb3f5",
+  "entry_id": "zh-d0858c18b5d6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d0858c18b5d6-1",
+      "headword": "卢植",
+      "kind": "name",
+      "reading": "Lú Zhí",
+      "senses": [
+        {
+          "id": "zh-d0858c18b5d6-1-s1",
+          "definition": "Lu Zhi, a person’s name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "以后，刘备去找卢植。",
+        "gloss": "Lu Zhi",
+        "sense_id": "zh-d0858c18b5d6-1-s1"
+      },
+      {
+        "sentence": "卢植因为拒绝行贿，被人诬陷，押回京城。",
+        "gloss": "Lu Zhi",
+        "sense_id": "zh-d0858c18b5d6-1-s1"
+      },
+      {
+        "sentence": "张飞很生气，要杀护送卢植的人。",
+        "gloss": "Lu Zhi",
+        "sense_id": "zh-d0858c18b5d6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "95cb70aee44141e354ba189e2e060bd539e8d359e9e3e7a5aac7289d4b12a333"
+}

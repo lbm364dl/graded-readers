@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/usuario/hsk-graded-readers/pipeline/agent_harness.py", line 1857, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/usuario/hsk-graded-readers/pipeline/agent_harness.py", line 1850, in main
+    result = asyncio.run(AnnotationOnlyHarness(args).run_annotation_only())
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/usuario/hsk-graded-readers/pipeline/agent_harness.py", line 1401, in __init__
+    raise ValueError(
+ValueError: annotation output directory is not empty: /home/usuario/hsk-graded-readers/runs/experiments/annotation-production-chapter-350-400-hsk4-ch001-constrained-delta; pass --resume to explicitly target it

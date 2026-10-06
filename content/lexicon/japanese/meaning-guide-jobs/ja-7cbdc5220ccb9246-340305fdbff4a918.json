@@ -1,0 +1,32 @@
+{
+  "id": "ja-7cbdc5220ccb9246-340305fdbff4a918",
+  "entry_id": "ja-7cbdc5220ccb9246",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7cbdc5220ccb9246",
+      "headword": "増長する",
+      "reading": "ぞうちょうする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7cbdc5220ccb9246-1",
+          "definition": "to become conceited; grow arrogant"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人間は自分の力を信じすぎて、すぐ増長する。",
+        "gloss": "become conceited; grow arrogant",
+        "sense_id": "ja-7cbdc5220ccb9246-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bb78349b8b6aaf3477b96830eb19b751899174df85f2c1bf847df08a9b177f88"
+}

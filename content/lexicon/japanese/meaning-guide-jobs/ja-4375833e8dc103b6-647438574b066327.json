@@ -1,0 +1,32 @@
+{
+  "id": "ja-4375833e8dc103b6-647438574b066327",
+  "entry_id": "ja-4375833e8dc103b6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4375833e8dc103b6",
+      "headword": "空",
+      "reading": "そら",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4375833e8dc103b6-1",
+          "definition": "sky"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、絵をかくなら自然そのものを写すべきだ、空には星、地には露、池には金魚、枯れ木には鳥がいる、自然全体が大きな絵なのだ、と語った。",
+        "gloss": "sky",
+        "sense_id": "ja-4375833e8dc103b6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "52b0c9d1cd2a86d8fbc0eab3f86867547bc0cc2821e4e4b49ae3d8dc746fb2b9"
+}

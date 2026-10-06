@@ -1,0 +1,32 @@
+{
+  "id": "ja-d89f09032e5b9be6-5727020a4ed792b9",
+  "entry_id": "ja-d89f09032e5b9be6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d89f09032e5b9be6",
+      "headword": "間",
+      "reading": "あいだ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d89f09032e5b9be6-1",
+          "definition": "the space between things or people; an interval of time"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "夜は五つと三つの子供の寝床へもぐり込み、二人の間で一緒に寝る。",
+        "gloss": "space between; interval",
+        "sense_id": "ja-d89f09032e5b9be6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5730a0439e4cee8d0c36e29cf6afc87c64ae55952ad075886b888d4e56acd08b"
+}

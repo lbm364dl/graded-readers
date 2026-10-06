@@ -1,0 +1,31 @@
+{
+  "id": "zh-d35fea0a07d5-1-3e5176d34564518d",
+  "entry_id": "zh-d35fea0a07d5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d35fea0a07d5-1",
+      "headword": "豹头",
+      "kind": "word",
+      "reading": "bàotóu",
+      "senses": [
+        {
+          "id": "zh-d35fea0a07d5-1-s1",
+          "definition": "a head resembling a leopard's"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备回头看那人，只见他身长八尺，豹头环眼，燕颔虎须，声音如巨雷，气势如奔马。",
+        "gloss": "leopard-like head",
+        "sense_id": "zh-d35fea0a07d5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "106147b6f97df92e04398ee9cb6d8fb93eb9c120758203308e64680a9c01d85a"
+}

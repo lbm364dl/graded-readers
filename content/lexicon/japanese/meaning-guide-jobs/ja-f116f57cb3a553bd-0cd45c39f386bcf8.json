@@ -1,0 +1,32 @@
+{
+  "id": "ja-f116f57cb3a553bd-0cd45c39f386bcf8",
+  "entry_id": "ja-f116f57cb3a553bd",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f116f57cb3a553bd",
+      "headword": "考え",
+      "reading": "かんがえ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f116f57cb3a553bd-1",
+          "definition": "thought; idea"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし、その時の吾輩には何も考えがなく、怖いとも思わなかった。",
+        "gloss": "thought; idea",
+        "sense_id": "ja-f116f57cb3a553bd-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "13481807e325640d7cc8f2c6284e24da6560dfe6099dd228d1bdbda6244cc0e1"
+}

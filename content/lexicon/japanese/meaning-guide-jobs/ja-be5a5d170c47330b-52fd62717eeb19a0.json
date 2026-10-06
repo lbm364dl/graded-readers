@@ -1,0 +1,32 @@
+{
+  "id": "ja-be5a5d170c47330b-52fd62717eeb19a0",
+  "entry_id": "ja-be5a5d170c47330b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-be5a5d170c47330b",
+      "headword": "ところが",
+      "reading": "ところが",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-be5a5d170c47330b-1",
+          "definition": "however; but, introducing a contrast or unexpected development"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが小便がしたくなり、もう待てなかった。",
+        "gloss": "however; but",
+        "sense_id": "ja-be5a5d170c47330b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "361fcf8255e7973a4b326919786aebf99943d62d9c4d8206ae76d149a7c22ac5"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-9447d4b3f980bd07-27a0cb2f825725a2",
+  "entry_id": "ja-9447d4b3f980bd07",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9447d4b3f980bd07",
+      "headword": "星",
+      "reading": "ほし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9447d4b3f980bd07-1",
+          "definition": "star"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、絵をかくなら自然そのものを写すべきだ、空には星、地には露、池には金魚、枯れ木には鳥がいる、自然全体が大きな絵なのだ、と語った。",
+        "gloss": "stars",
+        "sense_id": "ja-9447d4b3f980bd07-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4be045b1aa757c8e97895409fca4cb78de0461719c6d9caef93e1a887f59387d"
+}

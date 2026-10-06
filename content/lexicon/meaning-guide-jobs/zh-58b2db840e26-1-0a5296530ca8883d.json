@@ -1,0 +1,36 @@
+{
+  "id": "zh-58b2db840e26-1-0a5296530ca8883d",
+  "entry_id": "zh-58b2db840e26-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-58b2db840e26-1",
+      "headword": "来意",
+      "kind": "word",
+      "reading": "láiyì",
+      "senses": [
+        {
+          "id": "zh-58b2db840e26-1-s1",
+          "definition": "purpose for coming"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备到卢植军中行礼，说明来意。",
+        "gloss": "purpose for coming",
+        "sense_id": "zh-58b2db840e26-1-s1"
+      },
+      {
+        "sentence": "刘备到了卢植军中，入帐行礼，说明来意。",
+        "gloss": "purpose in coming",
+        "sense_id": "zh-58b2db840e26-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "18200a86be6463d655c8b6e4a55064d607d0f75307d563c1e5fa5256bd945ba6"
+}

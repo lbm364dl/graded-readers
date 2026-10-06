@@ -1,0 +1,31 @@
+{
+  "id": "zh-39185c90ef7a-1-9aba957f03aa7122",
+  "entry_id": "zh-39185c90ef7a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-39185c90ef7a-1",
+      "headword": "马匹",
+      "kind": "word",
+      "reading": "mǎpǐ",
+      "senses": [
+        {
+          "id": "zh-39185c90ef7a-1-s1",
+          "definition": "horses"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们送来马匹、金银和铁。",
+        "gloss": "horses",
+        "sense_id": "zh-39185c90ef7a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0d87da92856168ff0e374a39eff219d23636d25cfed41ee55bbb8694c5bba290"
+}

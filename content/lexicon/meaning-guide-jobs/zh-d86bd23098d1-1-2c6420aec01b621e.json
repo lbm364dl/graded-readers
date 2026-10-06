@@ -1,0 +1,31 @@
+{
+  "id": "zh-d86bd23098d1-1-2c6420aec01b621e",
+  "entry_id": "zh-d86bd23098d1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d86bd23098d1-1",
+      "headword": "不到",
+      "kind": "word",
+      "reading": "búdào",
+      "senses": [
+        {
+          "id": "zh-d86bd23098d1-1-s1",
+          "definition": "less than; not reaching a specified amount, time, or point"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不到两天，他们听见山后喊声很大。",
+        "gloss": "less than",
+        "sense_id": "zh-d86bd23098d1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7e5bec599760b308a81597c83ae5c00eca6f1209bbb464591e35f3714641541a"
+}

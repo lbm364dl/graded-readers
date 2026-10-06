@@ -1,0 +1,36 @@
+{
+  "id": "zh-a6f8cdff6b32-1-26a8c55b25d4c508",
+  "entry_id": "zh-a6f8cdff6b32-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a6f8cdff6b32-1",
+      "headword": "两边",
+      "kind": "word",
+      "reading": "liǎngbiān",
+      "senses": [
+        {
+          "id": "zh-a6f8cdff6b32-1-s1",
+          "definition": "both sides; the two sides"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "关羽和张飞各带一部分人，藏在山的两边。",
+        "gloss": "both sides",
+        "sense_id": "zh-a6f8cdff6b32-1-s1"
+      },
+      {
+        "sentence": "刘备发出信号，两边的人一起出来。",
+        "gloss": "both sides",
+        "sense_id": "zh-a6f8cdff6b32-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "25c7cd2c1f075e6db6ce1a93ff464d7f01d245598b56eeac4a364513ca3c4581"
+}

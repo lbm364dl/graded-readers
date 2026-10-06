@@ -1,0 +1,32 @@
+{
+  "id": "ja-219a64481cd007af-f676503e26eba1f9",
+  "entry_id": "ja-219a64481cd007af",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-219a64481cd007af",
+      "headword": "魚屋",
+      "reading": "さかなや",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-219a64481cd007af-1",
+          "definition": "fish shop; fishmonger"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "fishmonger",
+        "sense_id": "ja-219a64481cd007af-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8cefe72263e98c1c511f3bd33b401184dc4f5baff600079c02eda0aacdc71099"
+}

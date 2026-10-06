@@ -1,0 +1,31 @@
+{
+  "id": "zh-8491cffebe61-1-5a75da453763742f",
+  "entry_id": "zh-8491cffebe61-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8491cffebe61-1",
+      "headword": "出来",
+      "kind": "construction",
+      "reading": "chūlai",
+      "senses": [
+        {
+          "id": "zh-8491cffebe61-1-s1",
+          "definition": "come or go out from an enclosed or concealed place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备发出信号，两边的人一起出来。",
+        "gloss": "come out",
+        "sense_id": "zh-8491cffebe61-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "85e70eb8fa685895efe6add0b9b53e4bad6a1693691089df3df04f563bc9d525"
+}

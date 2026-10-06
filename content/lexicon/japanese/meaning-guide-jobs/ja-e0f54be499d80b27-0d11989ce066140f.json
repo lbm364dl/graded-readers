@@ -1,0 +1,32 @@
+{
+  "id": "ja-e0f54be499d80b27-0d11989ce066140f",
+  "entry_id": "ja-e0f54be499d80b27",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e0f54be499d80b27",
+      "headword": "ろく",
+      "reading": "ろく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e0f54be499d80b27-1",
+          "definition": "decent; satisfactory; worthwhile"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "decent; worthwhile",
+        "sense_id": "ja-e0f54be499d80b27-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3e17a03784c862615a4157ae8c5d8db97e4ca7f3c79366b26b05bd9daf737106"
+}

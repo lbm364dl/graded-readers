@@ -1,0 +1,32 @@
+{
+  "id": "ja-059b4db367b04f14-f4fd4db1a32e3f1a",
+  "entry_id": "ja-059b4db367b04f14",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-059b4db367b04f14",
+      "headword": "黒い",
+      "reading": "くろい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-059b4db367b04f14-1",
+          "definition": "black; having the color of coal or ink"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "西の垣のそばへ行くと、大きな黒い猫が枯菊の上で寝ていた。",
+        "gloss": "black",
+        "sense_id": "ja-059b4db367b04f14-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "858fad4ef23c326d6e3b6234f925220a939b1c874c33c3517cb58bde8fcdd695"
+}

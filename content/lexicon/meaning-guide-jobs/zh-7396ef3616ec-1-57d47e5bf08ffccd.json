@@ -1,0 +1,31 @@
+{
+  "id": "zh-7396ef3616ec-1-57d47e5bf08ffccd",
+  "entry_id": "zh-7396ef3616ec-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7396ef3616ec-1",
+      "headword": "一万",
+      "kind": "word",
+      "reading": "yíwàn",
+      "senses": [
+        {
+          "id": "zh-7396ef3616ec-1-s1",
+          "definition": "ten thousand"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这一战中，曹操杀死一万多人，夺得旗子、战鼓和许多马匹。",
+        "gloss": "ten thousand",
+        "sense_id": "zh-7396ef3616ec-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "aa50b099ffc68e1b9559e5d8e82e446112b6ac0e6660268ffbfbd791b1a53980"
+}

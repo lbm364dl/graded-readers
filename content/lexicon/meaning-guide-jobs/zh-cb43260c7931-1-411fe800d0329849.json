@@ -1,0 +1,31 @@
+{
+  "id": "zh-cb43260c7931-1-411fe800d0329849",
+  "entry_id": "zh-cb43260c7931-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cb43260c7931-1",
+      "headword": "贤良",
+      "kind": "word",
+      "reading": "xiánliáng",
+      "senses": [
+        {
+          "id": "zh-cb43260c7931-1-s1",
+          "definition": "virtuous and capable; an honorific title for a virtuous and capable teacher"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "中平元年，疫病流行，他用符水给百姓治病，自称大贤良师。",
+        "gloss": "virtuous and capable",
+        "sense_id": "zh-cb43260c7931-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a72f0fb2f2b8511777bb2c35a5b246735957d2e48f2288f73cf7dfcdbc1cebe6"
+}

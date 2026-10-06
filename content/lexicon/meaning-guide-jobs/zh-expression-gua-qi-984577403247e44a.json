@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-gua-qi-984577403247e44a",
+  "entry_id": "zh-expression-gua-qi",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-gua-qi",
+      "headword": "刮起",
+      "reading": "guāqǐ",
+      "base_entry_id": "zh-49f3ab54d5fa-1",
+      "components": [
+        {
+          "entry_id": "zh-49f3ab54d5fa-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-3f3ed24bab3f-1",
+          "role": "onset complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-gua-qi-s1",
+          "definition": "begin to blow, said of wind"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "夜里大风忽然刮起。",
+        "gloss": "begin to blow, said of wind",
+        "sense_id": "zh-expression-gua-qi-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "刮",
+        "role": "verb"
+      },
+      {
+        "headword": "起",
+        "role": "onset complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "86efeccff7aac76529e092d98cd2a52c6d7ed04fc0f4b664076828413f102618"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-4e778c4fdbc46f8c-bc3db97ec9342d08",
+  "entry_id": "ja-4e778c4fdbc46f8c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4e778c4fdbc46f8c",
+      "headword": "泣きたい",
+      "reading": "なきたい",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-4e778c4fdbc46f8c-1",
+          "definition": "expresses a desire to cry"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "泣きたくても声が出なかった。",
+        "gloss": "even if (I) want to cry",
+        "sense_id": "ja-4e778c4fdbc46f8c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4e99b6e83a8953b376fc5edc41d8f10f76da9131aa0503b9f28d48668a96260c"
+}

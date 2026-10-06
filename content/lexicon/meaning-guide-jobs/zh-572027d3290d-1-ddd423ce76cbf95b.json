@@ -1,0 +1,31 @@
+{
+  "id": "zh-572027d3290d-1-ddd423ce76cbf95b",
+  "entry_id": "zh-572027d3290d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-572027d3290d-1",
+      "headword": "平安",
+      "kind": "word",
+      "reading": "píng'ān",
+      "senses": [
+        {
+          "id": "zh-572027d3290d-1-s1",
+          "definition": "safe and peaceful; free from danger or trouble"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备说自己是汉室宗亲，想打败作乱的黄巾军，让百姓平安，只是力气不够。",
+        "gloss": "safe and peaceful",
+        "sense_id": "zh-572027d3290d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "da328783ab1dc07133d04f8943640dc13a1fd41b9a77ed6ffe14dccf691689cb"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-86fe2a029bb688fc-0d95d6681ba83815",
+  "entry_id": "ja-86fe2a029bb688fc",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-86fe2a029bb688fc",
+      "headword": "喉",
+      "reading": "のど",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-86fe2a029bb688fc-1",
+          "definition": "throat"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どうも喉にからむようで、吾輩は実に困った。",
+        "gloss": "throat",
+        "sense_id": "ja-86fe2a029bb688fc-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "83a717ac5f17cf4ff407e55b38765b3a6d8614e9ea18cadfb5b7c730fd826a10"
+}

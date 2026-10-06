@@ -1,0 +1,36 @@
+{
+  "id": "zh-ff839e93c6e6-1-98c11669a33dcb99",
+  "entry_id": "zh-ff839e93c6e6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ff839e93c6e6-1",
+      "headword": "混乱",
+      "kind": "word",
+      "reading": "hùnluàn",
+      "senses": [
+        {
+          "id": "zh-ff839e93c6e6-1-s1",
+          "definition": "disorderly; chaotic"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝末年，朝政混乱，灾害和不祥之事不停发生。",
+        "gloss": "chaotic",
+        "sense_id": "zh-ff839e93c6e6-1-s1"
+      },
+      {
+        "sentence": "汉朝末年，朝政混乱，灾害与不祥之事不断发生。",
+        "gloss": "disorderly",
+        "sense_id": "zh-ff839e93c6e6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f7d6e8fdddecea9acf45643f53f6b310018c8adf877b69ad646f7d53414b4cf6"
+}

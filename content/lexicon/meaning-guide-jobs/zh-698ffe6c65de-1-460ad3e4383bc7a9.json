@@ -1,0 +1,36 @@
+{
+  "id": "zh-698ffe6c65de-1-460ad3e4383bc7a9",
+  "entry_id": "zh-698ffe6c65de-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-698ffe6c65de-1",
+      "headword": "战事",
+      "kind": "word",
+      "reading": "zhànshì",
+      "senses": [
+        {
+          "id": "zh-698ffe6c65de-1-s1",
+          "definition": "military action or events of a war or battle"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军战事不利，退入长社，用草扎营。",
+        "gloss": "war situation",
+        "sense_id": "zh-698ffe6c65de-1-s1"
+      },
+      {
+        "sentence": "他急忙带兵赶去，却发现黄巾军已经败散，战事已经结束。",
+        "gloss": "battle",
+        "sense_id": "zh-698ffe6c65de-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5b9ba012450186b0e4d6728534b0ec5064f1e3de946f71c62b33511a1f019ff6"
+}

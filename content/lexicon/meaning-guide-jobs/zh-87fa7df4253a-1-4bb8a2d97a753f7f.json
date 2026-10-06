@@ -1,0 +1,31 @@
+{
+  "id": "zh-87fa7df4253a-1-4bb8a2d97a753f7f",
+  "entry_id": "zh-87fa7df4253a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-87fa7df4253a-1",
+      "headword": "祭告",
+      "kind": "word",
+      "reading": "jìgào",
+      "senses": [
+        {
+          "id": "zh-87fa7df4253a-1-s1",
+          "definition": "to make an offering and announce something in a ritual"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，三人在桃园祭告天地。",
+        "gloss": "make offerings and announce",
+        "sense_id": "zh-87fa7df4253a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "26bd8caa737053e7ee6ea5d3dc79f3f0738cf2e6ed8dfa169989af49c7bda691"
+}

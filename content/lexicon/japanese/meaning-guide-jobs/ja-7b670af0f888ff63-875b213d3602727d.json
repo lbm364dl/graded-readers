@@ -1,0 +1,61 @@
+{
+  "id": "ja-7b670af0f888ff63-875b213d3602727d",
+  "entry_id": "ja-7b670af0f888ff63",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-7b670af0f888ff63",
+      "headword": "出す",
+      "reading": "だす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7b670af0f888ff63-1",
+          "definition": "To take or send something out; let out."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "女の人は吾輩を何度も外へ出しましたが、吾輩は台所へ入りました。",
+        "gloss": "let out; sent outside",
+        "sense_id": "ja-7b670af0f888ff63-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-7b670af0f888ff63",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "出す is a transitive verb meaning to cause something to move out of a place, including taking, sending, or letting it out. These uses share the idea of making something cross an outward boundary; context determines which English verb fits.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "出す",
+        "contribution_en": "A whole verb for causing something to go out; the English rendering depends on how it leaves.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "3fb1565f3cda6e8853e1c631f42585e62fa2f67d4fea0f35d301ccc2adf5bf83",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-d86be2741ccfea7f",
+      "reason": "The part gloss repeats the explanation's complete definition of 出す without adding a separate lexical distinction. Requested change: Keep the general explanation of causing something to move outward; remove the redundant whole-verb part gloss.",
+      "entry_id": "ja-7b670af0f888ff63",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "2ce6e390ab367d95396c3fdfbe63010e226ed2f666d4350220ed656df07d8595"
+}

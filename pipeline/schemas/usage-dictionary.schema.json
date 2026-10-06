@@ -1,0 +1,20 @@
+{
+  "type": "object", "additionalProperties": false, "required": ["entries"],
+  "properties": {"entries": {"type": "array", "items": {
+    "type": "object", "additionalProperties": false,
+    "required": ["id", "headword", "reading", "kind", "senses"],
+    "properties": {
+      "id": {"type": "string"}, "headword": {"type": "string"},
+      "reading": {"type": "string"},
+      "kind": {"type": "string", "enum": ["word", "name", "particle", "expression", "construction"]},
+      "senses": {"type": "array", "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "definition", "occurrences"],
+        "properties": {
+          "id": {"type": "string"}, "definition": {"type": "string"},
+          "occurrences": {"type": "array", "items": {"type": "string"}}
+        }
+      }}
+    }
+  }}}
+}

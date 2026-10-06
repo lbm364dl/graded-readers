@@ -1,0 +1,55 @@
+{
+  "id": "ja-e04c28f2bedecfee-afbcc5b213feee8d",
+  "entry_id": "ja-e04c28f2bedecfee",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-e04c28f2bedecfee",
+      "headword": "歩く",
+      "reading": "あるく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e04c28f2bedecfee-1",
+          "definition": "To walk; move on foot."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "walking",
+        "sense_id": "ja-e04c28f2bedecfee-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-e04c28f2bedecfee",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "歩く (あるく) is a native verb meaning to walk or move on foot. It names the action as a whole; the writing does not need to be divided into meaningful parts.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "e1a82379fd83865d3cc0a50ba42495e3c1e624bbc817e07a3c7f8a21768404c9",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-be71dcec535f459a",
+      "reason": "The origin label and claim that the writing need not be divided into parts do not help explain the lexical meaning. Requested change: Define 歩く directly as “to walk; move on foot” and remove the origin and breakdown commentary.",
+      "entry_id": "ja-e04c28f2bedecfee",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "ea37268b2ff5cdb0f9adf67ee70afde4d63ec9daa865998bbdd2a6d484482ed6"
+}

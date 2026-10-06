@@ -1,0 +1,32 @@
+{
+  "id": "ja-24f57206360c2add-0c06c7d2b896a760",
+  "entry_id": "ja-24f57206360c2add",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-24f57206360c2add",
+      "headword": "怒る",
+      "reading": "いかる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-24f57206360c2add-1",
+          "definition": "To become angry; to get angry."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が、家なら教師の方が大きいようだと言うと、黒は「家が大きくても腹の足しにはならない」と怒り、乱暴に立ち去った。",
+        "gloss": "getting angry",
+        "sense_id": "ja-24f57206360c2add-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2a7841b50291d532a15db1f04a8629c7e817bb69a5a3cee54061ddd027555aa2"
+}

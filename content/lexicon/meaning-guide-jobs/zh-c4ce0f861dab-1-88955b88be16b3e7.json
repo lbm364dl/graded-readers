@@ -1,0 +1,31 @@
+{
+  "id": "zh-c4ce0f861dab-1-88955b88be16b3e7",
+  "entry_id": "zh-c4ce0f861dab-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c4ce0f861dab-1",
+      "headword": "十五万",
+      "kind": "word",
+      "reading": "shíwǔwàn",
+      "senses": [
+        {
+          "id": "zh-c4ce0f861dab-1-s1",
+          "definition": "one hundred fifty thousand"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "当时张角有十五万黄巾军，卢植有五万兵，双方在广宗相拒，尚未分出胜负。",
+        "gloss": "one hundred fifty thousand",
+        "sense_id": "zh-c4ce0f861dab-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dd1aa9e5bc0bcbfd6a1344c331449ac4c3cd4a37255ff76603580cffc0da878f"
+}

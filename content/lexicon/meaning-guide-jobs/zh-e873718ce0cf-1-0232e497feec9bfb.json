@@ -1,0 +1,31 @@
+{
+  "id": "zh-e873718ce0cf-1-0232e497feec9bfb",
+  "entry_id": "zh-e873718ce0cf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e873718ce0cf-1",
+      "headword": "想起",
+      "kind": "word",
+      "reading": "xiǎngqǐ",
+      "senses": [
+        {
+          "id": "zh-e873718ce0cf-1-s1",
+          "definition": "to remember; recall"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "事情结束后，刘备想起老师卢植。",
+        "gloss": "remember",
+        "sense_id": "zh-e873718ce0cf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d767ac9a1f4589b0181baa37559694e4db7f2322cbc11df0c6176ca50ef00a1f"
+}

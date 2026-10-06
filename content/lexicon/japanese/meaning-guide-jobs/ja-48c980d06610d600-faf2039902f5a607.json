@@ -1,0 +1,32 @@
+{
+  "id": "ja-48c980d06610d600-faf2039902f5a607",
+  "entry_id": "ja-48c980d06610d600",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-48c980d06610d600",
+      "headword": "先生",
+      "reading": "せんせい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-48c980d06610d600-1",
+          "definition": "teacher; instructor"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "　白君は軍人の家に、三毛君は弁護士の家に、吾輩は先生の家に住んでいる。",
+        "gloss": "teacher; instructor",
+        "sense_id": "ja-48c980d06610d600-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fa696a0f600f5a45348441335778694eb149369d93e9d9bb3fa0194ab4389d56"
+}

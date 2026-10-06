@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff310-41e5-7983-bd0a-167740944547"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.93,\"naturalness\":0.96,\"readability\":0.97,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“马超勇猛，打败了李傕的军队”将马超击杀李蒙、王方并击退相关军队，概括成直接打败李傕军队，略有指代和因果简化。\",\"“曹操用假消息和伏兵打败吕布，占领山东许多地方”把曹操设诈击败吕布与后来夺取濮阳、定陶、山东诸地压缩为同一连续行动，因果关系略显过度简化。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":28342,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":691,"reasoning_output_tokens":514}}

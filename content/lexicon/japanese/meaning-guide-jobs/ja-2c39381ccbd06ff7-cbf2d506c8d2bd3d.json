@@ -1,0 +1,32 @@
+{
+  "id": "ja-2c39381ccbd06ff7-cbf2d506c8d2bd3d",
+  "entry_id": "ja-2c39381ccbd06ff7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2c39381ccbd06ff7",
+      "headword": "それなら",
+      "reading": "それなら",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-2c39381ccbd06ff7-1",
+          "definition": "in that case; if that is so"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、「それなら、内へ置いてやれ」と言い、奥へ入ってしまった。",
+        "gloss": "if that's the case; then",
+        "sense_id": "ja-2c39381ccbd06ff7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "34da5fe7cbfde316c7f88075ee37afccd0fbe63fe367a273223ed04649574029"
+}

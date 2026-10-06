@@ -1,0 +1,31 @@
+{
+  "id": "zh-943874ecb6bd-1-2252f6719e73da70",
+  "entry_id": "zh-943874ecb6bd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-943874ecb6bd-1",
+      "headword": "胜利",
+      "kind": "word",
+      "reading": "shènglì",
+      "senses": [
+        {
+          "id": "zh-943874ecb6bd-1-s1",
+          "definition": "victory"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军逃走，三人取得第一次胜利。",
+        "gloss": "victory",
+        "sense_id": "zh-943874ecb6bd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a5d630d1d380992d8405bc0c66793dff43f3cbd717af70aa71ba60466188471d"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-274e2c53d49d-1-5e9fc3abf97d5c1f",
+  "entry_id": "zh-274e2c53d49d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-274e2c53d49d-1",
+      "headword": "查问",
+      "kind": "word",
+      "reading": "cháwèn",
+      "senses": [
+        {
+          "id": "zh-274e2c53d49d-1-s1",
+          "definition": "to investigate; to inquire"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷派宦官左丰来查问军情，并向卢植索贿。",
+        "gloss": "to investigate; to inquire",
+        "sense_id": "zh-274e2c53d49d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "94ba8fbd81b27b10c9b67800d6c032e52e765e756e2b9ef4a0323b4cfbb71de3"
+}

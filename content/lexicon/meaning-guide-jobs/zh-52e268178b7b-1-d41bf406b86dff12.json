@@ -1,0 +1,31 @@
+{
+  "id": "zh-52e268178b7b-1-d41bf406b86dff12",
+  "entry_id": "zh-52e268178b7b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-52e268178b7b-1",
+      "headword": "竟",
+      "kind": "word",
+      "reading": "jìng",
+      "senses": [
+        {
+          "id": "zh-52e268178b7b-1-s1",
+          "definition": "unexpectedly; contrary to expectation"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "车里的人竟是卢植。",
+        "gloss": "unexpectedly",
+        "sense_id": "zh-52e268178b7b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a84c0881c135a03428c98aa5657e2fa7fd543f48de91f6e3cc6a6bca5d30b25e"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-963aa1e26917-1-e0085bd6ea9a4093",
+  "entry_id": "zh-963aa1e26917-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-963aa1e26917-1",
+      "headword": "从小",
+      "kind": "word",
+      "reading": "cóngxiǎo",
+      "senses": [
+        {
+          "id": "zh-963aa1e26917-1-s1",
+          "definition": "from childhood; since childhood"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备家里很穷，从小就有大志。",
+        "gloss": "from childhood",
+        "sense_id": "zh-963aa1e26917-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b19482178d3ca33e17e73c02b1c17e05be67645c5d34d9d0060a5a676c5ef039"
+}

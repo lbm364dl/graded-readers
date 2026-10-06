@@ -1,0 +1,40 @@
+{
+  "id": "zh-17bd17162b20-1-e3789baf2106bee1",
+  "entry_id": "zh-17bd17162b20-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-17bd17162b20-1",
+      "headword": "领",
+      "kind": "word",
+      "reading": "lǐng",
+      "senses": [
+        {
+          "id": "zh-17bd17162b20-1-s1",
+          "definition": "to lead; guide"
+        },
+        {
+          "id": "zh-17bd17162b20-1-s2",
+          "definition": "to receive; accept (an order or command)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉让邹靖带刘备、张飞、关羽三人，领五百人前去迎敌。",
+        "gloss": "to lead",
+        "sense_id": "zh-17bd17162b20-1-s1"
+      },
+      {
+        "sentence": "刘备领命，连夜赶到颍川。",
+        "gloss": "receive",
+        "sense_id": "zh-17bd17162b20-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fe2c92b4fe7492ae2c702aa997cbad391b3caecef234e21302a7094cbb9d6a22"
+}

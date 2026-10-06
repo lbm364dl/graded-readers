@@ -1,0 +1,31 @@
+{
+  "id": "zh-7100b1773b3f-1-76927dd5a0c97e5f",
+  "entry_id": "zh-7100b1773b3f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7100b1773b3f-1",
+      "headword": "在位",
+      "kind": "word",
+      "reading": "zàiwèi",
+      "senses": [
+        {
+          "id": "zh-7100b1773b3f-1-s1",
+          "definition": "hold office (said of a ruler)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝在位时，压制正直贤能的人，却特别信任宦官。",
+        "gloss": "to be in office",
+        "sense_id": "zh-7100b1773b3f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "af44d43715969331f4e8f4701fcc90ee1f65fce44309aa82fe5d7f8085d4c904"
+}

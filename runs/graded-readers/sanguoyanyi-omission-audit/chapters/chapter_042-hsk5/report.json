@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_042-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 963,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了孔明与鲁肃讨论南北军胜负后的具体策略，以及鲁肃入城弔丧、饮酒等过渡情节。",
+      "classification": "material",
+      "reason": "南北军不同胜负下的具体取利方案体现孔明推动孙刘联合的策略和动机；弔丧、饮酒虽属过渡，但该策略内容不能仅以一般性的“从中取利”完全替代。",
+      "required_fix": "补回孔明关于南军或北军获胜时分别联合取荆州、乘势取江南的具体策略；鲁肃入城弔丧、收礼并与玄德饮酒的过渡可一并补写。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“转兵攻打江陵”略有夸大，原文主要说曹操率兵赶赴江陵，荆州官员随即出城投降。",
+      "classification": "material",
+      "reason": "“攻打江陵”把曹操赶赴江陵、荆州官员随即投降的过程改写成了实际攻城，改变了事件性质和时间顺序。",
+      "required_fix": "改为“连夜率兵赶赴江陵”；随后说明荆州官员预料不能抵敌，出城投降，不要写成已经攻打江陵。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了孔明与鲁肃讨论南北军胜负后的具体策略，以及鲁肃入城弔丧、饮酒等过渡情节。",
+      "classification": "material",
+      "reason": "南北军不同胜负下的具体取利方案体现孔明推动孙刘联合的策略和动机；弔丧、饮酒虽属过渡，但该策略内容不能仅以一般性的“从中取利”完全替代。",
+      "required_fix": "补回孔明关于南军或北军获胜时分别联合取荆州、乘势取江南的具体策略；鲁肃入城弔丧、收礼并与玄德饮酒的过渡可一并补写。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“转兵攻打江陵”略有夸大，原文主要说曹操率兵赶赴江陵，荆州官员随即出城投降。",
+      "classification": "material",
+      "reason": "“攻打江陵”把曹操赶赴江陵、荆州官员随即投降的过程改写成了实际攻城，改变了事件性质和时间顺序。",
+      "required_fix": "改为“连夜率兵赶赴江陵”；随后说明荆州官员预料不能抵敌，出城投降，不要写成已经攻打江陵。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 963,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-ba1514520e5345f6-79acf5ff981497fc",
+  "entry_id": "ja-ba1514520e5345f6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ba1514520e5345f6",
+      "headword": "権利",
+      "reading": "けんり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ba1514520e5345f6-1",
+          "definition": "a right; an entitlement"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "我々猫の間では、目刺しの頭でも、ぼらのへそでも、最初に見つけた者が食べる権利を持つ。",
+        "gloss": "right; entitlement",
+        "sense_id": "ja-ba1514520e5345f6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8fe824b2e443b5cb7927356b7e6cdc8e731988eb65ca6b135314045e9ef1bd3c"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-7da95c1b97bb-1-8b5d46e72a5cee6b",
+  "entry_id": "zh-7da95c1b97bb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7da95c1b97bb-1",
+      "headword": "缴纳",
+      "kind": "word",
+      "reading": "jiǎonà",
+      "senses": [
+        {
+          "id": "zh-7da95c1b97bb-1-s1",
+          "definition": "to pay or hand over money or dues that are owed"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘胜的儿子刘贞曾被封为涿鹿亭侯，后来因未按规定缴纳酬金而失侯，这一支便留在涿县。",
+        "gloss": "to pay",
+        "sense_id": "zh-7da95c1b97bb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f09c0cd5ac49001556af87d8f8dfc45e9af96524d6e02de371f953f6f4898fb4"
+}

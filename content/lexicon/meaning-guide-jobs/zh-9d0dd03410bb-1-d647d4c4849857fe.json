@@ -1,0 +1,31 @@
+{
+  "id": "zh-9d0dd03410bb-1-d647d4c4849857fe",
+  "entry_id": "zh-9d0dd03410bb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9d0dd03410bb-1",
+      "headword": "相助",
+      "kind": "word",
+      "reading": "xiāngzhù",
+      "senses": [
+        {
+          "id": "zh-9d0dd03410bb-1-s1",
+          "definition": "to help one another"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "龚景又带乡勇出城相助，青州之围终于解开。",
+        "gloss": "help one another",
+        "sense_id": "zh-9d0dd03410bb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6675d58c31e542194a05c083a6730eef45ef173bb3bcd2e2a8ccd88a3f7c56ea"
+}

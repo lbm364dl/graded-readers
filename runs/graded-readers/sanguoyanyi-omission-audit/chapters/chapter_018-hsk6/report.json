@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_018-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1390,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "language_problems",
+      "finding_note": "“孙干”应为人名“孙乾”。",
+      "classification": "material",
+      "reason": "“孙干”误写为“孙乾”，属于人物姓名错误，可能造成身份识别问题。",
+      "required_fix": "将“孙干”改为“孙乾”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "language_problems",
+      "finding_note": "“孙干”应为人名“孙乾”。",
+      "classification": "material",
+      "reason": "“孙干”误写为“孙乾”，属于人物姓名错误，可能造成身份识别问题。",
+      "required_fix": "将“孙干”改为“孙乾”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1390,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

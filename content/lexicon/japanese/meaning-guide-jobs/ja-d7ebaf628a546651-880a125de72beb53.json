@@ -1,0 +1,32 @@
+{
+  "id": "ja-d7ebaf628a546651-880a125de72beb53",
+  "entry_id": "ja-d7ebaf628a546651",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d7ebaf628a546651",
+      "headword": "のだ",
+      "reading": "のだ",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-d7ebaf628a546651-1",
+          "definition": "an explanatory pattern that presents a statement as an explanation or emphasizes its factual basis"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "誰がとったか分からないので、お金をもらうのだという。",
+        "gloss": "the fact is that; explanatory emphasis",
+        "sense_id": "ja-d7ebaf628a546651-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8694c8a9d9ca4fe9f5077d166993eb03a478f745279d239fe7a643899b31bb12"
+}

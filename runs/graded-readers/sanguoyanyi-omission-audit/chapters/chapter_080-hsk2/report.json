@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_080-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 290,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去曹丕两次受诏后具体上表、再降诏的过程及部分官员封赏细节，但不影响主线理解。",
+      "classification": "material",
+      "reason": "两次上表、再降诏及相关劝议交代了曹丕避免篡位之名的动机，并构成最终修筑受禅台的因果过程；官员封赏细节虽可压缩，但该 omission note 同时涵盖了这一重要动机与因果链。",
+      "required_fix": "补回曹丕第一次接受建议后上表谦辞、献帝再降诏、曹丕担忧篡窃之名，以及贾诩提出修筑受禅台的具体过程；官员封赏细节可继续概述。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去曹丕两次受诏后具体上表、再降诏的过程及部分官员封赏细节，但不影响主线理解。",
+      "classification": "material",
+      "reason": "两次上表、再降诏及相关劝议交代了曹丕避免篡位之名的动机，并构成最终修筑受禅台的因果过程；官员封赏细节虽可压缩，但该 omission note 同时涵盖了这一重要动机与因果链。",
+      "required_fix": "补回曹丕第一次接受建议后上表谦辞、献帝再降诏、曹丕担忧篡窃之名，以及贾诩提出修筑受禅台的具体过程；官员封赏细节可继续概述。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 290,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

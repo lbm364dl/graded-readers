@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff519-2000-7632-be45-22085f563b02"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"text\":\"孔明到陇上时，司马懿正在那里。蜀军少米，陇上麦子又熟，孔明便想出一个法子。他早在蜀中做好三辆一样的四轮车。孔明坐在一辆车上，穿白衣，手拿扇子；三辆车边上都有二十四人，穿黑衣，手拿剑。姜维、马岱、魏延领人跟车，分路到魏兵那里。关兴拿黑旗走在车前，后三万人拿刀和绳，等着割麦。魏兵见车上的孔明，忙报司马懿，懿让人去追。孔明让车慢慢往回走，魏兵追了三十里，还是不能到车边。司马懿也到，说：“这是孔明的法子，不能再追！”魏兵便回上邽。孔明马上让他们把陇上麦子割完，送回卤城。蜀军有了米，便能在卤城住下。\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":42014,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":8626,"reasoning_output_tokens":8368}}

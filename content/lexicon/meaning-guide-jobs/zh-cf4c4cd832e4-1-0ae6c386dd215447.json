@@ -1,0 +1,31 @@
+{
+  "id": "zh-cf4c4cd832e4-1-0ae6c386dd215447",
+  "entry_id": "zh-cf4c4cd832e4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cf4c4cd832e4-1",
+      "headword": "香",
+      "kind": "word",
+      "reading": "xiāng",
+      "senses": [
+        {
+          "id": "zh-cf4c4cd832e4-1-s1",
+          "definition": "incense"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "次日，三人备好祭礼，焚香再拜。",
+        "gloss": "incense",
+        "sense_id": "zh-cf4c4cd832e4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1bcba6f454cc0746b2e15dc63c3e99e19fa8a66e5f60baaa8b89f0aaf0e8fa40"
+}

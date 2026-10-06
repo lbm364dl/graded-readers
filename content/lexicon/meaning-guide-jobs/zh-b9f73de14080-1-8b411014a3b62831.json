@@ -1,0 +1,31 @@
+{
+  "id": "zh-b9f73de14080-1-8b411014a3b62831",
+  "entry_id": "zh-b9f73de14080-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b9f73de14080-1",
+      "headword": "全",
+      "kind": "word",
+      "reading": "quán",
+      "senses": [
+        {
+          "id": "zh-b9f73de14080-1-s1",
+          "definition": "whole; entire; all"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "一支全打着红旗的军队迎面而来，截住败退的黄巾军。",
+        "gloss": "entirely",
+        "sense_id": "zh-b9f73de14080-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fdd58d642e5d0f9a3526b730149705d39c012c1f392accc8d7de5df2fba8ad2b"
+}

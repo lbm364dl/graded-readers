@@ -1,0 +1,95 @@
+{
+  "id": "ja-4e168d5062c93efb-3765c4e270847eda",
+  "entry_id": "ja-4e168d5062c93efb",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-4e168d5062c93efb",
+      "headword": "に",
+      "reading": "に",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-4e168d5062c93efb-1",
+          "definition": "Marks a location, position, or destination; in, at, or into."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-2",
+          "definition": "Marks the agent in a passive construction; by."
+        },
+        {
+          "id": "ja-4e168d5062c93efb-3",
+          "definition": "Marks the order or point in time at which something happens; finally, last."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "with; in the position of",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "into; in",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩はこの家に住むことにしました。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "onto; on",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "女の人に台所から外へ何回も投げられたが、吾輩はまた入った。",
+        "gloss": "by",
+        "sense_id": "ja-4e168d5062c93efb-2"
+      },
+      {
+        "sentence": "最後に主人が来た。",
+        "gloss": "at; in",
+        "sense_id": "ja-4e168d5062c93efb-3"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「では、家の内に置いてやれ」と言った。",
+        "gloss": "in; into",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "それで吾輩は、この家に住むことにしたのである。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩の家の裏には、小さな茶園がある。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-4e168d5062c93efb",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "に marks a place or point related to an action or state. Depending on the verb and context, that place can be where something is, where it is placed or directed, or where someone lives; English may express this as “at,” “in,” or “to.”",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "156018b91ac067c53cfa280a56bd2a160c71e80583383be16d5135058e385272",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2162ad7a9cb82cce4a8f48a1aabf3560d1acd6777aaa0b42f1d6f4172a62d218"
+}

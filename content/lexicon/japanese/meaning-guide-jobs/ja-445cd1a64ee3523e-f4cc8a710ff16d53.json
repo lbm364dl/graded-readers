@@ -1,0 +1,32 @@
+{
+  "id": "ja-445cd1a64ee3523e-f4cc8a710ff16d53",
+  "entry_id": "ja-445cd1a64ee3523e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-445cd1a64ee3523e",
+      "headword": "説明する",
+      "reading": "せつめいする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-445cd1a64ee3523e-1",
+          "definition": "to explain"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が「人の絵を見ると簡単そうなのに、自分で筆を持つと実に難しい」と言うと、友人は、最初から上手にはかけない、室内の想像だけでは絵にならない、と説明した。",
+        "gloss": "explained",
+        "sense_id": "ja-445cd1a64ee3523e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bca67437cbdd6d39699ee563774a74e89de32aaac6aa2207a8383bf204e2b5e7"
+}

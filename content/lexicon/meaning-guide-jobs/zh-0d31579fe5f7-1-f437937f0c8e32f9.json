@@ -1,0 +1,31 @@
+{
+  "id": "zh-0d31579fe5f7-1-f437937f0c8e32f9",
+  "entry_id": "zh-0d31579fe5f7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0d31579fe5f7-1",
+      "headword": "遇见",
+      "kind": "word",
+      "reading": "yùjiàn",
+      "senses": [
+        {
+          "id": "zh-0d31579fe5f7-1-s1",
+          "definition": "to meet or encounter someone or something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备带兵回去，半路遇见护送囚车的军队，车里是卢植。",
+        "gloss": "to meet; encounter",
+        "sense_id": "zh-0d31579fe5f7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fa3183285c61ca98e94fda6e1193fe72bd0d9468d6c3bd422a164fde512e9cdc"
+}

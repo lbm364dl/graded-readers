@@ -1,0 +1,36 @@
+{
+  "id": "zh-393e1241552b-1-d27242fbf72c1628",
+  "entry_id": "zh-393e1241552b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-393e1241552b-1",
+      "headword": "请求",
+      "kind": "word",
+      "reading": "qǐngqiú",
+      "senses": [
+        {
+          "id": "zh-393e1241552b-1-s1",
+          "definition": "to request something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，青州太守龚景送来文书，说黄巾军包围青州，城快要守不住了，请求救援。",
+        "gloss": "to request",
+        "sense_id": "zh-393e1241552b-1-s1"
+      },
+      {
+        "sentence": "次日，青州太守龚景送来文书，说黄巾军围城将陷，请求救援。",
+        "gloss": "to request",
+        "sense_id": "zh-393e1241552b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6ea8ed246cdc31bf9955649102f3201ef14efa2fabfb8f11a374976f7f587b9f"
+}

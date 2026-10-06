@@ -1,0 +1,31 @@
+{
+  "id": "zh-75527e5b5cba-1-f1c495b795979d0a",
+  "entry_id": "zh-75527e5b5cba-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-75527e5b5cba-1",
+      "headword": "将",
+      "kind": "word",
+      "reading": "jiàng",
+      "senses": [
+        {
+          "id": "zh-75527e5b5cba-1-s1",
+          "definition": "a general; a military leader"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "没过几天，有人报告：黄巾军将领程远志率领五万兵马来犯涿郡。",
+        "gloss": "general",
+        "sense_id": "zh-75527e5b5cba-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "47dd5676c78324d522262a980a8e36d8a61c5100703592a09c6fc1be00c6d2c9"
+}

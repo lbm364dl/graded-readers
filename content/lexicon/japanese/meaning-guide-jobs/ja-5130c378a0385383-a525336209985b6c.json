@@ -1,0 +1,32 @@
+{
+  "id": "ja-5130c378a0385383-a525336209985b6c",
+  "entry_id": "ja-5130c378a0385383",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5130c378a0385383",
+      "headword": "待つ",
+      "reading": "まつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5130c378a0385383-1",
+          "definition": "wait"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが小便がしたくなり、もう待てなかった。",
+        "gloss": "could no longer wait",
+        "sense_id": "ja-5130c378a0385383-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "27cdf8d7c3aa67b9cecdb68c5282f874fffe1e4b1dfbf1c8e415e4a1c8474775"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-8936d2a02579a5df-1ac0a4e663914725",
+  "entry_id": "ja-8936d2a02579a5df",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8936d2a02579a5df",
+      "headword": "背中",
+      "reading": "せなか",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8936d2a02579a5df-1",
+          "definition": "the back of a person or animal"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "仕方なく主人のそばで暮らし、朝は膝、昼は背中に乗った。",
+        "gloss": "back",
+        "sense_id": "ja-8936d2a02579a5df-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "00023c18ad78a8c168d707998b99223672a14db12786783fda6edf71f8413cbe"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-fde26a91e5a23f7c-915f7ecfa7acdc16",
+  "entry_id": "ja-fde26a91e5a23f7c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fde26a91e5a23f7c",
+      "headword": "尋ねる",
+      "reading": "たずねる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fde26a91e5a23f7c-1",
+          "definition": "to ask or inquire"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が「車屋と教師では、どちらが偉いか」と尋ねると、黒は「車屋の方が強いに決まっている。",
+        "gloss": "ask; inquire",
+        "sense_id": "ja-fde26a91e5a23f7c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "affbb7365e18a95f601f1e1c608dcae15010f306ab48fc2f81a441c55436ba8f"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-49f3ab54d5fa-1-21b2e895840ee482",
+  "entry_id": "zh-49f3ab54d5fa-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-49f3ab54d5fa-1",
+      "headword": "刮",
+      "kind": "word",
+      "reading": "guā",
+      "senses": [
+        {
+          "id": "zh-49f3ab54d5fa-1-s1",
+          "definition": "blow, as wind"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "夜里大风忽然刮起。",
+        "gloss": "blow",
+        "sense_id": "zh-49f3ab54d5fa-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bfe8f0336990399b292dc91a8e69e9dfab680dee82bbdc91e4deab0d7b94b590"
+}

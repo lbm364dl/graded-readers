@@ -1,0 +1,31 @@
+{
+  "id": "zh-4d06e2cd1886-1-fbe9bfb2983d9f3e",
+  "entry_id": "zh-4d06e2cd1886-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4d06e2cd1886-1",
+      "headword": "纵马",
+      "kind": "word",
+      "reading": "zòng mǎ",
+      "senses": [
+        {
+          "id": "zh-4d06e2cd1886-1-s1",
+          "definition": "to let a horse gallop or urge a horse forward"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志挥刀冲来，关羽纵马迎上，一刀将他斩成两段。",
+        "gloss": "spur the horse",
+        "sense_id": "zh-4d06e2cd1886-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5570fa6595b7e12905562464450b47471c9715c9cb17f4063d38c46da483b221"
+}

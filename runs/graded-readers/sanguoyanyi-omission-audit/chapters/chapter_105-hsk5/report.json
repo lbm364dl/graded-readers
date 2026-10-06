@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_105-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 895,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "未提及张茂进谏后被曹叡下令处斩。",
+      "classification": "material",
+      "reason": "这省略了张茂进谏后被处斩这一明确事件及结局，也削弱了曹叡拒谏、残酷统治的重要刻画。",
+      "required_fix": "补充张茂上表切谏后，曹叡下令将其处斩。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“铜人和金盘运回洛阳后，被改铸成翁仲、铜龙、铜凤”表述略有失真：原文是将无法运走的铜柱打碎后铸成翁仲、铜龙、铜凤，铜人和承露盘则被运回献给曹叡。",
+      "classification": "material",
+      "reason": "接受场景把被运回献给曹叡的铜人和承露盘误写成了被改铸的对象，改变了原文中的物件、动作和事件结果。",
+      "required_fix": "改为：铜人和承露盘被运回洛阳献给曹叡；因铜柱太重无法运走，曹叡下令将铜柱打碎，铸成翁仲、铜龙和铜凤。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "未提及张茂进谏后被曹叡下令处斩。",
+      "classification": "material",
+      "reason": "这省略了张茂进谏后被处斩这一明确事件及结局，也削弱了曹叡拒谏、残酷统治的重要刻画。",
+      "required_fix": "补充张茂上表切谏后，曹叡下令将其处斩。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“铜人和金盘运回洛阳后，被改铸成翁仲、铜龙、铜凤”表述略有失真：原文是将无法运走的铜柱打碎后铸成翁仲、铜龙、铜凤，铜人和承露盘则被运回献给曹叡。",
+      "classification": "material",
+      "reason": "接受场景把被运回献给曹叡的铜人和承露盘误写成了被改铸的对象，改变了原文中的物件、动作和事件结果。",
+      "required_fix": "改为：铜人和承露盘被运回洛阳献给曹叡；因铜柱太重无法运走，曹叡下令将铜柱打碎，铸成翁仲、铜龙和铜凤。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 895,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

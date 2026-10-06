@@ -1,0 +1,41 @@
+{
+  "id": "zh-1ea041154c67-1-7642c103f2c261cd",
+  "entry_id": "zh-1ea041154c67-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1ea041154c67-1",
+      "headword": "拼命",
+      "kind": "word",
+      "reading": "pīn mìng",
+      "senses": [
+        {
+          "id": "zh-1ea041154c67-1-s1",
+          "definition": "with all one's effort; desperately"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张梁、张宝只好带着剩下的人拼命逃走。",
+        "gloss": "desperately",
+        "sense_id": "zh-1ea041154c67-1-s1"
+      },
+      {
+        "sentence": "走出帐外，张飞气得握紧刀，大声说：“我们拼命救他，他却这样对待我们！",
+        "gloss": "with all our might",
+        "sense_id": "zh-1ea041154c67-1-s1"
+      },
+      {
+        "sentence": "张梁、张宝拼命战斗，最后才逃脱。",
+        "gloss": "to fight desperately",
+        "sense_id": "zh-1ea041154c67-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b71e64567b8a61bf0e580bd759671724a3ae7d8b23e0e882b3cf290edc7bd4f4"
+}

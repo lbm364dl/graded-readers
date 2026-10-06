@@ -1,0 +1,31 @@
+{
+  "id": "zh-33edc4a7fd25-1-c63329bcc3463abb",
+  "entry_id": "zh-33edc4a7fd25-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-33edc4a7fd25-1",
+      "headword": "徒弟",
+      "kind": "word",
+      "reading": "túdì",
+      "senses": [
+        {
+          "id": "zh-33edc4a7fd25-1-s1",
+          "definition": "a student or disciple of a teacher"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他的徒弟有五百多人，云游四方，都会画符念咒。",
+        "gloss": "disciple",
+        "sense_id": "zh-33edc4a7fd25-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "99530a9004a2f5924bad970430f49fe7b1111c0940f9dfc5e12f8f213b5947f0"
+}

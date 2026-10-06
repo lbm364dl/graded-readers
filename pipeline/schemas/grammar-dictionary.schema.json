@@ -1,0 +1,41 @@
+{
+  "type": "object", "additionalProperties": false, "required": ["entries", "assignments"],
+  "properties": {
+    "entries": {"type": "array", "items": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "title", "reading", "kind", "summary_en", "explanation_en", "formation", "notes_en"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^ja-grammar-", "minLength": 12},
+        "title": {"type": "string", "minLength": 1}, "reading": {"type": "string"},
+        "kind": {"enum": ["particle", "conjugation", "construction"]},
+        "summary_en": {"type": "string", "minLength": 1},
+        "explanation_en": {"type": "string", "minLength": 1},
+        "formation": {"type": "array", "items": {"anyOf": [{"type": "object", "additionalProperties": false,
+          "required": ["form", "explanation_en"], "properties": {
+            "form": {"type": "string"}, "explanation_en": {"type": "string"}}},
+          {"type": "object", "additionalProperties": false,
+          "required": ["form", "explanation_en", "grammar_entry_id"], "properties": {
+            "form": {"type": "string"}, "explanation_en": {"type": "string"},
+            "grammar_entry_id": {"type": "string", "pattern": "^ja-grammar-"}
+          }}]}},
+        "notes_en": {"type": "array", "items": {"type": "string"}}
+      }
+    }},
+    "assignments": {"type": "array", "items": {"anyOf": [
+      {"type": "object", "additionalProperties": false,
+      "required": ["candidate_id", "entry_ids", "context_en"], "properties": {
+        "candidate_id": {"type": "string"},
+        "entry_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "context_en": {"type": "string", "minLength": 1}
+      }},
+      {"type": "object", "additionalProperties": false,
+      "required": ["candidate_id", "entry_ids", "context_en", "display_meaning_en", "display_base_meaning_en"], "properties": {
+        "candidate_id": {"type": "string"},
+        "entry_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "context_en": {"type": "string", "minLength": 1},
+        "display_meaning_en": {"type": "string", "minLength": 1},
+        "display_base_meaning_en": {"type": "string", "minLength": 1}
+      }
+    }]}}
+  }
+}

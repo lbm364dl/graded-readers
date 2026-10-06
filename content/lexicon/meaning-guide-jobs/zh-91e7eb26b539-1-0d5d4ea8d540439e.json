@@ -1,0 +1,31 @@
+{
+  "id": "zh-91e7eb26b539-1-0d5d4ea8d540439e",
+  "entry_id": "zh-91e7eb26b539-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-91e7eb26b539-1",
+      "headword": "掌握",
+      "kind": "word",
+      "reading": "zhǎngwò",
+      "senses": [
+        {
+          "id": "zh-91e7eb26b539-1-s1",
+          "definition": "have or exercise control over"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "宦官曹节等人掌握权力，常常干涉朝廷的事。",
+        "gloss": "to control",
+        "sense_id": "zh-91e7eb26b539-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "518869966656ef31d396a7b720cfff12fbf9d795b729a447c85298a16d44e79f"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-9b150f79d784cc08-2087ba8a759254eb",
+  "entry_id": "ja-9b150f79d784cc08",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9b150f79d784cc08",
+      "headword": "捨てる",
+      "reading": "すてる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9b150f79d784cc08-1",
+          "definition": "To discard or abandon something; throw away."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は笹原の中へ捨てられました。",
+        "gloss": "was thrown away",
+        "sense_id": "ja-9b150f79d784cc08-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fe2e25e79e0e3b7a71ac2daf42511c493eca2d62cfaaa9df64e6c21a306720fc"
+}

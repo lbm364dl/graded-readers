@@ -1,0 +1,31 @@
+{
+  "id": "zh-ae0e3cbf6ec8-1-9dab6a398ccb2700",
+  "entry_id": "zh-ae0e3cbf6ec8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ae0e3cbf6ec8-1",
+      "headword": "局面",
+      "kind": "word",
+      "reading": "júmiàn",
+      "senses": [
+        {
+          "id": "zh-ae0e3cbf6ec8-1-s1",
+          "definition": "a situation or state of affairs"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "窦武、陈蕃于是商量除掉宦官，想改变这种局面。",
+        "gloss": "situation",
+        "sense_id": "zh-ae0e3cbf6ec8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1e42e9c470ec72496e6e055c87ffffb64d0399be2cfcf8c9a83d734bf69ac2cc"
+}

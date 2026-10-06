@@ -1,0 +1,31 @@
+{
+  "id": "zh-30071aca48bd-1-75989d8b29b295ce",
+  "entry_id": "zh-30071aca48bd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-30071aca48bd-1",
+      "headword": "变大",
+      "kind": "construction",
+      "reading": "biàn dà",
+      "senses": [
+        {
+          "id": "zh-30071aca48bd-1-s1",
+          "definition": "become greater in size, amount, or degree"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "夜里风突然变大，士兵同时放火。",
+        "gloss": "grow stronger",
+        "sense_id": "zh-30071aca48bd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "762844f0dbebd545ca95d7149f9b9e947158695e14a490e58e66454423a6a379"
+}

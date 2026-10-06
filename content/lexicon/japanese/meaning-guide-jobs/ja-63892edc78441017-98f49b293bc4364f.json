@@ -1,0 +1,32 @@
+{
+  "id": "ja-63892edc78441017-98f49b293bc4364f",
+  "entry_id": "ja-63892edc78441017",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-63892edc78441017",
+      "headword": "写生する",
+      "reading": "しゃせいする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-63892edc78441017-1",
+          "definition": "to sketch or draw from direct observation, especially from nature or life"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩を写生していたのである。",
+        "gloss": "was sketching",
+        "sense_id": "ja-63892edc78441017-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a7108d3e2d885bace9c48f52545e3b8dd3860712c749f0ec014860ad0c01442a"
+}

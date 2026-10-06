@@ -1,0 +1,31 @@
+{
+  "id": "zh-3f5d4e7d625f-1-2f54c7ed88828e30",
+  "entry_id": "zh-3f5d4e7d625f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3f5d4e7d625f-1",
+      "headword": "依草结营",
+      "kind": "expression",
+      "reading": "yīcǎo jié yíng",
+      "senses": [
+        {
+          "id": "zh-3f5d4e7d625f-1-s1",
+          "definition": "set up camp by/in the grass"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇甫嵩、朱俊与黄巾军交战，黄巾军作战不利，退入长社，依草结营。",
+        "gloss": "camp in the grass",
+        "sense_id": "zh-3f5d4e7d625f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "346b9536162b08fad8278549c140503eff5e4af5641eafb2ab2bf1a8ea4a8c76"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-4fe131173e23-1-dd5ba6941a1d1e2e",
+  "entry_id": "zh-4fe131173e23-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4fe131173e23-1",
+      "headword": "武器",
+      "kind": "word",
+      "reading": "wǔqì",
+      "senses": [
+        {
+          "id": "zh-4fe131173e23-1-s1",
+          "definition": "a weapon; an object used for fighting"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军马上逃走，很多人放下武器投降。",
+        "gloss": "weapons",
+        "sense_id": "zh-4fe131173e23-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a4ab5ea8cdac7c1449f8b324dea478d5d47b1ddfc0174af171316ff828685639"
+}

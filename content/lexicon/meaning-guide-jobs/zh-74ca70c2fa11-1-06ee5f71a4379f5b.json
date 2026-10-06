@@ -1,0 +1,31 @@
+{
+  "id": "zh-74ca70c2fa11-1-06ee5f71a4379f5b",
+  "entry_id": "zh-74ca70c2fa11-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-74ca70c2fa11-1",
+      "headword": "本领",
+      "kind": "word",
+      "reading": "běnlǐng",
+      "senses": [
+        {
+          "id": "zh-74ca70c2fa11-1-s1",
+          "definition": "ability; skill"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他喜爱结交有本领的伙伴。",
+        "gloss": "ability",
+        "sense_id": "zh-74ca70c2fa11-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "caa367a9e0296413d1e3919d39d20e5bf58daa12c3536a3f65ea74553c02a88f"
+}

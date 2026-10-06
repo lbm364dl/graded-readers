@@ -1,0 +1,31 @@
+{
+  "id": "zh-81a8fc9575dd-1-43e1220eb89261aa",
+  "entry_id": "zh-81a8fc9575dd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-81a8fc9575dd-1",
+      "headword": "专心",
+      "kind": "word",
+      "reading": "zhuānxīn",
+      "senses": [
+        {
+          "id": "zh-81a8fc9575dd-1-s1",
+          "definition": "concentrate; give one's attention"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备不太专心读书，性情宽和，话不多，喜怒很少露在脸上。",
+        "gloss": "to concentrate",
+        "sense_id": "zh-81a8fc9575dd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "da7c4ee6e084c60fa85b2c2ae9088ce5b9224ec7b295ad3f71ef3f87ea08b445"
+}

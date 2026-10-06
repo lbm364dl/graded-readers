@@ -1,0 +1,66 @@
+{
+  "id": "ja-9a62108a1ac7b577-9219593483f028d1",
+  "entry_id": "ja-9a62108a1ac7b577",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-9a62108a1ac7b577",
+      "headword": "また",
+      "reading": "また",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9a62108a1ac7b577-1",
+          "definition": "again"
+        },
+        {
+          "id": "ja-9a62108a1ac7b577-2",
+          "definition": "also; in addition"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "女の人に台所から外へ何回も投げられたが、吾輩はまた入った。",
+        "gloss": "again",
+        "sense_id": "ja-9a62108a1ac7b577-1"
+      },
+      {
+        "sentence": "また投げ出されても、吾輩は何度も這い上がった。",
+        "gloss": "again",
+        "sense_id": "ja-9a62108a1ac7b577-1"
+      },
+      {
+        "sentence": "吾輩はおさんの隙を見て、また台所へ這い上がった。",
+        "gloss": "again",
+        "sense_id": "ja-9a62108a1ac7b577-1"
+      },
+      {
+        "sentence": "隣の三毛君も、また別の理由で人間に憤慨している。",
+        "gloss": "again; for another reason",
+        "sense_id": "ja-9a62108a1ac7b577-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-9a62108a1ac7b577",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "また means “again”: it says that an action or event happens one more time. It commonly appears before the action it describes.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "ac6d7558410975559bbe0c6c66488892b31263d212269c9e2239f90a790ae165",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a7a971ab70c8bbaed66a61c1ad952523fdd2c0f3f4b9b87383667adf439400ee"
+}

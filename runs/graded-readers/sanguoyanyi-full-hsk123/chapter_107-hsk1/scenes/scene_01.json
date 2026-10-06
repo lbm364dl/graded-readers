@@ -1,0 +1,41 @@
+{
+  "scene": {
+    "id": "scene_01",
+    "title": "司馬懿奪權與姜維敗兵",
+    "source_start_quote": "第一○七回：魏主政歸司馬氏，姜維兵敗牛頭山",
+    "required_events": [
+      "司馬懿趁曹爽隨曹芳出獵，封鎖洛陽並奏郭太后罷免曹爽；桓範出城勸曹爽赴許都，曹爽卻信使者誓言，交出兵權投降，終與黨羽被誅三族。司馬懿掌魏國大權，夏侯霸反魏投蜀，告知鍾會、鄧艾將成大患。姜維採其策聯羌伐魏，築麴山二城，反遭郭淮、陳泰斷水斷糧；姜維轉襲牛頭山又中斷糧之計，兵敗折損大半，退往陽平關，擊敗司馬師後入關。"
+    ],
+    "target_chars": 140,
+    "source_start": 0,
+    "source_end": 5517
+  },
+  "text": "司马懿趁曹爽随曹芳出猎，封锁洛阳，上奏郭太后废曹爽。桓范出城，劝曹爽带天子去许都调兵；曹爽却信使者以洛水发誓，交出兵权投降，终与党羽被诛三族。司马懿掌魏国大权。夏侯霸怕被杀，反魏投蜀，警告钟会、邓艾将成大患。姜维听计联羌伐魏，在曲山筑两城，却被郭淮、陈泰断水断粮；他转袭牛头山，又遭断粮，兵败过半，退向阳平关，击败司马师后入关。",
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 9.0,
+    "readability": 9.0,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "司马懿趁曹爽随曹芳出猎，封锁洛阳，上奏郭太后废曹爽。桓范出城，劝曹爽带天子去许都调兵；曹爽却信使者以洛水发誓，交出兵权投降，终与党羽被诛三族。司马懿掌魏国大权。夏侯霸怕被杀，反魏投蜀，警告钟会、邓艾将成大患。姜维听计联羌伐魏，在曲山筑两城，却被郭淮、陈泰断水断粮；他转袭牛头山，又遭断粮，兵败过半，退向阳平关，击败司马师后入关。",
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9.0,
+        "readability": 9.0,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      }
+    }
+  ],
+  "resolved": true
+}

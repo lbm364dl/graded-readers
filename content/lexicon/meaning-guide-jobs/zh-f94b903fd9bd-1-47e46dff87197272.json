@@ -1,0 +1,36 @@
+{
+  "id": "zh-f94b903fd9bd-1-47e46dff87197272",
+  "entry_id": "zh-f94b903fd9bd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f94b903fd9bd-1",
+      "headword": "若",
+      "kind": "word",
+      "reading": "ruò",
+      "senses": [
+        {
+          "id": "zh-f94b903fd9bd-1-s1",
+          "definition": "if; introducing a condition"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "老人把三卷天书交给他，要他替上天教化百姓、救助世人；若心生别念，便会受罚。",
+        "gloss": "if",
+        "sense_id": "zh-f94b903fd9bd-1-s1"
+      },
+      {
+        "sentence": "他对两个弟弟说，最难得到的就是民心，如今民心已经归顺，若不趁势夺取天下，实在可惜。",
+        "gloss": "if",
+        "sense_id": "zh-f94b903fd9bd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "aebd50ccb1d7cac591a4fd43b7416369c117b8089ddb52b4d413f3a1b709112a"
+}

@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "language": "japanese",
+  "reviewed": true,
+  "source_fingerprint": "c018fff20f01607564d36ee6a83e043755127e69429cdddbec2b5cdf5a11b349",
+  "entries": [
+    {
+      "id": "ja-ccef940dc92e4944",
+      "headword": "目が回る",
+      "reading": "めがまわる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-ccef940dc92e4944-1",
+          "definition": "to feel dizzy",
+          "occurrences": [
+            "assets/annotations/japanese_wagahai_n5_001.json#fc3d1659ffed:overlay:me-ga-mawaru:79",
+            "assets/annotations/japanese_wagahai_n3_001.json#5d7d4ca96f63:overlay:me-ga-mawaru-collocation:426",
+            "assets/annotations/japanese_wagahai_n2_001.json#e87f18a73556:overlay:me-ga-mawaru:612",
+            "assets/annotations/japanese_wagahai_n1_001.json#18d200bc533b:overlay:me-ga-mawaru:652"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-a6bd7b9372edf0eb",
+      "headword": "腹が減る",
+      "reading": "はらがへる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-a6bd7b9372edf0eb-1",
+          "definition": "to be hungry; to feel hunger",
+          "occurrences": [
+            "assets/annotations/japanese_wagahai_n4_001.json#275953a10c40:overlay:hara-ga-heru:366",
+            "assets/annotations/japanese_wagahai_n3_001.json#5d7d4ca96f63:overlay:hara-ga-heru:581",
+            "assets/annotations/japanese_wagahai_n1_001.json#18d200bc533b:overlay:hara-ga-heru:1033"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-8ee043c63467ab74",
+      "headword": "気分が悪い",
+      "reading": "きぶんがわるい",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-8ee043c63467ab74-1",
+          "definition": "to feel unwell or sick",
+          "occurrences": [
+            "assets/annotations/japanese_wagahai_n4_001.json#275953a10c40:overlay:kibun-ga-warui:590"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-ef6e2c1fc0b5a63b",
+      "headword": "胸が悪くなる",
+      "reading": "むねがわるくなる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-ef6e2c1fc0b5a63b-1",
+          "definition": "to feel sick to one's stomach; to feel ill",
+          "occurrences": [
+            "assets/annotations/japanese_wagahai_n3_001.json#5d7d4ca96f63:overlay:mune-ga-waruku-naru:431",
+            "assets/annotations/japanese_wagahai_n2_001.json#e87f18a73556:overlay:mune-ga-waruku-naru:617",
+            "assets/annotations/japanese_wagahai_n1_001.json#18d200bc533b:overlay:chest-feels-ill:660",
+            "assets/annotations/japanese_wagahai_n1_001.json#18d200bc533b:overlay:mune-ga-waruku-naru:5962"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-ab9baaa9ce5df70e",
+      "headword": "音がする",
+      "reading": "おとがする",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-ab9baaa9ce5df70e-1",
+          "definition": "for there to be a sound; to make a sound",
+          "occurrences": [
+            "assets/annotations/japanese_wagahai_n3_001.json#5d7d4ca96f63:overlay:oto-ga-suru:449"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-81e4f56987c10f0e",
+      "headword": "顔を合わせる",
+      "reading": "かおをあわせる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-81e4f56987c10f0e-1",
+          "definition": "to meet face-to-face",
+          "occurrences": []
+        }
+      ]
+    },
+    {
+      "id": "ja-b64ccc36298aec03",
+      "headword": "日が暮れる",
+      "reading": "ひがくれる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-b64ccc36298aec03-1",
+          "definition": "for daylight to fade; for evening to fall",
+          "occurrences": [
+            "assets/annotations/japanese_wagahai_n2_001.json#e87f18a73556:overlay:hi-ga-kureru:951",
+            "assets/annotations/japanese_wagahai_n1_001.json#18d200bc533b:overlay:hi-ga-kureru:1025"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-c7ebe5b995bf6fe2",
+      "headword": "気配がする",
+      "reading": "けはいがする",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-c7ebe5b995bf6fe2-1",
+          "definition": "for there to be a sign of someone's or something's presence",
+          "occurrences": [
+            "assets/annotations/japanese_wagahai_n2_001.json#e87f18a73556:overlay:kehai-ga-suru:1034"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-c26dc935eb05b039",
+      "headword": "平気な顔をしている",
+      "reading": "へいきなかおをしている",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-c26dc935eb05b039-1",
+          "definition": "to act as if unconcerned; to appear untroubled",
+          "occurrences": [
+            "assets/annotations/japanese_wagahai_n2_001.json#e87f18a73556:overlay:heikina-kao-o-shiteiru:2776"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-975b0c988eae815e",
+      "headword": "知己になる",
+      "reading": "ちきになる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-975b0c988eae815e-1",
+          "definition": "to become acquainted with someone",
+          "occurrences": [
+            "assets/annotations/japanese_wagahai_n2_001.json#e87f18a73556:overlay:chiki-ni-naru:4336"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-17a14609bd5e9ae4",
+      "headword": "ひどい目にあう",
+      "reading": "ひどいめにあう",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-17a14609bd5e9ae4-1",
+          "definition": "to suffer a terrible experience; to go through something awful",
+          "occurrences": [
+            "assets/annotations/japanese_wagahai_n2_001.json#e87f18a73556:overlay:hidoi-me-ni-au:4468"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-f794299ded1fa671",
+      "headword": "気持ちが落ち着く",
+      "reading": "きもちがおちつく",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-f794299ded1fa671-1",
+          "definition": "for one's feelings to settle; to become calm",
+          "occurrences": [
+            "assets/annotations/japanese_wagahai_n1_001.json#18d200bc533b:overlay:kimochi-ga-ochitsuku:1598"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-72fc412c0ebeb6d4",
+      "headword": "物になる",
+      "reading": "ものになる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-72fc412c0ebeb6d4-1",
+          "definition": "to amount to something; to come to fruition",
+          "occurrences": [
+            "assets/annotations/japanese_wagahai_n1_001.json#18d200bc533b:overlay:mono-ni-naru:3664"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-6c794d788a7ee69b",
+      "headword": "骨と皮ばかり",
+      "reading": "ほねとかわばかり",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-6c794d788a7ee69b-1",
+          "definition": "nothing but bones and skin; extremely thin",
+          "occurrences": [
+            "assets/annotations/japanese_wagahai_n1_001.json#18d200bc533b:overlay:hone-to-kawa-bakari:5513"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-004f506f32fc0b84",
+      "headword": "腹の足しになる",
+      "reading": "はらのたしになる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-004f506f32fc0b84-1",
+          "definition": "to help satisfy hunger",
+          "occurrences": [
+            "assets/annotations/japanese_wagahai_n1_001.json#18d200bc533b:overlay:hara-no-tashi-ni-naranai:5640"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja-e724ad9076f016f8",
+      "headword": "欲を言えばきりがない",
+      "reading": "よくをいえばきりがない",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-e724ad9076f016f8-1",
+          "definition": "if one talks about what one wants, there is no end; one can always want more",
+          "occurrences": [
+            "assets/annotations/japanese_wagahai_n1_001.json#18d200bc533b:overlay:yoku-o-ieba-kiri-ga-nai:6766"
+          ]
+        }
+      ]
+    }
+  ],
+  "review_digest": "12f421a6c1bc22b6911dc56d8fca69206dc033f0f0f8bcc1e3ebf700425a67da",
+  "group_fingerprints": {
+    "ja-ccef940dc92e4944": "e9a310f83610c7dd2f029af008587ca5d32a18ee25bb396679b997ace3207fac",
+    "ja-a6bd7b9372edf0eb": "13d2c8f20e272c35663f0e0a3b3dc125ad2393229477df17f8d9fab0e65adb28",
+    "ja-8ee043c63467ab74": "0274576d3b4fdac89c681123654175641e11538ddebbcc36e82dd3f6d948f3e5",
+    "ja-ef6e2c1fc0b5a63b": "ddbb6579b0e1f1df0080de39c92b086d292065d7b2dcc49fa5cd8422d6a0b4c1",
+    "ja-ab9baaa9ce5df70e": "31cd48778d1f7611b9618389b7dfe6756e2e7c836567ce4596afef73f5eb61eb",
+    "ja-b64ccc36298aec03": "9194aeccc16f2d23cd14d932d325240fde10b29194122b3ea9cf69ceb673e882",
+    "ja-c7ebe5b995bf6fe2": "287dcc653c289d69e32824f89e3d2602c73052c2de2100aac7bea1e484186dbf",
+    "ja-c26dc935eb05b039": "285c6037d44807361682c1ee696577bb4ea3539420e42daca62206328778c015",
+    "ja-975b0c988eae815e": "37df58a6fc80c15c25c0874a61de7ebf9df53604b3dc63f02f59455f110908af",
+    "ja-17a14609bd5e9ae4": "6ff3fdb26da2ad5fe34d4ad5f46ec92006babced163c30db4bb574f9f015cfb0",
+    "ja-f794299ded1fa671": "eb370c03c2f1477e057a05f8a286183171d5cc4d45dc2c59e7fd332cc4e53d1d",
+    "ja-72fc412c0ebeb6d4": "4a29148c31cd480bbd9c393125cedc55f4ca980c9abf2e79aeccb4fcc9e3b259",
+    "ja-6c794d788a7ee69b": "a2c73397153482bebfef98fa0b1bcddb041ab2dbed279f7ed30738d61e66a26f",
+    "ja-004f506f32fc0b84": "46a05f24ab1aa336ed7cc0ac145e27fe03773369b326f346b6cfae2ebb2efa51",
+    "ja-e724ad9076f016f8": "de05e460a19a4ce7e66fc3686f55a1f3e0da88d0e9cfe510bb438d5b0e118d8a"
+  }
+}

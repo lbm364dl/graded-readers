@@ -1,0 +1,31 @@
+{
+  "id": "zh-b168bb302db0-1-3063c59259840479",
+  "entry_id": "zh-b168bb302db0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b168bb302db0-1",
+      "headword": "战",
+      "kind": "word",
+      "reading": "zhàn",
+      "senses": [
+        {
+          "id": "zh-b168bb302db0-1-s1",
+          "definition": "battle; combat"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这一战中，曹操杀死一万多人，夺得旗子、战鼓和许多马匹。",
+        "gloss": "battle",
+        "sense_id": "zh-b168bb302db0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c12f7acaa35a68946126d13a42e55d8574da26d84989d35a5a8b489cca3ffc38"
+}

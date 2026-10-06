@@ -1,0 +1,31 @@
+{
+  "id": "zh-2b264025e323-1-450364fa2d8b2562",
+  "entry_id": "zh-2b264025e323-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2b264025e323-1",
+      "headword": "借",
+      "kind": "word",
+      "reading": "jiè",
+      "senses": [
+        {
+          "id": "zh-2b264025e323-1-s1",
+          "definition": "use as a means; take advantage of"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "use; take advantage of",
+        "sense_id": "zh-2b264025e323-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e60d16df539aa7750055d1567c1677984ea907837c6e41aeba1a71a1d4c1f970"
+}

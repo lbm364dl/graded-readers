@@ -1,0 +1,31 @@
+{
+  "id": "zh-0a081f4eb033-1-9808d342eadb7bcc",
+  "entry_id": "zh-0a081f4eb033-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0a081f4eb033-1",
+      "headword": "张榜",
+      "kind": "construction",
+      "reading": "zhāngbǎng",
+      "senses": [
+        {
+          "id": "zh-0a081f4eb033-1-s1",
+          "definition": "to post or display a public notice"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”刘焉听从建议，立即张榜。",
+        "gloss": "to post a recruitment notice",
+        "sense_id": "zh-0a081f4eb033-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "26914325ad05ea35b922d1d160eada441d0c95869bdbf8a266053e900a339ead"
+}

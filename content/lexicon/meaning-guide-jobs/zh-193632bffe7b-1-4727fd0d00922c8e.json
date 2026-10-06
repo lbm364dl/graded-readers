@@ -1,0 +1,31 @@
+{
+  "id": "zh-193632bffe7b-1-4727fd0d00922c8e",
+  "entry_id": "zh-193632bffe7b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-193632bffe7b-1",
+      "headword": "喝",
+      "kind": "word",
+      "reading": "hē",
+      "senses": [
+        {
+          "id": "zh-193632bffe7b-1-s1",
+          "definition": "drink (a liquid)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”刘备十分高兴，于是和他进村店喝酒。",
+        "gloss": "drink",
+        "sense_id": "zh-193632bffe7b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "31c4ee3b89f415c68b383218a34abdde83b737913b28a42e68e75eb3a3b8471e"
+}

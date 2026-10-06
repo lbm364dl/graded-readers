@@ -1,0 +1,32 @@
+{
+  "id": "ja-83cb2480739d0c16-f6332ee2b0ad24cc",
+  "entry_id": "ja-83cb2480739d0c16",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-83cb2480739d0c16",
+      "headword": "探す",
+      "reading": "さがす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-83cb2480739d0c16-1",
+          "definition": "to look for; search for"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒の子分になって食べ物を探すこともしなかった。",
+        "gloss": "look for",
+        "sense_id": "ja-83cb2480739d0c16-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "07552ea970ac70205473d174929564a7d7d954b5de896c59230bb15d2553da2b"
+}

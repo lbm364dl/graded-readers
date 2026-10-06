@@ -1,0 +1,31 @@
+{
+  "id": "zh-04ad311c3679-1-7e9f45244e9f83e7",
+  "entry_id": "zh-04ad311c3679-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-04ad311c3679-1",
+      "headword": "筑",
+      "kind": "word",
+      "reading": "zhù",
+      "senses": [
+        {
+          "id": "zh-04ad311c3679-1-s1",
+          "definition": "to build or construct"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "左丰怀恨回报，诬告卢植筑高墙却不作战，使军心懈怠。",
+        "gloss": "to build",
+        "sense_id": "zh-04ad311c3679-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3c55c57b4a1dda2969f2ca75612ded5a2d3e7ba843f8c7abc83db46f3f1b7938"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-c96cf35a456c6564-7a54718c8de6a898",
+  "entry_id": "ja-c96cf35a456c6564",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c96cf35a456c6564",
+      "headword": "辛い",
+      "reading": "つらい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c96cf35a456c6564-1",
+          "definition": "painful; difficult to endure"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "目を開けているのもつらいほどだった。",
+        "gloss": "painful; difficult",
+        "sense_id": "ja-c96cf35a456c6564-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "caf5e6259989fc99d67118ff15f07277290ce0f39ab2e407e693478ae6d256fb"
+}

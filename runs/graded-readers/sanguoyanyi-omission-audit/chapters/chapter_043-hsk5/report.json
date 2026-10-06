@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_043-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 1022,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了鲁肃事先嘱咐诸葛亮不要实说曹操兵多，以及诸葛亮与诸葛瑾相见的情节。",
+      "classification": "material",
+      "reason": "鲁肃的事先嘱咐构成诸葛亮后来故意夸大曹军兵力的动机和铺垫；与诸葛瑾相见也补充了兄弟关系及行事先公后私的刻画，不能完全视为装饰。",
+      "required_fix": "补回鲁肃两次嘱咐诸葛亮勿实说曹操兵多的情节，以及诸葛亮与诸葛瑾相遇、交谈的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了鲁肃事先嘱咐诸葛亮不要实说曹操兵多，以及诸葛亮与诸葛瑾相见的情节。",
+      "classification": "material",
+      "reason": "鲁肃的事先嘱咐构成诸葛亮后来故意夸大曹军兵力的动机和铺垫；与诸葛瑾相见也补充了兄弟关系及行事先公后私的刻画，不能完全视为装饰。",
+      "required_fix": "补回鲁肃两次嘱咐诸葛亮勿实说曹操兵多的情节，以及诸葛亮与诸葛瑾相遇、交谈的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1022,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

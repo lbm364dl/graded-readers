@@ -1,0 +1,31 @@
+{
+  "id": "zh-e46b17ada920-1-ab6b98cb09710036",
+  "entry_id": "zh-e46b17ada920-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e46b17ada920-1",
+      "headword": "刚才",
+      "kind": "word",
+      "reading": "gāngcái",
+      "senses": [
+        {
+          "id": "zh-e46b17ada920-1-s1",
+          "definition": "a short time ago"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刚才见你看招军榜叹气，所以前来相问。",
+        "gloss": "just now",
+        "sense_id": "zh-e46b17ada920-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "906b855a03213b0d7589bcf11a4dc4604953302720e13441ce6408a62391fe5b"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-35cb5a651483ff11-d2855d3a19f7cf55",
+  "entry_id": "ja-35cb5a651483ff11",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-35cb5a651483ff11",
+      "headword": "想像",
+      "reading": "そうぞう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-35cb5a651483ff11-1",
+          "definition": "imagination; the act or ability to form ideas or images in the mind"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が「自分で筆を持つと、絵は実に難しい」と言うと、友人は、室内の想像だけでは絵はかけない、自然そのものを見て写生すべきだと教えた。",
+        "gloss": "imagination",
+        "sense_id": "ja-35cb5a651483ff11-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c984b061c94f45c5553674b2f501733819ab7e9d4067554fa26c4f1f7058fd94"
+}

@@ -1,0 +1,72 @@
+{
+  "id": "ja-d6f97ba105d25c6b-d10684665281552d",
+  "entry_id": "ja-d6f97ba105d25c6b",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-d6f97ba105d25c6b",
+      "headword": "ことはない",
+      "reading": "ことはない",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-d6f97ba105d25c6b-1",
+          "definition": "Used after a verb to say that there has never been an occasion to do something."
+        },
+        {
+          "id": "ja-d6f97ba105d25c6b-2",
+          "definition": "Used after a potential verb to say that there is nothing one cannot do; to say that something is possible."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が鼠をとったことはないと言うと、黒は、人間が猫のとった鼠を取り上げて交番へ持って行き、五銭をもらうという話をした。",
+        "gloss": "have never done; there has been no occasion to",
+        "sense_id": "ja-d6f97ba105d25c6b-1"
+      },
+      {
+        "sentence": "こんなに寝ていても仕事が続くなら、猫にだって出来ないことはない、と。",
+        "gloss": "there is no matter that; nothing is such that",
+        "sense_id": "ja-d6f97ba105d25c6b-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-d6f97ba105d25c6b",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "After a verb in the た-form, こと makes the action into an event or experience, and ない denies that it occurred. は marks that event as the point being discussed, so the construction says there has been no occasion when the action happened: the speaker has never done it.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "こと",
+        "contribution_en": "Turns the preceding verb phrase into an event or experience that can be discussed.",
+        "claim_ids": []
+      },
+      {
+        "text": "は",
+        "contribution_en": "Marks that event or experience as the point being discussed.",
+        "claim_ids": []
+      },
+      {
+        "text": "ない",
+        "contribution_en": "Denies that the event or experience occurred.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "e47109b636e9ef0cc60e2c1eef78c8f0ba091861b508bde5c8ef214700d25140",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d2e3954e58b37dfe6bebb2bef314c66523759365bd8b87dec08c45d7fea6830e"
+}

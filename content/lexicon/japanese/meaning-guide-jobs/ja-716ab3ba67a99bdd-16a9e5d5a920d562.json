@@ -1,0 +1,32 @@
+{
+  "id": "ja-716ab3ba67a99bdd-16a9e5d5a920d562",
+  "entry_id": "ja-716ab3ba67a99bdd",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-716ab3ba67a99bdd",
+      "headword": "白君",
+      "reading": "はっくん",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "ja-716ab3ba67a99bdd-1",
+          "definition": "Shiro-kun"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "白君は会うたびに、人間ほど不人情なものはない、と話していた。",
+        "gloss": "Shiro-kun",
+        "sense_id": "ja-716ab3ba67a99bdd-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "95c5b92a7e54449463704e29e0c592fc33e2c86acd570e786c26c026644903cc"
+}

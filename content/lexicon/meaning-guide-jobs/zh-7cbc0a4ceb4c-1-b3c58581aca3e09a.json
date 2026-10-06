@@ -1,0 +1,31 @@
+{
+  "id": "zh-7cbc0a4ceb4c-1-b3c58581aca3e09a",
+  "entry_id": "zh-7cbc0a4ceb4c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7cbc0a4ceb4c-1",
+      "headword": "掌",
+      "kind": "word",
+      "reading": "zhǎng",
+      "senses": [
+        {
+          "id": "zh-7cbc0a4ceb4c-1-s1",
+          "definition": "to hold or exercise (power)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹节等宦官掌权，窦武和陈蕃想除掉他们。",
+        "gloss": "to hold",
+        "sense_id": "zh-7cbc0a4ceb4c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "676ffdee4b55eb935b4f7c500ca783685b61aac20b5e466cf1a0dbc03f019fe9"
+}

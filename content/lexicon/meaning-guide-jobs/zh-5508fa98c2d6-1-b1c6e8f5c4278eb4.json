@@ -1,0 +1,36 @@
+{
+  "id": "zh-5508fa98c2d6-1-b1c6e8f5c4278eb4",
+  "entry_id": "zh-5508fa98c2d6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5508fa98c2d6-1",
+      "headword": "张角",
+      "kind": "name",
+      "reading": "Zhāng Jiǎo",
+      "senses": [
+        {
+          "id": "zh-5508fa98c2d6-1-s1",
+          "definition": "Zhang Jiao"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角给百姓治病，聚集了很多人。",
+        "gloss": "Zhang Jiao",
+        "sense_id": "zh-5508fa98c2d6-1-s1"
+      },
+      {
+        "sentence": "当时疫病流行，很多人相信张角。",
+        "gloss": "Zhang Jiao",
+        "sense_id": "zh-5508fa98c2d6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6f58ac8b6f3bfbc41b347c3a7faf75c590f1bb88404fc3e37321145f6d1061fb"
+}

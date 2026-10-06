@@ -1,0 +1,36 @@
+{
+  "id": "zh-e0f2d3ead59c-1-feda9ee148288ef2",
+  "entry_id": "zh-e0f2d3ead59c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e0f2d3ead59c-1",
+      "headword": "放下",
+      "kind": "construction",
+      "reading": "fàngxià",
+      "senses": [
+        {
+          "id": "zh-e0f2d3ead59c-1-s1",
+          "definition": "put something down"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军马上逃走，很多人放下武器投降。",
+        "gloss": "put down",
+        "sense_id": "zh-e0f2d3ead59c-1-s1"
+      },
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "to put down",
+        "sense_id": "zh-e0f2d3ead59c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8a4c4f0ab68d10a7a9a817303ed5e6d0761518b5a918f2c6d9ffac99b2d23819"
+}

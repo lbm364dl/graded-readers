@@ -1,0 +1,32 @@
+{
+  "id": "ja-c6c3010516434b7c-05f7af002a1f3481",
+  "entry_id": "ja-c6c3010516434b7c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c6c3010516434b7c",
+      "headword": "漸く",
+      "reading": "ようやく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c6c3010516434b7c-1",
+          "definition": "at last; finally, after delay or difficulty"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これが人間の飲むたばこだということを、吾輩はようやくこの頃知った。",
+        "gloss": "at last; finally",
+        "sense_id": "ja-c6c3010516434b7c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "10e047963ab0c9db3ec981ac48a35f1c469ddede9a99d63deb7c586cb0dadabb"
+}

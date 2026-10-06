@@ -1,0 +1,94 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_044-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 155,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了周瑜具体部署各路将领、程普由不服到折服等次要情节。",
+      "classification": "material",
+      "reason": "具体将领部署可压缩为“调配水陆军”，但程普由不服到折服表现了周瑜的统帅才能及二人的关系变化，属于重要 characterization，虽不影响主线事件，仍超出单纯气氛或非必要细节。",
+      "required_fix": "补充周瑜分派各路将领及程普因不服而托病、听闻部署有法后折服并亲自谢罪的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了周瑜具体部署各路将领、程普由不服到折服等次要情节。",
+      "classification": "material",
+      "reason": "具体将领部署可压缩为“调配水陆军”，但程普由不服到折服表现了周瑜的统帅才能及二人的关系变化，属于重要 characterization，虽不影响主线事件，仍超出单纯气氛或非必要细节。",
+      "required_fix": "补充周瑜分派各路将领及程普因不服而托病、听闻部署有法后折服并亲自谢罪的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 8,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 154,
+      "review": {
+        "source_fidelity": 7,
+        "naturalness": 7,
+        "readability": 7,
+        "material_omissions": [
+          "省略了周瑜第二次面见孙权、说明曹军实际兵力与疲弱情况并消除孙权疑虑的关键情节，导致孙权最终同意出兵的因果链不完整。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“四忌”后列出五项内容，且“兵疲说服权”混淆了四忌与周瑜后来劝说孙权的内容。",
+          "“鲁肃止之，派诸葛瑾”将派遣诸葛瑾的行为错误归给了鲁肃，原文是周瑜采纳建议后派诸葛瑾前往。"
+        ],
+        "language_problems": [
+          "“兵疲说服权”语义不通，表达不自然。",
+          "“整军分派各路将领”虽可读，但过于笼统，未具体呈现各路部署。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 153,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.0,
+        "readability": 8.0,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "“遂破曹”将原文中尚未发生的破曹结果写成既成事实；原文只写周瑜决定并筹备破曹。"
+        ],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 155,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

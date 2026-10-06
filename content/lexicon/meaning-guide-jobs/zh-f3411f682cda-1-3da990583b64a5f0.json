@@ -1,0 +1,31 @@
+{
+  "id": "zh-f3411f682cda-1-3da990583b64a5f0",
+  "entry_id": "zh-f3411f682cda-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f3411f682cda-1",
+      "headword": "这是",
+      "kind": "construction",
+      "reading": "zhèshì",
+      "senses": [
+        {
+          "id": "zh-f3411f682cda-1-s1",
+          "definition": "this is; this constitutes or amounts to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "this is",
+        "sense_id": "zh-f3411f682cda-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f0c332c2e0ff1f2520f8724d9972673bbe5119c44e9bb8362db3984704e4f8d5"
+}

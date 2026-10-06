@@ -1,0 +1,31 @@
+{
+  "id": "zh-d657ee1d4abb-1-4632f3166f495761",
+  "entry_id": "zh-d657ee1d4abb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d657ee1d4abb-1",
+      "headword": "正",
+      "kind": "word",
+      "reading": "zhèng",
+      "senses": [
+        {
+          "id": "zh-d657ee1d4abb-1-s1",
+          "definition": "currently; in the midst of doing something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角刚打败董卓，正追赶汉军，却遇到三人攻击。",
+        "gloss": "just; currently",
+        "sense_id": "zh-d657ee1d4abb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2a9021150d71c0c5af3a7b484a4daca92cd5eb1a1f6c0406605839e90db80353"
+}

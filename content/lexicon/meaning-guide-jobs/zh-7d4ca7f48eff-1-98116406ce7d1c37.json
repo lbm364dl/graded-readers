@@ -1,0 +1,45 @@
+{
+  "id": "zh-7d4ca7f48eff-1-98116406ce7d1c37",
+  "entry_id": "zh-7d4ca7f48eff-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7d4ca7f48eff-1",
+      "headword": "大",
+      "kind": "word",
+      "reading": "dà",
+      "senses": [
+        {
+          "id": "zh-7d4ca7f48eff-1-s1",
+          "definition": "large; big"
+        },
+        {
+          "id": "zh-7d4ca7f48eff-1-s2",
+          "definition": "great; eminent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "殿角忽起狂风，一条大青蛇从梁上飞下，盘在椅上。",
+        "gloss": "large",
+        "sense_id": "zh-7d4ca7f48eff-1-s1"
+      },
+      {
+        "sentence": "中平元年，疫病流行，他用符水给百姓治病，自称大贤良师。",
+        "gloss": "great",
+        "sense_id": "zh-7d4ca7f48eff-1-s2"
+      },
+      {
+        "sentence": "家旁有一棵大桑树，远远看去，像一把车盖。",
+        "gloss": "big",
+        "sense_id": "zh-7d4ca7f48eff-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "080244a567422d30e1982765165542443200f9053780539e0cac62a1582e2a4f"
+}

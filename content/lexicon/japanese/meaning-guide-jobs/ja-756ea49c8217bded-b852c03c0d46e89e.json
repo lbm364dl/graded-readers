@@ -1,0 +1,32 @@
+{
+  "id": "ja-756ea49c8217bded-b852c03c0d46e89e",
+  "entry_id": "ja-756ea49c8217bded",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-756ea49c8217bded",
+      "headword": "ワットマン",
+      "reading": "わっとまん",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "ja-756ea49c8217bded-1",
+          "definition": "Whatman, a brand of paper"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "Whatman paper; Whatman",
+        "sense_id": "ja-756ea49c8217bded-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3aeb9ad89982c6a8a382f0004426e699dad296f857c8a8fdb648aad97178ed81"
+}

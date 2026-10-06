@@ -1,0 +1,31 @@
+{
+  "id": "zh-211bd184e38b-1-1d93841f6265bae8",
+  "entry_id": "zh-211bd184e38b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-211bd184e38b-1",
+      "headword": "光武",
+      "kind": "name",
+      "reading": "Guāngwǔ",
+      "senses": [
+        {
+          "id": "zh-211bd184e38b-1-s1",
+          "definition": "Emperor Guangwu"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝自高祖斩白蛇起义，一统天下；后来光武中兴，传到献帝，终于分为三国。",
+        "gloss": "Emperor Guangwu",
+        "sense_id": "zh-211bd184e38b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e25dc487e8f30aca2e2b0a1b0dc820969ef5b81791a01670f38084f7dcf6a894"
+}

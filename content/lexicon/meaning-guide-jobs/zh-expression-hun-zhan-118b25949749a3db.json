@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-hun-zhan-118b25949749a3db",
+  "entry_id": "zh-expression-hun-zhan",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-hun-zhan",
+      "headword": "混战",
+      "reading": "hùnzhàn",
+      "kind": "expression",
+      "base_entry_id": "zh-2175a19ace96-2",
+      "components": [
+        {
+          "entry_id": "zh-2175a19ace96-2",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-b168bb302db0-1",
+          "role": "combat"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-hun-zhan-s1",
+          "definition": "fight in a confused mêlée"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "救军抵达后，黄巾军分兵，双方立刻混战。",
+        "gloss": "fight in a confused mêlée",
+        "sense_id": "zh-expression-hun-zhan-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "混",
+        "role": "verb"
+      },
+      {
+        "headword": "战",
+        "role": "combat"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5f067fb76f9f0ea57d3e2365f49450e2dafb07a9573ebd06847df10e6818172f"
+}

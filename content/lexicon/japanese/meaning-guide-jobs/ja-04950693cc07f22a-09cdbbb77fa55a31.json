@@ -1,0 +1,32 @@
+{
+  "id": "ja-04950693cc07f22a-09cdbbb77fa55a31",
+  "entry_id": "ja-04950693cc07f22a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-04950693cc07f22a",
+      "headword": "ニャー",
+      "reading": "にゃー",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-04950693cc07f22a-1",
+          "definition": "the sound a cat makes; meow"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "鳴けば書生が来るかと思い、「ニャー、ニャー」と鳴いたが、誰も来ない。",
+        "gloss": "meow",
+        "sense_id": "ja-04950693cc07f22a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "df478ca3a4fd5ba3eda221688ba41216222535a9575b7fb6b14a968e575d3de2"
+}

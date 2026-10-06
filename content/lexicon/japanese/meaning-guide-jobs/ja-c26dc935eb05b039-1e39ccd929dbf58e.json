@@ -1,0 +1,32 @@
+{
+  "id": "ja-c26dc935eb05b039-1e39ccd929dbf58e",
+  "entry_id": "ja-c26dc935eb05b039",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c26dc935eb05b039",
+      "headword": "平気な顔をしている",
+      "reading": "へいきなかおをしている",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-c26dc935eb05b039-1",
+          "definition": "to act as if unconcerned; to appear untroubled"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが人間は、吾輩たちが見つけたごちそうを、いつも力で奪って平気な顔をしている。",
+        "gloss": "act as if unconcerned",
+        "sense_id": "ja-c26dc935eb05b039-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "04d4ac12e39b4b14b3db667fb5c58220bfd7d867c5532b58c78f56fe919eadd0"
+}

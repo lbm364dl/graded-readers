@@ -1,0 +1,31 @@
+{
+  "id": "zh-36634a42170f-1-6fa012717350d117",
+  "entry_id": "zh-36634a42170f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-36634a42170f-1",
+      "headword": "旗上",
+      "kind": "construction",
+      "reading": "qí shàng",
+      "senses": [
+        {
+          "id": "zh-36634a42170f-1-s1",
+          "definition": "on the flag; on a flag"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人上山，看见汉军已经失败，黄巾军从四面赶来，旗上写着“天公将军”。",
+        "gloss": "on the flag",
+        "sense_id": "zh-36634a42170f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3c748e86d2c643f7c5a8f50b109ab2f403846b5fa1a868dd2e3abb6940c8ccfc"
+}

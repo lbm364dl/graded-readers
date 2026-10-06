@@ -1,0 +1,81 @@
+{
+  "id": "ja-8278159494939602-6bebb984bf1bc7ce",
+  "entry_id": "ja-8278159494939602",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-8278159494939602",
+      "headword": "か",
+      "reading": "か",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-8278159494939602-1",
+          "definition": "Marks an embedded question or expresses whether."
+        },
+        {
+          "id": "ja-8278159494939602-2",
+          "definition": "Marks a direct question."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どこで生まれたか分かりません。",
+        "gloss": "whether; embedded question",
+        "sense_id": "ja-8278159494939602-1"
+      },
+      {
+        "sentence": "どこで生まれたか分からない。",
+        "gloss": "whether; question marker in an embedded question",
+        "sense_id": "ja-8278159494939602-1"
+      },
+      {
+        "sentence": "誰がとったか分からないので、お金をもらうのだという。",
+        "gloss": "whether; who ...",
+        "sense_id": "ja-8278159494939602-1"
+      },
+      {
+        "sentence": "吾輩は池の前に座り、どうすればよいか考えた。",
+        "gloss": "marks an embedded question",
+        "sense_id": "ja-8278159494939602-1"
+      },
+      {
+        "sentence": "今まで名前さえ付けてもらえないことからも、吾輩がどれほど大切にされなかったか分かる。",
+        "gloss": "whether; embedded question marker",
+        "sense_id": "ja-8278159494939602-1"
+      },
+      {
+        "sentence": "吾輩が「車屋と教師では、どちらが偉いか」と尋ねると、黒は「車屋の方が強いに決まっている。",
+        "gloss": "question marker",
+        "sense_id": "ja-8278159494939602-2"
+      },
+      {
+        "sentence": "さらに黒は、鼠をとると、人間がそれを取り上げて交番へ持って行き、誰がとったか分からないので、そのたびに五銭をもらう、と言った。",
+        "gloss": "embedded question marker",
+        "sense_id": "ja-8278159494939602-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-8278159494939602",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "か follows a phrase or clause to mark a question. After a clause, it lets that question function within a larger sentence, often with the meaning “whether.”",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "7e8b4d8796909427dd3030f70668034fcb4038f3c8a2c0248088d0d6e6b40237",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0d5f9d02284f0dea6b91c87f75ceb66e06cdd6b5b5bc42db4b78eb685c7a3596"
+}

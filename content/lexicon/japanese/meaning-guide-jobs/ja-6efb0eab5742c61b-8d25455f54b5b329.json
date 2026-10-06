@@ -1,0 +1,42 @@
+{
+  "id": "ja-6efb0eab5742c61b-8d25455f54b5b329",
+  "entry_id": "ja-6efb0eab5742c61b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6efb0eab5742c61b",
+      "headword": "太る",
+      "reading": "ふとる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6efb0eab5742c61b-1",
+          "definition": "To grow fat; to gain weight."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "「君は車屋にいるから、たくさん食べて太っているのだね」\n",
+        "gloss": "be fat; be overweight",
+        "sense_id": "ja-6efb0eab5742c61b-1"
+      },
+      {
+        "sentence": "黒は、自分はどこへ行っても食べ物に困らないと言い、吾輩も後について来れば一月もしないうちに太れると自慢した。",
+        "gloss": "can gain weight",
+        "sense_id": "ja-6efb0eab5742c61b-1"
+      },
+      {
+        "sentence": "鼠をたくさん食べるから、そんなに太って毛つやもよいのだろう」と言うと、黒は急にため息をついた。",
+        "gloss": "grow fat; become plump",
+        "sense_id": "ja-6efb0eab5742c61b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ed10736eac28e9f97dfd67e13e9deb51c74fa8b70e21dac42b881d1f34529fdc"
+}

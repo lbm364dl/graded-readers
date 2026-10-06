@@ -1,0 +1,31 @@
+{
+  "id": "zh-6054f18a7d10-1-a8e2db3192338cf7",
+  "entry_id": "zh-6054f18a7d10-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6054f18a7d10-1",
+      "headword": "一军",
+      "kind": "word",
+      "reading": "yījūn",
+      "senses": [
+        {
+          "id": "zh-6054f18a7d10-1-s1",
+          "definition": "one army or military force"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角一军进犯幽州。",
+        "gloss": "one army",
+        "sense_id": "zh-6054f18a7d10-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c5edc1f1cac8d8807a2fb270399e2b44fca7e2af025cbe27ea0c49d37bd73322"
+}

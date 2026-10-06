@@ -1,0 +1,31 @@
+{
+  "id": "zh-2ce121a47d05-1-60934046aea7169b",
+  "entry_id": "zh-2ce121a47d05-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2ce121a47d05-1",
+      "headword": "读书人",
+      "kind": "word",
+      "reading": "dúshūrén",
+      "senses": [
+        {
+          "id": "zh-2ce121a47d05-1-s1",
+          "definition": "a person who reads or studies; an educated person"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角原是没有考中的读书人。",
+        "gloss": "scholar; educated person",
+        "sense_id": "zh-2ce121a47d05-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7287e2f15326dfbcf61c0056d035977b05f3b90d556a22fe0102f27668367f67"
+}

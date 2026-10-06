@@ -1,0 +1,237 @@
+{
+  "id": "zh-b71852847d38-1-ecd780cb5ca6f85e",
+  "entry_id": "zh-b71852847d38-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-b71852847d38-1",
+      "headword": "叫",
+      "kind": "word",
+      "reading": "jiào",
+      "senses": [
+        {
+          "id": "zh-b71852847d38-1-s1",
+          "definition": "tell or ask someone to do something"
+        },
+        {
+          "id": "zh-b71852847d38-1-s2",
+          "definition": "be called; have a particular name"
+        },
+        {
+          "id": "zh-b71852847d38-1-s3",
+          "definition": "call out; speak loudly to attract attention"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉发布招军榜，叫人到处报名。",
+        "gloss": "tell",
+        "sense_id": "zh-b71852847d38-1-s1"
+      },
+      {
+        "sentence": "那人说自己叫关羽。",
+        "gloss": "be called",
+        "sense_id": "zh-b71852847d38-1-s2"
+      },
+      {
+        "sentence": "两队人在山下相遇，刘备叫黄巾军投降。",
+        "gloss": "call on",
+        "sense_id": "zh-b71852847d38-1-s1"
+      },
+      {
+        "sentence": "皇帝信任张让，叫他“阿父”，朝政逐渐败坏，天下人心想要作乱，盗贼纷纷起来。",
+        "gloss": "to call",
+        "sense_id": "zh-b71852847d38-1-s1"
+      },
+      {
+        "sentence": "大汉叫张飞，住在涿郡，有田，卖酒杀猪，也喜爱结交豪杰。",
+        "gloss": "be called",
+        "sense_id": "zh-b71852847d38-1-s2"
+      },
+      {
+        "sentence": "那人叫关羽，曾因杀了当地一个仗势欺人的人，逃难了五六年。",
+        "gloss": "be called",
+        "sense_id": "zh-b71852847d38-1-s2"
+      },
+      {
+        "sentence": "他大声骂敌人背叛汉朝，叫他们早些投降。",
+        "gloss": "to tell; to order",
+        "sense_id": "zh-b71852847d38-1-s1"
+      },
+      {
+        "sentence": "他又让人传出“苍天已死，黄天当立”和“岁在甲子，天下大吉”的话，叫百姓在家门上写“甲子”。",
+        "gloss": "to tell; have someone",
+        "sense_id": "zh-b71852847d38-1-s1"
+      },
+      {
+        "sentence": "正饮酒时，一个大汉推着一辆车来到店门前休息，进门便叫酒保斟酒，说要赶进城投军。",
+        "gloss": "to call out",
+        "sense_id": "zh-b71852847d38-1-s3"
+      },
+      {
+        "sentence": "张角让手下向百姓传话，说旧的天下已经衰弱，新的天下将要出现，还叫人用白土在家门上写下“甲子”二字。",
+        "gloss": "tell; have someone",
+        "sense_id": "zh-b71852847d38-1-s1"
+      },
+      {
+        "sentence": "正饮之间，一个大汉推车到店门口歇下，入店便叫酒保倒酒，说要赶进城投军。",
+        "gloss": "to call",
+        "sense_id": "zh-b71852847d38-1-s3"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-b71852847d38-1",
+    "claim_ids": [
+      "c1",
+      "c2"
+    ],
+    "structure": "single_component",
+    "explanation_en": "叫 is a verb that can direct someone to do something, as in 叫他走 (“tell him to go”). With a person followed by a name, it says what that person is called, as in 他叫李明 (“he is called Li Ming”).",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "叫",
+        "contribution_en": "The verb directs someone toward an action, or predicates the name by which someone is called; what follows determines the use.",
+        "claim_ids": [
+          "c1",
+          "c2"
+        ]
+      }
+    ],
+    "research": {
+      "entry_id": "zh-b71852847d38-1",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://dict.cucldk.com/?w=%E5%8F%AB",
+          "title": "现代汉语词典（第七版）",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The entry separates a use meaning ‘make; command’ (with an example 叫他早点回去) from a use meaning ‘is; is called’ (with 我叫王勇). The page supports the target senses, though it is a third-party-hosted dictionary entry."
+        },
+        {
+          "id": "s2",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=22498&la=0&powerMode=0",
+          "title": "教育部《國語辭典簡編本》2021: 叫",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The Ministry of Education dictionary lists 叫 as ‘be named/called,’ as summoning or calling someone (often with a commanding tone), and as ‘make, let, cause.’ Its examples distinguish these uses."
+        },
+        {
+          "id": "s3",
+          "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%8F%AB",
+          "title": "漢語多功能字庫: 叫",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The entry gives the Shuowen gloss 嘑也 and cites early examples of calling or shouting, a Han example of calling a friend, and later examples of naming and passive 叫. It documents these senses and examples but does not demonstrate that the modern target senses developed from the older vocal-call sense."
+        },
+        {
+          "id": "s4",
+          "url": "https://zdic.net/hans/%E5%8F%AB",
+          "title": "叫 jiào - 汉典",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The entry lists ‘name/be called’ and ‘make, command’ among modern senses, and reproduces the Shuowen gloss 嘑也. The classical examples shown primarily illustrate vocal calling or shouting; they do not establish a historical derivation of the target uses."
+        },
+        {
+          "id": "s5",
+          "url": "https://scholars.hkbu.edu.hk/en/publications/%E8%BF%91%E4%BB%A3%E6%B1%89%E8%AF%AD%E4%BD%BF%E5%BD%B9%E5%8A%A8%E8%AF%8D%E5%8F%8A%E5%85%B6%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8F%A5%E6%B3%95%E8%AF%AD%E4%B9%89%E7%BB%93%E6%9E%84/",
+          "title": "近代汉语使役动词及其相关的句法、语义结构",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The journal article abstract says causative 叫-constructions came into use in the Ming-Qing period and that 叫, unlike 使/令/遣, took a less direct path to causative use. It describes causative verbs becoming semantically bleached in serial-verb constructions, but the abstract does not specify a path from the vocal-call sense of 叫."
+        },
+        {
+          "id": "s6",
+          "url": "https://newetds.lib.tsinghua.edu.cn/qh/paper/summary?dbCode=ETDQH&sysId=222135",
+          "title": "汉语使役句句法、语义的历时研究",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The dissertation abstract describes causative constructions developing through reanalysis of verbs in the first position of serial-verb constructions, and says the 叫 construction historically replaced the 教 construction. It attributes variation in their development to multiple factors. This supports a proposed history for causative 叫, but not a derivation from the older sense ‘call/shout’."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "In the example 刘焉发布招军榜，叫人到处报名, 叫 relates 人 to the following action: someone is told or directed to register in various places. This fits the dictionary use glossed as ‘make; command’ and the Ministry dictionary’s command-toned calling/summoning use. The sentence does not specify whether the directive is polite or coercive.",
+          "source_ids": [
+            "s1",
+            "s2"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "In 那人说自己叫关羽, 叫 predicates the name by which the person says he is called: the person’s name is Guan Yu. The naming dictionaries and their examples support this use; they do not specify who assigned the name or whether it is formal.",
+          "source_ids": [
+            "s1",
+            "s2"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "The consulted character references report an older vocal-call or shout sense: the Shuowen gloss is 嘑也, and cited early texts use 叫 for calling or shouting. Those attestations establish an older sense, but do not by themselves prove that either the modern directive use or the naming use derives from it.",
+          "source_ids": [
+            "s3",
+            "s4"
+          ]
+        },
+        {
+          "id": "c4",
+          "text_en": "A historical account of causative constructions places causative 叫 in the Ming-Qing period and describes it as developing through grammatical reanalysis; a dissertation abstract additionally characterizes 叫 as replacing the causative 教 construction. These accounts support a history for the causative construction, but do not establish that it arose specifically from the ancient vocal-call sense or explain the historical development of the naming predicate.",
+          "source_ids": [
+            "s5",
+            "s6"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "叫 使令 称呼 词典 叫人做 什么",
+          "opened_urls": [
+            "https://dict.cucldk.com/?w=%E5%8F%AB",
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=22498&la=0&powerMode=0"
+          ]
+        },
+        {
+          "query": "site:humanum.arts.cuhk.edu.hk/Lexis/lexi-mf 叫 嘑也",
+          "opened_urls": [
+            "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%8F%AB"
+          ]
+        },
+        {
+          "query": "叫 称为 语法 历史发展 使令 叫 名字",
+          "opened_urls": [
+            "https://zdic.net/hans/%E5%8F%AB",
+            "https://scholars.hkbu.edu.hk/en/publications/%E8%BF%91%E4%BB%A3%E6%B1%89%E8%AF%AD%E4%BD%BF%E5%BD%B9%E5%8A%A8%E8%AF%8D%E5%8F%8A%E5%85%B6%E7%9B%B8%E5%85%B3%E7%9A%84%E5%8F%A5%E6%B3%95%E8%AF%AD%E4%B9%89%E7%BB%93%E6%9E%84/",
+            "https://newetds.lib.tsinghua.edu.cn/qh/paper/summary?dbCode=ETDQH&sysId=222135"
+          ]
+        },
+        {
+          "query": "site:kci.go.kr 叫 词汇化 语法 使令",
+          "opened_urls": []
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://dict.cucldk.com/?w=%E5%8F%AB",
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=22498&la=0&powerMode=0",
+            "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%8F%AB",
+            "https://zdic.net/hans/%E5%8F%AB",
+            "https://journal.kci.go.kr/clsyn/archive/articleView?artiId=ART000928695"
+          ]
+        }
+      ],
+      "gaps": [
+        "The opened references attest the old vocal-call sense and the modern naming use, but do not show when or through what intermediate contexts 叫 developed its ‘be called/name’ use. The causative histories consulted describe grammatical reanalysis and/or replacement of 教, but the available abstracts do not establish a derivation from the vocal-call sense or provide a detailed lexical pathway for the target directive construction."
+      ]
+    },
+    "input_fingerprint": "ee0c4b24b84b3d9321221b338cc834cbebd2824bda7a33f3a6bf21ddfa5c6842",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c9722ecfc7294b047dcc350e35476ec18a0ee0eac7c1821d31b90add5ec9b84d"
+}

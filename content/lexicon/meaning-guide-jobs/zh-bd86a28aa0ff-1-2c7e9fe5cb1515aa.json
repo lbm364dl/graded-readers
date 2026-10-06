@@ -1,0 +1,31 @@
+{
+  "id": "zh-bd86a28aa0ff-1-2c7e9fe5cb1515aa",
+  "entry_id": "zh-bd86a28aa0ff-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bd86a28aa0ff-1",
+      "headword": "上去",
+      "kind": "construction",
+      "reading": "shàngqu",
+      "senses": [
+        {
+          "id": "zh-bd86a28aa0ff-1-s1",
+          "definition": "to move forward to a position"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人立刻冲上去，把黄巾军打退，救下董卓。",
+        "gloss": "up and forward",
+        "sense_id": "zh-bd86a28aa0ff-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "35eaea8bbab198bc59a4be3e9c4e57fcbd90eebed4c48fc6a2e80fafc6dc827c"
+}

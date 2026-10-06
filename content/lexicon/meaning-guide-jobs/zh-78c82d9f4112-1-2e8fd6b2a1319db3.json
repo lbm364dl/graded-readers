@@ -1,0 +1,31 @@
+{
+  "id": "zh-78c82d9f4112-1-2e8fd6b2a1319db3",
+  "entry_id": "zh-78c82d9f4112-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-78c82d9f4112-1",
+      "headword": "觉得",
+      "kind": "word",
+      "reading": "juéde",
+      "senses": [
+        {
+          "id": "zh-78c82d9f4112-1-s1",
+          "definition": "to think or feel that something is the case"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "叔父觉得这孩子与众不同，常常帮助他。",
+        "gloss": "to think; to feel",
+        "sense_id": "zh-78c82d9f4112-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "86535153517078a546dd4a3436a99503c994c755e9ec1294bcc688bc39fe8ca7"
+}

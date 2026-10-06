@@ -1,0 +1,31 @@
+{
+  "id": "zh-fd0c0de3c662-1-79746c09332953ac",
+  "entry_id": "zh-fd0c0de3c662-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fd0c0de3c662-1",
+      "headword": "一辆",
+      "kind": "word",
+      "reading": "yíliàng",
+      "senses": [
+        {
+          "id": "zh-fd0c0de3c662-1-s1",
+          "definition": "one vehicle"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备回去的路上，看见一辆车，车里关着的人正是卢植。",
+        "gloss": "one vehicle",
+        "sense_id": "zh-fd0c0de3c662-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7a8050b39679f25b35059247b8801691dbb00b7df1648841d9335f3b15237a43"
+}

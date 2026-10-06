@@ -1,0 +1,31 @@
+{
+  "id": "zh-72a2d7f07301-1-652851e339676629",
+  "entry_id": "zh-72a2d7f07301-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-72a2d7f07301-1",
+      "headword": "打乱",
+      "kind": "word",
+      "reading": "dǎluàn",
+      "senses": [
+        {
+          "id": "zh-72a2d7f07301-1-s1",
+          "definition": "to throw into disorder"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角刚击败董卓，军队却被三人打乱，败退五十多里。",
+        "gloss": "throw into disorder",
+        "sense_id": "zh-72a2d7f07301-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "134d15a7b104f08f95312f912d58e747bfb12112256aa0eed08291e4cee181cd"
+}

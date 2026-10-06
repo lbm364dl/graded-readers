@@ -1,0 +1,31 @@
+{
+  "id": "zh-f5e88e660749-1-869ddf3c38bdefd7",
+  "entry_id": "zh-f5e88e660749-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f5e88e660749-1",
+      "headword": "脸上",
+      "kind": "word",
+      "reading": "liǎnshàng",
+      "senses": [
+        {
+          "id": "zh-f5e88e660749-1-s1",
+          "definition": "on the face; on someone's facial surface"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备不太专心读书，性情宽和，话不多，喜怒很少露在脸上。",
+        "gloss": "on the face",
+        "sense_id": "zh-f5e88e660749-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0dec8a21f666d1b7183431a9a166b7e626fb5626e4256a990ed585c854ace05a"
+}

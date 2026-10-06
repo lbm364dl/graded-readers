@@ -1,0 +1,31 @@
+{
+  "id": "zh-06fea8eab68d-1-3d427efc9e6e5c9e",
+  "entry_id": "zh-06fea8eab68d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-06fea8eab68d-1",
+      "headword": "人员",
+      "kind": "word",
+      "reading": "rényuán",
+      "senses": [
+        {
+          "id": "zh-06fea8eab68d-1-s1",
+          "definition": "personnel; people recruited or employed for a purpose"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "幽州兵少，刘焉听从邹靖的建议，马上发布招军榜，招募人员保卫地方。",
+        "gloss": "personnel",
+        "sense_id": "zh-06fea8eab68d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0cb7834844f3b6af48d8e757d782a25a280d6bd935a5ff4240c68e3409dc7613"
+}

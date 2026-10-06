@@ -1,0 +1,134 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_034-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 373,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "未交代刘表在宴会上误以为刘备题反诗后又识破蔡瑁离间计的心理转折细节较少",
+      "classification": "material",
+      "reason": "刘表先因反诗震怒、继而判断为离间计并放弃追究，解释了他没有立即追捕刘备，也体现其对刘备的态度与判断；仅概括为“识破”使关键心理转折和因果不充分。",
+      "required_fix": "补充刘表见反诗后先拔剑震怒，随后想到刘备素不作诗，悟出这是外人离间之计，遂削去诗句并暂缓追捕的过程。"
+    },
+    {
+      "omission_note": "未明确说明玄德赴襄阳是受刘表邀约及刘表称病的安排背景",
+      "classification": "material",
+      "reason": "刘表称病并让刘备代为待客，是玄德赴襄阳及蔡瑁得以借宴设局的直接背景；缺失这一邀约与安排会削弱后续陷阱的因果链。",
+      "required_fix": "明确说明刘表派人邀玄德赴襄阳，因自称气疾不能出席，命刘备代为主持宴会接待，蔡瑁遂借此设局。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“刘表称病，蔡瑁借宴设局”容易让人误解为刘表主动参与设局；原文中主要是蔡瑁借刘表称病和宴会谋害刘备，刘表并未明确同谋",
+      "classification": "material",
+      "reason": "可能错误改变刘表在谋害刘备事件中的身份和因果关系，使读者误以为刘表主动参与设局。",
+      "required_fix": "改为“刘表称病，蔡瑁借此安排宴会设局谋害玄德”，明确设局者是蔡瑁，刘表并未明确同谋。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "未交代刘表在宴会上误以为刘备题反诗后又识破蔡瑁离间计的心理转折细节较少",
+      "classification": "material",
+      "reason": "刘表先因反诗震怒、继而判断为离间计并放弃追究，解释了他没有立即追捕刘备，也体现其对刘备的态度与判断；仅概括为“识破”使关键心理转折和因果不充分。",
+      "required_fix": "补充刘表见反诗后先拔剑震怒，随后想到刘备素不作诗，悟出这是外人离间之计，遂削去诗句并暂缓追捕的过程。"
+    },
+    {
+      "omission_note": "未明确说明玄德赴襄阳是受刘表邀约及刘表称病的安排背景",
+      "classification": "material",
+      "reason": "刘表称病并让刘备代为待客，是玄德赴襄阳及蔡瑁得以借宴设局的直接背景；缺失这一邀约与安排会削弱后续陷阱的因果链。",
+      "required_fix": "明确说明刘表派人邀玄德赴襄阳，因自称气疾不能出席，命刘备代为主持宴会接待，蔡瑁遂借此设局。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“刘表称病，蔡瑁借宴设局”容易让人误解为刘表主动参与设局；原文中主要是蔡瑁借刘表称病和宴会谋害刘备，刘表并未明确同谋",
+      "classification": "material",
+      "reason": "可能错误改变刘表在谋害刘备事件中的身份和因果关系，使读者误以为刘表主动参与设局。",
+      "required_fix": "改为“刘表称病，蔡瑁借此安排宴会设局谋害玄德”，明确设局者是蔡瑁，刘表并未明确同谋。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 335,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 7.5,
+        "readability": 8,
+        "material_omissions": [
+          "未交代刘琦与刘琮的具体继承困境：刘琦为前妻陈氏所生，虽贤却柔懦；刘琮为蔡氏所生而较聪明，废长立幼违礼，立长又恐蔡氏族中掌军生乱。这削弱了刘表犹豫及蔡氏敌视玄德的动机。",
+          "未交代伊籍在玄德赴新野前曾因的卢妨主而出面劝告，并因此与玄德常往来，削弱了伊籍后来连夜报信的关系铺垫。",
+          "未交代跃过檀溪后蔡瑁追至溪边，假称无害并欲取弓箭，玄德遂向西南逃走；这省略了结尾冲突、蔡瑁的进一步行动及赵云赶到后的追讨悬念。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“又为刘琦、刘琮立嗣不决”搭配生硬且语义含混，宜改为“又因刘琦、刘琮的继承问题犹豫不决”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 395,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 381,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.0,
+        "readability": 8.2,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "文本约395个CJK字符，超过要求的210-390字符上限。",
+          "“表为刘琦、刘琮谁继承犹豫”表达不自然。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 4,
+      "candidate_cjk": 373,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

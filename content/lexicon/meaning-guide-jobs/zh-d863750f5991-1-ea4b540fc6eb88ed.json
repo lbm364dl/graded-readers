@@ -1,0 +1,31 @@
+{
+  "id": "zh-d863750f5991-1-ea4b540fc6eb88ed",
+  "entry_id": "zh-d863750f5991-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d863750f5991-1",
+      "headword": "到任",
+      "kind": "construction",
+      "reading": "dàorèn",
+      "senses": [
+        {
+          "id": "zh-d863750f5991-1-s1",
+          "definition": "arrive to take up an official post"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刚到任，他就在城中四门设置十多根五色棒。",
+        "gloss": "to take office",
+        "sense_id": "zh-d863750f5991-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "51b0807878c1c6fcd96691446b663e25d672e4a8cfdb0d9d301d3631d7a43995"
+}

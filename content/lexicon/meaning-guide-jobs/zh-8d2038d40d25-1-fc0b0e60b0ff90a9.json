@@ -1,0 +1,36 @@
+{
+  "id": "zh-8d2038d40d25-1-fc0b0e60b0ff90a9",
+  "entry_id": "zh-8d2038d40d25-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8d2038d40d25-1",
+      "headword": "龚景",
+      "kind": "name",
+      "reading": "Gōng Jǐng",
+      "senses": [
+        {
+          "id": "zh-8d2038d40d25-1-s1",
+          "definition": "Gong Jing, a person's name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，青州太守龚景来信求救，说黄巾军围城，城快守不住了。",
+        "gloss": "Gong Jing",
+        "sense_id": "zh-8d2038d40d25-1-s1"
+      },
+      {
+        "sentence": "龚景又带乡勇出城相助，青州之围终于解开。",
+        "gloss": "Gong Jing",
+        "sense_id": "zh-8d2038d40d25-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "81434ca6baa8185e36d67ad0776c0f8e7d987d6728e54236a0f407614d8a2b90"
+}

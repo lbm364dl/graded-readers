@@ -1,0 +1,32 @@
+{
+  "id": "ja-3531487c645d7b13-dc6ad92c18eb72ea",
+  "entry_id": "ja-3531487c645d7b13",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3531487c645d7b13",
+      "headword": "残る",
+      "reading": "のこる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-3531487c645d7b13-1",
+          "definition": "to remain; be left"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ただ、書生の掌の上に乗せられ、ふわりと持ち上げられた感じが残っている。",
+        "gloss": "remains; is left",
+        "sense_id": "ja-3531487c645d7b13-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a5489db9a20d1407468acaccee69ee8c3703c897da0aafb7e568b32cdf8436cd"
+}

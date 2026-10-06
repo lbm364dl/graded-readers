@@ -1,0 +1,31 @@
+{
+  "id": "zh-341533806f14-1-078a8365d83fc7ff",
+  "entry_id": "zh-341533806f14-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-341533806f14-1",
+      "headword": "震惊",
+      "kind": "word",
+      "reading": "zhènjīng",
+      "senses": [
+        {
+          "id": "zh-341533806f14-1-s1",
+          "definition": "to be shocked"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝震惊得倒下，身边的人急忙把他送入宫中，百官也赶快躲开。",
+        "gloss": "to be shocked",
+        "sense_id": "zh-341533806f14-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bb93b024a6726420f2ebc4268262e7c6a16ac8efbe6854227641cb28ba89a963"
+}

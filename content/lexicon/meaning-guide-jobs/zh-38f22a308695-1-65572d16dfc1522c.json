@@ -1,0 +1,31 @@
+{
+  "id": "zh-38f22a308695-1-65572d16dfc1522c",
+  "entry_id": "zh-38f22a308695-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-38f22a308695-1",
+      "headword": "学会",
+      "kind": "construction",
+      "reading": "xuéhuì",
+      "senses": [
+        {
+          "id": "zh-38f22a308695-1-s1",
+          "definition": "to learn to do something; to acquire the ability to do something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角日夜学习，学会呼风唤雨，自称太平道人。",
+        "gloss": "to learn to",
+        "sense_id": "zh-38f22a308695-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4ffba4f0fb2316dbb1d61a45d8f6bfc023a285073328d7fe9617249b7f5a245a"
+}

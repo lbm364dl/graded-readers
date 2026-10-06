@@ -1,0 +1,31 @@
+{
+  "id": "zh-4fd955dfde48-1-f9e2d42788cfcd4f",
+  "entry_id": "zh-4fd955dfde48-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4fd955dfde48-1",
+      "headword": "家贫",
+      "kind": "word",
+      "reading": "jiāpín",
+      "senses": [
+        {
+          "id": "zh-4fd955dfde48-1-s1",
+          "definition": "be poor; have a poor household"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备家贫，平时靠卖鞋、织席生活，但心里有大志。",
+        "gloss": "be poor",
+        "sense_id": "zh-4fd955dfde48-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "00f166aa977cfbf9961bbbb164006e779f33ce693f50dabfa48edbecc4d8857e"
+}

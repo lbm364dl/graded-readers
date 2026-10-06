@@ -1,0 +1,32 @@
+{
+  "id": "ja-680e9d74f9c0562f-47ffdfd438876f2b",
+  "entry_id": "ja-680e9d74f9c0562f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-680e9d74f9c0562f",
+      "headword": "出来事",
+      "reading": "できごと",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-680e9d74f9c0562f-1",
+          "definition": "event; incident"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "白君は涙を流しながら、この出来事を吾輩に話した。",
+        "gloss": "event; incident",
+        "sense_id": "ja-680e9d74f9c0562f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9121db9127bb32df13631ef3d8ba3f5d052d516b0f043df415cbc288406e5e5c"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-3bb37d3623d53867-ae39a0e143956d5d",
+  "entry_id": "ja-3bb37d3623d53867",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3bb37d3623d53867",
+      "headword": "良い",
+      "reading": "よい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-3bb37d3623d53867-1",
+          "definition": "Good; preferable."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "鼠をとるより、寝ている方がよいと思った。",
+        "gloss": "better; preferable",
+        "sense_id": "ja-3bb37d3623d53867-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3ff92bc01c293e3e60422fdb3b2f8a96e165f5b05ab530f1ab8cd308e48a9f29"
+}

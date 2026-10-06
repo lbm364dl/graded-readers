@@ -1,0 +1,31 @@
+{
+  "id": "zh-53edf1f64603-1-682b043c1b9ffcc5",
+  "entry_id": "zh-53edf1f64603-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-53edf1f64603-1",
+      "headword": "不利",
+      "kind": "word",
+      "reading": "bú lì",
+      "senses": [
+        {
+          "id": "zh-53edf1f64603-1-s1",
+          "definition": "unfavorable; going badly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军战事不利，退入长社，用草扎营。",
+        "gloss": "unfavorable",
+        "sense_id": "zh-53edf1f64603-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "238a39ad2b549dd8550f10703118e35a2ace9c08560acc72fefce0927448c37f"
+}

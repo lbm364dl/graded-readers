@@ -1,0 +1,37 @@
+{
+  "id": "ja-5b55176eacae762e-8173a2f4b48153fe",
+  "entry_id": "ja-5b55176eacae762e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5b55176eacae762e",
+      "headword": "あまりにも",
+      "reading": "あまりにも",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5b55176eacae762e-1",
+          "definition": "excessively; too much"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "顔の真ん中が、あまりにも突き出ている。",
+        "gloss": "too much; excessively",
+        "sense_id": "ja-5b55176eacae762e-1"
+      },
+      {
+        "sentence": "それまでいた所と違い、そこはあまりにも明るく、目を開けていられないほどだった。",
+        "gloss": "far too; excessively",
+        "sense_id": "ja-5b55176eacae762e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6ee4cbe687ecd8aa207014260cdd610e8a92806cafd39bd8b2f388610625f46e"
+}

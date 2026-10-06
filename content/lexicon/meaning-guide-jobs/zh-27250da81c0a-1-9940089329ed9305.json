@@ -1,0 +1,31 @@
+{
+  "id": "zh-27250da81c0a-1-9940089329ed9305",
+  "entry_id": "zh-27250da81c0a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-27250da81c0a-1",
+      "headword": "先",
+      "kind": "word",
+      "reading": "xiān",
+      "senses": [
+        {
+          "id": "zh-27250da81c0a-1-s1",
+          "definition": "first; before doing something else"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植被押走后，关羽建议先回涿郡，刘备同意了。",
+        "gloss": "first",
+        "sense_id": "zh-27250da81c0a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "33d8359b4e8690552849c83e700660931149d8e7278b421116cfe72786f9c908"
+}

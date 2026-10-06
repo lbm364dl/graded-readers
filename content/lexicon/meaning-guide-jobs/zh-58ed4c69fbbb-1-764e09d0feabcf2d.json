@@ -1,0 +1,31 @@
+{
+  "id": "zh-58ed4c69fbbb-1-764e09d0feabcf2d",
+  "entry_id": "zh-58ed4c69fbbb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-58ed4c69fbbb-1",
+      "headword": "接着",
+      "kind": "word",
+      "reading": "jiēzhe",
+      "senses": [
+        {
+          "id": "zh-58ed4c69fbbb-1-s1",
+          "definition": "then; next, after that"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "接着，他们在园中喝酒。",
+        "gloss": "then",
+        "sense_id": "zh-58ed4c69fbbb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4c4af5edc0fcf9527d0f6a7efa1c2df1e7e5c815af6bc01995d36bdcb7356d8a"
+}

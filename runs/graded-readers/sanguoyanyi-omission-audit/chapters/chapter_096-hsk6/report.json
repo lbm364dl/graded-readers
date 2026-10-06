@@ -1,0 +1,77 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_096-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1110,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "原文写作“郭准”，改为“郭淮”；若严格以原文为准，这是人物姓名改动。",
+      "classification": "material",
+      "reason": "接受场景将原文中的“郭准”改为“郭淮”，属于人物姓名错误，可能造成身份识别偏差。",
+      "required_fix": "将“命郭淮、张郃守长安”改为“命郭准、张郃守长安”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "原文写作“郭准”，改为“郭淮”；若严格以原文为准，这是人物姓名改动。",
+      "classification": "material",
+      "reason": "接受场景将原文中的“郭准”改为“郭淮”，属于人物姓名错误，可能造成身份识别偏差。",
+      "required_fix": "将“命郭淮、张郃守长安”改为“命郭准、张郃守长安”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1518,
+      "review": {
+        "source_fidelity": 7.8,
+        "naturalness": 7.7,
+        "readability": 8.5,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“贾逵警告周鲂可能设诈”将贾逵的警告对象写成周鲂；原文是贾逵向曹休指出周鲂可能诈降。",
+          "原文只是将贾逵的兵留在营中调用，未说把贾逵本人留在营中；且后文明确写贾逵率军救出曹休。",
+          "“又命周鲂继续引曹休前进”将行动命令错误归给陆逊；原文是曹休命周鲂引兵前进。"
+        ],
+        "language_problems": [
+          "“贾逵警告周鲂可能设诈”语义关系含混且易被理解为贾逵警告周鲂本人。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1110,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

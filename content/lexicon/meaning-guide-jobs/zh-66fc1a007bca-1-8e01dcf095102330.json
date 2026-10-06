@@ -1,0 +1,31 @@
+{
+  "id": "zh-66fc1a007bca-1-8e01dcf095102330",
+  "entry_id": "zh-66fc1a007bca-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-66fc1a007bca-1",
+      "headword": "这种",
+      "kind": "word",
+      "reading": "zhèzhǒng",
+      "senses": [
+        {
+          "id": "zh-66fc1a007bca-1-s1",
+          "definition": "this kind of; this sort of"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "窦武、陈蕃于是商量除掉宦官，想改变这种局面。",
+        "gloss": "this kind of",
+        "sense_id": "zh-66fc1a007bca-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8fa2ef58951366caa0c654f91a09e516a535d5d689e75bdce1545a6615f1a034"
+}

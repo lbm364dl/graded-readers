@@ -1,0 +1,31 @@
+{
+  "id": "zh-b8a694b2df6d-1-e2b82f05e3f93e23",
+  "entry_id": "zh-b8a694b2df6d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b8a694b2df6d-1",
+      "headword": "起来",
+      "kind": "construction",
+      "reading": "qǐlai",
+      "senses": [
+        {
+          "id": "zh-b8a694b2df6d-1-s1",
+          "definition": "to rise; to rise up"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝信任张让，叫他“阿父”，朝政逐渐败坏，天下人心想要作乱，盗贼纷纷起来。",
+        "gloss": "to rise up",
+        "sense_id": "zh-b8a694b2df6d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "95bf14b08f1319d17b4c9aa4474b885e137f1957f0014e7feffa880af3be2af3"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-618bd870cda3-1-851975a51001f959",
+  "entry_id": "zh-618bd870cda3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-618bd870cda3-1",
+      "headword": "如今",
+      "kind": "word",
+      "reading": "rújīn",
+      "senses": [
+        {
+          "id": "zh-618bd870cda3-1-s1",
+          "definition": "now; nowadays"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "如今听说这里招军破贼，便来投军。",
+        "gloss": "now; nowadays",
+        "sense_id": "zh-618bd870cda3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "51a649881756866393302e77915beb0c2db863ff796548017ab6aa04abdceeec"
+}

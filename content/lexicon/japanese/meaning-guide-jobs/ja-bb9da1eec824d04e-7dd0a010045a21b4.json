@@ -1,0 +1,32 @@
+{
+  "id": "ja-bb9da1eec824d04e-7dd0a010045a21b4",
+  "entry_id": "ja-bb9da1eec824d04e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bb9da1eec824d04e",
+      "headword": "外",
+      "reading": "そと",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-bb9da1eec824d04e-1",
+          "definition": "Outside; the exterior or an area beyond an enclosed space."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "女の人は吾輩を何度も外へ出しましたが、吾輩は台所へ入りました。",
+        "gloss": "outside",
+        "sense_id": "ja-bb9da1eec824d04e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0dd8114be6fbdfec578eb7fa274b46d1b7ab32a083a59a59895107d6da028512"
+}

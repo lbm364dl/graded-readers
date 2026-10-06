@@ -1,0 +1,32 @@
+{
+  "id": "ja-daba390b8e7b3f5f-c7d98503d28c7964",
+  "entry_id": "ja-daba390b8e7b3f5f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-daba390b8e7b3f5f",
+      "headword": "含む",
+      "reading": "ふくむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-daba390b8e7b3f5f-1",
+          "definition": "to contain; to include"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は黄を含んだ淡い灰色で、黒い斑がある。",
+        "gloss": "containing; including",
+        "sense_id": "ja-daba390b8e7b3f5f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fa6af69b50e5968c0da1203fa59f79d597a9f1d0a9948cf63ec3fce9f549a07a"
+}

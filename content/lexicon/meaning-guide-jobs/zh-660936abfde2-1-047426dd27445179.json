@@ -1,0 +1,31 @@
+{
+  "id": "zh-660936abfde2-1-047426dd27445179",
+  "entry_id": "zh-660936abfde2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-660936abfde2-1",
+      "headword": "五六年",
+      "kind": "word",
+      "reading": "wǔ liù nián",
+      "senses": [
+        {
+          "id": "zh-660936abfde2-1-s1",
+          "definition": "five or six years"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "那人叫关羽，曾因杀了当地一个仗势欺人的人，逃难了五六年。",
+        "gloss": "five or six years",
+        "sense_id": "zh-660936abfde2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7c5177d638b9990bbd90c3da95daf1e0cf5f37b93c8758d3a7b3c19f2b7afd6a"
+}

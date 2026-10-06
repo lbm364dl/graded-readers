@@ -1,0 +1,99 @@
+{
+  "id": "zh-4d5f7e15c8a5-1-f3833dba884fe6a9",
+  "entry_id": "zh-4d5f7e15c8a5-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-4d5f7e15c8a5-1",
+      "headword": "出",
+      "kind": "word",
+      "reading": "chū",
+      "senses": [
+        {
+          "id": "zh-4d5f7e15c8a5-1-s1",
+          "definition": "go or come out of a place, area, or position"
+        },
+        {
+          "id": "zh-4d5f7e15c8a5-1-s2",
+          "definition": "exert or put forth"
+        },
+        {
+          "id": "zh-4d5f7e15c8a5-1-s3",
+          "definition": "send out; dispatch"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备骑马出阵，关羽在左，张飞在右。",
+        "gloss": "to go out",
+        "sense_id": "zh-4d5f7e15c8a5-1-s1"
+      },
+      {
+        "sentence": "龚景又带乡勇出城相助，青州之围终于解开。",
+        "gloss": "go out of",
+        "sense_id": "zh-4d5f7e15c8a5-1-s1"
+      },
+      {
+        "sentence": "随后，一个人厉声问：“大丈夫不能为国家出力，为什么在这里长叹？",
+        "gloss": "exert; put forth",
+        "sense_id": "zh-4d5f7e15c8a5-1-s2"
+      },
+      {
+        "sentence": "程远志大怒，命邓茂出战。",
+        "gloss": "to go out",
+        "sense_id": "zh-4d5f7e15c8a5-1-s1"
+      },
+      {
+        "sentence": "”关羽带一千人埋伏在山左，张飞带一千人埋伏在山右，等信号一起出兵。",
+        "gloss": "to send out",
+        "sense_id": "zh-4d5f7e15c8a5-1-s3"
+      },
+      {
+        "sentence": "龚景率乡勇出城助战，刘备解开了青州之围。",
+        "gloss": "to go out of",
+        "sense_id": "zh-4d5f7e15c8a5-1-s1"
+      },
+      {
+        "sentence": "张飞说：“我颇有资财，愿意出钱招募乡勇，与你一同做大事。",
+        "gloss": "to put up",
+        "sense_id": "zh-4d5f7e15c8a5-1-s2"
+      },
+      {
+        "sentence": "程远志大怒，派邓茂出战。",
+        "gloss": "to go into battle",
+        "sense_id": "zh-4d5f7e15c8a5-1-s1"
+      },
+      {
+        "sentence": "龚景率民兵出城助战，黄巾军死伤惨重，最终解开了青州之围。",
+        "gloss": "go out",
+        "sense_id": "zh-4d5f7e15c8a5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-4d5f7e15c8a5-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "出 means to go or come out of a place, area, or position.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "出",
+        "contribution_en": "Expresses movement out of a place, area, or position.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "6698dfc39a26fcdaef62c34d0857510cc5ad26c83a56de103199a5d3a9b13967",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4dd6f6246ba90a50246c0808c299943f3578cd3bbb0999d00f99e3b73d82fd0b"
+}

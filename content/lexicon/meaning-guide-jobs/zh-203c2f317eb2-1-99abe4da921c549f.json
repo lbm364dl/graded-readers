@@ -1,0 +1,31 @@
+{
+  "id": "zh-203c2f317eb2-1-99abe4da921c549f",
+  "entry_id": "zh-203c2f317eb2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-203c2f317eb2-1",
+      "headword": "背义忘恩",
+      "kind": "expression",
+      "reading": "bèi yì wàng ēn",
+      "senses": [
+        {
+          "id": "zh-203c2f317eb2-1-s1",
+          "definition": "to betray righteousness and forget kindness"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇天后土，实鉴此心；背义忘恩，天人共戮。",
+        "gloss": "betray righteousness and forget kindness",
+        "sense_id": "zh-203c2f317eb2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "093327d440e45096bcd48fc4ef9812d00ab33deea2541187e38398b00f795971"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-e2def32c4e3e18e2-aa99f84545d729ac",
+  "entry_id": "ja-e2def32c4e3e18e2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e2def32c4e3e18e2",
+      "headword": "何度",
+      "reading": "なんど",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e2def32c4e3e18e2-1",
+          "definition": "many times; on many occasions"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "おさんは吾輩をぶら下げ、「この宿なしの子猫は、何度外へ出しても台所へ上がって来て困ります」と訴えた。",
+        "gloss": "many times",
+        "sense_id": "ja-e2def32c4e3e18e2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "18021fe79c9b8882629a735cbbf4f3f14009002eca279cc4b44ba1b59ea8692f"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-596325bb66742f48-c557f08f4dd10146",
+  "entry_id": "ja-596325bb66742f48",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-596325bb66742f48",
+      "headword": "茶畠",
+      "reading": "ちゃばたけ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-596325bb66742f48-1",
+          "definition": "A tea field; land where tea is cultivated."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある日、暖かい茶畠で寝転びながら話していると、黒が尋ねた。",
+        "gloss": "tea field",
+        "sense_id": "ja-596325bb66742f48-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6e3e2d09c2cec267209b2fc05b53c66bf2d926b506a618663761ce20f5f8b26c"
+}

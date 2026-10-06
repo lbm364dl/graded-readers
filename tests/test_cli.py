@@ -1,4 +1,5 @@
 """Tests for CLI commands."""
+import json
 import pytest
 import subprocess
 import sys
@@ -50,3 +51,24 @@ class TestCLI:
         result = self._run_cli("coverage", str(text_file))
         assert result.returncode == 0
         assert "HSK 1" in result.stdout
+        assert "Lower" in result.stdout
+        assert "Band" in result.stdout
+        assert "Fit" in result.stdout
+
+    def test_analyze_annotated_reader_json(self, tmp_path):
+        reader_file = tmp_path / "reader.json"
+        reader_file.write_text(
+            json.dumps({"level": "HSK3", "text": "我学习经济", "segments": []}),
+            encoding="utf-8",
+        )
+        result = self._run_cli("analyze", str(reader_file), "-l", "3")
+        assert result.returncode == 0
+        assert "Target-band tokens: 1" in result.stdout
+        assert "Fits target band:   YES" in result.stdout
+
+    def test_analyze_rejects_json_without_text(self, tmp_path):
+        reader_file = tmp_path / "reader.json"
+        reader_file.write_text(json.dumps({"segments": []}), encoding="utf-8")
+        result = self._run_cli("analyze", str(reader_file), "-l", "3")
+        assert result.returncode != 0
+        assert "string 'text' field" in result.stderr

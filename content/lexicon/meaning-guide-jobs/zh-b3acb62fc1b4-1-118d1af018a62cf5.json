@@ -1,0 +1,31 @@
+{
+  "id": "zh-b3acb62fc1b4-1-118d1af018a62cf5",
+  "entry_id": "zh-b3acb62fc1b4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b3acb62fc1b4-1",
+      "headword": "领军",
+      "kind": "construction",
+      "reading": "lǐng jūn",
+      "senses": [
+        {
+          "id": "zh-b3acb62fc1b4-1-s1",
+          "definition": "to lead troops"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备等人领军前进，到了大兴山下，与黄巾军相遇。",
+        "gloss": "to lead troops",
+        "sense_id": "zh-b3acb62fc1b4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "10db13721fe33dc54bfb1f250d679e3e30434cf763c189fbe4c8da23c44c731d"
+}

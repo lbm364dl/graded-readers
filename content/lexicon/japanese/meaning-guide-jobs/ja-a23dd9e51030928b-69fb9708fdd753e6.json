@@ -1,0 +1,32 @@
+{
+  "id": "ja-a23dd9e51030928b-69fb9708fdd753e6",
+  "entry_id": "ja-a23dd9e51030928b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a23dd9e51030928b",
+      "headword": "才能",
+      "reading": "さいのう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a23dd9e51030928b-1",
+          "definition": "talent; ability"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "元来、主人は人より特に優れた才能があるわけではない。",
+        "gloss": "talent; ability",
+        "sense_id": "ja-a23dd9e51030928b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "87ffdb31d022c6d8ebecbc25396aac434c21ad2e2625d9d0e5383fa632676e88"
+}

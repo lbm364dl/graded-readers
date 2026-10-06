@@ -1,0 +1,45 @@
+{
+  "id": "zh-b1c57d1cf657-1-aac62653d66ce8ad",
+  "entry_id": "zh-b1c57d1cf657-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b1c57d1cf657-1",
+      "headword": "见",
+      "kind": "word",
+      "reading": "jiàn",
+      "senses": [
+        {
+          "id": "zh-b1c57d1cf657-1-s1",
+          "definition": "to see or perceive something"
+        },
+        {
+          "id": "zh-b1c57d1cf657-1-s2",
+          "definition": "to meet or go to see someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "秋七月又见彩虹，山岸裂开。",
+        "gloss": "appear; be seen",
+        "sense_id": "zh-b1c57d1cf657-1-s1"
+      },
+      {
+        "sentence": "他们又聚集五百多名乡勇，去见邹靖。",
+        "gloss": "to meet",
+        "sense_id": "zh-b1c57d1cf657-1-s2"
+      },
+      {
+        "sentence": "邹靖带他们见刘焉，刘焉认刘备为侄子。",
+        "gloss": "to meet",
+        "sense_id": "zh-b1c57d1cf657-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "57c76ff023a711452ab1b2e8f9cd3a6903d682851e68d57cdaf5f70f96fd79c6"
+}

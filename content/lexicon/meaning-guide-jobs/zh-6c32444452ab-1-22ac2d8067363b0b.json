@@ -1,0 +1,36 @@
+{
+  "id": "zh-6c32444452ab-1-22ac2d8067363b0b",
+  "entry_id": "zh-6c32444452ab-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6c32444452ab-1",
+      "headword": "喜爱",
+      "kind": "word",
+      "reading": "xǐ'ài",
+      "senses": [
+        {
+          "id": "zh-6c32444452ab-1-s1",
+          "definition": "like; be fond of"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他喜爱结交有本领的伙伴。",
+        "gloss": "to like",
+        "sense_id": "zh-6c32444452ab-1-s1"
+      },
+      {
+        "sentence": "大汉叫张飞，住在涿郡，有田，卖酒杀猪，也喜爱结交豪杰。",
+        "gloss": "like",
+        "sense_id": "zh-6c32444452ab-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "48a45750a7c6a284201ed264e0bab8c649f001a86bb8693f35fe59ebce9f2f95"
+}

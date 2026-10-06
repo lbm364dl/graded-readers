@@ -1,0 +1,31 @@
+{
+  "id": "zh-f4fd4334db98-1-ceceebbd7b9ca2b1",
+  "entry_id": "zh-f4fd4334db98-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f4fd4334db98-1",
+      "headword": "饮",
+      "kind": "word",
+      "reading": "yǐn",
+      "senses": [
+        {
+          "id": "zh-f4fd4334db98-1-s1",
+          "definition": "to drink"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "正饮之间，一个大汉推车到店门口歇下，入店便叫酒保倒酒，说要赶进城投军。",
+        "gloss": "to drink",
+        "sense_id": "zh-f4fd4334db98-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "707d5a1ade8191694d8b876c694048d5a64f74bd30a7ec60be23c67b61e60634"
+}

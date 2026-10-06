@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_069-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1216,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将鲁肃写成“病故”，原文只说其身故，未说明病因。",
+      "classification": "material",
+      "reason": "“病故”新增了原文没有的死亡原因，属于真实的无依据事实添加。",
+      "required_fix": "将“鲁肃病故”改为“鲁肃身故”或“鲁肃去世”，不说明病因。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将鲁肃写成“病故”，原文只说其身故，未说明病因。",
+      "classification": "material",
+      "reason": "“病故”新增了原文没有的死亡原因，属于真实的无依据事实添加。",
+      "required_fix": "将“鲁肃病故”改为“鲁肃身故”或“鲁肃去世”，不说明病因。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1216,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

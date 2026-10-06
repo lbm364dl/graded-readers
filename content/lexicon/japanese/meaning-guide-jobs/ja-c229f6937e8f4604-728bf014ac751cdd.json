@@ -1,0 +1,32 @@
+{
+  "id": "ja-c229f6937e8f4604-728bf014ac751cdd",
+  "entry_id": "ja-c229f6937e8f4604",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c229f6937e8f4604",
+      "headword": "水彩絵具",
+      "reading": "すいさいえのぐ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c229f6937e8f4604-1",
+          "definition": "watercolor paint"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "watercolor paints",
+        "sense_id": "ja-c229f6937e8f4604-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7ffddf55d6692aaabe4c97fc094063a41b5d27679797ff91791eeb9dc13018b5"
+}

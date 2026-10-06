@@ -1,0 +1,36 @@
+{
+  "id": "zh-795cfc96d4b5-1-48a026ac0f1e53b1",
+  "entry_id": "zh-795cfc96d4b5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-795cfc96d4b5-1",
+      "headword": "因为",
+      "kind": "word",
+      "reading": "yīnwèi",
+      "senses": [
+        {
+          "id": "zh-795cfc96d4b5-1-s1",
+          "definition": "because; for the reason that"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他因为没有办法为国出力，长长地叹气。",
+        "gloss": "because",
+        "sense_id": "zh-795cfc96d4b5-1-s1"
+      },
+      {
+        "sentence": "卢植因为拒绝行贿，被人诬陷，押回京城。",
+        "gloss": "because",
+        "sense_id": "zh-795cfc96d4b5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ea499ba7878186cfe424240240bea4917f943eab44daf563bd1bb521e17175fe"
+}

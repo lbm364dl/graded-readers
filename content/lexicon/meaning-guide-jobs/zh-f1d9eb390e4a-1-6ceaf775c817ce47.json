@@ -1,0 +1,31 @@
+{
+  "id": "zh-f1d9eb390e4a-1-6ceaf775c817ce47",
+  "entry_id": "zh-f1d9eb390e4a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f1d9eb390e4a-1",
+      "headword": "弟",
+      "kind": "word",
+      "reading": "dì",
+      "senses": [
+        {
+          "id": "zh-f1d9eb390e4a-1-s1",
+          "definition": "younger brother; younger male sibling"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "誓毕，刘备为兄，关羽次之，张飞为弟。",
+        "gloss": "younger brother",
+        "sense_id": "zh-f1d9eb390e4a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "836d511c0436815c71a18468a28cdd0591ef0af4d5215b0b13796b60a211840f"
+}

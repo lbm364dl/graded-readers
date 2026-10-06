@@ -1,0 +1,31 @@
+{
+  "id": "zh-ce11603d2076-1-41a8bd5aa890ade7",
+  "entry_id": "zh-ce11603d2076-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ce11603d2076-1",
+      "headword": "营地",
+      "kind": "word",
+      "reading": "yíngdì",
+      "senses": [
+        {
+          "id": "zh-ce11603d2076-1-s1",
+          "definition": "a camp; place where troops are stationed"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人救下董卓，把他带回营地。",
+        "gloss": "camp",
+        "sense_id": "zh-ce11603d2076-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b42c3685bbff0027f7b29f4153eb27c18911644788a37201bc29065038160242"
+}

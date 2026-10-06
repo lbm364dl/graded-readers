@@ -1,0 +1,41 @@
+{
+  "id": "zh-2987ed96e330-1-a6423ac7317fc386",
+  "entry_id": "zh-2987ed96e330-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2987ed96e330-1",
+      "headword": "一千",
+      "kind": "word",
+      "reading": "yìqiān",
+      "senses": [
+        {
+          "id": "zh-2987ed96e330-1-s1",
+          "definition": "one thousand"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备让关羽带一千人到山左，张飞带一千人到山右，在那里埋伏，以鸣金为号。",
+        "gloss": "one thousand",
+        "sense_id": "zh-2987ed96e330-1-s1"
+      },
+      {
+        "sentence": "二人了解后很高兴，赠送五十匹好马、金银五百两和铁一千斤，帮助三人打造兵器。",
+        "gloss": "one thousand",
+        "sense_id": "zh-2987ed96e330-1-s1"
+      },
+      {
+        "sentence": "”他让关羽带一千人埋伏在山左，张飞带一千人埋伏在山右，听到信号就出来帮助。",
+        "gloss": "one thousand",
+        "sense_id": "zh-2987ed96e330-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5b8979ee3de4c4b0561214186fd7d64b0eb05fb0b72803910d316b7a4d0d0117"
+}

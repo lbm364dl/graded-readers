@@ -1,0 +1,31 @@
+{
+  "id": "zh-0168b4447588-1-ae8599fb1ca71cdf",
+  "entry_id": "zh-0168b4447588-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0168b4447588-1",
+      "headword": "进犯",
+      "kind": "word",
+      "reading": "jìnfàn",
+      "senses": [
+        {
+          "id": "zh-0168b4447588-1-s1",
+          "definition": "to invade; to attack a place or territory"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角一军进犯幽州。",
+        "gloss": "to invade",
+        "sense_id": "zh-0168b4447588-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "05c3b546a55808e452144d4fc3d6bc3e39c89065f17bd48254b501ebdd5a4089"
+}

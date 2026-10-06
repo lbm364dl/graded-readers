@@ -1,0 +1,31 @@
+{
+  "id": "zh-abee4974732a-1-6d5537ab1b8e3854",
+  "entry_id": "zh-abee4974732a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-abee4974732a-1",
+      "headword": "建议",
+      "kind": "word",
+      "reading": "jiànyì",
+      "senses": [
+        {
+          "id": "zh-abee4974732a-1-s1",
+          "definition": "a suggestion or piece of advice"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "幽州的兵不够，刘焉听从邹靖的建议。",
+        "gloss": "advice",
+        "sense_id": "zh-abee4974732a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4101887107257ce63a9884b1121ac6bb86e0fa2cc6590cb1862bb1b98f9dfaf3"
+}

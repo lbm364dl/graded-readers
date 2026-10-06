@@ -1,0 +1,32 @@
+{
+  "id": "ja-f6b11d6c29101f33-4b45dba71b4aae31",
+  "entry_id": "ja-f6b11d6c29101f33",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f6b11d6c29101f33",
+      "headword": "いたち",
+      "reading": "いたち",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f6b11d6c29101f33-1",
+          "definition": "weasel"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "weasel",
+        "sense_id": "ja-f6b11d6c29101f33-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c43961d43cfbd852e38b1f0f7ae278973037d360e9b09fb9096e97c6b27aabff"
+}

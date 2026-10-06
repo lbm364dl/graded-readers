@@ -1,0 +1,37 @@
+{
+  "id": "ja-9595057b8506e259-61b069cd5af5c492",
+  "entry_id": "ja-9595057b8506e259",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9595057b8506e259",
+      "headword": "適当",
+      "reading": "てきとう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9595057b8506e259-1",
+          "definition": "Suitable or appropriate; depending on context, casual or arbitrary."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は怖くなり、適当に話を終えて家へ帰った。",
+        "gloss": "casually; appropriately",
+        "sense_id": "ja-9595057b8506e259-1"
+      },
+      {
+        "sentence": "私が適当に作った話だ。",
+        "gloss": "suitably; casually",
+        "sense_id": "ja-9595057b8506e259-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ab66e3dda338414b41dc4fa55109dad830c65a677b8e087d41c30c9c9991837e"
+}

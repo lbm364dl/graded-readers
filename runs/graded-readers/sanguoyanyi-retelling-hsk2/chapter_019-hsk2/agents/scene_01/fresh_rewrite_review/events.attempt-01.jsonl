@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff361-ece4-77b1-8046-e83429ae6f11"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.94,\"readability\":0.93,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[],\"language_problems\":[\"篇幅明显超过500字目标的约70%—130%范围，压缩不足。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":31994,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":867,"reasoning_output_tokens":786}}

@@ -1,0 +1,120 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_001-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1359,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了灾异征兆及其具体描写",
+      "classification": "material",
+      "reason": "这些征兆引发了皇帝询问灾异之由，并直接铺垫蔡邕上疏及其遭陷害，省略后削弱了相关因果链。",
+      "required_fix": "补回主要灾异征兆及其引发皇帝询问、蔡邕上疏的情节。"
+    },
+    {
+      "omission_note": "省略了刘备、关羽、张飞的外貌和部分身世细节",
+      "classification": "material",
+      "reason": "三人的标志性外貌、刘备的宗族与成长经历、关羽和张飞的背景共同构成重要身份与人物刻画，缺失会削弱三人形象及其关系基础。",
+      "required_fix": "补回三人的关键外貌描写及与身份、性格和结识缘由相关的身世细节。"
+    },
+    {
+      "omission_note": "省略了张角三兄弟的部分组织和起事准备细节",
+      "classification": "material",
+      "reason": "这些内容说明黄巾军的组织规模、动员方式和起事准备，补充了张角势力迅速扩大及最终起兵的过程与动因。",
+      "required_fix": "补回三十六方的组织规模、门上书写甲子、私造黄旗定期起事及张角与二弟筹划等关键细节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了灾异征兆及其具体描写",
+      "classification": "material",
+      "reason": "这些征兆引发了皇帝询问灾异之由，并直接铺垫蔡邕上疏及其遭陷害，省略后削弱了相关因果链。",
+      "required_fix": "补回主要灾异征兆及其引发皇帝询问、蔡邕上疏的情节。"
+    },
+    {
+      "omission_note": "省略了刘备、关羽、张飞的外貌和部分身世细节",
+      "classification": "material",
+      "reason": "三人的标志性外貌、刘备的宗族与成长经历、关羽和张飞的背景共同构成重要身份与人物刻画，缺失会削弱三人形象及其关系基础。",
+      "required_fix": "补回三人的关键外貌描写及与身份、性格和结识缘由相关的身世细节。"
+    },
+    {
+      "omission_note": "省略了张角三兄弟的部分组织和起事准备细节",
+      "classification": "material",
+      "reason": "这些内容说明黄巾军的组织规模、动员方式和起事准备，补充了张角势力迅速扩大及最终起兵的过程与动因。",
+      "required_fix": "补回三十六方的组织规模、门上书写甲子、私造黄旗定期起事及张角与二弟筹划等关键细节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1512,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 7.5,
+        "readability": 8.2,
+        "material_omissions": [
+          "省略了张角与张宝、张梁商议“民心已顺、应乘势取天下”的起事动机与筹划，未完整补回所要求的关键准备细节。"
+        ],
+        "unsupported_additions": [
+          "将原文较笼统的桓、灵二帝致乱改写为二帝“昏庸无能”；结尾新增“乱世也将更加深重”的因果性判断。"
+        ],
+        "distortions": [
+          "将八州百姓家家侍奉张角改写为“纷纷归附”，强化成了普遍加入黄巾军的意思。"
+        ],
+        "language_problems": [
+          "“刘焉得知刘备的宗派”用词不当，宗派易被理解为宗教或政治派别，此处应指宗族身世或家世。",
+          "“威风堂堂”搭配不自然，原意应为“相貌堂堂、威风凛凛”。",
+          "“颍川又出现曹操”表达生硬，不如说明曹操率军赶到并截击败军清楚。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1612,
+      "review": {
+        "source_fidelity": 8.8,
+        "naturalness": 8.1,
+        "readability": 8.0,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "张角与张宝、张梁商议起事动机及筹划的内容被放在起兵之后以“此前”回补，且与前文已述的黄旗、约期、派唐州送信等细节重复，影响紧凑性和行文流畅度。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 1359,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

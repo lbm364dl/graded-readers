@@ -1,0 +1,36 @@
+{
+  "id": "zh-5c2c30a4fd95-1-a77b661dd21b9ade",
+  "entry_id": "zh-5c2c30a4fd95-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5c2c30a4fd95-1",
+      "headword": "助",
+      "kind": "word",
+      "reading": "zhù",
+      "senses": [
+        {
+          "id": "zh-5c2c30a4fd95-1-s1",
+          "definition": "assist; help"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "龚景率乡勇出城助战，刘备解开了青州之围。",
+        "gloss": "to assist",
+        "sense_id": "zh-5c2c30a4fd95-1-s1"
+      },
+      {
+        "sentence": "黄巾起义时，曹操率领五千名马步军到颍川助战。",
+        "gloss": "to assist",
+        "sense_id": "zh-5c2c30a4fd95-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e685f47570d9aa278d45cabf2762f95dc381a07e306253883586597d039b317d"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-38ea6826c9be-1-0dd4a246a2310242",
+  "entry_id": "zh-38ea6826c9be-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-38ea6826c9be-1",
+      "headword": "听从",
+      "kind": "word",
+      "reading": "tīngcóng",
+      "senses": [
+        {
+          "id": "zh-38ea6826c9be-1-s1",
+          "definition": "follow or heed (advice, instructions, or a person)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "幽州的兵不够，刘焉听从邹靖的建议。",
+        "gloss": "follow",
+        "sense_id": "zh-38ea6826c9be-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d37e9e4e7473fccb1846c78117226111720f51b6c7af003f7a606c84f8924627"
+}

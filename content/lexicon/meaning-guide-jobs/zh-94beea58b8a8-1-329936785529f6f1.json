@@ -1,0 +1,75 @@
+{
+  "id": "zh-94beea58b8a8-1-329936785529f6f1",
+  "entry_id": "zh-94beea58b8a8-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-94beea58b8a8-1",
+      "headword": "赶",
+      "kind": "word",
+      "reading": "gǎn",
+      "senses": [
+        {
+          "id": "zh-94beea58b8a8-1-s1",
+          "definition": "to hurry; to hasten"
+        },
+        {
+          "id": "zh-94beea58b8a8-1-s2",
+          "definition": "to drive or herd animals"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他进来要酒，说要赶进城投军。",
+        "gloss": "to hurry",
+        "sense_id": "zh-94beea58b8a8-1-s1"
+      },
+      {
+        "sentence": "他急忙带兵赶去，却发现黄巾军已经败散，战事已经结束。",
+        "gloss": "to hurry",
+        "sense_id": "zh-94beea58b8a8-1-s1"
+      },
+      {
+        "sentence": "有人来报，两位客人带着伙伴，赶着一群马来到庄上。",
+        "gloss": "to hurry",
+        "sense_id": "zh-94beea58b8a8-1-s2"
+      },
+      {
+        "sentence": "刘备接受命令，连夜赶路。",
+        "gloss": "to hurry",
+        "sense_id": "zh-94beea58b8a8-1-s1"
+      },
+      {
+        "sentence": "这时有人来报，两位客人带着随从，赶着一群马到了庄上。",
+        "gloss": "to drive; herd",
+        "sense_id": "zh-94beea58b8a8-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-94beea58b8a8-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "赶 means to hurry or hasten—to move or do something quickly.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "赶",
+        "contribution_en": "Expresses hurrying or hastening.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "5c0f91c954e29d158df64996281e6a1037b92ecee9d1d17ad4d1eb5a03f899d3",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e167c17597a8d0e4fccf150dc76eea8a602677ef2cc0f612fb0379456a344acc"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-2e9f01174398-1-c6f1c2fce8250725",
+  "entry_id": "zh-2e9f01174398-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2e9f01174398-1",
+      "headword": "依据",
+      "kind": "word",
+      "reading": "yījù",
+      "senses": [
+        {
+          "id": "zh-2e9f01174398-1-s1",
+          "definition": "use as the basis for; according to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备拜见皇甫嵩、朱俊，说明自己是依据卢植的意思来助战。",
+        "gloss": "according to",
+        "sense_id": "zh-2e9f01174398-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7bb499ce7fa37090a5b049e97c85d5a3b646ec16267b4abd7996045eaefa9f3b"
+}

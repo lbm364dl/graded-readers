@@ -1,0 +1,31 @@
+{
+  "id": "zh-1535021ac5c3-1-962db963dd253591",
+  "entry_id": "zh-1535021ac5c3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1535021ac5c3-1",
+      "headword": "侯览",
+      "kind": "name",
+      "reading": "Hóu Lǎn",
+      "senses": [
+        {
+          "id": "zh-1535021ac5c3-1-s1",
+          "definition": "Hou Lan, a personal name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来，张让、赵忠、封谞、段珪、曹节、侯览、蹇硕、程旷、夏恽、郭胜十人结党作恶，被称为十常侍。",
+        "gloss": "Hou Lan",
+        "sense_id": "zh-1535021ac5c3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3800c5826ddc2eaa30374edb7d7421b4ec1a6841e331192fc73fc6720be8e152"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-e7247b6f5625-1-f285481303eeaba2",
+  "entry_id": "zh-e7247b6f5625-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e7247b6f5625-1",
+      "headword": "正好",
+      "kind": "word",
+      "reading": "zhènghǎo",
+      "senses": [
+        {
+          "id": "zh-e7247b6f5625-1-s1",
+          "definition": "just right; at a suitable or favorable point"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞家后面有一座桃园，花开得正好。",
+        "gloss": "just right",
+        "sense_id": "zh-e7247b6f5625-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2c1b39f100483e0573c4aa1bf55a9497aee52db990d97c7b8e5c689b26986ed6"
+}

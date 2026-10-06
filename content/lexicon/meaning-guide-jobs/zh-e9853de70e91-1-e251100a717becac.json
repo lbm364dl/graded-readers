@@ -1,0 +1,31 @@
+{
+  "id": "zh-e9853de70e91-1-e251100a717becac",
+  "entry_id": "zh-e9853de70e91-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e9853de70e91-1",
+      "headword": "禁锢",
+      "kind": "word",
+      "reading": "jìngù",
+      "senses": [
+        {
+          "id": "zh-e9853de70e91-1-s1",
+          "definition": "to restrict or confine"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝禁锢善类，一贯崇信宦官。",
+        "gloss": "to confine",
+        "sense_id": "zh-e9853de70e91-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7f445f4f58eb85e33a080f01c9b68352ecf70a72942ab37f4e83c079fe737892"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff522-5d32-71a3-91d6-4610d92788e9"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.82,\"naturalness\":0.93,\"readability\":0.91,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“司马懿远远看见，以为蜀军还在”不准确：原文中司马懿看出这是空营，并确认营中无人后，才让张郃追击。\"],\"language_problems\":[\"篇幅明显超过300字目标的约70%—130%范围，压缩度不足。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":41777,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":607,"reasoning_output_tokens":477}}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-9e4b98f5277c-1-198a3bd1da42154e",
+  "entry_id": "zh-9e4b98f5277c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9e4b98f5277c-1",
+      "headword": "人少",
+      "kind": "construction",
+      "reading": "rén shǎo",
+      "senses": [
+        {
+          "id": "zh-9e4b98f5277c-1-s1",
+          "definition": "to have few people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备对关羽、张飞说：“我们人少，只有想个好主意，才能取胜。",
+        "gloss": "have few people",
+        "sense_id": "zh-9e4b98f5277c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "04afe5c0393f25ca43616115cafb54d7fc6c9bcb589ed24349bb32ac22618f75"
+}

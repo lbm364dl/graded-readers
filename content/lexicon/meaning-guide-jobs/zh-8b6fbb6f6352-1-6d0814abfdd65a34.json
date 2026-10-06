@@ -1,0 +1,31 @@
+{
+  "id": "zh-8b6fbb6f6352-1-6d0814abfdd65a34",
+  "entry_id": "zh-8b6fbb6f6352-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8b6fbb6f6352-1",
+      "headword": "曾经",
+      "kind": "word",
+      "reading": "céngjīng",
+      "senses": [
+        {
+          "id": "zh-8b6fbb6f6352-1-s1",
+          "definition": "once; at some time in the past"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他对邹靖说：“我曾经跟卢植学习，现在愿意去帮助他。",
+        "gloss": "once",
+        "sense_id": "zh-8b6fbb6f6352-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4e64124cec8fd27079bd6621bc3464fb498ab2b463f98f0f5d3e2922a4508d66"
+}

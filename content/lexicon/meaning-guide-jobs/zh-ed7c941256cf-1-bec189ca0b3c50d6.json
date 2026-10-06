@@ -1,0 +1,31 @@
+{
+  "id": "zh-ed7c941256cf-1-bec189ca0b3c50d6",
+  "entry_id": "zh-ed7c941256cf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ed7c941256cf-1",
+      "headword": "回京",
+      "kind": "construction",
+      "reading": "huíjīng",
+      "senses": [
+        {
+          "id": "zh-ed7c941256cf-1-s1",
+          "definition": "return to the capital"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷于是派董卓代替我，并押我回京问罪。",
+        "gloss": "return to the capital",
+        "sense_id": "zh-ed7c941256cf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ed49546d94ade470d76d71e160008710a78c73f5bf5e325c325c247e59f46fa0"
+}

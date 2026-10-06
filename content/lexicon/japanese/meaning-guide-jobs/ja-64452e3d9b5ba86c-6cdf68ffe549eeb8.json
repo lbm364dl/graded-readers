@@ -1,0 +1,52 @@
+{
+  "id": "ja-64452e3d9b5ba86c-6cdf68ffe549eeb8",
+  "entry_id": "ja-64452e3d9b5ba86c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-64452e3d9b5ba86c",
+      "headword": "だ",
+      "reading": "だ",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-64452e3d9b5ba86c-1",
+          "definition": "Copula used to state that something has a particular identity or quality."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で、それがたばこだと知った。",
+        "gloss": "is; am; are",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "広くはないが、日がよく入り、静かで気持ちのよい所だ。",
+        "gloss": "is; it is",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "「君は何だ」と言った。",
+        "gloss": "is; are",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "黒は「車屋の黒だ」と言った。",
+        "gloss": "is",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      },
+      {
+        "sentence": "黒は「人間は、格好のよい泥棒だ」と怒った。",
+        "gloss": "is; is a",
+        "sense_id": "ja-64452e3d9b5ba86c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3b19e9626d392fc6c5caf36d8c851460f63d93e19525f5aadb5c47a77c30a041"
+}

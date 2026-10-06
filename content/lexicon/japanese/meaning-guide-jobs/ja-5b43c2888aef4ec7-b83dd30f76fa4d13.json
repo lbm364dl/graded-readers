@@ -1,0 +1,32 @@
+{
+  "id": "ja-5b43c2888aef4ec7-b83dd30f76fa4d13",
+  "entry_id": "ja-5b43c2888aef4ec7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5b43c2888aef4ec7",
+      "headword": "奪う",
+      "reading": "うばう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5b43c2888aef4ec7-1",
+          "definition": "to take or seize something from someone, often by force"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが人間は、吾輩たちが見つけたごちそうを、いつも力で奪って平気な顔をしている。",
+        "gloss": "taking by force",
+        "sense_id": "ja-5b43c2888aef4ec7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e9a51e404309f363c3d40f8e452fec97b88adf594a7f4a8bb90a65a4e14fb28b"
+}

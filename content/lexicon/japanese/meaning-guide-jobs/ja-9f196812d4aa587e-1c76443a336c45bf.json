@@ -1,0 +1,32 @@
+{
+  "id": "ja-9f196812d4aa587e-1c76443a336c45bf",
+  "entry_id": "ja-9f196812d4aa587e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9f196812d4aa587e",
+      "headword": "こんな",
+      "reading": "こんな",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9f196812d4aa587e-1",
+          "definition": "such; this kind of"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その後、猫にはたくさん会ったが、こんな変な顔には一度も会わなかった。",
+        "gloss": "such; this kind of",
+        "sense_id": "ja-9f196812d4aa587e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "30e9c53408a0a6c6ae1a01652a723a43da807499868bf72622ca6387cbaf804f"
+}

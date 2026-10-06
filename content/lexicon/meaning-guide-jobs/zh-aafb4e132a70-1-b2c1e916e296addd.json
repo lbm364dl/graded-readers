@@ -1,0 +1,36 @@
+{
+  "id": "zh-aafb4e132a70-1-b2c1e916e296addd",
+  "entry_id": "zh-aafb4e132a70-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-aafb4e132a70-1",
+      "headword": "雄鸡",
+      "kind": "word",
+      "reading": "xióngjī",
+      "senses": [
+        {
+          "id": "zh-aafb4e132a70-1-s1",
+          "definition": "a male chicken"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来雌鸡变成雄鸡，黑气飞进温德殿，玉堂出现彩虹，五原山岸也崩裂。",
+        "gloss": "rooster",
+        "sense_id": "zh-aafb4e132a70-1-s1"
+      },
+      {
+        "sentence": "光和元年，雌鸡变成雄鸡。",
+        "gloss": "rooster",
+        "sense_id": "zh-aafb4e132a70-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7528e013ec1b921cc96ddb0dca9d56cd5fa29a071fbf897ed8e4665934be3081"
+}

@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_054-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1484,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了孔明送鲁肃时的警告、乔国老劝孙权将计就计正式招婿等细节；后人诗歌大多省略，符合压缩目标。",
+      "classification": "material",
+      "reason": "乔国老的劝说直接促成孙权将原本的诱捕计改为正式招婿，是婚事转为真实婚姻的关键因果；孔明送别时的警告虽较次要，但涉及其对荆州和两家关系的立场。诗歌省略不改变这些细节在情节中的作用。",
+      "required_fix": "补充孔明送鲁肃时的警告，并明确乔国老劝孙权为避免天下耻笑而正式招刘备为婿，促成国太相看及婚事转变。"
+    },
+    {
+      "omission_note": "省略了国太曾下令斩贾华、刘备出面劝阻的具体过程。",
+      "classification": "material",
+      "reason": "国太下令斩贾华以及刘备劝阻，表现了刘备为维护婚姻关系而缓和冲突的关键行为，并具体解释了贾华和伏兵为何被放走；省略后只保留了结果，损失了重要因果和人物刻画。",
+      "required_fix": "补充国太下令斩贾华，以及刘备以斩杀大将于亲事不利为由出面劝阻、乔国老随之相劝，国太才撤回命令的过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了孔明送鲁肃时的警告、乔国老劝孙权将计就计正式招婿等细节；后人诗歌大多省略，符合压缩目标。",
+      "classification": "material",
+      "reason": "乔国老的劝说直接促成孙权将原本的诱捕计改为正式招婿，是婚事转为真实婚姻的关键因果；孔明送别时的警告虽较次要，但涉及其对荆州和两家关系的立场。诗歌省略不改变这些细节在情节中的作用。",
+      "required_fix": "补充孔明送鲁肃时的警告，并明确乔国老劝孙权为避免天下耻笑而正式招刘备为婿，促成国太相看及婚事转变。"
+    },
+    {
+      "omission_note": "省略了国太曾下令斩贾华、刘备出面劝阻的具体过程。",
+      "classification": "material",
+      "reason": "国太下令斩贾华以及刘备劝阻，表现了刘备为维护婚姻关系而缓和冲突的关键行为，并具体解释了贾华和伏兵为何被放走；省略后只保留了结果，损失了重要因果和人物刻画。",
+      "required_fix": "补充国太下令斩贾华，以及刘备以斩杀大将于亲事不利为由出面劝阻、乔国老随之相劝，国太才撤回命令的过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1484,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

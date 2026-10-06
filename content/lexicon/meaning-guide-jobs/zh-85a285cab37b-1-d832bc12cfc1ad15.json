@@ -1,0 +1,31 @@
+{
+  "id": "zh-85a285cab37b-1-d832bc12cfc1ad15",
+  "entry_id": "zh-85a285cab37b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-85a285cab37b-1",
+      "headword": "胸口",
+      "kind": "word",
+      "reading": "xiōngkǒu",
+      "senses": [
+        {
+          "id": "zh-85a285cab37b-1-s1",
+          "definition": "the front area of the chest"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞挺丈八蛇矛刺中邓茂胸口，使他翻身落马。",
+        "gloss": "chest",
+        "sense_id": "zh-85a285cab37b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "35b95ba63a55aa95d6d06dba0aa4a7dd81af97e9f8898aac8a81578321eaaf94"
+}

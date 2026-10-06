@@ -1,0 +1,32 @@
+{
+  "id": "ja-5388342946416f10-42d8f42fe7252e0a",
+  "entry_id": "ja-5388342946416f10",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5388342946416f10",
+      "headword": "苦しくなる",
+      "reading": "くるしくなる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-5388342946416f10-1",
+          "definition": "to become painful or difficult"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どうも苦しくなって、吾輩はたいへん困った。",
+        "gloss": "becoming painful or difficult, and",
+        "sense_id": "ja-5388342946416f10-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8774178af0f3abe26fd64b460e8142b56d82c0479674963555989c98bd18ffeb"
+}

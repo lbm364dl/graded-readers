@@ -1,0 +1,185 @@
+{
+  "id": "ja-676e4c43d45cf9b6-8a4512e420b511a6",
+  "entry_id": "ja-676e4c43d45cf9b6",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-676e4c43d45cf9b6",
+      "headword": "から",
+      "reading": "から",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-676e4c43d45cf9b6-1",
+          "definition": "from a place or source; out of; through"
+        },
+        {
+          "id": "ja-676e4c43d45cf9b6-2",
+          "definition": "after a point in time"
+        },
+        {
+          "id": "ja-676e4c43d45cf9b6-3",
+          "definition": "because; since"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "from; out of",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "とても明るい所で、痛いので出てみると、吾輩はわらの上から笹原へ捨てられていた。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "人のにおいがする家を見つけ、こわれた竹垣の穴から中へ入った。",
+        "gloss": "from; through",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "女の人に台所から外へ何回も投げられたが、吾輩はまた入った。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "ある暖かい日の午後、昼ごはんの後で寝てから、吾輩は茶園を歩いた。",
+        "gloss": "after",
+        "sense_id": "ja-676e4c43d45cf9b6-2"
+      },
+      {
+        "sentence": "顔の真ん中から何かがひどく突き出ていて、その穴の中から時々ぷうぷうと煙を吹いた。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "目が回り、胸が悪くなったと思ったとき、どさりと音がして、目から火が出た。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "吾輩は藁の上から笹原へ捨てられていた。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "やがて人間の家らしい所へ着き、竹垣の穴から中へ入った。",
+        "gloss": "from; through",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "最初に会ったおさんは乱暴で、吾輩の頸筋をつかみ、台所から何度も外へ投げ出した。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "学校から帰ると、ほとんど一日中、書斎にこもっている。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "from; starting today",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "吾輩はその時から、決して鼠をとるまいと決心した。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "そして、その穴の中から時々、ぷうぷうと煙を吹く。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "吾輩は藁の上から、急に笹原の中へ棄てられたのである。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "竹垣の崩れた穴から、とある邸内にもぐり込んだ。",
+        "gloss": "from; through",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "学校から帰ると、書斎に入ったまま、ほとんど出て来ない。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "ほかに吾輩の世話をする者がいなかったからである。",
+        "gloss": "because",
+        "sense_id": "ja-676e4c43d45cf9b6-3"
+      },
+      {
+        "sentence": "すると胃の弱い主人が必ず目を覚まし、隣の部屋から飛び出して来る。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "便所で謡を歌うので、近所の人から「後架先生」と呼ばれても、気にせず同じ歌を繰り返していた。",
+        "gloss": "from; by",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "今日から謡や俳句をやめ、絵をかく決心をしたらしい。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "翌日から主人は、しばらく毎日、書斎で昼寝もせず絵ばかりかいた。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "主人は大いに感心し、翌日から写生を始めた。",
+        "gloss": "from; starting from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "主人は書斎から出て来て、吾輩の後ろで熱心に筆を動かしていた。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "すると主人は、失望と怒りの混じった声で、座敷から「この馬鹿野郎」と怒鳴った。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "太陽の光を受けた毛は、黒い中から火が出るように光っていた。",
+        "gloss": "from",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      },
+      {
+        "sentence": "吾輩はその話を聞いて、この時から決して鼠をとるまいと決心した。",
+        "gloss": "from; since",
+        "sense_id": "ja-676e4c43d45cf9b6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-676e4c43d45cf9b6",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "から marks a starting point. With a place or source, it shows where something begins, comes out, or passes through; with a time or event, it marks when something begins, giving the sense “after.”",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "9318860f47855332068fb03aac480d67ea5197c2dbfd14f0cdd24498dee518ef",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f669a677d2734fd7e0a9b5a5817650933701e95f79504af9f78eba6638bdab90"
+}

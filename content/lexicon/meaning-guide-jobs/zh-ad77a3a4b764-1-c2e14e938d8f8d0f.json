@@ -1,0 +1,31 @@
+{
+  "id": "zh-ad77a3a4b764-1-c2e14e938d8f8d0f",
+  "entry_id": "zh-ad77a3a4b764-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ad77a3a4b764-1",
+      "headword": "不论",
+      "kind": "word",
+      "reading": "bùlùn",
+      "senses": [
+        {
+          "id": "zh-ad77a3a4b764-1-s1",
+          "definition": "regardless of; irrespective of"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "犯法的人不论身份高低，都要受罚。",
+        "gloss": "regardless of",
+        "sense_id": "zh-ad77a3a4b764-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "44591d5505757d37aafed3bd8110743a6b0dd0ae302806884920d4dc42c10911"
+}

@@ -1,0 +1,95 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_082-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 503,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了诸葛瑾与孙权之间深厚信任的细节。",
+      "classification": "material",
+      "reason": "这段细节明确表现孙权与诸葛瑾的深厚关系及孙权对其忠诚的判断，属于重要关系与人物刻画。",
+      "required_fix": "补入张昭猜疑诸葛瑾投蜀，以及孙权以往盟誓和诸葛瑾拒绝投蜀的往事，说明二人彼此信任。"
+    },
+    {
+      "omission_note": "省略了赵咨在魏廷的具体辩答内容。",
+      "classification": "material",
+      "reason": "赵咨逐条应答曹丕关于孙权才能、学识、吴国实力及使臣人数的质询，展现其外交才辩并直接促成曹丕认可其使命与封吴王决定，属于重要人物刻画和事件因果。",
+      "required_fix": "补入赵咨针对孙权才能、学识、魏吴强弱及东吴人才的主要辩答，以及曹丕称赞其不辱君命的结果。"
+    },
+    {
+      "omission_note": "省略了孙桓败退后求援及魏国不援的背景。",
+      "classification": "material",
+      "reason": "孙桓求援与魏国不援解释了吴军陷入孤立、孙权忧惧并紧急调兵救援的原因，属于影响后续行动的背景和因果。",
+      "required_fix": "补入孙桓兵败彝陵后派人向孙权求救，以及孙权虽已受封但曹丕仍不肯出兵接应的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了诸葛瑾与孙权之间深厚信任的细节。",
+      "classification": "material",
+      "reason": "这段细节明确表现孙权与诸葛瑾的深厚关系及孙权对其忠诚的判断，属于重要关系与人物刻画。",
+      "required_fix": "补入张昭猜疑诸葛瑾投蜀，以及孙权以往盟誓和诸葛瑾拒绝投蜀的往事，说明二人彼此信任。"
+    },
+    {
+      "omission_note": "省略了赵咨在魏廷的具体辩答内容。",
+      "classification": "material",
+      "reason": "赵咨逐条应答曹丕关于孙权才能、学识、吴国实力及使臣人数的质询，展现其外交才辩并直接促成曹丕认可其使命与封吴王决定，属于重要人物刻画和事件因果。",
+      "required_fix": "补入赵咨针对孙权才能、学识、魏吴强弱及东吴人才的主要辩答，以及曹丕称赞其不辱君命的结果。"
+    },
+    {
+      "omission_note": "省略了孙桓败退后求援及魏国不援的背景。",
+      "classification": "material",
+      "reason": "孙桓求援与魏国不援解释了吴军陷入孤立、孙权忧惧并紧急调兵救援的原因，属于影响后续行动的背景和因果。",
+      "required_fix": "补入孙桓兵败彝陵后派人向孙权求救，以及孙权虽已受封但曹丕仍不肯出兵接应的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 512,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "赵咨未明确写出对曹丕“魏可伐吴否”及“吴是否畏魏”的核心答辩，仅以“拥江自守”一笔带过，遗漏了其以吴国兵力、江汉天险反驳魏国的关键外交论证。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 503,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

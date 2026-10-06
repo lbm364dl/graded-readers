@@ -1,0 +1,32 @@
+{
+  "id": "ja-5278c1621f73dff6-09d4a718d35292dc",
+  "entry_id": "ja-5278c1621f73dff6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5278c1621f73dff6",
+      "headword": "葉",
+      "reading": "は",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5278c1621f73dff6-1",
+          "definition": "a leaf of a plant"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "風で葉が二枚落ちると、黒は丸い目を開いた。",
+        "gloss": "leaf",
+        "sense_id": "ja-5278c1621f73dff6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7ac4d0f454ff584d7e9c7999e97503f44991bf71e603d82045b6972207885c45"
+}

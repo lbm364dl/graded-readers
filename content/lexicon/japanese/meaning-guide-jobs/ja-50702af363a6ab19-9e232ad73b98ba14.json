@@ -1,0 +1,32 @@
+{
+  "id": "ja-50702af363a6ab19-9e232ad73b98ba14",
+  "entry_id": "ja-50702af363a6ab19",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-50702af363a6ab19",
+      "headword": "吸う",
+      "reading": "すう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-50702af363a6ab19-1",
+          "definition": "to draw in or inhale; to smoke"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これが人間が吸うたばこというものだと、吾輩がようやくこの頃知った。",
+        "gloss": "smoke; inhale",
+        "sense_id": "ja-50702af363a6ab19-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a02328854a1941f832eca6b66cbe6f9f9f3f40cc02515da4e012c0dbdfb2f96e"
+}

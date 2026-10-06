@@ -1,0 +1,31 @@
+{
+  "id": "zh-dc06463a46eb-1-fde8d6b4a942ac1f",
+  "entry_id": "zh-dc06463a46eb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-dc06463a46eb-1",
+      "headword": "青",
+      "kind": "name",
+      "reading": "Qīng",
+      "senses": [
+        {
+          "id": "zh-dc06463a46eb-1-s1",
+          "definition": "Qing Province"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "青、幽、徐、冀等八州百姓，家家信奉大贤良师张角。",
+        "gloss": "Qing Province",
+        "sense_id": "zh-dc06463a46eb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "951122f5a974225280a81107046f181f208070b724f8b1225bea0ee144e3dd53"
+}

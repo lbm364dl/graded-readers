@@ -1,0 +1,36 @@
+{
+  "id": "zh-ac062088eadf-1-87d2ee8cf476e061",
+  "entry_id": "zh-ac062088eadf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ac062088eadf-1",
+      "headword": "放荡",
+      "kind": "word",
+      "reading": "fàngdàng",
+      "senses": [
+        {
+          "id": "zh-ac062088eadf-1-s1",
+          "definition": "unrestrained in behavior; dissolute"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操便假装中风，骗过父亲，后来依旧放荡。",
+        "gloss": "dissolute; undisciplined",
+        "sense_id": "zh-ac062088eadf-1-s1"
+      },
+      {
+        "sentence": "从此叔父再说他的过错，曹嵩也不再相信，曹操更加任性放荡。",
+        "gloss": "unrestrained",
+        "sense_id": "zh-ac062088eadf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "92732513d351145827d69d6f6e3624683d5c361fed55674a494823670ff00130"
+}

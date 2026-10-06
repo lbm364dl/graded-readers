@@ -1,0 +1,32 @@
+{
+  "id": "ja-e36ac8ea9d31bcb9-23370a932cc65ffc",
+  "entry_id": "ja-e36ac8ea9d31bcb9",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e36ac8ea9d31bcb9",
+      "headword": "つるつるする",
+      "reading": "つるつるする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e36ac8ea9d31bcb9-1",
+          "definition": "to be smooth or glossy"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "まず、毛でおおわれているはずの顔が、つるつるしていて、まるで薬缶のようだった。",
+        "gloss": "being smooth and shiny",
+        "sense_id": "ja-e36ac8ea9d31bcb9-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0e04900e022603aa483a542ce29108a0c59548d182f6a2fa2671974b372eaa46"
+}

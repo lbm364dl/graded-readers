@@ -1,0 +1,32 @@
+{
+  "id": "ja-2c9426cec49cd0ef-c99652a0923659df",
+  "entry_id": "ja-2c9426cec49cd0ef",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2c9426cec49cd0ef",
+      "headword": "新聞",
+      "reading": "しんぶん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2c9426cec49cd0ef-1",
+          "definition": "newspaper"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "朝、主人が新聞を読むときは、必ず膝の上に乗る。",
+        "gloss": "newspaper",
+        "sense_id": "ja-2c9426cec49cd0ef-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "194e58e3052b186060a57b65d9fa10f0094458eb692c74c0e970c8569c7224c4"
+}

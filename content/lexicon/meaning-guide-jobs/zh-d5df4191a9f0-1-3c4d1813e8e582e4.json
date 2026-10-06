@@ -1,0 +1,31 @@
+{
+  "id": "zh-d5df4191a9f0-1-3c4d1813e8e582e4",
+  "entry_id": "zh-d5df4191a9f0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d5df4191a9f0-1",
+      "headword": "奉承",
+      "kind": "word",
+      "reading": "fèngcheng",
+      "senses": [
+        {
+          "id": "zh-d5df4191a9f0-1-s1",
+          "definition": "to flatter"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植拒绝说，军粮尚且不足，哪有钱奉承他。",
+        "gloss": "to flatter",
+        "sense_id": "zh-d5df4191a9f0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3e5b1a2ec3c7bd19d054f8ec500cf9936f1b08d99d39fb21337854c7044ecd31"
+}

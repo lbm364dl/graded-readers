@@ -1,0 +1,32 @@
+{
+  "id": "ja-8b8306cdafc9e778-939b74df3e7811c6",
+  "entry_id": "ja-8b8306cdafc9e778",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8b8306cdafc9e778",
+      "headword": "写すべきだ",
+      "reading": "うつすべきだ",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-8b8306cdafc9e778-1",
+          "definition": "should; ought to do (expresses that an action is advisable or required)"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、絵をかくなら自然そのものを写すべきだ、空には星、地には露、池には金魚、枯れ木には鳥がいる、自然全体が大きな絵なのだ、と語った。",
+        "gloss": "should reproduce; ought to copy",
+        "sense_id": "ja-8b8306cdafc9e778-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e95e65abc55c2aa59e56dc2b19b5c2984d1c9e7c9fcd06a97102d781cce0ccb8"
+}

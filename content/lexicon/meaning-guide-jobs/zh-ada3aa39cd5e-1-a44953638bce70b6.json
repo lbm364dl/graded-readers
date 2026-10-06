@@ -1,0 +1,31 @@
+{
+  "id": "zh-ada3aa39cd5e-1-a44953638bce70b6",
+  "entry_id": "zh-ada3aa39cd5e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ada3aa39cd5e-1",
+      "headword": "路上",
+      "kind": "word",
+      "reading": "lùshàng",
+      "senses": [
+        {
+          "id": "zh-ada3aa39cd5e-1-s1",
+          "definition": "on the way; along a route"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "路上，三人救下董卓。",
+        "gloss": "on the road",
+        "sense_id": "zh-ada3aa39cd5e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6e3237f63a0c0c5bf0f0c197f766bfd521ef8ae22e2436e3f38c8cac049503a1"
+}

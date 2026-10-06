@@ -1,0 +1,31 @@
+{
+  "id": "zh-700fadbaef93-1-6b8dfe5ae57a799d",
+  "entry_id": "zh-700fadbaef93-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-700fadbaef93-1",
+      "headword": "大吉",
+      "kind": "word",
+      "reading": "dàjí",
+      "senses": [
+        {
+          "id": "zh-700fadbaef93-1-s1",
+          "definition": "very auspicious; greatly favorable"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他让人传播“苍天已死，黄天当立”和“岁在甲子，天下大吉”，还用白土在家门上写“甲子”。",
+        "gloss": "very auspicious",
+        "sense_id": "zh-700fadbaef93-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fc642a8a5d3147ff1a3ac9979cc0b1141bb9816854b1d1dac6b97448e35f3355"
+}

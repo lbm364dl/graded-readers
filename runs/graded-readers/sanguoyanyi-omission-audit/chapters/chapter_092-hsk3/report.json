@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_092-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 424,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“姜维识破裴绪是假扮的蜀军”表述有误，应为姜维识破裴绪是冒充魏将的蜀军。",
+      "classification": "material",
+      "reason": "原文明确说明裴绪是蜀将冒充魏将；现表述将其身份关系说反，造成身份与情节理解错误。",
+      "required_fix": "改为“姜维识破裴绪是冒充魏将的蜀军”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“姜维识破裴绪是假扮的蜀军”表述有误，应为姜维识破裴绪是冒充魏将的蜀军。",
+      "classification": "material",
+      "reason": "原文明确说明裴绪是蜀将冒充魏将；现表述将其身份关系说反，造成身份与情节理解错误。",
+      "required_fix": "改为“姜维识破裴绪是冒充魏将的蜀军”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 424,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

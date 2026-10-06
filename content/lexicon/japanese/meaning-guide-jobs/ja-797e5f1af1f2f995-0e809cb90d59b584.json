@@ -1,0 +1,32 @@
+{
+  "id": "ja-797e5f1af1f2f995-0e809cb90d59b584",
+  "entry_id": "ja-797e5f1af1f2f995",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-797e5f1af1f2f995",
+      "headword": "本当",
+      "reading": "ほんとう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-797e5f1af1f2f995-1",
+          "definition": "true; real; genuine"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は驚いて、「もし相手が本当に読んでいたら、どうするつもりだ」と聞いた。",
+        "gloss": "really; truly",
+        "sense_id": "ja-797e5f1af1f2f995-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "11194bd9a37fdddd9c4a21f823556f2ac10650f8d8ad37bc36aee58e4b4b64dc"
+}

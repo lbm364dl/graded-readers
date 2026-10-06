@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-ad2f3c4019734d9e-1290102c86bd4fb4",
+  "entry_id": "zh-component-ad2f3c4019734d9e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-ad2f3c4019734d9e",
+      "headword": "什么",
+      "reading": "shénme",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-ad2f3c4019734d9e-s1",
+          "definition": "what; an interrogative pronoun asking about the identity or nature of something"
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "80b44711881c455c7ead9cc42c5d8b5c73fc1509a88d0fc08904d846a9ea42da"
+}

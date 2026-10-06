@@ -1,0 +1,172 @@
+[
+  {
+    "id": "ja-grammar-request-451b08ecc9dbae65",
+    "entry_id": "ja-grammar-topic-wa",
+    "reason": "The reading field is pronunciation: use わ for the topic particle は, while keeping title は. Retain its accurate modern function explanation."
+  },
+  {
+    "id": "ja-grammar-request-a9d72915331eba16",
+    "entry_id": "ja-grammar-direction-e",
+    "reason": "The reading field is pronunciation: use え for the directional particle written へ. Keep the spelling and modern directional explanation."
+  },
+  {
+    "id": "ja-grammar-request-b7984e35e4faa908",
+    "entry_id": "ja-grammar-object-wo",
+    "reason": "The reading field is modern standard pronunciation: use お for the particle written を, keeping the title spelling and accurate object-marker explanation."
+  },
+  {
+    "id": "ja-grammar-request-2162672eb443b10e",
+    "entry_id": "ja-grammar-decision-koto-ni-suru",
+    "reason": "Keep this independent lesson focused on deciding to do an action: plain nonpast verb + ことにする, meaning and a concise useful contrast with ことになる. Remove the sentence about ことにしました and its polite-past formation row. Politeness and past are separate linked lessons, not part of this entry."
+  },
+  {
+    "id": "ja-grammar-request-c67f918829f48f05",
+    "entry_id": "ja-grammar-teiru",
+    "reason": "Focus this entry on the meaning and formation of ている (ongoing actions or resulting states). Remove the separate ています and ていました formation rows and the note decomposing 泣いていました. Polite and past inflections have their own linked lessons; retain only useful core constraints, not passage-driven combinations."
+  },
+  {
+    "id": "ja-grammar-request-46d7c7fcf24c03e2",
+    "entry_id": "ja-grammar-passive",
+    "reason": "Focus this entry on passive meaning and passive formation. Remove the polite-past passive formation row and the note analyzing 捨てられました. Polite past belongs to its own lesson. Keep legitimate passive formation examples and the brief contrast with lexical 生まれる only if useful; do not duplicate other lessons."
+  },
+  {
+    "id": "ja-grammar-request-fbb1dd6d2a907143",
+    "entry_id": "ja-grammar-te-yaru",
+    "reason": "Focus this entry on てやる benefactive meaning, base formation and register. Remove the imperative やれ formation row and the note analyzing 置いてやれ. Imperative formation has its own linked lesson. Keep concise core meaning and register guidance independent of the source passage."
+  },
+  {
+    "id": "ja-grammar-request-187b7290517e0986",
+    "entry_id": "ja-grammar-conjunctive-stem",
+    "reason": "Use the clear canonical title 連用形（ます語幹） and reading れんようけい（ますごかん）. Explain concisely that this is the stem before ます (e.g. 歩き in 歩きます), and its bare linking use in written sequences. Do not treat continuative stem and ます-stem as different forms. Remove the unmotivated not-by-itself-past-tense disclaimer and the note about the specific 歩き sentence. Keep formation independent, including irregular する→し and 来る→き if needed, without teaching ます politeness here."
+  },
+  {
+    "id": "ja-audit-request-8ad2a207a6340a63",
+    "reason": "The pronunciation of particle は is stated in both the summary and explanation. Requested change: Keep the pronunciation note once while retaining the useful topic/subject distinction.",
+    "entry_id": "ja-grammar-topic-wa"
+  },
+  {
+    "id": "ja-audit-request-0f5596b5b56b10e3",
+    "reason": "The notes repeat the ある and いる distinctions already covered by the formation rows. Requested change: Keep the target negative formation and its ある→ありません and いる→いません examples; remove the duplicate note.",
+    "entry_id": "ja-grammar-polite-negative"
+  },
+  {
+    "id": "ja-audit-request-07487caeef9ab72c",
+    "reason": "The 生まれる example and repeated clarification that 生まれた is not passive are source-driven rather than part of the general plain-past lesson. Requested change: Explain plain-past meaning and verb-class formation generically; remove the 生まれる-specific sentence and passive disclaimer.",
+    "entry_id": "ja-grammar-plain-past"
+  },
+  {
+    "id": "ja-audit-request-c45fb9c5e12493af",
+    "reason": "The note denying a の construction corrects an unstated possibility rather than explaining attributive adjective use. Requested change: Remove the note; retain the generic direct-modification rule and its minimal example.",
+    "entry_id": "ja-grammar-i-adjective-attributive"
+  },
+  {
+    "id": "ja-audit-request-959b976896a5b615",
+    "reason": "The route use is a separate use of を and is repeated in the note of an entry focused on direct objects. Requested change: Keep the direct-object explanation and formation; remove the route-use aside and the repeated scope note.",
+    "entry_id": "ja-grammar-object-wo"
+  },
+  {
+    "id": "ja-audit-request-bac53aa04c7017a7",
+    "reason": "The explanation catalogs passive and ている combinations that are separate constructions, and the note repeats the passage-specific ている combination. Requested change: Explain polite-past formation on the polite verb stem; remove the passive formation row, combination catalog sentence, and note about 泣いていました.",
+    "entry_id": "ja-grammar-polite-past"
+  },
+  {
+    "id": "ja-audit-request-bde72cde0e3d3cef",
+    "reason": "The explanation uses the passage's fixed expression 目が回る as its example, making the reusable subject-marker entry passage-bound. Requested change: State the subject-marking function generically; retain the useful contrast with は without using the passage-specific expression.",
+    "entry_id": "ja-grammar-subject-ga"
+  },
+  {
+    "id": "ja-audit-request-49512f01c6283280",
+    "reason": "The 生まれる clarification is specific to this passage and repeats the plain-past entry's disclaimer. Requested change: Remove the 生まれる-specific note; retain generic passive meaning, formation, agent marking, and useful constraints.",
+    "entry_id": "ja-grammar-passive"
+  },
+  {
+    "id": "ja-audit-request-f1840541b71ad400",
+    "reason": "The entry names the input form as a continuative stem and only says it is commonly the same as the ます-stem, leaving synonymous terminology unclear; one note also restates the passage's 見ながら analysis. Requested change: Identify the ordinary pre-ます 連用形 as the ます-stem. Remove the source-selected 見ながら note. Preserve simultaneous actions, normally shared subject, and the main predicate carrying sentence tense/politeness: those are core properties, not an unrelated inflection catalog.",
+    "entry_id": "ja-grammar-nagara"
+  },
+  {
+    "id": "ja-audit-request-5a19f525111a79de",
+    "reason": "The entry presents synonymous names without clearly identifying the ordinary pre-ます 連用形 as the ます-stem, adds a defensive past-tense disclaimer, and repeats the passage-specific 歩き explanation. Requested change: Explain that ordinary pre-ます 連用形 is the ます-stem (e.g. 歩き; complete polite form 歩きます), describe its linking use generically, and remove the disclaimer and passage-specific note.",
+    "entry_id": "ja-grammar-conjunctive-stem"
+  },
+  {
+    "id": "ja-audit-request-9b9fa738c4a7a5dd",
+    "reason": "The explanation catalogs existence, residence, and viewing uses that belong to separate に lessons, distracting from resulting position. Requested change: Focus on に marking the resulting location or position with verbs such as 置く; retain the essential contrast with action-location で and remove the list of unrelated に uses.",
+    "entry_id": "ja-grammar-ni-result-position"
+  },
+  {
+    "id": "ja-audit-request-c40484ecab9d90f0",
+    "reason": "The entry catalogs ている and てやる constructions that have separate lessons, then repeats that separation in a note. Requested change: Focus on connective て-form meaning and formation; remove the specialized-construction catalog and the note about separate entries.",
+    "entry_id": "ja-grammar-te-form"
+  },
+  {
+    "id": "ja-audit-request-d5426c0cb80d1460",
+    "reason": "The explanation and notes discuss the passage-specific compound 置いてやれ and its auxiliary instead of the general imperative form. Requested change: Keep generic direct-command meaning, formation, and tone constraints; remove the compound-specific sentence and notes.",
+    "entry_id": "ja-grammar-imperative"
+  },
+  {
+    "id": "ja-audit-request-80178e1d05b02819",
+    "reason": "The note about と's other grammatical uses is unrelated to the focused quotation lesson. Requested change: Keep the quoted-content plus と plus saying/thinking predicate pattern; remove the unrelated-use note.",
+    "entry_id": "ja-grammar-quotative-to"
+  },
+  {
+    "id": "ja-audit-request-eeaedb6bce6e3ad9",
+    "reason": "The final note is pipeline bookkeeping about retaining a lexical entry rather than learner-facing explanation. Requested change: Keep the decision meaning and plain-nonpast verb formation; remove the lexical-link note.",
+    "entry_id": "ja-grammar-decision-koto-ni-suru"
+  },
+  {
+    "id": "ja-audit-request-bc030a3a31aad78e",
+    "reason": "The notes list polite past and negative variants, which are separate inflection lessons. Requested change: Keep polite nonpast meaning, formation, and stem terminology; remove the notes listing ました and ません.",
+    "entry_id": "ja-grammar-polite-nonpast"
+  },
+  {
+    "id": "ja-audit-request-905d22bc4ed029df",
+    "reason": "The occurrence note adds a defensive claim that 生まれた is not passive morphology. Requested change: State only that 生まれた is the plain-past form of 生まれる and means “was born.”",
+    "candidate_id": "assets/annotations/japanese_wagahai_n5_001.json#grammar-segment-12-step-0"
+  },
+  {
+    "id": "ja-audit-request-ad85b11e44cafe45",
+    "reason": "The supplied gloss “walking; and walked” assigns a past-tense meaning to a bare continuative stem. Requested change: For this standalone form provide display_meaning_en='walking' and display_base_meaning_en='walk'. Describe the contextual linking function concisely, without the unrelated not-past disclaimer. Preserve the source form, span and canonical stem link.",
+    "candidate_id": "assets/annotations/japanese_wagahai_n5_001.json#grammar-segment-67-step-0"
+  },
+  {
+    "id": "ja-audit-request-8aca3f31a5766d9c",
+    "reason": "“Do the placing as a favor” is an incomplete and unnatural gloss for the complete 置いてやる form. Requested change: Use a complete gloss such as “place it for someone as a favor.”",
+    "candidate_id": "assets/annotations/japanese_wagahai_n5_001.json#grammar-segment-102-step-1"
+  },
+  {
+    "id": "ja-audit-request-b82d8e24b11e3ccd",
+    "reason": "The gloss for 置いてやれ omits the beneficiary conveyed by the benefactive construction. Requested change: Use a complete imperative gloss such as “put it there for someone as a favor”; keep command/register information separate.",
+    "candidate_id": "assets/annotations/japanese_wagahai_n5_001.json#grammar-segment-102-step-2"
+  },
+  {
+    "id": "ja-grammar-request-5bfe544a5a454102",
+    "reason": "The FULL ます form is distinct from its ます-stem. Keep this lesson focused on polite nonpast meaning and adding ます; replace duplicate stem-formation rules with one formation row Verb ます-stem + ます carrying grammar_entry_id=ja-grammar-conjunctive-stem. Do not relist godan/ichidan/irregular stem derivations; those are taught in the linked shared stem entry.",
+    "entry_id": "ja-grammar-polite-nonpast"
+  },
+  {
+    "id": "ja-grammar-request-c94913fc44b62b2c",
+    "reason": "Keep the focused polite past lesson. Its Verb ます-stem + ました formation should use grammar_entry_id=ja-grammar-conjunctive-stem as a prerequisite. Do not reteach stem derivation or unrelated construction combinations.",
+    "entry_id": "ja-grammar-polite-past"
+  },
+  {
+    "id": "ja-grammar-request-08c024bdf891dea4",
+    "reason": "Keep polite-negative meaning and stem + ません formation. Link the main formation to grammar_entry_id=ja-grammar-conjunctive-stem rather than duplicating stem derivation. If retaining existence verb examples, describe them as regular applications of the same polite-negative rule, not special exceptions.",
+    "entry_id": "ja-grammar-polite-negative"
+  },
+  {
+    "id": "ja-grammar-request-b4ce1a349328c0cd",
+    "reason": "Link the ます-stem + ながら formation to grammar_entry_id=ja-grammar-conjunctive-stem; keep shared-subject, simultaneity and main-predicate tense/politeness constraints. Do not separately reteach stem derivation.",
+    "entry_id": "ja-grammar-nagara"
+  },
+  {
+    "id": "ja-grammar-request-696baabbdda052f4",
+    "reason": "Keep the focused ongoing/resulting-state explanation; add grammar_entry_id=ja-grammar-te-form to the existing Verb て-form + いる formation as a prerequisite link. Do not add variant catalogs or duplicate て-form formation.",
+    "entry_id": "ja-grammar-teiru"
+  },
+  {
+    "id": "ja-grammar-request-16a5df71527ddd6d",
+    "reason": "Keep the focused benefactive meaning and register explanation; add grammar_entry_id=ja-grammar-te-form to the existing Verb て-form + やる formation as a prerequisite link. Do not add imperative variants or duplicate て-form formation.",
+    "entry_id": "ja-grammar-te-yaru"
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "id": "zh-91bb18682b2c-1-58b4b83cafe30e02",
+  "entry_id": "zh-91bb18682b2c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-91bb18682b2c-1",
+      "headword": "连",
+      "kind": "particle",
+      "reading": "lián",
+      "senses": [
+        {
+          "id": "zh-91bb18682b2c-1-s1",
+          "definition": "even; used to introduce something unexpected or extreme"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”董卓听后便轻视他们，连礼貌也没有。",
+        "gloss": "even",
+        "sense_id": "zh-91bb18682b2c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "74f2c260083dd7ef5b25d9d0f7e328129617a2145427559bb234545cf8a53ffe"
+}

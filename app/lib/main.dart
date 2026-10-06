@@ -1,13 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'data.dart';
 import 'models.dart';
 import 'theme.dart';
 import 'screens/home_screen.dart';
 import 'services/dictionary_service.dart';
-import 'services/etymology_service.dart';
-import 'services/glyph_service.dart';
 
 const _languageKey = 'selected_language';
 
@@ -16,39 +15,33 @@ void main() async {
 
   final prefs = await SharedPreferences.getInstance();
   final savedLang = prefs.getString(_languageKey);
-  final initialLang = savedLang == 'japanese' ? Language.japanese : Language.chinese;
+  final initialLang = Language.values.firstWhere(
+      (language) => language.name == savedLang,
+      orElse: () => Language.chinese);
 
-  // Only await the essential dictionary — everything else loads in background
-  await DictionaryService.instance.initialize(language: initialLang);
   runApp(GradedReadersApp(initialLanguage: initialLang));
 
-  // Load heavy assets in background after first frame
-  EtymologyService.instance.initialize();
-  GlyphService.instance.initialize();
-  GoogleFonts.pendingFonts([
-    GoogleFonts.notoSansJp(),
-    GoogleFonts.notoSansSc(),
-    GoogleFonts.notoSerifJp(),
-    GoogleFonts.notoSerifSc(),
-  ]);
+  // Let Flutter paint the shell before parsing lookup data. Agent-authored
+  // annotations render without the dictionary; the lookup data is warm by the
+  // time a reader normally reaches and taps a phrase.
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    unawaited(DictionaryService.instance.initialize(language: initialLang));
+  });
 }
 
 class LanguageNotifier extends ValueNotifier<Language> {
   LanguageNotifier(super.language);
 
-  bool _switching = false;
-  bool get isSwitching => _switching;
-
   Future<void> switchTo(Language language) async {
-    _switching = true;
-    notifyListeners();
-    await DictionaryService.instance.switchLanguage(language);
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(
-        _languageKey, language == Language.japanese ? 'japanese' : 'chinese');
-    await Future.delayed(const Duration(milliseconds: 50));
-    _switching = false;
+    if (value == language) return;
+
+    // The shelf and reviewed annotations do not depend on dictionary loading.
+    // Activate the language synchronously, then let the indexed lookup store
+    // finish opening without replacing the whole app with a loading screen.
+    unawaited(DictionaryService.instance.switchLanguage(language));
     value = language;
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_languageKey, language.name);
   }
 }
 
@@ -108,10 +101,7 @@ class _GradedReadersAppState extends State<GradedReadersApp> {
             theme: t.light,
             darkTheme: t.dark,
             themeMode: ThemeMode.system,
-            home: _languageNotifier.isSwitching
-                ? const Scaffold(
-                    body: Center(child: CircularProgressIndicator()))
-                : HomeScreen(repo: _repo),
+            home: HomeScreen(repo: _repo),
           );
         },
       ),

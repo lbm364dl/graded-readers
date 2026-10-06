@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff3b0-6431-7e33-abc2-07d57fbb4706"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.93,\"naturalness\":0.94,\"readability\":0.95,\"omissions\":[],\"unsupported_additions\":[\"称孙皓“没本事”是对原文未明确强调的概括性评价。\"],\"distortions\":[],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":33849,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":598,"reasoning_output_tokens":516}}

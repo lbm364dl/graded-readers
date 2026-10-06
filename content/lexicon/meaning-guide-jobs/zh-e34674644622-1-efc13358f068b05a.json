@@ -1,0 +1,31 @@
+{
+  "id": "zh-e34674644622-1-efc13358f068b05a",
+  "entry_id": "zh-e34674644622-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e34674644622-1",
+      "headword": "敌",
+      "kind": "word",
+      "reading": "dí",
+      "senses": [
+        {
+          "id": "zh-e34674644622-1-s1",
+          "definition": "enemy; opposing force"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉让邹靖带刘备、张飞、关羽三人，领五百人前去迎敌。",
+        "gloss": "enemy",
+        "sense_id": "zh-e34674644622-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6d2681d7435f87cd5c0b30673cf6eb1a7fed4f8db8db06ce0aec6d435dbe3484"
+}

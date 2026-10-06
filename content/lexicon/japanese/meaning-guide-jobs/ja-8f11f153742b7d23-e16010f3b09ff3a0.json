@@ -1,0 +1,32 @@
+{
+  "id": "ja-8f11f153742b7d23-e16010f3b09ff3a0",
+  "entry_id": "ja-8f11f153742b7d23",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8f11f153742b7d23",
+      "headword": "いろいろ",
+      "reading": "いろいろ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8f11f153742b7d23-1",
+          "definition": "various; many different"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その後、いろいろ経験して、朝は飯櫃の上、夜は炬燵の上、天気のよい昼は縁側で寝るようになった。",
+        "gloss": "various; many different",
+        "sense_id": "ja-8f11f153742b7d23-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bb34d05f6b6b74a602106088613abe47a2661a0c430f8b427153e91620818c70"
+}

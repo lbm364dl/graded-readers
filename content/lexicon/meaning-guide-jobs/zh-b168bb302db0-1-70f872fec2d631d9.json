@@ -1,0 +1,105 @@
+{
+  "id": "zh-b168bb302db0-1-70f872fec2d631d9",
+  "entry_id": "zh-b168bb302db0-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-b168bb302db0-1",
+      "headword": "战",
+      "kind": "word",
+      "reading": "zhàn",
+      "senses": [
+        {
+          "id": "zh-b168bb302db0-1-s1",
+          "definition": "battle; combat"
+        },
+        {
+          "id": "zh-b168bb302db0-1-s2",
+          "definition": "to fight; engage in combat"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这一战中，曹操杀死一万多人，夺得旗子、战鼓和许多马匹。",
+        "gloss": "battle",
+        "sense_id": "zh-b168bb302db0-1-s1"
+      },
+      {
+        "sentence": "程远志大怒，命邓茂出战。",
+        "gloss": "to fight",
+        "sense_id": "zh-b168bb302db0-1-s2"
+      },
+      {
+        "sentence": "黄巾军见救兵到来，马上迎战。",
+        "gloss": "to fight",
+        "sense_id": "zh-b168bb302db0-1-s2"
+      },
+      {
+        "sentence": "龚景率乡勇出城助战，刘备解开了青州之围。",
+        "gloss": "battle",
+        "sense_id": "zh-b168bb302db0-1-s1"
+      },
+      {
+        "sentence": "刘备说，老师卢植正在广宗与张角交战，自己曾跟随卢植学习，想去帮助他。",
+        "gloss": "battle",
+        "sense_id": "zh-b168bb302db0-1-s2"
+      },
+      {
+        "sentence": "皇甫嵩、朱俊与黄巾军交战，黄巾军作战不利，退入长社，依草结营。",
+        "gloss": "to fight",
+        "sense_id": "zh-b168bb302db0-1-s2"
+      },
+      {
+        "sentence": "黄巾起义时，曹操率领五千名马步军到颍川助战。",
+        "gloss": "battle",
+        "sense_id": "zh-b168bb302db0-1-s1"
+      },
+      {
+        "sentence": "程远志大怒，派邓茂出战。",
+        "gloss": "to fight",
+        "sense_id": "zh-b168bb302db0-1-s2"
+      },
+      {
+        "sentence": "关羽骑马迎战，挥刀将程远志斩成两段。",
+        "gloss": "to fight",
+        "sense_id": "zh-b168bb302db0-1-s2"
+      },
+      {
+        "sentence": "救军抵达后，黄巾军分兵，双方立刻混战。",
+        "gloss": "to fight",
+        "sense_id": "zh-b168bb302db0-1-s2"
+      },
+      {
+        "sentence": "张梁、张宝死战脱身，曹操随即带兵追击。",
+        "gloss": "to fight",
+        "sense_id": "zh-b168bb302db0-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-b168bb302db0-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "战 names battle or combat: fighting between opposing sides.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "战",
+        "contribution_en": "Names battle or combat.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "c1f9479b5a2cbf7768a0fad234648cc6f767814c44cce55176900934b54623a3",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2182d15725f7e3386077e232991bd6875eba95e90a7d0cb2416896d7d46f8b0c"
+}

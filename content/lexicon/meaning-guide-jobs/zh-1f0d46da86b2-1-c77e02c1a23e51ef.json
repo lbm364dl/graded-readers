@@ -1,0 +1,36 @@
+{
+  "id": "zh-1f0d46da86b2-1-c77e02c1a23e51ef",
+  "entry_id": "zh-1f0d46da86b2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1f0d46da86b2-1",
+      "headword": "分三路",
+      "kind": "construction",
+      "reading": "fēn sān lù",
+      "senses": [
+        {
+          "id": "zh-1f0d46da86b2-1-s1",
+          "definition": "divide forces or activity among three routes"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷命各地招兵，加强防守，抵抗黄巾军；又派卢植、皇甫嵩、朱俊各自率领精兵，分三路讨伐。",
+        "gloss": "to divide into three routes",
+        "sense_id": "zh-1f0d46da86b2-1-s1"
+      },
+      {
+        "sentence": "何进上奏，朝廷命各地招兵抵抗黄巾军，又派卢植、皇甫嵩、朱俊各率精兵，分三路讨伐。",
+        "gloss": "divide into three routes",
+        "sense_id": "zh-1f0d46da86b2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c17c4b0be6ba8ba73a63806f16cc53193e0fdfa06f043f639be557719a6280f2"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-07aa3f4068936f30-73d2119dad48d2ab",
+  "entry_id": "ja-07aa3f4068936f30",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-07aa3f4068936f30",
+      "headword": "内",
+      "reading": "うち",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-07aa3f4068936f30-1",
+          "definition": "the inside or interior of something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は吾輩を見て、「では、家の内に置いてやれ」と言った。",
+        "gloss": "inside; interior",
+        "sense_id": "ja-07aa3f4068936f30-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "407a1183c34f4fd381189df5a4d90cc9eff106891092ad36069db6203904d76e"
+}

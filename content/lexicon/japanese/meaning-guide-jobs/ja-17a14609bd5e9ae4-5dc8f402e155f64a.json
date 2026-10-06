@@ -1,0 +1,32 @@
+{
+  "id": "ja-17a14609bd5e9ae4-5dc8f402e155f64a",
+  "entry_id": "ja-17a14609bd5e9ae4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-17a14609bd5e9ae4",
+      "headword": "ひどい目にあう",
+      "reading": "ひどいめにあう",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-17a14609bd5e9ae4-1",
+          "definition": "to suffer a terrible experience; to go through something awful"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、自分は三、四十匹はとった、鼬にはひどい目にあった、と得意そうに話した。",
+        "gloss": "suffered a terrible experience",
+        "sense_id": "ja-17a14609bd5e9ae4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f568943eeb592ff1fbd7a5b686b6ba2a5c671ac201873fc3546f92cb0253b59d"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "zh-5bdf28bd3348-1-d8bd47c22cc95e56",
+  "entry_id": "zh-5bdf28bd3348-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5bdf28bd3348-1",
+      "headword": "打败",
+      "kind": "word",
+      "reading": "dǎbài",
+      "senses": [
+        {
+          "id": "zh-5bdf28bd3348-1-s1",
+          "definition": "to defeat in battle"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "两天后，他们看见董卓带领的汉军被张角打败，黄巾军正在追赶董卓。",
+        "gloss": "defeat",
+        "sense_id": "zh-5bdf28bd3348-1-s1"
+      },
+      {
+        "sentence": "刘备说自己是汉室宗亲，想打败作乱的黄巾军，让百姓平安，只是力气不够。",
+        "gloss": "defeat",
+        "sense_id": "zh-5bdf28bd3348-1-s1"
+      },
+      {
+        "sentence": "张角刚打败董卓，正追赶汉军，却遇到三人攻击。",
+        "gloss": "defeat",
+        "sense_id": "zh-5bdf28bd3348-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fb76c28c5e2362df363f2bfb4f52aff6b809539c7b2f9519ca0ab9c8d6a72ac7"
+}

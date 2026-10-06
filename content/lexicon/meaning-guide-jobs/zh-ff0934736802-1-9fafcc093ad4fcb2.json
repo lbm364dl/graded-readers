@@ -1,0 +1,31 @@
+{
+  "id": "zh-ff0934736802-1-9fafcc093ad4fcb2",
+  "entry_id": "zh-ff0934736802-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ff0934736802-1",
+      "headword": "整理",
+      "kind": "word",
+      "reading": "zhěnglǐ",
+      "senses": [
+        {
+          "id": "zh-ff0934736802-1-s1",
+          "definition": "put things in order; arrange"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天整理兵器，却因没有马匹而发愁。",
+        "gloss": "organize",
+        "sense_id": "zh-ff0934736802-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2d32a672e454766b821454807b62f882077b91c678cb42b8258f2871984d2699"
+}

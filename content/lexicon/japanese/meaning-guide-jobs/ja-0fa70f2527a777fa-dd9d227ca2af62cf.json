@@ -1,0 +1,32 @@
+{
+  "id": "ja-0fa70f2527a777fa-dd9d227ca2af62cf",
+  "entry_id": "ja-0fa70f2527a777fa",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0fa70f2527a777fa",
+      "headword": "生まれる",
+      "reading": "うまれる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0fa70f2527a777fa-1",
+          "definition": "To be born; to come into the world."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どこで生まれたか分かりません。",
+        "gloss": "was born",
+        "sense_id": "ja-0fa70f2527a777fa-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6625bc6dd44b4701fa6333686f64566c5b5ac185636cd8211ff21136b1e71b2d"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff2f3-cb57-7db1-9b6b-cbd50c453126"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.96,\"naturalness\":0.93,\"readability\":0.94,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[],\"language_problems\":[\"“曹操倒好热酒”搭配略不自然，宜改为“曹操斟好热酒”。\",\"“把孙坚头上的红帽换走”略生硬，可改为“与孙坚交换红帽”。\"],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":32899,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":1338,"reasoning_output_tokens":1226}}

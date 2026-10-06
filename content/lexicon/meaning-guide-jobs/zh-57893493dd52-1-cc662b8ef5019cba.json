@@ -1,0 +1,56 @@
+{
+  "id": "zh-57893493dd52-1-cc662b8ef5019cba",
+  "entry_id": "zh-57893493dd52-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-57893493dd52-1",
+      "headword": "纷纷",
+      "kind": "word",
+      "reading": "fēnfēn",
+      "senses": [
+        {
+          "id": "zh-57893493dd52-1-s1",
+          "definition": "one after another; in large numbers, as many people or things do the same thing"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "各地盗贼纷纷出现，社会更加不安。",
+        "gloss": "one after another",
+        "sense_id": "zh-57893493dd52-1-s1"
+      },
+      {
+        "sentence": "”三人于是发动黄巾起事，百姓纷纷跟随，黄巾军很快壮大。",
+        "gloss": "one after another",
+        "sense_id": "zh-57893493dd52-1-s1"
+      },
+      {
+        "sentence": "皇帝受惊，百官立即纷纷躲开。",
+        "gloss": "one after another",
+        "sense_id": "zh-57893493dd52-1-s1"
+      },
+      {
+        "sentence": "皇帝信任张让，叫他“阿父”，朝政逐渐败坏，天下人心想要作乱，盗贼纷纷起来。",
+        "gloss": "one after another",
+        "sense_id": "zh-57893493dd52-1-s1"
+      },
+      {
+        "sentence": "百姓纷纷裹上黄巾，跟随黄巾军的人有四五十万。",
+        "gloss": "one after another",
+        "sense_id": "zh-57893493dd52-1-s1"
+      },
+      {
+        "sentence": "程远志被杀后，黄巾军纷纷逃走，刘备带兵追赶，许多人投降。",
+        "gloss": "one after another",
+        "sense_id": "zh-57893493dd52-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e8bd839e08139721565ee5764c04c82592e145905e905566c044a5455dec327b"
+}

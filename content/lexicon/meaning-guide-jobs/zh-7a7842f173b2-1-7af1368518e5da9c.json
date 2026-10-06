@@ -1,0 +1,31 @@
+{
+  "id": "zh-7a7842f173b2-1-7af1368518e5da9c",
+  "entry_id": "zh-7a7842f173b2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7a7842f173b2-1",
+      "headword": "如同",
+      "kind": "word",
+      "reading": "rútóng",
+      "senses": [
+        {
+          "id": "zh-7a7842f173b2-1-s1",
+          "definition": "to be like; to resemble"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "楼桑村东南有一棵大桑树，高大茂盛，远看如同车盖。",
+        "gloss": "like; as if",
+        "sense_id": "zh-7a7842f173b2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "77e35c2b0fb909222a6d94367597da5a428df41c26f0bb3dd8a24e4357bf33d9"
+}

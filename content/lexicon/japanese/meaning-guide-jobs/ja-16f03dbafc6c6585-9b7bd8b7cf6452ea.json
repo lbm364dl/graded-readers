@@ -1,0 +1,32 @@
+{
+  "id": "ja-16f03dbafc6c6585-9b7bd8b7cf6452ea",
+  "entry_id": "ja-16f03dbafc6c6585",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-16f03dbafc6c6585",
+      "headword": "流す",
+      "reading": "ながす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-16f03dbafc6c6585-1",
+          "definition": "to let flow; to shed (tears)"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "白君は涙を流しながら、その一部始終を話した。",
+        "gloss": "while shedding tears",
+        "sense_id": "ja-16f03dbafc6c6585-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ffafc3eaba1fd2e97eda528794cc65e4e8713db38622991eade2d28a94b65f03"
+}

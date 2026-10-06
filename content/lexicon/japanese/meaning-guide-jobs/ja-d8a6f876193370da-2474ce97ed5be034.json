@@ -1,0 +1,32 @@
+{
+  "id": "ja-d8a6f876193370da-2474ce97ed5be034",
+  "entry_id": "ja-d8a6f876193370da",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d8a6f876193370da",
+      "headword": "這い出す",
+      "reading": "はいだす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d8a6f876193370da-1",
+          "definition": "to crawl out"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "様子がおかしいと思い、ゆっくり這い出すと、体がひどく痛かった。",
+        "gloss": "crawl out",
+        "sense_id": "ja-d8a6f876193370da-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9fd9ca5a9d5c9929550471dadf3b0a9e75577904e5ff953903d189d40120cefc"
+}

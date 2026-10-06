@@ -1,0 +1,37 @@
+{
+  "id": "ja-9c7439d372e0949d-8a45149473431e0f",
+  "entry_id": "ja-9c7439d372e0949d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9c7439d372e0949d",
+      "headword": "そこ",
+      "reading": "そこ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9c7439d372e0949d-1",
+          "definition": "that place; there"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そこは前までと違ってひどく明るかった。",
+        "gloss": "there; that place",
+        "sense_id": "ja-9c7439d372e0949d-1"
+      },
+      {
+        "sentence": "ある小春の穏やかな日、昼寝のあとでそこへ行くと、杉垣のそばで大きな黒猫が気持ちよさそうに寝ていた。",
+        "gloss": "there",
+        "sense_id": "ja-9c7439d372e0949d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "343aad3d3736a2770f01be997206ddd2e424c297d59d416ce5d40d7d46c7911c"
+}

@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_104-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 156,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了孔明临终任命蒋琬、费祎等后继者的情节。",
+      "classification": "material",
+      "reason": "这是孔明临终安排国家后继者的重要事件，补充了蜀汉政权交接与人物任用信息，属于重要情节而非可有可无的细节。",
+      "required_fix": "补充孔明临终明确任命蒋琬继任、费祎作为后继者的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了孔明临终任命蒋琬、费祎等后继者的情节。",
+      "classification": "material",
+      "reason": "这是孔明临终安排国家后继者的重要事件，补充了蜀汉政权交接与人物任用信息，属于重要情节而非可有可无的细节。",
+      "required_fix": "补充孔明临终明确任命蒋琬继任、费祎作为后继者的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 156,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

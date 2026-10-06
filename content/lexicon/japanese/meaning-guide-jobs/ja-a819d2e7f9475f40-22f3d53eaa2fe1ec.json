@@ -1,0 +1,32 @@
+{
+  "id": "ja-a819d2e7f9475f40-22f3d53eaa2fe1ec",
+  "entry_id": "ja-a819d2e7f9475f40",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a819d2e7f9475f40",
+      "headword": "大掃除",
+      "reading": "おおそうじ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a819d2e7f9475f40-1",
+          "definition": "a thorough or major cleaning"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が感心して聞いていると、黒は去年の大掃除の日の話を始めた。",
+        "gloss": "major house-cleaning",
+        "sense_id": "ja-a819d2e7f9475f40-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cd7a25c36346dd5741b3fdf9a6e1e7a759a5f005d5a51560ba192bcacb8062de"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-b3384df0da7cbbbc-080de8e2bc4484f2",
+  "entry_id": "ja-b3384df0da7cbbbc",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b3384df0da7cbbbc",
+      "headword": "食べ物",
+      "reading": "たべもの",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b3384df0da7cbbbc-1",
+          "definition": "food; something to eat"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "腹が減り、寒くなったので、食べ物を求めて池のそばを歩いた。",
+        "gloss": "food",
+        "sense_id": "ja-b3384df0da7cbbbc-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5724c392c90c2c718e803a8288f815bea50401c9fb87b4ba2a193cddee0bbbb0"
+}

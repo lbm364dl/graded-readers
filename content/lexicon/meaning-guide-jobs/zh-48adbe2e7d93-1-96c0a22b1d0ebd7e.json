@@ -1,0 +1,31 @@
+{
+  "id": "zh-48adbe2e7d93-1-96c0a22b1d0ebd7e",
+  "entry_id": "zh-48adbe2e7d93-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-48adbe2e7d93-1",
+      "headword": "田里",
+      "kind": "word",
+      "reading": "tiánlǐ",
+      "senses": [
+        {
+          "id": "zh-48adbe2e7d93-1-s1",
+          "definition": "the countryside; rural land"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "the countryside",
+        "sense_id": "zh-48adbe2e7d93-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2d5c6408e01efbc06a5774ab7e5e8ffe2cb26dfb22188acd93be4d8efb4d4341"
+}

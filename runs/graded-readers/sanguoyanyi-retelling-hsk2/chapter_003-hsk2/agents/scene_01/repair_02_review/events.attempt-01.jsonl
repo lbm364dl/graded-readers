@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff502-5d31-7a21-894d-0feb8a3092c8"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.84,\"naturalness\":0.92,\"readability\":0.86,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"王允说董卓夺走吕布的妻子是激怒吕布的煽动性说法，改写成事实，略有失真。\",\"貂蝉原话是不愿被赐给董卓的家奴吕布，改写为不愿离开董卓，因果重点有所偏移。\"],\"language_problems\":[\"篇幅明显超过500字目标的130%上限，未达到要求的紧凑长度。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":34073,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":966,"reasoning_output_tokens":809}}

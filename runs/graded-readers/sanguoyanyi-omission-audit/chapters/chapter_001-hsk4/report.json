@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_001-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 852,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "删去了刘备与张飞、关羽相识时的大部分外貌和背景细节，以及桃园结义誓词中的“同年同月同日死”等具体内容，但不影响主线复述。",
+      "classification": "material",
+      "reason": "外貌可压缩，但关羽杀人避祸等背景涉及其投军动机，誓词中的共同赴死也强化了三人的关系性质，属于重要关系与动机信息。",
+      "required_fix": "补回关羽投军的背景动机，并说明结义誓词包含共同赴死的约定。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "删去了刘备与张飞、关羽相识时的大部分外貌和背景细节，以及桃园结义誓词中的“同年同月同日死”等具体内容，但不影响主线复述。",
+      "classification": "material",
+      "reason": "外貌可压缩，但关羽杀人避祸等背景涉及其投军动机，誓词中的共同赴死也强化了三人的关系性质，属于重要关系与动机信息。",
+      "required_fix": "补回关羽投军的背景动机，并说明结义誓词包含共同赴死的约定。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 852,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

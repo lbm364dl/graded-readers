@@ -1,0 +1,36 @@
+{
+  "id": "zh-f33c0ba981ce-1-b948420505ea89fc",
+  "entry_id": "zh-f33c0ba981ce-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f33c0ba981ce-1",
+      "headword": "邓茂",
+      "kind": "name",
+      "reading": "Dèng Mào",
+      "senses": [
+        {
+          "id": "zh-f33c0ba981ce-1-s1",
+          "definition": "a personal name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志派邓茂出战。",
+        "gloss": "Deng Mao",
+        "sense_id": "zh-f33c0ba981ce-1-s1"
+      },
+      {
+        "sentence": "张飞举矛刺中邓茂，他从马上掉下。",
+        "gloss": "Deng Mao",
+        "sense_id": "zh-f33c0ba981ce-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "525fa79addaec1d0efb149670f4e2b375ad1dcc0b6fd3cb756bf6c9ab90641ce"
+}

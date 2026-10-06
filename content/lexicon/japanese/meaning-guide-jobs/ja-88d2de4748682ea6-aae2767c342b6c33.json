@@ -1,0 +1,32 @@
+{
+  "id": "ja-88d2de4748682ea6-aae2767c342b6c33",
+  "entry_id": "ja-88d2de4748682ea6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-88d2de4748682ea6",
+      "headword": "いつものように",
+      "reading": "いつものように",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-88d2de4748682ea6-1",
+          "definition": "as usual; in the customary way"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その日、吾輩はいつものように椽側で気持ちよく昼寝をしていた。",
+        "gloss": "as usual",
+        "sense_id": "ja-88d2de4748682ea6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "563588b74df9d2401c7e1e5cf568bacb17450d173f0b7afae88e2554487885a0"
+}

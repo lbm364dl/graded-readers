@@ -1,0 +1,146 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_025-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1171,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操试图安排关羽与二夫人同室、关羽秉烛户外守夜的关键细节。",
+      "classification": "material",
+      "reason": "该段体现关羽严守礼法、维护与刘备家眷关系的关键性格，也直接促成曹操更加敬服，属于重要人物塑造。",
+      "required_fix": "补入曹操安排关羽与二夫人同室，以及关羽秉烛立于户外通宵守夜的情节，并保留曹操因此更加敬服的反应。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操试图安排关羽与二夫人同室、关羽秉烛户外守夜的关键细节。",
+      "classification": "material",
+      "reason": "该段体现关羽严守礼法、维护与刘备家眷关系的关键性格，也直接促成曹操更加敬服，属于重要人物塑造。",
+      "required_fix": "补入曹操安排关羽与二夫人同室，以及关羽秉烛立于户外通宵守夜的情节，并保留曹操因此更加敬服的反应。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1329,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "将曹操攻下下邳后举火迷惑关羽说成“制造下邳失守的假象”，但下邳确已被曹操攻占，并非假象。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1146,
+      "review": {
+        "source_fidelity": 7,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“关羽误以为城失”错误地暗示下邳失守只是误会；原文中曹操确已攻入并占领下邳，举火只是为了迷惑关羽。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 1149,
+      "review": {
+        "source_fidelity": 8.8,
+        "naturalness": 9.0,
+        "readability": 9.0,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "原文是甘夫人一人梦见刘备陷入土坑，再与糜夫人谈论并一同哭泣；修复稿写成“二夫人梦见”，将梦境归于两位夫人，改变了原文事实。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 4,
+      "candidate_cjk": 1162,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "将原文中由甘夫人独自梦见刘备陷入土坑，改写为“甘夫人梦见……二人一同哭泣”虽语句随后有所区分，但标题性表述“甘夫人梦见”本身未明确错误；然而修复稿开头说“甘夫人梦见”并未构成将梦归于二夫人。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 5,
+      "candidate_cjk": 1164,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“还许昌途中”表达不自然，宜改为“回许昌途中”或“在返回许昌途中”。"
+        ],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 6,
+      "candidate_cjk": 1171,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

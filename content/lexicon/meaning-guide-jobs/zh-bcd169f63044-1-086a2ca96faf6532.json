@@ -1,0 +1,31 @@
+{
+  "id": "zh-bcd169f63044-1-086a2ca96faf6532",
+  "entry_id": "zh-bcd169f63044-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bcd169f63044-1",
+      "headword": "一万多",
+      "kind": "word",
+      "reading": "yíwàn duō",
+      "senses": [
+        {
+          "id": "zh-bcd169f63044-1-s1",
+          "definition": "more than ten thousand"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大方有一万多人，小方有六七千人，各方首领都称将军。",
+        "gloss": "more than ten thousand",
+        "sense_id": "zh-bcd169f63044-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cda9ec0f868650754ea01267f487cd50bcf21915687b31a0afdfa02e3a0bd35d"
+}

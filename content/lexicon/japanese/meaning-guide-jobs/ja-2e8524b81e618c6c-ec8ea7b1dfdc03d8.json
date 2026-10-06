@@ -1,0 +1,32 @@
+{
+  "id": "ja-2e8524b81e618c6c-ec8ea7b1dfdc03d8",
+  "entry_id": "ja-2e8524b81e618c6c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2e8524b81e618c6c",
+      "headword": "おかしい",
+      "reading": "おかしい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2e8524b81e618c6c-1",
+          "definition": "strange; odd"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "様子がおかしいと思い、ゆっくり這い出すと、体がひどく痛かった。",
+        "gloss": "strange; odd",
+        "sense_id": "ja-2e8524b81e618c6c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "64be345bbc09b04a636b0d77a83c2c8eafdabc13ce2c4adec6e4b63421c2f1d7"
+}

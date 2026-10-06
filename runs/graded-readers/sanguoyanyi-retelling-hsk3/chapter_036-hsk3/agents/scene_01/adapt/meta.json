@@ -1,0 +1,21 @@
+{
+  "job": "scene_01/adapt",
+  "model": "gpt-5.6-luna",
+  "effort": "high",
+  "fingerprint": "74d35009918b1092aeb3b6935ba6d6ab9d045bff0b48f6211b1fc2920e846fd5",
+  "started_at": "2026-08-12T09:13:46.350770+00:00",
+  "ended_at": "2026-08-12T09:14:18.109153+00:00",
+  "return_code": 0,
+  "attempt_count": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-08-12T09:13:46.350793+00:00",
+      "ended_at": "2026-08-12T09:14:18.108689+00:00",
+      "return_code": 0,
+      "throttled": false,
+      "events": "events.attempt-01.jsonl",
+      "stderr": "stderr.attempt-01.log"
+    }
+  ]
+}

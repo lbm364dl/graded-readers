@@ -1,0 +1,31 @@
+{
+  "id": "zh-4e6afdc8b871-1-7f46445b7fc44c8c",
+  "entry_id": "zh-4e6afdc8b871-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4e6afdc8b871-1",
+      "headword": "衰弱",
+      "kind": "word",
+      "reading": "shuāiruò",
+      "senses": [
+        {
+          "id": "zh-4e6afdc8b871-1-s1",
+          "definition": "weak; in decline"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角让手下向百姓传话，说旧的天下已经衰弱，新的天下将要出现，还叫人用白土在家门上写下“甲子”二字。",
+        "gloss": "weakened",
+        "sense_id": "zh-4e6afdc8b871-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dd011c3afa96adc6b08b456b3e8deb1491e9749ef672151dbef5343b4801b527"
+}

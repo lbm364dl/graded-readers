@@ -1,0 +1,32 @@
+{
+  "id": "ja-9cd0f5548bcefb7f-28061a8ff9b141fc",
+  "entry_id": "ja-9cd0f5548bcefb7f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9cd0f5548bcefb7f",
+      "headword": "それ",
+      "reading": "それ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9cd0f5548bcefb7f-1",
+          "definition": "that; it"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で、それがたばこだと知った。",
+        "gloss": "that; it",
+        "sense_id": "ja-9cd0f5548bcefb7f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9afb7e4aab843c3f641cb1b61b7825961271a5e149407f3e37ac367f7012ea34"
+}

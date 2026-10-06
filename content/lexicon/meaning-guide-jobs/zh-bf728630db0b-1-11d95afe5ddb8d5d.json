@@ -1,0 +1,31 @@
+{
+  "id": "zh-bf728630db0b-1-11d95afe5ddb8d5d",
+  "entry_id": "zh-bf728630db0b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bf728630db0b-1",
+      "headword": "光",
+      "kind": "name",
+      "reading": "Guāng",
+      "senses": [
+        {
+          "id": "zh-bf728630db0b-1-s1",
+          "definition": "Guang, the first part of the Guanghe reign-era name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "光和元年，母鸡变成公鸡；六月初一，黑气飞入宫中。",
+        "gloss": "The first part of the Guanghe reign-era name",
+        "sense_id": "zh-bf728630db0b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e73fc446848b4f82c9c53a023c3cb8f083f489d8186bfef611cfa7e17724d8ba"
+}

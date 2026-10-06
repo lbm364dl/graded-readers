@@ -1,0 +1,31 @@
+{
+  "id": "zh-ad6635011781-1-f7b3616c685edd51",
+  "entry_id": "zh-ad6635011781-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ad6635011781-1",
+      "headword": "直言",
+      "kind": "word",
+      "reading": "zhíyán",
+      "senses": [
+        {
+          "id": "zh-ad6635011781-1-s1",
+          "definition": "to speak frankly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "有人直言批评，也被定罪。",
+        "gloss": "speak frankly",
+        "sense_id": "zh-ad6635011781-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d2e67fb71cebbe06b3f5a6ef861f9965065d4e803d8158043e28f00936f7b8b1"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-e8ddcebd4532a5fa-a9e1cbb67b453814",
+  "entry_id": "zh-component-e8ddcebd4532a5fa",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-e8ddcebd4532a5fa",
+      "headword": "二十",
+      "reading": "èrshí",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-e8ddcebd4532a5fa-s1",
+          "definition": "the number twenty"
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9496ffe4047910556f28802a111b0178e7202f8e221062247dc2700e5ae1fc06"
+}

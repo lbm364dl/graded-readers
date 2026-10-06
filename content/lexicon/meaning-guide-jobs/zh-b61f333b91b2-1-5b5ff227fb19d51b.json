@@ -1,0 +1,31 @@
+{
+  "id": "zh-b61f333b91b2-1-5b5ff227fb19d51b",
+  "entry_id": "zh-b61f333b91b2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b61f333b91b2-1",
+      "headword": "发布",
+      "kind": "word",
+      "reading": "fābù",
+      "senses": [
+        {
+          "id": "zh-b61f333b91b2-1-s1",
+          "definition": "announce or issue publicly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉发布招军榜，叫人到处报名。",
+        "gloss": "issue",
+        "sense_id": "zh-b61f333b91b2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d3147f9a014bd1adbf2fcdfcb04eef44fd251c4adf81e7eebe1236f66798e120"
+}

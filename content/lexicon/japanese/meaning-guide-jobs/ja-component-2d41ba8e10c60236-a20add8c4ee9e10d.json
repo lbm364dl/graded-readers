@@ -1,0 +1,26 @@
+{
+  "id": "ja-component-2d41ba8e10c60236-a20add8c4ee9e10d",
+  "entry_id": "ja-component-2d41ba8e10c60236",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-component-2d41ba8e10c60236",
+      "headword": "覚ます",
+      "reading": "さます",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-component-2d41ba8e10c60236-1",
+          "definition": "To awaken someone or bring someone back to consciousness."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "245c355bd7c9ba5b6b3b48fdaa9d521ed135e832775d8be72620315638c2af2b"
+}

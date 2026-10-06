@@ -1,0 +1,31 @@
+{
+  "id": "zh-b1d59f7b9357-1-33936782836fe564",
+  "entry_id": "zh-b1d59f7b9357-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b1d59f7b9357-1",
+      "headword": "引出",
+      "kind": "construction",
+      "reading": "yǐnchū",
+      "senses": [
+        {
+          "id": "zh-b1d59f7b9357-1-s1",
+          "definition": "to bring or lead someone or something out; to cause something to emerge"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "榜文传到涿县，引出了刘备。",
+        "gloss": "to bring out",
+        "sense_id": "zh-b1d59f7b9357-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fbacabd221ebea024c105c302d89e258f5cb3d76fd43e40a80f6e487bb408901"
+}

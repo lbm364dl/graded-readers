@@ -1,0 +1,31 @@
+{
+  "id": "zh-fff33732fc97-1-f0784e79ba422069",
+  "entry_id": "zh-fff33732fc97-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fff33732fc97-1",
+      "headword": "休息",
+      "kind": "word",
+      "reading": "xiūxi",
+      "senses": [
+        {
+          "id": "zh-fff33732fc97-1-s1",
+          "definition": "rest; take a break"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "正饮酒时，一个大汉推着一辆车来到店门前休息，进门便叫酒保斟酒，说要赶进城投军。",
+        "gloss": "to rest",
+        "sense_id": "zh-fff33732fc97-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "74061e66e6759e5d398d83ab174c9a57d219ffafb41ac95e1168f28e2079c6a7"
+}

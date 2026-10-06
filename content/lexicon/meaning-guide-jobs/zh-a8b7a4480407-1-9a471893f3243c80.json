@@ -1,0 +1,31 @@
+{
+  "id": "zh-a8b7a4480407-1-9a471893f3243c80",
+  "entry_id": "zh-a8b7a4480407-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a8b7a4480407-1",
+      "headword": "警告",
+      "kind": "word",
+      "reading": "jǐnggào",
+      "senses": [
+        {
+          "id": "zh-a8b7a4480407-1-s1",
+          "definition": "to warn someone of a danger or tell them not to do something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "老人把天书三卷交给他，名为太平要术，并警告他不可生异心。",
+        "gloss": "to warn",
+        "sense_id": "zh-a8b7a4480407-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e9667059e852eab19164f6196954616ee7e2b0259ca145a8bf176a232f845d02"
+}

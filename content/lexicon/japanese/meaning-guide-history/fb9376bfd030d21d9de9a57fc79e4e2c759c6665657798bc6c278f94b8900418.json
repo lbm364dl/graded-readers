@@ -1,0 +1,2047 @@
+{
+  "schema_version": 2,
+  "policy_version": 5,
+  "reviewed": true,
+  "model": "gpt-6-luna",
+  "proposal_effort": "low",
+  "review_effort": "high",
+  "guides": [
+    {
+      "entry_id": "ja-component-011ca65462ff52a4",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "足（あし）means a leg or foot. It can refer to the limb as a whole or specifically to the part used for standing and walking.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "f5956578fff220ee26641aeaec5bb74dfa77a805a1854fb95b7cb56af1df3618",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-02ad1280d4b70f8e",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "じめじめ describes a persistently damp or clammy condition. It commonly appears in じめじめする and じめじめした空気.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "04e1a3f958c26215ee57d8d0fe15bf2326222ad042da6c939fbb32ec41835260",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-09bed1aa792d95f3",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "相手（あいて）is the person or party on the other side of a relationship, activity, or contest. 相 marks the relation as reciprocal, while 手 refers to the person or side taking part; together they name the counterpart, which may be a partner or an opponent depending on the activity.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "相",
+          "contribution_en": "Marks a reciprocal relation between the parties.",
+          "claim_ids": []
+        },
+        {
+          "text": "手",
+          "contribution_en": "Refers to the person or side taking part.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "1c2e9ee7060b3933a71cad2d165f3c763b8ef33ec33b19d0ea9661d01b1de967",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-11a3188f680a9763",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "広い describes something with a large span or plenty of space, such as a room, area, or opening. Depending on what it describes, it can mean “wide” or “spacious.”",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "f369648fd3e7c8ec93a3d23ef2cea39cf10694acf1ef8b3ee0b53cac4327115a",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-12cbfa4988715ec9",
+      "investigation_questions": [
+        {
+          "component": "懸",
+          "question": "Do reliable Japanese sources establish a distinct contribution of 懸 to the modern effort sense of 懸命?"
+        },
+        {
+          "component": "命",
+          "question": "Do reliable Japanese sources establish a distinct contribution of 命 to the modern effort sense of 懸命?"
+        }
+      ],
+      "claim_ids": [
+        "c1",
+        "c3"
+      ],
+      "structure": "single_component",
+      "explanation_en": "懸命 describes putting all one's strength into something, with determined, strenuous effort. The word also has an older association with risking one's life, which helps convey the force of striving to the limit.",
+      "caveat_en": "",
+      "parts": [],
+      "research": {
+        "entry_id": "ja-component-12cbfa4988715ec9",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/%E6%87%B8%E5%91%BD-493180",
+            "title": "懸命(ケンメイ)とは？ 意味や使い方 - コトバンク",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Digital Daijisen defines modern adjectival 懸命 as exerting oneself to the limit or doing something with all one's strength. The Kōjien entry in the same page records older senses including keeping or risking one's life, and an adjectival sense of acting with life-risking force or striving desperately. It says 懸命 often occurs in 懸命の地／一所懸命の地 and suggests a fixed association between 懸命 and land; it does not analyze separate modern contributions from 懸 and 命."
+          },
+          {
+            "id": "s2",
+            "url": "https://kotobank.jp/word/%E4%B8%80%E6%89%80%E6%87%B8%E5%91%BD-434245",
+            "title": "一所懸命(イッショケンメイ)とは？ 意味や使い方 - コトバンク",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The entries define medieval 一所懸命 in relation to relying on and protecting a single landholding at risk of one's life. The Kōjien entry cites 古事談 (c. 1212–15). Its word-history account says that as the place/estate sense weakened, the expression retained a life-risking or desperate sense, and that the form changed to 一生懸命 as the place/estate association was forgotten."
+          },
+          {
+            "id": "s3",
+            "url": "https://kotobank.jp/word/%E4%B8%80%E7%94%9F%E6%87%B8%E5%91%BD-434234",
+            "title": "一生懸命(イッショウケンメイ)とは？ 意味や使い方 - コトバンク",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Digital Daijisen explicitly glosses 一生懸命 as a form derived from 一所懸命. The Kōjien entry calls it a changed form of 一所懸命, gives a first cited example from 1734, and discusses historical factors proposed for the change. These entries support a historical relationship between the two full expressions, not the claim that standalone 懸命 is a shortening of 一生懸命."
+          },
+          {
+            "id": "s4",
+            "url": "https://japanknowledge.com/articles/blognihongo/entry.html?entryid=197",
+            "title": "第197回 「一“所”懸命」 - 日本語、どうでしょう？ ｜ジャパンナレッジ",
+            "accessed_at": "2026-09-27",
+            "summary_en": "A Japanese-language article explains the conventional account: 一所懸命 referred to protecting a landholding at risk of one's life; with the landholding sense fading, the desperate or life-risking sense remained and 一所 shifted to the similar-sounding 一生. It discusses the familiarity of 一生 to Edo-period speakers as an explanation, not a direct attestation of the change. It does not claim standalone 懸命 is an abbreviation."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "For a reusable modern explanation, define 懸命 directly as striving to the limit or exerting oneself with all one's strength. The historical dictionary also records life-risking and desperate-action senses, but does not establish that 懸 and 命 each independently contribute to the modern effort sense.",
+            "source_ids": [
+              "s1"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "The dictionary evidence supports a historical relationship in which 一生懸命 is a changed form of 一所懸命. The earlier expression referred to protecting or relying on a landholding at risk of one's life; later, the landholding association weakened while the desperate or life-risking sense remained. This evidence does not establish standalone 懸命 as a shortened form of 一生懸命.",
+            "source_ids": [
+              "s2",
+              "s3",
+              "s4"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "Japanese dictionary evidence associates 懸命 historically with life-risking meanings and with the fixed expression 懸命の地／一所懸命の地. It does not demonstrate a reliable, separately recoverable modern contribution from each character, or a precise component-by-component bridge to ‘earnest, strenuous effort.’ Explain the established word sense without decomposing it into those character meanings.",
+            "source_ids": [
+              "s1",
+              "s2"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "懸命 語源 一生懸命 辞書; 懸命 意味 一生懸命 日本国語大辞典; 一生懸命 語源 一所懸命 歴史 国語辞典",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E6%87%B8%E5%91%BD-493180",
+              "https://kotobank.jp/word/%E4%B8%80%E6%89%80%E6%87%B8%E5%91%BD-434245",
+              "https://kotobank.jp/word/%E4%B8%80%E7%94%9F%E6%87%B8%E5%91%BD-434234"
+            ]
+          },
+          {
+            "query": "懸命 語誌 懸命 一所懸命 命をつなぐ 意味 国語辞典",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E6%87%B8%E5%91%BD-493180",
+              "https://kotobank.jp/word/%E4%B8%80%E6%89%80%E6%87%B8%E5%91%BD-434245"
+            ]
+          },
+          {
+            "query": "懸命 一生懸命 略語 懸命 語源 辞書",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E4%B8%80%E7%94%9F%E6%87%B8%E5%91%BD-434234"
+            ]
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E6%87%B8%E5%91%BD-493180",
+              "https://kotobank.jp/word/%E4%B8%80%E6%89%80%E6%87%B8%E5%91%BD-434245",
+              "https://kotobank.jp/word/%E4%B8%80%E7%94%9F%E6%87%B8%E5%91%BD-434234",
+              "https://japanknowledge.com/articles/blognihongo/entry.html?entryid=197"
+            ]
+          }
+        ],
+        "gaps": [
+          "No opened source establishes that standalone modern 懸命 is a shortening of 一生懸命.",
+          "No opened source establishes separate, reliable modern semantic contributions from 懸 and 命 to 懸命, or a precise compositional bridge from those characters to the modern effort sense."
+        ]
+      },
+      "input_fingerprint": "3e0edb78aa79dda08d4e036e004f6130af1411746d4fed0d432e9232d9958e42",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "Do 懸 and 命 each contribute a recoverable meaning to modern 懸命, and if so, what is the conventional bridge from those contributions to its sense of earnest, strenuous effort?",
+        "Is modern 懸命 a shortened form of 一生懸命, and what evidence supports that relationship? In 懸命, do 懸 (such as “stake/risk”) and 命 (“life”) make a reliable contribution to the modern sense “earnest and strenuous effort,” or should the word be explained without component parts?"
+      ],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-19491096001b1ba6",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "じっと describes remaining completely still, without moving. It can modify an action such as waiting to show that it is done without movement.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "fcdeaaf42f3b48bad5dec204f79e5579066a348ca47ff1a9a7d2ddfaeecb30e0",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-1a54e0bb25e64f44",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "づく is a verb-forming suffix that attaches to a noun or an adjective stem to mean that something comes into or takes on the stated condition. For example, 色づく means to take on color.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "eef8488b07f3cd6d9f2c8eace7f3560be62765b8f8b0ad95982ae1d72d346e3e",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-1b42802e9f6d646e",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "In this sense, 差す means to take or determine a length or dimension. It names the act of finding the measurement, rather than the measurement itself.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "2802415a3b9b2f6cda918da3e940cb6ba48e7c0cba124822c1d3de8b2ad60633",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-24ca43654906e2aa",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "一日 (いちにち) combines 一 (“one”) with 日 (“day”) to mean a span of one day. It can refer to a full day or a duration of one day.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "一",
+          "contribution_en": "one",
+          "claim_ids": []
+        },
+        {
+          "text": "日",
+          "contribution_en": "day",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "90f5699f31992c2939381ae4e93595174c3b8d78b31783fd2741de5e9a12d497",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-26e1eae9d71b8a19",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "ふわり describes a light, soft floating or drifting motion. It is commonly used adverbially, often with と, to describe how something moves.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "3ecdccda51b4862a427cc2a49065632704782bb507d80ca463ac8183718642a5",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-2d41ba8e10c60236",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "覚ます means to wake someone or bring them back to consciousness. It is transitive: the person being awakened is the object.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "234a61515a169c5f62d8a81e01592d93109433ea0855c20de5ec37b02a4eca14",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-3068a080ea360bf9",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "やに means sticky, resin-like residue. In 目やに, it refers to discharge that collects around the eyes.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "ae0a24cc75a8509f878f73382e60dc9508b1ce4ef6b1efba8731ad96294bf7fc",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-32a9a7a3687913d1",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "給料 means wages or salary: payment provided to someone for their work. 給 suggests supplying or providing, while 料 contributes the sense of a payment or fee.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "給",
+          "contribution_en": "suggests supplying or providing",
+          "claim_ids": []
+        },
+        {
+          "text": "料",
+          "contribution_en": "contributes the sense of a payment or fee",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "ab4f146fc714d6da6102223edf3c4521c621f15b4b0898fcf45114de951e967d",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-37fcd007ffc5e1bd",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "四十 is the number forty, read よんじゅう. 四 contributes four and 十 contributes ten: together they express four tens.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "四",
+          "contribution_en": "Contributes four.",
+          "claim_ids": []
+        },
+        {
+          "text": "十",
+          "contribution_en": "Contributes ten; with 四, it makes four tens.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "9bec4873eced839016710d4040b657428cb674408b71ae9cf66d6f58053d4483",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-3976a94ed90f5671",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "さん follows a person’s name or title to address or refer to them respectfully. It is a broadly polite honorific and does not specify a particular rank or relationship.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "75cb276e76d3ab2c03383bfb87caac8fb924cbd82289bf11cbd983f1bbe49d56",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-4614f515a2ab6581",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "ご飯 is the common polite word for cooked rice. It also means a meal, using rice as a familiar stand-in for the meal as a whole; the prefix ご gives the word a polite tone.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "ご",
+          "contribution_en": "Polite prefix.",
+          "claim_ids": []
+        },
+        {
+          "text": "飯",
+          "contribution_en": "Cooked rice; also food or a meal, which supports the broader meal sense of ご飯.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "ff83e08416714405fdee9ab26ea92a51582d3d62f50e4321cbccfb2599456598",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-46de2c2f78035c9f",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "何回 asks or states the number of times something happens. 何 asks “how many,” and 回 counts occurrences, so together they refer to how many times something happens or the number of occurrences.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "何",
+          "contribution_en": "Asks “how many.”",
+          "claim_ids": []
+        },
+        {
+          "text": "回",
+          "contribution_en": "Counts occurrences or repetitions.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "17aacfaff87e94cf356df8671da14931713bf5b43116d5cda16f08b7727d6519",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-471c6ae1c19a546e",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "這う（はう）means to crawl or creep, moving low along a surface or through a space. It can describe people and animals, as well as things such as vines that spread along a surface.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "309df4af859af1906e0567b9fd3bc476be5d9e3e1df56f44c02bef65d5c90ddb",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-4a376919546c4b91",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "こと is a broad noun for a thing or matter, often abstract. After a verb or clause, it makes that action, event, or situation into a noun phrase, treating its content as a matter or fact; for example, 食べること means “eating” as an activity.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "a5894c9449482ebcd7f54877c35a93df915677cc3e941f5be3ef0e838b68ba2e",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-4bb011ae2722881d",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "なる means “to become” or “come to be,” describing a change in which someone or something reaches a new state or condition.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "1d88b82ecac1039cea0f9b4bb3f6f032fd17777796b268a68965921f2a81066f",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-5a3e5b040e053178",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "そう refers to a way or state made clear by the conversation or situation, roughly “so” or “that way.” It commonly points to something already mentioned or understood, as in そう思う (“think so”).",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "77f670b357df28af8850ce5b005fe8105ccc5e7d7956c78a90e02de10b19222a",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-5bf7b71571213d2a",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "動く means to move or be in motion. It can describe a person or thing changing position, or a machine or mechanism operating.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "e01618d6d1655ae55e53262ac207141a6a91f6bc26e13f08bd0d422a846788c1",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-5ed95006aa017ecb",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "潜る（もぐる）means to go beneath a surface or enter a space that covers or surrounds you. It describes diving underwater, burrowing into the ground, or ducking under something, depending on the movement and place.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "9249c9f5696f627efba0d79763dff232e1d35a6be93df553077815787502d267",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-61b171e6c6774d53",
+      "investigation_questions": [
+        {
+          "component": "野",
+          "question": "Does 野 contribute a meaning to 野郎, or does it serve another role in the spelling?"
+        },
+        {
+          "component": "野郎",
+          "question": "What reliable evidence explains how the older young-man use relates to the modern rough or insulting use?"
+        }
+      ],
+      "claim_ids": [
+        "c1",
+        "c2"
+      ],
+      "structure": "overlapping",
+      "explanation_en": "野郎 is a rough or familiar way to refer to a man or fellow, and as direct address it can sound insulting. 郎 means “man” or “young man,” which fits the person referred to; the contribution of 野 to this word’s meaning is unclear.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "野",
+          "contribution_en": "Its contribution to the word’s meaning is unclear.",
+          "claim_ids": [
+            "c1"
+          ]
+        },
+        {
+          "text": "郎",
+          "contribution_en": "Means “man” or “young man,” fitting the male person referred to.",
+          "claim_ids": [
+            "c2"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "ja-component-61b171e6c6774d53",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/%E9%87%8E%E9%83%8E-649946",
+            "title": "野郎（読み）ヤロウ - コトバンク（デジタル大辞泉・精選版 日本国語大辞典・普及版 字通）",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The dictionaries attest 野郎 for a young man, a man addressed insultingly, a kabuki actor with a shaved forelock, and other historical senses. The 日本国語大辞典 gives examples dated 1665, 1681, 1687, and 1780. These entries establish the word, spelling, and historical uses, but do not explain 野's contribution or give a derivation."
+          },
+          {
+            "id": "s2",
+            "url": "https://www.kanjipedia.jp/kotoba/0006790400",
+            "title": "ヤロウ | 言葉 | 漢字ペディア",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Lists 野郎 under words beginning with 野 and defines it as a colloquial term for a young man and as an insulting term for a man. This directly supports the spelling and lexicalized two-character form, but does not break down the compound's meaning."
+          },
+          {
+            "id": "s3",
+            "url": "https://www.kanjipedia.jp/kanji/0007353100",
+            "title": "郎 | 漢字一字 | 漢字ペディア",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Gives 郎 the senses 'man' and 'young man' and lists 野郎 among compounds containing 郎. This establishes the character's independent meaning and its presence in the word, but does not explicitly assign that sense as a productive component contribution in 野郎."
+          },
+          {
+            "id": "s4",
+            "url": "https://kotobank.jp/word/%E9%87%8E%E9%83%8E%E6%AD%8C%E8%88%9E%E4%BC%8E-144443",
+            "title": "野郎歌舞伎（読み）ヤロウカブキ - コトバンク（デジタル大辞泉・精選版 日本国語大辞典・改訂新版 世界大百科事典）",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Describes 野郎歌舞伎 as a form performed by actors with shaved forelocks after young-men's kabuki was prohibited. The encyclopedia notes uncertainty about some dates and circumstances. It contextualizes the historical 野郎 senses but does not establish how 野郎 was formed or how its spelling contributes meaning."
+          },
+          {
+            "id": "s5",
+            "url": "https://wordorigin.seesaa.net/article/201510article_89.html",
+            "title": "語源〖野郎〗: ナッシーの語源帳",
+            "accessed_at": "2026-09-27",
+            "summary_en": "A personal etymology blog proposes that 野郎 developed from 童 through わらは and わらう, and separately reports a dictionary theory that the spelling shifted from 野老 to 野郎. The page supplies no supporting evidence for either proposal. These are unverified competing suggestions, not reliable grounds for a reusable explanation."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "Japanese lexical references attest 野郎 as a word written with these two characters, including senses for a young man and for an insulting or rough term for a man. The entries establish the spelling and modern lexical meanings, but do not state what semantic contribution 野 makes.",
+            "source_ids": [
+              "s1",
+              "s2"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "漢字ペディア gives 郎 an independent 'man/young man' sense and lists 野郎 as a compound containing 郎. This is compatible with a male-person association for 郎, but the cited evidence does not explicitly analyze 郎's contribution within 野郎 or specify 野's role.",
+            "source_ids": [
+              "s2",
+              "s3"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "Historical dictionary examples attest 野郎 for young men, kabuki actors, and men insulted by the term from the seventeenth and eighteenth centuries; an encyclopedia links 野郎歌舞伎 with actors whose forelocks were shaved. These attestations establish usage context, not a proven derivation of the modern insult or the component meaning of 野.",
+            "source_ids": [
+              "s1",
+              "s4"
+            ]
+          },
+          {
+            "id": "c4",
+            "text_en": "An opened personal blog presents two incompatible origin suggestions, one deriving the spoken form from 童 and another proposing a spelling change from 野老 to 野郎. The page does not substantiate either account, and neither is confirmed by the opened dictionary entries, so neither supports a reusable etymological claim.",
+            "source_ids": [
+              "s1",
+              "s5"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "野郎 語源 野郎 野の意味 日本語 辞典; 「野郎」の語源 野郎語源 日本国語大辞典; 野郎 語源 野 漢字 由来 若衆 日本語; 野郎 女郎 野郎 語源 野郎頭 語源",
+            "opened_urls": []
+          },
+          {
+            "query": "野郎 語源 辞書 野郎 当て字 日本語語源辞典; site:dictionary.goo.ne.jp 野郎 語源 やろう; site:weblio.jp/content/野郎 語源 野郎; 野郎 やろう もと 若者 野郎頭 語源 日本語",
+            "opened_urls": []
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E9%87%8E%E9%83%8E-649946",
+              "https://www.kanjipedia.jp/kotoba/0006790400",
+              "https://www.kanjipedia.jp/kanji/0007353100",
+              "https://kotobank.jp/word/%E9%87%8E%E9%83%8E%E6%AD%8C%E8%88%9E%E4%BC%8E-144443",
+              "https://kotobank.jp/word/%E9%87%8E%E8%89%AF-597473",
+              "https://wordorigin.seesaa.net/article/201510article_89.html"
+            ]
+          }
+        ],
+        "gaps": [
+          "The opened reputable lexical sources do not directly specify whether 野 contributes a modern semantic component to 野郎, or whether the spelling is semantic, phonographic, or otherwise motivated.",
+          "No opened reliable source establishes the compound's formation or a derivation linking its historical young-man or kabuki senses to the modern insult. The competing derivation suggestions found on a personal blog remain unsupported."
+        ]
+      },
+      "input_fingerprint": "a7ee211a3225d37808f995a785a97f108b46ad80c53b766d847743fd2ba16b85",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "What contribution, if any, does 野 make to the formation or modern meaning of 野郎, and is the spelling or compound analysis supported by reliable Japanese lexical evidence?"
+      ],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-63892edc78441017",
+      "investigation_questions": [
+        {
+          "component": "生",
+          "question": "Does 生 contribute a recognizable nuance in modern 写生, or is its association with “life” limited to the documented early Meiji use?"
+        }
+      ],
+      "claim_ids": [
+        "c1"
+      ],
+      "structure": "compositional",
+      "explanation_en": "写生する means to draw or sketch a subject as it appears when observed directly. する makes the action named by 写生 into a verb.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "写",
+          "contribution_en": "Points to depicting the subject as seen.",
+          "claim_ids": [
+            "c1"
+          ]
+        },
+        {
+          "text": "生",
+          "contribution_en": "A distinct contribution in modern 写生 is not established by the supplied evidence.",
+          "claim_ids": [
+            "c1"
+          ]
+        },
+        {
+          "text": "する",
+          "contribution_en": "Turns 写生 into a verb meaning to do that kind of depicting.",
+          "claim_ids": []
+        }
+      ],
+      "research": {
+        "entry_id": "ja-component-63892edc78441017",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/%E5%86%99%E7%94%9F-186198",
+            "title": "写生（読み）シャセイ — コトバンク（デジタル大辞泉・精選版 日本国語大辞典・日本大百科全書ほか）",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The Digital Daijisen and Nihon Kokugo Daijiten entries define 写生 as depicting scenery or things as seen; neither analyzes 生 as a separate component of the contemporary word. The Nihon Kokugo Daijiten’s word-history note says that early Meiji Western-style painting used 写生 with the sense “depict life.” This attests a historical use in that context, but does not establish an invariant modern contribution or a proven derivation. The encyclopedia’s discussion of living subjects and life/vitality concerns East Asian art contexts and should not be generalized into a claim about the modern Japanese word."
+          },
+          {
+            "id": "s2",
+            "url": "https://www.kanjipedia.jp/kanji/0003833400",
+            "title": "生 — 漢字ペディア",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The entry lists independent senses of 生 including living, life, and lively, and lists 写生 as a compound. It does not explain what 生 contributes specifically to 写生."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "Modern dictionary definitions describe 写生 as depicting scenery or things as seen. They do not specify a separate modern meaning contributed by 生, so the compound-level sense alone does not settle whether speakers perceive such a contribution.",
+            "source_ids": [
+              "s1"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "The Nihon Kokugo Daijiten records a historical early Meiji Western-painting use of 写生 in the sense “depict life.” This supports a context-specific historical association, but not a proven derivation or a required meaning of 生 in contemporary 写生.",
+            "source_ids": [
+              "s1"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "生 has independent meanings including “life” and “living,” but that character-level evidence does not by itself establish its semantic contribution within 写生.",
+            "source_ids": [
+              "s2"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "写生 意味 生 漢字 成り立ち 国語辞典",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E5%86%99%E7%94%9F-186198",
+              "https://www.kanjipedia.jp/kanji/0003833400"
+            ]
+          },
+          {
+            "query": "写生 デジタル大辞泉 意味",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E5%86%99%E7%94%9F-186198"
+            ]
+          },
+          {
+            "query": "写生 近代 日本語 語源 写生 国語辞典",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E5%86%99%E7%94%9F-186198"
+            ]
+          },
+          {
+            "query": "\"写生\" \"生命を写す\" 語誌",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E5%86%99%E7%94%9F-186198"
+            ]
+          },
+          {
+            "query": "写生 生命を写す 明治 写生 語義 生意",
+            "opened_urls": []
+          },
+          {
+            "query": "\"写生\" \"生意\" 絵画 日本",
+            "opened_urls": []
+          },
+          {
+            "query": "写生 生 生命 意味 日本画 近代 語源 論文",
+            "opened_urls": []
+          },
+          {
+            "query": "site:ndl.go.jp 写生 生命を写す 明治",
+            "opened_urls": []
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E5%86%99%E7%94%9F-186198",
+              "https://www.kanjipedia.jp/kanji/0003833400",
+              "https://hagilib.city.hagi.lg.jp/hagilib-archive/image/120.pdf",
+              "https://dictionary.goo.ne.jp/word/%E5%86%99%E7%94%9F/",
+              "https://www.jstage.jst.go.jp/article/zoukeitokyoiku/19/0/19_5/_pdf"
+            ]
+          }
+        ],
+        "gaps": [
+          "The opened dictionary pages do not resolve whether modern speakers compositionally perceive 生 as contributing “life,” “vitality,” or another nuance in 写生; no direct modern usage analysis establishing this was found.",
+          "The cited Hagi museum PDF could not be opened, so its historical discussion and references remain unverified and are not used as evidence."
+        ]
+      },
+      "input_fingerprint": "133f5496552f861c1d0a4d6f9a5ad904ff4a012f05ba917f120377eb5329f82c",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "What contribution, if any, does 生 make to the modern Japanese compound 写生 beyond the compound's meaning of drawing or sketching from direct observation?"
+      ],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-6a723edb2be6b35a",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "絵具（えのぐ）means paint used to make pictures. 絵 means “picture,” while 具 suggests supplies or equipment for a purpose; together, they name the paint used in picture-making.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "絵",
+          "contribution_en": "picture",
+          "claim_ids": []
+        },
+        {
+          "text": "具",
+          "contribution_en": "supplies or equipment for a purpose; here, supplies for picture-making",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "c0d6b7ba216cc4a03582c6f4afe876802529a019611f5ff29a5c1a9b91b3bf26",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-708353831e1f7459",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "一度 combines 一, “one,” with 度, a counter for times or occasions. Together they mean “one time” or “a single occasion.”",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "一",
+          "contribution_en": "one",
+          "claim_ids": []
+        },
+        {
+          "text": "度",
+          "contribution_en": "counter for times or occasions",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "2f32ab4dd80cbca5183ee0029b91208a1929803f895c5ea974c140b2135292f5",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-7703a9cd32a10983",
+      "investigation_questions": [],
+      "claim_ids": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "structure": "compositional",
+      "explanation_en": "水彩 means coloring with paint used in water: 水 names water as the medium, and 彩 contributes coloring or putting color on something. It also has the established shortened sense “watercolor painting,” from 水彩画.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "水",
+          "contribution_en": "Names water as the medium used with the paint.",
+          "claim_ids": [
+            "c1"
+          ]
+        },
+        {
+          "text": "彩",
+          "contribution_en": "Contributes coloring or putting color on something.",
+          "claim_ids": [
+            "c2"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "ja-component-7703a9cd32a10983",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/%E6%B0%B4%E5%BD%A9-539715",
+            "title": "水彩（スイサイ）とは？ 意味や使い方 - コトバンク",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Digital Daijisen defines 水彩 as coloring with paint dissolved in water and also as a shortening of 水彩画. The Japanese National Language Dictionary gives the same basic definition. The encyclopedia entry describes water as the medium used to dissolve paint, while noting that “watercolor” can be used broadly or for a narrower genre."
+          },
+          {
+            "id": "s2",
+            "url": "https://kotobank.jp/word/%E6%B0%B4%E5%BD%A9%E7%94%BB-82887",
+            "title": "水彩画（スイサイガ）とは？ 意味や使い方 - コトバンク",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The Japan Encyclopedia (Nipponica) describes watercolor painting as using pigment dissolved in water and discusses watercolors made with pigment and binders such as gum arabic. It distinguishes transparent and opaque watercolors."
+          },
+          {
+            "id": "s3",
+            "url": "https://kotobank.jp/word/%E5%BD%A9-507116",
+            "title": "彩（サイ）とは？ 意味や使い方 - コトバンク",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Digital Daijisen defines 彩 as putting beautiful color on something or coloring. This supports the color-related contribution in 水彩 without establishing the compound’s history."
+          },
+          {
+            "id": "s4",
+            "url": "https://kotobank.jp/word/%E5%BD%A9%E8%89%B2-507685",
+            "title": "彩色（サイシキ）とは？ 意味や使い方 - コトバンク",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Digital Daijisen defines 彩色 as putting color on something. The Japanese National Language Dictionary likewise gives coloring or applying color as its basic sense."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "In the modern compound, 水 specifies water as the medium: dictionaries define 水彩 as coloring with paint dissolved in water, and the encyclopedia describes pigment being dissolved in water for use. This supports a contribution about how the paint is used, not a claim that the pigment itself must dissolve in water.",
+            "source_ids": [
+              "s1",
+              "s2"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "彩 contributes the act of coloring or putting color on something. This is supported both by 水彩’s definition as 彩色 with water-dissolved paint and by the dictionary definitions of 彩 and 彩色.",
+            "source_ids": [
+              "s1",
+              "s3",
+              "s4"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "水彩 also has the established abbreviated sense “watercolor painting” from 水彩画. The opened references support these modern meanings; they do not establish a coinage history or a proven historical derivation for the compound.",
+            "source_ids": [
+              "s1",
+              "s2"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "水彩 意味 水 彩 国語辞典",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E6%B0%B4%E5%BD%A9-539715"
+            ]
+          },
+          {
+            "query": "水彩画 水彩 絵具 用語 武蔵野美術大学 水彩絵具",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E6%B0%B4%E5%BD%A9%E7%94%BB-82887"
+            ]
+          },
+          {
+            "query": "site:kotobank.jp/word 彩 意味 色をつける 彩色 国語辞典",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E5%BD%A9-507116",
+              "https://kotobank.jp/word/%E5%BD%A9%E8%89%B2-507685"
+            ]
+          },
+          {
+            "query": "水彩画 コトバンク 意味 水彩画 日本国語大辞典",
+            "opened_urls": []
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E6%B0%B4%E5%BD%A9-539715",
+              "https://kotobank.jp/word/%E6%B0%B4%E5%BD%A9%E7%94%BB-82887",
+              "https://zokeifile.musabi.ac.jp/%E6%B0%B4%E5%BD%A9%E7%B5%B5%E5%85%B7/",
+              "https://kotobank.jp/word/%E5%BD%A9-507116",
+              "https://kotobank.jp/word/%E5%BD%A9%E8%89%B2-507685"
+            ]
+          }
+        ],
+        "gaps": [
+          "The opened sources support the modern component contributions but do not establish when 水彩 was coined, how the compound historically formed, or a specific documented derivation."
+        ]
+      },
+      "input_fingerprint": "61fa092edb58a92f145beb6874a595c6b91351b748ece6dee6a278f9e6bb9b9a",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "水彩: What do 水 and 彩 each contribute to the modern compound meaning “watercolor painting,” beyond their broad character glosses?"
+      ],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-7a5e06835e4c967f",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "寒い describes cold conditions, especially cold weather or surroundings, and the sensation of feeling cold.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "1b3cb6db08f39d596e1ac2c1042b7e7d0f9ea19824bfa28cc921c4b3a9174980",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-7fca314cadec7a61",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "込む means to go or move inward. In compounds such as 飛び込む, it contributes movement into a place or state.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "3d8e361776859ad3a69483b8dabdb813999a6ac6eda77b3b751fbb33fe621b52",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-82b72f997eae81cc",
+      "investigation_questions": [
+        {
+          "component": "上手",
+          "question": "What, if anything, do 上 and 手 contribute to the modern formation of じょうず?"
+        }
+      ],
+      "claim_ids": [
+        "c1"
+      ],
+      "structure": "single_component",
+      "explanation_en": "上手 means being skillful or good at an activity. The supplied evidence supports this whole-word meaning but does not establish a contribution from either written character.",
+      "caveat_en": "",
+      "parts": [],
+      "research": {
+        "entry_id": "ja-component-82b72f997eae81cc",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/%E4%B8%8A%E6%89%8B-162205",
+            "title": "上手（読み）ジョウズ — 精選版 日本国語大辞典, コトバンク",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The entry defines じょうず as being skillful or dexterous at something and gives a first-cited example from 781 referring to a skilled archer, followed by an example from Yamato Monogatari (947–957). It separately defines うわて and かみて. It does not explain the modern contribution of each character or the semantic development of じょうず."
+          },
+          {
+            "id": "s2",
+            "url": "https://www.kanjipedia.jp/kotoba/0003484900",
+            "title": "じょうず — 漢字ペディア",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Defines じょうず as technical or practical skill, and also records the sense ‘flattery.’ It says that うわて and かみて have different meanings. It offers no component analysis or etymology."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "For じょうず, the opened dictionaries support the whole-word sense ‘skillful; good at an activity.’ They do not establish that 上 contributes ‘upper/superior’ or 手 contributes ‘hand/skill’ in the modern formation of this word. Those character glosses alone are not a supported explanation of the word.",
+            "source_ids": [
+              "s1",
+              "s2"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "The historical dictionary cites a 781 example for the skill-related sense and another from Yamato Monogatari (947–957). These attest early use, but do not explain how じょうず acquired that meaning or prove a semantic pathway.",
+            "source_ids": [
+              "s1"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "The dictionaries distinguish じょうず from the readings うわて and かみて, which have separately described uses. The shared spelling does not establish that their meanings or histories are identical.",
+            "source_ids": [
+              "s1",
+              "s2"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "上手 じょうず 語源 日本国語大辞典",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E4%B8%8A%E6%89%8B-162205"
+            ]
+          },
+          {
+            "query": "上手 じょうず 意味 語源 うわて 辞書",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E4%B8%8A%E6%89%8B-162205",
+              "https://www.kanjipedia.jp/kotoba/0003484900"
+            ]
+          },
+          {
+            "query": "上手 じょうず 日本語 語構成 上 手 熟語 語源",
+            "opened_urls": [
+              "https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2012/08/15/1324445_01.pdf"
+            ]
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E4%B8%8A%E6%89%8B-162205",
+              "https://www.kanjipedia.jp/kotoba/0003484900",
+              "https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2012/08/15/1324445_01.pdf",
+              "https://dictionary.goo.ne.jp/word/%E4%B8%8A%E6%89%8B_%28%E3%81%86%E3%82%8F%E3%81%A6%29/"
+            ]
+          },
+          {
+            "query": "\"じょうず\" \"語源\" 上手 日本語",
+            "opened_urls": []
+          },
+          {
+            "query": "\"上手\" \"じょうず\" \"上手\" 語源 日本語辞典",
+            "opened_urls": []
+          },
+          {
+            "query": "site:repository.ninjal.ac.jp じょうず 上手 語源",
+            "opened_urls": []
+          }
+        ],
+        "gaps": [
+          "No consulted reliable source establishes what 上 and 手 each contribute, if anything, to the modern word formation of じょうず.",
+          "No consulted reliable source traces how じょうず acquired its skill-related meaning. The cited early examples attest usage but do not clarify its semantic development."
+        ]
+      },
+      "input_fingerprint": "e64e22c6016abcf2736a806a4371817bae14a7baeb61c8fef58096dd53840dbe",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "For 上手（じょうず）meaning “skillful; good at an activity,” what contribution do 上 and 手 make in modern Japanese word formation, if any, and how does that contribution connect to the whole meaning? Check that this is not an unsupported inference from the kanji or a conflation with another reading such as うわて.",
+        "Is there a reliable historical account of how 上手（じょうず）acquired its skill-related meaning? Include one only if it clarifies the modern meaning."
+      ],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-8615b1fd59f5192b",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "取る means to take or pick something up, or to obtain it. The exact English wording depends on what is taken and how.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "8de1f4f1a5390051fe09751352157e6707af17a2adef70f7889015b41faf64af",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-882336646f88af2a",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "さっぱり describes a clean, light, or uncluttered quality. For food it often means fresh-tasting and not heavy; for a person or space, it can describe a refreshed or neat state.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "b6cff099d43280ea78bb420b25cda9a65f45bf490af9b779eecc352fb69e1292",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-8aaaa730b2c25740",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "やか is a suffix used in certain な-adjectives to describe a quality or state. The base identifies the particular quality, as in にぎやか “lively” and 穏やか “calm.”",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "e37243f1c49dd25c0a18f35328c8aa2dcbe9993cf45ae4d40dd6baaf10f7e4c7",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-8f715136c1d548ee",
+      "investigation_questions": [
+        {
+          "component": "天",
+          "question": "What, if anything, is the documented contribution of 天 to the spelling 天秤?"
+        }
+      ],
+      "claim_ids": [
+        "c1",
+        "c2"
+      ],
+      "structure": "lexicalized",
+      "explanation_en": "天秤 is a balance scale used to compare an object's mass with weights. 秤 contributes the weighing-scale meaning; the contribution of 天 to the word's meaning is not established.",
+      "caveat_en": "The contribution of 天 in this spelling remains unresolved.",
+      "parts": [
+        {
+          "text": "天",
+          "contribution_en": "No separate meaning contribution is established.",
+          "claim_ids": [
+            "c2"
+          ]
+        },
+        {
+          "text": "秤",
+          "contribution_en": "Contributes the weighing-scale meaning.",
+          "claim_ids": [
+            "c1",
+            "c2"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "ja-component-8f715136c1d548ee",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/%E5%A4%A9%E7%A7%A4-578834",
+            "title": "天秤(テンビン)とは？ 意味や使い方 - コトバンク",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The page combines several dictionary entries. Digital Daijisen defines the balance as a lever-based instrument for comparing an object's mass with weights. The entry in Seisenban Nihon Kokugo Daijiten gives てんぴん as a variant reading and cites 文明本節用集（室町中） for the weighing-scale sense. Neither entry explains why 天 is part of the spelling or gives an origin for the compound."
+          },
+          {
+            "id": "s2",
+            "url": "https://www.kanjipedia.jp/kanji/0003387500",
+            "title": "秤 | 漢字一字 | 漢字ペディア",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The entry gives 秤 the meanings ‘scale’ and ‘weigh,’ and lists 天秤 as a compound. Its character-formation note concerns 秤 alone; it does not explain the compound 天秤."
+          },
+          {
+            "id": "s3",
+            "url": "https://www.tkgje.jp/entries/05500/05598_tenbin.html",
+            "title": "天秤 (てんびん) - TKG Japanese-English Learner's Dictionary",
+            "accessed_at": "2026-09-27",
+            "summary_en": "This learner-dictionary entry defines 天秤 as a two-pan balance scale and also lists Libra. It gives no component analysis or historical explanation."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "The supplied sense is supported: 天秤 refers to a balance scale used to determine an object's mass by comparing it with weights. The opened dictionaries describe a beam-and-pan instrument and the comparison with weights.",
+            "source_ids": [
+              "s1",
+              "s3"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "The opened entries support 秤 as the scale/weighing element, but none assigns 天 an independent modern semantic contribution within 天秤. Explain the whole lexical item as ‘balance scale’; these sources do not support a further meaning for 天 in this word.",
+            "source_ids": [
+              "s1",
+              "s2",
+              "s3"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "Seisenban Nihon Kokugo Daijiten cites 文明本節用集（室町中） for the balance-scale sense and records てんぴん as a variant reading. This documents a historical dictionary citation and a reading variant, but does not establish the compound's origin or why it is written 天秤.",
+            "source_ids": [
+              "s1"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "天秤 てんびん 語源 国語辞典 天 秤",
+            "opened_urls": []
+          },
+          {
+            "query": "天秤 語源 てんびん 表記 歴史 日本語 辞書",
+            "opened_urls": []
+          },
+          {
+            "query": "天秤 日本国語大辞典 てんびん",
+            "opened_urls": []
+          },
+          {
+            "query": "「天秤」 語源 天 なぜ 天秤 表記",
+            "opened_urls": []
+          },
+          {
+            "query": "てんびん 天秤 語源 日本語",
+            "opened_urls": []
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E5%A4%A9%E7%A7%A4-578834",
+              "https://www.kanjipedia.jp/kanji/0003387500",
+              "https://www.tkgje.jp/entries/05500/05598_tenbin.html"
+            ]
+          }
+        ],
+        "gaps": [
+          "The opened sources do not establish whether 天秤 is merely a conventional spelling or offer a documented historical derivation that explains 天. The proposed dossier's conclusion that 天 remains unexplained is supported for these sources, but the origin and spelling rationale remain unresolved."
+        ]
+      },
+      "input_fingerprint": "d2c349c10d12d9d8fae495d92551e41e61f515fd0ae605125b587a71f9506093",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "Establish whether 天 contributes a reliable meaning to 天秤 in modern Japanese; if not, determine whether the spelling is conventional or whether documented word history offers a useful explanation."
+      ],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-9ad474ad816713ae",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "いつ asks when something happens or is scheduled. It can stand on its own as “when?” or appear in a question such as いつ来ますか (“When are you coming?”).",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "e3af7e9affb11cad95f2748824713b4c5cf8802ae503eec2e5b6a37521c44b5f",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-9c7439d372e0949d",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "そこ means “there” or “that place.” It can also refer to a situation or point being discussed; context identifies what it refers to.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "dac729db2bc7b253e8c65d34267884e658f922e960ec3e105655089ba0ac3e91",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-9d3504686eecb360",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "真ん is a bound prefix that emphasizes being right at the center or middle. It commonly appears before position words, as in 真ん中 (まんなか, the very center).",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "真ん",
+          "contribution_en": "Emphasizes the exact center or middle when used as a prefix.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "eb1996a5348602303548c8a368a1c1de4eba2a3da1811c18397536e60fef5e40",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-a5dae628e87ab9bd",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "馬鹿（ばか）means a fool or foolish person. It is also commonly used as an insult, with force shaped by tone and the relationship between speakers.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "a80070528a40119f48e5422f33a5a51013217c91f47e93a13bc31a84fcc79c95",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-ad2e314ef6a2146f",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "する is a basic verb for carrying out an action or bringing about a result, roughly “do” or “make.” Its specific sense depends on the activity or result supplied by context; many action nouns also combine with する to form verbs meaning to perform that activity.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "4bcd294dd202fac10bbd478121d45215d704b57d7640ad28dee7d6860acbdca7",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-b77e3516d1a784c0",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "眠い describes the drowsy feeling of needing sleep.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "bdeda9b39694fc759af2a9a30902c0f699549abdf73f903edce1d460a2a9c5ee",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-b89e99841ab1197e",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "はず names an expected or logically likely outcome, based on what is known or reasoned. It commonly follows a clause, as in 来るはず, “is expected to come.”",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "eb8fd4eee8244ce9d618b6393e2369fc8e6bcb7db700a17caf8d363b5e1786cd",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-c0184249f7d6abe9",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "上げる means to raise or lift something. In another common use, it means to give something to another person, treating the item as passing from giver to recipient; this does not imply physical upward movement.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "272330e588f8e5a4e1d39931c0149a79250599967e2fd113afcacebfdd359f68",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-cc80263dc25d22ec",
+      "investigation_questions": [
+        {
+          "component": "勉",
+          "question": "Is there evidence for a distinct contribution of 勉 within the Japanese word 勉強?"
+        },
+        {
+          "component": "強",
+          "question": "Is there evidence for a distinct contribution of 強 within the Japanese word 勉強?"
+        }
+      ],
+      "claim_ids": [
+        "c1",
+        "c2",
+        "c4"
+      ],
+      "structure": "overlapping",
+      "explanation_en": "勉強 means studying or learning, and 勉強する is a common way to say “to study.” The word was also used earlier for effortful striving, which offers a useful association between study and effort; the evidence does not establish the precise historical path between those senses.",
+      "caveat_en": "勉 and 強 together can serve as a mnemonic for the older sense of effortful striving, but their separate contributions to the Japanese word are not established.",
+      "parts": [
+        {
+          "text": "勉",
+          "contribution_en": "Together with 強, can serve as an effortful-striving mnemonic; a distinct contribution within 勉強 is not established.",
+          "claim_ids": [
+            "c1"
+          ]
+        },
+        {
+          "text": "強",
+          "contribution_en": "Together with 勉, can serve as an effortful-striving mnemonic; a distinct contribution within 勉強 is not established.",
+          "claim_ids": [
+            "c1"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "ja-component-cc80263dc25d22ec",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/%E5%8B%89%E5%BC%B7-626150",
+            "title": "勉強（読み）ベンキョウ — コトバンク（デジタル大辞泉、精選版 日本国語大辞典、普及版 字通）",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The entries distinguish effortful striving, reluctant action, learning or acquiring skills, experience, and discounting. 精選版 日本国語大辞典 gives an early 17th-century Japanese example for effort, a 1759 example for reluctant action, an 1871 example under learning, and an 1887–88 example for discounting. 字通 glosses the compound as effort and quotes 中庸; these entries establish senses and attestations, not a step-by-step derivation of the modern learning sense."
+          },
+          {
+            "id": "s2",
+            "url": "https://kotobank.jp/word/%E5%8B%89-626048",
+            "title": "勉（読み）ベン — コトバンク（デジタル大辞泉、普及版 字通）",
+            "accessed_at": "2026-09-27",
+            "summary_en": "デジタル大辞泉 glosses 勉 as exerting oneself with effort or striving. 字通 discusses the character’s form and competing analyses. These character-level notes do not establish how 勉 historically contributed to the Japanese compound 勉強."
+          },
+          {
+            "id": "s3",
+            "url": "https://kotobank.jp/word/%E5%BC%B7-477578",
+            "title": "強（読み）キョウ — コトバンク（デジタル大辞泉、精選版 日本国語大辞典、普及版 字通）",
+            "accessed_at": "2026-09-27",
+            "summary_en": "デジタル大辞泉 lists 強 under the sense “strive forcibly” in 勉強. 字通 explains character-level senses including strength and striving, but this does not by itself prove a historical morphological derivation of the Japanese compound."
+          },
+          {
+            "id": "s4",
+            "url": "https://japanknowledge.com/articles/blognihongo/entry.html?7=&entryid=498",
+            "title": "第496回「勉強」は学ぶことではない？ — ジャパンナレッジ",
+            "accessed_at": "2026-09-27",
+            "summary_en": "A dictionary editor distinguishes the compound’s older effortful-striving sense from its later learning sense. The 中庸 example means striving to act, not studying. The editor says the timing of the semantic change is unclear, reports no Edo-period example of the learning sense found at the time of writing, and presents a possible connection through 近思録 as conditional rather than established."
+          },
+          {
+            "id": "s5",
+            "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART001548914",
+            "title": "日本語の「勉強」の意味概念について —学習すること、という意味で使われるようになった時期について—",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Saito Akemi’s 2011 article surveys dictionary senses and examples from Meiji-era school regulations, fiction, and newspapers. Its abstract concludes that 勉強 became widely used for learning in school and similar contexts around the beginning of the Meiji period. The opened page does not establish the compound’s character-by-character historical formation."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "Japanese character dictionaries associate 勉 with striving or exerting oneself, and 強 with strength and, in compounds such as 勉強, effortful striving. These glosses make “strive with effort” a cautious mnemonic for the older compound sense; they do not show that the modern learning sense is compositionally defined by assigning one part of that meaning to each character.",
+            "source_ids": [
+              "s2",
+              "s3"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "Japanese dictionary evidence records 勉強 with an effort or striving sense before its documented learning sense: 精選版 日本国語大辞典 cites an early 17th-century example for effort and an 1871 example under learning or acquiring knowledge and skills. The examples establish attested senses and dates, not the precise path between them.",
+            "source_ids": [
+              "s1"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "The dictionary-editor account reads 勉強 in the quoted 中庸 passage as exerting oneself to act, not studying. It says the date of the Japanese shift to the learning sense is unclear and treats a proposed Edo-period link through 近思録 as conditional; the cited passage itself uses the older effort sense.",
+            "source_ids": [
+              "s4"
+            ]
+          },
+          {
+            "id": "c4",
+            "text_en": "The established modern lexical sense includes learning or studying. Saito’s historical survey concludes that use of 勉強 for learning became widespread in school and related contexts around the beginning of the Meiji period.",
+            "source_ids": [
+              "s1",
+              "s5"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "勉強 語源 日本国語大辞典 勉 強 語誌",
+            "opened_urls": []
+          },
+          {
+            "query": "勉強 語源 日本語 歴史 近世 勉強する",
+            "opened_urls": [
+              "https://japanknowledge.com/articles/blognihongo/entry.html?7=&entryid=498"
+            ]
+          },
+          {
+            "query": "日本語の「勉強」の意味概念について 斎藤 明美",
+            "opened_urls": [
+              "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART001548914"
+            ]
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E5%8B%89%E5%BC%B7-626150",
+              "https://kotobank.jp/word/%E5%8B%89-626048",
+              "https://kotobank.jp/word/%E5%BC%B7-477578",
+              "https://japanknowledge.com/articles/blognihongo/entry.html?7=&entryid=498",
+              "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART001548914"
+            ]
+          }
+        ],
+        "gaps": [
+          "The opened sources do not establish a precise date or sequence for the semantic shift from effortful striving to learning.",
+          "The opened sources do not establish a proven historical morphological derivation assigning distinct semantic contributions to 勉 and 強 in the Japanese compound. The character glosses and compound sense should not be presented as proof of that derivation."
+        ]
+      },
+      "input_fingerprint": "cbc1726895d67a1958e5d83e25fd26da0bab9153731a56ae10e5ef9e9cd84c92",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "What do reliable Japanese etymological sources establish about how 勉 and 強 contributed to the formation and development of 勉強 meaning “study,” and can their roles be explained without treating separate kanji meanings as a modern compositional definition?"
+      ],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-cff531698c8c55eb",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "五十 (ごじゅう) means fifty: 五 contributes five and 十 contributes ten, giving five tens. It is a standard Japanese number word.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "五",
+          "contribution_en": "five",
+          "claim_ids": []
+        },
+        {
+          "text": "十",
+          "contribution_en": "ten; combined with 五, it gives five tens",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "c964ed310e542a88cc057a5977ec011395e70e467ff3c1bf04499d6148f022e4",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-d7146dd4a0bb6e03",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "上がる means to move upward, rise, or climb. It is intransitive: it describes something moving up, without stating who or what makes it move.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "0a21f85806eb2a46196501ab4a1eab44d8a918bca45b73ea308d3b796650d0d6",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-da7d8ce94a87d421",
+      "investigation_questions": [
+        {
+          "component": "付く",
+          "question": "How broadly can 付く combine with new mental-content nouns to describe an idea or interpretation taking shape?"
+        }
+      ],
+      "claim_ids": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "structure": "single_component",
+      "explanation_en": "付く describes something becoming attached or present, or a result or state being reached. In expressions such as 気が付く and 想像が付く, it can describe awareness arising or an idea taking shape; this mental reading depends on the expression’s construction.",
+      "caveat_en": "",
+      "parts": [],
+      "research": {
+        "entry_id": "ja-component-da7d8ce94a87d421",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/%E4%BB%98%E3%81%8F-571285",
+            "title": "付く（読み）ツク - コトバンク",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The Digital Daijisen entry gives broad senses of 付く, including perception, a settled state or result, and an example 想像がつく. The Seisenban Nihon Kokugo Daijiten section separately glosses a result/state use as reaching a result or conclusion and includes 想像がつく and 解釈の付かなかった問題. These are dictionary-attested mental-content constructions; the entry does not establish that bare 付く generally means ‘come to mind.’"
+          },
+          {
+            "id": "s2",
+            "url": "https://kotobank.jp/word/%E6%B0%97%E3%81%8C%E4%BB%98%E3%81%8F-471861",
+            "title": "気が付く(キガツク)とは？ 意味や使い方 - コトバンク",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The Seisenban Nihon Kokugo Daijiten treats 気が付く as a phrase meaning ‘think of,’ ‘notice,’ or ‘realize,’ with an earliest cited example from 1563. It also records distinct senses for attentiveness and regaining consciousness. This supports the phrase’s mental readings, not a general standalone sense of 付く."
+          },
+          {
+            "id": "s3",
+            "url": "https://kotobank.jp/word/%E5%BF%83%E4%BB%98%E3%81%8F-500486",
+            "title": "心付く(ココロツク)とは？ 意味や使い方 - コトバンク",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The Seisenban Nihon Kokugo Daijiten records 心付く as meaning that something previously outside awareness becomes conscious, with examples from 落窪物語 and 1902. It also lists separate senses such as becoming discerning and pleasing someone. This attests a lexicalized 心付く expression, rather than an unrestricted meaning for 付く."
+          },
+          {
+            "id": "s4",
+            "url": "https://www2.ninjal.ac.jp/dictionaries/IPALBV/mibook.html",
+            "title": "IPAL動詞 解説編形式 - 国立国語研究所",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The NINJAL IPAL verb reference lists 付く patterns by sense and argument structure. Its examples include 彼はその事について想像が付いていた under a 付く pattern. This independently supports 想像が付く as an established construction, but the single example does not establish how freely novel nouns can occur in that pattern."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "The dictionary evidence attests mental interpretations in particular expressions: 気が付く can mean ‘think of, notice, realize,’ and 心付く can mean that something outside awareness becomes conscious. These support explaining the mental reading in those expressions; they do not show that bare 付く independently has a general ‘come to mind’ meaning.",
+            "source_ids": [
+              "s2",
+              "s3"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "A result/state use of 付く is also attested with mental content: the dictionary entries give 想像がつく and 解釈の付かなかった問題, and NINJAL’s IPAL reference gives 想像が付いていた. This shows that the relevant use is not limited to 気が付く, while the cited evidence remains tied to particular constructions.",
+            "source_ids": [
+              "s1",
+              "s4"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "The sources distinguish noticing or awareness from reaching a result or conclusion. For a reusable explanation, ‘come to mind’ should therefore be presented with its construction or context, rather than as a broad gloss for 付く on its own.",
+            "source_ids": [
+              "s1",
+              "s2",
+              "s3",
+              "s4"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "付く 意味 想像がつく 日本国語大辞典",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E4%BB%98%E3%81%8F-571285"
+            ]
+          },
+          {
+            "query": "気が付く 心付く 国語辞典 付く 意味 mental",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E6%B0%97%E3%81%8C%E4%BB%98%E3%81%8F-471861",
+              "https://kotobank.jp/word/%E5%BF%83%E4%BB%98%E3%81%8F-500486"
+            ]
+          },
+          {
+            "query": "「付く」 意味 思い浮かぶ 用法 日本語 コーパス",
+            "opened_urls": [
+              "https://www2.ninjal.ac.jp/dictionaries/IPALBV/mibook.html"
+            ]
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E4%BB%98%E3%81%8F-571285",
+              "https://kotobank.jp/word/%E6%B0%97%E3%81%8C%E4%BB%98%E3%81%8F-471861",
+              "https://kotobank.jp/word/%E5%BF%83%E4%BB%98%E3%81%8F-500486",
+              "https://www2.ninjal.ac.jp/dictionaries/IPALBV/mibook.html"
+            ]
+          }
+        ],
+        "gaps": [
+          "The opened dictionary and reference examples establish several mental-content constructions but do not determine how productive the ‘come to mind’ or ‘an idea forms’ reading is with novel noun + が + 付く combinations. Contemporary corpus evidence or a fuller grammar study would be needed to delimit that productivity."
+        ]
+      },
+      "input_fingerprint": "9e7ff077763cc78cc675f462bfe079109c040a246dcb1c7b54f9d7ea3182e11d",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "Check how 付く contributes to the supplied “come to mind” sense in modern Japanese, and whether it is a productive meaning of the verb or restricted to particular expressions."
+      ],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-e3245fc22f58420e",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "間（ま）means a span or interval of time, such as the time between events or the period available for something to happen.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "2441192f12831cfe7f2a1d2bc3511518f0b70b7115f046d8646a9fcfb7420ae0",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-e622c775243ec3a8",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "におい means a smell or odor and can refer to something pleasant or unpleasant. The kana spelling is neutral; the kanji spellings 匂い and 臭い can suggest a pleasant scent and an unpleasant smell, respectively.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "f2d1dcdfcb0c41a66ccef7238d14de29196cc90203870965479465b7a9f71560",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-ecc8364090196a1a",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "突く（つく）means to thrust, jab, or poke something, typically with a pointed or forceful motion. It can also describe something jutting or projecting outward.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "0a686eeb1d9ac4fe6deb00f39385947ca0b7e11bb9a3b3820ee9f74196a7cd4c",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-f2f1c5e4f4fe63e3",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "一生 combines 一, “one” or “a whole,” with 生, “life.” Together they refer to the full span of a person’s life.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "一",
+          "contribution_en": "One, with the sense of a whole span here.",
+          "claim_ids": []
+        },
+        {
+          "text": "生",
+          "contribution_en": "Life; the life whose full span is meant.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "60455dec6d24a89684775d67a79967f383c8236974a14e8e639356567e98ed78",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-f6bf988655d6afac",
+      "investigation_questions": [
+        {
+          "component": "望",
+          "question": "Do reliable Japanese sources establish a specific modern contribution of 望 within 人望 beyond its association with public expectation or standing?"
+        }
+      ],
+      "claim_ids": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "structure": "overlapping",
+      "explanation_en": "人望 means favorable regard from other people, especially trust and respect that lead them to admire someone as trustworthy. 人 points to the people whose regard is involved; 望 is associated with the expectation or standing attached to a person, which fits the favorable regard in the whole word.",
+      "caveat_en": "The precise contribution of 望 within 人望 is not established.",
+      "parts": [
+        {
+          "text": "人",
+          "contribution_en": "The people who direct regard toward someone.",
+          "claim_ids": [
+            "c1"
+          ]
+        },
+        {
+          "text": "望",
+          "contribution_en": "Associated with public expectation or standing in this compound; its precise contribution is unresolved.",
+          "claim_ids": [
+            "c2",
+            "c3"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "ja-component-f6bf988655d6afac",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://dictionary.goo.ne.jp/word/%E4%BA%BA%E6%9C%9B/",
+            "title": "人望（じんぼう）とは？ 意味・読み方・使い方をわかりやすく解説 - goo国語辞書",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Digital Daijisen defines 人望 as being admired and looked up to by people as a trustworthy person. This supports the established whole-word meaning."
+          },
+          {
+            "id": "s2",
+            "url": "https://dictionary.goo.ne.jp/thsrs/11749/meaning/m0u/",
+            "title": "人望（じんぼう）の言い換え・類語・同義語 - goo辞書",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Shogakukan’s synonym guide says 人望 is a very favorable public evaluation and explains that people recognize the person’s moral or ability-based excellence and direct respect, trust, and expectation toward them. It describes the compound as a whole, not 望’s independent contribution."
+          },
+          {
+            "id": "s3",
+            "url": "https://www.kanjipedia.jp/kotoba/0003683800",
+            "title": "ジンボウ | 言葉 | 漢字ペディア",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Defines 人望 as the trust and respect placed in someone by many people in society."
+          },
+          {
+            "id": "s4",
+            "url": "https://kotobank.jp/word/%E6%9C%9B-131739",
+            "title": "望(ボウ)とは？ 意味や使い方 - コトバンク",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Digital Daijisen lists a sense of 望 as what people expect of someone and good reputation, and includes 人望 among examples. This supports a conventional association of 望 in 人望 with public expectation or standing, but does not establish a productive morpheme-by-morpheme gloss."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "Modern Japanese dictionaries define 人望 as favorable regard from others, especially trust, respect, and being admired as a trustworthy person.",
+            "source_ids": [
+              "s1",
+              "s2",
+              "s3"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "Expectation is included in one dictionary’s explanation of the attitudes people direct toward a person with 人望. Separately, a dictionary entry for 望 records the sense ‘what people expect of someone; good reputation’ and gives 人望 as an example. This supports an association between 望 and public expectation or standing in the compound, but it does not prove that 望 independently means ‘being looked to with expectation’ in every modern use of 人望.",
+            "source_ids": [
+              "s2",
+              "s4"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "The opened dictionaries support the established whole-word meaning directly. They do not resolve whether modern speakers analyze 人望 compositionally or treat its meaning as substantially lexicalized; the expectation and esteem definitions are compatible, rather than contradictory.",
+            "source_ids": [
+              "s1",
+              "s2",
+              "s3",
+              "s4"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "人望 望 意味 人望 辞書 語源",
+            "opened_urls": [
+              "https://dictionary.goo.ne.jp/word/%E4%BA%BA%E6%9C%9B/",
+              "https://dictionary.goo.ne.jp/thsrs/11749/meaning/m0u/",
+              "https://kotobank.jp/word/%E6%9C%9B-131739"
+            ]
+          },
+          {
+            "query": "人望 じんぼう 国語辞典 意味",
+            "opened_urls": [
+              "https://www.kanjipedia.jp/kotoba/0003683800"
+            ]
+          },
+          {
+            "query": "“人望” “人の望み” 国語辞典",
+            "opened_urls": [
+              "https://kagawa-u.repo.nii.ac.jp/record/2062/files/AN00038237_142_R001.pdf"
+            ]
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://dictionary.goo.ne.jp/word/%E4%BA%BA%E6%9C%9B/",
+              "https://dictionary.goo.ne.jp/thsrs/11749/meaning/m0u/",
+              "https://www.kanjipedia.jp/kotoba/0003683800",
+              "https://www.kanjipedia.jp/kanji/0006440900",
+              "https://kotobank.jp/word/%E8%BC%BF%E6%9C%9B-654903",
+              "https://kotobank.jp/word/%E6%9C%9B-131739",
+              "https://kagawa-u.repo.nii.ac.jp/record/2062/files/AN00038237_142_R001.pdf"
+            ]
+          }
+        ],
+        "gaps": [
+          "No opened source directly analyzes how modern speakers segment 人望 or establishes that 望 independently contributes a specific meaning rather than participating in the compound’s established sense.",
+          "The university repository PDF could not be accessed through the web tool. Its search result suggested an analysis glossing 人望 as ‘people’s hope/desire’; because the document was not read, this competing analysis remains unverified and is not used as evidence."
+        ]
+      },
+      "input_fingerprint": "91f0f0e7c64332c1630e8cee629e2920d19cedc27e4e80e21dbdbb2ffa2dab10",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "What contribution does 望 reliably make in the modern compound 人望, and is “being looked to or regarded with expectation” supported over a more lexicalized analysis?",
+        "What contribution does 望 reliably make to the modern meaning of 人望?"
+      ],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-component-fd3834746f947b30",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "飛ぶ (とぶ) means to fly through the air or to jump or leap, with the motion understood as airborne. It covers both sustained flight and a brief jump.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "2a8eedd64791a11f9f0ed23310b4e289e78746b2b0d729afd2265a98551ad763",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    }
+  ],
+  "review_digest": "11f51be42a77c82a758b384c001db86d5c19d6f5d56c31fd9a5a6510c45d54a1"
+}

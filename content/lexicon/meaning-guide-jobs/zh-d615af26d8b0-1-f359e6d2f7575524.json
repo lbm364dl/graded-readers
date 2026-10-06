@@ -1,0 +1,36 @@
+{
+  "id": "zh-d615af26d8b0-1-f359e6d2f7575524",
+  "entry_id": "zh-d615af26d8b0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d615af26d8b0-1",
+      "headword": "长叹",
+      "kind": "word",
+      "reading": "chángtàn",
+      "senses": [
+        {
+          "id": "zh-d615af26d8b0-1-s1",
+          "definition": "to sigh deeply or for a long time"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这天，他见到榜文，想到自己没有力量为国家出力，不能报国，不禁长叹。",
+        "gloss": "heave a long sigh",
+        "sense_id": "zh-d615af26d8b0-1-s1"
+      },
+      {
+        "sentence": "随后有人大声说：“大丈夫不为国家尽力，为什么长叹？",
+        "gloss": "heave a long sigh",
+        "sense_id": "zh-d615af26d8b0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e4c90b1c0042721a50874eeb07836b20056e9c7ba7efdc76510f315af9fb0031"
+}

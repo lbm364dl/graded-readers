@@ -1,0 +1,15 @@
+{
+  "book_run_id": "wagahai-ch03-n5",
+  "status": "running",
+  "updated_at": "2026-08-06T17:21:21.592811+00:00",
+  "global_agent_concurrency": 1,
+  "chapter_concurrency": 1,
+  "runs": [
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_03.txt",
+      "level": "n5",
+      "status": "pending"
+    }
+  ],
+  "length_violations": []
+}

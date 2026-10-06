@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff339-96b4-7e60-9bfa-bfc4336adae6"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.96,\"readability\":0.97,\"omissions\":[],\"unsupported_additions\":[\"“邓艾终于有了地方休息”是原文未明确提及的结果。\"],\"distortions\":[],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":38361,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":422,"reasoning_output_tokens":341}}

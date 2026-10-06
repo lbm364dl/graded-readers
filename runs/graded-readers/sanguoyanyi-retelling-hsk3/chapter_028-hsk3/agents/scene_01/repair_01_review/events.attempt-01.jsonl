@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff3c5-2038-7013-aa72-a92668bee9e8"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.78,\"naturalness\":0.94,\"readability\":0.93,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将糜芳、傅士仁杀死马忠改写成马忠被两名东吴将领杀死，颠倒了事件因果和人物命运。\"],\"language_problems\":[],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":29033,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":616,"reasoning_output_tokens":516}}

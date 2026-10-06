@@ -1,0 +1,31 @@
+{
+  "id": "zh-a6c1ceaf4bee-1-fda18740fa0d76b8",
+  "entry_id": "zh-a6c1ceaf4bee-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a6c1ceaf4bee-1",
+      "headword": "送信",
+      "kind": "word",
+      "reading": "sòng xìn",
+      "senses": [
+        {
+          "id": "zh-a6c1ceaf4bee-1-s1",
+          "definition": "to send or deliver a message"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角一面私造黄旗，约好起事日期，一面派弟子送信，却被告密。",
+        "gloss": "to deliver a message",
+        "sense_id": "zh-a6c1ceaf4bee-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1d57bca30d11f97867bf88e37677cc7bee77129a8dcfde2d568731d083d916a0"
+}

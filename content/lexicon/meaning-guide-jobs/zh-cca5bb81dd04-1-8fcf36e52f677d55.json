@@ -1,0 +1,31 @@
+{
+  "id": "zh-cca5bb81dd04-1-8fcf36e52f677d55",
+  "entry_id": "zh-cca5bb81dd04-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cca5bb81dd04-1",
+      "headword": "草地",
+      "kind": "word",
+      "reading": "cǎodì",
+      "senses": [
+        {
+          "id": "zh-cca5bb81dd04-1-s1",
+          "definition": "grassy ground; grassland"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军退到长社，靠着草地扎营。",
+        "gloss": "grassland",
+        "sense_id": "zh-cca5bb81dd04-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9a1ce5bac62bdadb8337cbce276caa5bdbf2fa74b78d82ad1db429eeba575c5b"
+}

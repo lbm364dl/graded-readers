@@ -1,0 +1,32 @@
+{
+  "id": "ja-6ef9bef7cbd872ca-956bcb86a8f48fbd",
+  "entry_id": "ja-6ef9bef7cbd872ca",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6ef9bef7cbd872ca",
+      "headword": "四十匹",
+      "reading": "よんじゅっぴき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6ef9bef7cbd872ca-1",
+          "definition": "forty animals, counted with 匹"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "何度も会ううち、黒は鼠を三、四十匹とったことがあると自慢した。",
+        "gloss": "forty animals",
+        "sense_id": "ja-6ef9bef7cbd872ca-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b19c6bd040c4c1e86b49f5fce1b3437aa746f07651e935368782961812833e90"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-4098bb49226a-1-e5b11dcedf838bb5",
+  "entry_id": "zh-4098bb49226a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4098bb49226a-1",
+      "headword": "亲眼",
+      "kind": "word",
+      "reading": "qīnyǎn",
+      "senses": [
+        {
+          "id": "zh-4098bb49226a-1-s1",
+          "definition": "with one's own eyes"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志亲眼看见邓茂被张飞杀死，便挥刀直取张飞。",
+        "gloss": "with one's own eyes",
+        "sense_id": "zh-4098bb49226a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "250ea4c7775cdfc7704f31f43aa364676cf3f149ac8439b7dd3be77fc6f041ce"
+}

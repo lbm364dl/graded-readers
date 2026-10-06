@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff51f-39fa-7cb2-bb5f-802666a51dd7"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.86,\"naturalness\":0.93,\"readability\":0.95,\"omissions\":[],\"unsupported_additions\":[\"“姜维又气又怕”中的“怕”原文没有明确依据。\",\"“不再想着杀人”是对姜维心态的推断，原文只写他接受屯田建议。\"],\"distortions\":[\"“姜维在祁山打了胜仗”略显笼统，原文虽在祁山击退鄧艾并夺取营寨，但随后奉诏撤军，不能简单概括为完成了祁山战役的胜利。\",\"将后主称为“蜀王”不够准确，原文称“后主”。\"],\"language_problems\":[],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":34191,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":706,"reasoning_output_tokens":516}}

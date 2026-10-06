@@ -1,0 +1,31 @@
+{
+  "id": "zh-b977f966967a-2-7373a3a63fad2b2a",
+  "entry_id": "zh-b977f966967a-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b977f966967a-2",
+      "headword": "备",
+      "kind": "name",
+      "reading": "Bèi",
+      "senses": [
+        {
+          "id": "zh-b977f966967a-2-s1",
+          "definition": "Bei, a given name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”刘备说自己是汉室宗亲，姓刘，名备，有志破贼救民，只恨力量不足。",
+        "gloss": "Bei (given name)",
+        "sense_id": "zh-b977f966967a-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "147791fd04fa10a68c6a2b77994885b9a078dd7f94908c4f090a9b8d7cfe1683"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-48fe6d5913ab-1-1e9f01365822662b",
+  "entry_id": "zh-48fe6d5913ab-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-48fe6d5913ab-1",
+      "headword": "有田",
+      "kind": "construction",
+      "reading": "yǒutián",
+      "senses": [
+        {
+          "id": "zh-48fe6d5913ab-1-s1",
+          "definition": "have farmland"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大汉叫张飞，住在涿郡，有田，卖酒杀猪，也喜爱结交豪杰。",
+        "gloss": "own farmland",
+        "sense_id": "zh-48fe6d5913ab-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "da14981960033d303fdfcc7af28e5a64bb72e9be36fbb2ee9e90bbb6e805a193"
+}

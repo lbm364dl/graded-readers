@@ -1,0 +1,32 @@
+{
+  "id": "ja-3f9c12ac0d7768fe-e3c874e4cf085a30",
+  "entry_id": "ja-3f9c12ac0d7768fe",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3f9c12ac0d7768fe",
+      "headword": "少し",
+      "reading": "すこし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-3f9c12ac0d7768fe-1",
+          "definition": "a little; slightly"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "掌の上で少し落ち着き、書生の顔を見たことが、人間というものの見始めだったのだろう。",
+        "gloss": "a little",
+        "sense_id": "ja-3f9c12ac0d7768fe-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6f9cf32dba4ab4ad2d5c29eeb2d6daea673f14d99cf9b4854ce53311f8986478"
+}

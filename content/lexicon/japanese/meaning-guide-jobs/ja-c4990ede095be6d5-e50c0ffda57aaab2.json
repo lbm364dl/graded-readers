@@ -1,0 +1,32 @@
+{
+  "id": "ja-c4990ede095be6d5-e50c0ffda57aaab2",
+  "entry_id": "ja-c4990ede095be6d5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c4990ede095be6d5",
+      "headword": "場所",
+      "reading": "ばしょ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c4990ede095be6d5-1",
+          "definition": "A place; location."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ただ、薄暗くてじめじめした場所で、ニャーニャー泣いていたことだけは覚えている。",
+        "gloss": "place",
+        "sense_id": "ja-c4990ede095be6d5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e58ef424527c7f4c47b3e2fbba5b2387ab358989fd83174b9f05d1bba34fddad"
+}

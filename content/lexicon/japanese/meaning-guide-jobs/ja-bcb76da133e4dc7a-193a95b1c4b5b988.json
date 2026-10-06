@@ -1,0 +1,32 @@
+{
+  "id": "ja-bcb76da133e4dc7a-193a95b1c4b5b988",
+  "entry_id": "ja-bcb76da133e4dc7a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bcb76da133e4dc7a",
+      "headword": "たまる",
+      "reading": "たまる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-bcb76da133e4dc7a-1",
+          "definition": "to accumulate; to collect"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その後、黒は足を悪くし、毛の色も悪くなり、目には目やにがたまった。",
+        "gloss": "accumulated",
+        "sense_id": "ja-bcb76da133e4dc7a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a83007b73a10122cb4a144470c02e8cf055c2253a99179229a42df522f180231"
+}

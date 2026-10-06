@@ -1,0 +1,31 @@
+{
+  "id": "zh-0a96ed333bf0-1-393cf51100f82daa",
+  "entry_id": "zh-0a96ed333bf0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0a96ed333bf0-1",
+      "headword": "劳",
+      "kind": "word",
+      "reading": "láo",
+      "senses": [
+        {
+          "id": "zh-0a96ed333bf0-1-s1",
+          "definition": "reward someone for meritorious service"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉亲自迎接，并赏劳将士。",
+        "gloss": "to reward for meritorious service",
+        "sense_id": "zh-0a96ed333bf0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bfb5ba26c04b5ae1f418b485d50dfd2f9c6a4229f48483ae244aed61aabf58ec"
+}

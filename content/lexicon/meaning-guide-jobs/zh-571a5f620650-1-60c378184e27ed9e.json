@@ -1,0 +1,31 @@
+{
+  "id": "zh-571a5f620650-1-60c378184e27ed9e",
+  "entry_id": "zh-571a5f620650-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-571a5f620650-1",
+      "headword": "害怕",
+      "kind": "word",
+      "reading": "hàipà",
+      "senses": [
+        {
+          "id": "zh-571a5f620650-1-s1",
+          "definition": "be afraid; fear"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军人数很多，官军害怕，常常后退。",
+        "gloss": "be afraid",
+        "sense_id": "zh-571a5f620650-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "676b57a6eb4cb84c4ec8395839ef4d08834f182a78189c061524ae1abebac4c4"
+}

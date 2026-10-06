@@ -1,0 +1,147 @@
+{
+  "id": "ja-24764b8641a14e66-116e0577ef2d1b3c",
+  "entry_id": "ja-24764b8641a14e66",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-24764b8641a14e66",
+      "headword": "どこ",
+      "reading": "どこ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-24764b8641a14e66-1",
+          "definition": "Where; what place."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どこで生まれたか分かりません。",
+        "gloss": "where",
+        "sense_id": "ja-24764b8641a14e66-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-24764b8641a14e66",
+    "investigation_questions": [],
+    "claim_ids": [
+      "c1",
+      "c2"
+    ],
+    "structure": "single_component",
+    "explanation_en": "どこ asks which place, or where. It belongs to the Japanese コ・ソ・ア・ド series of place expressions, alongside ここ, そこ, and あそこ.",
+    "caveat_en": "Dictionaries report a historical path from いずこ through いどこ to どこ; the cited evidence does not independently verify the sound transition to modern どこ.",
+    "parts": [
+      {
+        "text": "どこ",
+        "contribution_en": "As a whole, asks which place or where.",
+        "claim_ids": [
+          "c1"
+        ]
+      }
+    ],
+    "research": {
+      "entry_id": "ja-24764b8641a14e66",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://kotobank.jp/word/%E4%BD%95%E5%87%A6-432437",
+          "title": "何処（読み）ドコ - コトバンク（デジタル大辞泉・精選版 日本国語大辞典）",
+          "accessed_at": "2026-09-27",
+          "summary_en": "Digital Daijisen defines どこ as an indefinite demonstrative pronoun for an unspecified place or situation, and lists asking which place or part. It reports a historical sequence from いずこ through いどこ to どこ. The separate Nihon Kokugo Daijiten entry describes いどこ as an older form of どこ and cites an example from about 935; for どこ it cites a 1099 example transcribed with the reading トコ."
+        },
+        {
+          "id": "s2",
+          "url": "https://www.coelang.tufs.ac.jp/mt/ja/gmod/contents/card/014.html",
+          "title": "日本語 文法 どれ／どこ／どのN：カード - 東京外国語大学言語モジュール",
+          "accessed_at": "2026-09-27",
+          "summary_en": "The grammar resource places どこ in the place row of the コ・ソ・ア・ド series, corresponding to ここ・そこ・あそこ, and illustrates asking where a restroom is."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "For the supplied sense, どこ asks which place; Digital Daijisen classifies it as an indefinite demonstrative pronoun, and TUFS places it in the ド place row alongside ここ・そこ・あそこ.",
+          "source_ids": [
+            "s1",
+            "s2"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "The consulted dictionary entries report the historical chain いずこ → いどこ → どこ. The Nihon Kokugo Daijiten cites いどこ around 935 and a 1099 example under どこ, but transcribes the latter reading as トコ. These entries support reporting the dictionaries’ analysis; the cited examples alone do not independently establish the full sound history or demonstrate that the 1099 form was pronounced どこ.",
+          "source_ids": [
+            "s1"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "Digital Daijisen also lists uses asking which part or what degree. Those are additional dictionary senses; the supplied definition and example concern place.",
+          "source_ids": [
+            "s1"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "どこ 語源 何処 いどこ いずこ 日本語辞典",
+          "opened_urls": []
+        },
+        {
+          "query": "site:coelang.tufs.ac.jp/mt/ja/gmod/contents/card/014.html どこ",
+          "opened_urls": []
+        },
+        {
+          "query": "日本語 どこ 場所 系列 こそあど 指示詞 論文",
+          "opened_urls": []
+        },
+        {
+          "query": "どこ 語源 何処 いどこ いずこ 日本語辞典; どこ 古語 いづこ 何処 語源 日本国語大辞典",
+          "opened_urls": []
+        },
+        {
+          "query": "「どこ」 「いどこ」 「いずこ」 日本語史",
+          "opened_urls": []
+        },
+        {
+          "query": "どこ 初出 将門記 承徳三年点 トコ 日本国語大辞典",
+          "opened_urls": []
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://kotobank.jp/word/%E4%BD%95%E5%87%A6-432437",
+            "https://www.coelang.tufs.ac.jp/mt/ja/gmod/contents/card/014.html",
+            "https://www.jstage.jst.go.jp/article/jajls/21/2/21_50/_pdf"
+          ]
+        }
+      ],
+      "gaps": [
+        "The historical sequence is reported by the opened dictionary page, but the cited primary texts were not independently inspected. The 1099 citation is transcribed トコ, leaving the pronunciation relevant to the proposed transition to どこ unverified here. The J-STAGE PDF could not be retrieved for detailed inspection, so it is not used as evidence."
+      ]
+    },
+    "input_fingerprint": "a2e59211d943895f8d2172c9086a61f66d0230f8db744f6ccf9511e3453ccd0f",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-eea9e67d92952ebc",
+      "reason": "The historical etymology caveat is unrelated to learning the modern question word. Requested change: Retain the modern meaning and its コ・ソ・ア・ド relationship; remove the etymological caveat.",
+      "entry_id": "ja-24764b8641a14e66",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "9792b9aeeb561039c79c7e44a559c4a05613806e889f5ff24c8bff57261f8751"
+}

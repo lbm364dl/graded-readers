@@ -1,0 +1,31 @@
+{
+  "id": "zh-7260e0c3165f-1-9257e2822fe0394e",
+  "entry_id": "zh-7260e0c3165f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7260e0c3165f-1",
+      "headword": "任性",
+      "kind": "word",
+      "reading": "rènxìng",
+      "senses": [
+        {
+          "id": "zh-7260e0c3165f-1-s1",
+          "definition": "willful; acting according to one's own wishes without restraint"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "从此叔父再说他的过错，曹嵩也不再相信，曹操更加任性放荡。",
+        "gloss": "willful",
+        "sense_id": "zh-7260e0c3165f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "947f1447acdc393791eedcb60dcfb78d2a5ad12c53866afcc9453187465c25e6"
+}

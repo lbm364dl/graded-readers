@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-zuo-neiying-zuo-e86511fb0d9ee4eb",
+  "entry_id": "zh-expression-zuo-neiying-zuo",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-zuo-neiying-zuo",
+      "headword": "作内应",
+      "reading": "zuò nèiyìng",
+      "kind": "expression",
+      "base_entry_id": "zh-7ff9df9923a8-1",
+      "components": [
+        {
+          "entry_id": "zh-7ff9df9923a8-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-964ae2bad1bc-1",
+          "role": "role"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-zuo-neiying-zuo-s1",
+          "definition": "act as an inside agent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角派马元义带着金帛，暗中结交宦官封谞，企图让他在朝中作内应。",
+        "gloss": "act as an inside agent",
+        "sense_id": "zh-expression-zuo-neiying-zuo-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "作",
+        "role": "verb"
+      },
+      {
+        "headword": "内应",
+        "role": "role"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "509fee61c19620d2a12aeca5c54ba3196136fec9230cbcb330984af7caf33683"
+}

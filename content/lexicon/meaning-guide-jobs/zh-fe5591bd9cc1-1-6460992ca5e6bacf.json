@@ -1,0 +1,31 @@
+{
+  "id": "zh-fe5591bd9cc1-1-6460992ca5e6bacf",
+  "entry_id": "zh-fe5591bd9cc1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fe5591bd9cc1-1",
+      "headword": "各地",
+      "kind": "word",
+      "reading": "gèdì",
+      "senses": [
+        {
+          "id": "zh-fe5591bd9cc1-1-s1",
+          "definition": "each place; places throughout an area"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷命各地招兵，抵抗黄巾军。",
+        "gloss": "various places",
+        "sense_id": "zh-fe5591bd9cc1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "44299615b92d074b1d75d3ed5d754b1b2cf1e3c2faa4df82c4f31b9e47d2e528"
+}

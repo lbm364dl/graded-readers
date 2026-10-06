@@ -1,0 +1,31 @@
+{
+  "id": "zh-4987c0fc4aca-1-a6c319754986f236",
+  "entry_id": "zh-4987c0fc4aca-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4987c0fc4aca-1",
+      "headword": "救民",
+      "kind": "construction",
+      "reading": "jiùmín",
+      "senses": [
+        {
+          "id": "zh-4987c0fc4aca-1-s1",
+          "definition": "save the people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "还发誓同心救民。",
+        "gloss": "save the people",
+        "sense_id": "zh-4987c0fc4aca-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4b6fce573432ea08c219c1ad26381e5880b2fbd52646cdddce48aa8cebb023d5"
+}

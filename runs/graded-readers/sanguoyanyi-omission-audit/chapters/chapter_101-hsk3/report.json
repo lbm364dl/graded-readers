@@ -1,0 +1,101 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_101-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 539,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了孔明与司马懿在上邽的多次神车诱敌过程及司马懿三日闭城不出的细节",
+      "classification": "material",
+      "reason": "这些细节构成孔明欺敌、司马懿误判退守的核心战术过程，并交代了魏军暂时失去行动能力。",
+      "required_fix": "补充多辆神车反复诱敌、司马懿误认神兵并退入上邽，及三日不敢出城的过程。"
+    },
+    {
+      "omission_note": "省略了魏军在鹵城战败后调集雍、凉援军的具体过程",
+      "classification": "material",
+      "reason": "郭淮提出袭击剑阁、调集援军的计划，以及孙礼率援军到达，构成后续援军突袭和蜀军应对的因果链。",
+      "required_fix": "补充郭淮建议调雍、凉兵袭剑阁断粮，司马懿发檄调兵及孙礼率援军抵达的过程。"
+    },
+    {
+      "omission_note": "省略了张郃追击途中魏延、关兴反复诱敌及孔明在木门道现身嘲讽魏军的细节",
+      "classification": "material",
+      "reason": "反复诱敌直接导致张郃深入木门道并中伏，也体现了孔明设伏的具体步骤；孔明现身嘲讽则是战后关键收束。",
+      "required_fix": "补充魏延、关兴轮番诈败引诱张郃，以及孔明在木门道现身宣告并嘲讽魏军的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了孔明与司马懿在上邽的多次神车诱敌过程及司马懿三日闭城不出的细节",
+      "classification": "material",
+      "reason": "这些细节构成孔明欺敌、司马懿误判退守的核心战术过程，并交代了魏军暂时失去行动能力。",
+      "required_fix": "补充多辆神车反复诱敌、司马懿误认神兵并退入上邽，及三日不敢出城的过程。"
+    },
+    {
+      "omission_note": "省略了魏军在鹵城战败后调集雍、凉援军的具体过程",
+      "classification": "material",
+      "reason": "郭淮提出袭击剑阁、调集援军的计划，以及孙礼率援军到达，构成后续援军突袭和蜀军应对的因果链。",
+      "required_fix": "补充郭淮建议调雍、凉兵袭剑阁断粮，司马懿发檄调兵及孙礼率援军抵达的过程。"
+    },
+    {
+      "omission_note": "省略了张郃追击途中魏延、关兴反复诱敌及孔明在木门道现身嘲讽魏军的细节",
+      "classification": "material",
+      "reason": "反复诱敌直接导致张郃深入木门道并中伏，也体现了孔明设伏的具体步骤；孔明现身嘲讽则是战后关键收束。",
+      "required_fix": "补充魏延、关兴轮番诈败引诱张郃，以及孔明在木门道现身宣告并嘲讽魏军的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 495,
+      "review": {
+        "source_fidelity": 7.2,
+        "naturalness": 8.5,
+        "readability": 8.4,
+        "material_omissions": [
+          "未交代孔明严守百日换班军令、拒绝因敌情留下换班兵，以及士卒因感恩自愿留下、以逸待劳主动击败疲惫雍凉军的关键因果与人物刻画。",
+          "未清楚保留鹵城首次夜袭战败后司马懿、郭淮退守并因此提出调集援军的独立事件。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "将鹵城首次夜袭与孙礼率雍凉援军到达后的后续战斗合并为“夜袭卤城，大败援军”；原文中首次夜袭先于援军调集，援军后来是在蜀军换班士卒自愿留下后被击败。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 539,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

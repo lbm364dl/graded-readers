@@ -1,0 +1,34 @@
+{
+  "status": "complete",
+  "scenes": 4,
+  "japanese_chars": 2386,
+  "chapter_cjk": 2386,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass",
+    "scene_03": "pass",
+    "scene_04": "pass"
+  },
+  "chapter_review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [],
+    "unsupported_additions": [
+      "「英国で大和魂の演説をする。独逸で大和魂の芝居をする」を「英国人、独逸人も大和魂を持つ」と人の属性へ置き換えている。"
+    ],
+    "distortions": [
+      "「大和魂」の海外展開が、英国・独逸という場所での演説・芝居から英国人・独逸人の所有へ変わっているが、全体の風刺意図は維持されている。"
+    ],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "chapter_review_verdict": "pass",
+  "scene_attempts": {
+    "scene_01": 3,
+    "scene_02": 1,
+    "scene_03": 2,
+    "scene_04": 1
+  },
+  "unresolved_scenes": []
+}

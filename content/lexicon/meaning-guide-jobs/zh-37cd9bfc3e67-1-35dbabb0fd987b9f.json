@@ -1,0 +1,31 @@
+{
+  "id": "zh-37cd9bfc3e67-1-35dbabb0fd987b9f",
+  "entry_id": "zh-37cd9bfc3e67-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-37cd9bfc3e67-1",
+      "headword": "焚香",
+      "kind": "construction",
+      "reading": "fénxiāng",
+      "senses": [
+        {
+          "id": "zh-37cd9bfc3e67-1-s1",
+          "definition": "to burn incense"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，三人备好乌牛、白马等祭礼，焚香再拜，发誓虽是异姓，也要报效国家、安定百姓。",
+        "gloss": "to burn incense",
+        "sense_id": "zh-37cd9bfc3e67-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ab52fa01ecb7728f6023931c0dc9ad43fb377924844c1fb86b96e450b9b465b1"
+}

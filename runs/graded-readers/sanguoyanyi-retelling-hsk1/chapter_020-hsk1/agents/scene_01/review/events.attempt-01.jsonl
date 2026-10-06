@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff516-16d1-72c0-ab83-4b4e7e08824f"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.93,\"naturalness\":0.96,\"readability\":0.97,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“王平没有守好街亭”略微简化了责任归属，但后文已说明马谡拒绝建议，未改变主要因果。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":39074,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":385,"reasoning_output_tokens":290}}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-99a60999bedfe489-bd9a0f7b88290923",
+  "entry_id": "ja-99a60999bedfe489",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-99a60999bedfe489",
+      "headword": "悔しい",
+      "reading": "くやしい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-99a60999bedfe489-1",
+          "definition": "feeling regret, frustration, or chagrin"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "おさんは悔しそうに吾輩を台所へ投げ出した。",
+        "gloss": "looking regretful or frustrated",
+        "sense_id": "ja-99a60999bedfe489-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e5da58223c5367a970d00a4f1f49c5534254124d7b22cdeac8453eeb146f5b40"
+}

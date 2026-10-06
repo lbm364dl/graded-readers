@@ -1,0 +1,9 @@
+{
+  "job": "annotations/chunk_0004/semantic_audit_review",
+  "model": "gpt-5.6-luna",
+  "effort": "high",
+  "fingerprint": "803205feb92c18e888f683935841a628a2b53adce25e6110118331a5c6cd45e3",
+  "started_at": "2026-08-06T23:48:13.469744+00:00",
+  "ended_at": "2026-08-06T23:52:09.942279+00:00",
+  "return_code": 0
+}

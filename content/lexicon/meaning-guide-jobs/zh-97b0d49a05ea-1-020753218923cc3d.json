@@ -1,0 +1,31 @@
+{
+  "id": "zh-97b0d49a05ea-1-020753218923cc3d",
+  "entry_id": "zh-97b0d49a05ea-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-97b0d49a05ea-1",
+      "headword": "十多根",
+      "kind": "word",
+      "reading": "shí duō gēn",
+      "senses": [
+        {
+          "id": "zh-97b0d49a05ea-1-s1",
+          "definition": "more than ten"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刚到任，他就在城中四门设置十多根五色棒。",
+        "gloss": "more than ten",
+        "sense_id": "zh-97b0d49a05ea-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b89213efdf8a319bed9959ede0cb4dd53ad2ce7af33e11992340fd97cfe2ccc4"
+}

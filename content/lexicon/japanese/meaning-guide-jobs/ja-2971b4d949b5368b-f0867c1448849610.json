@@ -1,0 +1,32 @@
+{
+  "id": "ja-2971b4d949b5368b-f0867c1448849610",
+  "entry_id": "ja-2971b4d949b5368b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2971b4d949b5368b",
+      "headword": "ずつ",
+      "reading": "ずつ",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-2971b4d949b5368b-1",
+          "definition": "each; apiece; at a time, in the stated amount or number"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "茶の木の根を一本ずつ嗅ぎながら杉垣の近くまで来ると、枯菊を押し倒して、大きな猫が長々と眠っていた。",
+        "gloss": "each; at a time",
+        "sense_id": "ja-2971b4d949b5368b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0e20e75d489e84f29ca66e631ed2444dc7305a49fbc96d70e9080d122b7342a3"
+}

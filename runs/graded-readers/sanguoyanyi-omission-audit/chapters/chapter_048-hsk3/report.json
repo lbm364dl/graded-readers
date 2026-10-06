@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_048-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 467,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将庞统的计策明确称为“火攻计”，原文在本段未直接说明。",
+      "classification": "material",
+      "reason": "这将庞统为徐庶脱身而设计的散布谣言之计改称为火攻计，改变了计策性质。",
+      "required_fix": "改为“庞统的计策被徐庶看穿了”或明确说明是为徐庶脱身而散布韩遂、马腾谋反谣言的计策。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将庞统的计策明确称为“火攻计”，原文在本段未直接说明。",
+      "classification": "material",
+      "reason": "这将庞统为徐庶脱身而设计的散布谣言之计改称为火攻计，改变了计策性质。",
+      "required_fix": "改为“庞统的计策被徐庶看穿了”或明确说明是为徐庶脱身而散布韩遂、马腾谋反谣言的计策。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 467,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

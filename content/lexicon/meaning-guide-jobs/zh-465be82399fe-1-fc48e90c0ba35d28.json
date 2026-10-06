@@ -1,0 +1,31 @@
+{
+  "id": "zh-465be82399fe-1-fc48e90c0ba35d28",
+  "entry_id": "zh-465be82399fe-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-465be82399fe-1",
+      "headword": "到处",
+      "kind": "word",
+      "reading": "dàochù",
+      "senses": [
+        {
+          "id": "zh-465be82399fe-1-s1",
+          "definition": "everywhere; in all places"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉发布招军榜，叫人到处报名。",
+        "gloss": "everywhere",
+        "sense_id": "zh-465be82399fe-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fadacd5a86a7d7ff71b743b20f788314f3a0de5770eedcf6a9f4b808c3559ab7"
+}

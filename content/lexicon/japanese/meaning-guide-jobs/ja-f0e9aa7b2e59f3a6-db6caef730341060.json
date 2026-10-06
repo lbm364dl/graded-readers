@@ -1,0 +1,32 @@
+{
+  "id": "ja-f0e9aa7b2e59f3a6-db6caef730341060",
+  "entry_id": "ja-f0e9aa7b2e59f3a6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f0e9aa7b2e59f3a6",
+      "headword": "失望",
+      "reading": "しつぼう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f0e9aa7b2e59f3a6-1",
+          "definition": "disappointment; a feeling of lost hope"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "すると主人は、失望と怒りの混じった声で、座敷から「この馬鹿野郎」と怒鳴った。",
+        "gloss": "disappointment",
+        "sense_id": "ja-f0e9aa7b2e59f3a6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c43308d780fdfb1b145b8343027d358ab98127077de92995da7add524c4dd2b0"
+}

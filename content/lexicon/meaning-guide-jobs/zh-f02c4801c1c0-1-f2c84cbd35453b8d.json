@@ -1,0 +1,40 @@
+{
+  "id": "zh-f02c4801c1c0-1-f2c84cbd35453b8d",
+  "entry_id": "zh-f02c4801c1c0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f02c4801c1c0-1",
+      "headword": "特别",
+      "kind": "word",
+      "reading": "tèbié",
+      "senses": [
+        {
+          "id": "zh-f02c4801c1c0-1-s1",
+          "definition": "especially; to an unusual or greater degree"
+        },
+        {
+          "id": "zh-f02c4801c1c0-1-s2",
+          "definition": "special; different from the usual"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝在位时，压制正直贤能的人，却特别信任宦官。",
+        "gloss": "especially",
+        "sense_id": "zh-f02c4801c1c0-1-s1"
+      },
+      {
+        "sentence": "刘备对关羽、张飞说：“敌人多，我们人少，必须用特别的办法才能取胜。",
+        "gloss": "special",
+        "sense_id": "zh-f02c4801c1c0-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d729fa76803a6773f382cac822d5f204cef4b0dcb03221a545ef9b202cda69c2"
+}

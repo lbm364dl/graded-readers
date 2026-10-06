@@ -1,0 +1,31 @@
+{
+  "id": "zh-e79a5fa4cff7-1-c0d0093002088a10",
+  "entry_id": "zh-e79a5fa4cff7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e79a5fa4cff7-1",
+      "headword": "解良人",
+      "kind": "name",
+      "reading": "Jiè Liáng rén",
+      "senses": [
+        {
+          "id": "zh-e79a5fa4cff7-1-s1",
+          "definition": "a native of Jie Liang"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "那人说：“我姓关，名羽，字寿长，后改字云长，是河东解良人。",
+        "gloss": "a native of Jie County",
+        "sense_id": "zh-e79a5fa4cff7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "12390950d7f03863ba75264b9c2b1f1f541d36654635eaabf97d8fdf6fa2fd8b"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-a06dd55a3e6a-1-8b8828d41b5849de",
+  "entry_id": "zh-a06dd55a3e6a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a06dd55a3e6a-1",
+      "headword": "拉住",
+      "kind": "construction",
+      "reading": "lā zhù",
+      "senses": [
+        {
+          "id": "zh-a06dd55a3e6a-1-s1",
+          "definition": "to pull and hold someone or something, stopping their movement"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备连忙拉住他：“这件事应当由朝廷处理，你不能冲动。",
+        "gloss": "pull back",
+        "sense_id": "zh-a06dd55a3e6a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fb03109edd479ff0bf71ac7c59092467b0542afbbd7bf335c17513547810477a"
+}

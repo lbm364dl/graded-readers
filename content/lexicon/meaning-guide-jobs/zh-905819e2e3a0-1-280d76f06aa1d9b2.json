@@ -1,0 +1,41 @@
+{
+  "id": "zh-905819e2e3a0-1-280d76f06aa1d9b2",
+  "entry_id": "zh-905819e2e3a0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-905819e2e3a0-1",
+      "headword": "同意",
+      "kind": "word",
+      "reading": "tóngyì",
+      "senses": [
+        {
+          "id": "zh-905819e2e3a0-1-s1",
+          "definition": "agree; give one's consent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植说：“朝廷派来的人向我要钱，我没有同意。",
+        "gloss": "agree",
+        "sense_id": "zh-905819e2e3a0-1-s1"
+      },
+      {
+        "sentence": "卢植被押走后，关羽建议先回涿郡，刘备同意了。",
+        "gloss": "agree",
+        "sense_id": "zh-905819e2e3a0-1-s1"
+      },
+      {
+        "sentence": "”刘备同意了，三人向北走。",
+        "gloss": "agree",
+        "sense_id": "zh-905819e2e3a0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4db00e2085a7e9e79de63cb7f3d9881629dbfba5b9edf3e5a42ef1a345ed926d"
+}

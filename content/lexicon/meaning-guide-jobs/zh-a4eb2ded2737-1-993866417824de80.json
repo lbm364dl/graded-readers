@@ -1,0 +1,31 @@
+{
+  "id": "zh-a4eb2ded2737-1-993866417824de80",
+  "entry_id": "zh-a4eb2ded2737-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a4eb2ded2737-1",
+      "headword": "将来",
+      "kind": "word",
+      "reading": "jiānglái",
+      "senses": [
+        {
+          "id": "zh-a4eb2ded2737-1-s1",
+          "definition": "the future; a time that has not yet come"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备小时候常和孩子们在树下玩，说自己将来要做大事。",
+        "gloss": "in the future",
+        "sense_id": "zh-a4eb2ded2737-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c823c4d4cc2414d8a0448de0e05c0b058045e5371a1648a69c8691e2648b9672"
+}

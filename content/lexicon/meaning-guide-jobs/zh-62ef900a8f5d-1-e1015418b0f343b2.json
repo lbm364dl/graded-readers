@@ -1,0 +1,36 @@
+{
+  "id": "zh-62ef900a8f5d-1-e1015418b0f343b2",
+  "entry_id": "zh-62ef900a8f5d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-62ef900a8f5d-1",
+      "headword": "年",
+      "kind": "word",
+      "reading": "nián",
+      "senses": [
+        {
+          "id": "zh-62ef900a8f5d-1-s1",
+          "definition": "year"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁二年四月十五日，皇帝在宫中坐下。",
+        "gloss": "year",
+        "sense_id": "zh-62ef900a8f5d-1-s1"
+      },
+      {
+        "sentence": "建宁四年二月，洛阳地震，海水泛滥，沿海居民被大浪卷走。",
+        "gloss": "year",
+        "sense_id": "zh-62ef900a8f5d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c177a28e5fba931bf994694101f141c6fe13b1a120de9dbd2bb4d7645eefef35"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-13915e90b4c8ae1a-c83bd1baaaa232fc",
+  "entry_id": "ja-13915e90b4c8ae1a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-13915e90b4c8ae1a",
+      "headword": "この頃",
+      "reading": "このごろ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-13915e90b4c8ae1a-1",
+          "definition": "recently; these days; around this time"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これが人間の飲むたばこだということを、吾輩はようやくこの頃知った。",
+        "gloss": "these days; recently",
+        "sense_id": "ja-13915e90b4c8ae1a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7ff44ca9189ff31929c500f71d60e1eed3b225696e85eb0ff72dca294dded89c"
+}

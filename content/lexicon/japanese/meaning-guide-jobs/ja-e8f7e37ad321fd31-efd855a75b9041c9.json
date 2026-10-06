@@ -1,0 +1,32 @@
+{
+  "id": "ja-e8f7e37ad321fd31-efd855a75b9041c9",
+  "entry_id": "ja-e8f7e37ad321fd31",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e8f7e37ad321fd31",
+      "headword": "棄てる",
+      "reading": "すてる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e8f7e37ad321fd31-1",
+          "definition": "to throw away or abandon"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は藁の上から、急に笹原の中へ棄てられたのである。",
+        "gloss": "was thrown away; was abandoned",
+        "sense_id": "ja-e8f7e37ad321fd31-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4796a827b2163e34d161aa8883ad3802f070137ebb76350f12404d96893b8cf4"
+}

@@ -1,0 +1,23 @@
+{
+  "type":"object", "additionalProperties":false, "required":["entries","bindings"],
+  "properties": {
+    "entries":{"type":"array","items":{
+      "type":"object","additionalProperties":false,
+      "required":["id","headword","reading","kind","base_entry_id","components","senses"],
+      "properties":{
+        "id":{"type":"string"},"headword":{"type":"string"},"reading":{"type":"string"},
+        "kind":{"type":"string","enum":["word","name","expression","construction","particle"]},
+        "base_entry_id":{"type":"string"},
+        "components":{"type":"array","items":{"type":"object","additionalProperties":false,
+          "required":["entry_id","role"],"properties":{"entry_id":{"type":"string"},"role":{"type":"string"}}}},
+        "senses":{"type":"array","items":{"type":"object","additionalProperties":false,
+          "required":["id","definition"],"properties":{"id":{"type":"string"},"definition":{"type":"string"}}}}
+      }
+    }},
+    "bindings":{"type":"array","items":{"type":"object","additionalProperties":false,
+      "required":["candidate_id","entry_id","sense_id","canonical_start","canonical_end"],
+      "properties":{"candidate_id":{"type":"string"},"entry_id":{"type":"string"},"sense_id":{"type":"string"},
+        "canonical_start":{"type":"integer"},"canonical_end":{"type":"integer"}}
+    }}
+  }
+}

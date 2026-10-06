@@ -1,0 +1,31 @@
+{
+  "id": "zh-08c623d9b4b7-1-733ea8334a38f2e8",
+  "entry_id": "zh-08c623d9b4b7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-08c623d9b4b7-1",
+      "headword": "随意",
+      "kind": "word",
+      "reading": "suíyì",
+      "senses": [
+        {
+          "id": "zh-08c623d9b4b7-1-s1",
+          "definition": "unrestrained; as one pleases"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹嵩相信了他，之后不再听叔父责备，曹操也更加随意。",
+        "gloss": "unrestrained; as one pleases",
+        "sense_id": "zh-08c623d9b4b7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e08d916f9dc917f94d36dfbb459b848f724738f73105ae3e68781041dc33d9a8"
+}

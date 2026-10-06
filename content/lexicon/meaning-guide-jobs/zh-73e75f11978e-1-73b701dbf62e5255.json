@@ -1,0 +1,31 @@
+{
+  "id": "zh-73e75f11978e-1-73b701dbf62e5255",
+  "entry_id": "zh-73e75f11978e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-73e75f11978e-1",
+      "headword": "不久",
+      "kind": "word",
+      "reading": "bùjiǔ",
+      "senses": [
+        {
+          "id": "zh-73e75f11978e-1-s1",
+          "definition": "soon; after a short time"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不久，青州被黄巾军围住。",
+        "gloss": "soon",
+        "sense_id": "zh-73e75f11978e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "882bf20ca5fd8c74cdfae487245c1070f65d2c2b3e2e41b243214632b333dac2"
+}

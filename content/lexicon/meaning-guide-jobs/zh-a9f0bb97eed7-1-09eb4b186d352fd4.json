@@ -1,0 +1,31 @@
+{
+  "id": "zh-a9f0bb97eed7-1-09eb4b186d352fd4",
+  "entry_id": "zh-a9f0bb97eed7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a9f0bb97eed7-1",
+      "headword": "玄德",
+      "kind": "name",
+      "reading": "Xuándé",
+      "senses": [
+        {
+          "id": "zh-a9f0bb97eed7-1-s1",
+          "definition": "Xuande, Liu Bei's courtesy name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备是中山靖王刘胜之后，字玄德。",
+        "gloss": "Xuande",
+        "sense_id": "zh-a9f0bb97eed7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2a0e1938456429c115fe9c6e6ad3336e477e0ffbd8bb377df7bb40fa29b95a39"
+}

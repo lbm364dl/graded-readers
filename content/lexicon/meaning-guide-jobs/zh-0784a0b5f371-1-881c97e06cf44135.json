@@ -1,0 +1,31 @@
+{
+  "id": "zh-0784a0b5f371-1-881c97e06cf44135",
+  "entry_id": "zh-0784a0b5f371-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0784a0b5f371-1",
+      "headword": "日夜",
+      "kind": "word",
+      "reading": "rìyè",
+      "senses": [
+        {
+          "id": "zh-0784a0b5f371-1-s1",
+          "definition": "day and night; continuously through both day and night"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角日夜学习，学会呼风唤雨，自称太平道人。",
+        "gloss": "day and night",
+        "sense_id": "zh-0784a0b5f371-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2a42ed24f9f218343c843eedfb5cff69428a334065408d728d2e4049d22326f4"
+}

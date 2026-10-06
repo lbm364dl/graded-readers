@@ -1,0 +1,32 @@
+{
+  "id": "ja-56d02607b2e7e550-f6752cdfc85cd5f7",
+  "entry_id": "ja-56d02607b2e7e550",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-56d02607b2e7e550",
+      "headword": "絡む",
+      "reading": "からむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-56d02607b2e7e550-1",
+          "definition": "to become entangled; to catch or cling to something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どうも喉にからむようで、吾輩は実に困った。",
+        "gloss": "become entangled; catch in",
+        "sense_id": "ja-56d02607b2e7e550-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "97f03e26048d824e1551c2289381d31bdecec5f4f3eb11475ddfd5e06ae3d513"
+}

@@ -1,0 +1,41 @@
+{
+  "scene": {
+    "id": "scene_01",
+    "title": "關公敗亡與英魂顯聖",
+    "source_start_quote": "卻說孫權求計於呂蒙。",
+    "required_events": [
+      "呂蒙獻計，孫權設伏；關公糧盡突圍，父子及趙累相繼被擒，關公父子不降而死，麥城失守，王甫墮城、周倉自刎。關公英魂至玉泉山，在普靜點化下悟道，後顯聖護民。呂蒙受關公附體而死；孫權依張昭計嫁禍曹操，曹操與司馬懿設計厚葬關公，卻被顯聖驚駭。劉備納吳氏為妃後，得知荊州失陷、關公遇害，悲痛欲親征報仇，終昏厥於地。"
+    ],
+    "target_chars": 140,
+    "source_start": 0,
+    "source_end": 4490
+  },
+  "text": "吕蒙献计，孙权命朱然、潘璋设伏。关公粮尽突围，赵累战死，关公、关平相继被擒；父子不降而死。麦城失守，王甫坠城，周仓自刎。关公英魂到玉泉山，普静点化他悟道，后显圣护民。庆功时，吕蒙被关公附体而死。张昭献计，孙权嫁祸曹操；曹操与司马懿设计厚葬关公，却被显圣惊倒。刘备纳吴氏为妃，得知荆州失陷、关公遇害，悲痛欲亲征报仇，终昏厥于地。",
+  "review": {
+    "source_fidelity": 8,
+    "naturalness": 8,
+    "readability": 8,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "吕蒙献计，孙权命朱然、潘璋设伏。关公粮尽突围，赵累战死，关公、关平相继被擒；父子不降而死。麦城失守，王甫坠城，周仓自刎。关公英魂到玉泉山，普静点化他悟道，后显圣护民。庆功时，吕蒙被关公附体而死。张昭献计，孙权嫁祸曹操；曹操与司马懿设计厚葬关公，却被显圣惊倒。刘备纳吴氏为妃，得知荆州失陷、关公遇害，悲痛欲亲征报仇，终昏厥于地。",
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 8,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      }
+    }
+  ],
+  "resolved": true
+}

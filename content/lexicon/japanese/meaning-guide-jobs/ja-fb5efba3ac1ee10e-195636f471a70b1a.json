@@ -1,0 +1,32 @@
+{
+  "id": "ja-fb5efba3ac1ee10e-195636f471a70b1a",
+  "entry_id": "ja-fb5efba3ac1ee10e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fb5efba3ac1ee10e",
+      "headword": "向こう",
+      "reading": "むこう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fb5efba3ac1ee10e-1",
+          "definition": "the other side; a place over there"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "やっと笹原を出ると、向こうに大きな池があった。",
+        "gloss": "over there; on the other side",
+        "sense_id": "ja-fb5efba3ac1ee10e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d2222c262f01c17e75ffd6a7938b1362fb20fe9219a3283ab6a8e0a3ec525a8f"
+}

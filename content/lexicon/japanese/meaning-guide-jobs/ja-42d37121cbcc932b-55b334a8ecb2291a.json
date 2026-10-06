@@ -1,0 +1,32 @@
+{
+  "id": "ja-42d37121cbcc932b-55b334a8ecb2291a",
+  "entry_id": "ja-42d37121cbcc932b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-42d37121cbcc932b",
+      "headword": "つらい",
+      "reading": "つらい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-42d37121cbcc932b-1",
+          "definition": "painful; difficult or distressing to endure"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが主人に言わせると、教師ほどつらい仕事はないらしい。",
+        "gloss": "hard; painful",
+        "sense_id": "ja-42d37121cbcc932b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "00215cc9a9e8f9244a3d965738f4f435b8795045a3eb77a72356047e3d174b66"
+}

@@ -1,0 +1,75 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_051-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1256,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "field": "language_problems",
+      "finding_note": "“医者警告毒箭不能妄动怒气”表达不自然且语义含混，宜改为“医者警告说箭头有毒，切不可动怒，否则伤口会再次崩裂”。",
+      "classification": "material",
+      "reason": "原句结构不自然且警告内容含混，可能妨碍读者准确理解毒箭、动怒与伤口复发之间的关系。",
+      "required_fix": "改为“医者警告说箭头有毒，切不可动怒，否则伤口会再次崩裂”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "language_problems",
+      "finding_note": "“医者警告毒箭不能妄动怒气”表达不自然且语义含混，宜改为“医者警告说箭头有毒，切不可动怒，否则伤口会再次崩裂”。",
+      "classification": "material",
+      "reason": "原句结构不自然且警告内容含混，可能妨碍读者准确理解毒箭、动怒与伤口复发之间的关系。",
+      "required_fix": "改为“医者警告说箭头有毒，切不可动怒，否则伤口会再次崩裂”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1256,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "“周瑜多年苦战却一无所得”中的“多年苦战”超出原文，原文未说明苦战持续多年。"
+        ],
+        "distortions": [
+          "将周瑜此次战役未得城池扩大表述为多年苦战后一无所得。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1256,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

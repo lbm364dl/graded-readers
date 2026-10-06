@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_036-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 243,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“玄德设伏”弱化了徐庶具体谋划并部署伏兵的作用。",
+      "classification": "material",
+      "reason": "原文明确由徐庶预料曹仁劫寨并秘密分拨部署，改称玄德设伏会改变关键谋划和部署者的叙事归属。",
+      "required_fix": "改为“徐庶又料到曹仁会劫寨，便秘密谋划并部署伏兵，玄德依计应战”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“玄德设伏”弱化了徐庶具体谋划并部署伏兵的作用。",
+      "classification": "material",
+      "reason": "原文明确由徐庶预料曹仁劫寨并秘密分拨部署，改称玄德设伏会改变关键谋划和部署者的叙事归属。",
+      "required_fix": "改为“徐庶又料到曹仁会劫寨，便秘密谋划并部署伏兵，玄德依计应战”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 243,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

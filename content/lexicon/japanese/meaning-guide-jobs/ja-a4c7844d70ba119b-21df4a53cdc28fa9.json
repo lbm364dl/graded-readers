@@ -1,0 +1,32 @@
+{
+  "id": "ja-a4c7844d70ba119b-21df4a53cdc28fa9",
+  "entry_id": "ja-a4c7844d70ba119b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a4c7844d70ba119b",
+      "headword": "耐える",
+      "reading": "たえる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a4c7844d70ba119b-1",
+          "definition": "to endure or withstand something difficult or unpleasant"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "痛みにたえながら外へ出ると、大きな池があった。",
+        "gloss": "while enduring",
+        "sense_id": "ja-a4c7844d70ba119b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c2ee7e616d3e12fa774960f299ad998a78c8bcf465be76cd576fb38f76c18ee8"
+}

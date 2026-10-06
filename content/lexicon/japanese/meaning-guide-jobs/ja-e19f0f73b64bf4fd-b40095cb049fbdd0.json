@@ -1,0 +1,32 @@
+{
+  "id": "ja-e19f0f73b64bf4fd-b40095cb049fbdd0",
+  "entry_id": "ja-e19f0f73b64bf4fd",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e19f0f73b64bf4fd",
+      "headword": "時",
+      "reading": "とき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e19f0f73b64bf4fd-1",
+          "definition": "Time; moment; occasion."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その時、初めて人を見ました。",
+        "gloss": "time; moment",
+        "sense_id": "ja-e19f0f73b64bf4fd-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e1858d354b07a3259cb42b01378ff54a83c0c75bfa40f9178d90b45d86729337"
+}

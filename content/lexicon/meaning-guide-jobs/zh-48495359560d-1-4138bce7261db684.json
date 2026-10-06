@@ -1,0 +1,31 @@
+{
+  "id": "zh-48495359560d-1-4138bce7261db684",
+  "entry_id": "zh-48495359560d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-48495359560d-1",
+      "headword": "靖王",
+      "kind": "name",
+      "reading": "Jìngwáng",
+      "senses": [
+        {
+          "id": "zh-48495359560d-1-s1",
+          "definition": "Prince Jing"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备是中山靖王刘胜之后，字玄德。",
+        "gloss": "Prince Jing",
+        "sense_id": "zh-48495359560d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2f548d10fa7b0efa6e702ee7ec700ff8a3482850414450fc57a5f1be2542b071"
+}

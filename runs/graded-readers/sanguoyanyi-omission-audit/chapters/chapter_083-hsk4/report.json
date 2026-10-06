@@ -1,0 +1,70 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_083-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 607,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“甘宁出战沙摩柯”略有失真，原文是甘宁不敢交锋，逃走后中箭身亡。",
+      "classification": "material",
+      "reason": "将甘宁不敢交锋、逃走改成主动出战，改变了关键行动及其因果过程。",
+      "required_fix": "改为甘宁不敢与沙摩柯交锋，拨马逃走，随后被沙摩柯一箭射中头颅而死。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“用青龙偃月刀在父亲神像前祭祀”表述不准确，原文是关兴取刀，并以潘璋之心血祭拜关公神像。",
+      "classification": "material",
+      "reason": "将祭祀所用之物误写为青龙偃月刀，遗漏了以潘璋心血祭拜关公神像这一关键事实。",
+      "required_fix": "改为关兴取得青龙偃月刀，并取潘璋心血在关公神像前祭祀。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“甘宁出战沙摩柯”略有失真，原文是甘宁不敢交锋，逃走后中箭身亡。",
+      "classification": "material",
+      "reason": "将甘宁不敢交锋、逃走改成主动出战，改变了关键行动及其因果过程。",
+      "required_fix": "改为甘宁不敢与沙摩柯交锋，拨马逃走，随后被沙摩柯一箭射中头颅而死。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“用青龙偃月刀在父亲神像前祭祀”表述不准确，原文是关兴取刀，并以潘璋之心血祭拜关公神像。",
+      "classification": "material",
+      "reason": "将祭祀所用之物误写为青龙偃月刀，遗漏了以潘璋心血祭拜关公神像这一关键事实。",
+      "required_fix": "改为关兴取得青龙偃月刀，并取潘璋心血在关公神像前祭祀。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 607,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

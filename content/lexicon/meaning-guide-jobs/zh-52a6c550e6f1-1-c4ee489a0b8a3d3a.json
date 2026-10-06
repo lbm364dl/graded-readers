@@ -1,0 +1,31 @@
+{
+  "id": "zh-52a6c550e6f1-1-c4ee489a0b8a3d3a",
+  "entry_id": "zh-52a6c550e6f1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-52a6c550e6f1-1",
+      "headword": "讨好",
+      "kind": "word",
+      "reading": "tǎohǎo",
+      "senses": [
+        {
+          "id": "zh-52a6c550e6f1-1-s1",
+          "definition": "to try to please someone to gain their favor"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植说军粮尚且不足，哪有钱讨好使者？",
+        "gloss": "to curry favor with",
+        "sense_id": "zh-52a6c550e6f1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "efb47245deba248c77ecb2d96c060be8dc589cb5ea9cdb026d76208761375be6"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-8691c36844e6-1-4b15272ce56afffe",
+  "entry_id": "zh-8691c36844e6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8691c36844e6-1",
+      "headword": "惊",
+      "kind": "word",
+      "reading": "jīng",
+      "senses": [
+        {
+          "id": "zh-8691c36844e6-1-s1",
+          "definition": "to be startled; to startle"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "灵帝惊倒，左右急忙救他入宫，百官奔走躲避。",
+        "gloss": "to startle",
+        "sense_id": "zh-8691c36844e6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5a73bade8caed0e37d5a24870c64036cbbb30a1efa381b0004b6b737e2fcd32b"
+}

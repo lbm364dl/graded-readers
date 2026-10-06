@@ -1,0 +1,32 @@
+{
+  "id": "ja-d65f19821373e8a1-6b3997f0cbf32242",
+  "entry_id": "ja-d65f19821373e8a1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d65f19821373e8a1",
+      "headword": "鯔",
+      "reading": "ぼら",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d65f19821373e8a1-1",
+          "definition": "a mullet, a type of fish"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "猫の仲間では、目刺の頭でも、ぼらのへそでも、最初に見付けた者が食べる権利を持つ。",
+        "gloss": "mullet",
+        "sense_id": "ja-d65f19821373e8a1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cb7316138cf3b78e8a47748cf44cc4baa76339f14ab09aeb8f1b9c5f3f076d8e"
+}

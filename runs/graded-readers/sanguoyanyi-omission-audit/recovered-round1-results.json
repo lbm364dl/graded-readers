@@ -1,0 +1,1511 @@
+{
+  "counts": {
+    "existing": 22,
+    "recovered": 283
+  },
+  "jobs": [
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_001-hsk1/chapter_repair"
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_001-hsk5/chapter_repair",
+      "bytes": 3125
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_001-hsk6/chapter_repair",
+      "bytes": 5302
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_002-hsk1/chapter_repair"
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_003-hsk3/chapter_repair"
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_003-hsk4/chapter_repair",
+      "bytes": 2064
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_003-hsk5/chapter_repair",
+      "bytes": 3230
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_003-hsk6/chapter_repair",
+      "bytes": 4150
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_004-hsk1/chapter_repair"
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_005-hsk1/chapter_repair"
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_005-hsk2/chapter_repair"
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_005-hsk3/chapter_repair"
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_005-hsk6/chapter_repair",
+      "bytes": 4510
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_006-hsk5/chapter_repair",
+      "bytes": 3782
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_006-hsk6/chapter_repair",
+      "bytes": 3964
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_007-hsk1/chapter_repair"
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_007-hsk3/chapter_repair"
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_007-hsk5/chapter_repair",
+      "bytes": 3209
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_008-hsk4/chapter_repair",
+      "bytes": 2529
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_008-hsk5/chapter_repair",
+      "bytes": 2818
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_009-hsk3/chapter_repair"
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_009-hsk6/chapter_repair",
+      "bytes": 4476
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_010-hsk3/chapter_repair"
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_010-hsk6/chapter_repair",
+      "bytes": 4476
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_011-hsk1/chapter_repair"
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_011-hsk2/chapter_repair"
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_012-hsk6/chapter_repair",
+      "bytes": 4644
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_013-hsk1/chapter_repair"
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_013-hsk3/chapter_repair"
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_013-hsk4/chapter_repair",
+      "bytes": 2505
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_014-hsk3/chapter_repair",
+      "bytes": 1540
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_014-hsk5/chapter_repair",
+      "bytes": 3130
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_015-hsk2/chapter_repair",
+      "bytes": 1053
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_015-hsk5/chapter_repair",
+      "bytes": 3312
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_016-hsk3/chapter_repair"
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_016-hsk4/chapter_repair",
+      "bytes": 2283
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_016-hsk5/chapter_repair",
+      "bytes": 3018
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_017-hsk4/chapter_repair",
+      "bytes": 2649
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_018-hsk4/chapter_repair",
+      "bytes": 2280
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_018-hsk5/chapter_repair",
+      "bytes": 3687
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_018-hsk6/chapter_repair",
+      "bytes": 4848
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_019-hsk1/chapter_repair"
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_019-hsk2/chapter_repair"
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_019-hsk5/chapter_repair",
+      "bytes": 2961
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_020-hsk2/chapter_repair"
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_021-hsk5/chapter_repair",
+      "bytes": 2929
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_021-hsk6/chapter_repair",
+      "bytes": 3444
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_022-hsk4/chapter_repair",
+      "bytes": 2614
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_022-hsk5/chapter_repair",
+      "bytes": 3189
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_022-hsk6/chapter_repair",
+      "bytes": 5100
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_023-hsk1/chapter_repair"
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_023-hsk2/chapter_repair"
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_023-hsk4/chapter_repair",
+      "bytes": 2122
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_023-hsk6/chapter_repair",
+      "bytes": 3902
+    },
+    {
+      "status": "existing",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_024-hsk2/chapter_repair"
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_024-hsk3/chapter_repair",
+      "bytes": 1905
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_024-hsk4/chapter_repair",
+      "bytes": 2526
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_024-hsk6/chapter_repair",
+      "bytes": 3915
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_025-hsk4/chapter_repair",
+      "bytes": 2613
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_025-hsk5/chapter_repair",
+      "bytes": 3161
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_025-hsk6/chapter_repair",
+      "bytes": 4460
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_026-hsk4/chapter_repair",
+      "bytes": 2529
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_026-hsk5/chapter_repair",
+      "bytes": 3682
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_027-hsk5/chapter_repair",
+      "bytes": 2733
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_028-hsk1/chapter_repair",
+      "bytes": 591
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_028-hsk3/chapter_repair",
+      "bytes": 1851
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_028-hsk5/chapter_repair",
+      "bytes": 3219
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_029-hsk1/chapter_repair",
+      "bytes": 666
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_029-hsk2/chapter_repair",
+      "bytes": 1191
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_029-hsk4/chapter_repair",
+      "bytes": 2388
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_029-hsk5/chapter_repair",
+      "bytes": 2853
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_030-hsk4/chapter_repair",
+      "bytes": 2232
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_030-hsk6/chapter_repair",
+      "bytes": 4560
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_031-hsk2/chapter_repair",
+      "bytes": 1017
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_031-hsk4/chapter_repair",
+      "bytes": 2268
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_031-hsk5/chapter_repair",
+      "bytes": 3264
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_031-hsk6/chapter_repair",
+      "bytes": 5167
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_032-hsk3/chapter_repair",
+      "bytes": 2088
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_032-hsk4/chapter_repair",
+      "bytes": 2361
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_032-hsk5/chapter_repair",
+      "bytes": 3199
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_032-hsk6/chapter_repair",
+      "bytes": 4355
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_033-hsk4/chapter_repair",
+      "bytes": 2372
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_033-hsk5/chapter_repair",
+      "bytes": 4071
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_033-hsk6/chapter_repair",
+      "bytes": 4987
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_034-hsk2/chapter_repair",
+      "bytes": 1188
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_034-hsk4/chapter_repair",
+      "bytes": 2764
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_035-hsk1/chapter_repair",
+      "bytes": 561
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_036-hsk2/chapter_repair",
+      "bytes": 849
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_036-hsk3/chapter_repair",
+      "bytes": 1719
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_036-hsk4/chapter_repair",
+      "bytes": 2513
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_036-hsk6/chapter_repair",
+      "bytes": 4108
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_037-hsk2/chapter_repair",
+      "bytes": 903
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_037-hsk3/chapter_repair",
+      "bytes": 1680
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_037-hsk4/chapter_repair",
+      "bytes": 2577
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_037-hsk6/chapter_repair",
+      "bytes": 3882
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_038-hsk1/chapter_repair",
+      "bytes": 675
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_038-hsk3/chapter_repair",
+      "bytes": 1779
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_039-hsk1/chapter_repair",
+      "bytes": 585
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_039-hsk3/chapter_repair",
+      "bytes": 1901
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_039-hsk4/chapter_repair",
+      "bytes": 2663
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_039-hsk6/chapter_repair",
+      "bytes": 5009
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_040-hsk4/chapter_repair",
+      "bytes": 2156
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_040-hsk5/chapter_repair",
+      "bytes": 4406
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_041-hsk6/chapter_repair",
+      "bytes": 4400
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_042-hsk2/chapter_repair",
+      "bytes": 1053
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_042-hsk3/chapter_repair",
+      "bytes": 1734
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_042-hsk5/chapter_repair",
+      "bytes": 3335
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_042-hsk6/chapter_repair",
+      "bytes": 5499
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_043-hsk3/chapter_repair",
+      "bytes": 1809
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_043-hsk4/chapter_repair",
+      "bytes": 2358
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_043-hsk5/chapter_repair",
+      "bytes": 3510
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_044-hsk1/chapter_repair",
+      "bytes": 561
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_044-hsk6/chapter_repair",
+      "bytes": 4917
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_045-hsk3/chapter_repair",
+      "bytes": 1506
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_046-hsk2/chapter_repair",
+      "bytes": 948
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_046-hsk5/chapter_repair",
+      "bytes": 3297
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_046-hsk6/chapter_repair",
+      "bytes": 4014
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_047-hsk2/chapter_repair",
+      "bytes": 915
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_047-hsk3/chapter_repair",
+      "bytes": 1590
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_047-hsk6/chapter_repair",
+      "bytes": 4164
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_048-hsk1/chapter_repair",
+      "bytes": 570
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_048-hsk3/chapter_repair",
+      "bytes": 1611
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_049-hsk1/chapter_repair",
+      "bytes": 555
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_049-hsk2/chapter_repair",
+      "bytes": 1158
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_049-hsk3/chapter_repair",
+      "bytes": 1713
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_050-hsk1/chapter_repair",
+      "bytes": 549
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_050-hsk3/chapter_repair",
+      "bytes": 1919
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_050-hsk5/chapter_repair",
+      "bytes": 3158
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_051-hsk2/chapter_repair",
+      "bytes": 1167
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_051-hsk5/chapter_repair",
+      "bytes": 2850
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_051-hsk6/chapter_repair",
+      "bytes": 4376
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_052-hsk4/chapter_repair",
+      "bytes": 2331
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_052-hsk5/chapter_repair",
+      "bytes": 2988
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_053-hsk2/chapter_repair",
+      "bytes": 1038
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_053-hsk3/chapter_repair",
+      "bytes": 1537
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_053-hsk4/chapter_repair",
+      "bytes": 2270
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_054-hsk5/chapter_repair",
+      "bytes": 2835
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_054-hsk6/chapter_repair",
+      "bytes": 5055
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_055-hsk2/chapter_repair",
+      "bytes": 885
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_055-hsk4/chapter_repair",
+      "bytes": 2103
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_055-hsk5/chapter_repair",
+      "bytes": 3498
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_056-hsk1/chapter_repair",
+      "bytes": 666
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_056-hsk2/chapter_repair",
+      "bytes": 1170
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_056-hsk3/chapter_repair",
+      "bytes": 1791
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_056-hsk5/chapter_repair",
+      "bytes": 2914
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_056-hsk6/chapter_repair",
+      "bytes": 4488
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_057-hsk3/chapter_repair",
+      "bytes": 2011
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_057-hsk4/chapter_repair",
+      "bytes": 2346
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_058-hsk2/chapter_repair",
+      "bytes": 1179
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_058-hsk4/chapter_repair",
+      "bytes": 2568
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_058-hsk5/chapter_repair",
+      "bytes": 3138
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_058-hsk6/chapter_repair",
+      "bytes": 4433
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_059-hsk2/chapter_repair",
+      "bytes": 1122
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_059-hsk6/chapter_repair",
+      "bytes": 4493
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_060-hsk1/chapter_repair",
+      "bytes": 651
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_060-hsk5/chapter_repair",
+      "bytes": 3257
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_060-hsk6/chapter_repair",
+      "bytes": 4409
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_061-hsk1/chapter_repair",
+      "bytes": 561
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_061-hsk3/chapter_repair",
+      "bytes": 1917
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_061-hsk4/chapter_repair",
+      "bytes": 2178
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_061-hsk6/chapter_repair",
+      "bytes": 3925
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_062-hsk2/chapter_repair",
+      "bytes": 1056
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_062-hsk3/chapter_repair",
+      "bytes": 1518
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_064-hsk1/chapter_repair",
+      "bytes": 657
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_064-hsk2/chapter_repair",
+      "bytes": 1224
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_064-hsk5/chapter_repair",
+      "bytes": 3456
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_064-hsk6/chapter_repair",
+      "bytes": 3891
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_065-hsk4/chapter_repair",
+      "bytes": 1992
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_065-hsk6/chapter_repair",
+      "bytes": 3887
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_066-hsk4/chapter_repair",
+      "bytes": 2205
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_067-hsk1/chapter_repair",
+      "bytes": 555
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_067-hsk5/chapter_repair",
+      "bytes": 3295
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_067-hsk6/chapter_repair",
+      "bytes": 4560
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_069-hsk6/chapter_repair",
+      "bytes": 4179
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_070-hsk3/chapter_repair",
+      "bytes": 1518
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_070-hsk6/chapter_repair",
+      "bytes": 3580
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_071-hsk2/chapter_repair",
+      "bytes": 849
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_071-hsk3/chapter_repair",
+      "bytes": 1866
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_072-hsk1/chapter_repair",
+      "bytes": 651
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_072-hsk3/chapter_repair",
+      "bytes": 1931
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_072-hsk4/chapter_repair",
+      "bytes": 2325
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_072-hsk5/chapter_repair",
+      "bytes": 3586
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_073-hsk1/chapter_repair",
+      "bytes": 669
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_073-hsk4/chapter_repair",
+      "bytes": 2475
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_073-hsk5/chapter_repair",
+      "bytes": 3011
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_074-hsk6/chapter_repair",
+      "bytes": 4816
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_075-hsk4/chapter_repair",
+      "bytes": 2587
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_075-hsk5/chapter_repair",
+      "bytes": 2761
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_076-hsk1/chapter_repair",
+      "bytes": 648
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_076-hsk2/chapter_repair",
+      "bytes": 1140
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_076-hsk3/chapter_repair",
+      "bytes": 1650
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_076-hsk5/chapter_repair",
+      "bytes": 3400
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_077-hsk4/chapter_repair",
+      "bytes": 2004
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_078-hsk2/chapter_repair",
+      "bytes": 1158
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_078-hsk5/chapter_repair",
+      "bytes": 2640
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_078-hsk6/chapter_repair",
+      "bytes": 4161
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_079-hsk1/chapter_repair",
+      "bytes": 603
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_079-hsk2/chapter_repair",
+      "bytes": 1221
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_079-hsk5/chapter_repair",
+      "bytes": 3422
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_079-hsk6/chapter_repair",
+      "bytes": 4658
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_080-hsk3/chapter_repair",
+      "bytes": 1428
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_080-hsk4/chapter_repair",
+      "bytes": 2232
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_081-hsk1/chapter_repair",
+      "bytes": 555
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_081-hsk2/chapter_repair",
+      "bytes": 1125
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_081-hsk4/chapter_repair",
+      "bytes": 2760
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_081-hsk6/chapter_repair",
+      "bytes": 3904
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_082-hsk1/chapter_repair",
+      "bytes": 558
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_082-hsk2/chapter_repair",
+      "bytes": 1002
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_082-hsk3/chapter_repair",
+      "bytes": 1797
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_082-hsk5/chapter_repair",
+      "bytes": 3279
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_083-hsk1/chapter_repair",
+      "bytes": 642
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_083-hsk4/chapter_repair",
+      "bytes": 2088
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_083-hsk5/chapter_repair",
+      "bytes": 2939
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_084-hsk3/chapter_repair",
+      "bytes": 1794
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_084-hsk4/chapter_repair",
+      "bytes": 2271
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_084-hsk5/chapter_repair",
+      "bytes": 3062
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_085-hsk1/chapter_repair",
+      "bytes": 558
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_085-hsk3/chapter_repair",
+      "bytes": 1674
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_085-hsk4/chapter_repair",
+      "bytes": 2765
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_085-hsk5/chapter_repair",
+      "bytes": 3246
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_086-hsk2/chapter_repair",
+      "bytes": 1170
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_086-hsk3/chapter_repair",
+      "bytes": 1902
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_086-hsk4/chapter_repair",
+      "bytes": 2640
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_087-hsk3/chapter_repair",
+      "bytes": 2118
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_088-hsk2/chapter_repair",
+      "bytes": 1185
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_088-hsk5/chapter_repair",
+      "bytes": 3465
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_090-hsk1/chapter_repair",
+      "bytes": 558
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_090-hsk3/chapter_repair",
+      "bytes": 1881
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_090-hsk6/chapter_repair",
+      "bytes": 3909
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_091-hsk2/chapter_repair",
+      "bytes": 1062
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_091-hsk4/chapter_repair",
+      "bytes": 2334
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_092-hsk1/chapter_repair",
+      "bytes": 582
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_092-hsk3/chapter_repair",
+      "bytes": 1485
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_092-hsk5/chapter_repair",
+      "bytes": 3177
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_093-hsk1/chapter_repair",
+      "bytes": 627
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_093-hsk2/chapter_repair",
+      "bytes": 1245
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_093-hsk4/chapter_repair",
+      "bytes": 2391
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_093-hsk5/chapter_repair",
+      "bytes": 3985
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_094-hsk3/chapter_repair",
+      "bytes": 1716
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_094-hsk4/chapter_repair",
+      "bytes": 2055
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_094-hsk6/chapter_repair",
+      "bytes": 3891
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_095-hsk3/chapter_repair",
+      "bytes": 1683
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_095-hsk4/chapter_repair",
+      "bytes": 2169
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_095-hsk5/chapter_repair",
+      "bytes": 3000
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_096-hsk2/chapter_repair",
+      "bytes": 1167
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_096-hsk6/chapter_repair",
+      "bytes": 5197
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_097-hsk1/chapter_repair",
+      "bytes": 606
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_097-hsk6/chapter_repair",
+      "bytes": 4907
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_098-hsk1/chapter_repair",
+      "bytes": 636
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_098-hsk5/chapter_repair",
+      "bytes": 2657
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_099-hsk1/chapter_repair",
+      "bytes": 654
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_099-hsk3/chapter_repair",
+      "bytes": 1596
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_099-hsk4/chapter_repair",
+      "bytes": 2662
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_100-hsk1/chapter_repair",
+      "bytes": 618
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_100-hsk4/chapter_repair",
+      "bytes": 2958
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_100-hsk5/chapter_repair",
+      "bytes": 3487
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_101-hsk4/chapter_repair",
+      "bytes": 2185
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_102-hsk1/chapter_repair",
+      "bytes": 605
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_102-hsk4/chapter_repair",
+      "bytes": 2804
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_103-hsk6/chapter_repair",
+      "bytes": 4608
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_104-hsk1/chapter_repair",
+      "bytes": 561
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_104-hsk2/chapter_repair",
+      "bytes": 1107
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_104-hsk5/chapter_repair",
+      "bytes": 3865
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_105-hsk3/chapter_repair",
+      "bytes": 1626
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_105-hsk5/chapter_repair",
+      "bytes": 3128
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_106-hsk2/chapter_repair",
+      "bytes": 939
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_106-hsk6/chapter_repair",
+      "bytes": 4320
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_107-hsk2/chapter_repair",
+      "bytes": 1179
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_107-hsk3/chapter_repair",
+      "bytes": 1710
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_107-hsk4/chapter_repair",
+      "bytes": 2370
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_107-hsk6/chapter_repair",
+      "bytes": 4623
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_108-hsk2/chapter_repair",
+      "bytes": 1134
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_108-hsk4/chapter_repair",
+      "bytes": 2714
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_109-hsk4/chapter_repair",
+      "bytes": 2097
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_109-hsk6/chapter_repair",
+      "bytes": 4874
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_110-hsk2/chapter_repair",
+      "bytes": 1056
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_110-hsk4/chapter_repair",
+      "bytes": 2070
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_110-hsk6/chapter_repair",
+      "bytes": 4440
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_111-hsk3/chapter_repair",
+      "bytes": 1707
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_111-hsk5/chapter_repair",
+      "bytes": 3747
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_111-hsk6/chapter_repair",
+      "bytes": 4139
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_112-hsk2/chapter_repair",
+      "bytes": 1014
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_112-hsk4/chapter_repair",
+      "bytes": 1983
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_112-hsk5/chapter_repair",
+      "bytes": 2664
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_113-hsk5/chapter_repair",
+      "bytes": 3078
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_113-hsk6/chapter_repair",
+      "bytes": 4290
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_114-hsk3/chapter_repair",
+      "bytes": 1593
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_114-hsk4/chapter_repair",
+      "bytes": 2711
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_114-hsk5/chapter_repair",
+      "bytes": 2911
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_115-hsk1/chapter_repair",
+      "bytes": 681
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_115-hsk3/chapter_repair",
+      "bytes": 1752
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_115-hsk5/chapter_repair",
+      "bytes": 4017
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_115-hsk6/chapter_repair",
+      "bytes": 4142
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_116-hsk2/chapter_repair",
+      "bytes": 1053
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_116-hsk4/chapter_repair",
+      "bytes": 2712
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_116-hsk6/chapter_repair",
+      "bytes": 4841
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_117-hsk3/chapter_repair",
+      "bytes": 1587
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_118-hsk1/chapter_repair",
+      "bytes": 660
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_118-hsk2/chapter_repair",
+      "bytes": 1323
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_118-hsk3/chapter_repair",
+      "bytes": 1551
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_118-hsk5/chapter_repair",
+      "bytes": 2823
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_118-hsk6/chapter_repair",
+      "bytes": 4193
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_119-hsk5/chapter_repair",
+      "bytes": 3549
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_120-hsk2/chapter_repair",
+      "bytes": 1032
+    },
+    {
+      "status": "recovered",
+      "job_dir": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-omission-audit/agents/chapter_120-hsk3/chapter_repair",
+      "bytes": 1809
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff55e-0efb-7ab1-96af-8de8b593f834"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.91,\"readability\":0.94,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“姜维得知司马昭带兵来救”略显提前；原文是姜维得知司马昭已平定寿春、准备前来救援。\"],\"language_problems\":[\"“魏军探到蜀军在铁笼山后运粮”不够自然，宜改为“魏军探知蜀军在铁笼山后运粮”。\"],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":30673,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1164,"reasoning_output_tokens":1023}}

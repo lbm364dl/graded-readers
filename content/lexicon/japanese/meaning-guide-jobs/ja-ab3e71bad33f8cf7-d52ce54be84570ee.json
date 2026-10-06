@@ -1,0 +1,32 @@
+{
+  "id": "ja-ab3e71bad33f8cf7-d52ce54be84570ee",
+  "entry_id": "ja-ab3e71bad33f8cf7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ab3e71bad33f8cf7",
+      "headword": "掴む",
+      "reading": "つかむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ab3e71bad33f8cf7-1",
+          "definition": "to grab; to seize"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "最初に会ったおさんは乱暴で、吾輩の頸筋をつかみ、台所から何度も外へ投げ出した。",
+        "gloss": "grabbing",
+        "sense_id": "ja-ab3e71bad33f8cf7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "11080d0032c722446fbaabd8fabf0504a07a17e12c54ef3569979332361f5805"
+}

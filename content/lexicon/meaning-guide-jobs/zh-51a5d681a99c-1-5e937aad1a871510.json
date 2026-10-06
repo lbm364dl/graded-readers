@@ -1,0 +1,36 @@
+{
+  "id": "zh-51a5d681a99c-1-5e937aad1a871510",
+  "entry_id": "zh-51a5d681a99c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-51a5d681a99c-1",
+      "headword": "名",
+      "kind": "word",
+      "reading": "míng",
+      "senses": [
+        {
+          "id": "zh-51a5d681a99c-1-s1",
+          "definition": "measure word for people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人谢过商人，打造兵器，配上铠甲，又聚集五百多名乡勇，前去报到。",
+        "gloss": "measure word for people",
+        "sense_id": "zh-51a5d681a99c-1-s1"
+      },
+      {
+        "sentence": "黄巾军起兵后，曹操带着五千名士兵赶到颍川。",
+        "gloss": "classifier for people",
+        "sense_id": "zh-51a5d681a99c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a11dc58e9d975d27ca489d64bd73e57187ef49ae26da303056e780e5d3635b5f"
+}

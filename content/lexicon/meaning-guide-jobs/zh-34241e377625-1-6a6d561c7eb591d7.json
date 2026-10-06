@@ -1,0 +1,209 @@
+{
+  "id": "zh-34241e377625-1-6a6d561c7eb591d7",
+  "entry_id": "zh-34241e377625-1",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "zh-34241e377625-1",
+      "headword": "相信",
+      "kind": "word",
+      "reading": "xiāngxìn",
+      "senses": [
+        {
+          "id": "zh-34241e377625-1-s1",
+          "definition": "to believe or trust someone or something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "当时疫病流行，很多人相信张角。",
+        "gloss": "believe in",
+        "sense_id": "zh-34241e377625-1-s1"
+      },
+      {
+        "sentence": "曹嵩相信了他，之后不再听叔父责备，曹操也更加随意。",
+        "gloss": "to believe",
+        "sense_id": "zh-34241e377625-1-s1"
+      },
+      {
+        "sentence": "从此叔父再说他的过错，曹嵩也不再相信，曹操更加任性放荡。",
+        "gloss": "to believe",
+        "sense_id": "zh-34241e377625-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-34241e377625-1",
+    "claim_ids": [
+      "c1",
+      "c2",
+      "c4"
+    ],
+    "structure": "lexicalized",
+    "explanation_en": "相信 means to believe or trust a person, or to regard a statement or idea as true. 信 contributes the central idea of believing or trusting. With a person as its target, the word does not specify exactly what is believed about them.",
+    "caveat_en": "The contribution of 相 to the modern word is not established, so 信 helps explain the meaning but does not account for the whole form.",
+    "parts": [
+      {
+        "text": "相",
+        "contribution_en": "Its contribution to the modern meaning of the word is not established.",
+        "claim_ids": []
+      },
+      {
+        "text": "信",
+        "contribution_en": "Contributes the central idea of believing or trusting.",
+        "claim_ids": [
+          "c2"
+        ]
+      }
+    ],
+    "research": {
+      "entry_id": "zh-34241e377625-1",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=27888&la=0&powerMode=0",
+          "title": "教育部《國語辭典簡編本》：相信",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Defines 相信 in one sense as trusting someone and regarding them as dependable, and in another as considering something actually so without doubt."
+        },
+        {
+          "id": "s2",
+          "url": "https://zdic.net/hans/%E7%9B%B8%E4%BF%A1",
+          "title": "汉典：相信的意思",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Gives a general definition and separate senses for trusting someone and taking something to be true. It cites a 《史记》 example about ministers not trusting one another and reports an encyclopedia gloss of the 《谷梁传》 occurrence as mutual trust."
+        },
+        {
+          "id": "s3",
+          "url": "https://so08.tci-thaijo.org/index.php/cikkuhygj/article/download/6358/4522/56844",
+          "title": "易混淆词语“相信—信任”的语义特征与形式搭配辨析",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The specialist comparison says both 相信 and 信任 can take person-denoting objects, but 相信 also takes propositional complements and generally differs in meaning and collocations from 信任. It says 相信 is generally not used reciprocally in the way 相互信任 is. It does not explain the historical formation of 相信."
+        },
+        {
+          "id": "s4",
+          "url": "https://xbzs.ecnu.edu.cn/CN/html/201505021.htm",
+          "title": "基于语料特点判断的上古出土文献某字存否研究——以“信”字为例",
+          "accessed_at": "2026-09-26",
+          "summary_en": "This scholarly article surveys early uses of 信 in transmitted texts, including uses glossed as believing or trusting. Its subject is whether the character 信 existed in early excavated documents; it does not analyze the compound 相信 or prove a derivation for it."
+        },
+        {
+          "id": "s5",
+          "url": "https://www.39017.com/hydcd/330387o.html",
+          "title": "相信_词语「相信」解释什么意思_相信 的解释及出处 - 汉语词典",
+          "accessed_at": "2026-09-26",
+          "summary_en": "A secondary dictionary page reports historical senses including mutual trust, trust in another person, and the modern sense of regarding something as true. It cites the 《谷梁传》 and 《史记》, but the page itself does not establish a historical pathway between those senses."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "For 相信张角, the available context supports believing or trusting Zhang Jiao as a person. The wording does not specify what people believed about him or establish whether the emphasis is his reliability, his claims, or belief in him more broadly.",
+          "source_ids": [
+            "s1",
+            "s2",
+            "s3"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "The modern word’s belief/trust meaning is semantically consistent with 信 as the content-bearing part; this is a component-level inference, not an explicit analysis in the opened sources. Early uses of 信 glossed as believing or trusting are separately reported, but they do not establish how the compound 相信 formed.",
+          "source_ids": [
+            "s1",
+            "s4"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "Historical dictionary reports describe an early reciprocal sense of 相信 as mutual trust, including a 《谷梁传》 citation, and a later interpersonal trust use in 《史记》. These attestations show older uses of the compound but do not prove that the modern nonreciprocal use developed from them.",
+          "source_ids": [
+            "s2",
+            "s5"
+          ]
+        },
+        {
+          "id": "c4",
+          "text_en": "The modern interpersonal target is distinct from the propositional sense ‘regard something as true.’ The specialist comparison confirms that 相信 can take either person-denoting objects or propositions, and notes that 相信 generally is not reciprocal like 相互信任.",
+          "source_ids": [
+            "s1",
+            "s3"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=27888&la=0&powerMode=0",
+            "https://zdic.net/hans/%E7%9B%B8%E4%BF%A1",
+            "https://xbzs.ecnu.edu.cn/CN/html/201505021.htm",
+            "https://so08.tci-thaijo.org/index.php/cikkuhygj/article/download/6358/4522/56844",
+            "https://ctext.org/guliang-zhuan/xi-gong-wu-nian/zhs"
+          ]
+        },
+        {
+          "query": "相信 词典 释义 相信 信任 词源",
+          "opened_urls": [
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=27888&la=0&powerMode=0",
+            "https://zdic.net/hans/%E7%9B%B8%E4%BF%A1"
+          ]
+        },
+        {
+          "query": "汉语 相信 词源 相 信 历史 语法化",
+          "opened_urls": [
+            "https://xbzs.ecnu.edu.cn/CN/html/201505021.htm"
+          ]
+        },
+        {
+          "query": "相信 古汉语 相信《谷梁传》 相 互相信 现代汉语",
+          "opened_urls": [
+            "https://so08.tci-thaijo.org/index.php/cikkuhygj/article/download/6358/4522/56844"
+          ]
+        },
+        {
+          "query": "《谷梁传·僖公五年》 相信",
+          "opened_urls": [
+            "https://ctext.org/guliang-zhuan/xi-gong-wu-nian/zhs",
+            "https://www.39017.com/hydcd/330387o.html"
+          ]
+        },
+        {
+          "query": "相信 语义特征 形式搭配 person 宾语 信任 相信 论文",
+          "opened_urls": [
+            "https://so08.tci-thaijo.org/index.php/cikkuhygj/article/download/6358/4522/56844"
+          ]
+        },
+        {
+          "query": "相信 词源 相信 语法化 相 副词 研究",
+          "opened_urls": [
+            "https://cnki.istiz.org.cn/kcms/detail/detailall.aspx?dbcode=CJFQ&dbname=CJFD2025&filename=nmdb202506005"
+          ]
+        }
+      ],
+      "gaps": [
+        "The opened sources do not establish what 相 contributes to modern nonreciprocal 相信, or whether that use developed from an older reciprocal sense. The attested older senses alone do not prove a derivation.",
+        "The 《谷梁传》 primary-text page was directly opened but returned an internal error. Its occurrence was accessible through secondary dictionary reporting, not independently verified against readable primary text in this session."
+      ]
+    },
+    "input_fingerprint": "2e3bd3a479b4593a49fc4616e2e4076d16f1cd8d48b041b6803e819d4605a3ae",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "entry_id": "zh-34241e377625-1",
+      "id": "hsk2-reader-xiangxin-xiang",
+      "reason": "Investigate and explain the contribution of 相 in 相信 in intuitive learner terms. Do not mechanically gloss it as mutual or imply that believing someone requires reciprocal belief. Distinguish supported modern function from historical development. Use existing research as a starting point; include concrete investigation_questions for remaining gaps.",
+      "force_research": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "931781bd5ba7fcc0111a70fd5e2fba23ad06481dfcc11559103900cf2e76c359"
+}

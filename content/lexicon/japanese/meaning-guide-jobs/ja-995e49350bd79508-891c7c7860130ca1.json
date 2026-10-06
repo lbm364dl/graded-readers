@@ -1,0 +1,32 @@
+{
+  "id": "ja-995e49350bd79508-891c7c7860130ca1",
+  "entry_id": "ja-995e49350bd79508",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-995e49350bd79508",
+      "headword": "投げる",
+      "reading": "なげる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-995e49350bd79508-1",
+          "definition": "to throw"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "女の人に台所から外へ何回も投げられたが、吾輩はまた入った。",
+        "gloss": "was thrown",
+        "sense_id": "ja-995e49350bd79508-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0f8cdd6bc94b9d9443a8866b12e2192c1e38c06b97b41f4ff200ec5b03a282d2"
+}

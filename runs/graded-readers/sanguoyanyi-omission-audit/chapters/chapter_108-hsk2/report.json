@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_108-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 322,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了诸葛恪被箭伤、吴军因酷热和疾病大量逃亡等细节。",
+      "classification": "material",
+      "reason": "诸葛恪负伤以及吴军因酷热、疾病而大量逃亡直接影响军心和退兵原因，属于重要因果信息。",
+      "required_fix": "补充诸葛恪中箭受伤，以及吴军因酷热和疾病导致军心涣散、多人逃亡，最终被迫退兵。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了诸葛恪被箭伤、吴军因酷热和疾病大量逃亡等细节。",
+      "classification": "material",
+      "reason": "诸葛恪负伤以及吴军因酷热、疾病而大量逃亡直接影响军心和退兵原因，属于重要因果信息。",
+      "required_fix": "补充诸葛恪中箭受伤，以及吴军因酷热和疾病导致军心涣散、多人逃亡，最终被迫退兵。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 322,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

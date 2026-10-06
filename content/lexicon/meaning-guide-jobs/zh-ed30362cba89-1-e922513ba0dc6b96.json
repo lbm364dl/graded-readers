@@ -1,0 +1,41 @@
+{
+  "id": "zh-ed30362cba89-1-e922513ba0dc6b96",
+  "entry_id": "zh-ed30362cba89-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ed30362cba89-1",
+      "headword": "次日",
+      "kind": "word",
+      "reading": "cìrì",
+      "senses": [
+        {
+          "id": "zh-ed30362cba89-1-s1",
+          "definition": "the following day"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "次日，三人备好祭礼，焚香再拜。",
+        "gloss": "the next day",
+        "sense_id": "zh-ed30362cba89-1-s1"
+      },
+      {
+        "sentence": "次日，青州太守龚景送来文书，说黄巾军围城将陷，请求救援。",
+        "gloss": "the next day",
+        "sense_id": "zh-ed30362cba89-1-s1"
+      },
+      {
+        "sentence": "次日，刘备与邹靖擂鼓前进，黄巾军迎战，刘备引军退走。",
+        "gloss": "the next day",
+        "sense_id": "zh-ed30362cba89-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "693132bebd090126b93d3724c31a82b19a5e2ee13854685d4edbc3973dddacdf"
+}

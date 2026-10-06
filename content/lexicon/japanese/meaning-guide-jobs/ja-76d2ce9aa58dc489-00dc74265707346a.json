@@ -1,0 +1,32 @@
+{
+  "id": "ja-76d2ce9aa58dc489-00dc74265707346a",
+  "entry_id": "ja-76d2ce9aa58dc489",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-76d2ce9aa58dc489",
+      "headword": "気持ち",
+      "reading": "きもち",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-76d2ce9aa58dc489-1",
+          "definition": "feeling; sensation"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "広くはないが、日がよく入り、静かで気持ちのよい所だ。",
+        "gloss": "feeling; comfort",
+        "sense_id": "ja-76d2ce9aa58dc489-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e60ab95740b7cf422da53fce3226bb2732b7a7ed18abe7695ea7a5fac6139ef9"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-63d230a45e38da18-81ab99894f1e4d75",
+  "entry_id": "ja-63d230a45e38da18",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-63d230a45e38da18",
+      "headword": "新体詩",
+      "reading": "しんたいし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-63d230a45e38da18-1",
+          "definition": "modern-style poetry"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "俳句を作って雑誌へ投稿し、新体詩を書き、間違いの多い英文を作り、弓に熱中し、謡を習い、時にはヴァイオリンまで鳴らした。",
+        "gloss": "modern-style poem",
+        "sense_id": "ja-63d230a45e38da18-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4d0901ed9dac544ae333c86522aa02068cf04834e4c229da38b5ad5e5e91d3bc"
+}

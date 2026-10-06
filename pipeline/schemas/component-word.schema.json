@@ -1,0 +1,9 @@
+{
+  "type": "object", "additionalProperties": false,
+  "required": ["headword", "reading", "kind", "definition"],
+  "properties": {
+    "headword": {"type": "string"}, "reading": {"type": "string"},
+    "kind": {"type": "string", "enum": ["word", "name", "expression", "construction"]},
+    "definition": {"type": "string"}
+  }
+}

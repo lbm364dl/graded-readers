@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_029-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 686,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去孙策临终时分别交代张昭、周瑜分掌内外事务的具体嘱托。",
+      "classification": "material",
+      "reason": "这明确规定了孙权继承后的内外政务分工，属于继承安排和后续治理结构的重要信息。",
+      "required_fix": "补充孙策临终嘱托：内事托张昭，外事托周瑜。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去孙策临终时分别交代张昭、周瑜分掌内外事务的具体嘱托。",
+      "classification": "material",
+      "reason": "这明确规定了孙权继承后的内外政务分工，属于继承安排和后续治理结构的重要信息。",
+      "required_fix": "补充孙策临终嘱托：内事托张昭，外事托周瑜。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 686,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_055-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 602,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将周瑜的离间对象扩展为赵云，原文主要指关羽、张飞与诸葛亮。",
+      "classification": "material",
+      "reason": "Accepted scene adds赵云 as a target of Zhou Yu's alienation plan, but the original specifies Guan Yu, Zhang Fei, and Zhuge Liang; this is an unsupported factual addition.",
+      "required_fix": "将“关、张、赵云及孔明”改为“关羽、张飞与诸葛亮”，删除赵云。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将周瑜的离间对象扩展为赵云，原文主要指关羽、张飞与诸葛亮。",
+      "classification": "material",
+      "reason": "Accepted scene adds赵云 as a target of Zhou Yu's alienation plan, but the original specifies Guan Yu, Zhang Fei, and Zhuge Liang; this is an unsupported factual addition.",
+      "required_fix": "将“关、张、赵云及孔明”改为“关羽、张飞与诸葛亮”，删除赵云。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 612,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "周瑜的离间计划将赵云列为对象；原文主要指关羽、张飞与诸葛亮。"
+        ],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 606,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "程普指出陈武、潘璋必不敢对孙夫人下手，这一判断促使孙权改派蒋钦、周泰持剑追杀；修复章省略了这一关键因果与孙权改变态度的动机。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 602,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

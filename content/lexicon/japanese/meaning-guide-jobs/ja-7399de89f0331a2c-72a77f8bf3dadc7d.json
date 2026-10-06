@@ -1,0 +1,32 @@
+{
+  "id": "ja-7399de89f0331a2c-72a77f8bf3dadc7d",
+  "entry_id": "ja-7399de89f0331a2c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7399de89f0331a2c",
+      "headword": "奴",
+      "reading": "やつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7399de89f0331a2c-1",
+          "definition": "An informal or rough term for a person; a guy or fellow."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "「いくら鼠をとっても、人間ほどひどい奴はいねえ。",
+        "gloss": "fellow; guy",
+        "sense_id": "ja-7399de89f0331a2c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "04b543d498199e20f2733ab1e1813508a437a4c199af5fb2561e1128037b87ab"
+}

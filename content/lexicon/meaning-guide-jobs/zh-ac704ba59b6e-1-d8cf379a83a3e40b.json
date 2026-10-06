@@ -1,0 +1,41 @@
+{
+  "id": "zh-ac704ba59b6e-1-d8cf379a83a3e40b",
+  "entry_id": "zh-ac704ba59b6e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ac704ba59b6e-1",
+      "headword": "将军",
+      "kind": "word",
+      "reading": "jiāngjūn",
+      "senses": [
+        {
+          "id": "zh-ac704ba59b6e-1-s1",
+          "definition": "a military commander; a general"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大方有一万多人，小方有六七千人，各方首领都称将军。",
+        "gloss": "general",
+        "sense_id": "zh-ac704ba59b6e-1-s1"
+      },
+      {
+        "sentence": "张角知道事情暴露，马上起兵，自称天公将军；张宝称地公将军，张梁称人公将军。",
+        "gloss": "general",
+        "sense_id": "zh-ac704ba59b6e-1-s1"
+      },
+      {
+        "sentence": "三人上山，看见汉军已经失败，黄巾军从四面赶来，旗上写着“天公将军”。",
+        "gloss": "general",
+        "sense_id": "zh-ac704ba59b6e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f83aa3ccc1c5f8c067d69224e9dd4b725542ee8a46a350c727f4ffdbc75a729e"
+}

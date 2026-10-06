@@ -1,0 +1,36 @@
+{
+  "id": "zh-409e2c3882c9-1-5b7b77bdd920d5e3",
+  "entry_id": "zh-409e2c3882c9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-409e2c3882c9-1",
+      "headword": "只",
+      "kind": "word",
+      "reading": "zhǐ",
+      "senses": [
+        {
+          "id": "zh-409e2c3882c9-1-s1",
+          "definition": "only; solely"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞听见后说：“大丈夫不能只叹气！",
+        "gloss": "only",
+        "sense_id": "zh-409e2c3882c9-1-s1"
+      },
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，只听见喊杀声，也看见火光照亮天空。",
+        "gloss": "only",
+        "sense_id": "zh-409e2c3882c9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "adfe33951ac806b7af31596f0b7d94f8572e6b7b6de23dee51a1497664cc8020"
+}

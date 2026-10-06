@@ -1,0 +1,41 @@
+{
+  "id": "zh-176c2761f312-1-6b241bd0ae763693",
+  "entry_id": "zh-176c2761f312-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-176c2761f312-1",
+      "headword": "安定",
+      "kind": "word",
+      "reading": "āndìng",
+      "senses": [
+        {
+          "id": "zh-176c2761f312-1-s1",
+          "definition": "to bring about stability or peace; to pacify"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，三人备好乌牛、白马等祭礼，焚香再拜，发誓虽是异姓，也要报效国家、安定百姓。",
+        "gloss": "stabilize",
+        "sense_id": "zh-176c2761f312-1-s1"
+      },
+      {
+        "sentence": "桥玄曾对曹操说，天下将乱，能安定天下的人，仿佛就是他。",
+        "gloss": "to pacify",
+        "sense_id": "zh-176c2761f312-1-s1"
+      },
+      {
+        "sentence": "何颙也说，汉室将亡，安定天下的必是此人。",
+        "gloss": "to stabilize",
+        "sense_id": "zh-176c2761f312-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c7220c0754a6ea5b3188f6c5c07c83b0387444ccddbbc629157d4ce0f4a82f8d"
+}

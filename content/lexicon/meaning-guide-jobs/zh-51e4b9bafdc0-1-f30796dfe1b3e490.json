@@ -1,0 +1,31 @@
+{
+  "id": "zh-51e4b9bafdc0-1-f30796dfe1b3e490",
+  "entry_id": "zh-51e4b9bafdc0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-51e4b9bafdc0-1",
+      "headword": "传来",
+      "kind": "construction",
+      "reading": "chuánlái",
+      "senses": [
+        {
+          "id": "zh-51e4b9bafdc0-1-s1",
+          "definition": "come or be conveyed from a source; arrive (of news or information)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不久，消息传来：程远志率五万黄巾军来犯涿郡。",
+        "gloss": "to arrive; to be reported",
+        "sense_id": "zh-51e4b9bafdc0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2299062ad20fde3864f692d99a9eb446f081189fe1c70bcf6cd32c549928cf6a"
+}

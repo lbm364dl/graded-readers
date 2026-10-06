@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_093-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 1142,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了张翼、高翔及时接应赵云的细节。",
+      "classification": "material",
+      "reason": "张翼、高翔的接应直接使赵云从姜维与马遵、梁虔的夹击中脱身，是赵云能够退回并向孔明报告战况的重要情节。",
+      "required_fix": "补充张翼、高翔两路蜀军及时杀出并接应赵云退回的情节。"
+    },
+    {
+      "omission_note": "省略了魏军劫营的具体分兵部署及蜀军各路将领的伏击安排。",
+      "classification": "material",
+      "reason": "这些部署解释了孔明如何预判魏军行动、设置空寨诱敌，以及魏军最终遭四面夹击和自相残杀的因果链，属于战斗结果的重要铺垫。",
+      "required_fix": "补充魏军分兵劫营、寨外设伏的部署，以及孔明安排魏延、赵云、关兴、张苞等各路伏击和迎击的计划。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了张翼、高翔及时接应赵云的细节。",
+      "classification": "material",
+      "reason": "张翼、高翔的接应直接使赵云从姜维与马遵、梁虔的夹击中脱身，是赵云能够退回并向孔明报告战况的重要情节。",
+      "required_fix": "补充张翼、高翔两路蜀军及时杀出并接应赵云退回的情节。"
+    },
+    {
+      "omission_note": "省略了魏军劫营的具体分兵部署及蜀军各路将领的伏击安排。",
+      "classification": "material",
+      "reason": "这些部署解释了孔明如何预判魏军行动、设置空寨诱敌，以及魏军最终遭四面夹击和自相残杀的因果链，属于战斗结果的重要铺垫。",
+      "required_fix": "补充魏军分兵劫营、寨外设伏的部署，以及孔明安排魏延、赵云、关兴、张苞等各路伏击和迎击的计划。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1142,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

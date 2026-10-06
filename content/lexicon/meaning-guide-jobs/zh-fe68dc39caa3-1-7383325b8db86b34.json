@@ -1,0 +1,31 @@
+{
+  "id": "zh-fe68dc39caa3-1-7383325b8db86b34",
+  "entry_id": "zh-fe68dc39caa3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fe68dc39caa3-1",
+      "headword": "结为",
+      "kind": "construction",
+      "reading": "jiéwéi",
+      "senses": [
+        {
+          "id": "zh-fe68dc39caa3-1-s1",
+          "definition": "to become or form a particular relationship or status"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人结为兄弟。",
+        "gloss": "become",
+        "sense_id": "zh-fe68dc39caa3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "80c5a34153ef3ffb1aec6eb22649ac3a6b2fa6bcc98f048990182343a676656f"
+}

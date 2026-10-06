@@ -1,0 +1,32 @@
+{
+  "id": "ja-631787ca71985c5e-5d220d37e85c091f",
+  "entry_id": "ja-631787ca71985c5e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-631787ca71985c5e",
+      "headword": "多い",
+      "reading": "おおい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-631787ca71985c5e-1",
+          "definition": "many; numerous"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "俳句を作って雑誌へ送り、新しい詩を書き、間違いの多い英文を書いた。",
+        "gloss": "many; numerous",
+        "sense_id": "ja-631787ca71985c5e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d438e64a6816a90d8a365f934f312d9e369347a8a3e7d16ec0975a19e7cdd968"
+}

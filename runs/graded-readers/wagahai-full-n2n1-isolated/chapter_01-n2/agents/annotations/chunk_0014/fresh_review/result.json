@@ -1,0 +1,1 @@
+{"verdict":"revise","issues":[{"segment_text":"に","problem":"wrong_type","explanation":"In 気長に, に is a case particle marking adverbial use, not an auxiliary/copula form.","suggested_fix":"Set type to particle, lemma to に, and meaning_en to \"adverbial marker\"."}]}

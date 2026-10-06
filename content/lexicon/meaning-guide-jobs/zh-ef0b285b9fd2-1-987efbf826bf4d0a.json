@@ -1,0 +1,31 @@
+{
+  "id": "zh-ef0b285b9fd2-1-987efbf826bf4d0a",
+  "entry_id": "zh-ef0b285b9fd2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ef0b285b9fd2-1",
+      "headword": "一支",
+      "kind": "word",
+      "reading": "yīzhī",
+      "senses": [
+        {
+          "id": "zh-ef0b285b9fd2-1-s1",
+          "definition": "one unit of an organized group or force"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "一支全打着红旗的军队迎面而来，截住败退的黄巾军。",
+        "gloss": "one troop",
+        "sense_id": "zh-ef0b285b9fd2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c1b13232fdf02ea372d292a7981cf7201fd92905c34947ad38cadbdd6edc327f"
+}

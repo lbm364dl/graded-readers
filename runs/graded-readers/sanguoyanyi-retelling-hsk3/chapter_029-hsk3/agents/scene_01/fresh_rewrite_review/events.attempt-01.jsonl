@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff3cd-ed8d-7251-bf71-04c2f7c969a6"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.91,\"readability\":0.79,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[],\"language_problems\":[\"篇幅明显超过750字目标的约70%—130%范围，信息堆叠较密，影响紧凑度和可读性。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":30393,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":611,"reasoning_output_tokens":516}}

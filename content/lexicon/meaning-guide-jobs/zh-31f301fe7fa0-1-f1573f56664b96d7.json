@@ -1,0 +1,31 @@
+{
+  "id": "zh-31f301fe7fa0-1-f1573f56664b96d7",
+  "entry_id": "zh-31f301fe7fa0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-31f301fe7fa0-1",
+      "headword": "原先",
+      "kind": "word",
+      "reading": "yuánxiān",
+      "senses": [
+        {
+          "id": "zh-31f301fe7fa0-1-s1",
+          "definition": "earlier; originally"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他的父亲曹嵩原先姓夏侯，因成为宦官曹腾的养子，才改姓曹。",
+        "gloss": "originally",
+        "sense_id": "zh-31f301fe7fa0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "137b23c47630990ad8f962edb2954aeddd5940a2caa1fdc55adbe05dbc13957e"
+}

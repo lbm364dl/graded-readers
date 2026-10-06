@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_103-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1336,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了黑旗、皂衣等祈禳仪式细节，以及孔明祈禳期间吐血不止的描写。",
+      "classification": "material",
+      "reason": "黑旗、皂衣属于可压缩的仪式细节，但孔明祈禳期间吐血不止进一步体现其病势严重和重要人物状态，关系到后续祈禳与死亡危机的连贯性。",
+      "required_fix": "补回孔明祈禳期间吐血不止的描写；黑旗、皂衣细节可维持压缩。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了黑旗、皂衣等祈禳仪式细节，以及孔明祈禳期间吐血不止的描写。",
+      "classification": "material",
+      "reason": "黑旗、皂衣属于可压缩的仪式细节，但孔明祈禳期间吐血不止进一步体现其病势严重和重要人物状态，关系到后续祈禳与死亡危机的连贯性。",
+      "required_fix": "补回孔明祈禳期间吐血不止的描写；黑旗、皂衣细节可维持压缩。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1336,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

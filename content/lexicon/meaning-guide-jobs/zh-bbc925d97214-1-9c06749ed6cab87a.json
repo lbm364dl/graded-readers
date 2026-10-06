@@ -1,0 +1,46 @@
+{
+  "id": "zh-bbc925d97214-1-9c06749ed6cab87a",
+  "entry_id": "zh-bbc925d97214-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bbc925d97214-1",
+      "headword": "带兵",
+      "kind": "construction",
+      "reading": "dàibīng",
+      "senses": [
+        {
+          "id": "zh-bbc925d97214-1-s1",
+          "definition": "to lead or take troops along"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植、皇甫嵩、朱隽各自带兵，分三路前往作战。",
+        "gloss": "lead troops",
+        "sense_id": "zh-bbc925d97214-1-s1"
+      },
+      {
+        "sentence": "”于是邹靖带兵回去，刘备、关羽、张飞带五百人前往卢植那里。",
+        "gloss": "lead troops",
+        "sense_id": "zh-bbc925d97214-1-s1"
+      },
+      {
+        "sentence": "程远志被杀后，黄巾军纷纷逃走，刘备带兵追赶，许多人投降。",
+        "gloss": "lead troops",
+        "sense_id": "zh-bbc925d97214-1-s1"
+      },
+      {
+        "sentence": "第二天，刘备和邹靖带兵向前，刘备带兵后退。",
+        "gloss": "lead troops",
+        "sense_id": "zh-bbc925d97214-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "37fef19c3af7fe339fe671726f35385b7c036c672563324e69d420ab6fc08aed"
+}

@@ -1,0 +1,101 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_089-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1171,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了马援庙祷告内容、山神自称身份及万安隐者拒绝功名等细节。",
+      "classification": "material",
+      "reason": "这些内容补足了孔明平蛮及复兴汉室的动机、山神显灵的来由，以及孟节拒绝功名的重要品格刻画；接受场景虽保留了事件梗概，但缺少了这些关键因果和人物信息。",
+      "required_fix": "补入孔明祈求平蛮复汉的祷告、山神说明奉马援之命前来指引，以及孟节拒绝受封为王和不慕富贵的表态。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了马援庙祷告内容、山神自称身份及万安隐者拒绝功名等细节。",
+      "classification": "material",
+      "reason": "这些内容补足了孔明平蛮及复兴汉室的动机、山神显灵的来由，以及孟节拒绝功名的重要品格刻画；接受场景虽保留了事件梗概，但缺少了这些关键因果和人物信息。",
+      "required_fix": "补入孔明祈求平蛮复汉的祷告、山神说明奉马援之命前来指引，以及孟节拒绝受封为王和不慕富贵的表态。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1533,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.5,
+        "readability": 8.5,
+        "material_omissions": [
+          "原文中马岱拆桥移至下游并从河边杀出、封锁孟获退路的关键伏击步骤未保留。"
+        ],
+        "unsupported_additions": [
+          "将王平、马忠补写为首轮伏击并出兵追击，原文未如此描写。"
+        ],
+        "distortions": [
+          "首轮伏击明确出击者是赵云、马岱、魏延，修复稿改成赵云、魏延、王平、马忠，漏掉并替换了马岱的战术作用。",
+          "将张翼写成留守空寨点灯，原文是撤军后负责断孟获后路。",
+          "原文为西北小路，修复稿改写为西路，方向信息不准确。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1162,
+      "review": {
+        "source_fidelity": 8.4,
+        "naturalness": 8.2,
+        "readability": 9.0,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "将张翼写成在空寨点灯并负责断后；原文仅命其负责断孟获后路，寨中灯火由撤军安排。",
+          "将杨锋兄弟子侄受孔明活命之恩概括为族人，关系范围被泛化。"
+        ],
+        "language_problems": [
+          "“蠮姑”用字错误，原文为“蛮姑”。"
+        ],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 1171,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

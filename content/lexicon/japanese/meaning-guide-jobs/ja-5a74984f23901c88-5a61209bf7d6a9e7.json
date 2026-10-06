@@ -1,0 +1,32 @@
+{
+  "id": "ja-5a74984f23901c88-5a61209bf7d6a9e7",
+  "entry_id": "ja-5a74984f23901c88",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5a74984f23901c88",
+      "headword": "出来るだけ",
+      "reading": "できるだけ",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-5a74984f23901c88-1",
+          "definition": "as much or as far as possible"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "仕方がないので、吾輩を家に入れてくれた主人の近くに、出来るだけいることにした。",
+        "gloss": "as much as possible",
+        "sense_id": "ja-5a74984f23901c88-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e2054a3f7a083a9f9a45c7cac903d02611789e15339afb12a8e1232a4625717f"
+}

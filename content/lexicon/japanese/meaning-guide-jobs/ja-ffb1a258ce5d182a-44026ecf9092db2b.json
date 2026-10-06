@@ -1,0 +1,32 @@
+{
+  "id": "ja-ffb1a258ce5d182a-44026ecf9092db2b",
+  "entry_id": "ja-ffb1a258ce5d182a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ffb1a258ce5d182a",
+      "headword": "あまりに",
+      "reading": "あまりに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ffb1a258ce5d182a-1",
+          "definition": "excessively; far too"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "今まで我慢していた吾輩の気持ちも知らず、ただ小便に立っただけで馬鹿野郎とは、あまりにひどい。",
+        "gloss": "far too; excessively",
+        "sense_id": "ja-ffb1a258ce5d182a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1733d8f092073490be3480141be1f36d945fcc4f4a593149505be6d5847f11a8"
+}

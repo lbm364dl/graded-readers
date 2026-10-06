@@ -1,0 +1,1680 @@
+{
+  "schema_version": 2,
+  "policy_version": 5,
+  "reviewed": true,
+  "model": "gpt-6-luna",
+  "proposal_effort": "low",
+  "review_effort": "high",
+  "guides": [
+    {
+      "entry_id": "ja-03b0ea708234bfd6",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "住む (すむ) is a verb meaning to live or reside in a place. It presents that place as where someone lives, and the place is commonly marked with に.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "f22779a9e2e4f153d3f77764a0fbd4ae67200407fd966c1d219a96482ca381d6",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-082b023646ecf45c",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "を marks the direct object selected by a verb. With verbs of movement or passage, it marks the route or space traversed.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "1507afa5a1e16aaff2b58bf777ae86afe820e2064a1c6d24798850eb948eea4b",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-0eb515e38163203a",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "人（ひと）is the ordinary Japanese word for a person or human being. Japanese does not mark nouns for number, so it can refer to one person or to people generally, depending on context.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "12f1e382c7b8b91b9eb7e9f6a466b92ef074bf361e4b4c5ea05f083ec5e3485a",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-0fa70f2527a777fa",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "生まれる means to be born: to begin life by coming into the world. It describes the person or living thing that enters life through birth.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "2792722fdfc2d8f6bfd745bada5beb795170648f8c189470c226c57ae1606929",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-11936d3d1c1c16e9",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "母（はは）means “mother” and commonly refers to the speaker’s own mother when speaking about her to others.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "7ca7c44e77dc7ed00cc1a093f1a30691204768fb41761dee7d20aeaf327156bd",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "e1c1e950976edb58870d594105fbc873ab3cd14489ae8d2fa246cfef64c1b21b"
+      ]
+    },
+    {
+      "entry_id": "ja-1eb517229b171abf",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "入る（はいる）means to enter or go into a place or space, moving from outside to inside. The place entered is commonly marked with に or へ.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "ac696035b420cb71d4e1de27de1f95ac67db6f3a56c8ef714bea262b308c449e",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "a7d929255c612b6dd79c3622deb85e636111b2a284444cb5d3137ac25b6244c5"
+      ]
+    },
+    {
+      "entry_id": "ja-200aba458d195418",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "その is a demonstrative that comes before a noun to identify something already mentioned or understood from context. It means “that” or “that particular.”",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "a14a0630be0fa69a8b012001c259b554c626a100e655ba327fc373e8888c0c11",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-24764b8641a14e66",
+      "investigation_questions": [],
+      "claim_ids": [
+        "c1"
+      ],
+      "structure": "single_component",
+      "explanation_en": "どこ asks which place or where. It is the place word in the Japanese コ・ソ・ア・ド series, alongside ここ, そこ, and あそこ.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "どこ",
+          "contribution_en": "As a whole, asks which place or where.",
+          "claim_ids": [
+            "c1"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "ja-24764b8641a14e66",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/%E4%BD%95%E5%87%A6-432437",
+            "title": "何処（読み）ドコ - コトバンク（デジタル大辞泉・精選版 日本国語大辞典）",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Digital Daijisen defines どこ as an indefinite demonstrative pronoun for an unspecified place or situation, and lists asking which place or part. It reports a historical sequence from いずこ through いどこ to どこ. The separate Nihon Kokugo Daijiten entry describes いどこ as an older form of どこ and cites an example from about 935; for どこ it cites a 1099 example transcribed with the reading トコ."
+          },
+          {
+            "id": "s2",
+            "url": "https://www.coelang.tufs.ac.jp/mt/ja/gmod/contents/card/014.html",
+            "title": "日本語 文法 どれ／どこ／どのN：カード - 東京外国語大学言語モジュール",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The grammar resource places どこ in the place row of the コ・ソ・ア・ド series, corresponding to ここ・そこ・あそこ, and illustrates asking where a restroom is."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "For the supplied sense, どこ asks which place; Digital Daijisen classifies it as an indefinite demonstrative pronoun, and TUFS places it in the ド place row alongside ここ・そこ・あそこ.",
+            "source_ids": [
+              "s1",
+              "s2"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "The consulted dictionary entries report the historical chain いずこ → いどこ → どこ. The Nihon Kokugo Daijiten cites いどこ around 935 and a 1099 example under どこ, but transcribes the latter reading as トコ. These entries support reporting the dictionaries’ analysis; the cited examples alone do not independently establish the full sound history or demonstrate that the 1099 form was pronounced どこ.",
+            "source_ids": [
+              "s1"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "Digital Daijisen also lists uses asking which part or what degree. Those are additional dictionary senses; the supplied definition and example concern place.",
+            "source_ids": [
+              "s1"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "どこ 語源 何処 いどこ いずこ 日本語辞典",
+            "opened_urls": []
+          },
+          {
+            "query": "site:coelang.tufs.ac.jp/mt/ja/gmod/contents/card/014.html どこ",
+            "opened_urls": []
+          },
+          {
+            "query": "日本語 どこ 場所 系列 こそあど 指示詞 論文",
+            "opened_urls": []
+          },
+          {
+            "query": "どこ 語源 何処 いどこ いずこ 日本語辞典; どこ 古語 いづこ 何処 語源 日本国語大辞典",
+            "opened_urls": []
+          },
+          {
+            "query": "「どこ」 「いどこ」 「いずこ」 日本語史",
+            "opened_urls": []
+          },
+          {
+            "query": "どこ 初出 将門記 承徳三年点 トコ 日本国語大辞典",
+            "opened_urls": []
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E4%BD%95%E5%87%A6-432437",
+              "https://www.coelang.tufs.ac.jp/mt/ja/gmod/contents/card/014.html",
+              "https://www.jstage.jst.go.jp/article/jajls/21/2/21_50/_pdf"
+            ]
+          }
+        ],
+        "gaps": [
+          "The historical sequence is reported by the opened dictionary page, but the cited primary texts were not independently inspected. The 1099 citation is transcribed トコ, leaving the pronunciation relevant to the proposed transition to どこ unverified here. The J-STAGE PDF could not be retrieved for detailed inspection, so it is not used as evidence."
+        ]
+      },
+      "input_fingerprint": "a2e59211d943895f8d2172c9086a61f66d0230f8db744f6ccf9511e3453ccd0f",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "cached_research",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "d3b00533e5abb1440a4e2b6f13a27ceb93059ac1286e2232c4d365a4f673684b"
+      ]
+    },
+    {
+      "entry_id": "ja-251db285792ab022",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "中（なか）means the inside or interior of something, and can extend to being within a group, range, or situation.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "4ab5b525e4aa267051a84036b127da624eb4890f78dd105f269c369cdf299376",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "04b583a28d7aee5ece728aedab3837c9936860f8014b84cd995a61c0792072e1"
+      ]
+    },
+    {
+      "entry_id": "ja-2a5543a0d23065e4",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "が is a particle with two grammatical uses. As a case particle, it marks the subject of a predicate; the subject is not necessarily the doer of an action. After a clause, it links that clause to a following one, often expressing contrast like “but.”",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "004b1480be150cba34dddc2a919cdf6b7be30c2e8758232426e674049af0cb23",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-33bf78b4de392af3",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "After a verb in dictionary form, こと packages the action as something to choose; に marks it as the outcome, and する expresses making that choice. Together, the construction means to decide to do the action.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "こと",
+          "contribution_en": "Turns the preceding action into something that can be chosen.",
+          "claim_ids": []
+        },
+        {
+          "text": "に",
+          "contribution_en": "Marks that action as the choice or outcome.",
+          "claim_ids": []
+        },
+        {
+          "text": "する",
+          "contribution_en": "Expresses making that choice.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "38e2143788ff21355e975571245f1ee5645ad1ce06189ae21f175d87f5e53dfe",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-36ec58610a51274c",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "分かる describes having a grasp of something or being able to tell it: the thing is understood, known, or clear to someone. The context determines which English sense fits.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "fb31c591ee2bc28a62126215a6447d14c93fe1ae6eb34aea78b76b28b7f7bbca",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-3e511d3b0d3e791e",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "The particle へ marks the direction or destination toward which movement proceeds. The verb describes the movement, while へ relates it to the place as its goal, as in 家へ行く or 外へ出る.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "8ce0ae07a35d8905b5eab945be9c239b629574988a6776b065985d22828a7113",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-453853a61337aecd",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "何度も means “many times” or “repeatedly.” 何度 refers to a number of occasions, and も presents that number as large, conveying repeated occurrence.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "何",
+          "contribution_en": "Introduces an unspecified number: “how many.”",
+          "claim_ids": []
+        },
+        {
+          "text": "度",
+          "contribution_en": "Counts occasions or occurrences.",
+          "claim_ids": []
+        },
+        {
+          "text": "も",
+          "contribution_en": "With an interrogative quantity, presents the amount as large, yielding “many.”",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "98e0cb738f0a776e77553196c592a7d28af240677d72d4ff497d71bbd3d87616",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-4c58f7c026c84f39",
+      "investigation_questions": [],
+      "claim_ids": [
+        "c4"
+      ],
+      "structure": "single_component",
+      "explanation_en": "暗い means dark: there is too little light to see clearly.",
+      "caveat_en": "",
+      "parts": [],
+      "research": {
+        "entry_id": "ja-4c58f7c026c84f39",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/%E6%9A%97%E3%81%84-485347",
+            "title": "暗い（読み）クライ — デジタル大辞泉・精選版 日本国語大辞典",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The entry identifies くらい as the modern colloquial adjective and くらし as its classical literary form. For the light-deficient sense, it records an example from an early-Heian reading of a Buddhist text, dated circa 830. It documents form and use, but gives no etymology."
+          },
+          {
+            "id": "s2",
+            "url": "https://kotobank.jp/word/%E6%9A%97%E3%81%97-3137495",
+            "title": "暗し（読み）くらし — 精選版 日本国語大辞典",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The entry classifies くらし as a classical ク-conjugation adjective and directs readers to くらい. It supports the historical grammatical form but offers no deeper derivation."
+          },
+          {
+            "id": "s3",
+            "url": "https://www2.ninjal.ac.jp/dictionaries/IPALBA/pdf_dir/%E3%81%8F%E3%82%89%E3%81%84.pdf",
+            "title": "くらい — IPAL-Basic Adjectives, National Institute for Japanese Language and Linguistics",
+            "accessed_at": "2026-09-27",
+            "summary_en": "NINJAL’s modern lexical resource analyzes the adjective synchronically as stem kura plus ending -い and describes the light-deficient sense as not being filled with a sufficient amount of light. This is a modern grammatical and semantic analysis, not an account of the word’s history."
+          },
+          {
+            "id": "s4",
+            "url": "https://kotobank.jp/word/%E9%BB%92-192740",
+            "title": "黒（読み）クロ — 精選版 日本国語大辞典・改訂新版 世界大百科事典",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The encyclopedia presents the proposal that kuro is historically related to kurashi ‘dark’ and kureru ‘grow dark’. It also reports that Susumu Ōno questioned the kuro–kurashi connection on the basis of accent and voicing notation in the Ruiju Myōgishō, and proposed a possible connection between kuro and kuri ‘black mud’. This is a disputed proposal about kuro; it does not establish the origin of kurai."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "The historical dictionary records a light-deficient use of くらし in an early-Heian reading, circa 830, and gives くらし as the literary form corresponding to modern くらい. This establishes an early attested Japanese form, not its ultimate origin.",
+            "source_ids": [
+              "s1",
+              "s2"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "NINJAL analyzes modern くらい as kura plus -い. That segmentation describes present-day structure; it does not establish the historical derivation of kura or prove that the word is inherited from Proto-Japonic.",
+            "source_ids": [
+              "s3"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "A Japanese encyclopedia presents kuro ‘black’ as related to kurashi ‘dark’, but also reports Susumu Ōno’s objection to that relationship based on historical accent evidence and his alternative proposal for kuro. Neither account proves the origin of 暗い itself; the proposed relationship cannot be treated as an established derivation of kurai.",
+            "source_ids": [
+              "s4"
+            ]
+          },
+          {
+            "id": "c4",
+            "text_en": "For the supplied sense, the historical dictionary defines 暗い as having little light so that objects are hard or impossible to see; NINJAL similarly describes it as lacking sufficient light.",
+            "source_ids": [
+              "s1",
+              "s3"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E6%9A%97%E3%81%84-485347",
+              "https://kotobank.jp/word/%E6%9A%97%E3%81%97-3137495",
+              "https://www2.ninjal.ac.jp/dictionaries/IPALBA/pdf_dir/%E3%81%8F%E3%82%89%E3%81%84.pdf"
+            ]
+          },
+          {
+            "query": "暗い くらい 語源 国語辞典 語源 くらし",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E9%BB%92-192740"
+            ]
+          },
+          {
+            "query": "くらし くらい 語源 日本語 語源辞典 暗い",
+            "opened_urls": []
+          },
+          {
+            "query": "日本語 暗い くらい 古代語 語源 上代語 くら",
+            "opened_urls": []
+          },
+          {
+            "query": "\"くらい\" \"語源\" 暗い 日本語辞典",
+            "opened_urls": []
+          },
+          {
+            "query": "\"くらし\" \"語源\" 暗し",
+            "opened_urls": []
+          },
+          {
+            "query": "\"暗い\" \"語源\" 日本語 古語 くら くろ",
+            "opened_urls": []
+          }
+        ],
+        "gaps": [
+          "No opened source establishes the ultimate historical derivation of kura/くらい or demonstrates that it is inherited native Japanese in the strict historical-linguistic sense. The early attestation documents Japanese use, not prehistoric ancestry.",
+          "The kuro–kurashi relationship is presented alongside a scholarly objection, and neither account resolves the origin of kurai. A dedicated etymological treatment of 暗い or くらし was not found among the opened sources."
+        ]
+      },
+      "input_fingerprint": "b544c1195da1299ace3fee4532c68c7559a6039e6c70457afa54db2dc9836292",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "cached_research",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "b30f10c4f3c80020ee89ec69246949ffe5569083df02534c0e1d78e8ce4a1d08"
+      ]
+    },
+    {
+      "entry_id": "ja-4e168d5062c93efb",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "に marks a place or point related to an action or state. Depending on the verb and context, that place can be where something is, where it is placed or directed, or where someone lives; English may express this as “at,” “in,” or “to.”",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "156018b91ac067c53cfa280a56bd2a160c71e80583383be16d5135058e385272",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-5101ef62ab8e39d5",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "男の人 is the ordinary expression for a man or adult male person. 男 describes the 人 as male, and の links the description to 人, the person being identified.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "男",
+          "contribution_en": "Describes the person as male.",
+          "claim_ids": []
+        },
+        {
+          "text": "の",
+          "contribution_en": "Links 男 as a description of 人.",
+          "claim_ids": []
+        },
+        {
+          "text": "人",
+          "contribution_en": "Means “person” and is the main noun in the expression.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "13b2c27f127a205e5385cb5299acc1f78911ec5b71aeea76df739677caf9495f",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-542e1077fd666b34",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "左（ひだり） is a simple noun meaning the left side, or the direction opposite right. In 左に, に marks it as a location or direction.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "f0e268894e380a7789e54ba21e75a0d105fc7e28ef7c72fbf50aa24289c9dba7",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-5a3faf1d2f144180",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "の links a noun or noun-like phrase to a following noun, showing how the first phrase relates to or describes the second. The relation may be possession, association, kind, or location; English may express it with “of,” “my,” or another phrase, or leave it implicit.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "の",
+          "contribution_en": "Marks the relation between a noun phrase and the noun that follows it.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "7e3a05e54d0bf9a0fc381421989170ae5de83b0831fec1132ac68e2f0a180daa",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-5cb35b105de32650",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "目（め）means “eye,” the organ of sight.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "d8fc6413d32e70b3b321837a7144d19f38fab87576b9434fdfd235f3596ac920",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "08a73f42bc28e7f41da42194a1e4659cf7574458a45e88f1e2f8096ccdd90d9e"
+      ]
+    },
+    {
+      "entry_id": "ja-5cc817ca84d986df",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "置く（おく）means to put or place something in a position. The place is often marked with に.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "6457b52c33a1a57c04f5f5549e72b717e2d8881391bba30fa3c3396689e63047",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-62a8bf5f7a727257",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "Slowly; without haste.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "32bb31c9288208ca655b96b69cb8a9f93125620453cb291c42d18554ce1e2b98",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "306b00d42739ea667ddededb688ed8c0d3aa9d3521d497b68cb605fa3b174495"
+      ]
+    },
+    {
+      "entry_id": "ja-6bff8bcd08c09789",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "見る is the basic verb for seeing or looking at something. The thing seen is usually marked by を; context shows whether the focus is simply perceiving it or directing one’s gaze toward it.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "b31991771277718a2df4428a74e14e216a627014570312273ef6a88ea4cf2f33",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-6fa7df4bd5e6b657",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "兄弟 combines 兄 (older brother) and 弟 (younger brother), framing siblings through those two birth-order positions. As a conventional whole, it means sibling or siblings and can refer to people of any gender; that broader usage belongs to the word, not to 弟 alone.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "兄",
+          "contribution_en": "Means older brother; paired with 弟, it names one of the two sibling positions.",
+          "claim_ids": []
+        },
+        {
+          "text": "弟",
+          "contribution_en": "Means younger brother; paired with 兄, it names the other sibling position. It does not itself mean sister.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "cf85372e31daceeb2195006ebc9569f606ec18187c5ccd727342db28e146e264",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "e81c9d61e570e77a44f64b4012be2c78d4d644aeb7f9783501105c383743a8b5"
+      ]
+    },
+    {
+      "entry_id": "ja-7131dced6ea733db",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "まだ marks a situation as continuing up to the present, or as not having reached an expected point yet. With a negative, it commonly means “not yet.”",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "d085d34e7ee766b0fef0142651b97070e6c6a3e92afd386b2d329c96e51ac64a",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-7b670af0f888ff63",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "出す means to take, send, or let something out of a place. These uses share the idea of causing something to move outward; the English verb depends on how it leaves.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "3fb1565f3cda6e8853e1c631f42585e62fa2f67d4fea0f35d301ccc2adf5bf83",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "c0b1eb08320ae85713f9921289beef7c5a84e77436ce1a852459ccfa2d833283"
+      ]
+    },
+    {
+      "entry_id": "ja-7f9393374aa35e38",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "言う means to put something into words: to say it or to tell someone something. Which English verb fits depends on what is said and to whom.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "ea741a31d709823b6a17896836bfe48e2918a1ff4ede12514d99fb44ab3aecdd",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-81694b70f5f0de3d",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "ニャーニャー imitates a cat’s repeated meows. Used with a verb such as 鳴く, it describes meowing repeatedly.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "499fe57802dfe2d037b28eae246941523024d30cf3d9493a4bfd6277684a09f3",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "67c028b94dc89dddf60691bc17501cb8500563908bf948b9173804cd6863f01a"
+      ]
+    },
+    {
+      "entry_id": "ja-8278159494939602",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "か follows a phrase or clause to mark a question. After a clause, it lets that question function within a larger sentence, often with the meaning “whether.”",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "7e8b4d8796909427dd3030f70668034fcb4038f3c8a2c0248088d0d6e6b40237",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-9b150f79d784cc08",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "捨てる is a simple Japanese verb meaning to throw something away or give it up, ending one’s keeping or commitment to it. With a person or responsibility, it can mean to abandon them.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "0b8aa019fc93dc9ffeaf2e66c59c456bf1128d2f0a394ffd1f2368949293586c",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-9ede352f72e47972",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "女の人 means “woman” or “adult female person.” 女 identifies the person as female, and の links it to 人 (“person”), so the phrase names a person by gender.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "女",
+          "contribution_en": "Identifies the person as female.",
+          "claim_ids": []
+        },
+        {
+          "text": "の",
+          "contribution_en": "Links 女 to 人 in a noun-modifying relation.",
+          "claim_ids": []
+        },
+        {
+          "text": "人",
+          "contribution_en": "Means “person”; with 女の, it refers to a woman.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "5412b261fd7388108b77f5fca9882c9a51fd6184e447883d3036fa92c863614b",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-a02c537e75abb2f7",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "The particle で marks where an action or event takes place. The location may be a place or surface, and English often uses “at,” “in,” or “on” depending on context.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "bee70bae107ee2ebcc6c9cc454ce4cd77cfe72013d81608b021a5201c5d13354",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-a16209ee8312ed34",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "主人（しゅじん）means the master or head of a household: the person who holds the principal role in it.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "主",
+          "contribution_en": "The principal or person in charge.",
+          "claim_ids": []
+        },
+        {
+          "text": "人",
+          "contribution_en": "A person; here, the person with the principal role in the household.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "6e9fe8723e8ca816ff3b927d84ebfb7d900d54afff8d9733163ecd3b2bb86dcf",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-a3df6964e71cf418",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "いる means “to exist” or “to be present” when speaking of living things.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "49232a5f6d98ec22e37c3420ea9790daa06c66e2ff2939d2590e7d77eb648987",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "75ca19c296e2b06a2d34501969ef153a7216a7f525784647236f0f465a6cf818"
+      ]
+    },
+    {
+      "entry_id": "ja-ae6e9f9072030b69",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "笹 names bamboo grass, and 原 contributes the sense of an open field or expanse. Together, 笹原 means an area covered with bamboo grass.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "笹",
+          "contribution_en": "Bamboo grass; names the plants covering the area.",
+          "claim_ids": []
+        },
+        {
+          "text": "原",
+          "contribution_en": "An open field or expanse; supplies the setting for the grass.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "23dfefe7ff7e8f7b961776a163b80fe6f965e78d522d20e98a22eda3bcfca25a",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-b4d34b2aa45ee8a4",
+      "investigation_questions": [],
+      "claim_ids": [
+        "c1",
+        "c2"
+      ],
+      "structure": "lexicalized",
+      "explanation_en": "台所 is the ordinary word for a kitchen, the space where food is prepared and cooked. It is conventionally linked to the older name 台盤所 for a room associated with a 台盤, a food-serving stand; this historical shortening is proposed rather than established.",
+      "caveat_en": "",
+      "parts": [],
+      "research": {
+        "entry_id": "ja-b4d34b2aa45ee8a4",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/%E5%8F%B0%E6%89%80-91718",
+            "title": "台所（読み）ダイドコロ — コトバンク（精選版 日本国語大辞典ほか）",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The dictionary defines 台所 as a room for cooking and food preparation, labels it an abbreviation of 台盤所, and gives 吾妻鏡 (1203) as its earliest cited example with that room sense. Its usage note says 台盤所 dates from the Heian period, while abbreviation as 台所 seems to be medieval or later; this is a lexicographic account, not proof of the derivation."
+          },
+          {
+            "id": "s2",
+            "url": "https://kotobank.jp/word/%E5%8F%B0%E7%9B%A4%E6%89%80-558154",
+            "title": "台盤所（読み）ダイバンドコロ — コトバンク（精選版 日本国語大辞典ほか）",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The entry parses 台盤所 as the place where a 台盤 is set. It cites 宇津保物語 (c. 970–999) and describes the palace room as a waiting room for female attendants; its encyclopedia excerpt says 台所 is thought to abbreviate this name and characterizes the earlier room as serving-oriented."
+          },
+          {
+            "id": "s3",
+            "url": "https://www.aisf.or.jp/~jaanus/deta/d/daidokoro.htm",
+            "title": "daidokoro 台所 — JAANUS",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The architecture glossary calls 台所 a believed abbreviation of 台盤所. It describes early uses for final food preparation and serving, and later uses for buildings and spaces used to prepare and cook food."
+          },
+          {
+            "id": "s4",
+            "url": "https://www.aisf.or.jp/~jaanus/deta/d/daibandokoro.htm",
+            "title": "daibandokoro 台盤所 — JAANUS",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The glossary describes 台盤所 as a room containing a 台盤, a low table used to serve food, which also functioned as a waiting area and salon for female attendants. It calls this room the believed origin of 台所."
+          },
+          {
+            "id": "s5",
+            "url": "https://kotobank.jp/word/%E5%8F%B0%E7%9B%A4-91886",
+            "title": "台盤（読み）ダイバン — コトバンク（精選版 日本国語大辞典ほか）",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The dictionary defines 台盤 as a court furnishing: a legged stand on which dishes or food were placed. This supports the compound-level reading of 台盤所 as a place associated with that furnishing."
+          },
+          {
+            "id": "s6",
+            "url": "https://www.i-repository.net/contents/osakacu/kiyo/111H0000001-32-18.pdf",
+            "title": "都市住宅の「台所」関連空間の検討 : 古代から近世までの名称の分類と位置づけ — Osaka Metropolitan University Repository",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The PDF title page exposed the paper’s title, authors, citation, and date, but later page fetches timed out. The relevant argument about the proposed derivation was not read and is not used to support any claim."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "The consulted dictionaries and JAANUS give 台盤所 as the conventional proposed source of 台所, but phrase the historical connection as an abbreviation or a believed/thought origin. The dictionary dates the shortening to medieval times or later; the materials consulted do not establish a proven derivation.",
+            "source_ids": [
+              "s1",
+              "s2",
+              "s3",
+              "s4"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "At the level of 台盤所, 台盤 denotes a legged food-serving stand or low table, and 所 denotes the place where it is set. This supports a compound-level explanation of 台盤所; it does not establish 台 alone as meaning ‘kitchen’ or as independently naming a kitchen space.",
+            "source_ids": [
+              "s2",
+              "s4",
+              "s5"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "The entries distinguish early contexts: 台盤所 is cited from 宇津保物語 (c. 970–999) and described as a palace room for female attendants and food service; 台所 is cited for a cooking and food-service room in 吾妻鏡 (1203). These attestations show the terms in different contexts but do not by themselves demonstrate that one developed from the other.",
+            "source_ids": [
+              "s1",
+              "s2",
+              "s4"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "台所 語源 台盤所 日本国語大辞典",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E5%8F%B0%E6%89%80-91718",
+              "https://www.aisf.or.jp/~jaanus/deta/d/daidokoro.htm"
+            ]
+          },
+          {
+            "query": "台所 台盤所 語源 日本語 辞典",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E5%8F%B0%E6%89%80-91718",
+              "https://kotobank.jp/word/%E5%8F%B0%E7%9B%A4%E6%89%80-558154",
+              "https://www.aisf.or.jp/~jaanus/deta/d/daidokoro.htm",
+              "https://www.aisf.or.jp/~jaanus/deta/d/daibandokoro.htm",
+              "https://kotobank.jp/word/%E5%8F%B0%E7%9B%A4-91886"
+            ]
+          },
+          {
+            "query": "site:i-repository.net \"都市住宅の「台所」関連空間\"",
+            "opened_urls": [
+              "https://www.i-repository.net/contents/osakacu/kiyo/111H0000001-32-18.pdf"
+            ]
+          },
+          {
+            "query": "site:kotobank.jp/word 台盤 だいばん 精選版 日本国語大辞典",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E5%8F%B0%E7%9B%A4-91886"
+            ]
+          },
+          {
+            "query": "\"都市住宅の「台所」関連空間の検討\" \"台盤所\"",
+            "opened_urls": [
+              "https://ocu-omu.repo.nii.ac.jp/record/2014995/files/111H0000001-32-18.pdf",
+              "https://ocu-omu.repo.nii.ac.jp/records/2014995"
+            ]
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E5%8F%B0%E6%89%80-91718",
+              "https://kotobank.jp/word/%E5%8F%B0%E7%9B%A4%E6%89%80-558154",
+              "https://www.aisf.or.jp/~jaanus/deta/d/daidokoro.htm",
+              "https://www.aisf.or.jp/~jaanus/deta/d/daibandokoro.htm",
+              "https://kotobank.jp/word/%E5%8F%B0%E7%9B%A4-91886",
+              "https://www.i-repository.net/contents/osakacu/kiyo/111H0000001-32-18.pdf",
+              "https://ocu-omu.repo.nii.ac.jp/records/2014995",
+              "https://ocu-omu.repo.nii.ac.jp/record/2014995/files/111H0000001-32-18.pdf"
+            ]
+          }
+        ],
+        "gaps": [
+          "The historical shortening from 台盤所 to 台所 remains an attributed explanation rather than a demonstrated derivation in the sources read. The proposed scholarly study could not be read beyond its opening material because later PDF page fetches timed out, so its reported critique and any contradiction it raises remain unverified here.",
+          "The sources explain 台盤 as a serving stand and parse 台盤所 as its location; they do not establish a separate historical kitchen meaning for 台 alone."
+        ]
+      },
+      "input_fingerprint": "a1fb068d6ab56c65bacd3804ce538e45a9024505e6a5c0b73215954f8ba74d72",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "cached_research",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-b50f66e0eb7f06a9",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "も marks an item as included in the relevant set, giving meanings such as “also” or “too”; when it marks an unexpected or extreme case, it can mean “even.” With a negative predicate, it brings the marked item within the negation, giving “not … either” or, with multiple marked items, “neither … nor.”",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "ef54abdced915ef7aa3a2e21945257360a716560dd2f236c7ae487ea6c785044",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-bae4d3e398702f7b",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "と follows quoted words or a sentence and marks them as speech or thought. It commonly comes before a verb such as 言う “say” or 思う “think,” which tells who says or thinks the quoted content.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "と",
+          "contribution_en": "Marks the preceding words or sentence as quoted speech or thought.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "55d7b3636c6c81b4e3c738053ffb69b7b7dccdc20653523be002cf6855750429",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-bb9da1eec824d04e",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "外（そと）means the outside: the area beyond a boundary, especially the exterior of an enclosed space. It can refer to that area as a place or direction, as in 外へ出る (go outside).",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "ae7daa68eb088ed46863dae31dfd84f35912abd12963d3b2a20f9c582f68951d",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-bcb1db6cacd2ce60",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "手（て）means “hand,” the body part at the end of the arm.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "04ae0ebb4d093610ec0d089bc555855ab304291f472dbab53c97d4882c466bbc",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "154d0e80833b82d494e878c91a4075a66753e58326336b0f3d5088d24d45ab61"
+      ]
+    },
+    {
+      "entry_id": "ja-c077953bae1b6adf",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "泣く (なく) means “to cry; to weep.”",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "d8db0324dbf97a1a7492112f540682a4087fe63136ca32f8e33c4436f1df9277",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "82ac1815fc79dd913d8282c9891393640d5f28c423b020e17dee93b2079990fd"
+      ]
+    },
+    {
+      "entry_id": "ja-c1a8f23bf169bbb2",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "池（いけ）means a pond: a relatively small body of still or slow-moving water, natural or made by people.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "948ef4ff203c296b9500a77f7229511bb9a3517bd9c2a535bf1974f657201297",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-c5e0c8f4c2c41346",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "上（うえ）means the top, upper part, or surface of something. In Xの上, it can describe a position on that surface.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "9e754901cb382c54236327745a1ec14975083cfecc6b87d0f0bfd89401eaf638",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-c854cdaee6d2a124",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "ある is a basic verb meaning that a thing or abstract entity exists or is present. It is ordinarily used for things and abstract entities, rather than living beings.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "20a1bdc0bd418be764e45e9c56bf0960fd6d1628e148bb5cb991b96a796edc96",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-c8ab2130c2e0f754",
+      "investigation_questions": [
+        {
+          "component": "前",
+          "question": "What, if anything, does 前 contribute to 名前, and what evidence establishes that role?"
+        }
+      ],
+      "claim_ids": [
+        "c2",
+        "c3",
+        "c5"
+      ],
+      "structure": "lexicalized",
+      "explanation_en": "名前 is the ordinary Japanese word for a name or designation. 名 matches that core meaning, but the specific role of 前 in the word is not established.",
+      "caveat_en": "前’s other uses do not determine its contribution to 名前.",
+      "parts": [
+        {
+          "text": "名",
+          "contribution_en": "Matches the core idea of a name or designation; this does not by itself establish how 名前 was formed.",
+          "claim_ids": [
+            "c2"
+          ]
+        },
+        {
+          "text": "前",
+          "contribution_en": "Its specific contribution within 名前 is not established.",
+          "claim_ids": [
+            "c3",
+            "c5"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "ja-c8ab2130c2e0f754",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/%E5%90%8D%E5%89%8D-22836",
+            "title": "名前（なまえ）— コトバンク／精選版 日本国語大辞典",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The dictionary gives cited examples for 名前 from 1720 (表向きの名目, an outward or formal designation), 1731 (a person's name), 1886 (reputation or honor), and 1889 (a name for a thing or matter). These dates mark examples cited by this dictionary, not the word's coinage."
+          },
+          {
+            "id": "s2",
+            "url": "https://kotobank.jp/word/%E5%90%8D-586865",
+            "title": "名（な）— コトバンク／精選版 日本国語大辞典",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The entry records 名（な） meaning a name or designation in examples cited from the Kojiki (712), Tosa Nikki (c. 935), and Man’yōshū (late 8th century). This establishes older use of 名, but not the historical formation of 名前."
+          },
+          {
+            "id": "s3",
+            "url": "https://www2.ninjal.ac.jp/dictionaries/IPALBN/pdf_dir/%E3%81%BE%E3%81%88.pdf",
+            "title": "IPAL: 文法辞典 — まえ（前）／National Institute for Japanese Language and Linguistics",
+            "accessed_at": "2026-09-27",
+            "summary_en": "This NINJAL resource describes senses of まえ and lists some compounds or formations involving it. It does not list 名前 in the relevant formation examples or establish that 前 contributed a particular meaning when 名前 formed."
+          },
+          {
+            "id": "s4",
+            "url": "https://gogen-yurai.jp/namae/",
+            "title": "名前／なまえ — 語源由来辞典",
+            "accessed_at": "2026-09-27",
+            "summary_en": "This popular etymology page says 名 has long been used with the meaning ‘name’; the opened page gives no account of 前's historical role."
+          },
+          {
+            "id": "s5",
+            "url": "https://kotobank.jp/word/%E5%89%8D-544359",
+            "title": "前（まえ）— コトバンク／精選版 日本国語大辞典",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The entry documents a historical construction of the form Xの前 attached to a woman's name to express respect, citing 千手の前 in Heike monogatari (early 13th century). It also lists modern suffix uses for 前, with examples such as 男前 and 腕前. These separate uses do not by themselves establish the historical function of 前 in 名前."
+          },
+          {
+            "id": "s6",
+            "url": "https://etymology-encyclopedia.com/namae/",
+            "title": "なまえ〖名前〗の語源・由来 — 語源辞典オンライン",
+            "accessed_at": "2026-09-27",
+            "summary_en": "This secondary etymology page repeats the dictionary's early citations and reports that an honorific explanation for 前 is difficult to establish decisively. It nevertheless proposes that some kind of element was added to 名; that proposal is not substantiated by historical evidence on the opened page."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "精選版 日本国語大辞典 cites 名前 in 1720 with the sense ‘formal or outward designation’ and in 1731 for a person's name. These are the earliest examples cited in this entry, not proof of when the word was formed.",
+            "source_ids": [
+              "s1"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "The same dictionary records 名（な） meaning ‘name’ or ‘designation’ in examples from much earlier texts, including the Kojiki (712) and Man’yōshū (late 8th century). This shows that 名 predates the cited examples of 名前, but does not prove that 名前 was formed directly from 名 plus 前.",
+            "source_ids": [
+              "s1",
+              "s2"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "Japanese dictionaries attest a respectful use of 前 in the construction Xの前 after a woman's name, with a Heike monogatari example, and also describe other suffix uses of 前. The evidence concerns those constructions and does not establish that this respectful use, or the ordinary meaning ‘front/before,’ supplied 前's contribution in 名前.",
+            "source_ids": [
+              "s5"
+            ]
+          },
+          {
+            "id": "c4",
+            "text_en": "The opened NINJAL IPAL resource catalogs senses and some formations involving まえ, but its relevant examples do not identify 名前 as a formation or explain its history. It therefore does not support the proposed dossier's claim that NINJAL analyzes 前 as a compound element specifically in 名前.",
+            "source_ids": [
+              "s3"
+            ]
+          },
+          {
+            "id": "c5",
+            "text_en": "A secondary etymology page discusses an honorific explanation for 前 but acknowledges that the specific role is difficult to determine. Its proposal that some element was added to 名 is not supported there by a historical derivation or direct attestation of the formation.",
+            "source_ids": [
+              "s6"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "名前 なまえ 日本語 語源 日本国語大辞典 前 形成",
+            "opened_urls": []
+          },
+          {
+            "query": "名前 なまえ 語源 名 前 日本語 歴史 辞書",
+            "opened_urls": [
+              "https://etymology-encyclopedia.com/namae/"
+            ]
+          },
+          {
+            "query": "名前 語源 「前」 接尾語 辞典 日本語",
+            "opened_urls": []
+          },
+          {
+            "query": "\"名前\" \"日本語源大辞典\" なまえ 前",
+            "opened_urls": []
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/%E5%90%8D%E5%89%8D-22836",
+              "https://kotobank.jp/word/%E5%90%8D-586865",
+              "https://www2.ninjal.ac.jp/dictionaries/IPALBN/pdf_dir/%E3%81%BE%E3%81%88.pdf",
+              "https://gogen-yurai.jp/namae/",
+              "https://japanese.stackexchange.com/questions/13282/does-the-word-%E5%90%8D%E5%89%8D-have-English-roots",
+              "https://yurai-world.com/word/437/",
+              "https://kotobank.jp/word/%E5%89%8D-544359"
+            ]
+          }
+        ],
+        "gaps": [
+          "No opened reputable historical or scholarly source establishes how the native form 名前 was formed or whether 前 contributed meaning at formation. Older examples of 名 and separate respectful or suffix uses of 前 do not establish that derivation.",
+          "The directly opened Japanese Language Stack Exchange page returned an internal access error, so its proposed explanation was not independently assessed from the page and is not used as evidence."
+        ]
+      },
+      "input_fingerprint": "3deb3c52c394a50032de8ee623fc222107564f7448f30d0da9b62e27b37f2683",
+      "revision": 3,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "cached_research",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "1459d3b9fe03684cb4e11b4212b0763261b0aaa94ab7c8e310ee6abe4d39376c",
+        "23a785074d098367cd70a98d5d4b95419952b5238bd1597228e95b755aa43e59"
+      ]
+    },
+    {
+      "entry_id": "ja-cb4ad54ba33d9c57",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "所（ところ）means “place” or “location.”",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "所",
+          "contribution_en": "The word means “place” or “location.”",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "0c735d19ea6d87950da5b93624a30cf4b1512fec23222304de735fdf2b1941ee",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "a8f20738124d83c4181ff9ee87f0a36ecc169674347ccb4a6e358f3c21b13d72"
+      ]
+    },
+    {
+      "entry_id": "ja-ce444427c42e5ac6",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "猫（ねこ）is the ordinary Japanese word for a cat. The word names the animal as a whole; its written form does not provide a useful modern breakdown.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "ad0aa49441d01b310f7e1ca7369f2695b91019f14587884e066a33d8f242e62a",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-ced000268ad2f027",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "です is a polite copula that presents the preceding phrase as an identity or description. It makes the statement polite without changing that basic relation.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "2dc16cda1dbe4702e55309f2c81d70ae7aaf2053e7c53d5df62654b7969f35e4",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-d718a760ae947926",
+      "investigation_questions": [
+        {
+          "component": "輩",
+          "question": "How, if at all, did its group-related sense relate to the earlier plural use of わがはい?"
+        }
+      ],
+      "claim_ids": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "structure": "overlapping",
+      "explanation_en": "吾輩 is a formal, literary first-person pronoun, traditionally masculine, meaning “I/me.” In the spelling, 吾 suggests “self” or “my/our,” and 輩 suggests companions or a group, together giving a cue of a self associated with a group. In Japanese usage, the pronoun had an earlier plural “we/us” use before its singular “I/me” use developed.",
+      "caveat_en": "These component glosses help explain the spelling, but their role in the word’s historical formation is not established.",
+      "parts": [
+        {
+          "text": "吾",
+          "contribution_en": "Suggests “self” or “my/our” as a spelling cue.",
+          "claim_ids": [
+            "c1"
+          ]
+        },
+        {
+          "text": "輩",
+          "contribution_en": "Suggests companions or a group as a spelling cue; this is not the whole word’s conventional meaning.",
+          "claim_ids": [
+            "c2"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "ja-d718a760ae947926",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://kotobank.jp/word/我が輩-664623",
+            "title": "我が輩（読み）ワガハイ - コトバンク（デジタル大辞泉・精選版 日本国語大辞典）",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Digital Daijisen describes わがはい as a masculine first-person pronoun and gives both a singular, self-important use and a plural use. The historical dictionary records a masculine plural use, with an example dated around 1467, then says the singular use developed from it, with an example dated 1871–72. Both dictionaries also separately list わがともがら, meaning ‘our companions/us’; this is a different reading from わがはい."
+          },
+          {
+            "id": "s2",
+            "url": "https://www.kanjipedia.jp/kanji/0002093400",
+            "title": "吾 | 漢字一字 - 漢字ペディア",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The kanji reference gives 吾 the Japanese readings われ and わが, with senses including ‘self’ and ‘my/our.’ It lists 吾が as a word form. This supports a modern component gloss, not the historical derivation of 吾輩."
+          },
+          {
+            "id": "s3",
+            "url": "https://kotobank.jp/word/我が-664488",
+            "title": "我が（読み）ワガ - コトバンク（デジタル大辞泉・精選版 日本国語大辞典）",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Digital Daijisen defines わが as ‘mine/my’ or ‘ours/our’ and analyzes it as わ plus the particle が. The historical dictionary likewise analyzes わが as わ plus が, with historical examples. The page identifies 吾が as an alternate spelling."
+          },
+          {
+            "id": "s4",
+            "url": "https://kotobank.jp/word/輩-585004",
+            "title": "輩（読み）トモガラ - コトバンク（デジタル大辞泉・精選版 日本国語大辞典）",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The Japanese dictionary gives 輩, read ともがら, meanings such as companions and people of the same kind. Its kanji entry also gives the reading はい and the sense ‘companions of the same rank.’ These Japanese senses support a group-related component gloss."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "As a modern component gloss, 吾 can contribute ‘self’ or ‘my/our’: the kanji reference gives it the readings われ and わが and those senses, while the Japanese dictionary analyzes わが as わ plus が and defines it as ‘my/our.’ This supports a cautious component interpretation of the spelling 吾輩, but does not establish how the word historically formed.",
+            "source_ids": [
+              "s2",
+              "s3"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "輩 has Japanese group-related senses, including ‘companions’ and ‘people of the same kind.’ A gloss such as ‘my/our companions’ is therefore useful for explaining the written components, but it is not the conventional lexical meaning of わがはい.",
+            "source_ids": [
+              "s4",
+              "s1"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "The established Japanese word わがはい is a masculine first-person pronoun. The historical dictionary records an earlier plural use, ‘we/us,’ and describes the singular ‘I/me’ use as developing from it; its cited examples are dated around 1467 and 1871–72 respectively. This documents a Japanese usage history, not an etymological derivation from the modern meanings of 吾 and 輩.",
+            "source_ids": [
+              "s1"
+            ]
+          },
+          {
+            "id": "c4",
+            "text_en": "The dictionary’s わがともがら entry means ‘our companions/us,’ but it is read ともがら, not はい. Its existence is consistent with the component gloss, but does not prove that わがはい historically arose from that phrase.",
+            "source_ids": [
+              "s1",
+              "s4"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "吾輩 語源 吾 輩 日本語 辞書 わがはい",
+            "opened_urls": [
+              "https://kotobank.jp/word/吾輩-2814880",
+              "https://kotobank.jp/word/我が輩-664623"
+            ]
+          },
+          {
+            "query": "site:kotobank.jp/word 吾 漢字 わが われ 意味 日本国語大辞典; 吾 漢字ペディア わが われ 意味",
+            "opened_urls": [
+              "https://kotobank.jp/word/我が-664488",
+              "https://www.kanjipedia.jp/kanji/0002093400"
+            ]
+          },
+          {
+            "query": "輩 わがはい 語構成 吾輩 日本語",
+            "opened_urls": [
+              "https://kotobank.jp/word/輩-585004"
+            ]
+          },
+          {
+            "query": "自称詞の歴史社会言語学的研究 拙者から僕へ 吾輩 輩",
+            "opened_urls": [
+              "https://www.jstage.jst.go.jp/article/kotoba/39/0/39_87/_pdf/-char/ja"
+            ]
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://kotobank.jp/word/我が輩-664623",
+              "https://www.kanjipedia.jp/kanji/0002093400",
+              "https://kotobank.jp/word/我が-664488",
+              "https://kotobank.jp/word/輩-585004",
+              "https://www.jstage.jst.go.jp/article/kotoba/39/0/39_87/_pdf/-char/ja",
+              "https://kotobank.jp/word/吾輩-2814880",
+              "https://kotobank.jp/word/吾が-422480"
+            ]
+          }
+        ],
+        "gaps": [
+          "The consulted Japanese dictionary and kanji sources support separate component senses and a plural-to-singular usage history, but do not establish the historical formation or derivation of わがはい from those components. The J-STAGE PDF could not be read in detail during this check, so it is not used to support claims."
+        ]
+      },
+      "input_fingerprint": "0a2b90c32fd685fde3ca1bae15dda49ef88e119f01f6e09d1d751f4eb392ec67",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "cached_research",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "1a75242cfcdb6e58377e07eab8c17989adc73cff84a47ae6b9430b86a7a9811e",
+        "4582dbf1e17660a329769f45653f7d0954f05b8909127373f83554b4768dd289"
+      ]
+    },
+    {
+      "entry_id": "ja-d89923df7df1d8e9",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "回る（まわる）means to turn or spin, or to travel around a route. In 目が回る, the sense of spinning extends to feeling dizzy, as if the surroundings were moving around you.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "e15c99e571e73265cf9e958895f1f260d9edbbc27e0428cc55f4366314b3af39",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-deeddc3ff4f7bd70",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "は marks a phrase as the topic of a statement, roughly “as for” that phrase. By setting it apart as the topic, it can also suggest a contrast with other possible topics. It attaches to a phrase and does not itself name an object or action.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "4f66eda63970a69b895aca4638f79869101a2703ba6a3c394ac721fa7599d6ff",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-e04c28f2bedecfee",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "歩く (あるく) means “to walk; move on foot.”",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "e1a82379fd83865d3cc0a50ba42495e3c1e624bbc817e07a3c7f8a21768404c9",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "e8e80a14598498bbc71f838da353dfd28266e776e06ba27b11991ab89dcb2a0b"
+      ]
+    },
+    {
+      "entry_id": "ja-e19f0f73b64bf4fd",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "時（とき）means a time, moment, or occasion when something happens. It is a noun; その時 means “that time.”",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "7b7cbba82ec9c19a82a812e554c57bcdf693931b589f0458b31c9ea5934ced52",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "9d3f607b8cd792b261124dc7d76948c6809a8fee588449b6a782c8ac44a33a0f"
+      ]
+    },
+    {
+      "entry_id": "ja-e9e56ef8d397f015",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "この is a demonstrative determiner placed before a noun. It presents that noun as near the speaker or currently in focus, as in この本 (“this book”).",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "d03e9d6a480e55394465826881c53672e2e7d71cfa1584ea4d020b783222513d",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "9dc10f944454718153b221c2c2480a90db894a41eb09db3ab711959f80616c71"
+      ]
+    },
+    {
+      "entry_id": "ja-ecabccd29dcc7d77",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "家 (いえ) means a house or home: the dwelling building or the place where someone lives. It can refer to the physical structure or to the home as a place of residence.",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "9506579a79a0ac63601ddea74740f5b46c861b44babcb280f6bf42da5894ed54",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "ja-f7af53d24c1c67fc",
+      "investigation_questions": [],
+      "claim_ids": [],
+      "structure": "single_component",
+      "explanation_en": "初めて (はじめて) means that something happens or is experienced on its first occasion. It commonly frames a verb or clause, and can modify a noun in phrases such as 初めての経験 (a first experience).",
+      "caveat_en": "",
+      "parts": [],
+      "input_fingerprint": "88ed1289b8e280b69bf43aa8580ea7c74875d2697a407e1da189588151e394e2",
+      "revision": 2,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": [
+        "7c3349e8948ff8603e95fdec71185dc2c3b85d634ca0f5138648af9afc860941"
+      ]
+    }
+  ],
+  "review_digest": "e171c8efb23b26499639acf57885a020448df60a1b14d962172da1753b4f2b86"
+}

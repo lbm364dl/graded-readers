@@ -1,0 +1,113 @@
+{
+  "id": "ja-5cb35b105de32650-80eeeb0fa7b36202",
+  "entry_id": "ja-5cb35b105de32650",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-5cb35b105de32650",
+      "headword": "目",
+      "reading": "め",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5cb35b105de32650-1",
+          "definition": "Eye; the organ of sight."
+        },
+        {
+          "id": "ja-5cb35b105de32650-2",
+          "definition": "An experience or treatment one receives, often an unpleasant one."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "eyes",
+        "sense_id": "ja-5cb35b105de32650-1"
+      },
+      {
+        "sentence": "すると、速く動き出し、目が変になって気分も悪くなった。",
+        "gloss": "eyes",
+        "sense_id": "ja-5cb35b105de32650-1"
+      },
+      {
+        "sentence": "風で葉が二枚落ちると、黒は丸い目を開いた。",
+        "gloss": "eye",
+        "sense_id": "ja-5cb35b105de32650-1"
+      },
+      {
+        "sentence": "目が回り、胸が悪くなったと思ったとき、どさりと音がして、目から火が出た。",
+        "gloss": "eye",
+        "sense_id": "ja-5cb35b105de32650-1"
+      },
+      {
+        "sentence": "吾輩は動かずにいたが、絵は妙な色で、目もなく、目の見えない猫なのか、寝ている猫なのか分からない。",
+        "gloss": "eye",
+        "sense_id": "ja-5cb35b105de32650-1"
+      },
+      {
+        "sentence": "吾輩が近づくと、彼は丸い目を開け、「お前は何だ」と言った。",
+        "gloss": "eyes",
+        "sense_id": "ja-5cb35b105de32650-1"
+      },
+      {
+        "sentence": "その後、黒は足を悪くし、毛の色も悪くなり、目には目やにがたまった。",
+        "gloss": "eyes",
+        "sense_id": "ja-5cb35b105de32650-1"
+      },
+      {
+        "sentence": "ところが、しばらくすると、書生が急に速く動き始めたのか、吾輩だけが動いたのか分からないまま、目が回り、胸が悪くなった。",
+        "gloss": "eyes; sight",
+        "sense_id": "ja-5cb35b105de32650-1"
+      },
+      {
+        "sentence": "それまでいた所と違い、そこはあまりにも明るく、目を開けていられないほどだった。",
+        "gloss": "eyes",
+        "sense_id": "ja-5cb35b105de32650-1"
+      },
+      {
+        "sentence": "風で葉が二、三枚落ちると、猫は突然、丸い目を開いた。",
+        "gloss": "eyes",
+        "sense_id": "ja-5cb35b105de32650-1"
+      },
+      {
+        "sentence": "その目は琥珀より美しかった。",
+        "gloss": "eye",
+        "sense_id": "ja-5cb35b105de32650-1"
+      },
+      {
+        "sentence": "そして、自分は三、四十匹はとった、鼬にはひどい目にあった、と得意そうに話した。",
+        "gloss": "experience; treatment",
+        "sense_id": "ja-5cb35b105de32650-2"
+      },
+      {
+        "sentence": "つやのあった毛はだんだん色があせて抜け、きれいだった目には目やにがたまった。",
+        "gloss": "eyes",
+        "sense_id": "ja-5cb35b105de32650-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-5cb35b105de32650",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "目（め）means “eye,” the organ of sight.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "d8fc6413d32e70b3b321837a7144d19f38fab87576b9434fdfd235f3596ac920",
+    "revision": 2,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": [
+      "08a73f42bc28e7f41da42194a1e4659cf7574458a45e88f1e2f8096ccdd90d9e"
+    ]
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "066f560e13104dfa897455042b684caf1c187bccf161e5c28b09713201487c73"
+}

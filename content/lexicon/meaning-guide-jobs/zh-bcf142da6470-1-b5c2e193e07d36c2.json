@@ -1,0 +1,36 @@
+{
+  "id": "zh-bcf142da6470-1-b5c2e193e07d36c2",
+  "entry_id": "zh-bcf142da6470-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bcf142da6470-1",
+      "headword": "不如",
+      "kind": "word",
+      "reading": "bùrú",
+      "senses": [
+        {
+          "id": "zh-bcf142da6470-1-s1",
+          "definition": "would be better to; might as well"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”关羽说卢植已经被押走，三人没有依靠，不如回涿郡。",
+        "gloss": "might as well",
+        "sense_id": "zh-bcf142da6470-1-s1"
+      },
+      {
+        "sentence": "关羽认为卢植既已被捕，三人又没有官职可以依靠，不如回涿郡。",
+        "gloss": "might as well",
+        "sense_id": "zh-bcf142da6470-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f2c2706ee2aadad026fe4c1972bed53c980bd7e7d03ab81e6e04d5da87d3806d"
+}

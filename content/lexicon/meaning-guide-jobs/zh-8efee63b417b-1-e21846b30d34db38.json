@@ -1,0 +1,31 @@
+{
+  "id": "zh-8efee63b417b-1-e21846b30d34db38",
+  "entry_id": "zh-8efee63b417b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8efee63b417b-1",
+      "headword": "远望",
+      "kind": "word",
+      "reading": "yuǎnwàng",
+      "senses": [
+        {
+          "id": "zh-8efee63b417b-1-s1",
+          "definition": "to look into the distance"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人登上高冈远望，只见汉军大败，黄巾军从后面漫山而来。",
+        "gloss": "to gaze into the distance",
+        "sense_id": "zh-8efee63b417b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "838708f163fdd6e2b94cfe60a5ff27e850b9afad0762977b906c48cb709582cb"
+}

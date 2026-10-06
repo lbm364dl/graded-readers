@@ -1,0 +1,32 @@
+{
+  "id": "ja-29f1317648d3ccbe-4078c6f5bc75700b",
+  "entry_id": "ja-29f1317648d3ccbe",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-29f1317648d3ccbe",
+      "headword": "丸い",
+      "reading": "まるい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-29f1317648d3ccbe-1",
+          "definition": "round; having a circular or curved shape"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "風で葉が二枚落ちると、黒は丸い目を開いた。",
+        "gloss": "round",
+        "sense_id": "ja-29f1317648d3ccbe-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "60833f1275551e9065fd4b2d127b9114faa499b3c3a630ef80400775a137abd8"
+}

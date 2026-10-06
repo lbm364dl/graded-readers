@@ -1,0 +1,31 @@
+{
+  "id": "zh-48d3e75b9ee5-1-c0e1bdf420e604bd",
+  "entry_id": "zh-48d3e75b9ee5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-48d3e75b9ee5-1",
+      "headword": "受到",
+      "kind": "word",
+      "reading": "shòudào",
+      "senses": [
+        {
+          "id": "zh-48d3e75b9ee5-1-s1",
+          "definition": "receive or undergo (an effect, treatment, or experience)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "有人违反禁令，不管地位高低，都要受到处罚。",
+        "gloss": "to receive",
+        "sense_id": "zh-48d3e75b9ee5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a584c1d9079304e50b175aacbebac7a37662b75aff308e19d31f580ea018b770"
+}

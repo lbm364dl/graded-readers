@@ -1,0 +1,36 @@
+{
+  "id": "zh-85217f7aff77-1-2b48b701c2655d52",
+  "entry_id": "zh-85217f7aff77-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-85217f7aff77-1",
+      "headword": "日",
+      "kind": "word",
+      "reading": "rì",
+      "senses": [
+        {
+          "id": "zh-85217f7aff77-1-s1",
+          "definition": "day"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁二年四月十五日，皇帝坐在温德殿。",
+        "gloss": "day",
+        "sense_id": "zh-85217f7aff77-1-s1"
+      },
+      {
+        "sentence": "不求同年同月同日生，但愿同年同月同日死。",
+        "gloss": "day",
+        "sense_id": "zh-85217f7aff77-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3e7b13b77e2637c258329a024820f3a81ae3ebfc33427e60b4aacf31e0884510"
+}

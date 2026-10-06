@@ -1,0 +1,37 @@
+{
+  "id": "ja-d6d0dfb2dabd2123-a5147fe9a02fd7a4",
+  "entry_id": "ja-d6d0dfb2dabd2123",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d6d0dfb2dabd2123",
+      "headword": "決心",
+      "reading": "けっしん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d6d0dfb2dabd2123-1",
+          "definition": "a decision or resolve"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "声も出せないので、食物のある所まで歩く決心をし、池を左に見ながら、ゆっくり回り始めた。",
+        "gloss": "decision; resolve",
+        "sense_id": "ja-d6d0dfb2dabd2123-1"
+      },
+      {
+        "sentence": "今日から謡や俳句をやめ、絵をかく決心をしたらしい。",
+        "gloss": "decision; resolve",
+        "sense_id": "ja-d6d0dfb2dabd2123-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6fad6a30ddfc34a8c2d709df43e7c9768672c1c86d361d19cc034ad2ec247809"
+}

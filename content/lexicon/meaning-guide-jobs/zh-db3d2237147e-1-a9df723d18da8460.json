@@ -1,0 +1,31 @@
+{
+  "id": "zh-db3d2237147e-1-a9df723d18da8460",
+  "entry_id": "zh-db3d2237147e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-db3d2237147e-1",
+      "headword": "阿瞒",
+      "kind": "name",
+      "reading": "Ā Mán",
+      "senses": [
+        {
+          "id": "zh-db3d2237147e-1-s1",
+          "definition": "Cao Cao's childhood name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "为首的是曹操，字孟德，小字阿瞒，又名吉利。",
+        "gloss": "Aman, Cao Cao's childhood name",
+        "sense_id": "zh-db3d2237147e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c16d4636ed7e049ab616d36afb35a9a146d4562b7c340f77be4d5986c69a7fd8"
+}

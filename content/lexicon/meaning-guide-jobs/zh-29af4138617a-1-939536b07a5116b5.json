@@ -1,0 +1,36 @@
+{
+  "id": "zh-29af4138617a-1-939536b07a5116b5",
+  "entry_id": "zh-29af4138617a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-29af4138617a-1",
+      "headword": "连夜",
+      "kind": "word",
+      "reading": "liányè",
+      "senses": [
+        {
+          "id": "zh-29af4138617a-1-s1",
+          "definition": "during the night without delay; that night"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备领命，连夜赶到颍川。",
+        "gloss": "that same night",
+        "sense_id": "zh-29af4138617a-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩说张梁、张宝会去广宗投靠张角，于是让刘备连夜前往。",
+        "gloss": "that very night",
+        "sense_id": "zh-29af4138617a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9d74124b088ab086013f523c6dd82a465198dde97c02f56a20d8c108c1d079b6"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-39124293c1a0-1-570eacd527f7212d",
+  "entry_id": "zh-39124293c1a0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-39124293c1a0-1",
+      "headword": "祭礼",
+      "kind": "word",
+      "reading": "jìlǐ",
+      "senses": [
+        {
+          "id": "zh-39124293c1a0-1-s1",
+          "definition": "a ritual ceremony"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "祭礼结束后，他们聚集乡勇，在桃园中喝酒。",
+        "gloss": "ceremony",
+        "sense_id": "zh-39124293c1a0-1-s1"
+      },
+      {
+        "sentence": "祭礼后，他们杀牛摆酒，聚集三百多名乡勇，在桃园中痛快喝酒。",
+        "gloss": "sacrificial ceremony",
+        "sense_id": "zh-39124293c1a0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cd700dc63c7b64fea99b6c96c2a400da5583666ab9f3ac1829d91a464e23de95"
+}

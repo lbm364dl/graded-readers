@@ -1,0 +1,31 @@
+{
+  "id": "zh-db88ca087717-1-25155df3a284ef4c",
+  "entry_id": "zh-db88ca087717-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-db88ca087717-1",
+      "headword": "落榜",
+      "kind": "word",
+      "reading": "luòbǎng",
+      "senses": [
+        {
+          "id": "zh-db88ca087717-1-s1",
+          "definition": "to fail an examination and not be placed on the list of successful candidates"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角原是落榜秀才，进山采药时遇到一位老人。",
+        "gloss": "fail the imperial examination",
+        "sense_id": "zh-db88ca087717-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8acbe4c28e758aa223515faa7ad76f6dc86227198b386a1c5ffeaf2c0f1020b7"
+}

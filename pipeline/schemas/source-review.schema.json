@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source_fidelity", "naturalness", "readability", "omissions", "unsupported_additions", "distortions", "language_problems", "length_reason_en", "verdict"],
+  "properties": {
+    "source_fidelity": {"type": "number", "minimum": 0, "maximum": 10},
+    "naturalness": {"type": "number", "minimum": 0, "maximum": 10},
+    "readability": {"type": "number", "minimum": 0, "maximum": 10},
+    "omissions": {"type": "array", "items": {"type": "string"}},
+    "unsupported_additions": {"type": "array", "items": {"type": "string"}},
+    "distortions": {"type": "array", "items": {"type": "string"}},
+    "language_problems": {"type": "array", "items": {"type": "string"}},
+    "length_reason_en": {"type": "string", "minLength": 1},
+    "verdict": {"type": "string", "enum": ["pass", "revise"]}
+  }
+}

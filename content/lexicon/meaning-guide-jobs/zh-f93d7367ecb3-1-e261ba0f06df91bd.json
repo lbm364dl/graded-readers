@@ -1,0 +1,31 @@
+{
+  "id": "zh-f93d7367ecb3-1-e261ba0f06df91bd",
+  "entry_id": "zh-f93d7367ecb3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f93d7367ecb3-1",
+      "headword": "重",
+      "kind": "word",
+      "reading": "zhòng",
+      "senses": [
+        {
+          "id": "zh-f93d7367ecb3-1-s1",
+          "definition": "to weigh a specified amount"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，刘备请工匠打造双股剑，关羽打造青龙偃月刀，重八十二斤，张飞打造丈八点钢矛，并各自准备全身铠甲。",
+        "gloss": "to weigh",
+        "sense_id": "zh-f93d7367ecb3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f326fb70d74d15cff63195712cef4b7084ecdac01889aa33c331dcd490468e82"
+}

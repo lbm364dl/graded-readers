@@ -1,0 +1,32 @@
+{
+  "id": "ja-a1cdba18fec3c86f-c3181f9e92c8cc11",
+  "entry_id": "ja-a1cdba18fec3c86f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a1cdba18fec3c86f",
+      "headword": "こともする",
+      "reading": "こともする",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-a1cdba18fec3c86f-1",
+          "definition": "to do something as well; to do something even"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒の子分になって食べ物を探すこともしなかった。",
+        "gloss": "did not even do",
+        "sense_id": "ja-a1cdba18fec3c86f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8dfc7c97b84fda196a5585399c8bcfaf495a457df266e28c0217fa857c5f1cba"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-8e1c524298c8-1-f18b2bc4559a3eef",
+  "entry_id": "zh-8e1c524298c8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8e1c524298c8-1",
+      "headword": "连忙",
+      "kind": "word",
+      "reading": "liánmáng",
+      "senses": [
+        {
+          "id": "zh-8e1c524298c8-1-s1",
+          "definition": "quickly; without delay, in response to something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备连忙劝他，说不能这样做。",
+        "gloss": "hurriedly",
+        "sense_id": "zh-8e1c524298c8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9b6d0dda082f51aeb2311c4cdd519fc4ec7201c1d01852a39d51d179570b0393"
+}

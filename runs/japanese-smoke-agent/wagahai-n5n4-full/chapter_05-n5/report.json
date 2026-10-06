@@ -1,0 +1,32 @@
+{
+  "status": "complete",
+  "scenes": 4,
+  "japanese_chars": 1486,
+  "chapter_cjk": 1486,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass",
+    "scene_03": "pass",
+    "scene_04": "pass"
+  },
+  "chapter_review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [
+      "吾輩が主人夫婦を起こそうとした場面で、具体的な行動が主人中心に圧縮され、細君を起こそうとしたことが明示されていない。"
+    ],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "chapter_review_verdict": "pass",
+  "scene_attempts": {
+    "scene_01": 3,
+    "scene_02": 4,
+    "scene_03": 1,
+    "scene_04": 2
+  },
+  "unresolved_scenes": []
+}

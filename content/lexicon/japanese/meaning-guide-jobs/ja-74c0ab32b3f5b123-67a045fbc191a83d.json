@@ -1,0 +1,32 @@
+{
+  "id": "ja-74c0ab32b3f5b123-67a045fbc191a83d",
+  "entry_id": "ja-74c0ab32b3f5b123",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-74c0ab32b3f5b123",
+      "headword": "二倍",
+      "reading": "にばい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-74c0ab32b3f5b123-1",
+          "definition": "twice as much or as many; double"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒は乱暴で、体は吾輩の二倍もあり、たいへん強そうだった。",
+        "gloss": "twice; double",
+        "sense_id": "ja-74c0ab32b3f5b123-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c63e205daf731eac50cc1e079bc63129d6e2b53d2e127f71585fd6999bd64839"
+}

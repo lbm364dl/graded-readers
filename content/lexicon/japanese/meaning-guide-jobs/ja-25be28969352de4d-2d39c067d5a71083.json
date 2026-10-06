@@ -1,0 +1,32 @@
+{
+  "id": "ja-25be28969352de4d-2d39c067d5a71083",
+  "entry_id": "ja-25be28969352de4d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-25be28969352de4d",
+      "headword": "たばこ",
+      "reading": "たばこ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-25be28969352de4d-1",
+          "definition": "tobacco; a cigarette"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これが人間が吸うたばこというものだと、吾輩がようやくこの頃知った。",
+        "gloss": "tobacco; cigarette",
+        "sense_id": "ja-25be28969352de4d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "83395c6f5b8edb57eb970bd33bb495e7f6d52d3d8af4caf035aa9ace89b6e2a3"
+}

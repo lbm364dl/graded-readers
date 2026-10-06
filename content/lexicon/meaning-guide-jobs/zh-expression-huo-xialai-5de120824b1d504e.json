@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-huo-xialai-5de120824b1d504e",
+  "entry_id": "zh-expression-huo-xialai",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-huo-xialai",
+      "headword": "活下来",
+      "reading": "huó xiàlai",
+      "base_entry_id": "zh-84cbd30181dc-1",
+      "components": [
+        {
+          "entry_id": "zh-84cbd30181dc-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-dd30687a4300-1",
+          "role": "result complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-huo-xialai-s1",
+          "definition": "survive; remain alive"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "董卓能不能活下来，故事留下了悬念。",
+        "gloss": "survive; remain alive",
+        "sense_id": "zh-expression-huo-xialai-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "活",
+        "role": "verb"
+      },
+      {
+        "headword": "下来",
+        "role": "result complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bfcae06eab9ddc76959311645eb2e95da87e728c565ca6e7053baf8da23f178b"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-5f328f4ebddd-1-3607ad9d75cfe3a9",
+  "entry_id": "zh-5f328f4ebddd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5f328f4ebddd-1",
+      "headword": "正盛",
+      "kind": "construction",
+      "reading": "zhèng shèng",
+      "senses": [
+        {
+          "id": "zh-5f328f4ebddd-1-s1",
+          "definition": "be at a peak of flourishing or intensity"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞说，庄后有一座桃园，桃花开得正盛。",
+        "gloss": "be in full bloom",
+        "sense_id": "zh-5f328f4ebddd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "96c5a09d6c03bb6c35b8a22d123cf1ad538499fe59824353a32d06de2200643d"
+}

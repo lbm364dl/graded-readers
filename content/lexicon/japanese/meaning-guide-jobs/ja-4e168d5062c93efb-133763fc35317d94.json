@@ -1,0 +1,42 @@
+{
+  "id": "ja-4e168d5062c93efb-133763fc35317d94",
+  "entry_id": "ja-4e168d5062c93efb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4e168d5062c93efb",
+      "headword": "に",
+      "reading": "に",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-4e168d5062c93efb-1",
+          "definition": "Marks a location, position, or destination; in, at, or into."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "with; in the position of",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "into; in",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      },
+      {
+        "sentence": "吾輩はこの家に住むことにしました。",
+        "gloss": "in; at",
+        "sense_id": "ja-4e168d5062c93efb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8c9adb18fc78eee97a9ed3b2cc972fc992e3fc10120c31ed47850fdad410292e"
+}

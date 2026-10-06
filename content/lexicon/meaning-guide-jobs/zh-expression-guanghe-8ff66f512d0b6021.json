@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-guanghe-8ff66f512d0b6021",
+  "entry_id": "zh-expression-guanghe",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-guanghe",
+      "headword": "光和",
+      "reading": "Guānghé",
+      "kind": "name",
+      "base_entry_id": "zh-bf728630db0b-1",
+      "components": [
+        {
+          "entry_id": "zh-bf728630db0b-1",
+          "role": "name element"
+        },
+        {
+          "entry_id": "zh-3d7114281f5b-2",
+          "role": "name element"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-guanghe-s1",
+          "definition": "the Guanghe reign-era name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "光和元年，母鸡变成公鸡；六月初一，黑气飞入宫中。",
+        "gloss": "the Guanghe reign-era name",
+        "sense_id": "zh-expression-guanghe-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "光",
+        "role": "name element"
+      },
+      {
+        "headword": "和",
+        "role": "name element"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "93a32d34cda78b46764bb866201d028cd2c8efaf30809b2ee35aefa2d710497a"
+}

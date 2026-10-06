@@ -1,0 +1,31 @@
+{
+  "id": "zh-170819193a32-1-95d89c6dbac26568",
+  "entry_id": "zh-170819193a32-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-170819193a32-1",
+      "headword": "金鼓",
+      "kind": "word",
+      "reading": "jīngǔ",
+      "senses": [
+        {
+          "id": "zh-170819193a32-1-s1",
+          "definition": "gongs and drums"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "恰好张梁、张宝已经败退，曹操截住他们，斩首万余级，夺得许多旗帜、金鼓和马匹。",
+        "gloss": "gongs and drums",
+        "sense_id": "zh-170819193a32-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6e402b975681839ee0e6c462132fa5d1669e1a02e6e6192a6e139eb6cba1e45e"
+}

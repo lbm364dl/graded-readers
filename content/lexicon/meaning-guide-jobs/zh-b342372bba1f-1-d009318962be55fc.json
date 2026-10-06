@@ -1,0 +1,31 @@
+{
+  "id": "zh-b342372bba1f-1-d009318962be55fc",
+  "entry_id": "zh-b342372bba1f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b342372bba1f-1",
+      "headword": "不肯",
+      "kind": "word",
+      "reading": "bù kěn",
+      "senses": [
+        {
+          "id": "zh-b342372bba1f-1-s1",
+          "definition": "be unwilling to; refuse to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他便诬陷我不肯作战。",
+        "gloss": "refuse to",
+        "sense_id": "zh-b342372bba1f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "57abff583f2d9e1c6472c7344fe34f552cce48961f34ac616a9bdd62a9ae3c38"
+}

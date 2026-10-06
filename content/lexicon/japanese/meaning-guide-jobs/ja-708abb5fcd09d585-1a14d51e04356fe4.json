@@ -1,0 +1,32 @@
+{
+  "id": "ja-708abb5fcd09d585-1a14d51e04356fe4",
+  "entry_id": "ja-708abb5fcd09d585",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-708abb5fcd09d585",
+      "headword": "ものの",
+      "reading": "ものの",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-708abb5fcd09d585-1",
+          "definition": "although; despite the fact that"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "邸内に入ったものの、どうすればよいかは分からない。",
+        "gloss": "although; despite the fact that",
+        "sense_id": "ja-708abb5fcd09d585-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "310257d87d3ee49ba33810d8388be1b45a74dd88db4c48cf7c7b11dbd7b49415"
+}

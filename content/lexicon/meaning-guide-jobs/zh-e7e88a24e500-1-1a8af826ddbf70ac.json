@@ -1,0 +1,31 @@
+{
+  "id": "zh-e7e88a24e500-1-1a8af826ddbf70ac",
+  "entry_id": "zh-e7e88a24e500-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e7e88a24e500-1",
+      "headword": "打到",
+      "kind": "construction",
+      "reading": "dǎdào",
+      "senses": [
+        {
+          "id": "zh-e7e88a24e500-1-s1",
+          "definition": "to fight one's way to or reach a place through fighting"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军将要打到幽州。",
+        "gloss": "fight to",
+        "sense_id": "zh-e7e88a24e500-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "38c888a7787de455a3eb3e3b401529bc785e6f228cd32bd2dc5be048df4acd96"
+}

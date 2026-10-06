@@ -1,0 +1,83 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_042-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 299,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "遗漏赵云救出阿斗后得知糜夫人投井，以及刘备因爱将险死而掷阿斗、赵云感激拜谢这一重要情节。",
+      "classification": "material",
+      "reason": "这些内容包含糜夫人之死、刘备掷阿斗的动机，以及赵云与刘备关系和忠诚刻画，属于重要事件与人物塑造。",
+      "required_fix": "补回糜夫人投井、刘备掷阿斗及赵云感激拜谢的情节。"
+    },
+    {
+      "omission_note": "略去张飞喝退曹军时夏侯杰惊死、曹军自相践踏等细节。",
+      "classification": "material",
+      "reason": "夏侯杰惊死是明确事件，曹军自相践踏也具体表现了张飞喝退曹军的战果与威势，超出单纯氛围或装饰性描写。",
+      "required_fix": "补写夏侯杰惊死及曹军逃奔时自相践踏、丢盔弃甲的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "遗漏赵云救出阿斗后得知糜夫人投井，以及刘备因爱将险死而掷阿斗、赵云感激拜谢这一重要情节。",
+      "classification": "material",
+      "reason": "这些内容包含糜夫人之死、刘备掷阿斗的动机，以及赵云与刘备关系和忠诚刻画，属于重要事件与人物塑造。",
+      "required_fix": "补回糜夫人投井、刘备掷阿斗及赵云感激拜谢的情节。"
+    },
+    {
+      "omission_note": "略去张飞喝退曹军时夏侯杰惊死、曹军自相践踏等细节。",
+      "classification": "material",
+      "reason": "夏侯杰惊死是明确事件，曹军自相践踏也具体表现了张飞喝退曹军的战果与威势，超出单纯氛围或装饰性描写。",
+      "required_fix": "补写夏侯杰惊死及曹军逃奔时自相践踏、丢盔弃甲的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 300,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.5,
+        "readability": 8.5,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "将钟缙说成被赵云刺死；原文写赵云将其刺落马后，钟缙夺路逃走。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 299,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

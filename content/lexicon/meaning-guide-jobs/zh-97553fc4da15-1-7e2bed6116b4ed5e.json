@@ -1,0 +1,31 @@
+{
+  "id": "zh-97553fc4da15-1-7e2bed6116b4ed5e",
+  "entry_id": "zh-97553fc4da15-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-97553fc4da15-1",
+      "headword": "帐外",
+      "kind": "word",
+      "reading": "zhàngwài",
+      "senses": [
+        {
+          "id": "zh-97553fc4da15-1-s1",
+          "definition": "outside a tent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "走出帐外，张飞气得握紧刀，大声说：“我们拼命救他，他却这样对待我们！",
+        "gloss": "outside the tent",
+        "sense_id": "zh-97553fc4da15-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e06d84de5e044559249703c65516859f865dd09384132a6765dd4acf4620201f"
+}

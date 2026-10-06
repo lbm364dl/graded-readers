@@ -1,0 +1,31 @@
+{
+  "id": "zh-6ea559fa53fa-1-1005055980b6ba01",
+  "entry_id": "zh-6ea559fa53fa-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6ea559fa53fa-1",
+      "headword": "求援",
+      "kind": "word",
+      "reading": "qiúyuán",
+      "senses": [
+        {
+          "id": "zh-6ea559fa53fa-1-s1",
+          "definition": "to ask for help or reinforcements"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，青州太守派人送来求援消息，说黄巾军围住了城，城里的人十分不安。",
+        "gloss": "request aid",
+        "sense_id": "zh-6ea559fa53fa-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "61cdb0c0ee6247b39e66d33a11576f14d82d99fc03a0185bf9e034fcb806a0b9"
+}

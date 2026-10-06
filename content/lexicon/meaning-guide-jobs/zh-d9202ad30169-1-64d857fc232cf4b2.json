@@ -1,0 +1,31 @@
+{
+  "id": "zh-d9202ad30169-1-64d857fc232cf4b2",
+  "entry_id": "zh-d9202ad30169-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d9202ad30169-1",
+      "headword": "之间",
+      "kind": "word",
+      "reading": "zhījiān",
+      "senses": [
+        {
+          "id": "zh-d9202ad30169-1-s1",
+          "definition": "during; in the course of an activity"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "正饮之间，一个大汉推车到店门口歇下，入店便叫酒保倒酒，说要赶进城投军。",
+        "gloss": "in the midst of",
+        "sense_id": "zh-d9202ad30169-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4d75a6cba1df5e6c543a6e524d262ba5769943a63d4901d580c72c2520b89ec3"
+}

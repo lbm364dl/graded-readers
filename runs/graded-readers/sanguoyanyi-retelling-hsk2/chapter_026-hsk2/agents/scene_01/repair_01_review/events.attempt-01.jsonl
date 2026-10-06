@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff38b-47d4-72c2-966b-4f130405fe61"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.92,\"naturalness\":0.72,\"readability\":0.78,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[],\"language_problems\":[\"篇幅明显超过500字目标的130%上限。\",\"“司马懿不是一直留在营中……”重复前文信息，语气突兀，影响连贯性。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":36135,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1137,"reasoning_output_tokens":1034}}

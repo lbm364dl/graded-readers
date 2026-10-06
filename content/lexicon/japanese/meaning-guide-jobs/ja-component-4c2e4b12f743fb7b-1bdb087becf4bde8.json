@@ -1,0 +1,26 @@
+{
+  "id": "ja-component-4c2e4b12f743fb7b-1bdb087becf4bde8",
+  "entry_id": "ja-component-4c2e4b12f743fb7b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-component-4c2e4b12f743fb7b",
+      "headword": "逆さ",
+      "reading": "さかさ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-component-4c2e4b12f743fb7b-1",
+          "definition": "An inverted or upside-down position."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d3d10e9bc4dddf00c59d23cee89ab9127125b7b21fef31f97056ac53ce257812"
+}

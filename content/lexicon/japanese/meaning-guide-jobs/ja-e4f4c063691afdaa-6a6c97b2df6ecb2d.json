@@ -1,0 +1,36 @@
+{
+  "id": "ja-e4f4c063691afdaa-6a6c97b2df6ecb2d",
+  "entry_id": "ja-e4f4c063691afdaa",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e4f4c063691afdaa",
+      "headword": "担ぐ",
+      "reading": "かつぐ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e4f4c063691afdaa-1",
+          "definition": "to carry or hoist something on one's shoulder"
+        },
+        {
+          "id": "ja-e4f4c063691afdaa-2",
+          "definition": "to trick or deceive someone; to make a fool of someone"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩には、この男が、こんな冗談を言って人を担ぐことを楽しんでいるように思われた。",
+        "gloss": "play a trick on; make a fool of",
+        "sense_id": "ja-e4f4c063691afdaa-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8e7cfe0d30404013dfbe6b7b160430832d9e3df65a91939bf63873b68825537a"
+}

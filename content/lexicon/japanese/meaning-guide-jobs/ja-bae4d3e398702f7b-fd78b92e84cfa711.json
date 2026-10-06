@@ -1,0 +1,141 @@
+{
+  "id": "ja-bae4d3e398702f7b-fd78b92e84cfa711",
+  "entry_id": "ja-bae4d3e398702f7b",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-bae4d3e398702f7b",
+      "headword": "と",
+      "reading": "と",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-bae4d3e398702f7b-1",
+          "definition": "Marks quoted speech or thought."
+        },
+        {
+          "id": "ja-bae4d3e398702f7b-2",
+          "definition": "Follows a verb or clause to mark an immediate or predictable result, or an occurrence upon which another event follows; when, whenever, or if."
+        },
+        {
+          "id": "ja-bae4d3e398702f7b-3",
+          "definition": "Marks a person or thing accompanying or participating with another; with."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "quoting the preceding words",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "後で聞くとその人間は書生で、猫をつかまえて煮て食べることもあるそうだ。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "手の上に乗せられ、顔を見ると、毛のない顔は薬缶のようで、顔の真ん中の出た所の穴から時々煙を吹いた。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "後で、それがたばこだと知った。",
+        "gloss": "quoting marker",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "見ると、書生も兄弟もお母さんもいない。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "とても明るい所で、痛いので出てみると、吾輩はわらの上から笹原へ捨てられていた。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "笹原を出ると池があり、鳴いて書生を呼んだが、誰も来なかった。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「では、家の内に置いてやれ」と言った。",
+        "gloss": "quoting the command",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "西の垣のそばへ行くと、大きな黒い猫が枯菊の上で寝ていた。",
+        "gloss": "when; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "風で葉が二枚落ちると、黒は丸い目を開いた。",
+        "gloss": "when; if; upon",
+        "sense_id": "ja-bae4d3e398702f7b-2"
+      },
+      {
+        "sentence": "「君は何だ」と言った。",
+        "gloss": "quotative marker",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "名前はまだない」と答えた。",
+        "gloss": "quoting the statement",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "黒は「車屋の黒だ」と言った。",
+        "gloss": "quoting",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "吾輩はその後、黒と何回も会い、話をするようになった。",
+        "gloss": "with",
+        "sense_id": "ja-bae4d3e398702f7b-3"
+      },
+      {
+        "sentence": "黒は「人間は、格好のよい泥棒だ」と怒った。",
+        "gloss": "quoting",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "吾輩はその話を聞き、決して鼠をとるまいと決めた。",
+        "gloss": "quoting the thought or decision",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      },
+      {
+        "sentence": "鼠をとるより、寝ている方がよいと思った。",
+        "gloss": "marks quoted thought",
+        "sense_id": "ja-bae4d3e398702f7b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-bae4d3e398702f7b",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "と follows quoted words or a sentence and marks them as speech or thought. It commonly comes before a verb such as 言う “say” or 思う “think,” which tells who says or thinks the quoted content.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "と",
+        "contribution_en": "Marks the preceding words or sentence as quoted speech or thought.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "55d7b3636c6c81b4e3c738053ffb69b7b7dccdc20653523be002cf6855750429",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6e63f294c76bd228a38676f206a0cece0f8bc20684b15d98e71fa8aa341b7f9e"
+}

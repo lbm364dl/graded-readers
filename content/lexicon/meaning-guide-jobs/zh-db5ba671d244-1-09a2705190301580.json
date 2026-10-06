@@ -1,0 +1,85 @@
+{
+  "id": "zh-db5ba671d244-1-09a2705190301580",
+  "entry_id": "zh-db5ba671d244-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-db5ba671d244-1",
+      "headword": "上",
+      "kind": "particle",
+      "reading": "shàng",
+      "senses": [
+        {
+          "id": "zh-db5ba671d244-1-s1",
+          "definition": "onto; indicates movement or attachment to a surface"
+        },
+        {
+          "id": "zh-db5ba671d244-1-s2",
+          "definition": "on; at a location or surface"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "百姓纷纷裹上黄巾，跟随黄巾军的人有四五十万。",
+        "gloss": "onto, indicating attachment",
+        "sense_id": "zh-db5ba671d244-1-s1"
+      },
+      {
+        "sentence": "殿角忽然刮起狂风，一条大青蛇从房梁上飞下来，盘在座椅上。",
+        "gloss": "on; above",
+        "sense_id": "zh-db5ba671d244-1-s2"
+      },
+      {
+        "sentence": "殿角忽然刮起狂风，一条大青蛇从房梁上飞下来，盘在座椅上。",
+        "gloss": "on",
+        "sense_id": "zh-db5ba671d244-1-s2"
+      },
+      {
+        "sentence": "他又让人传出“苍天已死，黄天当立”和“岁在甲子，天下大吉”的话，叫百姓在家门上写“甲子”。",
+        "gloss": "on; above",
+        "sense_id": "zh-db5ba671d244-1-s2"
+      },
+      {
+        "sentence": "黄巾军披着头发，额上围着黄巾。",
+        "gloss": "on",
+        "sense_id": "zh-db5ba671d244-1-s2"
+      },
+      {
+        "sentence": "一条大青蛇从梁上飞下，盘在座位上。",
+        "gloss": "on",
+        "sense_id": "zh-db5ba671d244-1-s2"
+      },
+      {
+        "sentence": "张角让手下向百姓传话，说旧的天下已经衰弱，新的天下将要出现，还叫人用白土在家门上写下“甲子”二字。",
+        "gloss": "on",
+        "sense_id": "zh-db5ba671d244-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-db5ba671d244-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "After a verb, 上 marks movement onto a surface or attachment to it.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "上",
+        "contribution_en": "After a verb, marks movement onto a surface or attachment to it.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "23518906f3eaa36ce5276694e3ee1350c30d093219a3cf9d1bc092f2d7d7e731",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5db78622c9129101477cec19137abb63ae9ea91b1f6bed0685875bc52f2e014d"
+}

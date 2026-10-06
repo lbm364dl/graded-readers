@@ -1,0 +1,32 @@
+{
+  "id": "ja-4c5b33383e61873a-51d1c26591ad0634",
+  "entry_id": "ja-4c5b33383e61873a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4c5b33383e61873a",
+      "headword": "奥",
+      "reading": "おく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4c5b33383e61873a-1",
+          "definition": "the inner part; the interior; farther inside"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人はそれだけ言って奥へ入った。",
+        "gloss": "the inner part; farther inside",
+        "sense_id": "ja-4c5b33383e61873a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5605c00cec6cc4ec2e2f93368dfc2c1b38a52ead32870e1253f2c0eeb679ea30"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff2f5-baa1-7cf2-b6df-62b902c55e54"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.93,\"naturalness\":0.91,\"readability\":0.9,\"omissions\":[\"篇幅明显超过750字目标，未达到紧凑压缩要求。\"],\"unsupported_additions\":[],\"distortions\":[\"“袁绍、曹操带兵入宫”并非完整准确：二人率兵入宫后追击宦官，但少帝和陈留王主要由闵贡等寻回并护送回洛阳。\"],\"language_problems\":[],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":29582,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1164,"reasoning_output_tokens":1034}}

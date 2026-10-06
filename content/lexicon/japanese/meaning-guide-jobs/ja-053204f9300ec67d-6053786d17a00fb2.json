@@ -1,0 +1,32 @@
+{
+  "id": "ja-053204f9300ec67d-6053786d17a00fb2",
+  "entry_id": "ja-053204f9300ec67d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-053204f9300ec67d",
+      "headword": "手を出す",
+      "reading": "てをだす",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-053204f9300ec67d-1",
+          "definition": "to get involved in something; to try one's hand at it"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は俳句、新しい詩、英語、弓、歌、バイオリンなど、何にでも手を出すが、どれも上手にならない。",
+        "gloss": "try one's hand at; dabble in",
+        "sense_id": "ja-053204f9300ec67d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "239081f2ca3709ada5824e22be756bd26816fd567892764436453cb25f314625"
+}

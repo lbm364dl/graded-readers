@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-ting-ming-2119567e10473463",
+  "entry_id": "zh-expression-ting-ming",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-ting-ming",
+      "headword": "听命",
+      "reading": "tīngmìng",
+      "base_entry_id": "zh-1f2eb2608d23-1",
+      "components": [
+        {
+          "entry_id": "zh-1f2eb2608d23-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-42abb81858b5-1",
+          "role": "orders"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-ting-ming-s1",
+          "definition": "heed or obey orders"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "卢植很高兴，让他留下听命。",
+        "gloss": "heed or obey orders",
+        "sense_id": "zh-expression-ting-ming-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "听",
+        "role": "verb"
+      },
+      {
+        "headword": "命",
+        "role": "orders"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6ca5ff3cb607206408ce46ee6757be79e38366ffcdbf65e60e5cadb75a959f3e"
+}

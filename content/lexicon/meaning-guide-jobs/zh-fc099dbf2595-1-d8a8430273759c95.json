@@ -1,0 +1,31 @@
+{
+  "id": "zh-fc099dbf2595-1-d8a8430273759c95",
+  "entry_id": "zh-fc099dbf2595-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fc099dbf2595-1",
+      "headword": "焚",
+      "kind": "word",
+      "reading": "fén",
+      "senses": [
+        {
+          "id": "zh-fc099dbf2595-1-s1",
+          "definition": "to burn; to set something on fire"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "次日，三人备好祭礼，焚香再拜。",
+        "gloss": "to burn",
+        "sense_id": "zh-fc099dbf2595-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f585a4cd0433249e94ca3b8e250c6c6e345ba22b63cf87ff29e4655ccd8fd6ff"
+}

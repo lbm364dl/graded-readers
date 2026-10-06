@@ -1,0 +1,31 @@
+{
+  "id": "zh-3a0f8ca8e74a-1-15b7fb872a2d4ddc",
+  "entry_id": "zh-3a0f8ca8e74a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3a0f8ca8e74a-1",
+      "headword": "忽起",
+      "kind": "construction",
+      "reading": "hūqǐ",
+      "senses": [
+        {
+          "id": "zh-3a0f8ca8e74a-1-s1",
+          "definition": "arise or begin suddenly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "殿角忽起狂风，一条大青蛇从梁上飞下，盘在椅上。",
+        "gloss": "suddenly arose",
+        "sense_id": "zh-3a0f8ca8e74a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "72017f0cc2ef99abb5019091934ee5b403513b5b49c472c6e448c194c80c1f53"
+}

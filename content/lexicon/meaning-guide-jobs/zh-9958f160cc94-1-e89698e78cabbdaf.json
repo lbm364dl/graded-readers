@@ -1,0 +1,31 @@
+{
+  "id": "zh-9958f160cc94-1-e89698e78cabbdaf",
+  "entry_id": "zh-9958f160cc94-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9958f160cc94-1",
+      "headword": "而有",
+      "kind": "construction",
+      "reading": "ér yǒu",
+      "senses": [
+        {
+          "id": "zh-9958f160cc94-1-s1",
+          "definition": "Boundary error: the annotation bundles the linker 而 with the independent predicate 有; correct the upstream lexical boundary rather than treating the combined token as a separate lexical item."
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备不怎么读书，性情宽和，少言而有大志，喜欢结交天下豪杰。",
+        "gloss": "and possess",
+        "sense_id": "zh-9958f160cc94-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "32a4ab1e513aa492ff6221936acd9c4d87248bb36f87eff8a3000f037817ae0a"
+}

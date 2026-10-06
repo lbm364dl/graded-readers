@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff511-2875-7dc0-af13-850768568a14"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.93,\"readability\":0.93,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“刘备于是得到汉中要地”略显提前概括；此时主要是夺取定军山等战略据点，汉中全局尚未完全平定。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":33982,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1134,"reasoning_output_tokens":1034}}

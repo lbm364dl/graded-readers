@@ -1,0 +1,32 @@
+{
+  "id": "ja-005674689b2e845b-41badbfe21500f01",
+  "entry_id": "ja-005674689b2e845b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-005674689b2e845b",
+      "headword": "目から火が出る",
+      "reading": "めからひがでる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-005674689b2e845b-1",
+          "definition": "to see stars from a sharp blow or sudden pain"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "大きな音がして落ち、目から火が出たところまでは覚えている。",
+        "gloss": "sparks flew from my eyes",
+        "sense_id": "ja-005674689b2e845b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3c3b83326fca4e9e796c49791b5b5bb3495ca58a20632b1def77900dff904b6c"
+}

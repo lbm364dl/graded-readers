@@ -1,0 +1,31 @@
+{
+  "id": "zh-a57fbc7663a1-1-0e28df0ba2fc4312",
+  "entry_id": "zh-a57fbc7663a1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a57fbc7663a1-1",
+      "headword": "一定",
+      "kind": "word",
+      "reading": "yídìng",
+      "senses": [
+        {
+          "id": "zh-a57fbc7663a1-1-s1",
+          "definition": "certainly; definitely"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "我一定要杀了董卓！",
+        "gloss": "definitely",
+        "sense_id": "zh-a57fbc7663a1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "009ff7f986e607a0d1ab22725b5f1b91d17db5c1db3d39bcbd51eb0dada4b4e4"
+}

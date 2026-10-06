@@ -1,0 +1,31 @@
+{
+  "id": "zh-2a953c4338c1-1-c395df6b3eae38c6",
+  "entry_id": "zh-2a953c4338c1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2a953c4338c1-1",
+      "headword": "额",
+      "kind": "word",
+      "reading": "é",
+      "senses": [
+        {
+          "id": "zh-2a953c4338c1-1-s1",
+          "definition": "forehead"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军披着头发，额上围着黄巾。",
+        "gloss": "forehead",
+        "sense_id": "zh-2a953c4338c1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "05cc586b02150c68cee02c69359615f61b34419e7b1d925677a3404ba13e1c3b"
+}

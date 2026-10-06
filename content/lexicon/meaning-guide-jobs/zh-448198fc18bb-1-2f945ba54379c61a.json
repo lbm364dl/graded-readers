@@ -1,0 +1,31 @@
+{
+  "id": "zh-448198fc18bb-1-2f945ba54379c61a",
+  "entry_id": "zh-448198fc18bb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-448198fc18bb-1",
+      "headword": "冲出",
+      "kind": "construction",
+      "reading": "chōng chū",
+      "senses": [
+        {
+          "id": "zh-448198fc18bb-1-s1",
+          "definition": "to rush out"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "两路伏兵同时冲出，刘备也回头进攻。",
+        "gloss": "to rush out",
+        "sense_id": "zh-448198fc18bb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1cc9bb5755a8854f8fc0fc40d3900fb95b0a62ce47db99a40f6c370908825d15"
+}

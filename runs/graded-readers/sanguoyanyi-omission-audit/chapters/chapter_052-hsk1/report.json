@@ -1,0 +1,74 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_052-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 179,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了取零陵后刘备安抚军民及赵云、张飞争取任务的细节。",
+      "classification": "material",
+      "reason": "赵云、张飞争取任务体现二人的重要性格和关系，并解释赵云抽签领兵取桂阳及张飞随后请求取武陵的动机；刘备安抚军民虽较次要，但与该关键过渡一并遗漏，削弱了后续情节的连贯性。",
+      "required_fix": "补回刘备入城安抚军民、赏劳三军，以及赵云与张飞争取出兵、拈鬮决定由赵云领三千兵取桂阳的关键过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了取零陵后刘备安抚军民及赵云、张飞争取任务的细节。",
+      "classification": "material",
+      "reason": "赵云、张飞争取任务体现二人的重要性格和关系，并解释赵云抽签领兵取桂阳及张飞随后请求取武陵的动机；刘备安抚军民虽较次要，但与该关键过渡一并遗漏，削弱了后续情节的连贯性。",
+      "required_fix": "补回刘备入城安抚军民、赏劳三军，以及赵云与张飞争取出兵、拈鬮决定由赵云领三千兵取桂阳的关键过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 175,
+      "review": {
+        "source_fidelity": 7.8,
+        "naturalness": 8.3,
+        "readability": 8.5,
+        "material_omissions": [
+          "省略了趙範投降後與趙雲結為兄弟的關係（以及同姓同鄉等背景），削弱了趙雲拒絕娶樊氏及後續識破趙範陰謀的動機與連貫性。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 179,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

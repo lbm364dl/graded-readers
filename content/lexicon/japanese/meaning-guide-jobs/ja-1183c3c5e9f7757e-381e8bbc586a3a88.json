@@ -1,0 +1,32 @@
+{
+  "id": "ja-1183c3c5e9f7757e-381e8bbc586a3a88",
+  "entry_id": "ja-1183c3c5e9f7757e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1183c3c5e9f7757e",
+      "headword": "たくなる",
+      "reading": "たくなる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-1183c3c5e9f7757e-1",
+          "definition": "Following a verb's continuative stem, ～たくなる expresses coming to want to do that action."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はその名を聞くと少し不安になったが、同時に、どれほど無学なのか試してみたくなった。",
+        "gloss": "came to want to try",
+        "sense_id": "ja-1183c3c5e9f7757e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ee662c38fbc624a8f0f3d59d1c31681817deee194dff2eca99243105d9e64f34"
+}

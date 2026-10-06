@@ -1,0 +1,88 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_064-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 339,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略韦康投降后被马超处死这一关键背景，使杨阜复仇的直接因果略显跳跃。",
+      "classification": "material",
+      "reason": "韦康被杀直接 motivates 杨阜复仇，并 establishes 马超残暴及杨阜未降的关键因果背景。",
+      "required_fix": "补充韦康投降后被马超处死，以及杨阜因此坚持复仇的情节。"
+    },
+    {
+      "omission_note": "省略刘备写信劝降刘璋后，刘璋毁信斥责法正的具体情节。",
+      "classification": "material",
+      "reason": "这不仅是劝降失败的具体事件，也体现刘璋对法正的态度并强化其拒降动机；仅概述为劝降后发怒逐使者不足以保留这些信息。",
+      "required_fix": "补充法正代刘备致信劝降、刘璋撕毁书信并斥责法正的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略韦康投降后被马超处死这一关键背景，使杨阜复仇的直接因果略显跳跃。",
+      "classification": "material",
+      "reason": "韦康被杀直接 motivates 杨阜复仇，并 establishes 马超残暴及杨阜未降的关键因果背景。",
+      "required_fix": "补充韦康投降后被马超处死，以及杨阜因此坚持复仇的情节。"
+    },
+    {
+      "omission_note": "省略刘备写信劝降刘璋后，刘璋毁信斥责法正的具体情节。",
+      "classification": "material",
+      "reason": "这不仅是劝降失败的具体事件，也体现刘璋对法正的态度并强化其拒降动机；仅概述为劝降后发怒逐使者不足以保留这些信息。",
+      "required_fix": "补充法正代刘备致信劝降、刘璋撕毁书信并斥责法正的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8.5,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 346,
+      "review": {
+        "source_fidelity": 7,
+        "naturalness": 7,
+        "readability": 8,
+        "material_omissions": [
+          "省略马超得知叛乱后斩杀赵月，以及梁宽、赵衢在冀城杀害马超妻子、幼子和亲属的关键情节，削弱了马超败逃和屠城报复的因果。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "称“赵昂全家”皆被马超杀死，遗漏原文明确说明赵昂妻王氏因在军中而幸免，造成事实不准确。"
+        ],
+        "language_problems": [
+          "“备取成都”表述含混且不自然，宜改为“准备攻取成都”。",
+          "“以全忠名”不够自然，宜改为“以全其忠名”或“成全其忠名”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 339,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

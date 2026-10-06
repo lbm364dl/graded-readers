@@ -1,0 +1,32 @@
+{
+  "id": "ja-3b7ec2219ea5b9e7-dd876cfbf4bdedea",
+  "entry_id": "ja-3b7ec2219ea5b9e7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3b7ec2219ea5b9e7",
+      "headword": "というわけではない",
+      "reading": "というわけではない",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-3b7ec2219ea5b9e7-1",
+          "definition": "it is not that; it does not mean that"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が好きだからというわけではない。",
+        "gloss": "it is not that; it does not mean that",
+        "sense_id": "ja-3b7ec2219ea5b9e7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2838ca4c166591b3eb589fce239c147237191149576b089f229f1e35e3677a4a"
+}

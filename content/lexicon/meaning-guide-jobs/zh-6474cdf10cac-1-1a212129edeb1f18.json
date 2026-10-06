@@ -1,0 +1,31 @@
+{
+  "id": "zh-6474cdf10cac-1-1a212129edeb1f18",
+  "entry_id": "zh-6474cdf10cac-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6474cdf10cac-1",
+      "headword": "告状",
+      "kind": "word",
+      "reading": "gàozhuàng",
+      "senses": [
+        {
+          "id": "zh-6474cdf10cac-1-s1",
+          "definition": "complain about or accuse someone to another person or authority"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操的叔父曾因他游荡无度，向曹嵩告状。",
+        "gloss": "to tell on someone",
+        "sense_id": "zh-6474cdf10cac-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bb6df7a07035a8c26a191f02f0112398a60a5f1e484d9e7a0380411304fcf361"
+}

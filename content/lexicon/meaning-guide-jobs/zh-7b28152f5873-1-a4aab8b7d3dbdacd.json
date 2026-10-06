@@ -1,0 +1,31 @@
+{
+  "id": "zh-7b28152f5873-1-a4aab8b7d3dbdacd",
+  "entry_id": "zh-7b28152f5873-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7b28152f5873-1",
+      "headword": "喜怒",
+      "kind": "word",
+      "reading": "xǐnù",
+      "senses": [
+        {
+          "id": "zh-7b28152f5873-1-s1",
+          "definition": "joy and anger; emotional reactions"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备不太专心读书，性情宽和，话不多，喜怒很少露在脸上。",
+        "gloss": "joy and anger",
+        "sense_id": "zh-7b28152f5873-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "caa57e108dae95ef68f3c1894bda5288bd7f14f49948757bc1459f5a4c79e000"
+}

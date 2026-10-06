@@ -1,0 +1,31 @@
+{
+  "id": "zh-7580db8de8e9-1-7793ec96ba365d63",
+  "entry_id": "zh-7580db8de8e9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7580db8de8e9-1",
+      "headword": "入宫",
+      "kind": "construction",
+      "reading": "rù gōng",
+      "senses": [
+        {
+          "id": "zh-7580db8de8e9-1-s1",
+          "definition": "enter the palace"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "灵帝惊倒，左右急忙救他入宫，百官奔走躲避。",
+        "gloss": "enter the palace",
+        "sense_id": "zh-7580db8de8e9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3b1542e16bb39faad671a7f3ad2a6f9ed93e6402132c469cc0e6b4a72154c3a6"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-6a2688137fc4-1-54e04dd1154b91b6",
+  "entry_id": "zh-6a2688137fc4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6a2688137fc4-1",
+      "headword": "为友",
+      "kind": "construction",
+      "reading": "wéi yǒu",
+      "senses": [
+        {
+          "id": "zh-6a2688137fc4-1-s1",
+          "definition": "to be friends with"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "十五岁时，母亲让他外出游学，他曾师从郑玄、卢植，也与公孙瓒等人为友。",
+        "gloss": "to be friends with",
+        "sense_id": "zh-6a2688137fc4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b4bcea37e7be2e656727afde3d7a30f66528ec7f03390ca5e29cdd6a2a7593bd"
+}

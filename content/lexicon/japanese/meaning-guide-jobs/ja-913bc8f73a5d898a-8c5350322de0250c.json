@@ -1,0 +1,32 @@
+{
+  "id": "ja-913bc8f73a5d898a-8c5350322de0250c",
+  "entry_id": "ja-913bc8f73a5d898a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-913bc8f73a5d898a",
+      "headword": "早い",
+      "reading": "はやい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-913bc8f73a5d898a-1",
+          "definition": "early"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "冬の日差しが早く傾き、吾輩の昼寝の時間も短くなった。",
+        "gloss": "early",
+        "sense_id": "ja-913bc8f73a5d898a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dceaa222cefa46f7ffd5903daa27bc8048f1c11da64c32b7931781e944cbd6ab"
+}

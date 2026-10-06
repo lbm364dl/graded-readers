@@ -1,0 +1,32 @@
+{
+  "id": "ja-7f4c2273982371ac-0a30bdc97c878170",
+  "entry_id": "ja-7f4c2273982371ac",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7f4c2273982371ac",
+      "headword": "空く",
+      "reading": "あく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7f4c2273982371ac-1",
+          "definition": "to become vacant or open up; to leave space available"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は二人の間に少し空いた場所を見つけ、どうにか入り込む。",
+        "gloss": "opened up; became vacant",
+        "sense_id": "ja-7f4c2273982371ac-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2b4517b536210953d93a5de2a5cce643b6a0ae4f26b4843f23ce1fcb0072e45b"
+}

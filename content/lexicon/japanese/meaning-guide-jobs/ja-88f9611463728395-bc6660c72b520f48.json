@@ -1,0 +1,32 @@
+{
+  "id": "ja-88f9611463728395-bc6660c72b520f48",
+  "entry_id": "ja-88f9611463728395",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-88f9611463728395",
+      "headword": "散る",
+      "reading": "ちる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-88f9611463728395-1",
+          "definition": "to scatter; to disperse or fall apart"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "もう助からないと思った時、どさりという音がして、目の前に火花が散った。",
+        "gloss": "scattered; flew",
+        "sense_id": "ja-88f9611463728395-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5e239ad2f52423eff2495dc35d743432ef1eba8cc7725f14adc4692b48707f69"
+}

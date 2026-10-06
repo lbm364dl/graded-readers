@@ -1,0 +1,32 @@
+{
+  "id": "ja-553f2302b91f38ee-fa779cca9e926049",
+  "entry_id": "ja-553f2302b91f38ee",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-553f2302b91f38ee",
+      "headword": "薄暗い",
+      "reading": "うすぐらい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-553f2302b91f38ee-1",
+          "definition": "Dim; not brightly lit."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ただ、薄暗くてじめじめした場所で、ニャーニャー泣いていたことだけは覚えている。",
+        "gloss": "dim and gloomy",
+        "sense_id": "ja-553f2302b91f38ee-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bdd95186bb02e1fb1d45d0189d3125d842021a3538dbc4a55ecfefc6b40d411d"
+}

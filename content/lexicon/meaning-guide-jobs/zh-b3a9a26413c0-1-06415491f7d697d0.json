@@ -1,0 +1,36 @@
+{
+  "id": "zh-b3a9a26413c0-1-06415491f7d697d0",
+  "entry_id": "zh-b3a9a26413c0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b3a9a26413c0-1",
+      "headword": "蔡邕",
+      "kind": "name",
+      "reading": "Cài Yōng",
+      "senses": [
+        {
+          "id": "zh-b3a9a26413c0-1-s1",
+          "definition": "Cai Yong, a person named in the passage"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "Cai Yong",
+        "sense_id": "zh-b3a9a26413c0-1-s1"
+      },
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "Cai Yong",
+        "sense_id": "zh-b3a9a26413c0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "961d1a73f50380f2ed7a73c1dd6f119d0b97713cdd7928336c1de54c3b350211"
+}

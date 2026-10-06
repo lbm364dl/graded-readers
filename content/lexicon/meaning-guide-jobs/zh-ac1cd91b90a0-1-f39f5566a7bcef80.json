@@ -1,0 +1,31 @@
+{
+  "id": "zh-ac1cd91b90a0-1-f39f5566a7bcef80",
+  "entry_id": "zh-ac1cd91b90a0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ac1cd91b90a0-1",
+      "headword": "初战",
+      "kind": "word",
+      "reading": "chūzhàn",
+      "senses": [
+        {
+          "id": "zh-ac1cd91b90a0-1-s1",
+          "definition": "the first battle or fighting in a series"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，三人取得了第一次胜利，初战便显出力量。",
+        "gloss": "first battle",
+        "sense_id": "zh-ac1cd91b90a0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "63cf63b65624dfd64988278f8d4363f6e4c4c756b5481bca1f63e307ab57757d"
+}

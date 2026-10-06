@@ -1,0 +1,31 @@
+{
+  "id": "zh-6d70eedc5706-1-527f461caf4d9c33",
+  "entry_id": "zh-6d70eedc5706-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6d70eedc5706-1",
+      "headword": "置办",
+      "kind": "word",
+      "reading": "zhìbàn",
+      "senses": [
+        {
+          "id": "zh-6d70eedc5706-1-s1",
+          "definition": "to acquire or prepare the things needed for a purpose"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这些金银和铁也用来置办器用。",
+        "gloss": "purchase and prepare",
+        "sense_id": "zh-6d70eedc5706-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6fbe335a5923d4c40b60accf49f4cc4aaad86c22cac11aaccc8739b2a79f13c5"
+}

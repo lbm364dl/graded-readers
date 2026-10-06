@@ -1,0 +1,31 @@
+{
+  "id": "zh-3354e03154fe-1-609432cc0f0fab1d",
+  "entry_id": "zh-3354e03154fe-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3354e03154fe-1",
+      "headword": "黄巾起事",
+      "kind": "name",
+      "reading": "Huángjīn qǐshì",
+      "senses": [
+        {
+          "id": "zh-3354e03154fe-1-s1",
+          "definition": "the Yellow Turban uprising"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来他和张宝、张梁一起，发动黄巾起事。",
+        "gloss": "Yellow Turban uprising",
+        "sense_id": "zh-3354e03154fe-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "64cb9dd3d0d8d3c0697e8f07a6bd948e4121921bcfbbf38884eb44dc20398c7a"
+}

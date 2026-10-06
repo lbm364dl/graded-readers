@@ -1,0 +1,32 @@
+{
+  "id": "ja-ad719b2dd042f03a-5fff0bc272bd683b",
+  "entry_id": "ja-ad719b2dd042f03a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ad719b2dd042f03a",
+      "headword": "はずの",
+      "reading": "はずの",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-ad719b2dd042f03a-1",
+          "definition": "a pattern using はず with の to modify a noun as something expected or supposed"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "まず、毛でおおわれているはずの顔が、つるつるしていて、まるで薬缶のようだった。",
+        "gloss": "supposed to; expected to be",
+        "sense_id": "ja-ad719b2dd042f03a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d5b52c84b5179db0e0a219e95fbc6ce3267b210b7f2f86c6083fc10b59fdbeee"
+}

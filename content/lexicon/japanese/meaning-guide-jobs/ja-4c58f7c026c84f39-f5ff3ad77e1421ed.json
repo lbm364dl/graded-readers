@@ -1,0 +1,170 @@
+{
+  "id": "ja-4c58f7c026c84f39-f5ff3ad77e1421ed",
+  "entry_id": "ja-4c58f7c026c84f39",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-4c58f7c026c84f39",
+      "headword": "暗い",
+      "reading": "くらい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4c58f7c026c84f39-1",
+          "definition": "Dark; lacking light."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "暗い所でニャーニャー泣いていました。",
+        "gloss": "dark",
+        "sense_id": "ja-4c58f7c026c84f39-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-4c58f7c026c84f39",
+    "investigation_questions": [
+      {
+        "component": "暗い",
+        "question": "What is the historical origin of this adjective?"
+      }
+    ],
+    "claim_ids": [
+      "c4",
+      "c2",
+      "c1"
+    ],
+    "structure": "single_component",
+    "explanation_en": "暗い describes a place or thing with too little light for objects to be seen clearly. In modern grammar, it consists of the stem くら and adjective ending い; its classical form is くらし.",
+    "caveat_en": "",
+    "parts": [],
+    "research": {
+      "entry_id": "ja-4c58f7c026c84f39",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://kotobank.jp/word/%E6%9A%97%E3%81%84-485347",
+          "title": "暗い（読み）クライ — デジタル大辞泉・精選版 日本国語大辞典",
+          "accessed_at": "2026-09-27",
+          "summary_en": "The entry identifies くらい as the modern colloquial adjective and くらし as its classical literary form. For the light-deficient sense, it records an example from an early-Heian reading of a Buddhist text, dated circa 830. It documents form and use, but gives no etymology."
+        },
+        {
+          "id": "s2",
+          "url": "https://kotobank.jp/word/%E6%9A%97%E3%81%97-3137495",
+          "title": "暗し（読み）くらし — 精選版 日本国語大辞典",
+          "accessed_at": "2026-09-27",
+          "summary_en": "The entry classifies くらし as a classical ク-conjugation adjective and directs readers to くらい. It supports the historical grammatical form but offers no deeper derivation."
+        },
+        {
+          "id": "s3",
+          "url": "https://www2.ninjal.ac.jp/dictionaries/IPALBA/pdf_dir/%E3%81%8F%E3%82%89%E3%81%84.pdf",
+          "title": "くらい — IPAL-Basic Adjectives, National Institute for Japanese Language and Linguistics",
+          "accessed_at": "2026-09-27",
+          "summary_en": "NINJAL’s modern lexical resource analyzes the adjective synchronically as stem kura plus ending -い and describes the light-deficient sense as not being filled with a sufficient amount of light. This is a modern grammatical and semantic analysis, not an account of the word’s history."
+        },
+        {
+          "id": "s4",
+          "url": "https://kotobank.jp/word/%E9%BB%92-192740",
+          "title": "黒（読み）クロ — 精選版 日本国語大辞典・改訂新版 世界大百科事典",
+          "accessed_at": "2026-09-27",
+          "summary_en": "The encyclopedia presents the proposal that kuro is historically related to kurashi ‘dark’ and kureru ‘grow dark’. It also reports that Susumu Ōno questioned the kuro–kurashi connection on the basis of accent and voicing notation in the Ruiju Myōgishō, and proposed a possible connection between kuro and kuri ‘black mud’. This is a disputed proposal about kuro; it does not establish the origin of kurai."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "The historical dictionary records a light-deficient use of くらし in an early-Heian reading, circa 830, and gives くらし as the literary form corresponding to modern くらい. This establishes an early attested Japanese form, not its ultimate origin.",
+          "source_ids": [
+            "s1",
+            "s2"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "NINJAL analyzes modern くらい as kura plus -い. That segmentation describes present-day structure; it does not establish the historical derivation of kura or prove that the word is inherited from Proto-Japonic.",
+          "source_ids": [
+            "s3"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "A Japanese encyclopedia presents kuro ‘black’ as related to kurashi ‘dark’, but also reports Susumu Ōno’s objection to that relationship based on historical accent evidence and his alternative proposal for kuro. Neither account proves the origin of 暗い itself; the proposed relationship cannot be treated as an established derivation of kurai.",
+          "source_ids": [
+            "s4"
+          ]
+        },
+        {
+          "id": "c4",
+          "text_en": "For the supplied sense, the historical dictionary defines 暗い as having little light so that objects are hard or impossible to see; NINJAL similarly describes it as lacking sufficient light.",
+          "source_ids": [
+            "s1",
+            "s3"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://kotobank.jp/word/%E6%9A%97%E3%81%84-485347",
+            "https://kotobank.jp/word/%E6%9A%97%E3%81%97-3137495",
+            "https://www2.ninjal.ac.jp/dictionaries/IPALBA/pdf_dir/%E3%81%8F%E3%82%89%E3%81%84.pdf"
+          ]
+        },
+        {
+          "query": "暗い くらい 語源 国語辞典 語源 くらし",
+          "opened_urls": [
+            "https://kotobank.jp/word/%E9%BB%92-192740"
+          ]
+        },
+        {
+          "query": "くらし くらい 語源 日本語 語源辞典 暗い",
+          "opened_urls": []
+        },
+        {
+          "query": "日本語 暗い くらい 古代語 語源 上代語 くら",
+          "opened_urls": []
+        },
+        {
+          "query": "\"くらい\" \"語源\" 暗い 日本語辞典",
+          "opened_urls": []
+        },
+        {
+          "query": "\"くらし\" \"語源\" 暗し",
+          "opened_urls": []
+        },
+        {
+          "query": "\"暗い\" \"語源\" 日本語 古語 くら くろ",
+          "opened_urls": []
+        }
+      ],
+      "gaps": [
+        "No opened source establishes the ultimate historical derivation of kura/くらい or demonstrates that it is inherited native Japanese in the strict historical-linguistic sense. The early attestation documents Japanese use, not prehistoric ancestry.",
+        "The kuro–kurashi relationship is presented alongside a scholarly objection, and neither account resolves the origin of kurai. A dedicated etymological treatment of 暗い or くらし was not found among the opened sources."
+      ]
+    },
+    "input_fingerprint": "b544c1195da1299ace3fee4532c68c7559a6039e6c70457afa54db2dc9836292",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-b069366a119c7620",
+      "reason": "The classical form and stem analysis are irrelevant to recognizing the modern adjective. Requested change: Explain 暗い as “dark” or “lacking light”; remove the stem and classical-form sentence.",
+      "entry_id": "ja-4c58f7c026c84f39",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "caab69ef212bd0d954cf451df0c77c323b2b2fcf191e5328c85646a1f8b77b4d"
+}

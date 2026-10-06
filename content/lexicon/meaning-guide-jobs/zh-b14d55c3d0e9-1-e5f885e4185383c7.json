@@ -1,0 +1,31 @@
+{
+  "id": "zh-b14d55c3d0e9-1-e5f885e4185383c7",
+  "entry_id": "zh-b14d55c3d0e9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b14d55c3d0e9-1",
+      "headword": "害死",
+      "kind": "construction",
+      "reading": "hàisǐ",
+      "senses": [
+        {
+          "id": "zh-b14d55c3d0e9-1-s1",
+          "definition": "to cause someone’s death; to kill"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们没有仔细保密，反被宦官害死。",
+        "gloss": "to kill",
+        "sense_id": "zh-b14d55c3d0e9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "925235d01ee7efe091cd2dd6ac4101661683361e816a3892ae36fec0f5b293d7"
+}

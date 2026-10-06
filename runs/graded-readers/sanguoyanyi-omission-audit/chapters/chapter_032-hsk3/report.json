@@ -1,0 +1,92 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_032-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 589,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了袁谭与曹操结亲、暗送将军印及曹操因此决意除掉袁谭等情节。",
+      "classification": "material",
+      "reason": "这些情节交代了袁谭与曹操的政治联姻、郭图的内应计划及曹操后来决意除掉袁谭的动机，影响人物关系与后续因果。",
+      "required_fix": "补写袁谭与曹操结亲、暗送将军印，以及曹操由此产生杀袁谭之心。"
+    },
+    {
+      "omission_note": "省略了袁尚攻打平原、曹操调运粮道以及尹楷、沮鹄败亡后的若干战事细节。",
+      "classification": "material",
+      "reason": "袁尚攻打平原和曹操调运粮道构成双方战略行动的因果链，尹楷、沮鹄败亡则是曹操围攻冀州的重要进展；省略后会削弱战局推进与时间顺序。",
+      "required_fix": "补充袁尚攻打平原、曹操打通粮道并击败尹楷和沮鹄的关键经过。"
+    },
+    {
+      "omission_note": "省略了冀州城内老弱百姓诈降、曹操险中弩箭等攻城过程。",
+      "classification": "material",
+      "reason": "诈降是审配守城方主动设伏、曹操识破并反制的关键攻城事件；曹操险中弩箭体现战斗风险并推动双方交战结果，均非单纯装饰性细节。",
+      "required_fix": "补写冀州老弱百姓诈降、城中伏兵出击及曹操险中弩箭的攻城过程。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“袁尚求降”略有失真：原文是袁尚兵败后派阴夔到曹营请降，并非袁尚亲自求降。",
+      "classification": "material",
+      "reason": "将请降的具体执行者由阴夔改成袁尚本人，改变了人物行为主体。",
+      "required_fix": "改为“袁尚兵败后，派豫州刺史阴夔到曹营请降”，避免写成袁尚亲自求降。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了袁谭与曹操结亲、暗送将军印及曹操因此决意除掉袁谭等情节。",
+      "classification": "material",
+      "reason": "这些情节交代了袁谭与曹操的政治联姻、郭图的内应计划及曹操后来决意除掉袁谭的动机，影响人物关系与后续因果。",
+      "required_fix": "补写袁谭与曹操结亲、暗送将军印，以及曹操由此产生杀袁谭之心。"
+    },
+    {
+      "omission_note": "省略了袁尚攻打平原、曹操调运粮道以及尹楷、沮鹄败亡后的若干战事细节。",
+      "classification": "material",
+      "reason": "袁尚攻打平原和曹操调运粮道构成双方战略行动的因果链，尹楷、沮鹄败亡则是曹操围攻冀州的重要进展；省略后会削弱战局推进与时间顺序。",
+      "required_fix": "补充袁尚攻打平原、曹操打通粮道并击败尹楷和沮鹄的关键经过。"
+    },
+    {
+      "omission_note": "省略了冀州城内老弱百姓诈降、曹操险中弩箭等攻城过程。",
+      "classification": "material",
+      "reason": "诈降是审配守城方主动设伏、曹操识破并反制的关键攻城事件；曹操险中弩箭体现战斗风险并推动双方交战结果，均非单纯装饰性细节。",
+      "required_fix": "补写冀州老弱百姓诈降、城中伏兵出击及曹操险中弩箭的攻城过程。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“袁尚求降”略有失真：原文是袁尚兵败后派阴夔到曹营请降，并非袁尚亲自求降。",
+      "classification": "material",
+      "reason": "将请降的具体执行者由阴夔改成袁尚本人，改变了人物行为主体。",
+      "required_fix": "改为“袁尚兵败后，派豫州刺史阴夔到曹营请降”，避免写成袁尚亲自求降。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 589,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": "zh-bbcd809f30d3-1-56ef784b28119409",
+  "entry_id": "zh-bbcd809f30d3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bbcd809f30d3-1",
+      "headword": "杀",
+      "kind": "word",
+      "reading": "shā",
+      "senses": [
+        {
+          "id": "zh-bbcd809f30d3-1-s1",
+          "definition": "kill"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "关羽挥刀杀了程远志。",
+        "gloss": "kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "张飞很生气，要杀护送卢植的人。",
+        "gloss": "kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      },
+      {
+        "sentence": "张飞又气又不满，拿刀要杀董卓。",
+        "gloss": "kill",
+        "sense_id": "zh-bbcd809f30d3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4f491301ee3dae8cd500d0a3a49e1c0ca707de73f9e5221e721f64b35c20d132"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-9409b8096e4ff8c6-5bf307b426324725",
+  "entry_id": "ja-9409b8096e4ff8c6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9409b8096e4ff8c6",
+      "headword": "袋",
+      "reading": "ふくろ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9409b8096e4ff8c6-1",
+          "definition": "bag; sack"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "自分の気分しだいで、吾輩を逆さにしたり、頭に袋をかぶせたり、外へ投げ出したり、へっついの中へ押し込んだりする。",
+        "gloss": "bag",
+        "sense_id": "ja-9409b8096e4ff8c6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a05ff4bf4df6c74d23b93f82416ae14c07450559527a03da3e0385892c7c4e0b"
+}

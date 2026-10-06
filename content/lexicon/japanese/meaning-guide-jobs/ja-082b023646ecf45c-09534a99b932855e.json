@@ -1,0 +1,47 @@
+{
+  "id": "ja-082b023646ecf45c-09534a99b932855e",
+  "entry_id": "ja-082b023646ecf45c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-082b023646ecf45c",
+      "headword": "を",
+      "reading": "を",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-082b023646ecf45c-1",
+          "definition": "Marks the direct object of an action, or the path through which it moves."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その時、初めて人を見ました。",
+        "gloss": "marks the object of the action",
+        "sense_id": "ja-082b023646ecf45c-1"
+      },
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "marks the object or path",
+        "sense_id": "ja-082b023646ecf45c-1"
+      },
+      {
+        "sentence": "女の人は吾輩を何度も外へ出しましたが、吾輩は台所へ入りました。",
+        "gloss": "object marker",
+        "sense_id": "ja-082b023646ecf45c-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "marks the object",
+        "sense_id": "ja-082b023646ecf45c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a8203272296a70827b2f2a4e1e2801e03fef4cb0baad3c025a2a78e19cfe631f"
+}

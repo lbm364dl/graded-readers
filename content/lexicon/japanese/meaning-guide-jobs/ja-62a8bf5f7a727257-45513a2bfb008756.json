@@ -1,0 +1,32 @@
+{
+  "id": "ja-62a8bf5f7a727257-45513a2bfb008756",
+  "entry_id": "ja-62a8bf5f7a727257",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-62a8bf5f7a727257",
+      "headword": "ゆっくり",
+      "reading": "ゆっくり",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-62a8bf5f7a727257-1",
+          "definition": "Slowly; without haste."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "slowly",
+        "sense_id": "ja-62a8bf5f7a727257-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c99fb25cfc1c4efc06a56be4e0288312b80163cb81f708890eed95461009d0bf"
+}

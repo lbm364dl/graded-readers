@@ -1,0 +1,848 @@
+{
+  "source_epub": "sanguoyanyi.epub",
+  "source_epub_bytes": 933647,
+  "source_epub_sha256": "d7897acb14a5f5340dfde79d0ad281b757d3ef46243e3d96d4b7230840373282",
+  "chapter_count": 120,
+  "chapters": [
+    {
+      "number": 1,
+      "title": "第一回：宴桃園豪傑三結義，斬黃巾英雄首立功",
+      "file": "chapter_001.txt",
+      "characters": 4783,
+      "sha256": "6de006fdaa91dc2a6611f68d030c8bcd043abc6317ca9a27c54bdb82dab633ef"
+    },
+    {
+      "number": 2,
+      "title": "第二回：張翼德怒鞭督郵，何國舅謀誅宦豎",
+      "file": "chapter_002.txt",
+      "characters": 5818,
+      "sha256": "819f43bb98c51f387e84ffcd4b3d898f70d97e8c4df0499bb2fbf7419631cf13"
+    },
+    {
+      "number": 3,
+      "title": "第三回：議溫明董卓叱丁原，餽金珠李肅說呂布",
+      "file": "chapter_003.txt",
+      "characters": 5013,
+      "sha256": "fff2b366cc027e097632a6a23603dbc04974175b72ab380e7f6b61f2cf494651"
+    },
+    {
+      "number": 4,
+      "title": "第四回：廢漢帝陳留為皇，謀董賊孟德獻刀",
+      "file": "chapter_004.txt",
+      "characters": 4157,
+      "sha256": "12fa5bc20a15c6416d7e1e39dcbaab68e4135d88b09ec88aac46d30dcf32a768"
+    },
+    {
+      "number": 5,
+      "title": "第五回：發矯詔諸鎮應曹公，破關兵三英戰呂布",
+      "file": "chapter_005.txt",
+      "characters": 5667,
+      "sha256": "3b41ef7f0f6c49190c8c29599bc2612259c8e4d3bfebe44a9832522d5f7b04af"
+    },
+    {
+      "number": 6,
+      "title": "第六回：焚金闕董卓行兇，匿玉璽孫堅背約",
+      "file": "chapter_006.txt",
+      "characters": 4192,
+      "sha256": "40c822d9a14c538803ae193d71d06c5c9ae878f26450c8b01eb122726f98fd69"
+    },
+    {
+      "number": 7,
+      "title": "第七回：袁紹磐河戰公孫，孫堅跨江擊劉表",
+      "file": "chapter_007.txt",
+      "characters": 4657,
+      "sha256": "c5c5361ea2dc97c78f9f13421be8868fcaef9b7a8d77ad01a4bfae0963aa512c"
+    },
+    {
+      "number": 8,
+      "title": "第八回：王司徒巧使連環計，董太師大鬧鳳儀亭",
+      "file": "chapter_008.txt",
+      "characters": 4259,
+      "sha256": "d245b53f56a69984115a3add9860603fdd590e0cb297a7afcecaceab66888b40"
+    },
+    {
+      "number": 9,
+      "title": "第九回：除暴兇呂布助司徒，犯長安李傕聽賈詡",
+      "file": "chapter_009.txt",
+      "characters": 5373,
+      "sha256": "ed8545fec9ac4e81ca3775dd6e42dbfc5e12b9c82da0991ef71b4ad6be04a0f3"
+    },
+    {
+      "number": 10,
+      "title": "第十回：勤王室馬騰舉義，報父讎曹操興師",
+      "file": "chapter_010.txt",
+      "characters": 4242,
+      "sha256": "68b07d8560d1baa8b60e6bb4261101cfaa9d61fdb72754958b39b4a99b10edea"
+    },
+    {
+      "number": 11,
+      "title": "第十一回：劉皇叔北海救孔融，呂溫侯濮陽破曹操",
+      "file": "chapter_011.txt",
+      "characters": 5822,
+      "sha256": "a03235df39377598ab31c4a7aba8203016bd67e63bc6cb49bfbe1d09ceb89ca8"
+    },
+    {
+      "number": 12,
+      "title": "第十二回：陶恭祖三讓徐州，曹孟德大戰呂布",
+      "file": "chapter_012.txt",
+      "characters": 4589,
+      "sha256": "2b30ae3689be0e97169c57c2a70e846215249a11e67c7e60c66d7c08ebdf776e"
+    },
+    {
+      "number": 13,
+      "title": "第十三回：李傕郭汜大交兵，楊奉董承雙救駕",
+      "file": "chapter_013.txt",
+      "characters": 5972,
+      "sha256": "f598ae8d7baed9102d672ef771346b1dafda6fa0f9dbee92f11c4f834bf6c85e"
+    },
+    {
+      "number": 14,
+      "title": "第十四回：曹孟德移駕幸許都，呂奉先乘夜襲徐郡",
+      "file": "chapter_014.txt",
+      "characters": 6361,
+      "sha256": "b478978be5dc41cdef9231d851466ec28772fa081a2f44c09d90d507b1b8ddc5"
+    },
+    {
+      "number": 15,
+      "title": "第十五回：太史慈酣鬥小霸王，孫伯符大戰嚴白虎",
+      "file": "chapter_015.txt",
+      "characters": 7254,
+      "sha256": "49d088c34ddc164f90ab1627ed3ed8d069647e51bae1efaba44a9d3fd527b2ac"
+    },
+    {
+      "number": 16,
+      "title": "第十六回：呂奉先射戟轅門，曹孟德拜師淯水",
+      "file": "chapter_016.txt",
+      "characters": 6780,
+      "sha256": "9ab9b973c821afcc6955bb6d07f418d95f0dcb4f6a1fb4c799e82ee02b962827"
+    },
+    {
+      "number": 17,
+      "title": "第十七回：袁公路大起七軍，曹孟德會合三將",
+      "file": "chapter_017.txt",
+      "characters": 4394,
+      "sha256": "3e960d77bc7a927521458eefb93bf80bbf4604f9d1ebea6a2a831883ba327324"
+    },
+    {
+      "number": 18,
+      "title": "第十八回：賈文和料敵決勝，夏侯惇拔失啖睛",
+      "file": "chapter_018.txt",
+      "characters": 3826,
+      "sha256": "e9e947f704002375f2049306f9233a8f985d048bf20cf41d025471fe1a75630e"
+    },
+    {
+      "number": 19,
+      "title": "第十九回：下邳城曹操鏖兵，白門樓呂布殞命",
+      "file": "chapter_019.txt",
+      "characters": 6524,
+      "sha256": "d547c7af470d7a62cb27fdceb3957533ca7a124ace0c1ef855dd23b18d366fb8"
+    },
+    {
+      "number": 20,
+      "title": "第二十回：曹阿瞞許田打圍，董國舅內閣受詔",
+      "file": "chapter_020.txt",
+      "characters": 4557,
+      "sha256": "f6f17146ff73b1eda978691b3ae4c768835f4012b53c4ab21eb4dd7b383d1fa8"
+    },
+    {
+      "number": 21,
+      "title": "第二十一回：曹操煮酒論英雄，關公賺城斬車胄",
+      "file": "chapter_021.txt",
+      "characters": 4804,
+      "sha256": "b76d70e6746b9e5cd3f343adad56cfda3c14ee4caf18616dbcefce97b355aab7"
+    },
+    {
+      "number": 22,
+      "title": "第二十二回：袁曹各起馬步三軍，關張共擒王劉二將",
+      "file": "chapter_022.txt",
+      "characters": 5510,
+      "sha256": "51904bbab9621ff7701aac18e2a5d47421299b8eccd4f71cd58e28fadcd47ee4"
+    },
+    {
+      "number": 23,
+      "title": "第二十三回：禰正平裸衣罵賊，吉太醫下毒遭刑",
+      "file": "chapter_023.txt",
+      "characters": 5729,
+      "sha256": "4b2980ee9a78fc13f56c3af4998e118259ff6aa7d308bb21001a2e2c6e81c147"
+    },
+    {
+      "number": 24,
+      "title": "第二十四回：國賊行兇殺貴妃，皇叔敗走投袁紹",
+      "file": "chapter_024.txt",
+      "characters": 2815,
+      "sha256": "69b18916b20ba766c6d52bf8e8582f40153f886ae11e603a31a76bdc9615c4d8"
+    },
+    {
+      "number": 25,
+      "title": "第二十五回：屯土山關公約三事，救白馬曹操解重圍",
+      "file": "chapter_025.txt",
+      "characters": 5041,
+      "sha256": "9e8c650c4dca5b30ba239fa926316b6cf12869ae71aaeb18a386a2dad9723c9c"
+    },
+    {
+      "number": 26,
+      "title": "第二十六回：袁本初敗兵折將，關雲長挂印封金",
+      "file": "chapter_026.txt",
+      "characters": 4154,
+      "sha256": "fb7ccfd8d78559066620975ad79eb3f4623ea3c9b1422309e1cfae848398196b"
+    },
+    {
+      "number": 27,
+      "title": "第二十七回：美髯公千里走單騎，漢壽侯五關斬六將",
+      "file": "chapter_027.txt",
+      "characters": 5176,
+      "sha256": "84d5ce2af235a9bff05f9610d76856eff95abf6e5bcbc042dae1e5305067e178"
+    },
+    {
+      "number": 28,
+      "title": "第二十八回：斬蔡陽兄弟釋疑，會古城主臣聚義",
+      "file": "chapter_028.txt",
+      "characters": 6078,
+      "sha256": "b56203fdebeca223fe760972010d96d37fe3ac2427687e3eec530fe6b585d6e3"
+    },
+    {
+      "number": 29,
+      "title": "第二十九回：小霸王怒斬于吉，碧眼兒坐領江東",
+      "file": "chapter_029.txt",
+      "characters": 5049,
+      "sha256": "909fb6b2051a75e0062024fedc9bc7c7ecc0e4bb6460cdd76c78116544d07c6c"
+    },
+    {
+      "number": 30,
+      "title": "第三十回：戰官渡本初敗績，劫烏巢孟德燒糧",
+      "file": "chapter_030.txt",
+      "characters": 5834,
+      "sha256": "b5f18324b6ae503c106a80bb45ae4d6516872a9a1cdec282578627aa01ec3149"
+    },
+    {
+      "number": 31,
+      "title": "第三十一回：曹操倉亭破本初，玄德荊州依劉表",
+      "file": "chapter_031.txt",
+      "characters": 4819,
+      "sha256": "a046a6511b879d5f9349aa9e08461b7866509abfb3be8c1f2fcd731491f0eb0c"
+    },
+    {
+      "number": 32,
+      "title": "第三十二回：奪冀州袁尚爭鋒，決漳河許攸獻計",
+      "file": "chapter_032.txt",
+      "characters": 5597,
+      "sha256": "129a5b37729363ee27cf169257f0de4e7694ace69d80f60f819ad785b1648277"
+    },
+    {
+      "number": 33,
+      "title": "第三十三回：曹丕乘亂納甄氏，郭嘉遺計定遼東",
+      "file": "chapter_033.txt",
+      "characters": 5205,
+      "sha256": "b162700c52301410002550f634a81c3e74b0c05550a78568bbe36f17cd339b48"
+    },
+    {
+      "number": 34,
+      "title": "第三十四回：蔡夫人隔屏聽密語，劉皇叔躍馬過檀溪",
+      "file": "chapter_034.txt",
+      "characters": 4389,
+      "sha256": "51e864cfd006d041683f3633fd17b9978dd82bc5cc7b5903de3e277084a30024"
+    },
+    {
+      "number": 35,
+      "title": "第三十五回：玄德南漳逢隱淪，單福新野遇英主",
+      "file": "chapter_035.txt",
+      "characters": 3879,
+      "sha256": "6e1ddcd74927012b3434f8608816930baaa3ec20a155662dd7816c1a537de8db"
+    },
+    {
+      "number": 36,
+      "title": "第三十六回：玄德用計襲樊城，元直走馬薦諸葛",
+      "file": "chapter_036.txt",
+      "characters": 4235,
+      "sha256": "428b7d1d991586e32e7827279605d8e55a11756cbdcc2d344dc5989fb2072fa3"
+    },
+    {
+      "number": 37,
+      "title": "第三十七回：司馬徽再薦名士，劉玄德三顧草廬",
+      "file": "chapter_037.txt",
+      "characters": 4800,
+      "sha256": "362339fa20865e6f347726acb7f664103f31611b0efc2c60a3c266d36e902008"
+    },
+    {
+      "number": 38,
+      "title": "第三十八回：定三分隆中決策，戰長江孫氏報讎",
+      "file": "chapter_038.txt",
+      "characters": 5059,
+      "sha256": "ca16ca9b44ae7f5303dc78b850bdf39f70f116d80e8c8a5b7192fa441c5560c9"
+    },
+    {
+      "number": 39,
+      "title": "第三十九回：荊州城公子三求計，博望坡軍師初用兵",
+      "file": "chapter_039.txt",
+      "characters": 4851,
+      "sha256": "e652d3878d253bcf3d29812e4d5fb51eec30c0b529325793baee219fcc512fed"
+    },
+    {
+      "number": 40,
+      "title": "第四十回：蔡夫人議獻荊州，諸葛亮火燒新野",
+      "file": "chapter_040.txt",
+      "characters": 4567,
+      "sha256": "521c816dece39c7d7645389b8cc6ccdd3d32d433705c43c506ba6b744065c591"
+    },
+    {
+      "number": 41,
+      "title": "第四十一回：劉玄德攜民渡江，趙子龍單騎救主",
+      "file": "chapter_041.txt",
+      "characters": 6135,
+      "sha256": "70340ccbcdc0bc145cbab4e4404aebe69e414346b3748983095f081411d70eb3"
+    },
+    {
+      "number": 42,
+      "title": "第四十二回：張翼德大鬧長板橋，劉豫州敗走漢津",
+      "file": "chapter_042.txt",
+      "characters": 3778,
+      "sha256": "c8fb1862f51542be7d1f52a378ed9a287cc73635fece05c5b14a80cc8677995a"
+    },
+    {
+      "number": 43,
+      "title": "第四十三回：諸葛亮舌戰群儒，魯子敬力排眾議",
+      "file": "chapter_043.txt",
+      "characters": 5444,
+      "sha256": "179dc00fb68a03de61a471395db6c5a7487c0a03078711c145c2bf41e035ce85"
+    },
+    {
+      "number": 44,
+      "title": "第四十四回：孔明用智激周瑜，孫權決計破曹操",
+      "file": "chapter_044.txt",
+      "characters": 4701,
+      "sha256": "8fe5312a67acd7ab3af592aac39c19218f959bce5cb419b57fec1ea6e05d8104"
+    },
+    {
+      "number": 45,
+      "title": "第四十五回：三江口曹操折兵，群英會蔣幹中計",
+      "file": "chapter_045.txt",
+      "characters": 5594,
+      "sha256": "b6d94c498baf0c0d8810bb6b1bd10dd9cc0667fac4f7f0cb0db025fcb8083dc0"
+    },
+    {
+      "number": 46,
+      "title": "第四十六回：用奇謀孔明借箭，獻密計黃蓋受刑",
+      "file": "chapter_046.txt",
+      "characters": 4872,
+      "sha256": "ad1dcd0d2672f1be0f7a62952b4bb917ce4b3501b033088ee4f4b596e42e549e"
+    },
+    {
+      "number": 47,
+      "title": "第四十七回：闞澤密獻詐書，龐統巧授連環計",
+      "file": "chapter_047.txt",
+      "characters": 4078,
+      "sha256": "5f181eaafc02f53a85ae89b19d2ffcf86133fb850224bacea042f4754a239527"
+    },
+    {
+      "number": 48,
+      "title": "第四十八回：宴長江曹操賦詩，鎖戰船北軍用武",
+      "file": "chapter_048.txt",
+      "characters": 3443,
+      "sha256": "698917341ff22a1f42c6ec4c406d4db5d3020ce61bf34ea700e65b7a48302b35"
+    },
+    {
+      "number": 49,
+      "title": "第四十九回：七星壇諸葛祭風，三江口周瑜縱火",
+      "file": "chapter_049.txt",
+      "characters": 5345,
+      "sha256": "450918c0f14ec3667fef54c5ec5b73b394d66a9f741d664f9d5ca3bd1ea6c55d"
+    },
+    {
+      "number": 50,
+      "title": "第五十回：諸葛亮智算華容，關雲長義釋曹操",
+      "file": "chapter_050.txt",
+      "characters": 3949,
+      "sha256": "bb3066ff56ada9e517e22625c27979f8da6deba10a0442d7cd067bf721c8d6b9"
+    },
+    {
+      "number": 51,
+      "title": "第五十一回：曹仁大戰東吳兵，孔明一氣周公瑾",
+      "file": "chapter_051.txt",
+      "characters": 4518,
+      "sha256": "f7c9ace2a70d5d9dcd78d33ba10466980d1af7a49bafd0c6da3e26bf848fbd80"
+    },
+    {
+      "number": 52,
+      "title": "第五十二回：諸葛亮智辭魯肅，趙子龍計取桂陽",
+      "file": "chapter_052.txt",
+      "characters": 4429,
+      "sha256": "2895baa44799e5a00de640ca50da377e24764a6a4a02b38c837749797ced4a29"
+    },
+    {
+      "number": 53,
+      "title": "第五十三回：關雲長義釋黃漢升，孫仲謀大戰張文遠",
+      "file": "chapter_053.txt",
+      "characters": 4780,
+      "sha256": "f9e0b9fa3fd354cbdcb9b5bcc091486bde01638d264aa22900d22e4a9007b982"
+    },
+    {
+      "number": 54,
+      "title": "第五十四回：吳國太佛寺看新郎，劉皇叔洞房續佳偶",
+      "file": "chapter_054.txt",
+      "characters": 5210,
+      "sha256": "72123bbdcd0d56e1b7d178d8a7999abac6449648c2755dcf61b4794b5d8adcc6"
+    },
+    {
+      "number": 55,
+      "title": "第五十五回：玄德智激孫夫人，孔明二氣周公瑾",
+      "file": "chapter_055.txt",
+      "characters": 4361,
+      "sha256": "fb79afa6e686fa2b2b41d8593ec806b53ed4014cf60ddc143c3944ede7e806ae"
+    },
+    {
+      "number": 56,
+      "title": "第五十六回：曹操大宴銅雀臺，孔明三氣周公瑾",
+      "file": "chapter_056.txt",
+      "characters": 4722,
+      "sha256": "50b6e1dedc20d79cd953a5aef58c5d6ad2a5a64703fc1fcf15109c7057a05188"
+    },
+    {
+      "number": 57,
+      "title": "第五十七回：柴桑口臥龍弔喪，耒陽縣鳳雛理事",
+      "file": "chapter_057.txt",
+      "characters": 5612,
+      "sha256": "77078a57538c2e0bb462fdc13323acd1c82b8967b834bc8b471f7aa684589699"
+    },
+    {
+      "number": 58,
+      "title": "第五十八回：馬孟起興兵雪恨，曹阿瞞割鬚棄袍",
+      "file": "chapter_058.txt",
+      "characters": 5269,
+      "sha256": "96295bb3d9601db1f8795dafc412b35164f3c13dbe0241a92951758165d038e5"
+    },
+    {
+      "number": 59,
+      "title": "第五十九回：許褚裸衣鬥馬超，曹操抹書間韓遂",
+      "file": "chapter_059.txt",
+      "characters": 5419,
+      "sha256": "8ce6c86278e4fdbc8e180991ecafe753690686dfa671737da6a9ec23b64c7226"
+    },
+    {
+      "number": 60,
+      "title": "第六十回：張永年反難楊脩，龐士元議取西蜀",
+      "file": "chapter_060.txt",
+      "characters": 7381,
+      "sha256": "5efdd5aa626c45c447ce4227a7f47098acf23f267800d97cd1e5d3e0aca2016f"
+    },
+    {
+      "number": 61,
+      "title": "第六十一回：趙雲截江奪阿斗，孫權遺書退老瞞",
+      "file": "chapter_061.txt",
+      "characters": 4836,
+      "sha256": "3f1b7b537e8742f2d98045923cbf694f15b6cc84d5e4d5ebfce6cfa17ccb0017"
+    },
+    {
+      "number": 62,
+      "title": "第六十二回：取涪關楊高授首，攻雒城黃魏爭功",
+      "file": "chapter_062.txt",
+      "characters": 5503,
+      "sha256": "5ba1fae0aa75420414c175a4dab2048bd47252a40913f772a13db715ff0fe93f"
+    },
+    {
+      "number": 63,
+      "title": "第六十三回：諸葛亮痛哭龐統，張翼德義釋嚴顏",
+      "file": "chapter_063.txt",
+      "characters": 5432,
+      "sha256": "918e1f57326bd85fbaf27b8cf61c6cd9010fa0c4d57f3a28a44502d32753d846"
+    },
+    {
+      "number": 64,
+      "title": "第六十四回：孔明定計捉張任，楊阜借兵破馬超",
+      "file": "chapter_064.txt",
+      "characters": 5317,
+      "sha256": "443d61dc523b08559a95c611821ed533b181b34eff2130cc990b08b08ed4e150"
+    },
+    {
+      "number": 65,
+      "title": "第六十五回：馬超大戰葭萌關，劉備自領益州牧",
+      "file": "chapter_065.txt",
+      "characters": 6133,
+      "sha256": "c359f8ac5ae4073452437ee4b83e23782d1aa96f29e8081b387954cc89fe5ec0"
+    },
+    {
+      "number": 66,
+      "title": "第六十六回：關雲長單刀赴會，伏皇后為國捐生",
+      "file": "chapter_066.txt",
+      "characters": 5242,
+      "sha256": "858715d46b648902c0d07c7fddcb2c52994acb52305a0cce3601f4c3186f3b9c"
+    },
+    {
+      "number": 67,
+      "title": "第六十七回：曹操平定漢中地，張遼威震逍遙津",
+      "file": "chapter_067.txt",
+      "characters": 5434,
+      "sha256": "99adb3481731648553ecb029a4b195c10626b6d39d77a73bd099c23dc905954a"
+    },
+    {
+      "number": 68,
+      "title": "第六十八回：甘寧百騎劫魏營，左慈擲盃戲曹操",
+      "file": "chapter_068.txt",
+      "characters": 5086,
+      "sha256": "52f721f42b0afbc173c6c9f3a8cafc6ee4b77da223c1d9eaf7594bf4a43f3363"
+    },
+    {
+      "number": 69,
+      "title": "第六十九回：卜周易管輅知機，討漢賊五臣死節",
+      "file": "chapter_069.txt",
+      "characters": 4982,
+      "sha256": "cf49267a882a95a6efabe0818a473cf11ad2d736a3aff8bec86e72a8b96b00ec"
+    },
+    {
+      "number": 70,
+      "title": "第七十回：猛張飛智取瓦口隘，老黃忠計奪天蕩山",
+      "file": "chapter_070.txt",
+      "characters": 5232,
+      "sha256": "c4e073dd5693dc2b3ec4add5cb7f044b664744ab82463dd7cd713e969e24208d"
+    },
+    {
+      "number": 71,
+      "title": "第七十一回：占對山黃忠逸待勞，據漢水趙雲寡勝眾",
+      "file": "chapter_071.txt",
+      "characters": 5616,
+      "sha256": "78b49d2258db00577756258944f22c2fc406d74b2a523fe23d47ab87d4fc426c"
+    },
+    {
+      "number": 72,
+      "title": "第七十二回：諸葛亮智取漢中，曹阿瞞兵退斜谷",
+      "file": "chapter_072.txt",
+      "characters": 4300,
+      "sha256": "5598d1a1ffe3622e441c5c607bf904e5ae2065a9b5bdf2aaa72e998cd93e46ed"
+    },
+    {
+      "number": 73,
+      "title": "第七十三回：玄德進位漢中王，雲長攻拔襄陽郡",
+      "file": "chapter_073.txt",
+      "characters": 5028,
+      "sha256": "24b6ae89f08b3824e292096c0bb939878fa0e932262dd933e5ee83d7952b7876"
+    },
+    {
+      "number": 74,
+      "title": "第七十四回：龐令明臺櫬決死戰，關雲長放水渰七軍",
+      "file": "chapter_074.txt",
+      "characters": 4506,
+      "sha256": "a88a5b3822786e34c104e448607ec5f605b20b6cd738b78e9e51faf4e871e5cc"
+    },
+    {
+      "number": 75,
+      "title": "第七十五回：關雲長刮骨療毒，呂子明白衣渡江",
+      "file": "chapter_075.txt",
+      "characters": 4055,
+      "sha256": "69177472de0d0f0e94c26551587db778bc964faf69f618a489e500313278de62"
+    },
+    {
+      "number": 76,
+      "title": "第七十六回：徐公明大戰沔水，關雲長敗走麥城",
+      "file": "chapter_076.txt",
+      "characters": 4780,
+      "sha256": "5cf0cd459ceff2edd07a50d1cece5517be08be796d0f1cb988cc57eb6d9564f0"
+    },
+    {
+      "number": 77,
+      "title": "第七十七回：玉泉山關公顯聖，洛陽城曹操感神",
+      "file": "chapter_077.txt",
+      "characters": 4490,
+      "sha256": "570c9ce67cd91ad2aa64175223374bd53756f892f45d568ca1219fc5d45b26b8"
+    },
+    {
+      "number": 78,
+      "title": "第七十八回：治風疾神醫身死，傳遺命奸雄數終",
+      "file": "chapter_078.txt",
+      "characters": 4088,
+      "sha256": "faec0c610e6746328a34e77d0b41e6d70eecbe06fa42604f48b5a7b8b263aeeb"
+    },
+    {
+      "number": 79,
+      "title": "第七十九回：兄逼弟曹植賦詩，姪陷叔劉封伏法",
+      "file": "chapter_079.txt",
+      "characters": 3938,
+      "sha256": "7763fad39cb75cffcda712e57ec62512304f7381870d20855f4db5eb7c8b6018"
+    },
+    {
+      "number": 80,
+      "title": "第八十回：曹丕廢帝篡炎劉，漢王正位續大統",
+      "file": "chapter_080.txt",
+      "characters": 4437,
+      "sha256": "9c413796f73dd3d356f255ef6283cedf9bd45ff5e9f7a83405cfcc9371dc7e59"
+    },
+    {
+      "number": 81,
+      "title": "第八十一回：急兄讎張飛遇害，雪弟恨先主興兵",
+      "file": "chapter_081.txt",
+      "characters": 4031,
+      "sha256": "2945ac86fba4d2147c6e77a3c7535012177ef92176bf6123b7443b509d04d43b"
+    },
+    {
+      "number": 82,
+      "title": "第八十二回：孫權降魏受九錫，先主征吳賞六軍",
+      "file": "chapter_082.txt",
+      "characters": 4427,
+      "sha256": "23355f333dc1e157119b91587a5daa936baa98bc20450f8a6ce3a225ced8e9ca"
+    },
+    {
+      "number": 83,
+      "title": "第八十三回：戰猇亭先主得讎人，守江口書生拜大將",
+      "file": "chapter_083.txt",
+      "characters": 5800,
+      "sha256": "17390ab86c002fcad4935b18f4d170b0d83e8c2bdee71648a16a01c3c4fd48f7"
+    },
+    {
+      "number": 84,
+      "title": "第八十四回：陸遜營燒七百里，孔明巧布八陣圖",
+      "file": "chapter_084.txt",
+      "characters": 4978,
+      "sha256": "febb0d64fd8d1e23903bda2987489da9b8c2633e0756a242d0eb28fbe7395890"
+    },
+    {
+      "number": 85,
+      "title": "第八十五回：劉先主遺詔託孤兒，諸葛亮安居平五路",
+      "file": "chapter_085.txt",
+      "characters": 5439,
+      "sha256": "767a46bb4175a5b4164f6dad214c3b0c6b4c02b28e7a7254aead9db795c10556"
+    },
+    {
+      "number": 86,
+      "title": "第八十六回：難張溫秦宓逞天辯，破曹丕徐盛用火攻",
+      "file": "chapter_086.txt",
+      "characters": 5255,
+      "sha256": "f814c0fb46b74b0f280fc2e665d73871fda7e42c8f99ef25df90f673ecfe75fb"
+    },
+    {
+      "number": 87,
+      "title": "第八十七回：征南寇丞相大興師，抗天兵蠻王初受執",
+      "file": "chapter_087.txt",
+      "characters": 5702,
+      "sha256": "259a3c3f320cbe9981f29ae07c4c97085a99ac0e7644586724130b39ca98545a"
+    },
+    {
+      "number": 88,
+      "title": "第八十八回：渡瀘水再縛番王，識詐降三擒孟獲",
+      "file": "chapter_088.txt",
+      "characters": 4920,
+      "sha256": "8f4d34489b48d3cc7eeaa06735a5adcc92d664ca19d5afb6202bcc54f4fba5e1"
+    },
+    {
+      "number": 89,
+      "title": "第八十九回：武鄉侯四番用計，南蠻王五次遭擒",
+      "file": "chapter_089.txt",
+      "characters": 5489,
+      "sha256": "14227ae4119888792cfec63b2921d9dc5a81e7f01f60d075d55f1eed73eea0c3"
+    },
+    {
+      "number": 90,
+      "title": "第九十回：驅巨獸六破蠻兵，燒藤甲七擒孟獲",
+      "file": "chapter_090.txt",
+      "characters": 6806,
+      "sha256": "f46dbdab86207dfb4fb9961bd20a83e66668ef08444be1248d4d6d8ab2f002f8"
+    },
+    {
+      "number": 91,
+      "title": "第九十一回：祭瀘水漢相班師，伐中原武侯上表",
+      "file": "chapter_091.txt",
+      "characters": 5510,
+      "sha256": "2aa26ecf460ecf4220e13166abd6eb18bc1755f311a53d7cb00638d4b46c7e46"
+    },
+    {
+      "number": 92,
+      "title": "第九十二回：趙子龍力斬五將，諸葛亮智取三城",
+      "file": "chapter_092.txt",
+      "characters": 4943,
+      "sha256": "01479f4b4425da05657b9286d1e47eae535696c23f75ea311963be5ae6f157ca"
+    },
+    {
+      "number": 93,
+      "title": "第九十三回：姜伯約歸降孔明，武鄉侯罵死王朗",
+      "file": "chapter_093.txt",
+      "characters": 5449,
+      "sha256": "dfd9ffde0643e97fb519e288919ce0baa7a184795b782ed15a94fbe21b04628a"
+    },
+    {
+      "number": 94,
+      "title": "第九十四回：諸葛亮乘雪破羌兵，司馬懿剋日擒孟達",
+      "file": "chapter_094.txt",
+      "characters": 5467,
+      "sha256": "68a4157be1e0b04a602c1d0d0a9363d53ef0d1e7ca601dc52e2aab27b145a5d9"
+    },
+    {
+      "number": 95,
+      "title": "第九十五回：馬謖拒諫失街亭，武侯彈琴退仲達",
+      "file": "chapter_095.txt",
+      "characters": 6015,
+      "sha256": "3b3eb39419762cbfba53d7bf53a5bab769a031dc69a6d92104255430cb8b1004"
+    },
+    {
+      "number": 96,
+      "title": "第九十六回：孔明揮淚斬馬謖，周魴斷髮賺曹休",
+      "file": "chapter_096.txt",
+      "characters": 4629,
+      "sha256": "5b222798b535137a19a739ae04a78ff736063bf5be876067f269acca321155b4"
+    },
+    {
+      "number": 97,
+      "title": "第九十七回：討魏國武侯再上表，破曹兵姜維詐獻書",
+      "file": "chapter_097.txt",
+      "characters": 4687,
+      "sha256": "904f5c38fec13350e3936ed1e0c570546903d7b5dcb2636a573c0899155cb457"
+    },
+    {
+      "number": 98,
+      "title": "第九十八回：追漢軍王雙受誅，襲陳倉武侯取勝",
+      "file": "chapter_098.txt",
+      "characters": 5127,
+      "sha256": "cc3d278b422f3af93799192c02259111681bb82b492b971ebcdc51e009d2efb5"
+    },
+    {
+      "number": 99,
+      "title": "第九十九回：諸葛亮大破魏兵，司馬懿入寇西蜀",
+      "file": "chapter_099.txt",
+      "characters": 5521,
+      "sha256": "382c37c1862dbd6c14ce7301c092ef3c9cf8e2fe5e64ae165e6034fa0cce0a88"
+    },
+    {
+      "number": 100,
+      "title": "第一○○回：漢兵劫寨破曹真，武侯鬥陣辱仲達",
+      "file": "chapter_100.txt",
+      "characters": 5315,
+      "sha256": "40e5a1eb2399737b9b372dbd592b62fa4713cf5b689532a1c11302176f897f91"
+    },
+    {
+      "number": 101,
+      "title": "第一○一回：出隴上諸葛妝神，奔劍閣張郃中計",
+      "file": "chapter_101.txt",
+      "characters": 5724,
+      "sha256": "ac9ec26bec310f16c1f2e0a2f7a157d7c4e0f3e21160dfac62b4c5cc2cf2b220"
+    },
+    {
+      "number": 102,
+      "title": "第一○二回：司馬懿戰北原渭橋，諸葛亮造木牛流馬",
+      "file": "chapter_102.txt",
+      "characters": 6660,
+      "sha256": "e561dbda9791859eb56ba4edda4c16a899433c429bf1cd2688c24fab2d408bcf"
+    },
+    {
+      "number": 103,
+      "title": "第一○三回：上方谷司馬受困，五丈原諸葛禳星",
+      "file": "chapter_103.txt",
+      "characters": 5782,
+      "sha256": "bcf37773c99996b68bacc7a2d9bcd252ddf9b1f5f18696cf083491964949f740"
+    },
+    {
+      "number": 104,
+      "title": "第一○四回：隕大星漢丞相歸天，見木像魏都督喪膽",
+      "file": "chapter_104.txt",
+      "characters": 3864,
+      "sha256": "37fa3cd88042317ba4f54b8de62bf9b5a8ab1bb2538263f94a9c4f123882dddb"
+    },
+    {
+      "number": 105,
+      "title": "第一○五回：武侯預伏錦囊計，魏主拆取承露盤",
+      "file": "chapter_105.txt",
+      "characters": 5433,
+      "sha256": "5b170da489987f89c76c9d9d6a3923650952c1f69c2c5c149fcfdcd1ce4befc1"
+    },
+    {
+      "number": 106,
+      "title": "第一○六回：公孫淵兵敗死襄平，司馬懿詐病賺曹爽",
+      "file": "chapter_106.txt",
+      "characters": 5133,
+      "sha256": "f63759ddfe7e1e4be3cf9f60a155ce58daac9f88319b3703e14910eb470fa4c3"
+    },
+    {
+      "number": 107,
+      "title": "第一○七回：魏主政歸司馬氏，姜維兵敗牛頭山",
+      "file": "chapter_107.txt",
+      "characters": 5517,
+      "sha256": "c1aa37114d98bc679154ef446b97e102f193f6e904164dd86d1cda21fa0b7db8"
+    },
+    {
+      "number": 108,
+      "title": "第一○八回：丁奉雪中奮短兵，孫峻席間施密計",
+      "file": "chapter_108.txt",
+      "characters": 3976,
+      "sha256": "a88e2f928fc8e2e23dba30091ca97d1f3c52fce283548c7f8c3c5d08e95a37fa"
+    },
+    {
+      "number": 109,
+      "title": "第一○九回：困司馬漢將奇謀，廢曹芳魏家果報",
+      "file": "chapter_109.txt",
+      "characters": 4412,
+      "sha256": "5d61d0a535f3bd7f132c65a9279c59bbbcec9596ffa261ea3e8f8242f47cd21f"
+    },
+    {
+      "number": 110,
+      "title": "第一一○回：文鴦單騎退雄兵，姜維背水破大敵",
+      "file": "chapter_110.txt",
+      "characters": 4599,
+      "sha256": "5f7f833724cbf5a9464b705b0f710317506480ac9b0ddb4a2d2f1bfd544a99fc"
+    },
+    {
+      "number": 111,
+      "title": "第一一一回：鄧士載智敗姜伯約，諸葛誕義討司馬昭",
+      "file": "chapter_111.txt",
+      "characters": 3938,
+      "sha256": "7e3b1e25043f16c47fbae6fd1178ce38dd2770d1da5efae28467c6a37a8df2bc"
+    },
+    {
+      "number": 112,
+      "title": "第一一二回：救壽春于詮死節，取長城伯約鑿兵",
+      "file": "chapter_112.txt",
+      "characters": 4060,
+      "sha256": "c8e3de4747df6721223ef592c1ae5480cb543e22a61700cfcb105cf2a1bc6e97"
+    },
+    {
+      "number": 113,
+      "title": "第一一三回：丁奉定計斬孫綝，姜維鬥陣破鄧艾",
+      "file": "chapter_113.txt",
+      "characters": 4597,
+      "sha256": "0dbdee5c54dfd12a5258c81279f2264d2836dab90336f35f3650face79d630b8"
+    },
+    {
+      "number": 114,
+      "title": "第一一四回：曹髦驅車死南闕，姜維棄糧勝魏兵",
+      "file": "chapter_114.txt",
+      "characters": 3904,
+      "sha256": "5d79b0968f064dbea5004359a44eef33d933c73799b5c1419a0c90292da31b2a"
+    },
+    {
+      "number": 115,
+      "title": "第一一五回：詔班師後主信纔，託屯田姜維避禍",
+      "file": "chapter_115.txt",
+      "characters": 4147,
+      "sha256": "7200bf2da70c7c3fc4b3f881259d04edb881859967b8f4e9720c84f4f826fe7f"
+    },
+    {
+      "number": 116,
+      "title": "第一一六回：鍾會分兵漢中道，武侯顯聖定軍山",
+      "file": "chapter_116.txt",
+      "characters": 4368,
+      "sha256": "f8201878f9b397a73c222a17d31882de50f69107ca8e70f599c39c2b111e208b"
+    },
+    {
+      "number": 117,
+      "title": "第一一七回：鄧士載偷渡陰平，諸葛瞻戰死綿竹",
+      "file": "chapter_117.txt",
+      "characters": 4631,
+      "sha256": "d067039ffaefa3244b07c9068e02718e3bb700e33a627dd5e22242af43785409"
+    },
+    {
+      "number": 118,
+      "title": "第一一八回：哭祖廟一王死孝，入西川二士爭功",
+      "file": "chapter_118.txt",
+      "characters": 3625,
+      "sha256": "0e6e05b29fbe5a31f39a41f44a911bcc68b221331f76a4806fc236827ade172f"
+    },
+    {
+      "number": 119,
+      "title": "第一一九回：假投降巧計成虛話，再受禪依樣畫葫蘆",
+      "file": "chapter_119.txt",
+      "characters": 4969,
+      "sha256": "b11b3198c7a3823d535acda41b86f8a638bee7c5b0cf4414afed591459532dba"
+    },
+    {
+      "number": 120,
+      "title": "第一二○回：薦杜預老將獻新謀，降孫皓三分歸一統",
+      "file": "chapter_120.txt",
+      "characters": 6633,
+      "sha256": "9479e053f0d98764dcd45e3890ad0f3f93711568ecd39c210a14a0f685b6c578"
+    }
+  ]
+}

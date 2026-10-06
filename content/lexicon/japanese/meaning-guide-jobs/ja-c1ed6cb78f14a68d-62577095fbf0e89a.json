@@ -1,0 +1,32 @@
+{
+  "id": "ja-c1ed6cb78f14a68d-62577095fbf0e89a",
+  "entry_id": "ja-c1ed6cb78f14a68d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c1ed6cb78f14a68d",
+      "headword": "我儘",
+      "reading": "わがまま",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c1ed6cb78f14a68d-1",
+          "definition": "selfish; willful; inclined to insist on one's own wishes"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "わがままな主人の失敗を一つ話そう。",
+        "gloss": "selfish; willful",
+        "sense_id": "ja-c1ed6cb78f14a68d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "050c804c11413fdb3b0a7f95c5ad97df4ee0dab2efabb0debd3f3e46bce20e2d"
+}

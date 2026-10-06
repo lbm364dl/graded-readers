@@ -1,0 +1,31 @@
+{
+  "id": "zh-b9a153ed3cf5-1-0b2c1d1ceb418d47",
+  "entry_id": "zh-b9a153ed3cf5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b9a153ed3cf5-1",
+      "headword": "江夏",
+      "kind": "name",
+      "reading": "Jiāngxià",
+      "senses": [
+        {
+          "id": "zh-b9a153ed3cf5-1-s1",
+          "definition": "Jiangxia"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "太守刘焉是江夏竟陵人，也是汉鲁恭王的后裔。",
+        "gloss": "Jiangxia",
+        "sense_id": "zh-b9a153ed3cf5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "618d3c4897e0962f4eba8f2707a0993a9aa0e88bf5a09773895bc3ab3f43f54b"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-c01541101124b181-52059c7a7a3d6833",
+  "entry_id": "ja-c01541101124b181",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c01541101124b181",
+      "headword": "食物",
+      "reading": "たべもの",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c01541101124b181-1",
+          "definition": "food; something to eat"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "声も出せないので、食物のある所まで歩く決心をし、池を左に見ながら、ゆっくり回り始めた。",
+        "gloss": "food",
+        "sense_id": "ja-c01541101124b181-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "64e7de0c47afa3cc2d39f4cfbd4569513d5137cd7a4d185d88583d965c387309"
+}

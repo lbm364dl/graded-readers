@@ -1,0 +1,31 @@
+{
+  "id": "zh-8a6949a38384-1-64a1986603c3d4b1",
+  "entry_id": "zh-8a6949a38384-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8a6949a38384-1",
+      "headword": "学",
+      "kind": "word",
+      "reading": "xué",
+      "senses": [
+        {
+          "id": "zh-8a6949a38384-1-s1",
+          "definition": "to study; learn"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "十五岁时，母亲让他外出游学，他曾师从郑玄、卢植，也与公孙瓒等人为友。",
+        "gloss": "to study; learn",
+        "sense_id": "zh-8a6949a38384-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "69b49ce42209511fa9053e623b90a09cc2c0efeb58a0cbe8fd03e61631050b41"
+}

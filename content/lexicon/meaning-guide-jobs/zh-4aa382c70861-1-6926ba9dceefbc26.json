@@ -1,0 +1,31 @@
+{
+  "id": "zh-4aa382c70861-1-6926ba9dceefbc26",
+  "entry_id": "zh-4aa382c70861-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4aa382c70861-1",
+      "headword": "丧",
+      "kind": "word",
+      "reading": "sàng",
+      "senses": [
+        {
+          "id": "zh-4aa382c70861-1-s1",
+          "definition": "lose a family member through death"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备幼年丧父，侍母至孝，家贫，靠卖草鞋、织席生活。",
+        "gloss": "to lose through death",
+        "sense_id": "zh-4aa382c70861-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "85f7c78f013cc9c5892b32ff835e5afd7ee7cc426fa3e7485f6c461138cd7692"
+}

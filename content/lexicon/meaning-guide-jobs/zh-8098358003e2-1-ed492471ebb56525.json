@@ -1,0 +1,41 @@
+{
+  "id": "zh-8098358003e2-1-ed492471ebb56525",
+  "entry_id": "zh-8098358003e2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8098358003e2-1",
+      "headword": "火攻",
+      "kind": "word",
+      "reading": "huǒgōng",
+      "senses": [
+        {
+          "id": "zh-8098358003e2-1-s1",
+          "definition": "an attack using fire"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇甫嵩和朱隽商量后，决定用火攻。",
+        "gloss": "fire attack",
+        "sense_id": "zh-8098358003e2-1-s1"
+      },
+      {
+        "sentence": "刘备赶到颍川时，火攻已经结束。",
+        "gloss": "fire attack",
+        "sense_id": "zh-8098358003e2-1-s1"
+      },
+      {
+        "sentence": "皇甫嵩、朱隽商量后，决定火攻，命士兵各带一把草，暗中埋下伏兵。",
+        "gloss": "fire attack",
+        "sense_id": "zh-8098358003e2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0fcca36766c1c907cf7c1c2ac934a37d6bdf42ca3e62e2fedfbd6b5d7fd8d03f"
+}

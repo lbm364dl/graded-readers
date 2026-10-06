@@ -1,0 +1,73 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_114-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 739,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹奂改名及其身世、司马昭受封赏赐等细节；省略了王经母子受刑前后的部分场景和诗赞。",
+      "classification": "material",
+      "reason": "曹奂的改名与身世属于身份信息；同时，受封赏赐和王经母子受刑的部分内容虽多为细节，但该 omission note 包含了不可仅视为氛围或修辞的身份信息。",
+      "required_fix": "补回曹奂改名、身世及司马昭受封赏赐的关键信息，并适度补写王经母子受刑场景；诗赞可简略概述。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹奂改名及其身世、司马昭受封赏赐等细节；省略了王经母子受刑前后的部分场景和诗赞。",
+      "classification": "material",
+      "reason": "曹奂的改名与身世属于身份信息；同时，受封赏赐和王经母子受刑的部分内容虽多为细节，但该 omission note 包含了不可仅视为氛围或修辞的身份信息。",
+      "required_fix": "补回曹奂改名、身世及司马昭受封赏赐的关键信息，并适度补写王经母子受刑场景；诗赞可简略概述。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 775,
+      "review": {
+        "source_fidelity": 8.2,
+        "naturalness": 8.5,
+        "readability": 9.0,
+        "material_omissions": [
+          "改写王瓘密信时，姜维不仅改了日期，还把内容改为约邓艾亲自率大军在坛山谷接应；修复稿仅说改了日期，导致邓艾率五万兵亲自到场的关键因果缺失。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“蜀魏君臣不和”将原文所指的蜀国君臣不和表述成蜀、魏双方君臣都不和，范围有所扩大。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 739,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

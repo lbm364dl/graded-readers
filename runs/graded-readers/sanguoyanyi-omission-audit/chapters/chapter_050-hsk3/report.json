@@ -1,0 +1,68 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_050-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 555,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了赵云夺旗而不追赶、曹操获脱的细节。",
+      "classification": "material",
+      "reason": "这包含赵云的具体行动及其导致曹操脱身的战术结果，不只是氛围或装饰性描写。",
+      "required_fix": "补充赵云不追赶曹操、只抢夺旗帜，因此曹操得以脱身的情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“孙权、陆逊、太史慈又截断合淝援军”略显因果简化，原文是孙权发现火光后命陆逊举火，太史慈与其合兵追击。",
+      "classification": "material",
+      "reason": "“截断合淝援军”将原文中孙权发现火光、命陆逊举火及太史慈合兵追击的具体行动和因果关系压缩为不同表述，造成了事件过程的因果失真。",
+      "required_fix": "改为孙权望见江中火光后命陆逊举火为号，太史慈与陆逊合兵冲杀，使曹操无法得到合淝援军，只得改奔彝陵。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了赵云夺旗而不追赶、曹操获脱的细节。",
+      "classification": "material",
+      "reason": "这包含赵云的具体行动及其导致曹操脱身的战术结果，不只是氛围或装饰性描写。",
+      "required_fix": "补充赵云不追赶曹操、只抢夺旗帜，因此曹操得以脱身的情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“孙权、陆逊、太史慈又截断合淝援军”略显因果简化，原文是孙权发现火光后命陆逊举火，太史慈与其合兵追击。",
+      "classification": "material",
+      "reason": "“截断合淝援军”将原文中孙权发现火光、命陆逊举火及太史慈合兵追击的具体行动和因果关系压缩为不同表述，造成了事件过程的因果失真。",
+      "required_fix": "改为孙权望见江中火光后命陆逊举火为号，太史慈与陆逊合兵冲杀，使曹操无法得到合淝援军，只得改奔彝陵。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 555,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-5e64308a7690d80f-171b6220ebc164f7",
+  "entry_id": "ja-5e64308a7690d80f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5e64308a7690d80f",
+      "headword": "十",
+      "reading": "じゅう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5e64308a7690d80f-1",
+          "definition": "ten"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩の家の裏には、十坪ほどの茶園がある。",
+        "gloss": "ten",
+        "sense_id": "ja-5e64308a7690d80f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cd36b41a86d02a90361c2856e20a93e7aae35f47c7e2d628871e1f879113fc43"
+}

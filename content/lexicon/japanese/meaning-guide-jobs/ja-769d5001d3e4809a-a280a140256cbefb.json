@@ -1,0 +1,32 @@
+{
+  "id": "ja-769d5001d3e4809a-a280a140256cbefb",
+  "entry_id": "ja-769d5001d3e4809a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-769d5001d3e4809a",
+      "headword": "当然",
+      "reading": "とうぜん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-769d5001d3e4809a-1",
+          "definition": "naturally; as a matter of course; to be expected"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "それが当然の決まりであり、相手が守らなければ、力に訴えてもよい。",
+        "gloss": "naturally; as a matter of course",
+        "sense_id": "ja-769d5001d3e4809a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d10078217da5ae96a2a0c164f8e9fc128a1c5b17a8bd2751718c86fc3f69cb2d"
+}

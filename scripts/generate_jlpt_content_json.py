@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate content_ja.json from JLPT graded reader markdown files."""
+"""Legacy-compatible entry point for rebuilding clean app content assets."""
 
 import json
 import os
@@ -256,4 +256,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    from generate_app_content_json import main as generate_clean_content
+
+    generate_clean_content()

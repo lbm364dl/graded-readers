@@ -1,0 +1,32 @@
+{
+  "id": "ja-a4d51e8196eac44e-e52a67f12c08c82c",
+  "entry_id": "ja-a4d51e8196eac44e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a4d51e8196eac44e",
+      "headword": "はずだ",
+      "reading": "はずだ",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-a4d51e8196eac44e-1",
+          "definition": "Expresses that something is expected or logically should be the case, based on available information or reasoning."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "毛があるはずの顔はつるつるで、やかんのようだった。",
+        "gloss": "supposed to; expected to",
+        "sense_id": "ja-a4d51e8196eac44e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3284c4e1a66131eeb477eca921014f5a8373e4c47f753de79ebc7443863d3638"
+}

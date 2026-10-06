@@ -1,0 +1,31 @@
+{
+  "id": "zh-136de7a8c46f-1-0315d7cab4b62253",
+  "entry_id": "zh-136de7a8c46f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-136de7a8c46f-1",
+      "headword": "拒绝",
+      "kind": "word",
+      "reading": "jùjué",
+      "senses": [
+        {
+          "id": "zh-136de7a8c46f-1-s1",
+          "definition": "to refuse; reject"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植因为拒绝行贿，被人诬陷，押回京城。",
+        "gloss": "refuse",
+        "sense_id": "zh-136de7a8c46f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2a82a9b083d484fccd14b19006d62cf16a7d8f66e2f86f224f945e6ea35a936e"
+}

@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_037-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 257,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“徐庶赶到许昌投曹操”略有歧义，可能让人误解为徐庶投靠曹操；原文只是因假信赶赴许昌，之后拒绝曹操所赐。",
+      "classification": "material",
+      "reason": "“投曹操”可能将徐庶因假信赴许昌并拒收曹操所赐，误写成投靠曹操，改变了关键人物立场和事件含义。",
+      "required_fix": "改为“徐庶因假信赶到许昌拜见母亲”或“徐庶被假信召回许昌”，不要写“投曹操”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“徐庶赶到许昌投曹操”略有歧义，可能让人误解为徐庶投靠曹操；原文只是因假信赶赴许昌，之后拒绝曹操所赐。",
+      "classification": "material",
+      "reason": "“投曹操”可能将徐庶因假信赴许昌并拒收曹操所赐，误写成投靠曹操，改变了关键人物立场和事件含义。",
+      "required_fix": "改为“徐庶因假信赶到许昌拜见母亲”或“徐庶被假信召回许昌”，不要写“投曹操”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 257,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

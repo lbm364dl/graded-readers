@@ -1,0 +1,21 @@
+{
+  "job": "annotations/chunk_0000/constrained_correction_02",
+  "model": "gpt-5.6-luna",
+  "effort": "medium",
+  "fingerprint": "81707400a700869dd59277f81bdd186eabbdb85c974a2c0aacbbb098e7cecf5a",
+  "started_at": "2026-08-07T02:56:28.838760+00:00",
+  "ended_at": "2026-08-07T02:58:52.963563+00:00",
+  "return_code": 0,
+  "attempt_count": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-08-07T02:56:28.838779+00:00",
+      "ended_at": "2026-08-07T02:58:52.963234+00:00",
+      "return_code": 0,
+      "throttled": false,
+      "events": "events.attempt-01.jsonl",
+      "stderr": "stderr.attempt-01.log"
+    }
+  ]
+}

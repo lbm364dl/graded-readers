@@ -1,0 +1,32 @@
+{
+  "id": "ja-de916efb65160e71-2d3652459fc25367",
+  "entry_id": "ja-de916efb65160e71",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-de916efb65160e71",
+      "headword": "様子",
+      "reading": "ようす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-de916efb65160e71-1",
+          "definition": "condition; appearance"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "様子がおかしいと思い、ゆっくり這い出すと、体がひどく痛かった。",
+        "gloss": "condition; appearance",
+        "sense_id": "ja-de916efb65160e71-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e2230e12a7ebd0800801aa7bed07b5fbfbd719ba16c3af359378e4ce4e925a52"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-131edfdaf6a2-1-beee287caf596a85",
+  "entry_id": "zh-131edfdaf6a2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-131edfdaf6a2-1",
+      "headword": "没过",
+      "kind": "construction",
+      "reading": "méiguò",
+      "senses": [
+        {
+          "id": "zh-131edfdaf6a2-1-s1",
+          "definition": "within fewer than (a specified number of days)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "没过几天，有人报告：黄巾军将领程远志率领五万兵马来犯涿郡。",
+        "gloss": "in less than",
+        "sense_id": "zh-131edfdaf6a2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0876428872d332d583d5a46b2e31bfa52b93e80e0b1139324a515f6546e50768"
+}

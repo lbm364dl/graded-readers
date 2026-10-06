@@ -1,0 +1,31 @@
+{
+  "id": "zh-1f5163c433ea-1-9da9f869a8b3b3bf",
+  "entry_id": "zh-1f5163c433ea-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1f5163c433ea-1",
+      "headword": "一些",
+      "kind": "word",
+      "reading": "yīxiē",
+      "senses": [
+        {
+          "id": "zh-1f5163c433ea-1-s1",
+          "definition": "some; an unspecified amount or number"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝还把一些正直的人关起来。",
+        "gloss": "some",
+        "sense_id": "zh-1f5163c433ea-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "77fe6fe2e885b89c296134aae76fe074684b40c44efb784e6883bc2e58f41173"
+}

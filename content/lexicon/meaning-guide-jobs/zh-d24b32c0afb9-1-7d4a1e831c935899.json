@@ -1,0 +1,31 @@
+{
+  "id": "zh-d24b32c0afb9-1-7d4a1e831c935899",
+  "entry_id": "zh-d24b32c0afb9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d24b32c0afb9-1",
+      "headword": "贿赂",
+      "kind": "word",
+      "reading": "huìlù",
+      "senses": [
+        {
+          "id": "zh-d24b32c0afb9-1-s1",
+          "definition": "a bribe; bribery"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "左丰来查看军情，向我索要贿赂。",
+        "gloss": "bribe; bribery",
+        "sense_id": "zh-d24b32c0afb9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f978d465695e9facf34312fe835f93ff7dac14c1e0e13520d60bf84cc863c49d"
+}

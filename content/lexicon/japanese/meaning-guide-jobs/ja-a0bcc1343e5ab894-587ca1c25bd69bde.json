@@ -1,0 +1,32 @@
+{
+  "id": "ja-a0bcc1343e5ab894-587ca1c25bd69bde",
+  "entry_id": "ja-a0bcc1343e5ab894",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a0bcc1343e5ab894",
+      "headword": "すべきだ",
+      "reading": "すべきだ",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-a0bcc1343e5ab894-1",
+          "definition": "should; ought to (expresses that an action is advisable or required)"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が「自分で筆を持つと、絵は実に難しい」と言うと、友人は、室内の想像だけでは絵はかけない、自然そのものを見て写生すべきだと教えた。",
+        "gloss": "should; ought to",
+        "sense_id": "ja-a0bcc1343e5ab894-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "170192f15e8f0ef16ad3405c67271f2e77b61f9c5619ad0323754cabbe6e492a"
+}

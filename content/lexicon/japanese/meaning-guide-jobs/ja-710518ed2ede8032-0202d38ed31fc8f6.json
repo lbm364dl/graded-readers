@@ -1,0 +1,37 @@
+{
+  "id": "ja-710518ed2ede8032-0202d38ed31fc8f6",
+  "entry_id": "ja-710518ed2ede8032",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-710518ed2ede8032",
+      "headword": "或",
+      "reading": "ある",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-710518ed2ede8032-1",
+          "definition": "a certain; some"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある暖かい日の午後、昼ごはんの後で寝てから、吾輩は茶園を歩いた。",
+        "gloss": "a certain",
+        "sense_id": "ja-710518ed2ede8032-1"
+      },
+      {
+        "sentence": "ある日、黒は人間の悪い話をした。",
+        "gloss": "a certain",
+        "sense_id": "ja-710518ed2ede8032-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8e702047e7709bfad37fe144e83eabebe7195131868c162782f46911f847c6b3"
+}

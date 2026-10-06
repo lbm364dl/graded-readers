@@ -1,0 +1,32 @@
+{
+  "id": "ja-1242b2cabeb92f1e-e0e3f4243e00cff0",
+  "entry_id": "ja-1242b2cabeb92f1e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1242b2cabeb92f1e",
+      "headword": "座る",
+      "reading": "すわる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1242b2cabeb92f1e-1",
+          "definition": "to sit; be seated"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この書生の手の上で、吾輩はしばらく気持ちよく座っていた。",
+        "gloss": "was sitting",
+        "sense_id": "ja-1242b2cabeb92f1e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5fa31a650eb6cf29a1205f35aa454435ca30dd97f35e71a501e31ca50109d35f"
+}

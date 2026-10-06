@@ -1,0 +1,31 @@
+{
+  "id": "zh-12d9b68679d5-1-7b6d69be0e071beb",
+  "entry_id": "zh-12d9b68679d5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-12d9b68679d5-1",
+      "headword": "泛上来",
+      "kind": "construction",
+      "reading": "fàn shànglai",
+      "senses": [
+        {
+          "id": "zh-12d9b68679d5-1-s1",
+          "definition": "to rise or surge upward and toward the reference point"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大风、雷雨、冰雹毁坏房屋，地震和海水泛上来，百姓生活很难。",
+        "gloss": "rise or surge up",
+        "sense_id": "zh-12d9b68679d5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5f08970f3f2479a0a3dcb8cf7d4bb54edc1adf24ce8fcbfdddc21aec2ee1a00d"
+}

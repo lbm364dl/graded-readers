@@ -1,0 +1,614 @@
+{
+  "format": "repair-research-lifecycle-benchmark-v1",
+  "prepared_at_utc": "2026-10-04T16:25:57.375227+00:00",
+  "purpose": "Evidence record for bounded repair, review, reference research and cache lifecycle checks. Chunk-scoped acceptance is not chapter approval or publication.",
+  "validation_snapshot": {
+    "broad_tests_passed": 826,
+    "broad_test_duration_seconds": 142.14,
+    "policy_focused_tests_passed": 50,
+    "source_adapter_tests_passed": 124,
+    "latest_focused_source_approval_compatibility_korean_chunk_publication_workspace_tests_passed": 164,
+    "latest_focused_test_duration_seconds": 7.35,
+    "counting_note": "Focused subsets overlap the broad suite and each other; counts are reported separately and not summed.",
+    "source": "root-reported final test runs; no raw runner output included"
+  },
+  "shared_change_scope": {
+    "review_anchor_mapping": "Contextual overlay ranges are no longer treated as defect targets; contrasting validator tests passed.",
+    "adjudicator_guidance": "Shared semantic review guidance is present at the adjudicator top level.",
+    "production_status": "TOPIK 3, 4 and 6 remain held; no production approval or publication claim."
+  },
+  "synthetic_cross_language_controls": [
+    {
+      "language": "Japanese",
+      "scope": "One saved excerpt; synthetic single-field corruption; not production content.",
+      "model": "gpt-6-luna",
+      "effort": "low",
+      "status": "synthetic_smoke_passed",
+      "repair": "applied",
+      "fresh_review": "pass",
+      "independent_review_children": 2,
+      "local_gate": "passed",
+      "source_taps_unchanged": true,
+      "review_acceptance_replay": true,
+      "publication_receipt_replay": true,
+      "candidate_digest": "c6d41d12398cda3115d4197eb5e680dc6fdf8bdf2ee12e021236ba8b52d9363f",
+      "artifacts": [
+        {
+          "path": "runs/maintenance/20261003/smokes/shared-repair-cj-20261004/runs/ja/smoke-summary.json",
+          "sha256": "977486723e0e8f14ac12abbc33db8b62e09fae646867e6c2b2ee006454cc445c"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/shared-repair-cj-20261004/runs/ja/accepted-annotations/chunk_0000.json",
+          "sha256": "50e612dfc50a642369fd8f7dc803c49de6dcfb357b03466e1e8a3e0078eeb181"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/shared-repair-cj-20261004/runs/ja/agents/annotations/chunk_0000/synthetic_repair_assembly/result.json",
+          "sha256": "0abfa8f8fe0dd2c459a126d42bd57dcd63473f9bb417fd7e2facf04d355dd557"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/shared-repair-cj-20261004/runs/ja/agents/annotations/chunk_0000/synthetic_fresh_review_review/result.json",
+          "sha256": "473f5d58ad5581f8528f858e2d4b624599fe68191940cc3988abaed7f446d3f1"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/shared-repair-cj-20261004/runs/ja/agents/annotations/chunk_0000/synthetic_fresh_review_boundary_review/result.json",
+          "sha256": "473f5d58ad5581f8528f858e2d4b624599fe68191940cc3988abaed7f446d3f1"
+        }
+      ]
+    },
+    {
+      "language": "Chinese",
+      "scope": "Synthetic single-field control on saved excerpt; not production content. One source-grounded overlay repair followed a fresh-review finding.",
+      "model": "gpt-6-luna",
+      "effort": "low",
+      "status": "synthetic_smoke_passed",
+      "repair_history_count": 3,
+      "final_review_verdict": "pass",
+      "source_taps_unchanged": true,
+      "acceptance_replay": true,
+      "publication_receipt_replay": true,
+      "candidate_digest": "3d823f9ee505bc65c779ea6c54312b857bb66725bab8de6a18765d0f058ac931",
+      "accepted_chunk_sha256": "b13464e1e12cf8a7a18f685694ac735490036b0c35036bd9175daf5f4f3caa10",
+      "artifacts": [
+        {
+          "path": "runs/maintenance/20261003/smokes/shared-repair-cj-20261004/runs/zh/smoke-continuation-summary.json",
+          "sha256": "64c4e7318ca82032cf4894d6f0774de9ebb0e0ad047aead10378833a2115cd72"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/shared-repair-cj-20261004/runs/zh/accepted-annotations/chunk_0000.json",
+          "sha256": "b13464e1e12cf8a7a18f685694ac735490036b0c35036bd9175daf5f4f3caa10"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/shared-repair-cj-20261004/runs/zh/agents/annotations/chunk_0000/synthetic_followup_01_assembly/result.json",
+          "sha256": "a6ba07904f9b394be376ed3f357009b1e94a621b22c4b39656ec7bd3a64467c7"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/shared-repair-cj-20261004/runs/zh/agents/annotations/chunk_0000/synthetic_followup_01_review/result.json",
+          "sha256": "473f5d58ad5581f8528f858e2d4b624599fe68191940cc3988abaed7f446d3f1"
+        }
+      ],
+      "continuation_repair_attempt_count": 1
+    }
+  ],
+  "korean_standalone_233_character_case": {
+    "scope": "Standalone excerpt only; separate from the full parent chain and not production publication.",
+    "source_character_count": 233,
+    "source_sha256": "c05a9df4125f46c7c001fbbc12ea3438c77b31a0c1664df5bded2be5974fe296",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "status": "accepted_by_fresh_independent_review",
+    "structural_gate": "passed",
+    "assembly_version": 1,
+    "offline_replay": {
+      "replayed": true,
+      "model_calls": 0
+    },
+    "candidate_digest": "44712900741dd995baa567e432ebc90fa2e8dbddfcf462de77ee15ce4cdf08a4",
+    "artifacts": [
+      {
+        "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/standalone-v2/run-output/source-text.txt",
+        "sha256": "c05a9df4125f46c7c001fbbc12ea3438c77b31a0c1664df5bded2be5974fe296"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/standalone-v2/run-output/outcome-summary.json",
+        "sha256": "dd21098a136b702df5c860bed7c63a2961362740899a7c937e7a1625495d8161"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/standalone-v2/run-output/accepted-smoke-assembly.json",
+        "sha256": "5c948dd6ae6990bdb5d78e8ec1c6768e25ecbec835f6cd4b7c41f9d398904541"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/standalone-v2/run-output/cache-replay-verification.json",
+        "sha256": "ff2e402890298aab61686b32fc6187ebed3fdb6d7e30b6f604029a3359a1d785"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/standalone-v2/run-output/agents/annotation-local-review-5a32a0caa19a841bc07b66d2468df3d0a5066358ea37d55089c3c2445c134393/result.json",
+        "sha256": "9d1270cd3466011d0d8976c8a9913963810e4db5fe91fb352ca8ff3a4fea04d6"
+      }
+    ]
+  },
+  "korean_full_parent_uncertainty_chain": {
+    "candidate_digest": "ff9b1400e604775498d8b1c4e476de3928979b1436be709d67e79da32c573eec",
+    "v2_v3_v4_status": "uncertain; unapproved; chain/replay preserved; no acceptance or assembly proof",
+    "v2": {
+      "status": "uncertain",
+      "approved": false,
+      "research_status": "unresolved",
+      "source_request_count": null,
+      "capture_failure_count": null,
+      "top_adjudication_status": "uncertain",
+      "top_adjudication_approved": false,
+      "adjudicated_candidate_digest": "ff9b1400e604775498d8b1c4e476de3928979b1436be709d67e79da32c573eec",
+      "artifact_refs": [
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/uncertainty-research-v2/run-output/outcome-summary.json",
+          "sha256": "4df8b60f4ffe3c89517429c33f61c363e06efbfe46e5892b734a3cd8c77df546"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/uncertainty-research-v2/run-output/adjudication-verified.json",
+          "sha256": "f6742cad355b939e883466eebb436b6be662535f714a0ea055caf4cad12c2bef"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/uncertainty-research-v2/run-output/cache-replay-verification.json",
+          "sha256": "5228cc0f7b3151385872f6db1503ee469272925eeec0e64aa7f977e1e713ea34"
+        }
+      ]
+    },
+    "v3": {
+      "status": "uncertain",
+      "approved": false,
+      "research_status": "unresolved",
+      "source_request_count": 0,
+      "capture_failure_count": 0,
+      "top_adjudication_status": "uncertain",
+      "top_adjudication_approved": false,
+      "adjudicated_candidate_digest": "ff9b1400e604775498d8b1c4e476de3928979b1436be709d67e79da32c573eec",
+      "artifact_refs": [
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/uncertainty-research-v3/run-output/outcome-summary.json",
+          "sha256": "02c68206369fec5a20b0ba9df38407b909e61e57626785e5e7e893535455f2d8"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/uncertainty-research-v3/run-output/adjudication-verified.json",
+          "sha256": "5c3b01002528d162d866a39c56adce03226b232ee6e24de0e906b4f5ce50ae78"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/uncertainty-research-v3/run-output/cache-replay-verification.json",
+          "sha256": "d6f1992fa799b24a4b70ca6f761d7bb408b5712f858b260acf937841ab200efa"
+        }
+      ]
+    },
+    "v4": {
+      "status": "uncertain",
+      "approved": false,
+      "research_status": "unresolved",
+      "source_request_count": 1,
+      "capture_failure_count": 0,
+      "top_adjudication_status": "uncertain",
+      "top_adjudication_approved": false,
+      "adjudicated_candidate_digest": "ff9b1400e604775498d8b1c4e476de3928979b1436be709d67e79da32c573eec",
+      "artifact_refs": [
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/uncertainty-research-v4/run-output/outcome-summary.json",
+          "sha256": "f76a3bbed716cf6cb5517d00d1563c9818d46368b4b112ebc6541274f49cd9f7"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/uncertainty-research-v4/run-output/adjudication-verified.json",
+          "sha256": "8de6041197e24954004784d933646f981fd39b964c4933525916e9d2cff8f464"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/uncertainty-research-v4/run-output/cache-replay-verification.json",
+          "sha256": "414f2b55c1db587acd5d6e980e9277e57a2e6f7fb9207a1f16add9db20353b1f"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/uncertainty-research-v4/run-output/annotation-research/605f194283595d6e2cff487934039ae107327a6ac9b43b4aec22a0c072440492/captures/capture-00.json",
+          "sha256": "dec76640c35dd3fb497bc3c9526cb62db8f8d64751e7d4baf0dff1f9805ce8e2"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/uncertainty-research-v4/run-output/annotation-research/605f194283595d6e2cff487934039ae107327a6ac9b43b4aec22a0c072440492/continuation-result.json",
+          "sha256": "8aeb8e5546e32796974844297518e4a40b52682c5e820e3542bdc7ef1d070775"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/uncertainty-research-v4/run-output/annotation-research/605f194283595d6e2cff487934039ae107327a6ac9b43b4aec22a0c072440492/evidence.json",
+          "sha256": "b77388461ecc9bc8412c3a3cac82be0c150f74066b3db449aedb069f772e2159"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/uncertainty-research-v4/run-output/annotation-research/605f194283595d6e2cff487934039ae107327a6ac9b43b4aec22a0c072440492/review-result.json",
+          "sha256": "9af6f29e5d7ce8fc5bf544da57c95734b37563f0a1efc4d299af189aff34fa1d"
+        }
+      ],
+      "capture_http_status": 200,
+      "capture_artifact_sha256": "dec76640c35dd3fb497bc3c9526cb62db8f8d64751e7d4baf0dff1f9805ce8e2",
+      "continuation_research_review_approved": true,
+      "independent_research_review_approved": true,
+      "elapsed_seconds": 200.07,
+      "continuation_result_present": true,
+      "continuation_findings_count": 1,
+      "http_200_capture_count": 1,
+      "approved_reference_count": 0,
+      "offline_replay": {
+        "replayed": true,
+        "model_calls": 0
+      }
+    },
+    "interpretation": "The V4 reference-capture/continuation/review and offline replay mechanisms completed, but the captured evidence did not resolve the exact component meaning. The final top-level adjudication remains uncertain with no approval.",
+    "v4_state": "completed; current saved final outcome is uncertain (not pending)."
+  },
+  "limitations": [
+    "Japanese and Chinese end-to-end controls are synthetic; they do not validate real review corrections or chapter publication.",
+    "The standalone Korean 233-character accepted case remains separate from the full-parent lifecycle; its acceptance is not generalized.",
+    "V5 and V6 operate on the same Korean chunk candidate; V5 uncertainty remains recorded, while V6 chunk acceptance is scoped to source_start 1556 in a 6754-character parent.",
+    "V6 did not approve chapter assembly or publication. TOPIK 3, 4 and 6 production coordinators remain held.",
+    "A source-adapter verification pass is still pending; this record is not the final issue/PR update."
+  ],
+  "korean_reviewed_cache_lifecycle": {
+    "v5": {
+      "status": "uncertain",
+      "approved": false,
+      "candidate_digest": "44712900741dd995baa567e432ebc90fa2e8dbddfcf462de77ee15ce4cdf08a4",
+      "effort": "low",
+      "elapsed_seconds": 121.79,
+      "artifacts": [
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/reviewed-cache-v5/run-output-paid/outcome-summary.json",
+          "sha256": "bd991247d28a8fd86a065f0cd7bb076ab1e9ed2233ed916d5c5a2d162f95c531"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/reviewed-cache-v5/run-output-paid/cache-only-replay.json",
+          "sha256": "bd11f256a18f830d511af84b114f095ba5895cb6b2c9ffbbf2b99298f5f9c7fd"
+        }
+      ]
+    },
+    "v6": {
+      "status": "cleared",
+      "approved": true,
+      "effective_review_kind": "adjudicated",
+      "same_chunk_candidate_digest": "44712900741dd995baa567e432ebc90fa2e8dbddfcf462de77ee15ce4cdf08a4",
+      "source_parent_length": 6754,
+      "source_start": 1556,
+      "acceptance_scope": "chunk",
+      "chunk_acceptance_verified": true,
+      "chapter_assembly_or_publication_approved": false,
+      "model": "gpt-6-luna",
+      "effort": "low",
+      "single_paid_adjudication_elapsed_seconds": 97.34,
+      "new_paid_job_count": 1,
+      "new_research_or_critic_model_jobs": [],
+      "legacy_v5_v1_reviewed_lesson_cache_compatibility": {
+        "status": "reviewed_lesson_reused",
+        "replayed": true
+      },
+      "offline_cache_replay": {
+        "replayed": true,
+        "model_calls": 0,
+        "network_calls": 0
+      },
+      "registered_lesson_status": "reviewed_lesson_reused",
+      "artifacts": [
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/reviewed-cache-v6/run-output-paid/outcome-summary.json",
+          "sha256": "fc681fae052bc9ba938ac3ee6ec733ce958a970987b48322d27a7f367ee67e18"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/reviewed-cache-v6/run-output-paid/chunk-acceptance-verification.json",
+          "sha256": "4929cb018a723a948d6e71e974ace2cd0cad05af0e7e0642aefc20ebdbcf5f90"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/reviewed-cache-v6/run-output-paid/adjudication-verified.json",
+          "sha256": "5d19ab08a32094a3c93fc81fcea8a92e8f3b060cfe18c63fe42ce0ea923e4a09"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/reviewed-cache-v6/run-output-paid/cache-only-replay.json",
+          "sha256": "00b9e84ca8ac80f3ffd765387b69c3c7ca03bc638bd37e0d00e51df075afe4ee"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/reviewed-cache-v6/run-output-paid/reviewed-lesson-cache-replay.json",
+          "sha256": "f2c498c60e2d473afc02d65e6094a904bd02a8154e175cabf9a6f7636db7e574"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/reviewed-cache-v6/run-output-paid/reviewed-lesson-cache-registration.json",
+          "sha256": "f2c498c60e2d473afc02d65e6094a904bd02a8154e175cabf9a6f7636db7e574"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/reviewed-cache-v6/run-output-paid/v5-cache-compatibility.json",
+          "sha256": "d62139b319224b540cc2e890dffe5fd37e1776e1dfef0247a7ea07404e274d7b"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/reviewed-cache-v6/run-output-paid/agents/annotation-adjudication-5318999bc7d38a9b16b988f80202e2d4e935d15a9412ec846c5e0a0d4147b065/meta.json",
+          "sha256": "04eb45b8286b8f8efeaf09f20e6e84f297ea425e7b3bcfeef0a45c8c5408900b"
+        }
+      ],
+      "descriptor_source_replay": {
+        "status": "replayed_and_cleared",
+        "replayed": true,
+        "approved": true,
+        "candidate_digest": "44712900741dd995baa567e432ebc90fa2e8dbddfcf462de77ee15ce4cdf08a4",
+        "adjudication_digest": "d4cfe07a36aa9ae22ec083071044174d042211c10dba1213e313728c732714c4",
+        "scoped_cache_digest": "5e3894d24ee7bd6cdb2e2826584240452cb034d84c76fd402c4f08a53559c7d9",
+        "cache_file_sha256_before_and_after": "d029ecf1f892de46c362cbe5d42645cf7893092ddbe78f9d6a7a593e84c5aa80",
+        "source_descriptor_digest": "bc10166f0875cb9841a0c792d3a3b5dde1510bd7a3008dbee4baf26dbfed7409",
+        "runner_calls_validated_from_cache": [
+          "annotation-adjudication-0c42cfd94bf8afd5222f1cc0c4c86e79499b6e59c4a44358976c13c951bf2275",
+          "annotation-adjudication-5318999bc7d38a9b16b988f80202e2d4e935d15a9412ec846c5e0a0d4147b065"
+        ],
+        "new_jobs": [],
+        "new_or_changed_meta": [],
+        "external_attempts": [],
+        "chapter_assembly_or_publication_approved": false,
+        "artifacts": [
+          {
+            "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/reviewed-cache-v6/descriptor-replay/outcome-summary.json",
+            "sha256": "b4fd95e142626eb51c330d01765ca8789002aba1666011b15343a5a48ffd0bdd"
+          },
+          {
+            "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/reviewed-cache-v6/descriptor-replay/registered-source-descriptor.json",
+            "sha256": "264be6ebcc14533a8b93f2336d45aa4262499152430a2540608940ba6c74785c"
+          },
+          {
+            "path": "runs/maintenance/20261003/smokes/k4-component-scope-repair-20261004/reviewed-cache-v6/descriptor-replay/cache-receipt-before-descriptor-replay-final.json",
+            "sha256": "d029ecf1f892de46c362cbe5d42645cf7893092ddbe78f9d6a7a593e84c5aa80"
+          }
+        ],
+        "interpretation": "Offline descriptor replay resolved the registered source lesson and validated both cached adjudication calls against the unchanged chunk/cache. This confirms chunk-scoped cached evidence reuse only; it does not grant chapter or publication approval."
+      },
+      "interpretation": "V5 retained its uncertain top-level finding. V6 cleared the same accepted chunk candidate at chunk scope, reusing the reviewed V5 v1 lesson/cache and making one low-effort adjudication call. A later offline source-descriptor replay validated the original registered source lesson and the same cached calls without new jobs, metadata changes, or external attempts. Chunk proof explicitly does not grant chapter assembly or publication approval."
+    },
+    "interpretation": "V5 retained its uncertain top-level finding. V6 cleared the same accepted chunk candidate at chunk scope, reusing the reviewed V5 v1 lesson/cache and making one low-effort adjudication call. V6 chunk proof explicitly does not grant chapter assembly or publication approval."
+  },
+  "typed_target_investigation": {
+    "status": "in_progress_not_accepted",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "chapter_published": false,
+    "production_status": "TOPIK 3, 4 and 6 held; cached reviewed work preserved",
+    "source_characters": 220,
+    "parent_characters": 6754,
+    "source_start": 649,
+    "targeted_repair": "applied and replayed; two complete-form meaning fields changed; source/tap ranges preserved",
+    "fresh_typed_review_issues": 3,
+    "independent_adjudication": "two unsupported with cited lessons; one uncertain lexical finding",
+    "research_observation": "A fact about other findings was marked supported and independently approved, but did not resolve the lexical gap. Effective adjudication remained uncertain.",
+    "candidate_digest": "76dd54bccec38c2c35a13c4e7b071b6446825d614281deca836b4ba75ff45ecf",
+    "tests": {
+      "affected_passed": 919,
+      "duration_seconds": 121.93,
+      "overlap_note": "Latest frozen suite; overlaps prior snapshots and must not be summed."
+    },
+    "artifacts": [
+      {
+        "path": "runs/maintenance/20261003/smokes/typed-review-acceptance-20261004/run-output/typed-review-0.json",
+        "sha256": "64a587f535a58bf47ba46a0ebb803c0f24f50879e10b8618b6036227ccb2cb93"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/typed-review-acceptance-20261004/run-output/typed-adjudication-0.json",
+        "sha256": "7b9df33d2a9edd159888f6744058be3be3ff6e86410f5fe2cdb0cb876c0cd7f8"
+      }
+    ],
+    "interpretation": "Structured targets preserve evidence-supported classifications. Focused research stops irrelevant fact substitution but has not completed the lexical lookup and acceptance lifecycle. Production remains held pending a whole-path smoke and affected-output verification.",
+    "research_policy": 4,
+    "host_binding_policy": 5,
+    "focused_research_smoke": {
+      "status": "uncertain_not_accepted",
+      "source_characters": 220,
+      "source_start": 649,
+      "same_candidate": true,
+      "finding_scope": "Research correctly stayed on the one unresolved noun; no unrelated supported fact was submitted.",
+      "remaining_gap": "Worker could not locate a verified direct primary dictionary entry URL. No candidate or publication approval.",
+      "artifacts": [
+        {
+          "path": "runs/maintenance/20261003/smokes/focused-research-acceptance-20261004/run-output/typed-review-0.json",
+          "sha256": "64a587f535a58bf47ba46a0ebb803c0f24f50879e10b8618b6036227ccb2cb93"
+        },
+        {
+          "path": "runs/maintenance/20261003/smokes/focused-research-acceptance-20261004/run-output/typed-adjudication-0.json",
+          "sha256": "bf1ef91fa07077b1cf045e38d4c6a47a5f6066224dfda73fedeb2c9d4bd36b6d"
+        }
+      ]
+    }
+  },
+  "approved_prerequisites_whole_path_smoke": {
+    "accepted": true,
+    "smoke_only": true,
+    "chapter_published": false,
+    "characters": 220,
+    "source_start": 649,
+    "parent_characters": 6754,
+    "candidate_digest": "5ee2d4d49706af31bd686d848647df0495702c7d4f60dc57484ba7254336ac99",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "offline_replay": true,
+    "forbidden_model_or_network_attempts": 0,
+    "elapsed_seconds": 377.19,
+    "interpretation": "Targeted four-field semantic repair, fresh independent review and evidence-based adjudication accepted this 220-character excerpt. Publication chunk verifier and repair assembly replay passed offline. This is not full chapter approval.",
+    "artifacts": [
+      {
+        "path": "runs/maintenance/20261003/smokes/approved-prerequisites-acceptance-20261004/run-output/prerequisites-outcome-summary.json",
+        "sha256": "bf55eb624a0114c555d72eeb0152e4e257fb7b6f88d0e8f4b1f2044ce65e66b6"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/approved-prerequisites-acceptance-20261004/run-output/typed-review-0.json",
+        "sha256": "58d2e22541aaa3c5e7eb453138f3e58fca9e7569239c94368bc471a58c9f8ec5"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/approved-prerequisites-acceptance-20261004/run-output/typed-adjudication-0.json",
+        "sha256": "c54aa77cc077f124711b5e79b2f9f3b2f265a638d9ec0ac76c5db050318de031"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/approved-prerequisites-acceptance-20261004/run-output/typed-repair-1.json",
+        "sha256": "856009cf48721d011d38f6c9349caeaef56d636ea8369ff2fb0478541876765b"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/approved-prerequisites-acceptance-20261004/run-output/typed-review-1.json",
+        "sha256": "6efb4db16f7f3e84806bc0229226689756ccd1846479876a0cd2e7c56241fc51"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/approved-prerequisites-acceptance-20261004/run-output/typed-adjudication-1.json",
+        "sha256": "ea224600d94f2cc07f4ac6d2229d28f65abee825b9fbed95cc72a862611e0b9b"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/approved-prerequisites-acceptance-20261004/run-output/complete-repair-publication-replay.json",
+        "sha256": "ebb2de5a23d01d4fc96f69ccf118fa634142672833231f4b945fc16e518cb9aa"
+      }
+    ]
+  },
+  "shared_candidate_budget_validation": {
+    "limit": 3,
+    "identity": "exact immutable candidate digest",
+    "languages": [
+      "zh",
+      "ja",
+      "ko"
+    ],
+    "broad_tests_passed": 945,
+    "broad_duration_seconds": 141.58,
+    "post_guard_japanese_tests_passed": 331,
+    "post_guard_japanese_duration_seconds": 2.75,
+    "independent_code_review": "approved after Japanese ordinary-pass tail guard regression",
+    "counting_note": "Overlapping test suites reported separately, not summed.",
+    "production_status": "TOPIK4 restarted with cached work and six GPT-6 Luna low workers; TOPIK3/6 inactive pending observed production progress",
+    "offline_whole_path_replay": {
+      "accepted": true,
+      "adjudication_candidates": 2,
+      "candidate_digest": "5ee2d4d49706af31bd686d848647df0495702c7d4f60dc57484ba7254336ac99",
+      "offline_replay": true,
+      "forbidden_model_or_network_attempts": 0,
+      "elapsed_seconds": 1.37,
+      "artifact": {
+        "path": "runs/maintenance/20261003/smokes/budgeted-prerequisites-replay-20261004/run-output/budgeted-outcome-summary.json",
+        "sha256": "65bb9ca1a1b8baa2ff8f85bf60d95d740c64d18bde594c2bf0104f5c09129d71"
+      },
+      "final_repair_and_publication_replay": {
+        "path": "runs/maintenance/20261003/smokes/budgeted-prerequisites-replay-20261004/run-output/complete-repair-publication-replay.json",
+        "sha256": "6eb88886c6206f824ba52a850555b4573d94d3f738cce92d4b01faa08e6d9683"
+      }
+    }
+  },
+  "per_target_policy6_and_disk_cleanup": {
+    "status": "isolated_whole_path_passed",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "changed_paths": [
+      "/segments/57/meaning_en"
+    ],
+    "supported_targets_unchanged": true,
+    "source_and_taps_unchanged": true,
+    "fresh_independent_review": "approved_without_issues",
+    "publication_chunk_verifier": true,
+    "offline_repair_and_publication_replay_after_physical_database_cleanup": true,
+    "elapsed_derived_lifecycle_seconds": 140.11929375599902,
+    "chapter_published": false,
+    "tests": {
+      "broad_semantic": 871,
+      "new_regressions": 24,
+      "runtime_and_replay": 240,
+      "overlap_note": "Suites reported separately, not summed."
+    },
+    "disk": {
+      "old_seed_bytes_approx": 749000000,
+      "new_seed_bytes": 245760,
+      "free_space_gib_approx": 680
+    },
+    "artifacts": [
+      {
+        "path": "runs/maintenance/20261003/smokes/mixed-target-acceptance-20261004/disputed-research-output/independent-adjudication.json",
+        "sha256": "eef66cb0981ac6ecfcdf0efa492bda21152c2765da166117e60a5e528afe9c52"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/mixed-target-acceptance-20261004/derived-run-output/accepted-result.json",
+        "sha256": "336343ee77fee2d0c207a3b541ad5194eeec21bf82e9cb596c2028e9422d2496"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/mixed-target-acceptance-20261004/derived-run-output/physical-state-removal-replay.json",
+        "sha256": "3274930ff93b80c7b9bd57d8d0e7695ebf8d34271682f39fb3588607182fb5c4"
+      }
+    ]
+  },
+  "reviewed_primary_source_smoke_20261005": {
+    "status": "bounded_final_review_rejected",
+    "accepted": false,
+    "production_equivalence": false,
+    "targeted_repairs_completed": 3,
+    "final_reviewer_objection": "Topic link attachment; exact recorded full range contradicts the shortened surface asserted by reviewer. Original rejection remains unchanged.",
+    "additional_shared_gap": "Approved run research was not carried into derived production reviews across language callers. Fix and new whole-path smoke required.",
+    "production_restarted": false,
+    "artifacts": [
+      {
+        "path": "runs/maintenance/20261003/smokes/reviewed-primary-source-acceptance-20261005/third-derived-run-output/outcome.json",
+        "sha256": "6daabab6e533ebd733b19c0f64f02dbc4c19c9c3136bdcefe8bb2576799bef1d"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/reviewed-primary-source-acceptance-20261005/third-derived-run-output/bounded-final-replay.json",
+        "sha256": "220e374c00f102dd8fb4765d456ed67d92d8be497aafac422f6185e1df9d8f4d"
+      },
+      {
+        "path": "runs/maintenance/20261003/checks/source-smoke-topic-range-finding-20261005.json",
+        "sha256": "ef8ba0faf70faab2d7f70161b17344e8a9645fd6399910144ed2e9db53e9864b"
+      }
+    ]
+  },
+  "pending_worker_correction_recovery_20261005": {
+    "status": "independently_audited_cache_recovery",
+    "commit": "de223c23",
+    "model_calls": 0,
+    "recovered_original_jobs": 6,
+    "adjudication_cleared": 1,
+    "adjudication_uncertain": 1,
+    "validated_plans_or_patches": 4,
+    "chunk_acceptance_claim": false,
+    "tests": 86,
+    "first_failure_evidence_preserved": true,
+    "artifacts": [
+      {
+        "path": "runs/maintenance/20261003/checks/topik4-six-pending-corrections-recovered-20261005.json",
+        "sha256": "09063b433934ebc346f4a809649b7954e77fa90bdb6cf7a55c13ebda6583aa67"
+      }
+    ]
+  },
+  "authenticated_run_research_actual_caller_smoke_20261005": {
+    "status": "isolated_whole_path_passed",
+    "model": "gpt-6-luna",
+    "effort": "low",
+    "source_characters": 210,
+    "source_start": 2231,
+    "parent_characters": 6754,
+    "exact_production_chunk_and_review_callbacks": true,
+    "changed_paths": [
+      "/segments/68/form_steps/0/meaning_en"
+    ],
+    "targeted_repairs": 1,
+    "fresh_independent_review": "ordinary_approved_without_issues",
+    "effective_acceptance": true,
+    "publication_chunk_verifier": true,
+    "offline_repair_and_publication_replay_after_physical_database_cleanup": true,
+    "removed_finished_state_directories": 5,
+    "elapsed_seconds": 403.6132981899973,
+    "chapter_published": false,
+    "production_restarted": false,
+    "mixed_finding_evidence": "68 actionable via authenticated carried primary research; 35/97 unsupported using approved formation/construction lessons. Raw and host classifications agree.",
+    "tests_reported_separately": {
+      "shared_focused_latest": 203,
+      "root_korean_scheduler": 164,
+      "host_chinese_japanese_publication_broad": 519,
+      "independent_chinese_japanese_carry_publication": 500,
+      "independent_latest_korean_helper_focus": 82
+    },
+    "overlap_note": "Suite totals overlap; do not sum. Smoke acceptance is not chapter publication.",
+    "artifacts": [
+      {
+        "path": "runs/maintenance/20261003/smokes/authenticated-carry-caller-acceptance-20261005/run-output/preflight.json",
+        "sha256": "f320f4b4edd11b5b9b21b16d5014cd051b833b30c82efee96b5503a93a1433ad"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/authenticated-carry-caller-acceptance-20261005/run-output/captured-production-preflight.json",
+        "sha256": "055b2fbdd3d3fd671d476848fc93b61eac414b6cdf62c3e63e5e978d1356baeb"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/authenticated-carry-caller-acceptance-20261005/run-output/captured-production-repair-preflight.json",
+        "sha256": "249f1bca132c6d1fe073c5ecc19453d21825c1ccef2a89564a190a3b198a984f"
+      },
+      {
+        "path": "runs/maintenance/20261003/smokes/authenticated-carry-caller-acceptance-20261005/run-output/accepted-result.json",
+        "sha256": "d1d51645ed10611c14e2bf770e3a661cb11a59765c2c7f3ab612b6718b4639d2"
+      }
+    ]
+  }
+}

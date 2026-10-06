@@ -1,0 +1,31 @@
+{
+  "id": "zh-c15616fa4d7b-1-a4cda213df5c0740",
+  "entry_id": "zh-c15616fa4d7b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c15616fa4d7b-1",
+      "headword": "展现",
+      "kind": "word",
+      "reading": "zhǎnxiàn",
+      "senses": [
+        {
+          "id": "zh-c15616fa4d7b-1-s1",
+          "definition": "to show or make apparent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人取得第一次胜利，也初次展现了自己的威力。",
+        "gloss": "display; demonstrate",
+        "sense_id": "zh-c15616fa4d7b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "69cf3efc0b45fbd7785571f5b21e6aa48b83eb9970a5f10ce254dcd785f326ef"
+}

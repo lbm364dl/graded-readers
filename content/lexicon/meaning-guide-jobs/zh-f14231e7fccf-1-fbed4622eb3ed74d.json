@@ -1,0 +1,31 @@
+{
+  "id": "zh-f14231e7fccf-1-fbed4622eb3ed74d",
+  "entry_id": "zh-f14231e7fccf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f14231e7fccf-1",
+      "headword": "本部",
+      "kind": "word",
+      "reading": "běnbù",
+      "senses": [
+        {
+          "id": "zh-f14231e7fccf-1-s1",
+          "definition": "one's own unit or force, especially one's own troops"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植让刘备带本部人马，再带一千官军到颍川，联络皇甫嵩、朱隽，约好时间一起进攻。",
+        "gloss": "one's own troops",
+        "sense_id": "zh-f14231e7fccf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f5b4d1f592a3c54e98cf28ba224a770e489d7e5e720b2854c63477e542316c52"
+}

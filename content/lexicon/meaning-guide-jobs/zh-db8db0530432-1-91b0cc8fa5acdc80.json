@@ -1,0 +1,31 @@
+{
+  "id": "zh-db8db0530432-1-91b0cc8fa5acdc80",
+  "entry_id": "zh-db8db0530432-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-db8db0530432-1",
+      "headword": "查看",
+      "kind": "word",
+      "reading": "chákàn",
+      "senses": [
+        {
+          "id": "zh-db8db0530432-1-s1",
+          "definition": "inspect; check by looking"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "左丰来查看军情，向我索要贿赂。",
+        "gloss": "to inspect; check",
+        "sense_id": "zh-db8db0530432-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ca503b3a26cdb1d6b3d273a04e9baca8482bfdfc721aececf00e4d9eeed20efc"
+}

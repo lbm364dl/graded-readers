@@ -1,0 +1,42 @@
+{
+  "id": "ja-ecabccd29dcc7d77-e801cae495a3e841",
+  "entry_id": "ja-ecabccd29dcc7d77",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ecabccd29dcc7d77",
+      "headword": "家",
+      "reading": "いえ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ecabccd29dcc7d77-1",
+          "definition": "House; home."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "house; home",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "house; home",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      },
+      {
+        "sentence": "吾輩はこの家に住むことにしました。",
+        "gloss": "house; home",
+        "sense_id": "ja-ecabccd29dcc7d77-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fb6691d6cc144e57cdd24f88fcadea1e41b195f93d235a95d6b4d6faa434a726"
+}

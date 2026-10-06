@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_117-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 988,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了董厥向姜维哭诉黄皓乱政、钟会与邓艾会面及相关交锋细节。",
+      "classification": "material",
+      "reason": "董厥对黄皓乱政的控诉交代了蜀内部政治失序这一动因；钟会与邓艾的交锋也塑造了邓艾受轻视后决定冒险取成都的关键动机。",
+      "required_fix": "补充董厥控诉黄皓乱政及钟会、邓艾会面中的主要交锋和由此形成的邓艾动机。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了董厥向姜维哭诉黄皓乱政、钟会与邓艾会面及相关交锋细节。",
+      "classification": "material",
+      "reason": "董厥对黄皓乱政的控诉交代了蜀内部政治失序这一动因；钟会与邓艾的交锋也塑造了邓艾受轻视后决定冒险取成都的关键动机。",
+      "required_fix": "补充董厥控诉黄皓乱政及钟会、邓艾会面中的主要交锋和由此形成的邓艾动机。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 988,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-1906b28dbb5cabe6-df6b06a395467640",
+  "entry_id": "ja-1906b28dbb5cabe6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1906b28dbb5cabe6",
+      "headword": "のだから",
+      "reading": "のだから",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-1906b28dbb5cabe6-1",
+          "definition": "because; since; used to give an explanatory reason"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、もう写生の邪魔をしたのだから仕方がないと思い、裏へ行って用を足そうと、ゆっくり歩き出した。",
+        "gloss": "because; since",
+        "sense_id": "ja-1906b28dbb5cabe6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fc78f81e7d57a1d53a46e28de9ae26db008ae5052100efddbd5047a741d00775"
+}

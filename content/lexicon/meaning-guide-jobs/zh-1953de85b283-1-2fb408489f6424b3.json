@@ -1,0 +1,31 @@
+{
+  "id": "zh-1953de85b283-1-2fb408489f6424b3",
+  "entry_id": "zh-1953de85b283-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1953de85b283-1",
+      "headword": "逃往",
+      "kind": "construction",
+      "reading": "táowǎng",
+      "senses": [
+        {
+          "id": "zh-1953de85b283-1-s1",
+          "definition": "to flee toward a place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇甫嵩说，张梁、张宝势穷力乏，必会逃往广宗依附张角。",
+        "gloss": "to flee toward",
+        "sense_id": "zh-1953de85b283-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0e2a818a0c3698c8c585386cd5f9f227bdc9aa1ccba292e19f3255b5e13e3516"
+}

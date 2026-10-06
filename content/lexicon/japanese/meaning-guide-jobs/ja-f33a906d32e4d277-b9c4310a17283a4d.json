@@ -1,0 +1,41 @@
+{
+  "id": "ja-f33a906d32e4d277-b9c4310a17283a4d",
+  "entry_id": "ja-f33a906d32e4d277",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f33a906d32e4d277",
+      "headword": "うちに",
+      "reading": "うちに",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-f33a906d32e4d277-1",
+          "definition": "while; during the time that something is happening"
+        },
+        {
+          "id": "ja-f33a906d32e4d277-2",
+          "definition": "within a certain period; before that period has passed"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は人間と同居し、彼等を長く見ているうちに、彼等は我儘なものだと考えるようになった。",
+        "gloss": "while; in the course of",
+        "sense_id": "ja-f33a906d32e4d277-1"
+      },
+      {
+        "sentence": "黒は、自分はどこへ行っても食べ物に困らないと言い、吾輩も後について来れば一月もしないうちに太れると自慢した。",
+        "gloss": "within; before",
+        "sense_id": "ja-f33a906d32e4d277-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "50c3d5b69775e4f53171c2d8794770b9de2224dad1bf691a62d475b1048728c9"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-550a6886166269c1-48c6f54e9bb7f65e",
+  "entry_id": "ja-550a6886166269c1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-550a6886166269c1",
+      "headword": "のだろう",
+      "reading": "のだろう",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-550a6886166269c1-1",
+          "definition": "Used after a clause to present it as a conjecture or inference; の gives the statement an explanatory framing."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "掌の上で少し落ち着き、書生の顔を見たことが、人間というものの見始めだったのだろう。",
+        "gloss": "I suppose; probably",
+        "sense_id": "ja-550a6886166269c1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7428dd5f05c0fd40242446f924ab1e245ab2c9af2a01977db9f7daea8d39eafc"
+}

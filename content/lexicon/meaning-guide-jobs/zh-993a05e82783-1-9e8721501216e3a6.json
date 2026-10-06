@@ -1,0 +1,36 @@
+{
+  "id": "zh-993a05e82783-1-9e8721501216e3a6",
+  "entry_id": "zh-993a05e82783-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-993a05e82783-1",
+      "headword": "打探",
+      "kind": "word",
+      "reading": "dǎtàn",
+      "senses": [
+        {
+          "id": "zh-993a05e82783-1-s1",
+          "definition": "to find out"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植让刘备带本部人马，再领一千官军前往颍川，联络皇甫嵩、朱俊，打探消息，并约定日期共同剿捕。",
+        "gloss": "to find out",
+        "sense_id": "zh-993a05e82783-1-s1"
+      },
+      {
+        "sentence": "卢植让刘备带本部人马，又给他一千官军，前去颍川打探消息，并联络皇甫嵩、朱隽，约定日期剿捕。",
+        "gloss": "to inquire discreetly; investigate",
+        "sense_id": "zh-993a05e82783-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "59c54ceb0923eae8d3f2aa40e3d972e50404a99aa11c8c73839ddc7ff8e5ad02"
+}

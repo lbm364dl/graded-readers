@@ -1,0 +1,32 @@
+{
+  "id": "ja-940b5f38c25813d1-8e0420bfdde6f140",
+  "entry_id": "ja-940b5f38c25813d1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-940b5f38c25813d1",
+      "headword": "何も",
+      "reading": "なにも",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-940b5f38c25813d1-1",
+          "definition": "nothing; anything (used with a negative)"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は何も考えないで、怖くなかった。",
+        "gloss": "nothing",
+        "sense_id": "ja-940b5f38c25813d1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "04ef1000dff4afb79db817d498fc1edd6ef6340ee36df9660ba1670774e1065b"
+}

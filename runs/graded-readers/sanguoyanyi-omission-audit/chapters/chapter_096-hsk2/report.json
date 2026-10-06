@@ -1,0 +1,100 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_096-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 321,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去马谡临刑前与孔明的对话、蒋琬劝阻及孔明追悔先帝遗言等细节。",
+      "classification": "material",
+      "reason": "這些內容交代馬謖與孔明的關係、蔣琬對斬首的勸阻，以及孔明執法與追悔先帝告誡的動機，構成重要人物刻畫與情感因果。",
+      "required_fix": "補入馬謖臨刑請求、蔣琬勸阻及孔明因未聽先帝告誡而痛哭的關鍵情節。"
+    },
+    {
+      "omission_note": "略去孔明自贬后进一步反思用兵，并制造攻城、渡水器械和储备战筏等内容。",
+      "classification": "material",
+      "reason": "這不只是一般軍備羅列，也呈現孔明自貶後對用兵方式的反思，並交代其為後續再伐魏所作的具體戰略與物資準備，對後文銜接有作用。",
+      "required_fix": "補入孔明反思兵敗原因、主張減兵省將及製造攻城渡水器械、儲糧備筏等後續準備。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将魏军据守险要概括为“退守长安等地”，带有整体撤退的意味。",
+      "classification": "material",
+      "reason": "原文是司马懿分拨诸将据守险要，并特别留郭淮、张郃守长安，曹叡回洛阳；概括为魏军整体“退守”改变了军事行动的性质。",
+      "required_fix": "改为“魏军分兵据守险要，郭淮、张郃守长安，曹叡回洛阳”，不要表述为魏军整体撤退。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去马谡临刑前与孔明的对话、蒋琬劝阻及孔明追悔先帝遗言等细节。",
+      "classification": "material",
+      "reason": "這些內容交代馬謖與孔明的關係、蔣琬對斬首的勸阻，以及孔明執法與追悔先帝告誡的動機，構成重要人物刻畫與情感因果。",
+      "required_fix": "補入馬謖臨刑請求、蔣琬勸阻及孔明因未聽先帝告誡而痛哭的關鍵情節。"
+    },
+    {
+      "omission_note": "略去孔明自贬后进一步反思用兵，并制造攻城、渡水器械和储备战筏等内容。",
+      "classification": "material",
+      "reason": "這不只是一般軍備羅列，也呈現孔明自貶後對用兵方式的反思，並交代其為後續再伐魏所作的具體戰略與物資準備，對後文銜接有作用。",
+      "required_fix": "補入孔明反思兵敗原因、主張減兵省將及製造攻城渡水器械、儲糧備筏等後續準備。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将魏军据守险要概括为“退守长安等地”，带有整体撤退的意味。",
+      "classification": "material",
+      "reason": "原文是司马懿分拨诸将据守险要，并特别留郭淮、张郃守长安，曹叡回洛阳；概括为魏军整体“退守”改变了军事行动的性质。",
+      "required_fix": "改为“魏军分兵据守险要，郭淮、张郃守长安，曹叡回洛阳”，不要表述为魏军整体撤退。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 332,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9.0,
+        "readability": 9.0,
+        "material_omissions": [
+          "未补入马谡称孔明如父、孔明称其子（义同兄弟）的临刑对话，削弱了二人的关系刻画及孔明斩后痛哭的情感基础。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“司马懿命郝昭守陈仓”把原文中曹叡采纳建议后下诏任命郝昭，改成了司马懿直接下令。",
+          "“曹休率三路魏军深入”将曹休、贾逵、司马懿分别率领的三路进军归于曹休，造成指挥关系失真。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 321,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

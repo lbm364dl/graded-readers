@@ -1,0 +1,56 @@
+{
+  "id": "zh-expression-ji-wei-e4aea33fc5678727",
+  "entry_id": "zh-expression-ji-wei",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-ji-wei",
+      "headword": "即位",
+      "reading": "jíwèi",
+      "kind": "expression",
+      "base_entry_id": "zh-7acc85882aa0-1",
+      "components": [
+        {
+          "entry_id": "zh-7acc85882aa0-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-1aa9c4170bdd-1",
+          "role": "object"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-ji-wei-s1",
+          "definition": "assume a ruler's throne or position"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "灵帝即位后，窦武和陈蕃一起辅佐他。",
+        "gloss": "assume a ruler's throne or position",
+        "sense_id": "zh-expression-ji-wei-s1"
+      },
+      {
+        "sentence": "桓帝死后，灵帝即位，大将军窦武、太傅陈蕃一同辅佐他。",
+        "gloss": "assume a ruler's throne or position",
+        "sense_id": "zh-expression-ji-wei-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "即",
+        "role": "verb"
+      },
+      {
+        "headword": "位",
+        "role": "object"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e88538f446a64a8d7f5879de1833b4a2198721da7f2bf4483080c672c28921b9"
+}

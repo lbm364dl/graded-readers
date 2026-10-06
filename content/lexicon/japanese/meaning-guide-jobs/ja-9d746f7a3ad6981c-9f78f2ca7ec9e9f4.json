@@ -1,0 +1,32 @@
+{
+  "id": "ja-9d746f7a3ad6981c-9f78f2ca7ec9e9f4",
+  "entry_id": "ja-9d746f7a3ad6981c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9d746f7a3ad6981c",
+      "headword": "つける",
+      "reading": "つける",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9d746f7a3ad6981c-1",
+          "definition": "to give or assign a name"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "誰も相手にせず、名前さえつけてくれない。",
+        "gloss": "will not give me a name as a favor",
+        "sense_id": "ja-9d746f7a3ad6981c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b2df6a07c9c7a28285a20bc1078d9bbaa486e72c155b3018ed38a11f5bc34ada"
+}

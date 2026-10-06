@@ -1,0 +1,187 @@
+{
+  "id": "zh-42abb81858b5-1-9f0cec3c060bc80f",
+  "entry_id": "zh-42abb81858b5-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-42abb81858b5-1",
+      "headword": "命",
+      "kind": "word",
+      "reading": "mìng",
+      "senses": [
+        {
+          "id": "zh-42abb81858b5-1-s1",
+          "definition": "order or command someone to do something"
+        },
+        {
+          "id": "zh-42abb81858b5-1-s2",
+          "definition": "an order or command; instructions one is to follow"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷命各地招兵，抵抗黄巾军。",
+        "gloss": "order",
+        "sense_id": "zh-42abb81858b5-1-s1"
+      },
+      {
+        "sentence": "何进请朝廷下令，命各地招兵抵抗黄巾军。",
+        "gloss": "to command",
+        "sense_id": "zh-42abb81858b5-1-s1"
+      },
+      {
+        "sentence": "卢植很高兴，让他留下听命。",
+        "gloss": "orders",
+        "sense_id": "zh-42abb81858b5-1-s2"
+      },
+      {
+        "sentence": "刘备领命，连夜赶到颍川。",
+        "gloss": "orders",
+        "sense_id": "zh-42abb81858b5-1-s2"
+      },
+      {
+        "sentence": "皇甫嵩、朱隽商量后，决定火攻，命士兵各带一把草，暗中埋下伏兵。",
+        "gloss": "order",
+        "sense_id": "zh-42abb81858b5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-42abb81858b5-1",
+    "claim_ids": [
+      "c1"
+    ],
+    "structure": "single_component",
+    "explanation_en": "命 is a verb meaning to direct or order someone to perform an action. It presents that action as something the person or group is told to carry out.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "命",
+        "contribution_en": "As a verb, directs or orders someone to perform an action.",
+        "claim_ids": [
+          "c1"
+        ]
+      }
+    ],
+    "research": {
+      "entry_id": "zh-42abb81858b5-1",
+      "status": "supported",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://zdic.net/hans/%E5%91%BD",
+          "title": "命 mìng - 汉典",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The entry gives a verb use meaning to assign or issue an order, with examples including 命夸娥氏二子负二山. Its character analysis describes 命 as 从口从令 and explains it as orally issuing an order. It also records separate noun senses, including 命令、政令, and other verb senses such as naming."
+        },
+        {
+          "id": "s2",
+          "url": "https://chardb.iis.sinica.edu.tw/evolution.jsp?cid=8313",
+          "title": "漢字「命」：字形演變",
+          "accessed_at": "2026-09-26",
+          "summary_en": "The Academia Sinica database says the oracle-bone forms of 命 and 令 were the same graph, used for issuing orders or directing. It describes later bronze, Chu manuscript, and small-seal forms as adding 口 to emphasize issuing orders orally."
+        },
+        {
+          "id": "s3",
+          "url": "https://www.cuhk.edu.hk/ics/clrc/scl_6/zhao.pdf",
+          "title": "「邦、封」「命、令」辨",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Zhao Chao's article discusses 命 and 令 in early inscriptions. It says they were originally one graph, that 命 took on a 口 element in Western Zhou bronze inscriptions, and that the graphs continued to be used interchangeably in some contexts. It also discusses 命 used for a county official title in Warring States inscriptions and the later use of 令 for that title."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "In the target verb use, 命 means to direct, assign, or order someone to perform an action. 汉典 distinguishes this verb from the separate noun sense “order, government directive” and gives examples in which an action follows 命, including 命夸娥氏二子负二山.",
+          "source_ids": [
+            "s1"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "汉典 analyzes the character as 从口从令 and explains the composition as orally issuing an order; its quoted 《说文》 gloss is 使也, and the quoted commentary explains 令 as 发号. The Academia Sinica database describes the historical graph as adding 口 to emphasize oral issuance. Zhao's article also discusses the early overlap of 命 and 令. These sources support a command-related reading of the components, but do not establish that every modern sense of 命 derives from this verb sense.",
+          "source_ids": [
+            "s1",
+            "s2",
+            "s3"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "In the supplied sentence 朝廷命各地招兵，抵抗黄巾军, 朝廷 issues a directive to 各地; 招兵 and 抵抗黄巾军 state what they are directed to do. The sentence does not specify the form or medium of the directive.",
+          "source_ids": [
+            "s1"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "命 字源 使令 命令 古汉语 辞典",
+          "opened_urls": [
+            "https://zdic.net/hans/%E5%91%BD",
+            "https://chardb.iis.sinica.edu.tw/evolution.jsp?cid=8313",
+            "https://www.cuhk.edu.hk/ics/clrc/scl_6/zhao.pdf"
+          ]
+        },
+        {
+          "query": "汉典 命 使令 命令 释义",
+          "opened_urls": [
+            "https://zdic.net/hans/%E5%91%BD"
+          ]
+        },
+        {
+          "query": "命令 命 训诂 古义 甲骨文 使令",
+          "opened_urls": [
+            "https://chardb.iis.sinica.edu.tw/evolution.jsp?cid=8313",
+            "https://www.cuhk.edu.hk/ics/clrc/scl_6/zhao.pdf"
+          ]
+        },
+        {
+          "query": "site:zdic.net/hans/命 命 指派 发号 使也",
+          "opened_urls": [
+            "https://zdic.net/hans/%E5%91%BD"
+          ]
+        },
+        {
+          "query": "site:chardb.iis.sinica.edu.tw/evolution.jsp 命 字形演变",
+          "opened_urls": [
+            "https://chardb.iis.sinica.edu.tw/evolution.jsp?cid=8313"
+          ]
+        },
+        {
+          "query": "\"邦、封\" \"命、令\" 辨 pdf",
+          "opened_urls": [
+            "https://www.cuhk.edu.hk/ics/clrc/scl_6/zhao.pdf"
+          ]
+        },
+        {
+          "query": "命 使也 从口从令 说文解字 释义 指派 发号 site:zdic.net",
+          "opened_urls": [
+            "https://zdic.net/hans/%E5%91%BD"
+          ]
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://zdic.net/hans/%E5%91%BD",
+            "https://chardb.iis.sinica.edu.tw/evolution.jsp?cid=8313",
+            "https://www.cuhk.edu.hk/ics/clrc/scl_6/zhao.pdf"
+          ]
+        }
+      ],
+      "gaps": []
+    },
+    "input_fingerprint": "60305c5907940576f05f1d396e598f2e3f30087843ec1809dbbf5d7f7d85e98d",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "supported",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c77ac829b536263227ea29c111e4c7e168f4319d0b070fe899587b4220e8b4fe"
+}

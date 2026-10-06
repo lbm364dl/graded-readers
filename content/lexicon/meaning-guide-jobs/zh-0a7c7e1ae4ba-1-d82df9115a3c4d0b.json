@@ -1,0 +1,31 @@
+{
+  "id": "zh-0a7c7e1ae4ba-1-d82df9115a3c4d0b",
+  "entry_id": "zh-0a7c7e1ae4ba-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0a7c7e1ae4ba-1",
+      "headword": "亡",
+      "kind": "word",
+      "reading": "wáng",
+      "senses": [
+        {
+          "id": "zh-0a7c7e1ae4ba-1-s1",
+          "definition": "to die"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "祖父刘雄，父亲刘弘；刘弘曾举孝廉，也做过官，后来早亡。",
+        "gloss": "to die",
+        "sense_id": "zh-0a7c7e1ae4ba-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c5edda343560cb22991b077fa942ede3e0a0ecd197343d089a7dbb6cf6b5e6af"
+}

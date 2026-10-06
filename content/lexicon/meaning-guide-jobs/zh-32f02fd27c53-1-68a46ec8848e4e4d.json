@@ -1,0 +1,31 @@
+{
+  "id": "zh-32f02fd27c53-1-68a46ec8848e4e4d",
+  "entry_id": "zh-32f02fd27c53-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-32f02fd27c53-1",
+      "headword": "交",
+      "kind": "word",
+      "reading": "jiāo",
+      "senses": [
+        {
+          "id": "zh-32f02fd27c53-1-s1",
+          "definition": "to associate or make friends with"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他十五岁时曾外出学习，也交了几个好友。",
+        "gloss": "to make friends with",
+        "sense_id": "zh-32f02fd27c53-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b8f1caa535672b324d81e0889b74ed8583aa93cb8f2955eee3932d285102c06d"
+}

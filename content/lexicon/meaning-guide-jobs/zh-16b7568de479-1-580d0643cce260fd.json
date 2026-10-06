@@ -1,0 +1,41 @@
+{
+  "id": "zh-16b7568de479-1-580d0643cce260fd",
+  "entry_id": "zh-16b7568de479-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-16b7568de479-1",
+      "headword": "力量",
+      "kind": "word",
+      "reading": "lìliàng",
+      "senses": [
+        {
+          "id": "zh-16b7568de479-1-s1",
+          "definition": "strength or ability to act"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他想为国家出力，救百姓，只是没有力量，看着榜文不断叹气。",
+        "gloss": "strength",
+        "sense_id": "zh-16b7568de479-1-s1"
+      },
+      {
+        "sentence": "这天，他见到榜文，想到自己没有力量为国家出力，不能报国，不禁长叹。",
+        "gloss": "strength",
+        "sense_id": "zh-16b7568de479-1-s1"
+      },
+      {
+        "sentence": "于是，三人取得了第一次胜利，初战便显出力量。",
+        "gloss": "strength; power",
+        "sense_id": "zh-16b7568de479-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e964767d9e2d9e24eafd4ed73b83a1a25ba3c0af2e9d5ca738e48d984c802d7d"
+}

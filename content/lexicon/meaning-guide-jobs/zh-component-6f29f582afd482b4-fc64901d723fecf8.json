@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-6f29f582afd482b4-fc64901d723fecf8",
+  "entry_id": "zh-component-6f29f582afd482b4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-6f29f582afd482b4",
+      "headword": "丈八",
+      "reading": "zhàng bā",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-6f29f582afd482b4-s1",
+          "definition": "A traditional length expression meaning one 丈 and eight 尺."
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "18d54d19942e01f2433e51e9e44a6abad446b6daa21e496f955429e7b809f66e"
+}

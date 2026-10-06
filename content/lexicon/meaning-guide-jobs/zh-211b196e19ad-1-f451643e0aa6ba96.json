@@ -1,0 +1,31 @@
+{
+  "id": "zh-211b196e19ad-1-f451643e0aa6ba96",
+  "entry_id": "zh-211b196e19ad-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-211b196e19ad-1",
+      "headword": "庄后",
+      "kind": "word",
+      "reading": "zhuānghòu",
+      "senses": [
+        {
+          "id": "zh-211b196e19ad-1-s1",
+          "definition": "behind the estate or manor"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞说，庄后有一座桃园，桃花开得正盛。",
+        "gloss": "behind the manor",
+        "sense_id": "zh-211b196e19ad-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dc0e37478c9d2977047319a54747bebf15d0d7358c14ac1a36d0c36e2bf85973"
+}

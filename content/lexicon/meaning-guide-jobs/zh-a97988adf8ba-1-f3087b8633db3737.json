@@ -1,0 +1,41 @@
+{
+  "id": "zh-a97988adf8ba-1-f3087b8633db3737",
+  "entry_id": "zh-a97988adf8ba-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a97988adf8ba-1",
+      "headword": "取胜",
+      "kind": "word",
+      "reading": "qǔshèng",
+      "senses": [
+        {
+          "id": "zh-a97988adf8ba-1-s1",
+          "definition": "win; achieve victory"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备对关羽、张飞说：“我们人少，只有想个好主意，才能取胜。",
+        "gloss": "win",
+        "sense_id": "zh-a97988adf8ba-1-s1"
+      },
+      {
+        "sentence": "刘备对关羽、张飞说：“敌人多，我们人少，必须用特别的办法才能取胜。",
+        "gloss": "win",
+        "sense_id": "zh-a97988adf8ba-1-s1"
+      },
+      {
+        "sentence": "他下马询问，卢植说：“我围攻张角，快要取胜。",
+        "gloss": "to win; achieve victory",
+        "sense_id": "zh-a97988adf8ba-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "226345d88d0009469d90a8cfa56331885f15d389483139692561f46cc1c3a686"
+}

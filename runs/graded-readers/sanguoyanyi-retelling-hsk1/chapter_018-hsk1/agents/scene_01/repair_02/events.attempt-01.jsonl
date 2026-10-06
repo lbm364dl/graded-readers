@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff511-5e4a-7bb0-85f4-8680f5f91c8f"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"text\":\"孟获连连败给蜀军，就请乌戈国主兀突骨来帮忙。兀突骨带三万藤甲兵前来，藤甲很硬很厚，刀箭都不能打穿，蜀军一时没有办法。孔明叫魏延假装败走十五回，引他们进山；让马岱在山中放好车和火药，再把前后路都堵住。蛮兵进山后，蜀军一齐点火，火从四面起来，藤甲遇火就着，三万兵全没了。孟获赶来帮忙，也被马岱抓住。孔明给他饭吃，问他服不服。孟获说，孔明七次抓住他都没有伤他，还愿把地还给他，他这才服了，低头认错。孔明就放他回去，还让他做首领。南方各处的人都来谢孔明，和蜀国和好，南方从此太平。\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":42859,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":7136,"reasoning_output_tokens":6889}}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-a21d123d0448-1-a614a86758e0d9b1",
+  "entry_id": "zh-a21d123d0448-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a21d123d0448-1",
+      "headword": "再犯",
+      "kind": "word",
+      "reading": "zàifàn",
+      "senses": [
+        {
+          "id": "zh-a21d123d0448-1-s1",
+          "definition": "to commit or do again, especially an offense or prohibited act"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他不避有权势的人，城内外的人从此都不敢再犯禁令，曹操的威名传开。",
+        "gloss": "violate again",
+        "sense_id": "zh-a21d123d0448-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3c1bf800a4a5179a43fff0bd139ddfee1e56c76ad6da334ebece407c0a4f6fba"
+}

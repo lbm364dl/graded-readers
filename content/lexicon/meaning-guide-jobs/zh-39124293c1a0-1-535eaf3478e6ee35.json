@@ -1,0 +1,80 @@
+{
+  "id": "zh-39124293c1a0-1-535eaf3478e6ee35",
+  "entry_id": "zh-39124293c1a0-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-39124293c1a0-1",
+      "headword": "祭礼",
+      "kind": "word",
+      "reading": "jìlǐ",
+      "senses": [
+        {
+          "id": "zh-39124293c1a0-1-s1",
+          "definition": "a ritual ceremony"
+        },
+        {
+          "id": "zh-39124293c1a0-1-s2",
+          "definition": "offerings or items prepared for a ritual sacrifice"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "祭礼结束后，他们聚集乡勇，在桃园中喝酒。",
+        "gloss": "ceremony",
+        "sense_id": "zh-39124293c1a0-1-s1"
+      },
+      {
+        "sentence": "祭礼后，他们杀牛摆酒，聚集三百多名乡勇，在桃园中痛快喝酒。",
+        "gloss": "sacrificial ceremony",
+        "sense_id": "zh-39124293c1a0-1-s1"
+      },
+      {
+        "sentence": "次日，三人备好祭礼，焚香再拜。",
+        "gloss": "sacrificial offerings",
+        "sense_id": "zh-39124293c1a0-1-s2"
+      },
+      {
+        "sentence": "第二天，三人备好乌牛、白马等祭礼，焚香再拜，发誓虽是异姓，也要报效国家、安定百姓。",
+        "gloss": "sacrificial offerings",
+        "sense_id": "zh-39124293c1a0-1-s2"
+      },
+      {
+        "sentence": "祭礼后，他们杀牛设酒，聚集三百多名乡勇，在桃园痛饮。",
+        "gloss": "sacrificial offerings",
+        "sense_id": "zh-39124293c1a0-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-39124293c1a0-1",
+    "claim_ids": [],
+    "structure": "compositional",
+    "explanation_en": "祭 refers to performing a sacrificial rite, and 礼 means a formal rite or ceremony. Together, 祭礼 is a ceremony for making offerings or performing a sacrifice.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "祭",
+        "contribution_en": "To perform a sacrificial rite or make offerings.",
+        "claim_ids": []
+      },
+      {
+        "text": "礼",
+        "contribution_en": "A formal rite or ceremony.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "9795db735085df7590e338e213745730d5d48544fad99c406cf2922aefc11449",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b0d46f812037cd83c21dd1fc7d84833a06030a61cfa8a33e15dce5f64636eefc"
+}

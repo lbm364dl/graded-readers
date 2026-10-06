@@ -1,0 +1,55 @@
+{
+  "scene": {
+    "id": "scene_03",
+    "title": "天災頻仍與忠臣被逐",
+    "source_start_quote": "建寧二年四月望日，帝御溫德殿",
+    "required_events": [
+      "靈帝登殿時青蛇自梁而下盤踞御座，皇帝驚倒，隨後雷雨冰雹摧毀房屋。",
+      "洛陽地震、海水泛濫、雌雞化雄、黑氣入殿、彩虹與山崩等異象接連發生。",
+      "蔡邕上疏，直指婦人與宦官干政是災異根源；曹節偷看奏章後散布消息，設法以他事陷害蔡邕，使其被放歸田里。"
+    ],
+    "target_chars": 400,
+    "source_start": 291,
+    "source_end": 568
+  },
+  "text": "建宁二年四月十五日，灵帝来到温德殿。刚登上御座，殿角忽然刮起狂风，一条大青蛇从房梁上飞下来，盘在御座上。皇帝惊得倒在地上，身边的人赶紧把他扶回宫中，百官也纷纷逃开。不一会儿，蛇便不见了。接着，雷声大作，下起暴雨和冰雹，一直到了半夜才停，许多房屋都被毁坏。建宁四年二月，洛阳发生地震；海水又暴涨，沿海百姓全被巨浪卷进海里。光和元年，母鸡变成了公鸡。六月初一，十多丈高的黑气飞进温德殿。秋天七月，玉堂上空出现彩虹，五原的山岸也全都崩裂。这样不祥的异象，一个接着一个。灵帝下诏询问群臣，灾异究竟是什么原因造成的。议郎蔡邕上疏直说，彩虹出现、母鸡变公鸡，都是妇人与宦官干预朝政造成的，话说得十分直接。皇帝看完奏章，叹了口气，起身去换衣服。曹节在后面偷偷看了奏章，把内容告诉身边的人。后来，他借另一件事陷害蔡邕，使蔡邕获罪，被放回乡里。",
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [],
+    "unsupported_additions": [
+      "“十多丈高” specifies height, whereas the original only states an extent of more than ten zhang.",
+      "“灵帝” makes the emperor’s identity explicit; this is contextually supported but not stated in the excerpt."
+    ],
+    "distortions": [
+      "“从房梁上飞下来” omits the original’s vivid “只见” presentation, but this is stylistic and immaterial.",
+      "“黑气十多丈高” slightly narrows the original “黑气十余丈,” which does not specifically indicate height."
+    ],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "建宁二年四月十五日，灵帝来到温德殿。刚登上御座，殿角忽然刮起狂风，一条大青蛇从房梁上飞下来，盘在御座上。皇帝惊得倒在地上，身边的人赶紧把他扶回宫中，百官也纷纷逃开。不一会儿，蛇便不见了。接着，雷声大作，下起暴雨和冰雹，一直到了半夜才停，许多房屋都被毁坏。建宁四年二月，洛阳发生地震；海水又暴涨，沿海百姓全被巨浪卷进海里。光和元年，母鸡变成了公鸡。六月初一，十多丈高的黑气飞进温德殿。秋天七月，玉堂上空出现彩虹，五原的山岸也全都崩裂。这样不祥的异象，一个接着一个。灵帝下诏询问群臣，灾异究竟是什么原因造成的。议郎蔡邕上疏直说，彩虹出现、母鸡变公鸡，都是妇人与宦官干预朝政造成的，话说得十分直接。皇帝看完奏章，叹了口气，起身去换衣服。曹节在后面偷偷看了奏章，把内容告诉身边的人。后来，他借另一件事陷害蔡邕，使蔡邕获罪，被放回乡里。",
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "omissions": [],
+        "unsupported_additions": [
+          "“十多丈高” specifies height, whereas the original only states an extent of more than ten zhang.",
+          "“灵帝” makes the emperor’s identity explicit; this is contextually supported but not stated in the excerpt."
+        ],
+        "distortions": [
+          "“从房梁上飞下来” omits the original’s vivid “只见” presentation, but this is stylistic and immaterial.",
+          "“黑气十多丈高” slightly narrows the original “黑气十余丈,” which does not specifically indicate height."
+        ],
+        "language_problems": [],
+        "verdict": "pass"
+      }
+    }
+  ],
+  "resolved": true
+}

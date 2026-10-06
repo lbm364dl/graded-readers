@@ -1,0 +1,31 @@
+{
+  "id": "zh-d8a7ebd775e9-1-f3ae7e04a29df5da",
+  "entry_id": "zh-d8a7ebd775e9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d8a7ebd775e9-1",
+      "headword": "内外",
+      "kind": "word",
+      "reading": "nèiwài",
+      "senses": [
+        {
+          "id": "zh-d8a7ebd775e9-1-s1",
+          "definition": "inside and outside; both within and beyond a place or group"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "此后内外都不敢犯法。",
+        "gloss": "inside and outside",
+        "sense_id": "zh-d8a7ebd775e9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "535818e348030338dfa7cccbe4bd778977549ee7660bd526012cd3c85f691037"
+}

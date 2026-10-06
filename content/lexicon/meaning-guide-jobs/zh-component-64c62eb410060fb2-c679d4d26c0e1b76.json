@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-64c62eb410060fb2-c679d4d26c0e1b76",
+  "entry_id": "zh-component-64c62eb410060fb2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-64c62eb410060fb2",
+      "headword": "招军",
+      "reading": "zhāo jūn",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-64c62eb410060fb2-s1",
+          "definition": "to recruit soldiers; recruit troops"
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "50d13291b5084baba3f2bee1b75494270ffcd0601c82d3ca97b22f438c01a638"
+}

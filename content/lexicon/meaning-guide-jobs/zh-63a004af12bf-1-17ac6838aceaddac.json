@@ -1,0 +1,31 @@
+{
+  "id": "zh-63a004af12bf-1-17ac6838aceaddac",
+  "entry_id": "zh-63a004af12bf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-63a004af12bf-1",
+      "headword": "同样",
+      "kind": "word",
+      "reading": "tóngyàng",
+      "senses": [
+        {
+          "id": "zh-63a004af12bf-1-s1",
+          "definition": "same; alike"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人都有同样的想法，越说越高兴。",
+        "gloss": "same",
+        "sense_id": "zh-63a004af12bf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4f4d0695c4388f6b05819187613c6c89898c04a56dd7478c9d9bd9dc54fc7fe6"
+}

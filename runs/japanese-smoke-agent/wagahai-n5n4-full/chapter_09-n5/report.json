@@ -1,0 +1,36 @@
+{
+  "status": "complete",
+  "scenes": 5,
+  "japanese_chars": 1707,
+  "chapter_cjk": 1707,
+  "scene_verdicts": {
+    "scene_01": "pass",
+    "scene_02": "pass",
+    "scene_03": "pass",
+    "scene_04": "pass",
+    "scene_05": "pass"
+  },
+  "chapter_review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [],
+    "unsupported_additions": [
+      "「ある朝」と時刻を特定しているが、原文は朝とは明示していない。"
+    ],
+    "distortions": [
+      "刑事事件の発生時刻を「ある朝」とした点は、原文の午後から夕方にかけての流れと厳密には一致しないが、物語上の連続性を損なうほどではない。"
+    ],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "chapter_review_verdict": "pass",
+  "scene_attempts": {
+    "scene_01": 2,
+    "scene_02": 1,
+    "scene_03": 2,
+    "scene_04": 2,
+    "scene_05": 1
+  },
+  "unresolved_scenes": []
+}

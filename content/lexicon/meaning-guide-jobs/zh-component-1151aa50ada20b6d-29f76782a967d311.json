@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-1151aa50ada20b6d-29f76782a967d311",
+  "entry_id": "zh-component-1151aa50ada20b6d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-1151aa50ada20b6d",
+      "headword": "楼桑",
+      "reading": "lóusāng",
+      "kind": "name",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-1151aa50ada20b6d-s1",
+          "definition": "A place name associated with the historical figure Liu Bei."
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4e6ce384b1927851f2a5cb1fcd61d28a628284b5814a29b71ac944e180195445"
+}

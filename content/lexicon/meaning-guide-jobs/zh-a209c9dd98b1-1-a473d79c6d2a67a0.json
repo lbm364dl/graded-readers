@@ -1,0 +1,31 @@
+{
+  "id": "zh-a209c9dd98b1-1-a473d79c6d2a67a0",
+  "entry_id": "zh-a209c9dd98b1-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a209c9dd98b1-1",
+      "headword": "喊声",
+      "kind": "word",
+      "reading": "hǎnshēng",
+      "senses": [
+        {
+          "id": "zh-a209c9dd98b1-1-s1",
+          "definition": "the sound of people calling out or shouting"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不到两天，他们听见山后喊声很大。",
+        "gloss": "shouts",
+        "sense_id": "zh-a209c9dd98b1-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3cf185addce0ebbd758c787431cb4cf8731d9ec8a245dad91660e8493286d2d0"
+}

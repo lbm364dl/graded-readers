@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_086-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 772,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹丕撤军途中弃置御用物品、徐晃救驾等细节。",
+      "classification": "material",
+      "reason": "弃置御用物品属于撤军过程中的次要细节，但徐晃救驾说明曹丕在龙舟火攻和丁奉袭击后如何脱险，关系到关键事件的完整结果。",
+      "required_fix": "补充曹丕撤军时下令弃置御用物品，以及张辽中箭后由徐晃救出并护送曹丕逃走。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将淮河火攻明确归于徐盛实施，原文未明确说明。",
+      "classification": "material",
+      "reason": "将未指明施动者的火攻明确归于徐盛，新增了具体行动者并改变了事件归因。",
+      "required_fix": "改为“淮河芦苇预先灌满鱼油后起火，火势顺风截住并焚烧龙舟”，不要明确归于徐盛实施。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“徐盛又把灌满鱼油的芦苇顺风点燃”因果和施动者表述过于确定，原文只叙述芦苇预灌鱼油后起火。",
+      "classification": "material",
+      "reason": "明确写成徐盛点燃芦苇，新增了原文未明示的施动者和因果关系。",
+      "required_fix": "改为“淮河中的芦苇预先灌满鱼油，随后尽皆起火，顺风截住龙舟”，不指定徐盛点火。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹丕撤军途中弃置御用物品、徐晃救驾等细节。",
+      "classification": "material",
+      "reason": "弃置御用物品属于撤军过程中的次要细节，但徐晃救驾说明曹丕在龙舟火攻和丁奉袭击后如何脱险，关系到关键事件的完整结果。",
+      "required_fix": "补充曹丕撤军时下令弃置御用物品，以及张辽中箭后由徐晃救出并护送曹丕逃走。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将淮河火攻明确归于徐盛实施，原文未明确说明。",
+      "classification": "material",
+      "reason": "将未指明施动者的火攻明确归于徐盛，新增了具体行动者并改变了事件归因。",
+      "required_fix": "改为“淮河芦苇预先灌满鱼油后起火，火势顺风截住并焚烧龙舟”，不要明确归于徐盛实施。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“徐盛又把灌满鱼油的芦苇顺风点燃”因果和施动者表述过于确定，原文只叙述芦苇预灌鱼油后起火。",
+      "classification": "material",
+      "reason": "明确写成徐盛点燃芦苇，新增了原文未明示的施动者和因果关系。",
+      "required_fix": "改为“淮河中的芦苇预先灌满鱼油，随后尽皆起火，顺风截住龙舟”，不指定徐盛点火。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 772,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

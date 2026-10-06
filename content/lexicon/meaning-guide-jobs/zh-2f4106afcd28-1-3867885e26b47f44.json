@@ -1,0 +1,185 @@
+{
+  "id": "zh-2f4106afcd28-1-3867885e26b47f44",
+  "entry_id": "zh-2f4106afcd28-1",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "zh-2f4106afcd28-1",
+      "headword": "流行",
+      "kind": "word",
+      "reading": "liúxíng",
+      "senses": [
+        {
+          "id": "zh-2f4106afcd28-1-s1",
+          "definition": "to be widespread or prevalent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "当时疫病流行，很多人相信张角。",
+        "gloss": "spread",
+        "sense_id": "zh-2f4106afcd28-1-s1"
+      },
+      {
+        "sentence": "中平元年，疫病流行，他用符水给百姓治病，自称大贤良师。",
+        "gloss": "to spread",
+        "sense_id": "zh-2f4106afcd28-1-s1"
+      },
+      {
+        "sentence": "中平元年，疫病流行。",
+        "gloss": "spread",
+        "sense_id": "zh-2f4106afcd28-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-2f4106afcd28-1",
+    "claim_ids": [
+      "c1",
+      "c2",
+      "c3"
+    ],
+    "structure": "lexicalized",
+    "explanation_en": "流行 means to spread or become widespread. 流 is associated with movement, which gives a natural image for something passing onward; 行 joins it in the established word but does not add a clearly separable step or result.",
+    "caveat_en": "The sense of being widespread belongs to 流行 as a whole; the word does not clearly divide into separate actions contributed by 流 and 行.",
+    "parts": [
+      {
+        "text": "流",
+        "contribution_en": "Associated with movement, which gives a natural image for spreading or propagation.",
+        "claim_ids": [
+          "c2"
+        ]
+      },
+      {
+        "text": "行",
+        "contribution_en": "Joins 流 in the conventional word; its separate contribution is not clear.",
+        "claim_ids": [
+          "c3"
+        ]
+      }
+    ],
+    "research": {
+      "entry_id": "zh-2f4106afcd28-1",
+      "status": "partial",
+      "sources": [
+        {
+          "id": "s1",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=14492&la=0&powerMode=0",
+          "title": "流行 — 教育部《國語辭典簡編本》",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Gives sense 1 as 散布、傳播 (to disseminate or spread), with a cold example. Separately gives sense 2 as 盛行一時 (to be in vogue for a time)."
+        },
+        {
+          "id": "s2",
+          "url": "https://zdic.net/hans/%E6%B5%81%E8%A1%8C",
+          "title": "流行的意思|汉典「流行」词语解释",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Its 國語辭典 section distinguishes 散布、传播 from 盛行一时 and cites 德之流行 from the Mencius and an illness use from Romance of the Three Kingdoms. The general entry glosses the word as 广泛传播;盛行, combining senses."
+        },
+        {
+          "id": "s3",
+          "url": "https://zdic.net/hans/%E6%B5%81",
+          "title": "流 liú — 汉典",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Lists liquid movement as a basic use of 流 and propagation as an extended use, with 流行 among its examples."
+        },
+        {
+          "id": "s4",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=14446&la=1&powerMode=0",
+          "title": "流 — Ministry of Education 《Concised Mandarin Chinese Dictionary》",
+          "accessed_at": "2026-09-26",
+          "summary_en": "Lists uses of 流 including movement and 留傳、散布 (transmission or dissemination); cites 流芳萬世 as an example for the latter."
+        }
+      ],
+      "claims": [
+        {
+          "id": "c1",
+          "text_en": "For the supplied sense, 流行 means that something spreads or is disseminated. With 疫病 as subject, the example describes disease spreading or becoming widespread. The dictionary treats being in vogue for a time as a separate sense; this sentence does not identify a disease subtype or why people believed Zhang Jue.",
+          "source_ids": [
+            "s1",
+            "s2"
+          ]
+        },
+        {
+          "id": "c2",
+          "text_en": "Dictionaries list movement, including liquid movement, and propagation or dissemination among the uses of 流. This supports a movement-to-spreading association for 流, but does not establish a component-by-component derivation of 流行.",
+          "source_ids": [
+            "s3",
+            "s4"
+          ]
+        },
+        {
+          "id": "c3",
+          "text_en": "The Han Dian entry cites 德之流行 from the Mencius under the sense 散布、传播. This documents an older dissemination use of 流行, but does not prove that this phrase directly gave rise to the modern disease-spreading use or specify 行's contribution.",
+          "source_ids": [
+            "s2"
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "site:dict.concised.moe.edu.tw/dictView.jsp 流行 散布 傳播 疫病",
+          "opened_urls": []
+        },
+        {
+          "query": "流行 汉典 孟子 德之流行 词语解释",
+          "opened_urls": [
+            "https://zdic.net/hans/%E6%B5%81%E8%A1%8C"
+          ]
+        },
+        {
+          "query": "流行 词源 行 训诂 汉语大词典 流行 盛行",
+          "opened_urls": []
+        },
+        {
+          "query": "流行 词源 词义 先秦 德之流行 训诂 行",
+          "opened_urls": []
+        },
+        {
+          "query": "流行 词语 古义 《左传》 天灾流行 词源",
+          "opened_urls": []
+        },
+        {
+          "query": "site:dict.concised.moe.edu.tw/dictView.jsp?ID 流 動 留傳 散布 行 移動",
+          "opened_urls": [
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=14446&la=1&powerMode=0"
+          ]
+        },
+        {
+          "query": "(direct open)",
+          "opened_urls": [
+            "https://dict.concised.moe.edu.tw/dictView.jsp?ID=14492&la=0&powerMode=0",
+            "https://zdic.net/hans/%E6%B5%81%E8%A1%8C",
+            "https://zdic.net/hans/%E6%B5%81",
+            "https://pedia.cloud.edu.tw/Entry/Detail/?search=%E6%B5%81&title=%E6%B5%81",
+            "https://www.shidianguji.com/book/SKQS0207",
+            "https://ctext.org/mengzi/gong-sun-chou-i/zhs",
+            "https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-13/zhs"
+          ]
+        }
+      ],
+      "gaps": [
+        "The sources do not explain what 行 contributes to 流行 or establish the historical path from older dissemination uses to the modern disease-spreading sense. Older attestations alone do not prove that derivation."
+      ]
+    },
+    "input_fingerprint": "33f838af08dede8c9fceb26bf58f97be1a7976821e739f788135c172ca5d7e78",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "partial",
+    "editorial_route": "cached_research",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "entry_id": "zh-2f4106afcd28-1",
+      "id": "hsk2-reader-liuxing-xing",
+      "reason": "Investigate and explain the contribution of 行 in 流行 for spreading/becoming widespread, instead of simply saying it has no clearly separable role. Use the existing dossier as a starting point; verify the missing relationship, without inventing a derivation or separate steps. Include concrete investigation_questions for any remaining contribution gap.",
+      "force_research": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "e2aef29d8c498b87c7995ab168a26a46958aa1b3a882fa7d8ee648844ee0b448"
+}

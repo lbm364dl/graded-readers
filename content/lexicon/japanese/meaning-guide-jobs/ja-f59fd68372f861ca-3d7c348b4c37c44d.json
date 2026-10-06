@@ -1,0 +1,32 @@
+{
+  "id": "ja-f59fd68372f861ca-3d7c348b4c37c44d",
+  "entry_id": "ja-f59fd68372f861ca",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f59fd68372f861ca",
+      "headword": "思い出す",
+      "reading": "おもいだす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f59fd68372f861ca-1",
+          "definition": "to remember; to recall"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "我儘ということで思い出した。",
+        "gloss": "remembered; recalled",
+        "sense_id": "ja-f59fd68372f861ca-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "70cbe6ebe3f18e83e94ae0e1a3f690724b3bb380cb5e9df08ead38f2e1577b64"
+}

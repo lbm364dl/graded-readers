@@ -1,0 +1,32 @@
+{
+  "id": "ja-ccbeba100c264bb3-0d4492805d9d49f7",
+  "entry_id": "ja-ccbeba100c264bb3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ccbeba100c264bb3",
+      "headword": "穏やか",
+      "reading": "おだやか",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ccbeba100c264bb3-1",
+          "definition": "calm; peaceful; gentle"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある小春の穏やかな日、昼寝のあとでそこへ行くと、杉垣のそばで大きな黒猫が気持ちよさそうに寝ていた。",
+        "gloss": "peaceful; calm",
+        "sense_id": "ja-ccbeba100c264bb3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a93d75b63e0eb1fb2a0766ecbffad553dd7d6d729af333f41b361b4399aa284b"
+}

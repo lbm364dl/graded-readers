@@ -1,0 +1,31 @@
+{
+  "id": "zh-99f4a9676cb0-1-bce19baa4570268c",
+  "entry_id": "zh-99f4a9676cb0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-99f4a9676cb0-1",
+      "headword": "朝中",
+      "kind": "word",
+      "reading": "cháozhōng",
+      "senses": [
+        {
+          "id": "zh-99f4a9676cb0-1-s1",
+          "definition": "in the imperial court or central government"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角派马元义带着金帛，暗中结交宦官封谞，企图让他在朝中作内应。",
+        "gloss": "in court",
+        "sense_id": "zh-99f4a9676cb0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4ab9b5aabf23375cdf8533f1d33d5d3a8d4b31229b688f63135240cd279ad662"
+}

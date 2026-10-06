@@ -1,0 +1,32 @@
+{
+  "id": "ja-60efd9ea59a37a80-30aa4a0ba290dfc9",
+  "entry_id": "ja-60efd9ea59a37a80",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-60efd9ea59a37a80",
+      "headword": "皆",
+      "reading": "みな",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-60efd9ea59a37a80-1",
+          "definition": "everyone; all"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人間は自分の力を過信して、みんな増長している。",
+        "gloss": "everyone; all of them",
+        "sense_id": "ja-60efd9ea59a37a80-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e91a84d885910f38225028a65817cb3af840972ac51eee0baecf536c8ae4aa6b"
+}

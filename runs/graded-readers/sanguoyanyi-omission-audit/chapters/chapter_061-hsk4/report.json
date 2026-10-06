@@ -1,0 +1,75 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_061-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 571,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "field": "language_problems",
+      "finding_note": "“迁治秣陵，建业”表述略有歧义，容易被理解为在秣陵另行建造建业；可改为“迁都秣陵，改称建业”。",
+      "classification": "material",
+      "reason": "该表述可能使读者误解为在秣陵另行建造建业，改变了迁都并改名的准确含义。",
+      "required_fix": "改为“迁都秣陵，改称建业”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "language_problems",
+      "finding_note": "“迁治秣陵，建业”表述略有歧义，容易被理解为在秣陵另行建造建业；可改为“迁都秣陵，改称建业”。",
+      "classification": "material",
+      "reason": "该表述可能使读者误解为在秣陵另行建造建业，改变了迁都并改名的准确含义。",
+      "required_fix": "改为“迁都秣陵，改称建业”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 633,
+      "review": {
+        "source_fidelity": 7.8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "张纮病故前上书劝孙权迁都秣陵，并说明当地有帝王之气；删去后迁都的动机缺失。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“孙权亲自督战，多次击退曹军”将原文双方互有胜负的战事概括成东吴多次单方面击退曹军，略有失真。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 571,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_119-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 906,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了司马昭立司马炎为世子前，司马攸与群臣劝立长幼的具体争议。",
+      "classification": "material",
+      "reason": "这段争议交代了司马昭原欲立司马攸、群臣以嫡长和潜在祸乱为由劝阻的关键动机，直接解释了司马炎最终被立为世子的原因。",
+      "required_fix": "补充司马昭欲立司马攸，以及山涛、贾充、何曾、裴秀、王祥、荀顗等群臣劝立长子司马炎的具体争议与理由。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“司马昭得知后率兵屯在长安”改变了原文中司马昭因担心卫瓘不能擒邓艾而预先屯兵长安的因果关系。",
+      "classification": "material",
+      "reason": "改写倒置了屯兵与得知钟会谋反之间的时间和因果关系，误称司马昭是在得知后才率兵屯驻长安。",
+      "required_fix": "改为“司马昭因担心卫瓘不能擒获邓艾，已预先屯兵长安；钟会收到书信后才得知此事并疑心司马昭怀疑自己”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“昭病危时指着司马炎去世”表述容易理解为司马炎因昭指认而去世；原意是司马昭病危不能言语，指着司马炎后死亡。",
+      "classification": "material",
+      "reason": "句式可能误导读者判断死亡者，造成关键人物身份和事件结果的歧义。",
+      "required_fix": "改为“司马昭病危不能言语，以手指着太子司马炎后去世；司马炎于是即晋王位”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了司马昭立司马炎为世子前，司马攸与群臣劝立长幼的具体争议。",
+      "classification": "material",
+      "reason": "这段争议交代了司马昭原欲立司马攸、群臣以嫡长和潜在祸乱为由劝阻的关键动机，直接解释了司马炎最终被立为世子的原因。",
+      "required_fix": "补充司马昭欲立司马攸，以及山涛、贾充、何曾、裴秀、王祥、荀顗等群臣劝立长子司马炎的具体争议与理由。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“司马昭得知后率兵屯在长安”改变了原文中司马昭因担心卫瓘不能擒邓艾而预先屯兵长安的因果关系。",
+      "classification": "material",
+      "reason": "改写倒置了屯兵与得知钟会谋反之间的时间和因果关系，误称司马昭是在得知后才率兵屯驻长安。",
+      "required_fix": "改为“司马昭因担心卫瓘不能擒获邓艾，已预先屯兵长安；钟会收到书信后才得知此事并疑心司马昭怀疑自己”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“昭病危时指着司马炎去世”表述容易理解为司马炎因昭指认而去世；原意是司马昭病危不能言语，指着司马炎后死亡。",
+      "classification": "material",
+      "reason": "句式可能误导读者判断死亡者，造成关键人物身份和事件结果的歧义。",
+      "required_fix": "改为“司马昭病危不能言语，以手指着太子司马炎后去世；司马炎于是即晋王位”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1042,
+      "review": {
+        "source_fidelity": 7.4,
+        "naturalness": 7.9,
+        "readability": 8.4,
+        "material_omissions": [
+          "省略了卫瓘收捕邓艾的原始计策：若邓艾欲杀卫瓘即可坐实反情，钟会再出兵讨伐；这削弱了开端行动的因果说明。",
+          "省略了田续因昔日被邓艾欲杀而报仇的动机，也省略了邓艾误以为来者是本部兵而未加防备，削弱了邓艾父子被杀的因果。"
+        ],
+        "unsupported_additions": [
+          "将姜维在宫中“往来冲突”改写为“突围失败”，添加了原文没有明确发生的突围情节。",
+          "将邓艾部下追赶押送队伍的动机说成“为报仇”，原文只说他们连夜追劫邓艾。",
+          "将成都军民的死者“不计其数”扩写为“死伤无数”，添加了原文未明说的伤者。",
+          "称司马昭认为后主“愚钝”，原文只明确说他因后主诚实而不再疑虑。"
+        ],
+        "distortions": [],
+        "language_problems": [
+          "“赐住宅、用度和随臣爵位”搭配生硬且含义不清，原文是封刘瑶及樊建、谯周、卻正等群臣为侯爵。",
+          "“司马炎承受魏朝统治”不够自然，宜改为“司马炎接受魏朝禅让并即皇帝位”或类似表述。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 906,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

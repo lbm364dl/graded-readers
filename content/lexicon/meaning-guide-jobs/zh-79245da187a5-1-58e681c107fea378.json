@@ -1,0 +1,31 @@
+{
+  "id": "zh-79245da187a5-1-58e681c107fea378",
+  "entry_id": "zh-79245da187a5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-79245da187a5-1",
+      "headword": "穷",
+      "kind": "word",
+      "reading": "qióng",
+      "senses": [
+        {
+          "id": "zh-79245da187a5-1-s1",
+          "definition": "poor; having little money or few resources"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备家里很穷，从小就有大志。",
+        "gloss": "poor",
+        "sense_id": "zh-79245da187a5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "97e117f49ed43f3121d41eb390677ab2b53504fec5ae0fe9fff9db882d89a048"
+}

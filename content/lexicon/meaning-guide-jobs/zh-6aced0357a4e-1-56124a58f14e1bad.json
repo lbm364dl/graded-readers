@@ -1,0 +1,31 @@
+{
+  "id": "zh-6aced0357a4e-1-56124a58f14e1bad",
+  "entry_id": "zh-6aced0357a4e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6aced0357a4e-1",
+      "headword": "结党",
+      "kind": "word",
+      "reading": "jiédǎng",
+      "senses": [
+        {
+          "id": "zh-6aced0357a4e-1-s1",
+          "definition": "to form a group or clique, especially for shared aims"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来，张让等十人结党作恶，被称为十常侍。",
+        "gloss": "to form a clique",
+        "sense_id": "zh-6aced0357a4e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "199982cd84a7ec57af162312b6390102168ff2ffd62e6f91f6f1ae3a0c716c31"
+}

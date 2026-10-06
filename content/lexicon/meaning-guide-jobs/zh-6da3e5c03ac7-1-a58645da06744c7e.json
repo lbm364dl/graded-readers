@@ -1,0 +1,41 @@
+{
+  "id": "zh-6da3e5c03ac7-1-a58645da06744c7e",
+  "entry_id": "zh-6da3e5c03ac7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6da3e5c03ac7-1",
+      "headword": "回",
+      "kind": "word",
+      "reading": "huí",
+      "senses": [
+        {
+          "id": "zh-6da3e5c03ac7-1-s1",
+          "definition": "return; go back to a place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇甫嵩判断张梁、张宝很可能回广宗找张角，便让刘备回去帮助卢植。",
+        "gloss": "return",
+        "sense_id": "zh-6da3e5c03ac7-1-s1"
+      },
+      {
+        "sentence": "卢植被押走后，关羽建议先回涿郡，刘备同意了。",
+        "gloss": "return",
+        "sense_id": "zh-6da3e5c03ac7-1-s1"
+      },
+      {
+        "sentence": "”军队带走卢植后，关羽说：“卢植已被抓，我们失去了依靠，只能回涿郡。",
+        "gloss": "return",
+        "sense_id": "zh-6da3e5c03ac7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "11691c1a23d52c75d7be3ca22ff9020d047d21093cd90dee12e6e52b05212eec"
+}

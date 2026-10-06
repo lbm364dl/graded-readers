@@ -1,0 +1,41 @@
+{
+  "id": "zh-1aa654f506a9-1-131419e6244ebb91",
+  "entry_id": "zh-1aa654f506a9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1aa654f506a9-1",
+      "headword": "很多",
+      "kind": "word",
+      "reading": "hěnduō",
+      "senses": [
+        {
+          "id": "zh-1aa654f506a9-1-s1",
+          "definition": "many; a large number of"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角给百姓治病，聚集了很多人。",
+        "gloss": "many",
+        "sense_id": "zh-1aa654f506a9-1-s1"
+      },
+      {
+        "sentence": "当时疫病流行，很多人相信张角。",
+        "gloss": "many",
+        "sense_id": "zh-1aa654f506a9-1-s1"
+      },
+      {
+        "sentence": "三人带人赶到青州，发现敌人很多。",
+        "gloss": "many",
+        "sense_id": "zh-1aa654f506a9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "137f2cce1baf32c55e5e6c0b30d9e051653eeab2a0e366de405dff35c6728e31"
+}

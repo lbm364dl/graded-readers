@@ -1,0 +1,31 @@
+{
+  "id": "zh-db390d391b2a-1-ee89b765c7c28749",
+  "entry_id": "zh-db390d391b2a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-db390d391b2a-1",
+      "headword": "喊道",
+      "kind": "construction",
+      "reading": "hǎndào",
+      "senses": [
+        {
+          "id": "zh-db390d391b2a-1-s1",
+          "definition": "call out or shout something in speech"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他挥鞭喊道：“反国逆贼，为什么不早投降？",
+        "gloss": "shout; yell",
+        "sense_id": "zh-db390d391b2a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "80254eb36e543092d732c435030b6ccd9f9c2b686b1ee76b6a2840f9daf0ea65"
+}

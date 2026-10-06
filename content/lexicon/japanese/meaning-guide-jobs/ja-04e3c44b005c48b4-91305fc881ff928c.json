@@ -1,0 +1,32 @@
+{
+  "id": "ja-04e3c44b005c48b4-91305fc881ff928c",
+  "entry_id": "ja-04e3c44b005c48b4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-04e3c44b005c48b4",
+      "headword": "かぶせる",
+      "reading": "かぶせる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-04e3c44b005c48b4-1",
+          "definition": "to put or cover over"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "自分の気分しだいで、吾輩を逆さにしたり、頭に袋をかぶせたり、外へ投げ出したり、へっついの中へ押し込んだりする。",
+        "gloss": "do things such as putting a bag over",
+        "sense_id": "ja-04e3c44b005c48b4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c49a6c4dd7101ea3bbddb018de0b4fec49a1ce366decd79a5507b0f540015ef1"
+}

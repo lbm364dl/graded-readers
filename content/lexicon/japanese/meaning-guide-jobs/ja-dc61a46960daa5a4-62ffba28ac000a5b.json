@@ -1,0 +1,32 @@
+{
+  "id": "ja-dc61a46960daa5a4-62ffba28ac000a5b",
+  "entry_id": "ja-dc61a46960daa5a4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dc61a46960daa5a4",
+      "headword": "同時に",
+      "reading": "どうじに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-dc61a46960daa5a4-1",
+          "definition": "At the same time; simultaneously."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はその名を聞くと少し不安になったが、同時に、どれほど無学なのか試してみたくなった。",
+        "gloss": "at the same time",
+        "sense_id": "ja-dc61a46960daa5a4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c08c2ab545e3249297645712956b6f9c727f2f4537a0bbd9480da991b6720876"
+}

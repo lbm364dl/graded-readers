@@ -1,0 +1,31 @@
+{
+  "id": "zh-8a63274ae9d3-1-eed42d1b20dfd079",
+  "entry_id": "zh-8a63274ae9d3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8a63274ae9d3-1",
+      "headword": "巨大",
+      "kind": "word",
+      "reading": "jùdà",
+      "senses": [
+        {
+          "id": "zh-8a63274ae9d3-1-s1",
+          "definition": "very large or great in size, amount, degree, or intensity"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "两天后，山后传来巨大的喊杀声。",
+        "gloss": "huge",
+        "sense_id": "zh-8a63274ae9d3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4dc2bb6c9d3e69a4b81faf11b3b84c18a4d7e24db319fe871faf32d0563c0578"
+}

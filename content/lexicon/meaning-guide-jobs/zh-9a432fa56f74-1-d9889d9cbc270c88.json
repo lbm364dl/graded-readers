@@ -1,0 +1,31 @@
+{
+  "id": "zh-9a432fa56f74-1-d9889d9cbc270c88",
+  "entry_id": "zh-9a432fa56f74-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9a432fa56f74-1",
+      "headword": "顿丘令",
+      "kind": "name",
+      "reading": "Dùnqiū lìng",
+      "senses": [
+        {
+          "id": "zh-9a432fa56f74-1-s1",
+          "definition": "Dunqiu magistrate"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来曹操任顿丘令。",
+        "gloss": "Dunqiu magistrate",
+        "sense_id": "zh-9a432fa56f74-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fb681556121cdbf4d03a0c3804ec6ef5616d4d5e9daf87cf5530f9deb199d7e6"
+}

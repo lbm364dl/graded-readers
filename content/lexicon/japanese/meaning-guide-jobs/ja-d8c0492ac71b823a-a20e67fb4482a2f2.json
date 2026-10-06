@@ -1,0 +1,32 @@
+{
+  "id": "ja-d8c0492ac71b823a-a20e67fb4482a2f2",
+  "entry_id": "ja-d8c0492ac71b823a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d8c0492ac71b823a",
+      "headword": "にらむ",
+      "reading": "にらむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d8c0492ac71b823a-1",
+          "definition": "To glare at or stare fiercely at someone or something."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が、「鼠なら君ににらまれたら終わりだ。",
+        "gloss": "if you are glared at",
+        "sense_id": "ja-d8c0492ac71b823a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "21ddf305ed7751719cdb0415ea4a3a857c7ab13ce5bf37aea73e487318b8c570"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "ja-f529062b68c07b93-275b5b26a32e514a",
+  "entry_id": "ja-f529062b68c07b93",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f529062b68c07b93",
+      "headword": "淡い",
+      "reading": "あわい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f529062b68c07b93-1",
+          "definition": "pale or light in color"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "胃が弱く、皮膚は淡い黄色で、弾力のない不活発な様子を見せている。",
+        "gloss": "pale",
+        "sense_id": "ja-f529062b68c07b93-1"
+      },
+      {
+        "sentence": "吾輩は黄を含んだ淡い灰色で、黒い斑がある。",
+        "gloss": "pale; light",
+        "sense_id": "ja-f529062b68c07b93-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "960b283e8e9ba7640e750690e52598dbea876860fd7d8de6404b83b95890a613"
+}

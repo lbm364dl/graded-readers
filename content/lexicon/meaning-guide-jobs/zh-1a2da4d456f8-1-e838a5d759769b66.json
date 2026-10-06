@@ -1,0 +1,31 @@
+{
+  "id": "zh-1a2da4d456f8-1-e838a5d759769b66",
+  "entry_id": "zh-1a2da4d456f8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1a2da4d456f8-1",
+      "headword": "传播",
+      "kind": "word",
+      "reading": "chuánbō",
+      "senses": [
+        {
+          "id": "zh-1a2da4d456f8-1-s1",
+          "definition": "spread or disseminate information, ideas, or other content"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他让人传播“苍天已死，黄天当立”和“岁在甲子，天下大吉”，还用白土在家门上写“甲子”。",
+        "gloss": "to spread",
+        "sense_id": "zh-1a2da4d456f8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d62ce45719e6cacf1aa54c4e638165ddc59dbca3f9e87309f3ed0f46f01c96e8"
+}

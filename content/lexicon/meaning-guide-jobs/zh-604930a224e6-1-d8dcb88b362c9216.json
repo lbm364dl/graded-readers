@@ -1,0 +1,31 @@
+{
+  "id": "zh-604930a224e6-1-d8dcb88b362c9216",
+  "entry_id": "zh-604930a224e6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-604930a224e6-1",
+      "headword": "响",
+      "kind": "word",
+      "reading": "xiǎng",
+      "senses": [
+        {
+          "id": "zh-604930a224e6-1-s1",
+          "definition": "loud; resounding"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他身材高大，头大眼圆，胡子很长，声音像雷一样响，气势惊人。",
+        "gloss": "sound; ring",
+        "sense_id": "zh-604930a224e6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "076600218d9ab1dee48fb58e4cfa7d0c9408d494abd8fd141e5c7439859939dd"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-26933ec20bb5-1-2e5f74ceb50aa35f",
+  "entry_id": "zh-26933ec20bb5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-26933ec20bb5-1",
+      "headword": "听了",
+      "kind": "construction",
+      "reading": "tīngle",
+      "senses": [
+        {
+          "id": "zh-26933ec20bb5-1-s1",
+          "definition": "after hearing or listening"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”刘备听了很开心。",
+        "gloss": "after hearing",
+        "sense_id": "zh-26933ec20bb5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f4b4d84d953ae9aa75eb946ab9934e275819f29739b8cd92d475c456aaaddaab"
+}

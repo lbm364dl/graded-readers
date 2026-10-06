@@ -1,0 +1,31 @@
+{
+  "id": "zh-f8f70f06540d-1-2fe8214fbcb33ea9",
+  "entry_id": "zh-f8f70f06540d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f8f70f06540d-1",
+      "headword": "一路",
+      "kind": "word",
+      "reading": "yīlù",
+      "senses": [
+        {
+          "id": "zh-f8f70f06540d-1-s1",
+          "definition": "along the way; throughout a journey"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人一路赶到大兴山下，和敌军相遇。",
+        "gloss": "all the way",
+        "sense_id": "zh-f8f70f06540d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "67cf96fd957bd14516d1d4d4387ac4832797409f20cd492f5101c3e0a3efc49d"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-daa9bb16488c-1-a7dc058cfba3ad8a",
+  "entry_id": "zh-daa9bb16488c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-daa9bb16488c-1",
+      "headword": "既",
+      "kind": "word",
+      "reading": "jì",
+      "senses": [
+        {
+          "id": "zh-daa9bb16488c-1-s1",
+          "definition": "already; having already"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们发誓，虽是异姓，既已结为兄弟，就要同心救民。",
+        "gloss": "since; once",
+        "sense_id": "zh-daa9bb16488c-1-s1"
+      },
+      {
+        "sentence": "关羽认为卢植既已被捕，三人又没有官职可以依靠，不如回涿郡。",
+        "gloss": "already",
+        "sense_id": "zh-daa9bb16488c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2a8582c839db26be9d3e0e5d5fc27461724b259b38b4c0f08e2dbd1d92b80834"
+}

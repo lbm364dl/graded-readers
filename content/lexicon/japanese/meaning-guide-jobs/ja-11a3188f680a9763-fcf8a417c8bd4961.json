@@ -1,0 +1,32 @@
+{
+  "id": "ja-11a3188f680a9763-fcf8a417c8bd4961",
+  "entry_id": "ja-11a3188f680a9763",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-11a3188f680a9763",
+      "headword": "広い",
+      "reading": "ひろい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-11a3188f680a9763-1",
+          "definition": "wide; broad; spacious"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "広くはないが、明るくて気持ちのよい場所だ。",
+        "gloss": "is not spacious",
+        "sense_id": "ja-11a3188f680a9763-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5664259b83b6ee981fe824a70b3f1c9b614b00c6f357c6ba58364c69f1e10e7c"
+}

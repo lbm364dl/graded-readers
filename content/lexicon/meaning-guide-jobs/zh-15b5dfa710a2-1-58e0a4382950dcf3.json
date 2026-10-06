@@ -1,0 +1,31 @@
+{
+  "id": "zh-15b5dfa710a2-1-58e0a4382950dcf3",
+  "entry_id": "zh-15b5dfa710a2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-15b5dfa710a2-1",
+      "headword": "押送",
+      "kind": "word",
+      "reading": "yāsòng",
+      "senses": [
+        {
+          "id": "zh-15b5dfa710a2-1-s1",
+          "definition": "to escort or transport someone under guard"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞听后大怒，要杀押送卢植的士兵。",
+        "gloss": "escort under guard",
+        "sense_id": "zh-15b5dfa710a2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4b977f397cdd0924d8c858056251c1b94e76d73d3d82261bff02dd096e7280ae"
+}

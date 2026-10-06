@@ -1,0 +1,32 @@
+{
+  "id": "ja-2d26cc091c073f7a-315a07a574c2a78d",
+  "entry_id": "ja-2d26cc091c073f7a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2d26cc091c073f7a",
+      "headword": "通う",
+      "reading": "かよう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2d26cc091c073f7a-1",
+          "definition": "to attend or go to a place regularly; to commute"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "小供は幼稚園へ通い、帰ると歌を歌い、時々吾輩の尻尾を持ち上げる。",
+        "gloss": "attending; going regularly",
+        "sense_id": "ja-2d26cc091c073f7a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f5b2b730e19a2ba295a09927f72abc16fcb2896f08fd614651a608e38c558ca3"
+}

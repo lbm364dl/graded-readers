@@ -1,0 +1,31 @@
+{
+  "id": "zh-37c607040dff-1-c777a31be03f8dd6",
+  "entry_id": "zh-37c607040dff-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-37c607040dff-1",
+      "headword": "二月",
+      "kind": "word",
+      "reading": "èr yuè",
+      "senses": [
+        {
+          "id": "zh-37c607040dff-1-s1",
+          "definition": "February; the second month of the lunar year"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁四年二月，洛阳发生地震，海水泛滥，沿海居民被大浪卷走。",
+        "gloss": "second month",
+        "sense_id": "zh-37c607040dff-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bf7fed723b1903e72362954d4d19e6352b50b2a338425d2fe6964e16202afd5b"
+}

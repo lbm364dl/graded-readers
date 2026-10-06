@@ -1,0 +1,37 @@
+{
+  "id": "ja-5ed0478109f0969d-ad3fcee66075b1fd",
+  "entry_id": "ja-5ed0478109f0969d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5ed0478109f0969d",
+      "headword": "語る",
+      "reading": "かたる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5ed0478109f0969d-1",
+          "definition": "to tell; to recount; to speak about"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、絵をかくなら自然そのものを写すべきだ、空には星、地には露、池には金魚、枯れ木には鳥がいる、自然全体が大きな絵なのだ、と語った。",
+        "gloss": "said; recounted",
+        "sense_id": "ja-5ed0478109f0969d-1"
+      },
+      {
+        "sentence": "主人が写生の大切さを語り、アンドレア・デル・サルトの話まで持ち出すと、美学者は笑って言った。",
+        "gloss": "speaking about; telling",
+        "sense_id": "ja-5ed0478109f0969d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "120f7d82221be4f4dc3844ad172e882e0dde5eb899cb53c45e17ece2ad415ba8"
+}

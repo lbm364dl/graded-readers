@@ -1,0 +1,31 @@
+{
+  "id": "zh-42773a00b183-1-4e495b4944071cfa",
+  "entry_id": "zh-42773a00b183-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-42773a00b183-1",
+      "headword": "答应",
+      "kind": "word",
+      "reading": "dāying",
+      "senses": [
+        {
+          "id": "zh-42773a00b183-1-s1",
+          "definition": "to answer or respond aloud"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备和关羽齐声答应。",
+        "gloss": "to answer",
+        "sense_id": "zh-42773a00b183-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2603a234c3aa3fa224395846d445f7f5c9d2a6d9392d6b86bccae134bdb3c7a3"
+}

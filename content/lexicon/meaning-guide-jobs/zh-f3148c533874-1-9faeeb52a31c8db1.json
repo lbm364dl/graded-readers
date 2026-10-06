@@ -1,0 +1,36 @@
+{
+  "id": "zh-f3148c533874-1-9faeeb52a31c8db1",
+  "entry_id": "zh-f3148c533874-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f3148c533874-1",
+      "headword": "矛",
+      "kind": "word",
+      "reading": "máo",
+      "senses": [
+        {
+          "id": "zh-f3148c533874-1-s1",
+          "definition": "spear"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞请人做矛。",
+        "gloss": "spear",
+        "sense_id": "zh-f3148c533874-1-s1"
+      },
+      {
+        "sentence": "张飞举矛刺中邓茂，他从马上掉下。",
+        "gloss": "spear",
+        "sense_id": "zh-f3148c533874-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3505c891b0b5dd166962ddffb65dbfdaada025025e87dd9c2abad9e68a5d4210"
+}

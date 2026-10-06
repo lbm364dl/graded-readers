@@ -1,0 +1,32 @@
+{
+  "id": "ja-dce2d7178debb6f3-f82302dcd64ec619",
+  "entry_id": "ja-dce2d7178debb6f3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dce2d7178debb6f3",
+      "headword": "音",
+      "reading": "おと",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-dce2d7178debb6f3-1",
+          "definition": "sound; noise"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "大きな音がして落ち、目から火が出たところまでは覚えている。",
+        "gloss": "sound; noise",
+        "sense_id": "ja-dce2d7178debb6f3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "380909813246b5dcc7ea34689534974b9f9cff317b1e90e56be30301e5e78bec"
+}

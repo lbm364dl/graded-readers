@@ -1,0 +1,36 @@
+{
+  "id": "zh-0246b05453ec-1-05a95d9e81c30782",
+  "entry_id": "zh-0246b05453ec-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0246b05453ec-1",
+      "headword": "刘弘",
+      "kind": "name",
+      "reading": "Liú Hóng",
+      "senses": [
+        {
+          "id": "zh-0246b05453ec-1-s1",
+          "definition": "Liu Hong, a person's name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他的父亲刘弘曾做过官，却很早去世。",
+        "gloss": "Liu Hong",
+        "sense_id": "zh-0246b05453ec-1-s1"
+      },
+      {
+        "sentence": "祖父刘雄，父亲刘弘；刘弘曾举孝廉，也做过官，后来早亡。",
+        "gloss": "Liu Hong",
+        "sense_id": "zh-0246b05453ec-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "602460d6eb7020099fa43e8edd1186fca9d79dcff6a764d7dc5cec5311111933"
+}

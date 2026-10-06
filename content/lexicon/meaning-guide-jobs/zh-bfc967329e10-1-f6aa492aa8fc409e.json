@@ -1,0 +1,31 @@
+{
+  "id": "zh-bfc967329e10-1-f6aa492aa8fc409e",
+  "entry_id": "zh-bfc967329e10-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bfc967329e10-1",
+      "headword": "联系",
+      "kind": "word",
+      "reading": "liánxì",
+      "senses": [
+        {
+          "id": "zh-bfc967329e10-1-s1",
+          "definition": "to contact or get in touch with someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角暗中送金钱，联系朝中的封谞，准备做内应。",
+        "gloss": "to contact",
+        "sense_id": "zh-bfc967329e10-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "29f9895fd775674587bc43795a33e6ccdd8e5802dc6369332b4c572061d51d31"
+}

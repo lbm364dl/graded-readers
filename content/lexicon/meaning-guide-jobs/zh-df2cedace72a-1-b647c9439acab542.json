@@ -1,0 +1,31 @@
+{
+  "id": "zh-df2cedace72a-1-b647c9439acab542",
+  "entry_id": "zh-df2cedace72a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-df2cedace72a-1",
+      "headword": "夜间",
+      "kind": "word",
+      "reading": "yèjiān",
+      "senses": [
+        {
+          "id": "zh-df2cedace72a-1-s1",
+          "definition": "at night; during the night"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "一名宦官的叔父夜间提刀行走，也被曹操抓住，用五色棒责打。",
+        "gloss": "at night",
+        "sense_id": "zh-df2cedace72a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d74f8e3ba496f3048aec7cc70d79e1027e3123b12a65ab48b86fdf5c2adc38f9"
+}

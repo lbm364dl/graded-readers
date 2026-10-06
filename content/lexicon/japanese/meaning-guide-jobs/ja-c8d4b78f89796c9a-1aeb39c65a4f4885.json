@@ -1,0 +1,32 @@
+{
+  "id": "ja-c8d4b78f89796c9a-1aeb39c65a4f4885",
+  "entry_id": "ja-c8d4b78f89796c9a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c8d4b78f89796c9a",
+      "headword": "憤慨する",
+      "reading": "ふんがいする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c8d4b78f89796c9a-1",
+          "definition": "to feel indignation; to resent or take offense"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "隣の三毛君も、また別の理由で人間に憤慨している。",
+        "gloss": "is indignant; feels resentful",
+        "sense_id": "ja-c8d4b78f89796c9a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ed46911d6b7b12b3edb57c8de6d335714c8511c6acf4b061964b478289f93701"
+}

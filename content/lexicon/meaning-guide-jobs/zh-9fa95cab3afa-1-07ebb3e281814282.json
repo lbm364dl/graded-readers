@@ -1,0 +1,36 @@
+{
+  "id": "zh-9fa95cab3afa-1-07ebb3e281814282",
+  "entry_id": "zh-9fa95cab3afa-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9fa95cab3afa-1",
+      "headword": "宫中",
+      "kind": "word",
+      "reading": "gōngzhōng",
+      "senses": [
+        {
+          "id": "zh-9fa95cab3afa-1-s1",
+          "definition": "in the palace; within the palace"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "建宁二年四月十五日，皇帝在宫中坐下。",
+        "gloss": "in the palace",
+        "sense_id": "zh-9fa95cab3afa-1-s1"
+      },
+      {
+        "sentence": "光和元年，母鸡变成公鸡；六月初一，黑气飞入宫中。",
+        "gloss": "in the palace",
+        "sense_id": "zh-9fa95cab3afa-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2688ff64451f0ebb12c70b01ecbb2d4b1978e7a6b0f76c7a24b3c94cbb423228"
+}

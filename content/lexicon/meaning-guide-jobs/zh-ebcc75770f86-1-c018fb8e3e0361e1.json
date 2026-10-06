@@ -1,0 +1,31 @@
+{
+  "id": "zh-ebcc75770f86-1-c018fb8e3e0361e1",
+  "entry_id": "zh-ebcc75770f86-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ebcc75770f86-1",
+      "headword": "飞下",
+      "kind": "construction",
+      "reading": "fēi xià",
+      "senses": [
+        {
+          "id": "zh-ebcc75770f86-1-s1",
+          "definition": "to fly down"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "殿角忽起狂风，一条大青蛇从梁上飞下，盘在椅上。",
+        "gloss": "fly down",
+        "sense_id": "zh-ebcc75770f86-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "353eabaf95180fb31fdbc2a797c2035a426241e5ed19439192e40b2b8706f892"
+}

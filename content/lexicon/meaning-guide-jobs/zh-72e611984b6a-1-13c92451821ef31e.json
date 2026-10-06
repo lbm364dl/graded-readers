@@ -1,0 +1,31 @@
+{
+  "id": "zh-72e611984b6a-1-13c92451821ef31e",
+  "entry_id": "zh-72e611984b6a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-72e611984b6a-1",
+      "headword": "装好",
+      "kind": "construction",
+      "reading": "zhuānghǎo",
+      "senses": [
+        {
+          "id": "zh-72e611984b6a-1-s1",
+          "definition": "to install or put something in place so that it is ready for use"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "火光照亮天空，黄巾军来不及披上铠甲，也来不及给马装好马鞍，只好四处逃跑。",
+        "gloss": "fit properly",
+        "sense_id": "zh-72e611984b6a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e50426aeceb18fca3d7246acad9be9cee053fd7801c3811aa1dd9d86788f4001"
+}

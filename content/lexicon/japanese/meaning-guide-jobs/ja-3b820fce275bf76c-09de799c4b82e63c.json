@@ -1,0 +1,32 @@
+{
+  "id": "ja-3b820fce275bf76c-09de799c4b82e63c",
+  "entry_id": "ja-3b820fce275bf76c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3b820fce275bf76c",
+      "headword": "呆れる",
+      "reading": "あきれる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-3b820fce275bf76c-1",
+          "definition": "to be astonished; to be appalled"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "　猫が聞いてあきれらあ。",
+        "gloss": "that's astonishing; one would be astonished",
+        "sense_id": "ja-3b820fce275bf76c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4d8122adcd004f50020d7538403b3f11c48ed6e8cca853e11b448133abef1277"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-b541dd94642e-1-c5b12a92821f7c7f",
+  "entry_id": "zh-b541dd94642e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b541dd94642e-1",
+      "headword": "传出",
+      "kind": "construction",
+      "reading": "chuánchū",
+      "senses": [
+        {
+          "id": "zh-b541dd94642e-1-s1",
+          "definition": "convey or make something known outward; put out information"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他又让人传出“苍天已死，黄天当立”和“岁在甲子，天下大吉”的话，叫百姓在家门上写“甲子”。",
+        "gloss": "to spread; transmit",
+        "sense_id": "zh-b541dd94642e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4b4c814bc823b6f5486c63f316d02fb9c3cfb6e440aa6461ce53ae5c4ecf12d4"
+}

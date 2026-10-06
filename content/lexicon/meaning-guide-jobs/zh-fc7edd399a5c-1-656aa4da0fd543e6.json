@@ -1,0 +1,36 @@
+{
+  "id": "zh-fc7edd399a5c-1-656aa4da0fd543e6",
+  "entry_id": "zh-fc7edd399a5c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fc7edd399a5c-1",
+      "headword": "十",
+      "kind": "word",
+      "reading": "shí",
+      "senses": [
+        {
+          "id": "zh-fc7edd399a5c-1-s1",
+          "definition": "ten"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来，张让等十人结党作恶，被称为十常侍。",
+        "gloss": "ten",
+        "sense_id": "zh-fc7edd399a5c-1-s1"
+      },
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "ten",
+        "sense_id": "zh-fc7edd399a5c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "16f358639c3e72f731961b23a069dc229f9b84723289986e25cfea8ea438e7dd"
+}

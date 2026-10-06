@@ -1,0 +1,42 @@
+{
+  "id": "ja-04690ec580149781-f58e6c326709777f",
+  "entry_id": "ja-04690ec580149781",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-04690ec580149781",
+      "headword": "のは",
+      "reading": "のは",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-04690ec580149781-1",
+          "definition": "Marks a nominalized clause or action as the topic, often introducing what or who is being identified or evaluated."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩がここで初めて見たのは人間だった。",
+        "gloss": "as for what ...",
+        "sense_id": "ja-04690ec580149781-1"
+      },
+      {
+        "sentence": "最初に会ったのは、おさんという下女だった。",
+        "gloss": "as for the fact that; what/who ... is",
+        "sense_id": "ja-04690ec580149781-1"
+      },
+      {
+        "sentence": "吾輩は、今までじっとしていた者の気持ちも知らず、そんな悪口を言うのはひどいと思った。",
+        "gloss": "as for the act of",
+        "sense_id": "ja-04690ec580149781-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ebd9e1917ac4a49d694f8d033f65b0f4eaf810ef1338bb75ce50e9cd3fab003a"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-5de1b913e76a-1-5da27da12b3190be",
+  "entry_id": "zh-5de1b913e76a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5de1b913e76a-1",
+      "headword": "雷",
+      "kind": "word",
+      "reading": "léi",
+      "senses": [
+        {
+          "id": "zh-5de1b913e76a-1-s1",
+          "definition": "thunder"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他身材高大，头大眼圆，胡子很长，声音像雷一样响，气势惊人。",
+        "gloss": "thunder",
+        "sense_id": "zh-5de1b913e76a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "96c481f4efd862c2e020f264f21489ed93c51b82e008f0c2bc54c06970cd661a"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-c1e9e1799e8a8e42-f5647c4e62998a68",
+  "entry_id": "ja-c1e9e1799e8a8e42",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c1e9e1799e8a8e42",
+      "headword": "覆う",
+      "reading": "おおう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c1e9e1799e8a8e42-1",
+          "definition": "to cover; to envelop"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "まず、毛でおおわれているはずの顔が、つるつるしていて、まるで薬缶のようだった。",
+        "gloss": "is covered",
+        "sense_id": "ja-c1e9e1799e8a8e42-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "62fb94a5396e262176855653d5a4b7ba0200d8a84d4aed7d9994d6370360f627"
+}

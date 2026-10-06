@@ -1,0 +1,32 @@
+{
+  "id": "ja-2c7c0dae26a19f40-e0ac76c024182f72",
+  "entry_id": "ja-2c7c0dae26a19f40",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2c7c0dae26a19f40",
+      "headword": "という",
+      "reading": "という",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-2c7c0dae26a19f40-1",
+          "definition": "Indicates that something is said or reported to be the case."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "誰がとったか分からないので、お金をもらうのだという。",
+        "gloss": "it is said that; reportedly",
+        "sense_id": "ja-2c7c0dae26a19f40-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "63def87e7819698e2817b5381062f7c9d615b9f060cfc1e9767bd089e9c1d4d6"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-ebcc19e28c1f-1-22f88583c2286ff7",
+  "entry_id": "zh-ebcc19e28c1f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ebcc19e28c1f-1",
+      "headword": "赶快",
+      "kind": "word",
+      "reading": "gǎnkuài",
+      "senses": [
+        {
+          "id": "zh-ebcc19e28c1f-1-s1",
+          "definition": "quickly; without delay"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝震惊得倒下，身边的人急忙把他送入宫中，百官也赶快躲开。",
+        "gloss": "quickly",
+        "sense_id": "zh-ebcc19e28c1f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "649b471b6b420868c40960adb8662a4ccbd3b824143c3c9603f979cc720bbe95"
+}

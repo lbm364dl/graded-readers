@@ -1,0 +1,32 @@
+{
+  "id": "ja-b2f97f0050969d1a-2f5240e84fcee858",
+  "entry_id": "ja-b2f97f0050969d1a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b2f97f0050969d1a",
+      "headword": "決心する",
+      "reading": "けっしんする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b2f97f0050969d1a-1",
+          "definition": "to make up one's mind; to resolve"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はその時から、決して鼠をとるまいと決心した。",
+        "gloss": "decided; resolved",
+        "sense_id": "ja-b2f97f0050969d1a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6f54959df4091f5f1b87b3102ebba21f82db2ca46936a589e6dfd2b34ea21405"
+}

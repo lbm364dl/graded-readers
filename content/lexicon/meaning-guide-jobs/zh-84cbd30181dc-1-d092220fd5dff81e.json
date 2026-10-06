@@ -1,0 +1,31 @@
+{
+  "id": "zh-84cbd30181dc-1-d092220fd5dff81e",
+  "entry_id": "zh-84cbd30181dc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-84cbd30181dc-1",
+      "headword": "活",
+      "kind": "word",
+      "reading": "huó",
+      "senses": [
+        {
+          "id": "zh-84cbd30181dc-1-s1",
+          "definition": "to live or remain alive"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "董卓能不能活下来，故事留下了悬念。",
+        "gloss": "survive",
+        "sense_id": "zh-84cbd30181dc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "621d9f5c19992ec05e7fae73596aa16d8ae11caa0692fcbde3e8dd9c2542ed6a"
+}

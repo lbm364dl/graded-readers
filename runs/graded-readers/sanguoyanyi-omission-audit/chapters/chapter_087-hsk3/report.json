@@ -1,0 +1,78 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_087-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 589,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略王连劝阻的具体理由及孔明的军政部署细节。",
+      "classification": "material",
+      "reason": "这些内容交代了王连劝阻的动机，以及孔明亲征的战略考量和后方防务部署，涉及人物动机与军政安排。",
+      "required_fix": "补充南方瘴疫、路远难治等劝阻理由，以及孔明对吴魏形势、李严、马超和后方援军的部署说明。"
+    },
+    {
+      "omission_note": "省略孔明连续诱降、伏击雍闿部众等部分战事过程。",
+      "classification": "material",
+      "reason": "这些过程构成孔明离间雍闿与高定、促成雍闿被杀及三郡平定的关键因果链，并非单纯战斗细节。",
+      "required_fix": "补充分囚俘虏、假传雍闿献首、释放并收买俘虏、诱捕探子送假信，以及伏击雍闿部众的连续过程。"
+    },
+    {
+      "omission_note": "省略孔明解释赵云、魏延战术安排的细节。",
+      "classification": "material",
+      "reason": "孔明对战术安排的解释揭示了他利用地形图、激发赵云魏延锐气、分兵夹击并部署伏兵的作战因果，也体现其重要谋略。",
+      "required_fix": "补充孔明依据吕凯地形图安排赵云魏延夜袭并分兵抄后，以王平、马忠夹击、张嶷张翼设伏并由关索接应擒敌的说明。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略王连劝阻的具体理由及孔明的军政部署细节。",
+      "classification": "material",
+      "reason": "这些内容交代了王连劝阻的动机，以及孔明亲征的战略考量和后方防务部署，涉及人物动机与军政安排。",
+      "required_fix": "补充南方瘴疫、路远难治等劝阻理由，以及孔明对吴魏形势、李严、马超和后方援军的部署说明。"
+    },
+    {
+      "omission_note": "省略孔明连续诱降、伏击雍闿部众等部分战事过程。",
+      "classification": "material",
+      "reason": "这些过程构成孔明离间雍闿与高定、促成雍闿被杀及三郡平定的关键因果链，并非单纯战斗细节。",
+      "required_fix": "补充分囚俘虏、假传雍闿献首、释放并收买俘虏、诱捕探子送假信，以及伏击雍闿部众的连续过程。"
+    },
+    {
+      "omission_note": "省略孔明解释赵云、魏延战术安排的细节。",
+      "classification": "material",
+      "reason": "孔明对战术安排的解释揭示了他利用地形图、激发赵云魏延锐气、分兵夹击并部署伏兵的作战因果，也体现其重要谋略。",
+      "required_fix": "补充孔明依据吕凯地形图安排赵云魏延夜袭并分兵抄后，以王平、马忠夹击、张嶷张翼设伏并由关索接应擒敌的说明。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 589,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

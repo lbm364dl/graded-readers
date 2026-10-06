@@ -1,0 +1,31 @@
+{
+  "id": "zh-69c679ef6bf3-2-8a3555d9d8e9b622",
+  "entry_id": "zh-69c679ef6bf3-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-69c679ef6bf3-2",
+      "headword": "更",
+      "kind": "word",
+      "reading": "gèng",
+      "senses": [
+        {
+          "id": "zh-69c679ef6bf3-2-s1",
+          "definition": "more; to a greater degree"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这个结果导致宦官从此更加专横，做事也更不受限制，朝廷中的正直之士更加危险。",
+        "gloss": "even more",
+        "sense_id": "zh-69c679ef6bf3-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cd18c950136f8aa4a4b05775b0fec009d6ee8bd30736a09e71c639a53dae375f"
+}

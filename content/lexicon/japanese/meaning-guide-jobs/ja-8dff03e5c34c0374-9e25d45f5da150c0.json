@@ -1,0 +1,32 @@
+{
+  "id": "ja-8dff03e5c34c0374-9e25d45f5da150c0",
+  "entry_id": "ja-8dff03e5c34c0374",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8dff03e5c34c0374",
+      "headword": "垣根",
+      "reading": "かきね",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8dff03e5c34c0374-1",
+          "definition": "a hedge or fence"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "茶の木の根を一つ一つ嗅ぎながら西側の杉の垣根へ行くと、枯れた菊を押し倒し、その上で大きな猫が眠っていた。",
+        "gloss": "hedge; fence",
+        "sense_id": "ja-8dff03e5c34c0374-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9fb9e1cdcdde3e23c8ef14c94892063751c26479aac24c16bf95fcd46d1c7055"
+}

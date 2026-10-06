@@ -1,0 +1,26 @@
+{
+  "id": "ja-component-0a536b1e57d0d20d-2c9d6bca1bc18616",
+  "entry_id": "ja-component-0a536b1e57d0d20d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-component-0a536b1e57d0d20d",
+      "headword": "倒す",
+      "reading": "たおす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-component-0a536b1e57d0d20d-1",
+          "definition": "To knock or topple something over."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "66aa266e83a07673a3a2e840799d1e22ce49626eb94c0435c66297337b4c6b8f"
+}

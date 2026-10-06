@@ -1,0 +1,32 @@
+{
+  "id": "ja-fee6d7bcb86c6340-b6de2094d5bd8a56",
+  "entry_id": "ja-fee6d7bcb86c6340",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fee6d7bcb86c6340",
+      "headword": "元来",
+      "reading": "がんらい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fee6d7bcb86c6340-1",
+          "definition": "originally; by nature"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "元来、主人は人より特に優れた才能があるわけではない。",
+        "gloss": "originally; by nature",
+        "sense_id": "ja-fee6d7bcb86c6340-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fe08e18daad606c726e794bff5864d499fa51be1eda3db2e02fc26a8f9cff9cb"
+}

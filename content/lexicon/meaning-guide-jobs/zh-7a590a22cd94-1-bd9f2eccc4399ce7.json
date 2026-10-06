@@ -1,0 +1,31 @@
+{
+  "id": "zh-7a590a22cd94-1-bd9f2eccc4399ce7",
+  "entry_id": "zh-7a590a22cd94-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7a590a22cd94-1",
+      "headword": "这些",
+      "kind": "word",
+      "reading": "zhèxiē",
+      "senses": [
+        {
+          "id": "zh-7a590a22cd94-1-s1",
+          "definition": "these; the indicated plural things or people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这些金银和铁也用来置办器用。",
+        "gloss": "these",
+        "sense_id": "zh-7a590a22cd94-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f7247d816e2335fd860ff460268d75952bfd225850fddffb0b8b75af04542b43"
+}

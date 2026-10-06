@@ -1,0 +1,31 @@
+{
+  "id": "zh-e47a16623c43-1-748eb2de1926a937",
+  "entry_id": "zh-e47a16623c43-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e47a16623c43-1",
+      "headword": "刘元起",
+      "kind": "name",
+      "reading": "Liú Yuánqǐ",
+      "senses": [
+        {
+          "id": "zh-e47a16623c43-1-s1",
+          "definition": "Liu Yuanqi, a person's name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "叔父刘元起听后很惊讶，认为他非同常人，因他家贫，常常资助他。",
+        "gloss": "Liu Yuanqi",
+        "sense_id": "zh-e47a16623c43-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d541db140b862a0320f35255a50af2c31c56b18d3a16508eb95182417d5515c6"
+}

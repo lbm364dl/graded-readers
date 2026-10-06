@@ -1,0 +1,31 @@
+{
+  "id": "zh-2504b5dc8e0b-1-85bb29e1eedd5e52",
+  "entry_id": "zh-2504b5dc8e0b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2504b5dc8e0b-1",
+      "headword": "以求",
+      "kind": "word",
+      "reading": "yǐqiú",
+      "senses": [
+        {
+          "id": "zh-2504b5dc8e0b-1-s1",
+          "definition": "in order to seek or attain"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他和张宝、张梁号召众人顺从天意，以求太平。",
+        "gloss": "in order to seek",
+        "sense_id": "zh-2504b5dc8e0b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ceab3ae471bc76f4abb8db3b259b14ce6a04fc80435257927ea6d09d738278c4"
+}

@@ -1,0 +1,1 @@
+{"verdict":"revise","issues":[{"segment_text":"で","problem":"wrong_type","explanation":"In 平気で語った, で is the continuative/adverbial form of the copula だ, not a particle.","suggested_fix":"Use type auxiliary, lemma だ, kana で, meaning_en \"copula continuative form; being\"."}]}

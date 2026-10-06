@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_005-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 336,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去袁绍盟誓、孙坚击败胡轸等过渡情节",
+      "classification": "material",
+      "reason": "孙坚击败胡轸是原场景中明确发生的战斗事件；删去后遗漏了孙坚在汜水关的关键战果，超出单纯压缩仪式或过渡描写的范围。",
+      "required_fix": "补入孙坚率程普出战并击败胡轸的情节；袁绍盟誓可酌情简写。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "将鲍信暗中派弟弟鲍忠出战改成鲍忠因怕孙坚抢功而私自出战，行动主体有误",
+      "classification": "material",
+      "reason": "原文明确是济北相鲍信暗中派弟弟鲍忠出战，并非鲍忠私自行动；这改变了行动主体。",
+      "required_fix": "改为鲍信因担心孙坚夺取头功，暗中派弟弟鲍忠率军先行出战。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "将孙坚败退主要归因于袁术不给粮，弱化了华雄夜袭、孙军溃乱这一直接原因",
+      "classification": "material",
+      "reason": "原文中袁术不给粮导致孙坚军缺食并军中自乱，华雄随后趁夜袭营，孙军因此溃败；将败退主要归因于断粮会扭曲直接因果链。",
+      "required_fix": "说明袁术不给粮使孙坚军缺食自乱，华雄又趁夜袭营并击溃孙军，孙坚才败退。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去袁绍盟誓、孙坚击败胡轸等过渡情节",
+      "classification": "material",
+      "reason": "孙坚击败胡轸是原场景中明确发生的战斗事件；删去后遗漏了孙坚在汜水关的关键战果，超出单纯压缩仪式或过渡描写的范围。",
+      "required_fix": "补入孙坚率程普出战并击败胡轸的情节；袁绍盟誓可酌情简写。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "将鲍信暗中派弟弟鲍忠出战改成鲍忠因怕孙坚抢功而私自出战，行动主体有误",
+      "classification": "material",
+      "reason": "原文明确是济北相鲍信暗中派弟弟鲍忠出战，并非鲍忠私自行动；这改变了行动主体。",
+      "required_fix": "改为鲍信因担心孙坚夺取头功，暗中派弟弟鲍忠率军先行出战。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "将孙坚败退主要归因于袁术不给粮，弱化了华雄夜袭、孙军溃乱这一直接原因",
+      "classification": "material",
+      "reason": "原文中袁术不给粮导致孙坚军缺食并军中自乱，华雄随后趁夜袭营，孙军因此溃败；将败退主要归因于断粮会扭曲直接因果链。",
+      "required_fix": "说明袁术不给粮使孙坚军缺食自乱，华雄又趁夜袭营并击溃孙军，孙坚才败退。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 336,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

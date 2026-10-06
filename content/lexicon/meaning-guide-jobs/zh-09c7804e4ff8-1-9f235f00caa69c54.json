@@ -1,0 +1,36 @@
+{
+  "id": "zh-09c7804e4ff8-1-9f235f00caa69c54",
+  "entry_id": "zh-09c7804e4ff8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-09c7804e4ff8-1",
+      "headword": "路",
+      "kind": "word",
+      "reading": "lù",
+      "senses": [
+        {
+          "id": "zh-09c7804e4ff8-1-s1",
+          "definition": "road; route"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他率领打着红旗的军队追上来，挡住了黄巾军的路。",
+        "gloss": "route",
+        "sense_id": "zh-09c7804e4ff8-1-s1"
+      },
+      {
+        "sentence": "曹操的军马都打着红旗，从前面截住黄巾军的去路。",
+        "gloss": "road; way",
+        "sense_id": "zh-09c7804e4ff8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5fd8d4cbe6d43393d0bf210bd7748eb77a09c500db035b1d206f67493ec4553a"
+}

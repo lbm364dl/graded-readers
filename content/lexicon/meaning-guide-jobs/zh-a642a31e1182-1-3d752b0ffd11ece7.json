@@ -1,0 +1,31 @@
+{
+  "id": "zh-a642a31e1182-1-3d752b0ffd11ece7",
+  "entry_id": "zh-a642a31e1182-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a642a31e1182-1",
+      "headword": "战斗",
+      "kind": "word",
+      "reading": "zhàndòu",
+      "senses": [
+        {
+          "id": "zh-a642a31e1182-1-s1",
+          "definition": "to fight; engage in combat"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张梁、张宝拼命战斗，最后才逃脱。",
+        "gloss": "to fight",
+        "sense_id": "zh-a642a31e1182-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5ede83c2efee7d7f000428c9b08aab64ac87b65ce6fa3838dcd84d52be637e6b"
+}

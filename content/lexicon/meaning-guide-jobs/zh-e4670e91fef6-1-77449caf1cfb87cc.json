@@ -1,0 +1,31 @@
+{
+  "id": "zh-e4670e91fef6-1-77449caf1cfb87cc",
+  "entry_id": "zh-e4670e91fef6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e4670e91fef6-1",
+      "headword": "誓",
+      "kind": "word",
+      "reading": "shì",
+      "senses": [
+        {
+          "id": "zh-e4670e91fef6-1-s1",
+          "definition": "an oath; a solemn promise"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "誓毕，刘备为兄，关羽次之，张飞为弟。",
+        "gloss": "oath",
+        "sense_id": "zh-e4670e91fef6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8d87f1218da7b29c40ee7fb6c9a303956ce011b62ece20a47982052c2386fec4"
+}

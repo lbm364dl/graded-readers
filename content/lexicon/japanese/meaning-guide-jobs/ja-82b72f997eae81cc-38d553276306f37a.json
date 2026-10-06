@@ -1,0 +1,32 @@
+{
+  "id": "ja-82b72f997eae81cc-38d553276306f37a",
+  "entry_id": "ja-82b72f997eae81cc",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-82b72f997eae81cc",
+      "headword": "上手",
+      "reading": "じょうず",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-82b72f997eae81cc-1",
+          "definition": "skillful; good at something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が「人の絵を見ると簡単そうなのに、自分で筆を持つと実に難しい」と言うと、友人は、最初から上手にはかけない、室内の想像だけでは絵にならない、と説明した。",
+        "gloss": "skillful; good at",
+        "sense_id": "ja-82b72f997eae81cc-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8b828057b9a696ca2b2f4e6de50b9f5958a90f5a57741c0c57a0409e4aae574a"
+}

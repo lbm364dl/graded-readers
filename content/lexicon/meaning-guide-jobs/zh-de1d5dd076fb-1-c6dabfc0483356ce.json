@@ -1,0 +1,31 @@
+{
+  "id": "zh-de1d5dd076fb-1-c6dabfc0483356ce",
+  "entry_id": "zh-de1d5dd076fb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-de1d5dd076fb-1",
+      "headword": "与",
+      "kind": "word",
+      "reading": "yǔ",
+      "senses": [
+        {
+          "id": "zh-de1d5dd076fb-1-s1",
+          "definition": "and; with"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "and",
+        "sense_id": "zh-de1d5dd076fb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f4addba52ac533be476929a682d662ff676e4d1bfd16c0ab4ba9f45ea53fac72"
+}

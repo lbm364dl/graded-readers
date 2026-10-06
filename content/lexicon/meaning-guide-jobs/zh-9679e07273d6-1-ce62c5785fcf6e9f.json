@@ -1,0 +1,31 @@
+{
+  "id": "zh-9679e07273d6-1-ce62c5785fcf6e9f",
+  "entry_id": "zh-9679e07273d6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9679e07273d6-1",
+      "headword": "军情",
+      "kind": "word",
+      "reading": "jūnqíng",
+      "senses": [
+        {
+          "id": "zh-9679e07273d6-1-s1",
+          "definition": "military affairs or situation"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "左丰来查看军情，向我索要贿赂。",
+        "gloss": "military situation",
+        "sense_id": "zh-9679e07273d6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "966fd8dfc5b7be084baed78d5572fbddc1627dd9b7b8b12e8cde0ab832d2f7ff"
+}

@@ -1,0 +1,92 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_006-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1118,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了董卓具体安排徐荣伏兵、吕布断后的战术过程。",
+      "classification": "material",
+      "reason": "原文交代了李儒设计、徐荣放过追兵后截击，以及吕布负责断后的具体战术，这构成曹军败退和伏击成功的因果机制；接受场景只保留了概括结果。",
+      "required_fix": "补回李儒的部署、徐荣先放过追兵再截杀，以及吕布负责阻截后军的过程。"
+    },
+    {
+      "omission_note": "省略了曹洪脱去衣甲、徒步跟随，以及徐荣渡河追击后才被夏侯惇刺死的部分细节。",
+      "classification": "material",
+      "reason": "曹洪脱甲步行并背曹操渡河体现其牺牲性救援；徐荣渡河追击后才被夏侯惇刺死则是关键行动顺序，涉及重要人物刻画与事件 chronology。",
+      "required_fix": "补回曹洪脱去衣甲、拖刀步行及背曹操渡河，并说明徐荣从上游渡河追击后才被夏侯惇刺死。"
+    },
+    {
+      "omission_note": "省略了孙坚祭祀太庙、观天象并感叹汉室衰败的情节。",
+      "classification": "material",
+      "reason": "祭祀太庙和孙坚观天象、悲叹帝星不明及京城荒芜，体现其忠于汉室的关键性格与政治判断，不只是氛围描写。",
+      "required_fix": "补回孙坚参与太庙祭祀、夜观天象，以及感叹汉室衰败、百姓受苦和京城空毁的情节。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称董卓在荥阳“设下伏兵”，原文是徐荣依李儒之计设伏，董卓并非直接部署者。",
+      "classification": "material",
+      "reason": "错误改变了设伏这一关键战术安排的执行者，属于实质性的行动者归属错误。",
+      "required_fix": "应改为徐荣依李儒之计在荥阳城外设伏，董卓采纳该计并命吕布断后。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了董卓具体安排徐荣伏兵、吕布断后的战术过程。",
+      "classification": "material",
+      "reason": "原文交代了李儒设计、徐荣放过追兵后截击，以及吕布负责断后的具体战术，这构成曹军败退和伏击成功的因果机制；接受场景只保留了概括结果。",
+      "required_fix": "补回李儒的部署、徐荣先放过追兵再截杀，以及吕布负责阻截后军的过程。"
+    },
+    {
+      "omission_note": "省略了曹洪脱去衣甲、徒步跟随，以及徐荣渡河追击后才被夏侯惇刺死的部分细节。",
+      "classification": "material",
+      "reason": "曹洪脱甲步行并背曹操渡河体现其牺牲性救援；徐荣渡河追击后才被夏侯惇刺死则是关键行动顺序，涉及重要人物刻画与事件 chronology。",
+      "required_fix": "补回曹洪脱去衣甲、拖刀步行及背曹操渡河，并说明徐荣从上游渡河追击后才被夏侯惇刺死。"
+    },
+    {
+      "omission_note": "省略了孙坚祭祀太庙、观天象并感叹汉室衰败的情节。",
+      "classification": "material",
+      "reason": "祭祀太庙和孙坚观天象、悲叹帝星不明及京城荒芜，体现其忠于汉室的关键性格与政治判断，不只是氛围描写。",
+      "required_fix": "补回孙坚参与太庙祭祀、夜观天象，以及感叹汉室衰败、百姓受苦和京城空毁的情节。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "称董卓在荥阳“设下伏兵”，原文是徐荣依李儒之计设伏，董卓并非直接部署者。",
+      "classification": "material",
+      "reason": "错误改变了设伏这一关键战术安排的执行者，属于实质性的行动者归属错误。",
+      "required_fix": "应改为徐荣依李儒之计在荥阳城外设伏，董卓采纳该计并命吕布断后。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1118,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

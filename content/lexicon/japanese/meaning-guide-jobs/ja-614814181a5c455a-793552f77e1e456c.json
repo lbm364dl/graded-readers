@@ -1,0 +1,32 @@
+{
+  "id": "ja-614814181a5c455a-793552f77e1e456c",
+  "entry_id": "ja-614814181a5c455a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-614814181a5c455a",
+      "headword": "表",
+      "reading": "おもて",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-614814181a5c455a-1",
+          "definition": "the outside or exterior; the front or outward-facing side"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "おさんは吾輩を見るなり、首をつかんで表へ投げ出した。",
+        "gloss": "outside; front",
+        "sense_id": "ja-614814181a5c455a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "28404216ea3c8e065a1bed89ed79718d9d0cec309ed11dcb0ddfa2fe4d74dfa7"
+}

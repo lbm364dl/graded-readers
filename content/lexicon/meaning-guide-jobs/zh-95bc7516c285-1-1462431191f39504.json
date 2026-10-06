@@ -1,0 +1,31 @@
+{
+  "id": "zh-95bc7516c285-1-1462431191f39504",
+  "entry_id": "zh-95bc7516c285-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-95bc7516c285-1",
+      "headword": "大贤良师",
+      "kind": "word",
+      "reading": "dàxiánliángshī",
+      "senses": [
+        {
+          "id": "zh-95bc7516c285-1-s1",
+          "definition": "Great Worthy Teacher"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角散施符水，为百姓治病，自称大贤良师。",
+        "gloss": "Great Worthy Teacher",
+        "sense_id": "zh-95bc7516c285-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "668b456352cee55c2998538e286dab13b4b32831817b985871f71984d086677f"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-65e4a0128f0d9df3-15f141ee59695897",
+  "entry_id": "ja-65e4a0128f0d9df3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-65e4a0128f0d9df3",
+      "headword": "ことが多い",
+      "reading": "ことがおおい",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-65e4a0128f0d9df3-1",
+          "definition": "often; frequently; do something on many occasions"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "すると主人は、昼寝をしていることが多い。",
+        "gloss": "often; frequently",
+        "sense_id": "ja-65e4a0128f0d9df3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "33ff4d0d6aca164a9252a30c98bcc737574a89b19b8b4a2ab968a65d2a6958e7"
+}

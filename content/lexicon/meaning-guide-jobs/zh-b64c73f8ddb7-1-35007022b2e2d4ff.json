@@ -1,0 +1,31 @@
+{
+  "id": "zh-b64c73f8ddb7-1-35007022b2e2d4ff",
+  "entry_id": "zh-b64c73f8ddb7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b64c73f8ddb7-1",
+      "headword": "迎",
+      "kind": "word",
+      "reading": "yíng",
+      "senses": [
+        {
+          "id": "zh-b64c73f8ddb7-1-s1",
+          "definition": "to go toward someone or something coming, to meet or confront them"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉让邹靖带刘备、张飞、关羽三人，领五百人前去迎敌。",
+        "gloss": "to confront",
+        "sense_id": "zh-b64c73f8ddb7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d929a1987be4f2d78647ebe1b46ffa9c42cf2615c475a2b9796aea99b66604dd"
+}

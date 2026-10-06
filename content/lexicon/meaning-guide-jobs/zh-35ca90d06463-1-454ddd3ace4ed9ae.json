@@ -1,0 +1,31 @@
+{
+  "id": "zh-35ca90d06463-1-454ddd3ace4ed9ae",
+  "entry_id": "zh-35ca90d06463-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-35ca90d06463-1",
+      "headword": "张宝",
+      "kind": "name",
+      "reading": "Zhāng Bǎo",
+      "senses": [
+        {
+          "id": "zh-35ca90d06463-1-s1",
+          "definition": "Zhang Bao"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来他和张宝、张梁一起，发动黄巾起事。",
+        "gloss": "Zhang Bao",
+        "sense_id": "zh-35ca90d06463-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "828e0a4ae328b22e80450c55ea5539136b0df6918b585314704f12f3d4b7cbd6"
+}

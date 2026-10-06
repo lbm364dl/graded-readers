@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_007-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 437,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“曲义”误写为“曲义”，原文人物名为“麴义”；虽不影响情节，但属于专名准确性问题。",
+      "classification": "material",
+      "reason": "人物专名写法与原文不一致，属于名称准确性错误；虽不影响事件理解，但用户政策将错误人名归为material。",
+      "required_fix": "将“曲义”改为原文人物名“麴义”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“曲义”误写为“曲义”，原文人物名为“麴义”；虽不影响情节，但属于专名准确性问题。",
+      "classification": "material",
+      "reason": "人物专名写法与原文不一致，属于名称准确性错误；虽不影响事件理解，但用户政策将错误人名归为material。",
+      "required_fix": "将“曲义”改为原文人物名“麴义”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 437,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

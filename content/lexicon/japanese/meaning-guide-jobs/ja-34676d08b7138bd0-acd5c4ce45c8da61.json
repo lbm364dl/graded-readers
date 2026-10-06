@@ -1,0 +1,37 @@
+{
+  "id": "ja-34676d08b7138bd0-acd5c4ce45c8da61",
+  "entry_id": "ja-34676d08b7138bd0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-34676d08b7138bd0",
+      "headword": "いくら",
+      "reading": "いくら",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-34676d08b7138bd0-1",
+          "definition": "however much; no matter how much"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そこまでは覚えているが、その後のことは、いくら思い出そうとしても分からない。",
+        "gloss": "however much",
+        "sense_id": "ja-34676d08b7138bd0-1"
+      },
+      {
+        "sentence": "「いくら鼠をとっても、人間ほどひどい奴はいねえ。",
+        "gloss": "however much; no matter how much",
+        "sense_id": "ja-34676d08b7138bd0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5b1f66575fc192d5cb73a136c1e708b5f31849e77d1ad8fd20610805119c9665"
+}

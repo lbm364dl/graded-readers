@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_065-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1119,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了刘备具体任命文武官员、赏赐关羽及开仓赈济百姓等细节。",
+      "classification": "material",
+      "reason": "这不仅是名单细节，还包括赏赐关羽和开仓赈济等能体现刘备治理、恩赏与仁德的重要行动；完全省略会削弱后续关羽得知马超并产生比武念头的承接。",
+      "required_fix": "补回刘备对主要文武官员的任命、赏赐关羽以及开仓赈济百姓的情节。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了刘备具体任命文武官员、赏赐关羽及开仓赈济百姓等细节。",
+      "classification": "material",
+      "reason": "这不仅是名单细节，还包括赏赐关羽和开仓赈济等能体现刘备治理、恩赏与仁德的重要行动；完全省略会削弱后续关羽得知马超并产生比武念头的承接。",
+      "required_fix": "补回刘备对主要文武官员的任命、赏赐关羽以及开仓赈济百姓的情节。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1119,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

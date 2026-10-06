@@ -1,0 +1,31 @@
+{
+  "id": "zh-bdfc9fe96eed-1-b5b0bf2b2524787a",
+  "entry_id": "zh-bdfc9fe96eed-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bdfc9fe96eed-1",
+      "headword": "手艺",
+      "kind": "word",
+      "reading": "shǒuyì",
+      "senses": [
+        {
+          "id": "zh-bdfc9fe96eed-1-s1",
+          "definition": "a practical skill or craft"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他很早失去父亲，依靠手艺养家，也一直孝顺母亲。",
+        "gloss": "craft",
+        "sense_id": "zh-bdfc9fe96eed-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0215df00bd74fff5e59c6e083d73d86beef13c029eb7197b984a6360e5520dbc"
+}

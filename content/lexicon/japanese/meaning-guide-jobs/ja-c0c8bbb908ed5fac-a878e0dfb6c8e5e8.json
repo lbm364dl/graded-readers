@@ -1,0 +1,41 @@
+{
+  "id": "ja-c0c8bbb908ed5fac-a878e0dfb6c8e5e8",
+  "entry_id": "ja-c0c8bbb908ed5fac",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c0c8bbb908ed5fac",
+      "headword": "もう",
+      "reading": "もう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c0c8bbb908ed5fac-1",
+          "definition": "any longer; any more"
+        },
+        {
+          "id": "ja-c0c8bbb908ed5fac-2",
+          "definition": "already; by now"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが小便がしたくなり、もう待てなかった。",
+        "gloss": "any longer; no more",
+        "sense_id": "ja-c0c8bbb908ed5fac-1"
+      },
+      {
+        "sentence": "元気も体格も失った黒は、最後に「いたちと魚屋の天秤棒には、もうこりごりだ」と言った。",
+        "gloss": "anymore; no longer",
+        "sense_id": "ja-c0c8bbb908ed5fac-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4f228d64c807ab6ab9f7c2553ebbb2a1167b5a6dd060c8a30990837859e75d42"
+}

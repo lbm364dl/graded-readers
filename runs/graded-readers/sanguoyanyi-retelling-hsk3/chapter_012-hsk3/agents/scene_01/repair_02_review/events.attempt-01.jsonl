@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff36a-ec93-7401-a9ba-bcbeae1c8fa4"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.97,\"readability\":0.96,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将曹操派人把徐母骗到许昌、程昱后来仿写书信的过程概括为“让程昱把他的母亲哄到许昌”，对具体执行者的归属略有偏差。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":25751,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":773,"reasoning_output_tokens":659}}

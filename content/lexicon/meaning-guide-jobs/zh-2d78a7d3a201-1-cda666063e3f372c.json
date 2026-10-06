@@ -1,0 +1,31 @@
+{
+  "id": "zh-2d78a7d3a201-1-cda666063e3f372c",
+  "entry_id": "zh-2d78a7d3a201-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2d78a7d3a201-1",
+      "headword": "妖术",
+      "kind": "word",
+      "reading": "yāoshù",
+      "senses": [
+        {
+          "id": "zh-2d78a7d3a201-1-s1",
+          "definition": "supernatural arts or powers used to produce extraordinary effects"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植说，他围住张角，本来将要取胜，却因张角使用妖术，未能立即取胜。",
+        "gloss": "sorcery; magic arts",
+        "sense_id": "zh-2d78a7d3a201-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "011b396b13bac0032850649c0a063b58ed8c22863515c102228c33752e4c1dfb"
+}

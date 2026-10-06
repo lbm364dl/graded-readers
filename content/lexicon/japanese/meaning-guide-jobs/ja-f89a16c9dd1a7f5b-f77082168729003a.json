@@ -1,0 +1,32 @@
+{
+  "id": "ja-f89a16c9dd1a7f5b-f77082168729003a",
+  "entry_id": "ja-f89a16c9dd1a7f5b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f89a16c9dd1a7f5b",
+      "headword": "通る",
+      "reading": "とおる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f89a16c9dd1a7f5b-1",
+          "definition": "to pass through or go across"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "風が池の上を通り、日が暮れ始めると、腹がひどく減ってきた。",
+        "gloss": "passing through; going across",
+        "sense_id": "ja-f89a16c9dd1a7f5b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8ea9cc6a731c7738bd06f3885608ba4c92add5cf949c285558d25906fd4a7ea4"
+}

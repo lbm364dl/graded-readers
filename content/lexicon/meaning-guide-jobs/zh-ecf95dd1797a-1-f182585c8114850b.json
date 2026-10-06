@@ -1,0 +1,31 @@
+{
+  "id": "zh-ecf95dd1797a-1-f182585c8114850b",
+  "entry_id": "zh-ecf95dd1797a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ecf95dd1797a-1",
+      "headword": "远远",
+      "kind": "word",
+      "reading": "yuǎnyuǎn",
+      "senses": [
+        {
+          "id": "zh-ecf95dd1797a-1-s1",
+          "definition": "from far away; at a great distance"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "家旁有一棵大桑树，远远看去，像一把车盖。",
+        "gloss": "from a distance",
+        "sense_id": "zh-ecf95dd1797a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a3f3d463451b93d2c593d337e3b4244fbac81fee12de203f7b79a0b56666c297"
+}

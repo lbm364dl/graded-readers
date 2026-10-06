@@ -1,0 +1,31 @@
+{
+  "id": "zh-3f435d94357c-1-35b132313d79f12b",
+  "entry_id": "zh-3f435d94357c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3f435d94357c-1",
+      "headword": "五百多",
+      "kind": "word",
+      "reading": "wǔbǎiduō",
+      "senses": [
+        {
+          "id": "zh-3f435d94357c-1-s1",
+          "definition": "more than five hundred"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他的徒弟有五百多人，云游四方，都会画符念咒。",
+        "gloss": "more than five hundred",
+        "sense_id": "zh-3f435d94357c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "be62beab262da892ab2f127738d03bf7d6fcf20ece79efb0a73a13bed79882ac"
+}

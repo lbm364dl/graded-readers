@@ -1,0 +1,32 @@
+{
+  "id": "ja-3d11c5aea5ccb1b1-28d62492a332f798",
+  "entry_id": "ja-3d11c5aea5ccb1b1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3d11c5aea5ccb1b1",
+      "headword": "色々",
+      "reading": "いろいろ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-3d11c5aea5ccb1b1-1",
+          "definition": "various; in many ways"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "友達が来るたびに、主人は仕事の不平をいろいろ言っている。",
+        "gloss": "variously; all sorts of",
+        "sense_id": "ja-3d11c5aea5ccb1b1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "35ef1aaf5c8d44424da616568725005e76f785bee69340a88ed0c57693eb27c6"
+}

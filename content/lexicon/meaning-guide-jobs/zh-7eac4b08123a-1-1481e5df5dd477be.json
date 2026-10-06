@@ -1,0 +1,31 @@
+{
+  "id": "zh-7eac4b08123a-1-1481e5df5dd477be",
+  "entry_id": "zh-7eac4b08123a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7eac4b08123a-1",
+      "headword": "正是",
+      "kind": "word",
+      "reading": "zhèngshì",
+      "senses": [
+        {
+          "id": "zh-7eac4b08123a-1-s1",
+          "definition": "be precisely; be exactly the person or thing identified"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备回去的路上，看见一辆车，车里关着的人正是卢植。",
+        "gloss": "precisely be",
+        "sense_id": "zh-7eac4b08123a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e4a4a788966f707d444c7fa061e70764b8761b8fc9a488ad0c84aa23331d337f"
+}

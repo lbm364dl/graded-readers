@@ -1,0 +1,31 @@
+{
+  "id": "zh-9fdbcf447095-1-fcedcda5d9826773",
+  "entry_id": "zh-9fdbcf447095-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9fdbcf447095-1",
+      "headword": "穿",
+      "kind": "word",
+      "reading": "chuān",
+      "senses": [
+        {
+          "id": "zh-9fdbcf447095-1-s1",
+          "definition": "to put on or wear clothing or armor"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军惊慌，马来不及装鞍，人来不及穿甲，四散逃跑。",
+        "gloss": "to put on; wear",
+        "sense_id": "zh-9fdbcf447095-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ead6fa56e439eddd4692cfcfc1f2d9c5c4fd130e08b95a3dc22fbc607339da99"
+}

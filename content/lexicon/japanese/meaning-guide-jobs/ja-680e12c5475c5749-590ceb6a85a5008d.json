@@ -1,0 +1,32 @@
+{
+  "id": "ja-680e12c5475c5749-590ceb6a85a5008d",
+  "entry_id": "ja-680e12c5475c5749",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-680e12c5475c5749",
+      "headword": "あせる",
+      "reading": "あせる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-680e12c5475c5749-1",
+          "definition": "to fade; lose color"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "つやのあった毛はだんだん色があせて抜け、きれいだった目には目やにがたまった。",
+        "gloss": "fading and",
+        "sense_id": "ja-680e12c5475c5749-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "14a6438ef211e528db1dd761a6bfb2fdc9fea9f34cf709c2f8562873b513a14c"
+}

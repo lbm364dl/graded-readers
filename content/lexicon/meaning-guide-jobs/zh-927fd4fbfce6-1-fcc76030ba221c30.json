@@ -1,0 +1,31 @@
+{
+  "id": "zh-927fd4fbfce6-1-fcc76030ba221c30",
+  "entry_id": "zh-927fd4fbfce6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-927fd4fbfce6-1",
+      "headword": "出行",
+      "kind": "word",
+      "reading": "chūxíng",
+      "senses": [
+        {
+          "id": "zh-927fd4fbfce6-1-s1",
+          "definition": "go out; travel from one place to another"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "蹇硕的叔父夜里提刀出行，也被曹操抓住处罚。",
+        "gloss": "to go out",
+        "sense_id": "zh-927fd4fbfce6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "641b23165fdd5af2adf04f9afa3805067c5718a8faaccdb9ade8291dfbbd1b55"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-6e55fb9d8a3d-2-4ba27a5c1f75a59c",
+  "entry_id": "zh-6e55fb9d8a3d-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6e55fb9d8a3d-2",
+      "headword": "给",
+      "kind": "particle",
+      "reading": "gěi",
+      "senses": [
+        {
+          "id": "zh-6e55fb9d8a3d-2-s1",
+          "definition": "to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们又派弟子唐州送信给封谞。",
+        "gloss": "to",
+        "sense_id": "zh-6e55fb9d8a3d-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6e44d7122b5bc8e5f165b9b0ca91a77a8c79a6223a7c143d0db6b33eb2516751"
+}

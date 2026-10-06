@@ -1,0 +1,31 @@
+{
+  "id": "zh-af50a0fe2a50-1-ae4567b0f74983ae",
+  "entry_id": "zh-af50a0fe2a50-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-af50a0fe2a50-1",
+      "headword": "第",
+      "kind": "word",
+      "reading": "dì",
+      "senses": [
+        {
+          "id": "zh-af50a0fe2a50-1-s1",
+          "definition": "prefix used to form ordinal numbers"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，三人取得了第一次胜利，初战便显出力量。",
+        "gloss": "ordinal-number prefix",
+        "sense_id": "zh-af50a0fe2a50-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7a3a8d8a3266e6ab38a31a8ffd27e896a2c5a8f8268933e8c4ab1eb0e30d4866"
+}

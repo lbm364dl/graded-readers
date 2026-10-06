@@ -1,0 +1,31 @@
+{
+  "id": "zh-ab3ba0dbaddb-1-eb22b281f799a515",
+  "entry_id": "zh-ab3ba0dbaddb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ab3ba0dbaddb-1",
+      "headword": "看不起",
+      "kind": "word",
+      "reading": "kànbuqǐ",
+      "senses": [
+        {
+          "id": "zh-ab3ba0dbaddb-1-s1",
+          "definition": "to look down on someone or regard them as inferior"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备说自己没有官职，董卓因此看不起三人。",
+        "gloss": "look down on",
+        "sense_id": "zh-ab3ba0dbaddb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4f7b97738bac7141fbdd394d9c5128ea20f553448f958b6b87d3663d5eb07dfb"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "zh-d8f029bf6d54-1-13c86fcd6011de01",
+  "entry_id": "zh-d8f029bf6d54-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d8f029bf6d54-1",
+      "headword": "招军榜",
+      "kind": "word",
+      "reading": "zhāojūnbǎng",
+      "senses": [
+        {
+          "id": "zh-d8f029bf6d54-1-s1",
+          "definition": "military recruitment notice or proclamation"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉发布招军榜，叫人到处报名。",
+        "gloss": "recruitment notice",
+        "sense_id": "zh-d8f029bf6d54-1-s1"
+      },
+      {
+        "sentence": "刘备在涿县见到招军榜。",
+        "gloss": "recruitment notice",
+        "sense_id": "zh-d8f029bf6d54-1-s1"
+      },
+      {
+        "sentence": "刘备看着招军榜，一直叹气。",
+        "gloss": "recruitment notice",
+        "sense_id": "zh-d8f029bf6d54-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "34ab290b6db73df8e239cb19e7fe7c3522661299e9d90d1bb19d6fa7c35b4b94"
+}

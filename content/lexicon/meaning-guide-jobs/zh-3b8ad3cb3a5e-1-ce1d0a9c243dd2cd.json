@@ -1,0 +1,31 @@
+{
+  "id": "zh-3b8ad3cb3a5e-1-ce1d0a9c243dd2cd",
+  "entry_id": "zh-3b8ad3cb3a5e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3b8ad3cb3a5e-1",
+      "headword": "杀牛",
+      "kind": "construction",
+      "reading": "shā niú",
+      "senses": [
+        {
+          "id": "zh-3b8ad3cb3a5e-1-s1",
+          "definition": "slaughter cattle"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "祭礼后，他们杀牛摆酒，聚集三百多名乡勇，在桃园中痛快喝酒。",
+        "gloss": "to kill an ox",
+        "sense_id": "zh-3b8ad3cb3a5e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2bd1f97884eec24e3dab070a337b0f0b366cdacd6fc5ea62ec50dc54cdbfa7a4"
+}

@@ -1,0 +1,73 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_022-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 946,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了陈琳檄文中部分论证细节，以及刘备与刘岱、王忠交涉时关于车胄和曹操误会的完整说明。",
+      "classification": "material",
+      "reason": "檄文部分论证细节可压缩，但车胄被杀及曹操误会刘备谋反是刘备解释自身立场、请求二人求情并释放他们的重要动机和因果背景；删去后削弱了交涉的理由。",
+      "required_fix": "补回刘备说明车胄曾欲害己、曹操因此误疑自己谋反，以及自己受曹操大恩、希望刘岱和王忠代为分诉的完整交涉背景。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了陈琳檄文中部分论证细节，以及刘备与刘岱、王忠交涉时关于车胄和曹操误会的完整说明。",
+      "classification": "material",
+      "reason": "檄文部分论证细节可压缩，但车胄被杀及曹操误会刘备谋反是刘备解释自身立场、请求二人求情并释放他们的重要动机和因果背景；删去后削弱了交涉的理由。",
+      "required_fix": "补回刘备说明车胄曾欲害己、曹操因此误疑自己谋反，以及自己受曹操大恩、希望刘岱和王忠代为分诉的完整交涉背景。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 905,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 7.5,
+        "readability": 8.5,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "将许攸、荀谌与审配、郭图并列为同一阶段主张立即出兵，含混了二人是在袁绍犹豫后才进来表态的时间顺序。"
+        ],
+        "language_problems": [
+          "“马融前列学生，后设歌女侍女”表达不自然且语义不清，应改为“马融讲学时，前面聚集学生，后面陈列歌女侍女”等。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 946,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

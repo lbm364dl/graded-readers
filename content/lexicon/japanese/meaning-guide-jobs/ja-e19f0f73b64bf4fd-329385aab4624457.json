@@ -1,0 +1,61 @@
+{
+  "id": "ja-e19f0f73b64bf4fd-329385aab4624457",
+  "entry_id": "ja-e19f0f73b64bf4fd",
+  "reason": "requested",
+  "item": {
+    "entry": {
+      "id": "ja-e19f0f73b64bf4fd",
+      "headword": "時",
+      "reading": "とき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e19f0f73b64bf4fd-1",
+          "definition": "Time; moment; occasion."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その時、初めて人を見ました。",
+        "gloss": "time; moment",
+        "sense_id": "ja-e19f0f73b64bf4fd-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-e19f0f73b64bf4fd",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "時 (とき) means a time or occasion: a point or period treated as when something happens. It is a Japanese noun and can be modified to identify which time, as in その時 (that time).",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "時",
+        "contribution_en": "The whole word refers to a time or occasion when something happens.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "7b7cbba82ec9c19a82a812e554c57bcdf693931b589f0458b31c9ea5934ced52",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [
+    {
+      "id": "ja-audit-request-05e828bc295e4d3d",
+      "reason": "The part gloss repeats the definition, and その時 is a passage-adjacent example displayed separately. Requested change: Remove the redundant whole-word part gloss. Preserve the independent time/occasion meaning; a minimal generic illustration such as その時 is allowed if useful and is not inherently passage-bound.",
+      "entry_id": "ja-e19f0f73b64bf4fd",
+      "force_research": false,
+      "reuse_reviewed_evidence": true
+    }
+  ],
+  "status": "reviewed",
+  "result_digest": "de5fcd3db24c3433416dd8fb4d3106a78a0ff4ceaab177bad66c8af3d0915b19"
+}

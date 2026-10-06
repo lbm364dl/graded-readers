@@ -1,0 +1,36 @@
+{
+  "id": "zh-fa04eac66b07-1-826d5d2d3179f695",
+  "entry_id": "zh-fa04eac66b07-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fa04eac66b07-1",
+      "headword": "严格",
+      "kind": "word",
+      "reading": "yángé",
+      "senses": [
+        {
+          "id": "zh-fa04eac66b07-1-s1",
+          "definition": "strict; stringent"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "可是，他们没有严格保密，消息很快走漏，二人反而因此被害。",
+        "gloss": "strictly",
+        "sense_id": "zh-fa04eac66b07-1-s1"
+      },
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "strict",
+        "sense_id": "zh-fa04eac66b07-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3f93b48c3031bea92e2a51a6d11616494721fd039ca350ad6ff7acdbe1563d27"
+}

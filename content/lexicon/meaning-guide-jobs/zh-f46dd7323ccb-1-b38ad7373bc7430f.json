@@ -1,0 +1,46 @@
+{
+  "id": "zh-f46dd7323ccb-1-b38ad7373bc7430f",
+  "entry_id": "zh-f46dd7323ccb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f46dd7323ccb-1",
+      "headword": "一同",
+      "kind": "word",
+      "reading": "yītóng",
+      "senses": [
+        {
+          "id": "zh-f46dd7323ccb-1-s1",
+          "definition": "together; jointly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝死后，灵帝即位，大将军窦武、太傅陈蕃一同辅佐他。",
+        "gloss": "together",
+        "sense_id": "zh-f46dd7323ccb-1-s1"
+      },
+      {
+        "sentence": "张飞说：“我颇有资财，愿意出钱招募乡勇，与你一同做大事。",
+        "gloss": "together",
+        "sense_id": "zh-f46dd7323ccb-1-s1"
+      },
+      {
+        "sentence": "三人因共同志向相识，一同到张飞庄上商量大事。",
+        "gloss": "together",
+        "sense_id": "zh-f46dd7323ccb-1-s1"
+      },
+      {
+        "sentence": "刘焉让邹靖带五千人，与刘备、关羽、张飞一同赶往青州。",
+        "gloss": "together",
+        "sense_id": "zh-f46dd7323ccb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9ec9cf99347859dce2d8e11bd684b679422a1e84cfe97bda5ab67342944652b1"
+}

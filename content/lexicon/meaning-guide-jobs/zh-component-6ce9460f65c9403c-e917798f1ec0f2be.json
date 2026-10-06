@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-6ce9460f65c9403c-e917798f1ec0f2be",
+  "entry_id": "zh-component-6ce9460f65c9403c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-6ce9460f65c9403c",
+      "headword": "沛国",
+      "reading": "pèi guó",
+      "kind": "name",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-6ce9460f65c9403c-s1",
+          "definition": "A historical Chinese state or administrative region called Pei."
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f024fe3bcb294edc555865513e296d3d2d7ddebcb034df948d225ff112551788"
+}

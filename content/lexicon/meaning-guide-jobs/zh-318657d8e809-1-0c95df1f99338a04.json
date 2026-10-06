@@ -1,0 +1,31 @@
+{
+  "id": "zh-318657d8e809-1-0c95df1f99338a04",
+  "entry_id": "zh-318657d8e809-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-318657d8e809-1",
+      "headword": "家旁",
+      "kind": "word",
+      "reading": "jiāpáng",
+      "senses": [
+        {
+          "id": "zh-318657d8e809-1-s1",
+          "definition": "beside the house"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "家旁有一棵大桑树，远远看去，像一把车盖。",
+        "gloss": "beside the house",
+        "sense_id": "zh-318657d8e809-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cdb15b1c6e6ec480138368cbc0cc60ab9a71733e0140bebdf26c1a8c8813c3fc"
+}

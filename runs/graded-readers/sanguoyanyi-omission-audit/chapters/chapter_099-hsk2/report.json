@@ -1,0 +1,128 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_099-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 294,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了王平、张翼分别伏击魏军及锦囊具体指示的过程",
+      "classification": "material",
+      "reason": "这些战术部署直接解释了姜维、廖化袭击魏营及魏军溃败的原因，属于关键因果和战斗过程，不只是细节压缩。",
+      "required_fix": "补回王平、张翼分别截击前后队，以及锦囊指示姜维、廖化在魏军围攻时分兵袭击司马懿大营、迫使其退兵的具体过程。"
+    },
+    {
+      "omission_note": "省略了魏军撤退后曹真、司马懿在陈仓受雨困扰并上疏劝退的部分细节",
+      "classification": "material",
+      "reason": "陈仓受雨造成军队困顿，以及劝退奏疏促成魏主下诏召回，是魏军撤退的重要原因和因果链，不能仅作为非必要细节省略。",
+      "required_fix": "补回曹真、司马懿在陈仓遭连日暴雨、军需和士卒困苦的情节，并交代王肃等上疏陈述不宜深入、劝魏主召回大军的过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了王平、张翼分别伏击魏军及锦囊具体指示的过程",
+      "classification": "material",
+      "reason": "这些战术部署直接解释了姜维、廖化袭击魏营及魏军溃败的原因，属于关键因果和战斗过程，不只是细节压缩。",
+      "required_fix": "补回王平、张翼分别截击前后队，以及锦囊指示姜维、廖化在魏军围攻时分兵袭击司马懿大营、迫使其退兵的具体过程。"
+    },
+    {
+      "omission_note": "省略了魏军撤退后曹真、司马懿在陈仓受雨困扰并上疏劝退的部分细节",
+      "classification": "material",
+      "reason": "陈仓受雨造成军队困顿，以及劝退奏疏促成魏主下诏召回，是魏军撤退的重要原因和因果链，不能仅作为非必要细节省略。",
+      "required_fix": "补回曹真、司马懿在陈仓遭连日暴雨、军需和士卒困苦的情节，并交代王肃等上疏陈述不宜深入、劝魏主召回大军的过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 342,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "“粮草尽湿”超出原文；原文是军器尽湿、马无草料且粮运困难。"
+        ],
+        "distortions": [
+          "“带兵回朝”暗示司马懿率全军撤回，原文实际是留下诸将守寨和守隘口，仅司马懿班师回朝。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 286,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [
+          "未交代孔明将大军屯于汉中后本人回成都养病，影响人物行止与后续时间线衔接。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "“暗回汉中养病”将原文中“大军屯于汉中、孔明本人回成都养病”合并为孔明在汉中养病，改变了养病地点。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 295,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 7.5,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“王平、张翼分别挡住张郃、戴陵和司马懿”中“分别”对应三个对象但只有两名将领，且歪曲了原文中王平阻挡张郃、戴陵，张翼抵挡司马懿的分工。"
+        ],
+        "language_problems": [
+          "“王平、张翼分别挡住张郃、戴陵和司马懿”语法关系不清，无法自然、准确地表达两军分工。"
+        ],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 4,
+      "candidate_cjk": 294,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

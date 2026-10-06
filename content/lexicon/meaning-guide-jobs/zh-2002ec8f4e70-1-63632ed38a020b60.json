@@ -1,0 +1,36 @@
+{
+  "id": "zh-2002ec8f4e70-1-63632ed38a020b60",
+  "entry_id": "zh-2002ec8f4e70-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2002ec8f4e70-1",
+      "headword": "伏",
+      "kind": "word",
+      "reading": "fú",
+      "senses": [
+        {
+          "id": "zh-2002ec8f4e70-1-s1",
+          "definition": "conceal oneself or lie in wait for an attack"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇甫嵩、朱隽商量后，决定火攻，命士兵各带一把草，暗中埋下伏兵。",
+        "gloss": "ambush",
+        "sense_id": "zh-2002ec8f4e70-1-s1"
+      },
+      {
+        "sentence": "二更后，伏兵一齐放火，两人各带军队攻入营中。",
+        "gloss": "ambush",
+        "sense_id": "zh-2002ec8f4e70-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e379f6d160280b6b4667f5fd425da48d551b4c0483ed0921ee9f34c33fe086a8"
+}

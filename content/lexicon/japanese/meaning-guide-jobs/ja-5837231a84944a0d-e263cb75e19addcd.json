@@ -1,0 +1,32 @@
+{
+  "id": "ja-5837231a84944a0d-e263cb75e19addcd",
+  "entry_id": "ja-5837231a84944a0d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5837231a84944a0d",
+      "headword": "種族",
+      "reading": "しゅぞく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5837231a84944a0d-1",
+          "definition": "a species, race, or group"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかも、あとで聞いたところによると、その人間は書生で、人間の中でも一番凶悪な種族だったらしい。",
+        "gloss": "species; race; group",
+        "sense_id": "ja-5837231a84944a0d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5d071c6de3f0ca64f08243a0df1569b26f3a1da92e81d765373e0fc5909daf06"
+}

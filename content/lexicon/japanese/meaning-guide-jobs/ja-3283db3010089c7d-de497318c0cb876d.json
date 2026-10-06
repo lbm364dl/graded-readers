@@ -1,0 +1,32 @@
+{
+  "id": "ja-3283db3010089c7d-de497318c0cb876d",
+  "entry_id": "ja-3283db3010089c7d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3283db3010089c7d",
+      "headword": "まま",
+      "reading": "まま",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-3283db3010089c7d-1",
+          "definition": "while remaining in the same state"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが、しばらくすると、書生が急に速く動き始めたのか、吾輩だけが動いたのか分からないまま、目が回り、胸が悪くなった。",
+        "gloss": "while remaining in that state",
+        "sense_id": "ja-3283db3010089c7d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "eef780059fab684ed907ab878c05496708365d81f0380d3791f6e64cc4ad79df"
+}

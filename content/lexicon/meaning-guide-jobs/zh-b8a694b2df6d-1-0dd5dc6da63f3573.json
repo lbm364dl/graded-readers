@@ -1,0 +1,70 @@
+{
+  "id": "zh-b8a694b2df6d-1-0dd5dc6da63f3573",
+  "entry_id": "zh-b8a694b2df6d-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-b8a694b2df6d-1",
+      "headword": "起来",
+      "kind": "construction",
+      "reading": "qǐlai",
+      "senses": [
+        {
+          "id": "zh-b8a694b2df6d-1-s1",
+          "definition": "to rise; to rise up"
+        },
+        {
+          "id": "zh-b8a694b2df6d-1-s2",
+          "definition": "to indicate that an action results in a state of being confined or shut away"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝信任张让，叫他“阿父”，朝政逐渐败坏，天下人心想要作乱，盗贼纷纷起来。",
+        "gloss": "to rise up",
+        "sense_id": "zh-b8a694b2df6d-1-s1"
+      },
+      {
+        "sentence": "桓帝还把一些正直的人关起来。",
+        "gloss": "indicating a resulting state",
+        "sense_id": "zh-b8a694b2df6d-1-s2"
+      },
+      {
+        "sentence": "朝政日益败坏，盗贼纷纷起来，天下人心更加不安。",
+        "gloss": "rise up",
+        "sense_id": "zh-b8a694b2df6d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-b8a694b2df6d-1",
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "起 supplies the idea of rising, while 来 completes the directional construction by pointing toward a speaker or reference point. Together, 起来 means to rise up.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "起",
+        "contribution_en": "rise",
+        "claim_ids": []
+      },
+      {
+        "text": "来",
+        "contribution_en": "directional complement: movement toward the speaker or reference point",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "6479e022dcf8346e29da07bf67dbc6b5a2bd5fbaf80f7e099e45c64d551786f4",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ac051365a36af7c333dabfaf824e6deeff16c2786b5a8061d2f32dd0403c6bdd"
+}

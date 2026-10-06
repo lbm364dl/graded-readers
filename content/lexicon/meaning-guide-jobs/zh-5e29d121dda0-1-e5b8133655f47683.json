@@ -1,0 +1,31 @@
+{
+  "id": "zh-5e29d121dda0-1-e5b8133655f47683",
+  "entry_id": "zh-5e29d121dda0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5e29d121dda0-1",
+      "headword": "数量",
+      "kind": "word",
+      "reading": "shùliàng",
+      "senses": [
+        {
+          "id": "zh-5e29d121dda0-1-s1",
+          "definition": "quantity; number or amount"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "可是黄巾军数量很多，刘备这边的人很少，只好退到山下。",
+        "gloss": "number",
+        "sense_id": "zh-5e29d121dda0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "83e3998239a6f834099e6a2deb70e397e22097267f666416188753a5d7836dad"
+}

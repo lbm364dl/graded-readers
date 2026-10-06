@@ -1,0 +1,31 @@
+{
+  "id": "zh-ec1689691dab-1-8517e17271ad1206",
+  "entry_id": "zh-ec1689691dab-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ec1689691dab-1",
+      "headword": "传道",
+      "kind": "word",
+      "reading": "chuándào",
+      "senses": [
+        {
+          "id": "zh-ec1689691dab-1-s1",
+          "definition": "teach or spread a doctrine or religious teaching"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "五百多名弟子到各地传道，信徒逐渐增多。",
+        "gloss": "to spread teachings",
+        "sense_id": "zh-ec1689691dab-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "62bea74ba9d5a05a050e97c2570ea6992036c3d9ac824e971db2a2f8e5f1a331"
+}

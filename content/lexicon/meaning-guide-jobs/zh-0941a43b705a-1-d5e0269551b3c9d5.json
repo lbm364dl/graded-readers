@@ -1,0 +1,31 @@
+{
+  "id": "zh-0941a43b705a-1-d5e0269551b3c9d5",
+  "entry_id": "zh-0941a43b705a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0941a43b705a-1",
+      "headword": "不禁",
+      "kind": "word",
+      "reading": "bùjīn",
+      "senses": [
+        {
+          "id": "zh-0941a43b705a-1-s1",
+          "definition": "cannot help but; involuntarily"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这天，他见到榜文，想到自己没有力量为国家出力，不能报国，不禁长叹。",
+        "gloss": "cannot help but",
+        "sense_id": "zh-0941a43b705a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b8fa6532f6accc0f5e5bc00f009e5cedad9dd4f30d986de921a235041644c553"
+}

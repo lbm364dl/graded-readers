@@ -1,0 +1,31 @@
+{
+  "id": "zh-bc7f02642ee3-1-f730d9b56661b27a",
+  "entry_id": "zh-bc7f02642ee3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bc7f02642ee3-1",
+      "headword": "能不能",
+      "kind": "construction",
+      "reading": "néng bu néng",
+      "senses": [
+        {
+          "id": "zh-bc7f02642ee3-1-s1",
+          "definition": "whether someone can do something; an A-not-A question pattern expressing uncertainty about ability or possibility"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "董卓能不能活下来，故事留下了悬念。",
+        "gloss": "whether he can",
+        "sense_id": "zh-bc7f02642ee3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e428ec30ca527b2861b087ab5a863a869985e7281ee073593101ced9f7d8ac12"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-65913dfffbd814cd-5ca7d8e7e786f937",
+  "entry_id": "ja-65913dfffbd814cd",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-65913dfffbd814cd",
+      "headword": "あれ",
+      "reading": "あれ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-65913dfffbd814cd-1",
+          "definition": "that thing; that matter"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "「実は君、あれは出鱈目だよ。",
+        "gloss": "that; that matter",
+        "sense_id": "ja-65913dfffbd814cd-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "adf741774d6d9e8625e51baf7d7570599aa699e05f68f47e3c621bf1d49b8e51"
+}

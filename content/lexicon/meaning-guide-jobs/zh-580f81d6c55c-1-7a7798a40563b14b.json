@@ -1,0 +1,31 @@
+{
+  "id": "zh-580f81d6c55c-1-7a7798a40563b14b",
+  "entry_id": "zh-580f81d6c55c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-580f81d6c55c-1",
+      "headword": "楼",
+      "kind": "word",
+      "reading": "lóu",
+      "senses": [
+        {
+          "id": "zh-580f81d6c55c-1-s1",
+          "definition": "tower"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "家住楼桑村，村东南有一棵大桑树，高五丈多，树冠仿佛车盖。",
+        "gloss": "tower",
+        "sense_id": "zh-580f81d6c55c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c5ade154091e927cdd77e7f12cfc5fc1bc5da02b38c306ba0412399e0cac7382"
+}

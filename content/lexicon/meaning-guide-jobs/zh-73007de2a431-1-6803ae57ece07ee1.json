@@ -1,0 +1,31 @@
+{
+  "id": "zh-73007de2a431-1-6803ae57ece07ee1",
+  "entry_id": "zh-73007de2a431-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-73007de2a431-1",
+      "headword": "州",
+      "kind": "word",
+      "reading": "zhōu",
+      "senses": [
+        {
+          "id": "zh-73007de2a431-1-s1",
+          "definition": "an administrative region in historical China"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "青、幽、徐、冀等八州百姓，家家信奉大贤良师张角。",
+        "gloss": "province",
+        "sense_id": "zh-73007de2a431-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8fac8cc9c77498dfa4c9cae41e04a73126d76bb67c605508db27d4eb366878b4"
+}

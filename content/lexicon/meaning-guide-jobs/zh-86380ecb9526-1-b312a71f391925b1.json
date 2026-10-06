@@ -1,0 +1,31 @@
+{
+  "id": "zh-86380ecb9526-1-b312a71f391925b1",
+  "entry_id": "zh-86380ecb9526-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-86380ecb9526-1",
+      "headword": "侯",
+      "kind": "word",
+      "reading": "hóu",
+      "senses": [
+        {
+          "id": "zh-86380ecb9526-1-s1",
+          "definition": "marquis, a noble rank"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘胜的儿子刘贞曾被封为涿鹿亭侯，后来因未按规定缴纳酬金而失侯，这一支便留在涿县。",
+        "gloss": "marquis",
+        "sense_id": "zh-86380ecb9526-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "49c92465cab1887846421cfa90b48481d8b906c768097abafc9984b3d969a1b9"
+}

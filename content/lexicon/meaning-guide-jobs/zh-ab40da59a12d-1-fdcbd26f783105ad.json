@@ -1,0 +1,31 @@
+{
+  "id": "zh-ab40da59a12d-1-fdcbd26f783105ad",
+  "entry_id": "zh-ab40da59a12d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ab40da59a12d-1",
+      "headword": "庄上",
+      "kind": "word",
+      "reading": "zhuāngshàng",
+      "senses": [
+        {
+          "id": "zh-ab40da59a12d-1-s1",
+          "definition": "at or on the estate or manor"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这时，两个商人来到庄上。",
+        "gloss": "the estate",
+        "sense_id": "zh-ab40da59a12d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9ba104de62354b180594d49f12b22588b4e89fcde0561eaa67fbef910b8aae27"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-9f198b7cf347fd15-38af6f4960eac88b",
+  "entry_id": "ja-9f198b7cf347fd15",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9f198b7cf347fd15",
+      "headword": "アンドレア・デル・サルト",
+      "reading": "アンドレア・デル・サルト",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "ja-9f198b7cf347fd15-1",
+          "definition": "Andrea del Sarto, Italian painter"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が写生の大切さを語り、アンドレア・デル・サルトの話まで持ち出すと、美学者は笑って言った。",
+        "gloss": "Andrea del Sarto",
+        "sense_id": "ja-9f198b7cf347fd15-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "85f840b61ea47a147bc2322e2a6854e6eb96e074ed689481a37b8bb4f1397947"
+}

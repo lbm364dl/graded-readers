@@ -1,0 +1,31 @@
+{
+  "id": "zh-bd2b80097697-1-f3e8b171b30aae10",
+  "entry_id": "zh-bd2b80097697-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bd2b80097697-1",
+      "headword": "虽然",
+      "kind": "word",
+      "reading": "suīrán",
+      "senses": [
+        {
+          "id": "zh-bd2b80097697-1-s1",
+          "definition": "although; introduces a concession followed by a contrasting or limiting point"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备虽然贫穷，却有远大志向。",
+        "gloss": "although",
+        "sense_id": "zh-bd2b80097697-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2a84ba6f370d09bd211f7c6f1b3acba7490e9c0a28e98be8259ce9e67e82825d"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-65e02db56393-1-072fef6e916e7dd7",
+  "entry_id": "zh-65e02db56393-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-65e02db56393-1",
+      "headword": "再说",
+      "kind": "construction",
+      "reading": "zàishuō",
+      "senses": [
+        {
+          "id": "zh-65e02db56393-1-s1",
+          "definition": "to bring up or mention something again"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "从此叔父再说他的过错，曹嵩也不再相信，曹操更加任性放荡。",
+        "gloss": "to mention again",
+        "sense_id": "zh-65e02db56393-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "69af252aa39d637756e13636b3ea4cca5d756424b9bad7d7580bb0f1ae482086"
+}

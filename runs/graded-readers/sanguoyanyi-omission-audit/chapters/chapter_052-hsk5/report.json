@@ -1,0 +1,83 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_052-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 915,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去刘琦送回襄阳、关羽回荆州，以及糜竺、刘封守江陵的部署。",
+      "classification": "material",
+      "reason": "这是对刘琦、关羽、糜竺和刘封职责及各城防务的具体战略部署，涉及人物身份、行动顺序和荆襄控制格局，不只是氛围或装饰性细节。",
+      "required_fix": "补充刘琦送回襄阳、关羽回荆州，以及糜竺、刘封守江陵的安排。"
+    },
+    {
+      "omission_note": "略去刘度降后仍任零陵太守、刘贤赴荆州随军办事的安排。",
+      "classification": "material",
+      "reason": "这是零陵攻取后的治理结果和刘贤后续去向，改变了相关人物的身份与职责，并补足投降后的重要后果。",
+      "required_fix": "补充刘度仍任零陵太守、刘贤赴荆州随军办事。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去刘琦送回襄阳、关羽回荆州，以及糜竺、刘封守江陵的部署。",
+      "classification": "material",
+      "reason": "这是对刘琦、关羽、糜竺和刘封职责及各城防务的具体战略部署，涉及人物身份、行动顺序和荆襄控制格局，不只是氛围或装饰性细节。",
+      "required_fix": "补充刘琦送回襄阳、关羽回荆州，以及糜竺、刘封守江陵的安排。"
+    },
+    {
+      "omission_note": "略去刘度降后仍任零陵太守、刘贤赴荆州随军办事的安排。",
+      "classification": "material",
+      "reason": "这是零陵攻取后的治理结果和刘贤后续去向，改变了相关人物的身份与职责，并补足投降后的重要后果。",
+      "required_fix": "补充刘度仍任零陵太守、刘贤赴荆州随军办事。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 846,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "略去刘度降后仍任零陵太守、刘贤赴荆州随军办事的安排，未交代零陵治理结果及刘贤后续去向。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 915,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

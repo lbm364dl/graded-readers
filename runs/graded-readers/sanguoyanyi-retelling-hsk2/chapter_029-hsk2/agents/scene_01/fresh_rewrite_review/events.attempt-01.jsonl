@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff56d-f11d-7881-bfa0-d5ea1c5d01e5"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.88,\"naturalness\":0.95,\"readability\":0.78,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将孙綝概括为“因小事抓人”，与原文主要写其滥杀降臣家属、专权废帝的情节不完全相符。\",\"篇幅明显超过500字目标，压缩度不足。\"],\"language_problems\":[],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":30691,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1652,"reasoning_output_tokens":1537}}

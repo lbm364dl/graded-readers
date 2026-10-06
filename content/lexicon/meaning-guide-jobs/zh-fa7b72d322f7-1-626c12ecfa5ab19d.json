@@ -1,0 +1,31 @@
+{
+  "id": "zh-fa7b72d322f7-1-626c12ecfa5ab19d",
+  "entry_id": "zh-fa7b72d322f7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fa7b72d322f7-1",
+      "headword": "上书",
+      "kind": "word",
+      "reading": "shàngshū",
+      "senses": [
+        {
+          "id": "zh-fa7b72d322f7-1-s1",
+          "definition": "to submit a written memorial or petition"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "submit a memorial",
+        "sense_id": "zh-fa7b72d322f7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9f436fcdc267f480c1962040f6471094cf3ee6ca383d70e1ba5b872ff88164ed"
+}

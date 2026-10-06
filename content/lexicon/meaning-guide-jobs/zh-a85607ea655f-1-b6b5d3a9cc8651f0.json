@@ -1,0 +1,36 @@
+{
+  "id": "zh-a85607ea655f-1-b6b5d3a9cc8651f0",
+  "entry_id": "zh-a85607ea655f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a85607ea655f-1",
+      "headword": "冰雹",
+      "kind": "word",
+      "reading": "bīngbáo",
+      "senses": [
+        {
+          "id": "zh-a85607ea655f-1-s1",
+          "definition": "hail"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大风、雷雨、冰雹毁坏房屋，地震和海水泛上来，百姓生活很难。",
+        "gloss": "hail",
+        "sense_id": "zh-a85607ea655f-1-s1"
+      },
+      {
+        "sentence": "之后雷雨和冰雹下到半夜，许多房屋被毁。",
+        "gloss": "hail",
+        "sense_id": "zh-a85607ea655f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "07fd5a6e23e1a48774727d316cc8f49670b3180e0d03ecc380ba9c5bf1df172d"
+}

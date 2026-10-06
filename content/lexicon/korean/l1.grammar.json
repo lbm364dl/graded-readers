@@ -1,0 +1,1739 @@
+{
+  "reviewed": true,
+  "entries": [
+    {
+      "id": "time-e",
+      "title_en": "Time marker",
+      "pattern": "에",
+      "explanation_en": "After a time expression, 에 says when something happens."
+    },
+    {
+      "id": "subject-i-ga",
+      "title_en": "Subject marker",
+      "pattern": "이/가",
+      "explanation_en": "Marks the noun that is the subject of a statement."
+    },
+    {
+      "id": "topic-eun-neun",
+      "title_en": "Topic marker",
+      "pattern": "은/는",
+      "explanation_en": "Sets up the noun that the rest of the statement is about; it can also signal contrast."
+    },
+    {
+      "id": "possessive-ui",
+      "title_en": "Possession or relationship",
+      "pattern": "의",
+      "explanation_en": "Connects a noun to another noun it owns or is related to."
+    },
+    {
+      "id": "object-eul-reul",
+      "title_en": "Object marker",
+      "pattern": "을/를",
+      "explanation_en": "Marks the noun affected by the verb."
+    },
+    {
+      "id": "naming-iran",
+      "title_en": "Called or named",
+      "pattern": "(이)라는",
+      "explanation_en": "Follows a name before a noun to say what that person or thing is called."
+    },
+    {
+      "id": "quotation-rago",
+      "title_en": "Quoted name or words",
+      "pattern": "(이)라고",
+      "explanation_en": "This particle marks preceding words as quoted, as they were said. After a vowel-final form, use 라고; after a consonant-final noun, use 이라고. The shortened forms 라 and 이라 have the same quotation function: 라 follows a vowel-final form, and 이라 follows a consonant-final noun. In a name or label use, the quoted words supply the name or description."
+    },
+    {
+      "id": "past-ass-eoss",
+      "title_en": "Past time",
+      "pattern": "-았/었-",
+      "explanation_en": "Places the action or state before now. The written form changes with the preceding stem."
+    },
+    {
+      "id": "polite-seumnida",
+      "title_en": "Formal polite statement",
+      "pattern": "-습니다",
+      "explanation_en": "Ends a statement in a formal, polite style."
+    },
+    {
+      "id": "modifier-eun",
+      "title_en": "Description before a noun",
+      "pattern": "-(으)ㄴ",
+      "explanation_en": "Turns a descriptive word into a modifier placed before its noun."
+    },
+    {
+      "id": "past-action-modifier-n",
+      "title_en": "Completed action before a noun",
+      "pattern": "-(으)ㄴ",
+      "explanation_en": "After an action verb, this form describes a noun by an action already completed."
+    },
+    {
+      "id": "prospective-modifier-eul",
+      "title_en": "Action before a following noun",
+      "pattern": "-(으)ㄹ",
+      "explanation_en": "Forms a modifier for an action considered possible or expected; before 수 it helps express ability or possibility."
+    },
+    {
+      "id": "copula-ida",
+      "title_en": "Is or was",
+      "pattern": "이다",
+      "explanation_en": "Connects a noun to what someone or something is. It can take past and polite endings."
+    },
+    {
+      "id": "ability-eul-su-eopda",
+      "title_en": "Cannot do something",
+      "pattern": "-(으)ㄹ 수 없다",
+      "explanation_en": "A verb in its -(으)ㄹ modifier form followed by 수 없다 means that doing it is not possible."
+    },
+    {
+      "id": "action-location-eseo",
+      "title_en": "Place where an action happens",
+      "pattern": "에서",
+      "explanation_en": "Attach 에서 to a place noun to mark where an action takes place. The same form follows nouns ending in a consonant or a vowel."
+    },
+    {
+      "id": "additive-do",
+      "title_en": "Also or even",
+      "pattern": "도",
+      "explanation_en": "Attach 도 to a noun to mean ‘also’ or ‘too’. With emphasis, it can mean ‘even’. It usually replaces a subject, topic, or object marker, but can follow other particles."
+    },
+    {
+      "id": "causative-ge-hada",
+      "title_en": "Make or let something happen",
+      "pattern": "-게 하다",
+      "explanation_en": "Attach -게 to a verb or descriptive stem and follow it with 하다. The construction means to make or let someone perform an action, or to cause a state. When the action is negative, it can express preventing someone from doing something."
+    },
+    {
+      "id": "connective-go",
+      "title_en": "Connecting actions or descriptions",
+      "pattern": "-고",
+      "explanation_en": "Attach -고 to a verb or descriptive stem to connect it to another action or description, often meaning ‘and’. The final predicate can supply the tense for both connected parts when they share the same time."
+    },
+    {
+      "id": "negative-complement-i-ga",
+      "title_en": "Naming what something is not",
+      "pattern": "이/가 아니다",
+      "explanation_en": "Before 아니다, mark the noun naming what someone or something is not with 이 after a consonant or 가 after a vowel. This noun gives the identity or category being denied."
+    },
+    {
+      "id": "negative-ji-mothada",
+      "title_en": "Being unable to do something",
+      "pattern": "-지 못하다",
+      "explanation_en": "Attach -지 to a verb stem and follow it with 못하다 to express inability to perform the action. The inability may come from lack of skill or from circumstances that prevent the action."
+    },
+    {
+      "id": "present-action-modifier-neun",
+      "title_en": "An action describing a noun",
+      "pattern": "-는",
+      "explanation_en": "Attach -는 to an action verb stem and place the resulting modifier before a noun. Drop a stem-final ㄹ before adding -는. The modifier describes an ongoing or habitual action associated with the noun. Its time is understood relative to the main statement, so it can describe an action taking place at a past time."
+    },
+    {
+      "id": "ability-eul-su-itda",
+      "title_en": "Can do something",
+      "pattern": "-(으)ㄹ 수 있다",
+      "explanation_en": "A verb modifier followed by 수 있다 expresses ability or possibility. Add -을 to a stem ending in a consonant other than ㄹ, or -ㄹ to a vowel-ending stem; a ㄹ-ending stem keeps its ㄹ. Follow this modifier with 수 있다 to mean ‘can do’."
+    },
+    {
+      "id": "additive-gi-do-hada",
+      "title_en": "Also doing or being",
+      "pattern": "-기도 하다",
+      "explanation_en": "Attach -기도 하다 to an action or descriptive stem to add another action or state, meaning ‘also do’ or ‘also be’. The predicate becomes a noun-like expression with -기, 도 adds ‘also’, and 하다 completes the predicate."
+    },
+    {
+      "id": "adverbial-ge",
+      "title_en": "Describing how something happens",
+      "pattern": "-게",
+      "explanation_en": "Attach -게 to a descriptive stem to describe how an action happens or the degree of a quality. With an action verb, -게 can link the action to a following predicate that controls or changes whether it happens."
+    },
+    {
+      "id": "appearance-geot-gatda",
+      "title_en": "Seems or appears",
+      "pattern": "modifier + 것 같다",
+      "explanation_en": "Place a clause in noun-modifying form before 것 같다 to express an impression or an uncertain judgment: ‘seems’ or ‘appears’. For a current description, use -(으)ㄴ with descriptive predicates or -인 after a noun; for an ongoing action, use -는 with an action verb."
+    },
+    {
+      "id": "becoming-complement-i-ga",
+      "title_en": "What someone or something becomes",
+      "pattern": "이/가 되다",
+      "explanation_en": "Before 되다, attach 이 to a consonant-ending noun or 가 to a vowel-ending noun. This marked noun identifies the role, state, or age that someone or something reaches."
+    },
+    {
+      "id": "benefactive-a-eo-juda",
+      "title_en": "Doing something for someone",
+      "pattern": "-아/어 주다",
+      "explanation_en": "Connect an action verb to 주다 with -아/어 to present the action as done for someone. Use -아 when the stem's final vowel is ㅏ or ㅗ and -어 otherwise; 하다 becomes 해. The person receiving the benefit may be stated or understood."
+    },
+    {
+      "id": "change-ge-doeda",
+      "title_en": "Coming to do something",
+      "pattern": "-게 되다",
+      "explanation_en": "Attach -게 되다 to an action verb stem to describe a change in circumstances or a resulting situation, often meaning ‘come to do’ or ‘end up doing’. The construction emphasizes how the situation develops rather than a deliberate decision."
+    },
+    {
+      "id": "classification-euro-ro",
+      "title_en": "Regarding something as a category",
+      "pattern": "(으)로",
+      "explanation_en": "Attach 으로 after a consonant other than ㄹ, or 로 after a vowel or ㄹ. With predicates of judgment or classification, the marked noun gives the role or category in which someone or something is regarded: ‘as’."
+    },
+    {
+      "id": "comparison-boda",
+      "title_en": "Than in a comparison",
+      "pattern": "보다",
+      "explanation_en": "Attach 보다 to the noun or quantity used as the comparison point. The following predicate states how something differs from it. 보다 has the same form after consonants and vowels; 더 may be added to emphasize ‘more’."
+    },
+    {
+      "id": "comparison-wa-gwa",
+      "title_en": "Comparing with someone or something",
+      "pattern": "와/과",
+      "explanation_en": "With predicates of sameness or difference, attach 와 after a vowel or 과 after a consonant to mark the comparison partner. English may use ‘the same as’ or ‘different from’, depending on the predicate."
+    },
+    {
+      "id": "concessive-a-eodo",
+      "title_en": "Even if or even though",
+      "pattern": "-아/어도",
+      "explanation_en": "Attach -아도 or -어도 to an action or descriptive stem to say that the following result holds despite that condition: ‘even if’ or ‘even though’. Use -아도 after a stem whose final vowel is ㅏ or ㅗ and -어도 otherwise; 하다 becomes 해도. Regular contractions and irregular stem changes apply."
+    },
+    {
+      "id": "conditional-eumyeon",
+      "title_en": "If or when",
+      "pattern": "-(으)면",
+      "explanation_en": "Attach -으면 after a stem ending in a consonant other than ㄹ, or -면 after a vowel or ㄹ. This introduces a condition, meaning ‘if’, or a regularly occurring situation, meaning ‘when’. For nouns, use -이면 after a consonant or -면 after a vowel."
+    },
+    {
+      "id": "connective-a-eo",
+      "title_en": "Linking a verb to an auxiliary",
+      "pattern": "-아/어",
+      "explanation_en": "The -아/어 form connects a verb to a following auxiliary that adds meaning to the action. Use -아 when the stem's final vowel is ㅏ or ㅗ and -어 otherwise; 하다 becomes 해. Vowels may contract, and irregular verbs may change their stems. The following auxiliary determines the meaning of the complete construction."
+    },
+    {
+      "id": "connective-eun-neun-de",
+      "title_en": "Background or contrast",
+      "pattern": "-(으)ㄴ데 / -는데 / -인데",
+      "explanation_en": "This connective supplies background for the next clause or introduces a contrast. Use -는데 with action verbs and 있다 or 없다. With descriptive stems, use -은데 after a consonant or -ㄴ데 after a vowel; drop a final ㄹ before -ㄴ데. Use -인데 after nouns and -는데 after a past-marked stem."
+    },
+    {
+      "id": "connective-myeo",
+      "title_en": "While or and",
+      "pattern": "-(으)며",
+      "explanation_en": "Attach -으며 after a stem ending in a consonant other than ㄹ, or -며 after a vowel or ㄹ. It connects simultaneous actions or joins related actions and descriptions, meaning ‘while’ or ‘and’. It is especially common in written language."
+    },
+    {
+      "id": "copula-modifier-in",
+      "title_en": "A noun identifying another noun",
+      "pattern": "noun + 인",
+      "explanation_en": "Attach -인 to a noun to make it identify or classify a following noun. This is the noun-modifying form of 이다 and means ‘who is’ or ‘which is’. The form -인 follows both consonant-ending and vowel-ending nouns."
+    },
+    {
+      "id": "desire-go-sipda",
+      "title_en": "Wanting to do something",
+      "pattern": "-고 싶다",
+      "explanation_en": "Attach -고 싶다 to an action verb stem to mean ‘want to do’. It normally expresses the speaker's own desire in a statement or asks about the listener's desire in a question."
+    },
+    {
+      "id": "direction-euro-ro",
+      "title_en": "Direction of movement",
+      "pattern": "(으)로",
+      "explanation_en": "Attach 으로 after a consonant other than ㄹ, or 로 after a vowel or ㄹ, to indicate the direction or destination of movement. It presents the place as where someone or something heads."
+    },
+    {
+      "id": "exclusive-man",
+      "title_en": "Only",
+      "pattern": "만",
+      "explanation_en": "Attach 만 to a noun to restrict a statement to that person, thing, or quantity: ‘only’. It has the same form after consonants and vowels and can follow some other particles."
+    },
+    {
+      "id": "existential-modifier-neun",
+      "title_en": "Existing or present before a noun",
+      "pattern": "있는 / 없는",
+      "explanation_en": "Use 있는 before a noun to describe something that exists, is present, or is available, and 없는 for something absent or unavailable. 있다 and 없다 take -는 in this use, giving 있는 and 없는."
+    },
+    {
+      "id": "formal-question-seumnikka",
+      "title_en": "Formal polite question",
+      "pattern": "-습니까 / -ㅂ니까",
+      "explanation_en": "Attach -습니까 to a consonant-ending predicate stem or -ㅂ니까 to a vowel-ending stem to ask a formal polite question. Drop a stem-final ㄹ before adding -ㅂ니까. With a noun, use -입니까."
+    },
+    {
+      "id": "honorific-recipient-kke",
+      "title_en": "Respectfully marking a recipient",
+      "pattern": "께",
+      "explanation_en": "Attach 께 to a noun referring to a respected person to mark the recipient or person toward whom an action is directed. It is the respectful counterpart of 에게 and has the same form after consonants and vowels."
+    },
+    {
+      "id": "imperative-eora-ara",
+      "title_en": "Plain command",
+      "pattern": "-아라 / -어라",
+      "explanation_en": "Attach -아라 to an action stem whose final vowel is ㅏ or ㅗ and -어라 otherwise to give a plain command. 하다 becomes 해라, and adjoining vowels may contract. This direct style is used with someone younger or lower in status, or in familiar speech."
+    },
+    {
+      "id": "informal-question-ni",
+      "title_en": "Familiar informal question",
+      "pattern": "-니",
+      "explanation_en": "Attach -니 to a predicate stem to ask a familiar, non-polite question, usually to someone close or younger. Drop a stem-final ㄹ before -니. After a noun, use -이니 after a consonant or -니 after a vowel."
+    },
+    {
+      "id": "location-e",
+      "title_en": "Place or destination",
+      "pattern": "에",
+      "explanation_en": "Attach 에 to a place noun to mark where someone or something is, or the destination of movement. It has the same form after consonants and vowels. Use 에서 instead when marking the place where an action takes place."
+    },
+    {
+      "id": "negative-connective-ji",
+      "title_en": "Linking to a negative auxiliary",
+      "pattern": "-지",
+      "explanation_en": "Attach -지 directly to an action or descriptive stem before a negative auxiliary such as 않다. The -지 form links the predicate to the auxiliary; the auxiliary supplies the negation and completes the construction."
+    },
+    {
+      "id": "negative-ji-anhda",
+      "title_en": "Not doing or being",
+      "pattern": "-지 않다",
+      "explanation_en": "Attach -지 않다 to an action or descriptive stem to negate its meaning: ‘do not’ or ‘be not’. The original predicate takes -지, while 않다 completes the negative predicate."
+    },
+    {
+      "id": "nominalized-negation-geosi-anida",
+      "title_en": "Denying a situation",
+      "pattern": "modifier + 것이 아니다",
+      "explanation_en": "Put a clause in noun-modifying form before 것이 아니다 to mean ‘it is not the case that’. Use -는 for an ongoing action or 있다 and 없다, -(으)ㄴ for a current description, or -인 after a noun. 것 turns the clause into a situation that 아니다 denies; the wording determines which part of the claim is rejected."
+    },
+    {
+      "id": "nominalizer-gi",
+      "title_en": "Turning an action or state into a noun",
+      "pattern": "-기",
+      "explanation_en": "Attach -기 to an action or descriptive stem to make a noun-like expression referring to doing something or being in a state. It can take particles or appear within a larger grammatical construction."
+    },
+    {
+      "id": "noun-coordination-wa-gwa",
+      "title_en": "Joining nouns with and",
+      "pattern": "와/과",
+      "explanation_en": "Attach 와 after a vowel-ending noun or 과 after a consonant-ending noun to join it to another noun, meaning ‘and’. A particle attached to the final noun can apply to the coordinated group."
+    },
+    {
+      "id": "plain-declarative-da",
+      "title_en": "Plain statement",
+      "pattern": "-다 / -ㄴ다 / -는다",
+      "explanation_en": "Plain statements are common in narration, private thoughts, and non-polite speech. Descriptive predicates and 있다 or 없다 take -다. Present action verbs take -ㄴ다 after a vowel or -는다 after a consonant; drop a final ㄹ before -ㄴ다. A noun takes -이다, and a past-marked predicate takes -다."
+    },
+    {
+      "id": "plain-question-nya",
+      "title_en": "Plain direct question",
+      "pattern": "-냐 / -느냐 / -(으)냐",
+      "explanation_en": "These endings ask direct questions in a non-polite style. -냐 can follow a predicate stem. The fuller forms are -느냐 with action verbs and 있다 or 없다, and -(으)냐 with descriptive predicates. Drop a stem-final ㄹ before these endings. Nouns take -이냐 after a consonant or -냐 after a vowel. The style may sound familiar or stern depending on the relationship and tone."
+    },
+    {
+      "id": "plural-deul",
+      "title_en": "Making plurality explicit",
+      "pattern": "들",
+      "explanation_en": "Attach 들 to a noun to make its plural meaning explicit, especially with people. Korean nouns can also have plural meaning without 들, so this marker is not required whenever English uses a plural."
+    },
+    {
+      "id": "position-state-e",
+      "title_en": "A position or state occupied",
+      "pattern": "에",
+      "explanation_en": "Attach 에 to a noun naming a position, role, or state to mark what someone or something occupies or is in. With 있다, this can express holding a position or being in a particular state. The same form follows consonants and vowels."
+    },
+    {
+      "id": "possessor-ege",
+      "title_en": "The person who has something",
+      "pattern": "에게 … 있다/없다",
+      "explanation_en": "With 있다 or 없다, attach 에게 to the person who has or lacks something. The possessed thing or relationship is normally marked with 이 or 가. This structure often translates into English with ‘have’ rather than ‘there is’."
+    },
+    {
+      "id": "progressive-go-itda",
+      "title_en": "An action in progress",
+      "pattern": "-고 있다",
+      "explanation_en": "Attach -고 있다 to an action verb stem to describe an action in progress, often translated as ‘be doing’. 있다 functions as an auxiliary here, rather than independently stating that something exists."
+    },
+    {
+      "id": "reason-a-eoseo",
+      "title_en": "Giving a reason",
+      "pattern": "-아/어서",
+      "explanation_en": "Attach -아서 to a stem whose final vowel is ㅏ or ㅗ and -어서 otherwise to give a reason for the following statement. 하다 becomes 해서, and 아니다 becomes 아니라서. Regular contractions and irregular stem changes apply. The final predicate normally establishes the time of the whole statement."
+    },
+    {
+      "id": "recipient-ege",
+      "title_en": "The person an action is directed to",
+      "pattern": "에게",
+      "explanation_en": "Attach 에게 to a person or animal to mark the recipient or the one toward whom an action is directed, often translated as ‘to’. It has the same form after consonants and vowels."
+    },
+    {
+      "id": "reflective-question-eul-kka",
+      "title_en": "Wondering to oneself",
+      "pattern": "-(으)ㄹ까",
+      "explanation_en": "Use -(으)ㄹ까 to ask a question inwardly or wonder about an explanation or possibility. Add -을까 after a consonant other than ㄹ, or -ㄹ까 after a vowel; a ㄹ-ending stem takes -까. Nouns take -일까. The ending conveys reflection or uncertainty rather than necessarily referring to future time."
+    },
+    {
+      "id": "short-negation-an",
+      "title_en": "Negating with not",
+      "pattern": "안 + predicate",
+      "explanation_en": "Place 안 before an action or descriptive predicate to negate it. With many activity nouns followed by 하다, 안 goes between the noun and 하다. To deny a noun identity, use 아니다 instead."
+    },
+    {
+      "id": "tentative-question-eul-kka",
+      "title_en": "Considering an uncertain possibility",
+      "pattern": "-(으)ㄹ까",
+      "explanation_en": "Use -(으)ㄹ까 to consider whether something might happen or be true. Add -을까 after a consonant other than ㄹ, or -ㄹ까 after a vowel; a ㄹ-ending stem takes -까. Nouns take -일까. Before a predicate of worry, the clause identifies the uncertain possibility causing concern."
+    },
+    {
+      "id": "with-wa-gwa",
+      "title_en": "Together with someone",
+      "pattern": "와/과",
+      "explanation_en": "Attach 와 after a vowel-ending noun or 과 after a consonant-ending noun to mark a companion or someone participating in an action together: ‘with’. 함께 or 같이 may follow to emphasize doing it together."
+    },
+    {
+      "id": "after-eun-hu-e",
+      "title_en": "After doing something",
+      "pattern": "-(으)ㄴ 후에",
+      "explanation_en": "Use an action verb in its completed-action modifier form followed by 후에 to mean ‘after doing something’. Add -은 after a consonant other than ㄹ, or -ㄴ after a vowel. Drop a stem-final ㄹ before adding -ㄴ. The action before 후에 happens first."
+    },
+    {
+      "id": "auxiliary-connective-go",
+      "title_en": "Linking an action to an auxiliary",
+      "pattern": "-고",
+      "explanation_en": "Attach -고 directly to an action verb stem to link it to an auxiliary such as 있다 or 싶다. The auxiliary completes the meaning of the predicate. In this use, -고 does not join two independent actions with ‘and’."
+    },
+    {
+      "id": "before-gi-jeone",
+      "title_en": "Before doing something",
+      "pattern": "-기 전에",
+      "explanation_en": "Attach -기 전에 to an action verb stem to mean ‘before doing something’. The -기 form presents the action as a noun-like expression, and 전에 places the main event earlier than that action."
+    },
+    {
+      "id": "connective-jiman",
+      "title_en": "Contrasting with but",
+      "pattern": "-지만",
+      "explanation_en": "Attach -지만 to an action or descriptive stem to contrast its clause with the following clause, meaning ‘but’ or ‘although’. With a noun, use -이지만 after a consonant or -지만 after a vowel. A tense marker can come before -지만 when needed."
+    },
+    {
+      "id": "future-eul-geot-ida",
+      "title_en": "Predicting or intending an action",
+      "pattern": "-(으)ㄹ 것이다",
+      "explanation_en": "Use a verb in its -(으)ㄹ modifier form followed by 것이다 to express a prediction or intention, often translated as ‘will’. Add -을 after a consonant other than ㄹ, or -ㄹ after a vowel; a ㄹ-ending stem keeps its ㄹ. The modifier, 것, and 이다 together form the prediction or intention."
+    },
+    {
+      "id": "noun-reason-iraseo",
+      "title_en": "Giving a reason with a noun",
+      "pattern": "(이)라서",
+      "explanation_en": "Attach 이라서 after a consonant-ending noun or 라서 after a vowel-ending noun to give a reason based on an identity or category: ‘because someone or something is a noun’. This is the reason connective form of the copula 이다. The final predicate normally establishes the time of the statement."
+    },
+    {
+      "id": "polite-command-euseyo",
+      "title_en": "Making a polite request or command",
+      "pattern": "-(으)세요",
+      "explanation_en": "Attach -으세요 to an action verb stem ending in a consonant other than ㄹ, or -세요 after a vowel. Drop a stem-final ㄹ before adding -세요. This asks or tells the listener to do something politely; its force can range from a gentle request to a firm instruction."
+    },
+    {
+      "id": "source-eseo",
+      "title_en": "The place or state something comes from",
+      "pattern": "에서",
+      "explanation_en": "Attach 에서 to a noun to mark the starting place or source, meaning ‘from’. It can also mark a state that someone emerges from, such as sleep. The same form follows nouns ending in a consonant or a vowel."
+    },
+    {
+      "id": "adverbial-connective-a-eo",
+      "title_en": "Linking a predicate to describe an action",
+      "pattern": "-아/어",
+      "explanation_en": "The connective -아/어 can make a predicate describe a following action, with its precise meaning supplied by the predicate. Use -아 when the stem's final vowel is ㅏ or ㅗ and -어 otherwise; 하다 becomes 해. In 위하여, commonly contracted to 위해, this form expresses ‘for the sake of’."
+    },
+    {
+      "id": "basis-capacity-euro-ro",
+      "title_en": "The basis or circumstances for an action",
+      "pattern": "(으)로",
+      "explanation_en": "Attach 으로 after a noun ending in a consonant other than ㄹ, or 로 after a vowel or ㄹ. This use presents a status, qualification, ability, or circumstance as the basis for what someone can do, often meaning ‘with’ or ‘given’."
+    },
+    {
+      "id": "cause-e",
+      "title_en": "Marking a cause",
+      "pattern": "에",
+      "explanation_en": "Attach 에 to a noun naming something that causes a state or reaction. Depending on the predicate, English may use ‘from’, ‘because of’, or ‘at’. The form is the same after consonants and vowels."
+    },
+    {
+      "id": "connective-daga",
+      "title_en": "An action interrupted by another",
+      "pattern": "-다가",
+      "explanation_en": "Attach -다가 directly to an action verb stem to show that an action underway is interrupted or changes into another action. The two clauses normally concern the same person. The final predicate can supply the time for the connected actions."
+    },
+    {
+      "id": "inclusive-kkaji",
+      "title_en": "Including even an unexpected item",
+      "pattern": "까지",
+      "explanation_en": "Attach 까지 to a noun to emphasize that something extends even to that person or thing, often beyond what is expected. It has the same form after consonants and vowels. This use expresses emphatic inclusion rather than an endpoint."
+    },
+    {
+      "id": "informal-copula-iya-ya",
+      "title_en": "Informally saying what something is",
+      "pattern": "이야/야",
+      "explanation_en": "Attach 이야 after a consonant-ending noun or 야 after a vowel-ending noun to identify what someone or something is in familiar, non-polite speech. Question intonation turns the same form into a question."
+    },
+    {
+      "id": "informal-question-a-eo",
+      "title_en": "Asking a familiar question",
+      "pattern": "-아/어?",
+      "explanation_en": "Use sentence-final -아/어 with question intonation to ask a familiar, non-polite question. Add -아 when the stem's final vowel is ㅏ or ㅗ and -어 otherwise; 하다 becomes 해. Contractions and irregular stem changes apply. This style suits close relationships or speech to someone younger."
+    },
+    {
+      "id": "intention-euryeogo",
+      "title_en": "Connecting an intended action",
+      "pattern": "-(으)려고",
+      "explanation_en": "Attach -으려고 after an action stem ending in a consonant other than ㄹ, or -려고 after a vowel or ㄹ. The intended action becomes the purpose or intention behind the following action, often meaning ‘in order to’ or ‘with the intention of’."
+    },
+    {
+      "id": "intention-euryeogo-hada",
+      "title_en": "Intending or trying to do something",
+      "pattern": "-(으)려고 하다",
+      "explanation_en": "Follow an action verb in -(으)려고 form with the auxiliary 하다 to express an intention or an attempt to act. Use -으려고 after a consonant other than ㄹ and -려고 after a vowel or ㄹ. The construction describes a plan or attempt without asserting that the action is completed."
+    },
+    {
+      "id": "maintained-state-go-itda",
+      "title_en": "A continuing state",
+      "pattern": "-고 있다",
+      "explanation_en": "Attach -고 있다 to verbs that express knowledge or an action whose state is maintained. The construction describes that state as continuing, rather than necessarily showing an action in progress. With 알다, 알고 있다 means ‘know’ or ‘be aware of’."
+    },
+    {
+      "id": "manner-euro-ro",
+      "title_en": "The manner of an action",
+      "pattern": "(으)로",
+      "explanation_en": "Attach 으로 after a noun ending in a consonant other than ㄹ, or 로 after a vowel or ㄹ, to describe how an action is performed. The noun names a manner, tone, or style, often translated with ‘in’ or ‘with’."
+    },
+    {
+      "id": "necessity-a-eoya-hada",
+      "title_en": "Having to do something",
+      "pattern": "-아/어야 하다",
+      "explanation_en": "Connect an action or descriptive predicate to 하다 with -아/어야 to express necessity: ‘must’ or ‘have to’. Use -아야 when the stem's final vowel is ㅏ or ㅗ and -어야 otherwise; 하다 becomes 해야. Contractions and irregular stem changes apply."
+    },
+    {
+      "id": "necessity-connective-a-eoya",
+      "title_en": "Linking a predicate to necessity",
+      "pattern": "-아/어야",
+      "explanation_en": "Before the auxiliary 하다, -아/어야 links an action or state to an expression of necessity. Use -아야 when the stem's final vowel is ㅏ or ㅗ and -어야 otherwise; 하다 becomes 해야. The following auxiliary completes the meaning ‘must’ or ‘have to’."
+    },
+    {
+      "id": "nominalizer-neun-geot",
+      "title_en": "Naming an action or activity",
+      "pattern": "-는 것",
+      "explanation_en": "Attach -는 to an action verb stem and follow it with 것 to refer to doing that action as a thing or activity. Drop a stem-final ㄹ before -는. The resulting expression can take noun particles and serve as a subject or object. It can name a contemplated activity without stating that it actually happens."
+    },
+    {
+      "id": "noun-exclusion-malgo",
+      "title_en": "Someone or something else",
+      "pattern": "noun + 말고",
+      "explanation_en": "Place 말고 after a noun to exclude it when naming an alternative: ‘other than’ or ‘instead of’. With 도, 말고도 means ‘besides’ or ‘in addition to’, indicating that other people or things are included as well."
+    },
+    {
+      "id": "noun-reason-ttaemune",
+      "title_en": "Because of something",
+      "pattern": "noun + 때문에",
+      "explanation_en": "Place 때문에 after a noun to give it as the cause or reason for the following situation, meaning ‘because of’. The noun may include modifiers or a possessive phrase. The construction does not require a subject or object particle on that noun."
+    },
+    {
+      "id": "polite-confirmation-ji-yo",
+      "title_en": "Politely inviting agreement",
+      "pattern": "-지요",
+      "explanation_en": "Attach -지요 to an action or descriptive stem to present something as shared knowledge or invite the listener's agreement. It can correspond to an English tag such as ‘isn't it?’ even when written as a statement. After a noun, use -이지요; -지요 commonly contracts to -죠."
+    },
+    {
+      "id": "polite-yo",
+      "title_en": "Adding politeness for the listener",
+      "pattern": "요",
+      "explanation_en": "Attach 요 to an ending or expression that permits it to make the utterance polite toward the listener. It adds respect without changing the basic question or statement meaning. It can also follow a noun phrase used as a short reply."
+    },
+    {
+      "id": "prohibitive-ji-malda",
+      "title_en": "Telling someone not to do something",
+      "pattern": "-지 말다",
+      "explanation_en": "Attach -지 directly to an action verb stem and follow it with 말다 to prohibit that action. The construction means ‘do not do’ the action. 말다 carries the command ending appropriate to the way the listener is addressed."
+    },
+    {
+      "id": "purpose-eul-reul-wihae",
+      "title_en": "For someone or something",
+      "pattern": "을/를 위해",
+      "explanation_en": "After a noun, use 을 위해 if it ends in a consonant or 를 위해 if it ends in a vowel. This identifies the person, cause, or goal an action serves, meaning ‘for’ or ‘for the sake of’. 위해 is the contracted form of 위하여."
+    },
+    {
+      "id": "reason-gi-ttaemunida",
+      "title_en": "Explaining why something is so",
+      "pattern": "-기 때문이다",
+      "explanation_en": "Attach -기 때문이다 to an action or descriptive stem to state the reason for a situation, meaning ‘it is because’. The -기 clause names the reason, and 때문이다 makes it the predicate of the explanation. After a noun, use -이기 때문이다."
+    },
+    {
+      "id": "sequence-a-eoseo",
+      "title_en": "Doing one thing and then another",
+      "pattern": "-아/어서",
+      "explanation_en": "Use -아/어서 to connect an earlier action closely to what follows, often meaning ‘and then’ or ‘after doing’. Use -아서 when the stem's final vowel is ㅏ or ㅗ and -어서 otherwise; 하다 becomes 해서. The final predicate normally supplies the time for both actions. Context distinguishes this sequence from the same form's reason-giving use."
+    },
+    {
+      "id": "simultaneous-myeonseo",
+      "title_en": "Doing two things at the same time",
+      "pattern": "-(으)면서",
+      "explanation_en": "Attach -으면서 after an action stem ending in a consonant other than ㄹ, or -면서 after a vowel or ㄹ, to connect actions happening at the same time. The actions normally have the same subject. The final predicate can supply the time for both."
+    },
+    {
+      "id": "subject-honorific-si",
+      "title_en": "Showing respect for the subject",
+      "pattern": "-(으)시-",
+      "explanation_en": "Insert -으시- after a predicate stem ending in a consonant other than ㄹ, or -시- after a vowel. Drop a stem-final ㄹ before -시-. This marks respect for the person who performs the action or has the described state; it is distinct from politeness toward the listener. The predicate's ending follows this marker."
+    },
+    {
+      "id": "wish-eumyeon-joketda",
+      "title_en": "Hoping for a situation",
+      "pattern": "-(으)면 좋겠다",
+      "explanation_en": "Follow a conditional clause with 좋겠다 to express a wish or hope, meaning ‘I hope’ or ‘it would be nice if’. Use -으면 after a stem ending in a consonant other than ㄹ, or -면 after a vowel or ㄹ. For a noun predicate, use -이면 after a consonant or -면 after a vowel."
+    },
+    {
+      "id": "wish-get",
+      "title_en": "Expressing a desired outcome",
+      "pattern": "-겠-",
+      "explanation_en": "Insert -겠- between a predicate stem and its ending to present a state or outcome as desired or welcome. In 좋겠다, it gives the meaning ‘would be nice’, expressing a wish rather than asserting that something is already good. Context determines this wish-related use of -겠-."
+    },
+    {
+      "id": "addition-eun-neun-dedaga",
+      "title_en": "Adding another fact or circumstance",
+      "pattern": "-(으)ㄴ/는 데다가",
+      "explanation_en": "This construction means ‘in addition to’ or ‘besides being or doing’. It adds another fact that strengthens the preceding description. Use -는 데다가 with action verbs and 있다 or 없다; drop a stem-final ㄹ before -는. With descriptive predicates, use -은 데다가 after a consonant or -ㄴ 데다가 after a vowel, dropping a final ㄹ. Nouns take -인 데다가."
+    },
+    {
+      "id": "addition-oe-e",
+      "title_en": "In addition to",
+      "pattern": "noun + 외에",
+      "explanation_en": "Place 외에 after a noun to mean ‘besides’ or ‘in addition to’ that person or thing. 외 is a dependent noun meaning outside or beyond the stated referent, and 에 completes this expression. In its additive use, the preceding item remains included while another is added."
+    },
+    {
+      "id": "additive-eul-ppundeoreo",
+      "title_en": "Not only one thing but also another",
+      "pattern": "-(으)ㄹ뿐더러",
+      "explanation_en": "Attach -을뿐더러 after a predicate stem ending in a consonant other than ㄹ, or -ㄹ뿐더러 after a vowel; a ㄹ-ending stem takes -뿐더러. This connective adds a further fact: ‘not only … but also …’. Nouns take -일뿐더러. The ㄹ in this ending does not itself express future time. The ending is written directly onto the predicate."
+    },
+    {
+      "id": "adverse-condition-ass-eoss-daganeun",
+      "title_en": "An action risking an unwelcome consequence",
+      "pattern": "-았/었다가는",
+      "explanation_en": "Attach -았다가는 to an action stem whose final vowel is ㅏ or ㅗ, or -었다가는 otherwise; 하다 becomes 했다가는. The construction supposes that an action is carried out and presents an unwelcome consequence that could follow: ‘if someone were to do that, …’. Although its formation contains the past marker, this hypothetical use does not assert that the action actually happened."
+    },
+    {
+      "id": "after-eun-dwi",
+      "title_en": "After doing something",
+      "pattern": "-(으)ㄴ 뒤",
+      "explanation_en": "Use an action verb's completed-action modifier followed by 뒤 to place another event after that action. Add -은 after a consonant other than ㄹ, or -ㄴ after a vowel; drop a stem-final ㄹ before -ㄴ. The complete expression means ‘after doing’. 에 may follow 뒤 without changing this temporal relationship."
+    },
+    {
+      "id": "alternative-geona",
+      "title_en": "Alternative actions or states",
+      "pattern": "-거나",
+      "explanation_en": "Attach -거나 directly to an action or descriptive stem to connect alternatives, meaning ‘or’. Nouns take -이거나 after a consonant or -거나 after a vowel. The alternatives can name possible choices or different situations to which the following statement applies."
+    },
+    {
+      "id": "appearance-deuthada",
+      "title_en": "Seeming or appearing likely",
+      "pattern": "-(으)ㄴ/는/(으)ㄹ 듯하다",
+      "explanation_en": "Place 듯하다 after a noun-modifying predicate form to express an impression or inference: ‘seem’ or ‘appear’. Action verbs use -는 for an ongoing situation, -(으)ㄴ for a completed action, and -(으)ㄹ for an anticipated or possible action. Descriptive predicates normally use -(으)ㄴ for a current state; nouns use -인. The modifier identifies what seems true, while 듯하다 expresses the speaker's tentative judgment."
+    },
+    {
+      "id": "appearance-geot-man-gatda",
+      "title_en": "A strong impression that something is so",
+      "pattern": "-(으)ㄴ/는/(으)ㄹ 것만 같다",
+      "explanation_en": "Follow a noun-modifying predicate form with 것만 같다 to express a strong subjective impression: ‘feel just as though’ or ‘seem very much as if’. Action verbs use -는 for an ongoing situation, -(으)ㄴ for a completed action, or -(으)ㄹ for an anticipated possibility; descriptive predicates normally use -(으)ㄴ for a current state. In this construction, 만 intensifies the impression rather than restricting it to ‘only’."
+    },
+    {
+      "id": "attainment-complement-e",
+      "title_en": "The position or level reached",
+      "pattern": "noun + 에",
+      "explanation_en": "With a predicate of rising or reaching, attach 에 to the noun naming the position, rank, or level attained. It marks an abstract destination, often translated as ‘to’. The same form follows nouns ending in a consonant or a vowel."
+    },
+    {
+      "id": "belief-modifier-jul-alda",
+      "title_en": "Thinking or taking something to be true",
+      "pattern": "-(으)ㄴ/는/(으)ㄹ 줄 알다",
+      "explanation_en": "Place 줄 알다 after a noun-modifying clause to express knowing, believing, or assuming that its content is true. Action verbs use -는 for an ongoing situation, -(으)ㄴ for a completed action, or -(으)ㄹ for an expected possibility; descriptive predicates normally use -(으)ㄴ, and nouns use -인. Context determines whether the belief is correct. This proposition-based use differs from -(으)ㄹ 줄 알다 meaning to know how to perform an action."
+    },
+    {
+      "id": "causal-connective-a-eo",
+      "title_en": "Connecting a cause to its consequence",
+      "pattern": "-아/어",
+      "explanation_en": "The standalone connective -아/어 can give the reason or grounds for the following clause, meaning ‘because’ or ‘so’. Use -아 when the stem's final vowel is ㅏ or ㅗ and -어 otherwise; 하다 becomes 해. Contractions and irregular stem changes apply. The final predicate normally supplies the time of the statement. Context distinguishes this causal use from other functions of the same written form."
+    },
+    {
+      "id": "cause-euro-ro",
+      "title_en": "A cause or grounds",
+      "pattern": "noun + (으)로",
+      "explanation_en": "Attach 으로 after a noun ending in a consonant other than ㄹ, or 로 after a vowel or ㄹ, to mark a cause or the grounds for a result. Depending on the noun and predicate, English may use ‘because of’, ‘due to’, or ‘on the grounds of’."
+    },
+    {
+      "id": "clause-nominalizer-geot",
+      "title_en": "Referring to a clause as a fact or situation",
+      "pattern": "-(으)ㄴ/는/(으)ㄹ 것",
+      "explanation_en": "A noun-modifying clause followed by 것 can refer to the clause's content as a fact, situation, or possibility. Use -는 for an ongoing action, -(으)ㄴ for a completed action or current descriptive state, and -(으)ㄹ for an anticipated or possible situation; nouns use -인. The resulting expression can take noun particles and serve as a subject or object. Whether its content is an established fact or only a possibility depends on the modifier and context."
+    },
+    {
+      "id": "concessive-eumyeonseodo",
+      "title_en": "Even while or although",
+      "pattern": "-(으)면서도",
+      "explanation_en": "Attach -으면서도 after a predicate stem ending in a consonant other than ㄹ, or -면서도 after a vowel or ㄹ. It combines simultaneous -면서 with concessive 도 to mean ‘even while’ or ‘although’. The following action or state contrasts with what the first would lead one to expect, even though both coexist. The connected predicates normally share a subject."
+    },
+    {
+      "id": "concessive-neunde-do",
+      "title_en": "Even though something is the case",
+      "pattern": "-(으)ㄴ데도 / -는데도 / -인데도",
+      "explanation_en": "This connective means ‘even though’, presenting a circumstance whose expected consequence does not follow. Use -는데도 with action verbs and 있다 or 없다, dropping a stem-final ㄹ before -는. Descriptive stems take -은데도 after a consonant or -ㄴ데도 after a vowel; drop a final ㄹ before -ㄴ데도. Nouns take -인데도."
+    },
+    {
+      "id": "concessive-noun-edo",
+      "title_en": "Despite a circumstance",
+      "pattern": "noun + 에도",
+      "explanation_en": "Attach 에도 to a noun or nominalized expression naming a circumstance to mean ‘despite’ or ‘even with’. The following clause contrasts with the outcome that circumstance would normally suggest. The same form follows consonants and vowels. This concessive meaning comes from the relationship between the clauses; other uses of 에도 can simply mean ‘also at’ or ‘even at’."
+    },
+    {
+      "id": "conjecture-get",
+      "title_en": "An inference or imagined outcome",
+      "pattern": "-겠-",
+      "explanation_en": "Insert -겠- after a predicate stem and before its ending to express a judgment about what is likely or what would hold in an imagined situation. It may translate as ‘probably’, ‘will’, or ‘would’, depending on context, and is not limited to future time. In this use, it expresses an inference or supposition rather than the speaker's resolve to act."
+    },
+    {
+      "id": "contrary-expectation-gineun-keonyeong",
+      "title_en": "Far from doing or being something",
+      "pattern": "-기는커녕",
+      "explanation_en": "Attach -기는커녕 directly to an action or descriptive stem to mean ‘far from doing or being’. The -기 form makes the predicate noun-like, and 는커녕 rejects it as an expected possibility. The following clause usually presents an opposite result or shows that even a lesser expectation was not met."
+    },
+    {
+      "id": "degree-eul-mankeum",
+      "title_en": "To the extent that",
+      "pattern": "-(으)ㄹ 만큼",
+      "explanation_en": "Follow a predicate's -(으)ㄹ modifier form with 만큼 to describe the degree of an action or quality through a possible result or measure: ‘to the extent that’ or ‘enough to’. Add -을 after a consonant other than ㄹ, or -ㄹ after a vowel; a ㄹ-ending stem keeps its ㄹ. This modifier expresses the measuring possibility and need not indicate future time."
+    },
+    {
+      "id": "descriptive-a-eo-hada",
+      "title_en": "Expressing an emotional response",
+      "pattern": "descriptive predicate + -아/어 하다",
+      "explanation_en": "Connect a descriptive predicate of feeling to 하다 with -아/어 to form a verb expressing experiencing or showing that feeling. Use -아 when the stem's final vowel is ㅏ or ㅗ and -어 otherwise; contractions and irregular stem changes apply. This construction is useful for describing another person's emotional response, though it is not restricted to third-person subjects. It does not combine freely with every descriptive predicate."
+    },
+    {
+      "id": "difficulty-gi-eoryeopda",
+      "title_en": "Finding an action difficult",
+      "pattern": "-기 어렵다",
+      "explanation_en": "Attach -기 to an action verb stem and follow it with 어렵다 to mean ‘be difficult to do’. The nominalized action identifies what is difficult; 어렵다 supplies the assessment. The subject of the difficulty and the person attempting the action can be stated or understood from context."
+    },
+    {
+      "id": "discovery-euni",
+      "title_en": "Discovering something through an action or observation",
+      "pattern": "-(으)니",
+      "explanation_en": "Attach -으니 after an action stem ending in a consonant other than ㄹ, or -니 after a vowel; drop a stem-final ㄹ before -니. In this discovery use, performing the action or making an observation leads to a realization in the following clause: ‘when someone did or observed this, they found that …’. The following clause may also state an inference drawn from the observation. This function differs from using the same ending simply to give a reason."
+    },
+    {
+      "id": "distributive-mada",
+      "title_en": "Every or each",
+      "pattern": "noun + 마다",
+      "explanation_en": "Attach 마다 to a noun to mean ‘every’ or ‘each’. With a time or occasion noun, it marks recurrence on every such occasion; with other nouns, it distributes the statement across each member of the group. The form is the same after consonants and vowels."
+    },
+    {
+      "id": "during-modifier-jung",
+      "title_en": "During an activity",
+      "pattern": "-는/던 중",
+      "explanation_en": "Place 중 after an action modifier to locate another event during an activity. Use -는 중 to present the activity as in progress, dropping a stem-final ㄹ before -는. Use -던 중 to look back at an activity that was underway. 중 means ‘during’ or ‘in the course of’ here, and 에 may follow it. The complete expression describes the activity during which the main event occurs."
+    },
+    {
+      "id": "embedded-question-neunji",
+      "title_en": "Embedding a question",
+      "pattern": "-는지 / -(으)ㄴ지",
+      "explanation_en": "These endings place a question inside a larger sentence, often as what someone knows, wonders about, or observes. Use -는지 with action verbs and 있다 or 없다; use -은지 after a consonant-ending descriptive stem or -ㄴ지 after a vowel-ending one. Drop a stem-final ㄹ before -는지 or -ㄴ지. With nouns, use -인지. A question word supplies meanings such as ‘what’ or ‘how’; without one, the clause often means ‘whether’. An intention form in -(으)려 combines with -는지 as -(으)려는지, meaning ‘whether someone intends to’ or, with a question word, what they intend to do."
+    },
+    {
+      "id": "even-jocha",
+      "title_en": "Even an unexpected person or thing",
+      "pattern": "조차",
+      "explanation_en": "Attach 조차 to a noun to emphasize an unexpected or extreme inclusion: ‘even’. It often presents something as going beyond what was already expected, especially in an unfavorable situation. The form is unchanged after consonants and vowels and can follow another particle, as in a phrase meaning ‘even in’ a particular setting."
+    },
+    {
+      "id": "examination-complement-e",
+      "title_en": "The examination someone passes",
+      "pattern": "에 합격하다",
+      "explanation_en": "With 합격하다, attach 에 to the noun naming the examination or selection process that someone passes. This noun identifies the process in which a successful result is achieved. 에 has the same form after consonants and vowels."
+    },
+    {
+      "id": "exclusive-ppun",
+      "title_en": "Only someone or something",
+      "pattern": "noun + 뿐",
+      "explanation_en": "Attach 뿐 directly to a noun or pronoun to mean ‘only’ or ‘alone’, excluding other people or things. The form is unchanged after consonants and vowels. A following copula can make the expression a predicate meaning ‘is the only one’. This attached particle differs from the dependent noun 뿐 written separately after a verb modifier."
+    },
+    {
+      "id": "explanatory-eun-neun-geot-ida",
+      "title_en": "Explaining what a situation means",
+      "pattern": "-(으)ㄴ/는 것이다",
+      "explanation_en": "A clause modifying 것 followed by 이다 can explain, clarify, or emphasize a situation: ‘the point is that …’ or ‘that is what happened’. Use -는 것 with ongoing or habitual actions, -(으)ㄴ 것 with completed actions, and -(으)ㄴ 것 with present descriptive states; nouns use -인 것. Follow the modifier with 것이다. The modifier establishes the action or state's relation to the situation being explained; the explanatory construction itself does not make an action past."
+    },
+    {
+      "id": "formal-command-eusipsio",
+      "title_en": "A formal respectful command",
+      "pattern": "-(으)십시오",
+      "explanation_en": "Attach -으십시오 to an action verb stem ending in a consonant other than ㄹ, or -십시오 after a vowel. Drop a stem-final ㄹ before -십시오. This ending gives a formal respectful command or request, often translated with ‘please’. It includes the honorific -시- within the command ending."
+    },
+    {
+      "id": "habitual-gon-hada",
+      "title_en": "An action or situation that recurs",
+      "pattern": "-곤 하다",
+      "explanation_en": "Attach -곤 하다 to a verb stem to describe an action or situation that happens repeatedly or habitually. -곤 is a contraction of -고는 in this construction and attaches without a vowel-dependent change. The whole expression can mean ‘often do’ or ‘would regularly do’; the form of 하다 establishes its time. A negative predicate before -곤 하다 makes the negative situation itself recur."
+    },
+    {
+      "id": "honorific-existential-modifier-n",
+      "title_en": "Respectfully describing where someone is",
+      "pattern": "계신",
+      "explanation_en": "계시다 respectfully expresses a person's presence in a place or position. Its present-state noun modifier is 계신: remove the dictionary ending -다 and attach -ㄴ to 계시-. Placed before a noun referring to the person, 계신 means ‘who is there’ or ‘who occupies that position’. Its -ㄴ describes a current state relative to the surrounding sentence, rather than a completed action."
+    },
+    {
+      "id": "honorific-subject-kkeseo",
+      "title_en": "Respectfully marking the subject",
+      "pattern": "께서",
+      "explanation_en": "Attach 께서 to a noun referring to a person to respectfully mark that person as the subject. It serves the subject-marking role of 이 or 가 and has the same form after consonants and vowels. The predicate commonly also honors that subject with -시- or an honorific verb."
+    },
+    {
+      "id": "indirect-command-eurago",
+      "title_en": "Reporting a command",
+      "pattern": "-(으)라고",
+      "explanation_en": "Attach -으라고 to an action stem ending in a consonant other than ㄹ, or -라고 after a vowel or ㄹ, to report a command. Follow the reported clause with a predicate such as ‘say’, ‘tell’, or ‘order’. The clause names the action someone is told to perform; it does not state that the action was carried out."
+    },
+    {
+      "id": "indirect-statement-dago",
+      "title_en": "Reporting a statement or thought",
+      "pattern": "-ㄴ다고 / -는다고 / -다고 / -(이)라고",
+      "explanation_en": "These forms mark a proposition as the content of saying, thinking, or judging. Present action verbs take -ㄴ다고 after a vowel or -는다고 after a consonant; drop a final ㄹ before -ㄴ다고. Descriptive predicates and 있다 or 없다 take -다고, while nouns take -이라고 after a consonant or -라고 after a vowel. A tense-marked predicate takes -다고 after its tense marker. The quoted clause's time is understood in relation to the reported situation."
+    },
+    {
+      "id": "intention-euryeo",
+      "title_en": "Linking an intended action",
+      "pattern": "-(으)려",
+      "explanation_en": "Attach -으려 to an action stem ending in a consonant other than ㄹ, or -려 after a vowel or ㄹ. This connective presents an intended action and links it to a following predicate: ‘intending to’ or ‘in order to’. It names the intended action without asserting that it succeeds. Before auxiliary 하다, it forms the larger intention or attempt construction -(으)려 하다."
+    },
+    {
+      "id": "intention-euryeo-hada",
+      "title_en": "Intending or attempting to do something",
+      "pattern": "-(으)려 하다",
+      "explanation_en": "Connect an action verb to auxiliary 하다 with -으려 after a consonant other than ㄹ, or -려 after a vowel or ㄹ. The complete construction expresses intending or attempting to perform the action, without asserting success. Context distinguishes a stated plan from an attempt already underway; the form of 하다 supplies the time of that intention or attempt."
+    },
+    {
+      "id": "intention-get",
+      "title_en": "Expressing resolve or willingness",
+      "pattern": "-겠-",
+      "explanation_en": "Insert -겠- between an action stem and its sentence ending to express the speaker's intention, resolve, or willingness: ‘I will’ or ‘I intend to’. The marker is unchanged after consonants and vowels. With a negative predicate, it expresses an intention not to act. This use concerns a person's commitment rather than a prediction about what will happen."
+    },
+    {
+      "id": "intention-modifier-euryeoneun",
+      "title_en": "Describing an intended action",
+      "pattern": "-(으)려는",
+      "explanation_en": "Attach -으려는 to an action stem ending in a consonant other than ㄹ, or -려는 after a vowel or ㄹ. This modifier describes a following noun through an action someone intends or is trying to perform. It preserves the intention meaning rather than presenting the action as accomplished. Before the embedded-question element 지, it forms -(으)려는지, allowing a larger sentence to refer to what someone intends to do."
+    },
+    {
+      "id": "literary-question-neunga",
+      "title_en": "A reflective written question",
+      "pattern": "-는가 / -(으)ㄴ가",
+      "explanation_en": "These endings ask questions in a plain style common in writing, reflection, and rhetorical speech. Action verbs and 있다 or 없다 take -는가; descriptive stems take -은가 after a consonant or -ㄴ가 after a vowel. Drop a stem-final ㄹ before -는가 or -ㄴ가. Nouns take -인가, and stems bearing -었- or -겠- take -는가. The question may seek an answer or invite reflection through its rhetorical force."
+    },
+    {
+      "id": "loyalty-target-e",
+      "title_en": "The person or group receiving loyalty",
+      "pattern": "에 충성하다",
+      "explanation_en": "With 충성하다, 에 marks the institution, country, or other entity toward which loyalty is directed. Attach it directly to that noun, with the same form after consonants and vowels. The complete phrase means to be loyal or devote oneself loyally to the named entity."
+    },
+    {
+      "id": "maintained-state-eun-chae",
+      "title_en": "Doing something while a state continues",
+      "pattern": "-(으)ㄴ 채(로)",
+      "explanation_en": "Use an action verb's -(으)ㄴ modifier followed by 채, optionally 채로, to describe a state that remains in place while another action occurs. Add -은 after a consonant other than ㄹ, or -ㄴ after a vowel; drop a stem-final ㄹ before -ㄴ. The complete phrase means ‘while remaining in that state’ or ‘with that condition unchanged’. Include any negation in the modifying predicate when the continuing condition is not doing, or being unable to do, something."
+    },
+    {
+      "id": "manner-deut",
+      "title_en": "Acting as though doing something",
+      "pattern": "-듯(이)",
+      "explanation_en": "Attach -듯이, or its shorter form -듯, directly to a predicate stem to describe a following action by resemblance: ‘as though’ or ‘in the manner of’. The form is unchanged after consonants and vowels. It compares the manner of the actions or states without necessarily asserting that the comparison is literally true."
+    },
+    {
+      "id": "means-euro-ro",
+      "title_en": "The means used to do something",
+      "pattern": "(으)로",
+      "explanation_en": "Attach 으로 to a noun ending in a consonant other than ㄹ, or 로 after a vowel or ㄹ, to identify an instrument or means. The noun names what someone uses to accomplish an action, including an abstract resource or method. English commonly uses ‘with’, ‘by’, or ‘through’."
+    },
+    {
+      "id": "method-neun-beop",
+      "title_en": "How to perform an action",
+      "pattern": "-는 법",
+      "explanation_en": "Attach -는 to an action verb stem and follow it with the dependent noun 법 to name the method or technique of doing that action: ‘how to’ or ‘the way to’. Drop a stem-final ㄹ before -는, and write a space before 법. The resulting phrase can take noun particles and be something a person learns, knows, or practices. This method meaning differs from -는 법이다 when it states a general rule."
+    },
+    {
+      "id": "modal-get",
+      "title_en": "Framing a hypothetical possibility",
+      "pattern": "-겠-",
+      "explanation_en": "Insert -겠- between a predicate stem and its ending to frame a possibility hypothetically or tentatively. In a question about whether something can be done, it can give the force of ‘could’ or ‘would it be possible’. The marker is unchanged after consonants and vowels. Its meaning comes from the whole question and context; this use does not express the speaker's resolve to perform an action."
+    },
+    {
+      "id": "nominalizer-eum",
+      "title_en": "Making an action or state into a noun",
+      "pattern": "-(으)ㅁ",
+      "explanation_en": "Attach -음 after a predicate stem ending in a consonant other than ㄹ, or -ㅁ after a vowel. A ㄹ-ending stem keeps its ㄹ and adds ㅁ, producing the written final cluster ㄻ. The resulting expression names an action, state, or fact and can take noun particles. It is common in written language, reports, and concise statements."
+    },
+    {
+      "id": "noun-quality-dapda",
+      "title_en": "Having qualities befitting a noun",
+      "pattern": "noun + -답다",
+      "explanation_en": "The suffix -답다 forms an adjective meaning to have the characteristic qualities expected of the person, role, or thing named by a noun. Attach it directly to a suitable noun, without a space. The complete adjective expresses being befitting or true to that noun's qualities; those qualities depend on the noun and context. It can describe dignity or conduct, rather than a literal physical resemblance."
+    },
+    {
+      "id": "observed-sequence-deoni",
+      "title_en": "Recalling an event and what followed",
+      "pattern": "-더니",
+      "explanation_en": "Attach -더니 to an action or descriptive stem to recall an observed event or state and connect it to what followed. The following clause can describe a development, result, or contrast. The recalled viewpoint supplies the earlier time; -더니 itself does not assert that the first event was completed."
+    },
+    {
+      "id": "occasion-eul-ttae",
+      "title_en": "When an action or state occurs",
+      "pattern": "-(으)ㄹ 때",
+      "explanation_en": "Use a predicate's -(으)ㄹ modifier form followed by 때 to identify when an action or state occurs. Add -을 after a consonant other than ㄹ, or -ㄹ after a vowel; a ㄹ-ending stem keeps its ㄹ. The construction can refer to past, present, or future occasions, so its ㄹ does not necessarily mean future time."
+    },
+    {
+      "id": "personal-source-ege",
+      "title_en": "The person something comes from",
+      "pattern": "에게",
+      "explanation_en": "With a predicate of receiving, attach 에게 to a person or animal to identify the source: the one from whom something is received. What is received can be an object, information, or treatment. The form is the same after consonants and vowels; the predicate and context distinguish this source meaning from 에게 meaning ‘to’."
+    },
+    {
+      "id": "personal-source-egeseo",
+      "title_en": "From a person",
+      "pattern": "에게서",
+      "explanation_en": "Attach 에게서 to a person or animal to mark where something originates or from whom it comes. With receiving predicates, it identifies the giver or source. With 태어나다, it can identify the mother to whom someone was born. The same form follows consonants and vowels."
+    },
+    {
+      "id": "pretending-neun-cheok-hada",
+      "title_en": "Pretending to do something",
+      "pattern": "-는 척하다",
+      "explanation_en": "Attach -는 to an action verb stem and follow it with 척하다 to mean ‘pretend to do’ or ‘act as though doing’. Drop a stem-final ㄹ before -는. The complete construction describes deliberately presenting an action or condition as true without asserting that it really is."
+    },
+    {
+      "id": "realization-guna",
+      "title_en": "Expressing a realization",
+      "pattern": "-구나 / -는구나",
+      "explanation_en": "This plain exclamatory ending expresses newly noticed information, recognition, or an emotionally felt realization. Present action verbs take -는구나, dropping a stem-final ㄹ; descriptive predicates take -구나. After a tense or modal marker, use -구나. Nouns take -이구나 after a consonant or -구나 after a vowel. Its emotional tone depends on context."
+    },
+    {
+      "id": "reason-euni",
+      "title_en": "Giving grounds for what follows",
+      "pattern": "-(으)니",
+      "explanation_en": "Attach -으니 after a predicate stem ending in a consonant other than ㄹ, or -니 after a vowel; drop a stem-final ㄹ before -니. This presents a reason or premise for the following statement, inference, or request. A tense marker can precede the connective. With nouns, use -이니 after a consonant or -니 after a vowel."
+    },
+    {
+      "id": "reason-gie",
+      "title_en": "A circumstance explaining what follows",
+      "pattern": "-기에",
+      "explanation_en": "Attach -기에 to an action or descriptive stem to present a circumstance as the reason for a following action or judgment. It is common in written narration and explanations. In a question, the first clause can ask what circumstance accounts for the following situation. With nouns, use -이기에."
+    },
+    {
+      "id": "reported-statement-dago-hada",
+      "title_en": "Reporting what someone says",
+      "pattern": "-다고 하다",
+      "explanation_en": "Use a declarative quotation followed by 하다 to report that someone says something. Present action verbs take -ㄴ다고 after a vowel or -는다고 after a consonant, dropping a final ㄹ before -ㄴ다고; descriptive predicates take -다고. Nouns take -(이)라고. 하다 means ‘say’ here, and the speaker can remain unstated when reporting a commonly held assertion."
+    },
+    {
+      "id": "reported-statement-modifier-daneun",
+      "title_en": "A statement describing a noun",
+      "pattern": "-다는 / -ㄴ다는 / -는다는",
+      "explanation_en": "These forms make a proposition describe a following noun as its content. They contract declarative quotation forms followed by 하는. Present action verbs take -ㄴ다는 after a vowel or -는다는 after a consonant, dropping a final ㄹ before -ㄴ다는; descriptive predicates and past-marked predicates take -다는. Nouns take -(이)라는. The proposition can express a reason, belief, or claim without quoting a particular speaker."
+    },
+    {
+      "id": "result-state-a-eo-itda",
+      "title_en": "A resulting state continues",
+      "pattern": "-아/어 있다",
+      "explanation_en": "Connect a verb to 있다 with -아/어 to describe a state that remains after an action or change. Use -아 when the stem's final vowel is ㅏ or ㅗ and -어 otherwise; 하다 becomes 해. This commonly follows intransitive or passive verbs. The focus is on the continuing result rather than an action still in progress."
+    },
+    {
+      "id": "resultative-a-eo-notda",
+      "title_en": "Doing something and leaving the result",
+      "pattern": "-아/어 놓다",
+      "explanation_en": "Connect an action verb to auxiliary 놓다 with -아/어 to mean doing the action and leaving its result in place. It can also suggest completing something in preparation for later. Use -아 when the stem's final vowel is ㅏ or ㅗ and -어 otherwise; 하다 becomes 해. The complete meaning includes both the action and its retained result."
+    },
+    {
+      "id": "retrospective-modifier-deon",
+      "title_en": "Looking back at an action or state",
+      "pattern": "-던",
+      "explanation_en": "Attach -던 to an action or descriptive stem before a noun to look back at an earlier action or state associated with that noun. It can recall an activity in progress, repeated behavior, or a former condition. Unlike a completed-action modifier, -던 alone does not present the action as finished."
+    },
+    {
+      "id": "sequence-a-eo",
+      "title_en": "Connecting closely successive actions",
+      "pattern": "-아/어",
+      "explanation_en": "Use -아/어 between closely connected actions to express doing one and then what follows. Use -아 when the stem's final vowel is ㅏ or ㅗ and -어 otherwise; 하다 becomes 해. Contractions and irregular stem changes apply. The final predicate normally supplies the time for the sequence; context distinguishes this use from reason-giving -아/어."
+    },
+    {
+      "id": "sequence-ja",
+      "title_en": "As soon as an event occurs",
+      "pattern": "-자",
+      "explanation_en": "Attach connective -자 to an action verb stem to introduce an event immediately followed by another event or response. It often means ‘when’ or ‘as soon as’. The clauses can have different subjects, and the following predicate establishes narrative time. This connective is distinct from sentence-final -자 used to suggest doing something together."
+    },
+    {
+      "id": "similarity-cheoreom",
+      "title_en": "Like someone or something",
+      "pattern": "처럼",
+      "explanation_en": "Attach 처럼 to a noun to compare an action, appearance, or quality with that person or thing: ‘like’ or ‘in the manner of’. It expresses resemblance without saying that the two are identical. The same form follows nouns ending in consonants and vowels."
+    },
+    {
+      "id": "starting-point-buteo",
+      "title_en": "Starting from a point",
+      "pattern": "부터",
+      "explanation_en": "Attach 부터 to a noun to identify the starting point of a time span, sequence, or range. It can also identify the first aspect considered in an assessment, meaning ‘starting with’. The same form follows consonants and vowels, and an endpoint need not be stated."
+    },
+    {
+      "id": "substitution-neun-daesin",
+      "title_en": "Doing something instead",
+      "pattern": "-는 대신",
+      "explanation_en": "Attach -는 to an action verb stem and follow it with 대신 or 대신에 to present that action as the alternative replaced by what follows: ‘instead of doing’. Drop a stem-final ㄹ before -는. The construction can also express an exchange, where one action is done in return for another."
+    },
+    {
+      "id": "suppositional-conditional-damyeon",
+      "title_en": "Supposing something is true",
+      "pattern": "-다면 / -ㄴ다면 / -는다면",
+      "explanation_en": "This connective introduces an assumed or hypothetical situation: ‘if’ or ‘supposing that’. Present action verbs take -ㄴ다면 after a vowel or -는다면 after a consonant, dropping a final ㄹ before -ㄴ다면. Descriptive predicates and past-marked predicates take -다면; nouns take -(이)라면. The first clause supplies a supposition rather than asserting that it is true."
+    },
+    {
+      "id": "temporal-continuation-euro-ro",
+      "title_en": "Continuing onward in time",
+      "pattern": "(으)로",
+      "explanation_en": "Attach 으로 after a temporal noun ending in a consonant other than ㄹ, or 로 after a vowel or ㄹ, to express direction or extension in time. With a noun identifying a later period, it can mean ‘from then onward’ or ‘into the future’. The temporal noun supplies the reference point; the particle presents time as extending onward."
+    },
+    {
+      "id": "temporal-limit-dorok",
+      "title_en": "Until a time or state is reached",
+      "pattern": "-도록",
+      "explanation_en": "Attach -도록 to an action or descriptive stem to mark the temporal limit or extent of a situation: ‘until’ or ‘to the point that’. The preceding clause identifies the event or state reached while the main situation continues. In this use, -도록 sets a limit rather than expressing a purpose."
+    },
+    {
+      "id": "warning-daganeun",
+      "title_en": "Warning about a continuing situation",
+      "pattern": "-다가는",
+      "explanation_en": "Attach -다가는 to an action verb stem to warn that continuing or repeating the action could lead to an undesirable consequence. The following clause states the feared result, often as a possibility. The construction can also refer to a situation continuing as it is. It presents a conditional warning without asserting that the harmful outcome has occurred."
+    }
+  ],
+  "grammar_revision_reviews": [
+    {
+      "entry_kind": "grammar",
+      "before_entries": [
+        {
+          "id": "quotation-rago",
+          "title_en": "Quoted name or words",
+          "pattern": "(이)라고",
+          "explanation_en": "Marks the name or words used with a verb such as ‘call’ or ‘say’."
+        }
+      ],
+      "proposal": {
+        "entries": [
+          {
+            "id": "quotation-rago",
+            "title_en": "Quoted name or words",
+            "pattern": "(이)라고",
+            "explanation_en": "This particle marks preceding words as quoted, as they were said. After a vowel-final form, use 라고; after a consonant-final noun, use 이라고. The shortened forms 라 and 이라 have the same quotation function: 라 follows a vowel-final form, and 이라 follows a consonant-final noun. In a name or label use, the quoted words supply the name or description."
+          }
+        ],
+        "references": [
+          {
+            "entry_id": "quotation-rago",
+            "url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=70074&nation=eng",
+            "paraphrase_en": "The National Institute of Korean Language dictionary defines 라고 as a particle indicating that preceding words are quoted as said, gives 라 as its short form, and specifies use after a vowel-final form."
+          },
+          {
+            "entry_id": "quotation-rago",
+            "url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=70077&nation=eng",
+            "paraphrase_en": "The dictionary describes 라 as a quotation particle used after a form without a final consonant and identifies 라고 as its original form."
+          },
+          {
+            "entry_id": "quotation-rago",
+            "url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=70076&nation=eng",
+            "paraphrase_en": "The dictionary describes 이라 as a particle for quoting preceding words, specifies attachment after consonant-final nouns, and identifies 이라고 as its original form."
+          }
+        ]
+      },
+      "proposal_digest": "e73f951966bc87e9a0b228e5d90d326178ef0383b3a22b21b5c3ee632cbfb343",
+      "review": {
+        "approved": true,
+        "issues": [],
+        "prior_issue_assessments": [
+          {
+            "issue_id": "prior-issue-c81e4c4a17870417dd8d399c",
+            "disposition": "resolved_change",
+            "proposal_paths": [
+              "/entries/0/explanation_en"
+            ],
+            "proposal_spans": [
+              {
+                "path": "/entries/0/explanation_en",
+                "start": 0,
+                "end": 65,
+                "quote": "This particle marks preceding words as quoted, as they were said."
+              }
+            ],
+            "changed_fields": [
+              {
+                "path": "/entries/0/explanation_en",
+                "old_value_digest": "fd535caba84253f37f74c70897591023b303866b61d7abd826e766ed08823c16",
+                "current_value_digest": "b740a5d084ba8e1fc1418430755c37c743bf46a6368246f88e93b5e130c74fd9"
+              }
+            ],
+            "rationale": "The current explanation replaces the specifically objected-to material with this focused wording. It gives the reusable quotation function and full/short form conditions without the criticized reporting-pattern account or predicate inventory."
+          },
+          {
+            "issue_id": "prior-issue-952621a2080d6f8302af5e40",
+            "disposition": "resolved_change",
+            "proposal_paths": [
+              "/entries/0/explanation_en"
+            ],
+            "proposal_spans": [
+              {
+                "path": "/entries/0/explanation_en",
+                "start": 139,
+                "end": 270,
+                "quote": "The shortened forms 라 and 이라 have the same quotation function: 라 follows a vowel-final form, and 이라 follows a consonant-final noun."
+              }
+            ],
+            "changed_fields": [
+              {
+                "path": "/entries/0/explanation_en",
+                "old_value_digest": "d6dc089186eeef702037eb9c5f60b1644ecc6dd57eec5d9cc7659bd3eb590b0e",
+                "current_value_digest": "b740a5d084ba8e1fc1418430755c37c743bf46a6368246f88e93b5e130c74fd9"
+              }
+            ],
+            "rationale": "The current explanation replaces the specifically objected-to material with this focused wording. It gives the reusable quotation function and full/short form conditions without the criticized reporting-pattern account or predicate inventory."
+          },
+          {
+            "issue_id": "prior-issue-0b82baaa29e2ed086c3f12b8",
+            "disposition": "resolved_change",
+            "proposal_paths": [
+              "/entries/0/explanation_en"
+            ],
+            "proposal_spans": [
+              {
+                "path": "/entries/0/explanation_en",
+                "start": 0,
+                "end": 138,
+                "quote": "This particle marks preceding words as quoted, as they were said. After a vowel-final form, use 라고; after a consonant-final noun, use 이라고."
+              }
+            ],
+            "changed_fields": [
+              {
+                "path": "/entries/0/explanation_en",
+                "old_value_digest": "fca81ee43d505516e640c00ca0357d9cf7473b5e9c367c448e4472714e760b23",
+                "current_value_digest": "b740a5d084ba8e1fc1418430755c37c743bf46a6368246f88e93b5e130c74fd9"
+              }
+            ],
+            "rationale": "The current explanation replaces the specifically objected-to material with this focused wording. It gives the reusable quotation function and full/short form conditions without the criticized reporting-pattern account or predicate inventory."
+          }
+        ]
+      },
+      "review_digest": "f1393a9729d723cfe42aadde3b66728bc4642377f9c19946c0a482eb6738f82d",
+      "context_digest": "8e434210573e446c2a3e89ede39a3a8562e8d15ef7f668106052cc2029d88752",
+      "coverage": {
+        "entry_kind": "grammar",
+        "files": {
+          "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json": "c83f4d167f5724a8ba5ce163e2339609f417db5632cb3bf1ca0a96193b66926c",
+          "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json": "c242968fe992ff8aa9c3d3d6c1ca3374c3adfd49030e9e4419fecb0bd2e2b5f4",
+          "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json": "71db47b2d4863e894993115cb25a19e945d020e4ffb58a729603f2646fd9a005"
+        },
+        "published_files": [
+          "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+          "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+          "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json"
+        ],
+        "draft_files": [],
+        "occurrences": [
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 300,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "sentence": "하지만 아버지를 ‘아버지’라고 부를 수 없었습니다.",
+            "sentence_start": 709,
+            "start": 723,
+            "end": 725
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 300,
+            "end_segment_index": 300,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "display_meaning_en": "",
+            "context_en": "라고 marks ‘아버지’ as the exact title Gildong was not permitted to use when addressing his father.",
+            "anchor_surface": "라고",
+            "sentence": "하지만 아버지를 ‘아버지’라고 부를 수 없었습니다.",
+            "sentence_start": 709,
+            "start": 723,
+            "end": 725,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 314,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "sentence": "형도 ‘형’이라고 부를 수 없었습니다.",
+            "sentence_start": 738,
+            "start": 744,
+            "end": 747
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 314,
+            "end_segment_index": 314,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "display_meaning_en": "",
+            "context_en": "이라고 marks the quoted title 형 as what Gildong could not call his older brother.",
+            "anchor_surface": "이라고",
+            "sentence": "형도 ‘형’이라고 부를 수 없었습니다.",
+            "sentence_start": 738,
+            "start": 744,
+            "end": 747,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 330,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "sentence": "길동이 아버지를 ‘아버지’라고 불렀습니다.",
+            "sentence_start": 760,
+            "start": 774,
+            "end": 776
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 330,
+            "end_segment_index": 330,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "display_meaning_en": "",
+            "context_en": "라고 marks ‘아버지’ as the title Gildong used to address his father. The preceding word ends in a vowel, so the form is 라고.",
+            "anchor_surface": "라고",
+            "sentence": "길동이 아버지를 ‘아버지’라고 불렀습니다.",
+            "sentence_start": 760,
+            "start": 774,
+            "end": 776,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 366,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "sentence": "하지만 아직 아버지를 ‘아버지’라고 부를 수 없었습니다.",
+            "sentence_start": 832,
+            "start": 849,
+            "end": 851
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 366,
+            "end_segment_index": 366,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "display_meaning_en": "",
+            "context_en": "라고 marks ‘아버지’ as the title Gildong could not use when addressing his father.",
+            "anchor_surface": "라고",
+            "sentence": "하지만 아직 아버지를 ‘아버지’라고 부를 수 없었습니다.",
+            "sentence_start": 832,
+            "start": 849,
+            "end": 851,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 380,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "sentence": "형도 ‘형’이라고 부를 수 없었습니다.",
+            "sentence_start": 864,
+            "start": 870,
+            "end": 873
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 380,
+            "end_segment_index": 380,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "display_meaning_en": "",
+            "context_en": "이라고 marks ‘형’ as the quoted title Gildong could not use when addressing his older brother.",
+            "anchor_surface": "이라고",
+            "sentence": "형도 ‘형’이라고 부를 수 없었습니다.",
+            "sentence_start": 864,
+            "start": 870,
+            "end": 873,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 507,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "sentence": "그런데 나는 왜 아버지를 ‘아버지’라고 부를 수 없습니까?",
+            "sentence_start": 1105,
+            "start": 1124,
+            "end": 1126
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 507,
+            "end_segment_index": 507,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "display_meaning_en": "",
+            "context_en": "라고 marks ‘아버지’ as the exact title used with 부르다: to call someone ‘Father’.",
+            "anchor_surface": "라고",
+            "sentence": "그런데 나는 왜 아버지를 ‘아버지’라고 부를 수 없습니까?",
+            "sentence_start": 1105,
+            "start": 1124,
+            "end": 1126,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 522,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "sentence": "왜 형을 ‘형’이라고 부를 수 없습니까?",
+            "sentence_start": 1138,
+            "start": 1146,
+            "end": 1149
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 522,
+            "end_segment_index": 522,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "display_meaning_en": "",
+            "context_en": "이라고 marks ‘형’ as the exact family title Gildong is forbidden to use when addressing his older brother.",
+            "anchor_surface": "이라고",
+            "sentence": "왜 형을 ‘형’이라고 부를 수 없습니까?",
+            "sentence_start": 1138,
+            "start": 1146,
+            "end": 1149,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 677,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "sentence": "그런데 저는 아버지를 ‘아버지’라고 부를 수 없습니다.",
+            "sentence_start": 1453,
+            "start": 1470,
+            "end": 1472
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 677,
+            "end_segment_index": 677,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "display_meaning_en": "",
+            "context_en": "라고 marks the preceding quoted 아버지 as the title used in calling someone, rather than identifying another person.",
+            "anchor_surface": "라고",
+            "sentence": "그런데 저는 아버지를 ‘아버지’라고 부를 수 없습니다.",
+            "sentence_start": 1453,
+            "start": 1470,
+            "end": 1472,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 691,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "sentence": "형도 ‘형’이라고 부를 수 없습니다.”",
+            "sentence_start": 1484,
+            "start": 1490,
+            "end": 1493
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 691,
+            "end_segment_index": 691,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "display_meaning_en": "",
+            "context_en": "이라고 marks ‘형’ as the title he is unable to use when addressing his older brother.",
+            "anchor_surface": "이라고",
+            "sentence": "형도 ‘형’이라고 부를 수 없습니다.”",
+            "sentence_start": 1484,
+            "start": 1490,
+            "end": 1493,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 314,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "sentence": "자기 아버지를 ‘아버지’라고 부를 수 없었다.",
+            "sentence_start": 635,
+            "start": 648,
+            "end": 650
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 314,
+            "end_segment_index": 314,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "display_meaning_en": "",
+            "context_en": "라고 marks ‘아버지’ as the title he could not use when addressing his father.",
+            "anchor_surface": "라고",
+            "sentence": "자기 아버지를 ‘아버지’라고 부를 수 없었다.",
+            "sentence_start": 635,
+            "start": 648,
+            "end": 650,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 332,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "sentence": "인형도 자기 형이었지만 ‘형’이라고 부를 수 없었다.",
+            "sentence_start": 661,
+            "start": 677,
+            "end": 680
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 332,
+            "end_segment_index": 332,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "display_meaning_en": "",
+            "context_en": "이라고 marks the quoted family title 형 as the name Gildong could not use when addressing Inhyeong.",
+            "anchor_surface": "이라고",
+            "sentence": "인형도 자기 형이었지만 ‘형’이라고 부를 수 없었다.",
+            "sentence_start": 661,
+            "start": 677,
+            "end": 680,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 531,
+            "end_segment_index": 531,
+            "entry_id": "quotation-rago",
+            "surface": "형이라고",
+            "display_meaning_en": "",
+            "context_en": "이라고 marks the coordinated titles 아버지와 형 as the words Gildong cannot use to address his relatives.",
+            "anchor_surface": "형이라고",
+            "sentence": "아버지도 있고 형도 있는데 아버지와 형이라고 부르지 못한다.",
+            "sentence_start": 1052,
+            "start": 1072,
+            "end": 1076,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 710,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "sentence": "하지만 아버지를 ‘아버지’라고 부르지 못합니다.",
+            "sentence_start": 1414,
+            "start": 1428,
+            "end": 1430
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 710,
+            "end_segment_index": 710,
+            "entry_id": "quotation-rago",
+            "surface": "라고",
+            "display_meaning_en": "",
+            "context_en": "라고 marks ‘아버지’ as the exact title Gildong cannot use when addressing his father.",
+            "anchor_surface": "라고",
+            "sentence": "하지만 아버지를 ‘아버지’라고 부르지 못합니다.",
+            "sentence_start": 1414,
+            "start": 1428,
+            "end": 1430,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 724,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "sentence": "제 형도 ‘형’이라고 부르지 못합니다.",
+            "sentence_start": 1441,
+            "start": 1449,
+            "end": 1452
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 724,
+            "end_segment_index": 724,
+            "entry_id": "quotation-rago",
+            "surface": "이라고",
+            "display_meaning_en": "",
+            "context_en": "이라고 marks the quoted title ‘형’ as what he cannot call his older brother.",
+            "anchor_surface": "이라고",
+            "sentence": "제 형도 ‘형’이라고 부르지 못합니다.",
+            "sentence_start": 1441,
+            "start": 1449,
+            "end": 1452,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 479,
+            "entry_id": "quotation-rago",
+            "surface": "라",
+            "sentence": "어머니가 신분이 낮은 집안 일꾼이었다는 이유로, 길동은 아버지를 ‘아버지’라 부르거나 형 인형을 ‘형’이라 부를 때마다 꾸지람을 들었다.",
+            "sentence_start": 973,
+            "start": 1014,
+            "end": 1015
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 479,
+            "end_segment_index": 479,
+            "entry_id": "quotation-rago",
+            "surface": "라",
+            "display_meaning_en": "",
+            "context_en": "Shortened 라 marks 아버지 as the quoted form of address.",
+            "anchor_surface": "라",
+            "sentence": "어머니가 신분이 낮은 집안 일꾼이었다는 이유로, 길동은 아버지를 ‘아버지’라 부르거나 형 인형을 ‘형’이라 부를 때마다 꾸지람을 들었다.",
+            "sentence_start": 973,
+            "start": 1014,
+            "end": 1015,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_tap",
+            "segment_index": 490,
+            "entry_id": "quotation-rago",
+            "surface": "이라",
+            "sentence": "어머니가 신분이 낮은 집안 일꾼이었다는 이유로, 길동은 아버지를 ‘아버지’라 부르거나 형 인형을 ‘형’이라 부를 때마다 꾸지람을 들었다.",
+            "sentence_start": 973,
+            "start": 1030,
+            "end": 1032
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 490,
+            "end_segment_index": 490,
+            "entry_id": "quotation-rago",
+            "surface": "이라",
+            "display_meaning_en": "",
+            "context_en": "Shortened 이라 follows the consonant-ending quoted address 형.",
+            "anchor_surface": "이라",
+            "sentence": "어머니가 신분이 낮은 집안 일꾼이었다는 이유로, 길동은 아버지를 ‘아버지’라 부르거나 형 인형을 ‘형’이라 부를 때마다 꾸지람을 들었다.",
+            "sentence_start": 973,
+            "start": 1030,
+            "end": 1032,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 648,
+            "end_segment_index": 648,
+            "entry_id": "quotation-rago",
+            "surface": "아버지라",
+            "display_meaning_en": "",
+            "context_en": "라 abbreviates 라고 and specifies the title “Father.”",
+            "anchor_surface": "아버지라",
+            "sentence": "그런데 나는 아버지와 형이 있는데도 아버지를 아버지라, 형을 형이라 부르지 못하는구나.",
+            "sentence_start": 1315,
+            "start": 1340,
+            "end": 1344,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 653,
+            "end_segment_index": 653,
+            "entry_id": "quotation-rago",
+            "surface": "형이라",
+            "display_meaning_en": "",
+            "context_en": "이라 abbreviates 이라고 and specifies the title “Brother.”",
+            "anchor_surface": "형이라",
+            "sentence": "그런데 나는 아버지와 형이 있는데도 아버지를 아버지라, 형을 형이라 부르지 못하는구나.",
+            "sentence_start": 1315,
+            "start": 1349,
+            "end": 1352,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "form_step",
+            "segment_index": 776,
+            "form_step_index": 0,
+            "entry_id": "quotation-rago",
+            "segment_surface": "사람이라",
+            "surface": "사람이라",
+            "label": "Shortened nominal quotation marker",
+            "reading": "사람이라",
+            "meaning_en": "a human being, as a quoted description",
+            "lexical_id": "사람/명",
+            "sentence": "저는 그런 귀한 대접을 받지 못하니, 어찌 저를 사람이라 할 수 있겠습니까?”",
+            "sentence_start": 1563,
+            "start": 1590,
+            "end": 1594,
+            "sibling_grammar_links": [
+              {
+                "segment_index": 776,
+                "entry_id": "quotation-rago",
+                "context_en": "사람이라 is a shortened 사람이라고, marking the category used to describe him."
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 776,
+            "end_segment_index": 776,
+            "entry_id": "quotation-rago",
+            "surface": "사람이라",
+            "display_meaning_en": "",
+            "context_en": "사람이라 is a shortened 사람이라고, marking the category used to describe him.",
+            "anchor_surface": "사람이라",
+            "sentence": "저는 그런 귀한 대접을 받지 못하니, 어찌 저를 사람이라 할 수 있겠습니까?”",
+            "sentence_start": 1563,
+            "start": 1590,
+            "end": 1594,
+            "form_steps": [
+              {
+                "form": "사람이라",
+                "reading": "사람이라",
+                "label": "Shortened nominal quotation marker",
+                "meaning_en": "a human being, as a quoted description",
+                "grammar_entry_ids": [
+                  "quotation-rago"
+                ]
+              }
+            ]
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 852,
+            "end_segment_index": 852,
+            "entry_id": "quotation-rago",
+            "surface": "아버지라",
+            "display_meaning_en": "",
+            "context_en": "라 is the shortened quotation marker 라고, identifying the address ‘Father’.",
+            "anchor_surface": "아버지라",
+            "sentence": "제 아버지를 아버지라 부르지 못하고, 제 형을 형이라 부르지 못합니다.",
+            "sentence_start": 1746,
+            "start": 1753,
+            "end": 1757,
+            "form_steps": []
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "occurrence_kind": "grammar_link",
+            "segment_index": 863,
+            "end_segment_index": 863,
+            "entry_id": "quotation-rago",
+            "surface": "형이라",
+            "display_meaning_en": "",
+            "context_en": "이라 shortens 이라고 and quotes the familial address ‘Older Brother’.",
+            "anchor_surface": "형이라",
+            "sentence": "제 아버지를 아버지라 부르지 못하고, 제 형을 형이라 부르지 못합니다.",
+            "sentence_start": 1746,
+            "start": 1772,
+            "end": 1775,
+            "form_steps": []
+          }
+        ],
+        "chapter_digests": [
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l1.annotations.json",
+            "chapter": 1,
+            "digest": "569f6fbd034f2fde2f9a78bf56ee95e447d4030b18e0d3a32fd9a7fbf6ce745b"
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l2.annotations.json",
+            "chapter": 1,
+            "digest": "d6f7e535aeff425d9ca267a0e311deaf24fdeb4050a6c3a2a77f3a24f294e5de"
+          },
+          {
+            "file": "/home/catalin/graded-readers/content/korean/honggildong/l5.annotations.json",
+            "chapter": 1,
+            "digest": "dd43664016a622a99a4388237379c060e69ddcf25908919e840e8d3e475e3b3e"
+          }
+        ]
+      },
+      "dictionary_objection_accountability": {
+        "version": 2,
+        "policy_digest": "43ed1eff82d7a6dfea7fc4a632b18ac93becb541afd09787cf765ec03267c063"
+      },
+      "authenticated_dictionary_promotion": {
+        "version": 3,
+        "receipt_relpath": "runs/maintenance/20261003/smokes/dictionary-objection-accountability-acceptance-20261005/run-output/dictionary-promotion-2205b9b130e2fbaaa43ae0096c3e0a2129ba01e909dc8b824f86ea4c1179e926.json",
+        "receipt_sha256": "c1dc2ee002d9ef6a8417a0e6749ea7dbfb846a0ef45fb6e0a8d52f3291ef430a"
+      }
+    }
+  ]
+}

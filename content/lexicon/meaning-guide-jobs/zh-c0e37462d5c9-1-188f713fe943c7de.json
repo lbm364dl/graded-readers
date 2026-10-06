@@ -1,0 +1,31 @@
+{
+  "id": "zh-c0e37462d5c9-1-188f713fe943c7de",
+  "entry_id": "zh-c0e37462d5c9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c0e37462d5c9-1",
+      "headword": "下到",
+      "kind": "construction",
+      "reading": "xiàdào",
+      "senses": [
+        {
+          "id": "zh-c0e37462d5c9-1-s1",
+          "definition": "to fall or come down as far as a point in time or space"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "之后雷雨和冰雹下到半夜，许多房屋被毁。",
+        "gloss": "fall until",
+        "sense_id": "zh-c0e37462d5c9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7c8c9b9a593c3632b0eb3e4bdc92e3205e7c05b11ba3e33fdbf85f4c4ea95014"
+}

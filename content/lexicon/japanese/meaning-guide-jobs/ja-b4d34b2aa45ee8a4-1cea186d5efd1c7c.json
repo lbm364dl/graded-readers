@@ -1,0 +1,32 @@
+{
+  "id": "ja-b4d34b2aa45ee8a4-1cea186d5efd1c7c",
+  "entry_id": "ja-b4d34b2aa45ee8a4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b4d34b2aa45ee8a4",
+      "headword": "台所",
+      "reading": "だいどころ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b4d34b2aa45ee8a4-1",
+          "definition": "Kitchen."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "女の人は吾輩を何度も外へ出しましたが、吾輩は台所へ入りました。",
+        "gloss": "kitchen",
+        "sense_id": "ja-b4d34b2aa45ee8a4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "09918c81479b508dd4c93652496719df4a3430e951a3c613b29e2bc2f464739d"
+}

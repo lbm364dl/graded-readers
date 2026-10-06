@@ -1,0 +1,31 @@
+{
+  "id": "zh-051150a59704-1-c566a57820293554",
+  "entry_id": "zh-051150a59704-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-051150a59704-1",
+      "headword": "造",
+      "kind": "word",
+      "reading": "zào",
+      "senses": [
+        {
+          "id": "zh-051150a59704-1-s1",
+          "definition": "to make or create something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备命良匠打造双股剑，关羽造青龙偃月刀，又名冷艳锯，重八十二斤；张飞造丈八点钢矛。",
+        "gloss": "make",
+        "sense_id": "zh-051150a59704-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f3130ddbfc93d85a324042b9e592bf10b69a7d6174e12190b97fb0d4e9636cb9"
+}

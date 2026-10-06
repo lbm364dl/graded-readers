@@ -1,0 +1,31 @@
+{
+  "id": "zh-65eb352d08bf-1-29178a1ce69254ff",
+  "entry_id": "zh-65eb352d08bf-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-65eb352d08bf-1",
+      "headword": "意思",
+      "kind": "word",
+      "reading": "yìsi",
+      "senses": [
+        {
+          "id": "zh-65eb352d08bf-1-s1",
+          "definition": "meaning; intention or message"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备见到皇甫嵩和朱隽，转达卢植的意思。",
+        "gloss": "meaning",
+        "sense_id": "zh-65eb352d08bf-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e1f56a742a30650bd9f3408a54341d5ed9a310a6233f3e641f8d5fa341d1afcd"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-0c6d098997cc-1-216d9ffadce8b485",
+  "entry_id": "zh-0c6d098997cc-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0c6d098997cc-1",
+      "headword": "无力",
+      "kind": "word",
+      "reading": "wúlì",
+      "senses": [
+        {
+          "id": "zh-0c6d098997cc-1-s1",
+          "definition": "lack the ability or strength to do something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他当时因无力报国，只能长声叹气。",
+        "gloss": "lacking the power",
+        "sense_id": "zh-0c6d098997cc-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "34ee5ffd18912bd6d131b64d09259bb1af3fdccc4b6db1b353a5aabd45f1d5a5"
+}

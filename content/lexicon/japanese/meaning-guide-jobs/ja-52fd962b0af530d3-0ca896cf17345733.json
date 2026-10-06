@@ -1,0 +1,32 @@
+{
+  "id": "ja-52fd962b0af530d3-0ca896cf17345733",
+  "entry_id": "ja-52fd962b0af530d3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-52fd962b0af530d3",
+      "headword": "さえ",
+      "reading": "さえ",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-52fd962b0af530d3-1",
+          "definition": "even; marks something surprising or extreme, or something included in a statement"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "誰も相手にせず、名前さえつけてくれない。",
+        "gloss": "even",
+        "sense_id": "ja-52fd962b0af530d3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "586f9a4925013a17d2ac0ec6cbf5ad146f6ee090d717f356f78a9775d5108078"
+}

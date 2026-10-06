@@ -1,0 +1,36 @@
+{
+  "id": "zh-eade5f080910-1-39795ba7b75ac787",
+  "entry_id": "zh-eade5f080910-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-eade5f080910-1",
+      "headword": "秀才",
+      "kind": "word",
+      "reading": "xiùcai",
+      "senses": [
+        {
+          "id": "zh-eade5f080910-1-s1",
+          "definition": "a person who passed the lowest level of the imperial examination system"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角原是没考中的秀才，进山采药时遇到老人。",
+        "gloss": "scholar who passed an imperial examination",
+        "sense_id": "zh-eade5f080910-1-s1"
+      },
+      {
+        "sentence": "张角原是落榜秀才，进山采药时遇到一位老人。",
+        "gloss": "scholar who passed the county exam",
+        "sense_id": "zh-eade5f080910-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "24cc6cb5ad4ca99ed651aa1e1d0a6cad06a71fd809a7c8e6014dda4c0f9e6b13"
+}

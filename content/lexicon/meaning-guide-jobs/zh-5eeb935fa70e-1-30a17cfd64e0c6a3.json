@@ -1,0 +1,31 @@
+{
+  "id": "zh-5eeb935fa70e-1-30a17cfd64e0c6a3",
+  "entry_id": "zh-5eeb935fa70e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5eeb935fa70e-1",
+      "headword": "消气",
+      "kind": "word",
+      "reading": "xiāoqì",
+      "senses": [
+        {
+          "id": "zh-5eeb935fa70e-1-s1",
+          "definition": "to calm down or get rid of one's anger"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不杀他，我无法消气。",
+        "gloss": "vent one's anger",
+        "sense_id": "zh-5eeb935fa70e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "db2b7228780d597b24bc13779cfaa5fad6315519c3915ff2872bb3545c54224d"
+}

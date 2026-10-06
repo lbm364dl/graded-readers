@@ -1,0 +1,31 @@
+{
+  "id": "zh-eb76776da96a-1-bc5585b07fa32408",
+  "entry_id": "zh-eb76776da96a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-eb76776da96a-1",
+      "headword": "长长",
+      "kind": "word",
+      "reading": "chángcháng",
+      "senses": [
+        {
+          "id": "zh-eb76776da96a-1-s1",
+          "definition": "long; in a drawn-out way"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他因为没有办法为国出力，长长地叹气。",
+        "gloss": "at length; long (as an adverbial reduplication)",
+        "sense_id": "zh-eb76776da96a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ae32c4aae2111cd3c07a2bd936299aadc5b2c489ef9fd6302ea0650199dc12e6"
+}

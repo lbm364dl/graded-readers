@@ -1,0 +1,32 @@
+{
+  "id": "ja-bda2e52e1d856485-bb25527bbfbe5040",
+  "entry_id": "ja-bda2e52e1d856485",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-bda2e52e1d856485",
+      "headword": "だめ",
+      "reading": "だめ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-bda2e52e1d856485-1",
+          "definition": "no good; unacceptable"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これはだめだと思い、目を閉じて運に任せた。",
+        "gloss": "no good; unacceptable",
+        "sense_id": "ja-bda2e52e1d856485-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5ccf28965b7b23d75f01f2884e144ba9a28713a3e1f08351583de8bcbf520523"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-025fb2ba2b5a-1-ccc35383daeed976",
+  "entry_id": "zh-025fb2ba2b5a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-025fb2ba2b5a-1",
+      "headword": "亲自",
+      "kind": "word",
+      "reading": "qīnzì",
+      "senses": [
+        {
+          "id": "zh-025fb2ba2b5a-1-s1",
+          "definition": "personally; in person"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人取得了第一次胜利，刘焉亲自迎接他们。",
+        "gloss": "personally",
+        "sense_id": "zh-025fb2ba2b5a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "34e2ead2d107fe4bb29002ef6cfd9907cd2ce663e7312ae6b863e7aa4c5726c7"
+}

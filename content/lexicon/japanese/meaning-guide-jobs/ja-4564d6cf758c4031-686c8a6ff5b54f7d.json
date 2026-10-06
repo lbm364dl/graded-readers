@@ -1,0 +1,47 @@
+{
+  "id": "ja-4564d6cf758c4031-686c8a6ff5b54f7d",
+  "entry_id": "ja-4564d6cf758c4031",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4564d6cf758c4031",
+      "headword": "彼ら",
+      "reading": "かれら",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4564d6cf758c4031-1",
+          "definition": "they; them, referring to a group of people or other beings"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は人間と一緒に暮らし、彼らを見れば見るほど、彼らは我儘なものだと考えるようになった。",
+        "gloss": "them; they",
+        "sense_id": "ja-4564d6cf758c4031-1"
+      },
+      {
+        "sentence": "吾輩は人間と一緒に暮らし、彼らを見れば見るほど、彼らは我儘なものだと考えるようになった。",
+        "gloss": "they",
+        "sense_id": "ja-4564d6cf758c4031-1"
+      },
+      {
+        "sentence": "台所の板の間で他の者が震えていても、彼らは少しも気にしない。",
+        "gloss": "they",
+        "sense_id": "ja-4564d6cf758c4031-1"
+      },
+      {
+        "sentence": "そして、「猫族が親子の愛を守り、美しい家族の生活をするには、人間と戦い、彼らを滅ぼさなければならない」と言った。",
+        "gloss": "them",
+        "sense_id": "ja-4564d6cf758c4031-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a7038066e4e45a8cf06946cbbe1d19fe4f57859c1f566f2f4b92accf6a903324"
+}

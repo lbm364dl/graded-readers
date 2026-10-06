@@ -1,0 +1,32 @@
+{
+  "id": "ja-fdd025a3752a5eaf-68fbf87972b81516",
+  "entry_id": "ja-fdd025a3752a5eaf",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fdd025a3752a5eaf",
+      "headword": "つく",
+      "reading": "つく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fdd025a3752a5eaf-1",
+          "definition": "To follow or accompany someone, including by going along with them."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒は、自分はどこへ行っても食べ物に困らないと言い、吾輩も後について来れば一月もしないうちに太れると自慢した。",
+        "gloss": "if one follows along",
+        "sense_id": "ja-fdd025a3752a5eaf-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3e5c7420f7318317c7100dd93aa59968f55326a5eeb15765297d78f873041233"
+}

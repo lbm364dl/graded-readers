@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_092-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 927,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "原文中韩琪先被赵云刺落马，韩琼随后射箭追赶并被赵云射死；改写为“先刺死韩瑛，又刺死韩琪”，虽未改变主要结果，但弱化了战斗过程。",
+      "classification": "material",
+      "reason": "改写错误地把韩琪写成被赵云刺死，改变了人物的受伤、获救与死亡结果；原文死于赵云箭下的是韩琼。",
+      "required_fix": "改为：韩琪被赵云刺落马后由魏军偏将救走；韩琼追赶并放箭，随后被赵云一箭射中面门而死。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "原文中韩琪先被赵云刺落马，韩琼随后射箭追赶并被赵云射死；改写为“先刺死韩瑛，又刺死韩琪”，虽未改变主要结果，但弱化了战斗过程。",
+      "classification": "material",
+      "reason": "改写错误地把韩琪写成被赵云刺死，改变了人物的受伤、获救与死亡结果；原文死于赵云箭下的是韩琼。",
+      "required_fix": "改为：韩琪被赵云刺落马后由魏军偏将救走；韩琼追赶并放箭，随后被赵云一箭射中面门而死。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 927,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

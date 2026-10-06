@@ -1,0 +1,32 @@
+{
+  "id": "ja-d5cdb739ac20d94b-1e0f1ba901492387",
+  "entry_id": "ja-d5cdb739ac20d94b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d5cdb739ac20d94b",
+      "headword": "上手くなる",
+      "reading": "うまくなる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-d5cdb739ac20d94b-1",
+          "definition": "to become skilled; improve"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "弓に熱中したり、謡を習ったり、バイオリンを鳴らしたりもしたが、どれも上手くならなかった。",
+        "gloss": "did not become skilled",
+        "sense_id": "ja-d5cdb739ac20d94b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c85e09fa018fe5560cf9ce1ce767d8228fac5858745820639943135473dcf6c3"
+}

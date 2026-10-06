@@ -1,0 +1,41 @@
+{
+  "id": "zh-72a894d5971a-1-c7229e49dd818240",
+  "entry_id": "zh-72a894d5971a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-72a894d5971a-1",
+      "headword": "高大",
+      "kind": "word",
+      "reading": "gāodà",
+      "senses": [
+        {
+          "id": "zh-72a894d5971a-1-s1",
+          "definition": "large in stature or dimensions; tall and big"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他身材高大，耳朵很长，双手也比常人长。",
+        "gloss": "tall and big",
+        "sense_id": "zh-72a894d5971a-1-s1"
+      },
+      {
+        "sentence": "楼桑村东南有一棵大桑树，高大茂盛，远看如同车盖。",
+        "gloss": "tall and large",
+        "sense_id": "zh-72a894d5971a-1-s1"
+      },
+      {
+        "sentence": "他身材高大，头大眼圆，胡子很长，声音像雷一样响，气势惊人。",
+        "gloss": "tall and big",
+        "sense_id": "zh-72a894d5971a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dd493014bbbabfa2730aba2f4da7899a043228289cc48d91a43a6f9a125f8c50"
+}

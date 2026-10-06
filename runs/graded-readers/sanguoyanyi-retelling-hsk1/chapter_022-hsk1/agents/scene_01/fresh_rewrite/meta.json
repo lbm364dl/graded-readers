@@ -1,0 +1,21 @@
+{
+  "job": "scene_01/fresh_rewrite",
+  "model": "gpt-5.6-luna",
+  "effort": "xhigh",
+  "fingerprint": "670ffa5dfe8b1c580e4e2a4777cf054607db8689da0b635e4ed0a670f9b2395b",
+  "started_at": "2026-08-11T23:43:13.701119+00:00",
+  "ended_at": "2026-08-11T23:44:11.072977+00:00",
+  "return_code": 0,
+  "attempt_count": 1,
+  "attempts": [
+    {
+      "attempt": 1,
+      "started_at": "2026-08-11T23:43:13.701136+00:00",
+      "ended_at": "2026-08-11T23:44:11.072620+00:00",
+      "return_code": 0,
+      "throttled": false,
+      "events": "events.attempt-01.jsonl",
+      "stderr": "stderr.attempt-01.log"
+    }
+  ]
+}

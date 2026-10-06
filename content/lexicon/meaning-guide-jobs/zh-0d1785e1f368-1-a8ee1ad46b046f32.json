@@ -1,0 +1,31 @@
+{
+  "id": "zh-0d1785e1f368-1-a8ee1ad46b046f32",
+  "entry_id": "zh-0d1785e1f368-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0d1785e1f368-1",
+      "headword": "为",
+      "kind": "word",
+      "reading": "wèi",
+      "senses": [
+        {
+          "id": "zh-0d1785e1f368-1-s1",
+          "definition": "for; on behalf of"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他因为没有办法为国出力，长长地叹气。",
+        "gloss": "for",
+        "sense_id": "zh-0d1785e1f368-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0a95aada11dbabdf7ce6bb3daa2973114f66388c38154d84455fb6c917d5e6c3"
+}

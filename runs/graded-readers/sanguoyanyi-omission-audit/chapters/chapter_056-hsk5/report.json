@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_056-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 839,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将周瑜最终状态明确写成“昏倒”，原文只写他箭疮迸裂、坠马，留下悬念。",
+      "classification": "material",
+      "reason": "原文刻意只写周瑜箭疮迸裂、坠马并留下性命悬念，明确补写“昏倒”改变了结尾状态和叙事悬念。",
+      "required_fix": "将“坠马昏倒”改为“箭疮再次迸裂，坠马，留下悬念”，或仅写“箭疮再次迸裂，坠于马下”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将周瑜最终状态明确写成“昏倒”，原文只写他箭疮迸裂、坠马，留下悬念。",
+      "classification": "material",
+      "reason": "原文刻意只写周瑜箭疮迸裂、坠马并留下性命悬念，明确补写“昏倒”改变了结尾状态和叙事悬念。",
+      "required_fix": "将“坠马昏倒”改为“箭疮再次迸裂，坠马，留下悬念”，或仅写“箭疮再次迸裂，坠于马下”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 839,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

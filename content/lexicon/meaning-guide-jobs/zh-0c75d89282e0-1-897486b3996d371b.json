@@ -1,0 +1,36 @@
+{
+  "id": "zh-0c75d89282e0-1-897486b3996d371b",
+  "entry_id": "zh-0c75d89282e0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0c75d89282e0-1",
+      "headword": "本来",
+      "kind": "word",
+      "reading": "běnlái",
+      "senses": [
+        {
+          "id": "zh-0c75d89282e0-1-s1",
+          "definition": "originally; at first"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "卢植说，他围住张角，本来将要取胜，却因张角使用妖术，未能立即取胜。",
+        "gloss": "originally",
+        "sense_id": "zh-0c75d89282e0-1-s1"
+      },
+      {
+        "sentence": "刘备下马询问，卢植说，他围攻张角时本来快要取胜，却因张角使用法术而未能成功。",
+        "gloss": "originally; initially",
+        "sense_id": "zh-0c75d89282e0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "871e03a1f2455d249ead9f15994eef02a965e5e014096e324cc0e22df074b069"
+}

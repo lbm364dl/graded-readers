@@ -1,0 +1,31 @@
+{
+  "id": "zh-9db60007db37-1-79c4bda3b00c894e",
+  "entry_id": "zh-9db60007db37-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9db60007db37-1",
+      "headword": "奖赏",
+      "kind": "word",
+      "reading": "jiǎngshǎng",
+      "senses": [
+        {
+          "id": "zh-9db60007db37-1-s1",
+          "definition": "to reward"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉亲自迎接他们，并奖赏军士。",
+        "gloss": "to reward",
+        "sense_id": "zh-9db60007db37-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3bb4a93efaff7ab43defeb0d2503ff37088c3f5402c1c2cae9b935a25af4a1a7"
+}

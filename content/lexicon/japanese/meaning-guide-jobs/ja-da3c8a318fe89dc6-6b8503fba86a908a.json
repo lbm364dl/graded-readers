@@ -1,0 +1,32 @@
+{
+  "id": "ja-da3c8a318fe89dc6-6b8503fba86a908a",
+  "entry_id": "ja-da3c8a318fe89dc6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-da3c8a318fe89dc6",
+      "headword": "押し込む",
+      "reading": "おしこむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-da3c8a318fe89dc6-1",
+          "definition": "to push or shove something into a confined space"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そのうえ、へっついの中へ押し込んだりもする。",
+        "gloss": "also do things such as shove it inside",
+        "sense_id": "ja-da3c8a318fe89dc6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0e80765b99d39baccd93317508288f282c826c0a2885e2c7aeea08ff5a0956c9"
+}

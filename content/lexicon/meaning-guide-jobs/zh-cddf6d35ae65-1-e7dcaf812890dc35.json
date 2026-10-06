@@ -1,0 +1,31 @@
+{
+  "id": "zh-cddf6d35ae65-1-e7dcaf812890dc35",
+  "entry_id": "zh-cddf6d35ae65-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cddf6d35ae65-1",
+      "headword": "青龙",
+      "kind": "word",
+      "reading": "qīnglóng",
+      "senses": [
+        {
+          "id": "zh-cddf6d35ae65-1-s1",
+          "definition": "Azure Dragon; a name used for the Green Dragon Crescent Blade"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，刘备请工匠打造双股剑，关羽打造青龙偃月刀，重八十二斤，张飞打造丈八点钢矛，并各自准备全身铠甲。",
+        "gloss": "Azure Dragon",
+        "sense_id": "zh-cddf6d35ae65-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b3d8a7227b4deccc6620a745253baa1c83b7ba7fc1334bf0c36293f07559b511"
+}

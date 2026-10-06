@@ -1,0 +1,31 @@
+{
+  "id": "zh-938aa859ca9c-1-e38f8826fa61d4ed",
+  "entry_id": "zh-938aa859ca9c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-938aa859ca9c-1",
+      "headword": "赵忠",
+      "kind": "name",
+      "reading": "Zhào Zhōng",
+      "senses": [
+        {
+          "id": "zh-938aa859ca9c-1-s1",
+          "definition": "Zhao Zhong, a personal name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "后来，张让、赵忠、封谞、段珪、曹节、侯览、蹇硕、程旷、夏恽、郭胜十人结党作恶，被称为十常侍。",
+        "gloss": "Zhao Zhong",
+        "sense_id": "zh-938aa859ca9c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a09d6d1349ed0d80ea95b3f5178c7bfe58151a8a12c4fea22377b07a3efb3cc7"
+}

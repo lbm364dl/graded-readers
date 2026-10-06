@@ -43,3 +43,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/android/.kotlin/
+
+# Android release signing secrets. Keep the example file in git.
+/android/key.properties
+/android/*.jks
+/android/*.keystore

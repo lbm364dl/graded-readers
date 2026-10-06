@@ -1,0 +1,32 @@
+{
+  "id": "ja-3ee8228db0759327-f1f583969265eef2",
+  "entry_id": "ja-3ee8228db0759327",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3ee8228db0759327",
+      "headword": "つまみ出されようとする",
+      "reading": "つまみだされようとする",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-3ee8228db0759327-1",
+          "definition": "to be about to be thrown out"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "最後につまみ出されようとした時、この家の主人が「騒々しい。",
+        "gloss": "was about to be thrown out",
+        "sense_id": "ja-3ee8228db0759327-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "505dd4f478b4a18af30556c5f698203b9c595c28c22694bd0ca29341af87d419"
+}

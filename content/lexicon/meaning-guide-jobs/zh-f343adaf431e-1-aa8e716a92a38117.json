@@ -1,0 +1,36 @@
+{
+  "id": "zh-f343adaf431e-1-aa8e716a92a38117",
+  "entry_id": "zh-f343adaf431e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f343adaf431e-1",
+      "headword": "翻",
+      "kind": "word",
+      "reading": "fān",
+      "senses": [
+        {
+          "id": "zh-f343adaf431e-1-s1",
+          "definition": "to turn or flip over"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞挺丈八蛇矛刺中邓茂胸口，使他翻身落马。",
+        "gloss": "to turn over",
+        "sense_id": "zh-f343adaf431e-1-s1"
+      },
+      {
+        "sentence": "张飞挺矛直冲，一矛刺中邓茂心窝，邓茂翻身落马。",
+        "gloss": "to turn over",
+        "sense_id": "zh-f343adaf431e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "56c137b2fa07d0ce1cb34925f4d1ce3cbc3bb9aa5c2f24d57fe62baa4b4088a1"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-d09c3ac0da0e-1-cccb11fbfa5d2450",
+  "entry_id": "zh-d09c3ac0da0e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d09c3ac0da0e-1",
+      "headword": "权谋",
+      "kind": "word",
+      "reading": "quánmóu",
+      "senses": [
+        {
+          "id": "zh-d09c3ac0da0e-1-s1",
+          "definition": "ability to devise strategies and use political or practical maneuvering"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操小时候喜欢游猎和歌舞，也有权谋。",
+        "gloss": "political stratagems",
+        "sense_id": "zh-d09c3ac0da0e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c24bf400164709f0e6833fb20421fd946429cd1c234d4171507c8bcfea956cc7"
+}

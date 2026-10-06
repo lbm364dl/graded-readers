@@ -1,0 +1,31 @@
+{
+  "id": "zh-8f6fd4c5f7a7-1-9d79722bcd346403",
+  "entry_id": "zh-8f6fd4c5f7a7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8f6fd4c5f7a7-1",
+      "headword": "刺中",
+      "kind": "construction",
+      "reading": "cìzhòng",
+      "senses": [
+        {
+          "id": "zh-8f6fd4c5f7a7-1-s1",
+          "definition": "stab or thrust and hit the target"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞举矛刺中邓茂，他从马上掉下。",
+        "gloss": "stab and hit",
+        "sense_id": "zh-8f6fd4c5f7a7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "046712372734130b7ce68ea2a8a935082ca4f907db102b9dcbbd9f346fb56725"
+}

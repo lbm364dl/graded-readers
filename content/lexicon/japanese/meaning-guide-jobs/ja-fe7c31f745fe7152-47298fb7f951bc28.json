@@ -1,0 +1,32 @@
+{
+  "id": "ja-fe7c31f745fe7152-47298fb7f951bc28",
+  "entry_id": "ja-fe7c31f745fe7152",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fe7c31f745fe7152",
+      "headword": "実際",
+      "reading": "じっさい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fe7c31f745fe7152-1",
+          "definition": "reality; in fact"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "家のものは勉強家だと思っているが、実際はそうでもない。",
+        "gloss": "in reality; actually",
+        "sense_id": "ja-fe7c31f745fe7152-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4650dcfc8f44e7ec489ea1888c08d917dcb10fe37e7f26efad006385b20aa2d6"
+}

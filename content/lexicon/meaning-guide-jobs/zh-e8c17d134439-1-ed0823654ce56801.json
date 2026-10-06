@@ -1,0 +1,31 @@
+{
+  "id": "zh-e8c17d134439-1-ed0823654ce56801",
+  "entry_id": "zh-e8c17d134439-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e8c17d134439-1",
+      "headword": "高处",
+      "kind": "word",
+      "reading": "gāochù",
+      "senses": [
+        {
+          "id": "zh-e8c17d134439-1-s1",
+          "definition": "a high place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人登上高处，只见汉军已经大败，黄巾军漫山遍野而来，旗上写着“天公将军”。",
+        "gloss": "high place",
+        "sense_id": "zh-e8c17d134439-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "aac4316dca0df08d20acc79ea4464dbe85ba78e960e3092b81f0e5403995b1d0"
+}

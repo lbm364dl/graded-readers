@@ -4,7 +4,20 @@ import 'package:hsk_graded/models.dart';
 
 void main() {
   testWidgets('App launches without errors', (WidgetTester tester) async {
-    await tester.pumpWidget(const GradedReadersApp(initialLanguage: Language.chinese));
+    await tester
+        .pumpWidget(const GradedReadersApp(initialLanguage: Language.chinese));
     expect(find.text('Graded Readers'), findsOneWidget);
+  });
+
+  testWidgets('language switch keeps the app shell responsive',
+      (WidgetTester tester) async {
+    await tester
+        .pumpWidget(const GradedReadersApp(initialLanguage: Language.chinese));
+
+    await tester.tap(find.text('日本語'));
+    await tester.pump();
+
+    expect(find.text('Graded Readers'), findsOneWidget);
+    expect(find.text('日本語'), findsOneWidget);
   });
 }

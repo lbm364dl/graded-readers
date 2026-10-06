@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_083-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 844,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了陆逊的身世背景和阚泽以全家担保他的情节。",
+      "classification": "material",
+      "reason": "陆逊的身世背景涉及人物身份与定位，阚泽以全家担保则强化了推荐陆逊、孙权任用他的动机和政治分量。",
+      "required_fix": "补充陆逊的家世身份，并说明阚泽以全家性命担保其才能。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将黄忠之葬称为“厚葬”，原文只说命人备棺安葬。",
+      "classification": "material",
+      "reason": "“厚葬”是原文未明确支持的葬礼规格，属于新增事实。",
+      "required_fix": "改为“命人备棺安葬”或“命人置棺下葬”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "原文是先主亲自用刀剐杀糜芳、傅士仁，改写为命关兴将二人凌迟处死，改变了执行者。",
+      "classification": "material",
+      "reason": "改写改变了执行惩罚的实际执行者，属于人物行动主体错误。",
+      "required_fix": "改为“先主亲自用刀剐杀糜芳、傅士仁，以祭关公”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了陆逊的身世背景和阚泽以全家担保他的情节。",
+      "classification": "material",
+      "reason": "陆逊的身世背景涉及人物身份与定位，阚泽以全家担保则强化了推荐陆逊、孙权任用他的动机和政治分量。",
+      "required_fix": "补充陆逊的家世身份，并说明阚泽以全家性命担保其才能。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将黄忠之葬称为“厚葬”，原文只说命人备棺安葬。",
+      "classification": "material",
+      "reason": "“厚葬”是原文未明确支持的葬礼规格，属于新增事实。",
+      "required_fix": "改为“命人备棺安葬”或“命人置棺下葬”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "原文是先主亲自用刀剐杀糜芳、傅士仁，改写为命关兴将二人凌迟处死，改变了执行者。",
+      "classification": "material",
+      "reason": "改写改变了执行惩罚的实际执行者，属于人物行动主体错误。",
+      "required_fix": "改为“先主亲自用刀剐杀糜芳、傅士仁，以祭关公”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 844,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

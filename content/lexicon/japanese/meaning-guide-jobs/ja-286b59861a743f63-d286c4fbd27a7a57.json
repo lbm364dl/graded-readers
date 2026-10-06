@@ -1,0 +1,32 @@
+{
+  "id": "ja-286b59861a743f63-d286c4fbd27a7a57",
+  "entry_id": "ja-286b59861a743f63",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-286b59861a743f63",
+      "headword": "年上",
+      "reading": "としうえ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-286b59861a743f63-1",
+          "definition": "older in age; an older person"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そこで吾輩は、黒の方が年上だからたくさんとっただろうと、わざと尋ねた。",
+        "gloss": "older; senior in age",
+        "sense_id": "ja-286b59861a743f63-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8c43f62ccfaedb5b5bb607c4dc192a6de4d6d2bfea970e9cc559b9279d5fa83b"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-d1127ae92452f1c4-6e4694400c8064b3",
+  "entry_id": "ja-d1127ae92452f1c4",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d1127ae92452f1c4",
+      "headword": "そっと",
+      "reading": "そっと",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d1127ae92452f1c4-1",
+          "definition": "quietly; gently; unobtrusively"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩がそっと書斎をのぞくと、主人は昼寝をしていたり、読みかけの本に涎をたらしていたりする。",
+        "gloss": "quietly; stealthily",
+        "sense_id": "ja-d1127ae92452f1c4-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b49b5b303f2dce9ec42a42242f10afc51d1db397dafcdcd6c4262bc4727b603d"
+}

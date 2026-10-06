@@ -1,0 +1,31 @@
+{
+  "id": "zh-ce6d48a17aae-1-4ebbc95148a76471",
+  "entry_id": "zh-ce6d48a17aae-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ce6d48a17aae-1",
+      "headword": "追过",
+      "kind": "construction",
+      "reading": "zhuīguò",
+      "senses": [
+        {
+          "id": "zh-ce6d48a17aae-1-s1",
+          "definition": "to pursue past or beyond a place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军追过山岭时，刘备军中发出信号，两边伏兵立即杀出，刘备也转身反击。",
+        "gloss": "pursue past",
+        "sense_id": "zh-ce6d48a17aae-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2a03b658f79099b774918aaef924ecdb9815c7bfaf3f42ea9f3c467e36037b2b"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-7174f297203e7706-c18b7bced3b1ceee",
+  "entry_id": "ja-7174f297203e7706",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7174f297203e7706",
+      "headword": "胃",
+      "reading": "い",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7174f297203e7706-1",
+          "definition": "stomach"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "それでも始めると、胃が弱いのに一生懸命だった。",
+        "gloss": "stomach",
+        "sense_id": "ja-7174f297203e7706-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e603a2e25d8762ef22f117950b06d9613b3b1a6d808b18a06850d3709ce23939"
+}

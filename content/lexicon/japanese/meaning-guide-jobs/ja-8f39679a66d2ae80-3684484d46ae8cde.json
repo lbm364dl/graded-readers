@@ -1,0 +1,32 @@
+{
+  "id": "ja-8f39679a66d2ae80-3684484d46ae8cde",
+  "entry_id": "ja-8f39679a66d2ae80",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8f39679a66d2ae80",
+      "headword": "不活発",
+      "reading": "ふかっぱつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8f39679a66d2ae80-1",
+          "definition": "inactive; lacking activity or energy"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "胃が弱く、皮膚は淡い黄色で、弾力のない不活発な様子を見せている。",
+        "gloss": "inactive; lacking vitality",
+        "sense_id": "ja-8f39679a66d2ae80-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9fffe4592e35dc79e28364b4525071865792297ee107d1ca1e962292b7b1a76c"
+}

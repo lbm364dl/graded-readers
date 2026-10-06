@@ -1,0 +1,31 @@
+{
+  "id": "zh-f8cd68e290a5-1-714c3ed24859dfb5",
+  "entry_id": "zh-f8cd68e290a5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f8cd68e290a5-1",
+      "headword": "七月",
+      "kind": "word",
+      "reading": "qīyuè",
+      "senses": [
+        {
+          "id": "zh-f8cd68e290a5-1-s1",
+          "definition": "the seventh month"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "秋七月又见彩虹，山岸裂开。",
+        "gloss": "seventh month",
+        "sense_id": "zh-f8cd68e290a5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "52e66874831d90d282363f9e5c307d55f5ac0bdd7ede6150df9dde4787ae5647"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-ceda840199bf23b1-404312dfb7cd3470",
+  "entry_id": "ja-ceda840199bf23b1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ceda840199bf23b1",
+      "headword": "追い込む",
+      "reading": "おいこむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ceda840199bf23b1-1",
+          "definition": "to drive or corner someone or something into a place or difficult situation"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "亭主が縁の下へ入った時、大きな鼬が飛び出し、黒が泥溝へ追い込んだ。",
+        "gloss": "drove into; cornered in",
+        "sense_id": "ja-ceda840199bf23b1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fe0c471315e6f67115dbaa38b80cf31bc4a23811d9a3004fff169b14040137bd"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-b0539acbd4f2-1-b6a4849111f6eb2f",
+  "entry_id": "zh-b0539acbd4f2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b0539acbd4f2-1",
+      "headword": "下安",
+      "kind": "word",
+      "reading": "xià'ān",
+      "senses": [
+        {
+          "id": "zh-b0539acbd4f2-1-s1",
+          "definition": "to bring peace to the people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们发誓同心协力，上报国家，下安百姓。",
+        "gloss": "bring peace to",
+        "sense_id": "zh-b0539acbd4f2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fe4f9f60c28bd8bc912f90e775a5da06f458ef3544102b0d3c1ab66e37ecb4f5"
+}

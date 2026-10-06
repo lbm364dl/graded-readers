@@ -1,0 +1,92 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_067-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1239,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了张鲁逃往巴中后，杨松主动提出为内应并劝张鲁出城决战的具体过程，但主线仍然连贯。",
+      "classification": "material",
+      "reason": "这段说明杨松如何诱使张鲁出城，并构成张鲁随后被拒之城外、最终投降的因果与动机链条；省略后虽能理解结果，但削弱了关键背叛过程。",
+      "required_fix": "补入杨松暗中向曹操通报、主动请为内应，并劝张鲁出城决一死战的过程。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“张鲁见关寨尽失”略显笼统，原文是张卫得知杨昂、杨任败退且各营尽失后弃关。",
+      "classification": "material",
+      "reason": "改写将弃守阳平关的行动者从张卫错写成张鲁，造成了明确的角色身份错误。",
+      "required_fix": "改为“张卫见关寨尽失，连夜弃守阳平关”，或明确写出张卫得知杨昂、杨任败退且各营尽失后弃关。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了张鲁逃往巴中后，杨松主动提出为内应并劝张鲁出城决战的具体过程，但主线仍然连贯。",
+      "classification": "material",
+      "reason": "这段说明杨松如何诱使张鲁出城，并构成张鲁随后被拒之城外、最终投降的因果与动机链条；省略后虽能理解结果，但削弱了关键背叛过程。",
+      "required_fix": "补入杨松暗中向曹操通报、主动请为内应，并劝张鲁出城决一死战的过程。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“张鲁见关寨尽失”略显笼统，原文是张卫得知杨昂、杨任败退且各营尽失后弃关。",
+      "classification": "material",
+      "reason": "改写将弃守阳平关的行动者从张卫错写成张鲁，造成了明确的角色身份错误。",
+      "required_fix": "改为“张卫见关寨尽失，连夜弃守阳平关”，或明确写出张卫得知杨昂、杨任败退且各营尽失后弃关。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9.5,
+    "naturalness": 9.2,
+    "readability": 9.3,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1329,
+      "review": {
+        "source_fidelity": 7.2,
+        "naturalness": 8.4,
+        "readability": 8.5,
+        "material_omissions": [
+          "省略了张鲁决定不焚烧仓廪府库的理由，以及曹操因其封存国库而怜惜、优礼相待的因果，削弱了张鲁的品格刻画和后续封赏动机。",
+          "凌统绕河逃到桥边后，孙权在舟中发现并命董袭驾舟接回的救援过程未交代，仅写其“绕河渡过”，使其如何生还的关键链条不清。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [
+          "开篇称张鲁、张卫共同据守阳平关；原文实际由张卫在阳平关布防，张鲁在汉宁统筹粮草，混淆了二人的驻地和职责。",
+          "巴中段打乱了时间顺序：原文先是张卫率兵出战并被许褚斩杀，之后杨松才劝张鲁出城；修订本却先写张鲁在杨松劝说下出城，再写“张卫出战时被许褚斩杀”。",
+          "皖城攻城时将原文甘宁所用的铁练写成“一戟”，改变了具体武器和战斗动作。",
+          "原文是张鲁通过来人得知庞德与曹操并马而行，修订本写成张鲁亲眼看见，改变了信息来源。",
+          "原文中凌统负伤后由董袭驾舟接回，修订本改写为其自行“绕河渡过”，造成救援方式失真。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 1239,
+      "review": {
+        "source_fidelity": 9.5,
+        "naturalness": 9.2,
+        "readability": 9.3,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

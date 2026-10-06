@@ -1,0 +1,36 @@
+{
+  "id": "zh-084700c83146-1-8bfd564a3c384de1",
+  "entry_id": "zh-084700c83146-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-084700c83146-1",
+      "headword": "未",
+      "kind": "word",
+      "reading": "wèi",
+      "senses": [
+        {
+          "id": "zh-084700c83146-1-s1",
+          "definition": "not; not yet"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘胜的儿子刘贞曾被封为涿鹿亭侯，后来因未按规定缴纳酬金而失侯，这一支便留在涿县。",
+        "gloss": "not",
+        "sense_id": "zh-084700c83146-1-s1"
+      },
+      {
+        "sentence": "刘备下马询问，卢植说，他围攻张角时本来快要取胜，却因张角使用法术而未能成功。",
+        "gloss": "not yet",
+        "sense_id": "zh-084700c83146-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cc63a5375bc381b56a7bfce5600b52d63b33a573248d5418428a708684496280"
+}

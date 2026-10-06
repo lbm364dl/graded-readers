@@ -1,0 +1,32 @@
+{
+  "id": "ja-98bccc56bc9975c7-b85d8ad45b17c3da",
+  "entry_id": "ja-98bccc56bc9975c7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-98bccc56bc9975c7",
+      "headword": "ふわふわする",
+      "reading": "ふわふわする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-98bccc56bc9975c7-1",
+          "definition": "to feel light, soft, or as if floating"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ただ、書生の手のひらに乗せられて、すっと上へ持ち上げられた時、何だかふわふわするような感じがしただけだった。",
+        "gloss": "feel fluffy or light",
+        "sense_id": "ja-98bccc56bc9975c7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0f720dd5fcab17666581d67862ea7f11ebf8bda7214c03b5cc46346c33542bff"
+}

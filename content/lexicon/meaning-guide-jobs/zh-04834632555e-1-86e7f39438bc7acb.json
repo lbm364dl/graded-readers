@@ -1,0 +1,31 @@
+{
+  "id": "zh-04834632555e-1-86e7f39438bc7acb",
+  "entry_id": "zh-04834632555e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-04834632555e-1",
+      "headword": "不敢",
+      "kind": "word",
+      "reading": "bùgǎn",
+      "senses": [
+        {
+          "id": "zh-04834632555e-1-s1",
+          "definition": "not dare; be unwilling or afraid to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他不避有权势的人，城内外的人从此都不敢再犯禁令，曹操的威名传开。",
+        "gloss": "not dare",
+        "sense_id": "zh-04834632555e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "472842210061a61df84bcf9bb733b01bcc877a5851145f7bfd99ad28a12fd1dc"
+}

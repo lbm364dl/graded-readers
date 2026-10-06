@@ -1,0 +1,32 @@
+{
+  "id": "ja-9d77a2670f52899d-d0686b6411f8870f",
+  "entry_id": "ja-9d77a2670f52899d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9d77a2670f52899d",
+      "headword": "急に",
+      "reading": "きゅうに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9d77a2670f52899d-1",
+          "definition": "Suddenly; abruptly."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "鼠をたくさん食べるから、そんなに太って毛つやもよいのだろう」と言うと、黒は急にため息をついた。",
+        "gloss": "suddenly",
+        "sense_id": "ja-9d77a2670f52899d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cd44e2aa6050b58a59d89edba2bbc813b623f9b43db1505f67672acee2a157c5"
+}

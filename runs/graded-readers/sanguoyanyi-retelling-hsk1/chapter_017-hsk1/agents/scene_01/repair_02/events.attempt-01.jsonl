@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff314-5fdd-7831-a660-3b4aaaff80f8"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"text\":\"刘备准备带军队去东边，打东吴。赵云来对他说：“曹操才是国家的敌人，不是孙权。现在曹丕抢了汉朝的皇位，天下人都很生气。我们应该先打魏国，早早拿下关中。这样，东边会有很多人拿着粮食、骑着马来帮我们。要是先打东吴，这一仗很难很快结束。”赵云还说：“国家的大事，比兄弟之间的恨更重要。请陛下先想天下，不要只想着自己的恨。”刘备听了，但是还是很生气。关羽是他的兄弟，也是他的家人。东吴杀了关羽，这个恨他一天也忘不了。刘备说：“如果我不替弟弟报仇，就算有很大的天下，也没有什么用。”于是，他不听赵云的话，让军队去打东吴，还要自己带军队。\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":38705,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":3267,"reasoning_output_tokens":3034}}

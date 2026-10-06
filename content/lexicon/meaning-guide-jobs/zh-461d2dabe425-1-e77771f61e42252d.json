@@ -1,0 +1,31 @@
+{
+  "id": "zh-461d2dabe425-1-e77771f61e42252d",
+  "entry_id": "zh-461d2dabe425-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-461d2dabe425-1",
+      "headword": "情况",
+      "kind": "word",
+      "reading": "qíngkuàng",
+      "senses": [
+        {
+          "id": "zh-461d2dabe425-1-s1",
+          "definition": "the circumstances or state of affairs"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "你带人去看看那里的情况，回来告诉我。",
+        "gloss": "situation",
+        "sense_id": "zh-461d2dabe425-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e145ecb70dacef04a2ba4bcd40630ae5d0a4a8f509e86fb9f26fb797878a738a"
+}

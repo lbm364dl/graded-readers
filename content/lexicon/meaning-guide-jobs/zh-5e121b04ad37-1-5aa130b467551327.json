@@ -1,0 +1,31 @@
+{
+  "id": "zh-5e121b04ad37-1-5aa130b467551327",
+  "entry_id": "zh-5e121b04ad37-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5e121b04ad37-1",
+      "headword": "草席",
+      "kind": "word",
+      "reading": "cǎoxí",
+      "senses": [
+        {
+          "id": "zh-5e121b04ad37-1-s1",
+          "definition": "a mat made of grass or similar plant material"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他住在涿县，平时卖鞋和草席。",
+        "gloss": "straw mats",
+        "sense_id": "zh-5e121b04ad37-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ac6c28539a69f23e91c4e6fde40fd76a8988bcb928586b1c48f87433c5df132d"
+}

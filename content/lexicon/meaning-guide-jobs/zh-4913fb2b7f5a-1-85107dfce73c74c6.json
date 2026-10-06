@@ -1,0 +1,31 @@
+{
+  "id": "zh-4913fb2b7f5a-1-85107dfce73c74c6",
+  "entry_id": "zh-4913fb2b7f5a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4913fb2b7f5a-1",
+      "headword": "官员",
+      "kind": "word",
+      "reading": "guānyuán",
+      "senses": [
+        {
+          "id": "zh-4913fb2b7f5a-1-s1",
+          "definition": "official; government official"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他们迫害敢说真话的官员，朝廷的坏事越来越多。",
+        "gloss": "officials",
+        "sense_id": "zh-4913fb2b7f5a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6c89a1099dfc571dd0f8ec1d24916b984b45d5e5889219de06d39c8f7b3853f2"
+}

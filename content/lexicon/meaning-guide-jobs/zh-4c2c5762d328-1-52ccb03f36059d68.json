@@ -1,0 +1,31 @@
+{
+  "id": "zh-4c2c5762d328-1-52ccb03f36059d68",
+  "entry_id": "zh-4c2c5762d328-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4c2c5762d328-1",
+      "headword": "故事",
+      "kind": "word",
+      "reading": "gùshì",
+      "senses": [
+        {
+          "id": "zh-4c2c5762d328-1-s1",
+          "definition": "story; account"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "董卓能不能活下来，故事留下了悬念。",
+        "gloss": "story",
+        "sense_id": "zh-4c2c5762d328-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4ecc8d3a312930e691efc92c76103abc8119368b88eab0f574fdc5d9eb85ca43"
+}

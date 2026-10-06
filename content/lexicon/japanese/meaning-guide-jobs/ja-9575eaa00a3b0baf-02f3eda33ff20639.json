@@ -1,0 +1,32 @@
+{
+  "id": "ja-9575eaa00a3b0baf-02f3eda33ff20639",
+  "entry_id": "ja-9575eaa00a3b0baf",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9575eaa00a3b0baf",
+      "headword": "追い回す",
+      "reading": "おいまわす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9575eaa00a3b0baf-1",
+          "definition": "to chase around repeatedly or from place to place"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が少しでも手を出すと、家内総がかりで追い回される。",
+        "gloss": "be chased around",
+        "sense_id": "ja-9575eaa00a3b0baf-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bec4897f59acb2c34e3d2a9f3d0468b0c88a55d584c9b117b6093e1d6f009347"
+}

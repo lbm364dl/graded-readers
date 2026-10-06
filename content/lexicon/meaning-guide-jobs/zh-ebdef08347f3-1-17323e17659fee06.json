@@ -1,0 +1,31 @@
+{
+  "id": "zh-ebdef08347f3-1-17323e17659fee06",
+  "entry_id": "zh-ebdef08347f3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ebdef08347f3-1",
+      "headword": "那里",
+      "kind": "word",
+      "reading": "nàlǐ",
+      "senses": [
+        {
+          "id": "zh-ebdef08347f3-1-s1",
+          "definition": "there; that place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备决定去救那里。",
+        "gloss": "there",
+        "sense_id": "zh-ebdef08347f3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "aef4ef29721c0241fe05e42de702f04367a5725ec179c32127b33894ae928abd"
+}

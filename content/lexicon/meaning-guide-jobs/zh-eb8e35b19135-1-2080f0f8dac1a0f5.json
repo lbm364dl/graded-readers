@@ -1,0 +1,31 @@
+{
+  "id": "zh-eb8e35b19135-1-2080f0f8dac1a0f5",
+  "entry_id": "zh-eb8e35b19135-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-eb8e35b19135-1",
+      "headword": "提刀",
+      "kind": "construction",
+      "reading": "tí dāo",
+      "senses": [
+        {
+          "id": "zh-eb8e35b19135-1-s1",
+          "definition": "take or carry a knife in hand"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”说完，他提刀走向董卓的帐篷。",
+        "gloss": "take up a knife",
+        "sense_id": "zh-eb8e35b19135-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3e36630aa8974d8e220b14458cbf805e90526f2ce436c2600863b46713b1a27b"
+}

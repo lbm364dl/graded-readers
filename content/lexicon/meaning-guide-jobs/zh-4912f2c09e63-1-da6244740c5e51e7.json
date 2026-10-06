@@ -1,0 +1,36 @@
+{
+  "id": "zh-4912f2c09e63-1-da6244740c5e51e7",
+  "entry_id": "zh-4912f2c09e63-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4912f2c09e63-1",
+      "headword": "无度",
+      "kind": "word",
+      "reading": "wúdù",
+      "senses": [
+        {
+          "id": "zh-4912f2c09e63-1-s1",
+          "definition": "without restraint"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹操的叔父曾因他游荡无度，向曹嵩告状。",
+        "gloss": "without restraint",
+        "sense_id": "zh-4912f2c09e63-1-s1"
+      },
+      {
+        "sentence": "叔父见他游荡无度，便告诉曹嵩。",
+        "gloss": "without restraint",
+        "sense_id": "zh-4912f2c09e63-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "661dd405571c871f316a21d860ea6683de8834dc57a5c9a80a6ed79cf037f4fc"
+}

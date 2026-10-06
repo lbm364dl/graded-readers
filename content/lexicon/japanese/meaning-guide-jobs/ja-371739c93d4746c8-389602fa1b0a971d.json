@@ -1,0 +1,32 @@
+{
+  "id": "ja-371739c93d4746c8-389602fa1b0a971d",
+  "entry_id": "ja-371739c93d4746c8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-371739c93d4746c8",
+      "headword": "食事",
+      "reading": "しょくじ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-371739c93d4746c8-1",
+          "definition": "a meal; eating"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そのくせ、食事はたくさん食べる。",
+        "gloss": "meal; eating",
+        "sense_id": "ja-371739c93d4746c8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "124a5cf0569d18f8fa381553ba02bfe0b34904e6c8c75c38a43a2f6da24d71f4"
+}

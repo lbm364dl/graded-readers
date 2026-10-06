@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_112-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 569,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "未明确交代王真被蜀军乱枪刺死。",
+      "classification": "material",
+      "reason": "这遗漏了王真的明确死亡事件，改变了该战斗的结果信息。",
+      "required_fix": "补充说明王真被蜀军乱枪刺死。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "未明确交代王真被蜀军乱枪刺死。",
+      "classification": "material",
+      "reason": "这遗漏了王真的明确死亡事件，改变了该战斗的结果信息。",
+      "required_fix": "补充说明王真被蜀军乱枪刺死。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 569,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-9279cfcc8e7b73e7-5d4caefda3deab66",
+  "entry_id": "ja-9279cfcc8e7b73e7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-9279cfcc8e7b73e7",
+      "headword": "慌ただしい",
+      "reading": "あわただしい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-9279cfcc8e7b73e7-1",
+          "definition": "hurried; busy; bustling"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は大きな包みを持って、あわただしく帰って来た。",
+        "gloss": "hurriedly; busily",
+        "sense_id": "ja-9279cfcc8e7b73e7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5fd45e84c81d8a91c8c720a1e37b4057dd5c3267b7039883fdc4660bcb2102a9"
+}

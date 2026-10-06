@@ -1,0 +1,36 @@
+{
+  "id": "zh-9d221cb47716-1-acd0446d12843264",
+  "entry_id": "zh-9d221cb47716-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9d221cb47716-1",
+      "headword": "河东",
+      "kind": "name",
+      "reading": "Hédōng",
+      "senses": [
+        {
+          "id": "zh-9d221cb47716-1-s1",
+          "definition": "Hedong"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "那人姓关，名羽，字寿长，后来改字云长，是河东解良人。",
+        "gloss": "Hedong",
+        "sense_id": "zh-9d221cb47716-1-s1"
+      },
+      {
+        "sentence": "那人说：“我姓关，名羽，字寿长，后改字云长，是河东解良人。",
+        "gloss": "Hedong, a commandery in ancient China",
+        "sense_id": "zh-9d221cb47716-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a5c05fc0a0f9ab5ffa8a3e40358d447a860ec1a67889a77bea0e1123276ae947"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-a70aa4799927-1-d03ebd9fc09ef39b",
+  "entry_id": "zh-a70aa4799927-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a70aa4799927-1",
+      "headword": "五万",
+      "kind": "word",
+      "reading": "wǔwàn",
+      "senses": [
+        {
+          "id": "zh-a70aa4799927-1-s1",
+          "definition": "fifty thousand"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "不久，程远志带五万人来打涿郡。",
+        "gloss": "fifty thousand",
+        "sense_id": "zh-a70aa4799927-1-s1"
+      },
+      {
+        "sentence": "不久，消息传来：程远志率五万黄巾军来犯涿郡。",
+        "gloss": "fifty thousand",
+        "sense_id": "zh-a70aa4799927-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e2123c3cae14ea261174072d18b60ac0faa76f230bfda39a0028b513eaccaf8b"
+}

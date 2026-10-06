@@ -1,0 +1,31 @@
+{
+  "id": "zh-392113be1059-1-9a6acc4974c259cf",
+  "entry_id": "zh-392113be1059-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-392113be1059-1",
+      "headword": "溃逃",
+      "kind": "word",
+      "reading": "kuìtáo",
+      "senses": [
+        {
+          "id": "zh-392113be1059-1-s1",
+          "definition": "to flee in disorder"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "黄巾军声势浩大，官军见到他们便溃逃。",
+        "gloss": "to flee in disorder",
+        "sense_id": "zh-392113be1059-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "79ca083bd70d365dc14cf3bf39a1261128fca2a0525e41a3c21c4ee695464888"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-a3b445efc48f-1-0368509b0c6492a9",
+  "entry_id": "zh-a3b445efc48f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a3b445efc48f-1",
+      "headword": "已",
+      "kind": "word",
+      "reading": "yǐ",
+      "senses": [
+        {
+          "id": "zh-a3b445efc48f-1-s1",
+          "definition": "already; by now or by the time in question"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”军队带走卢植后，关羽说：“卢植已被抓，我们失去了依靠，只能回涿郡。",
+        "gloss": "already",
+        "sense_id": "zh-a3b445efc48f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b4ac404cac2c70959161d937b78a7f506b4fc4f86b38dd5479cf36c223e8722a"
+}

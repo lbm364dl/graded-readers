@@ -1,0 +1,32 @@
+{
+  "id": "ja-f01f77b00df377bd-bd90d2cb3ebec22d",
+  "entry_id": "ja-f01f77b00df377bd",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f01f77b00df377bd",
+      "headword": "軍人",
+      "reading": "ぐんじん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f01f77b00df377bd-1",
+          "definition": "a member of the military; a soldier or military officer"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "　白君は軍人の家に、三毛君は弁護士の家に、吾輩は先生の家に住んでいる。",
+        "gloss": "soldier; military officer",
+        "sense_id": "ja-f01f77b00df377bd-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7c68fcea59e40b5484300144fef11d6cd41d513fb1302b723abab9732ed1f5eb"
+}

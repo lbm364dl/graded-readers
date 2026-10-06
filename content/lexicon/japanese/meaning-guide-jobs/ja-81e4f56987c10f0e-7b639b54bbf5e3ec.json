@@ -1,0 +1,32 @@
+{
+  "id": "ja-81e4f56987c10f0e-7b639b54bbf5e3ec",
+  "entry_id": "ja-81e4f56987c10f0e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-81e4f56987c10f0e",
+      "headword": "顔を合わせる",
+      "reading": "かおをあわせる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-81e4f56987c10f0e-1",
+          "definition": "to meet face-to-face"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩の主人は教師だが、吾輩と顔を合わせることはめったにない。",
+        "gloss": "meet face-to-face",
+        "sense_id": "ja-81e4f56987c10f0e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a76e55db9c46e00a14ecbc7727a646dd482bce880cb1c0fbc6a2d48227c57d1d"
+}

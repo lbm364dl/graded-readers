@@ -1,0 +1,32 @@
+{
+  "id": "ja-778bc389c5d22699-1f4de17fde81d126",
+  "entry_id": "ja-778bc389c5d22699",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-778bc389c5d22699",
+      "headword": "具合",
+      "reading": "ぐあい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-778bc389c5d22699-1",
+          "definition": "condition; state; state of health"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "茶園で会った最後の日、吾輩が具合を尋ねると、黒は「鼬の最後っ屁と、肴屋の天秤棒には、もうこりごりだ」と答えた。",
+        "gloss": "condition; state of health",
+        "sense_id": "ja-778bc389c5d22699-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7078270378f41bfecdd00017d677e2fe8c0bca608cd5b5e9508fdc6e644e9bc8"
+}

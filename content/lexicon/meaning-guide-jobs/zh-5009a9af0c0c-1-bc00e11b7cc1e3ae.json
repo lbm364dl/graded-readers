@@ -1,0 +1,31 @@
+{
+  "id": "zh-5009a9af0c0c-1-bc00e11b7cc1e3ae",
+  "entry_id": "zh-5009a9af0c0c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5009a9af0c0c-1",
+      "headword": "呼风唤雨",
+      "kind": "expression",
+      "reading": "hūfēng huànyǔ",
+      "senses": [
+        {
+          "id": "zh-5009a9af0c0c-1-s1",
+          "definition": "bring about wind and rain through supernatural or magical power"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角日夜学习，学会呼风唤雨，自称太平道人。",
+        "gloss": "to summon wind and rain",
+        "sense_id": "zh-5009a9af0c0c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "340018cd86fe0d57cd45be93fe20fab14be09aee8c0388949aa4f5b58b5b637f"
+}

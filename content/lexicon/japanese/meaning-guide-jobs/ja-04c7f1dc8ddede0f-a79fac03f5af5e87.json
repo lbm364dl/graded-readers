@@ -1,0 +1,32 @@
+{
+  "id": "ja-04c7f1dc8ddede0f-a79fac03f5af5e87",
+  "entry_id": "ja-04c7f1dc8ddede0f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-04c7f1dc8ddede0f",
+      "headword": "三毛",
+      "reading": "みけ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-04c7f1dc8ddede0f-1",
+          "definition": "a calico cat"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "以来、その穴は、隣家の三毛を訪ねる時の通路にもなった。",
+        "gloss": "calico cat",
+        "sense_id": "ja-04c7f1dc8ddede0f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ccc334f967ae5f486f381c22c5a426108b24d65d8712e2885d877570121039be"
+}

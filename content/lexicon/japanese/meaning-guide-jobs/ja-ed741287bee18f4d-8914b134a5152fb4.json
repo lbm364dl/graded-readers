@@ -1,0 +1,32 @@
+{
+  "id": "ja-ed741287bee18f4d-8914b134a5152fb4",
+  "entry_id": "ja-ed741287bee18f4d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ed741287bee18f4d",
+      "headword": "どうにか",
+      "reading": "どうにか",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ed741287bee18f4d-1",
+          "definition": "somehow; by some means"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は二人の間に少し空いた場所を見つけ、どうにか入り込む。",
+        "gloss": "somehow; by some means",
+        "sense_id": "ja-ed741287bee18f4d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4df7ee6ab3eb3a64bc2882742f7c4b4613926457764314ff961a8e0150e09173"
+}

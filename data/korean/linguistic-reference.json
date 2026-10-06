@@ -1,0 +1,14 @@
+{
+  "reviewed": true,
+  "notes": [
+    {
+      "id": "written-forms-versus-aspiration",
+      "guidance_en": "Keep written morphology separate from pronunciation. Before consonant-initial -게, the written stem-final ㅎ is retained in 이렇게 and 그렇게. Pronouncing ㅎ followed by ㄱ as [ㅋ] does not change their spelling to 이러케 or 그러케 and is not a written ㅎ-drop conjugation. In contrast, 이래 is an attested irregular written form of 이렇다. Explain the relevant formation, not a catalog of other forms.",
+      "sources": [
+        {"url": "https://www.korean.go.kr/kornorms/m/m_regltn.do", "location": "Hangul spelling, Article 40 attachment 1", "evidence_en": "The official spelling examples retain stem-final ㅎ: 이렇게, 이렇고, 이렇지, 이렇거나."},
+        {"url": "https://www.korean.go.kr/kornorms/m/m_regltn.do?regltn_code=0002", "location": "Standard pronunciation, Article 12", "evidence_en": "ㅎ followed by ㄱ, ㄷ or ㅈ is pronounced with an aspirated consonant; this is a pronunciation rule."},
+        {"url": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=71157", "location": "이렇다, application", "evidence_en": "The dictionary lists 이래 as an inflected written form."}
+      ]
+    }
+  ]
+}

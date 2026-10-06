@@ -1,0 +1,36 @@
+{
+  "id": "zh-053737b6ffba-1-ac11547f5eeac251",
+  "entry_id": "zh-053737b6ffba-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-053737b6ffba-1",
+      "headword": "幼年",
+      "kind": "word",
+      "reading": "yòunián",
+      "senses": [
+        {
+          "id": "zh-053737b6ffba-1-s1",
+          "definition": "early childhood; a person's early years"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备幼年丧父，侍母至孝，家贫，靠卖草鞋、织席生活。",
+        "gloss": "childhood",
+        "sense_id": "zh-053737b6ffba-1-s1"
+      },
+      {
+        "sentence": "刘备幼年和乡中孩子在树下玩，说将来要做天子，要乘这车盖。",
+        "gloss": "childhood",
+        "sense_id": "zh-053737b6ffba-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ba3db57abf7da3b0df3d6916533d60ec01db4583eae1a7b103714b5eab488e41"
+}

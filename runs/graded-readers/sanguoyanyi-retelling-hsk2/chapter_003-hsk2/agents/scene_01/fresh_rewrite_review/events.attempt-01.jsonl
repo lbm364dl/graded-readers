@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff508-0cfb-76a0-ad42-d0d6d8294a1c"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.96,\"naturalness\":0.98,\"readability\":0.98,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“董卓带貂蝉坐车回家”把董卓返回郿坞说成回家，地点表述略不准确。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":34010,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":609,"reasoning_output_tokens":516}}

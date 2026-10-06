@@ -1,0 +1,31 @@
+{
+  "id": "zh-7e14752b870f-1-5770ba33e6ed82c1",
+  "entry_id": "zh-7e14752b870f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7e14752b870f-1",
+      "headword": "挥",
+      "kind": "word",
+      "reading": "huī",
+      "senses": [
+        {
+          "id": "zh-7e14752b870f-1-s1",
+          "definition": "swing; wield"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "关羽挥刀杀了程远志。",
+        "gloss": "swing",
+        "sense_id": "zh-7e14752b870f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "85abdecf4d03820e9a2b8fabddd2e4f5b03f17534ee8ff69437638f249ff327f"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-28372e431e1e-1-6866c9d9490420ea",
+  "entry_id": "zh-28372e431e1e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-28372e431e1e-1",
+      "headword": "三路",
+      "kind": "word",
+      "reading": "sānlù",
+      "senses": [
+        {
+          "id": "zh-28372e431e1e-1-s1",
+          "definition": "three routes or forces acting in separate directions"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三路夹攻，黄巾军大败，青州也安全了。",
+        "gloss": "three attacking forces",
+        "sense_id": "zh-28372e431e1e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9be03a59027ca3507d0434057a746d439dd538c7230258d3d1a52263fe9e3d99"
+}

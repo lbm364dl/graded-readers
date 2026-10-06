@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_080-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 643,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹丕因许昌宫室多妖而迁往洛阳的原因。",
+      "classification": "material",
+      "reason": "原文明确交代曹丕因疑许昌宫室多妖而迁往洛阳，接受场景保留迁都事件却删去了其原因，造成因果和动机信息缺失。",
+      "required_fix": "补充曹丕因许昌宫室多妖、疑有不祥，故迁往洛阳并大建宫室。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹丕因许昌宫室多妖而迁往洛阳的原因。",
+      "classification": "material",
+      "reason": "原文明确交代曹丕因疑许昌宫室多妖而迁往洛阳，接受场景保留迁都事件却删去了其原因，造成因果和动机信息缺失。",
+      "required_fix": "补充曹丕因许昌宫室多妖、疑有不祥，故迁往洛阳并大建宫室。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 643,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

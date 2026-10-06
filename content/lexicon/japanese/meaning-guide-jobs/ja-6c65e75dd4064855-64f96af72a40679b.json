@@ -1,0 +1,32 @@
+{
+  "id": "ja-6c65e75dd4064855-64f96af72a40679b",
+  "entry_id": "ja-6c65e75dd4064855",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6c65e75dd4064855",
+      "headword": "いびきをかく",
+      "reading": "いびきをかく",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-6c65e75dd4064855-1",
+          "definition": "to snore"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が近づいても気にせず、大きないびきをかいて寝ている。",
+        "gloss": "snoring; making loud snores",
+        "sense_id": "ja-6c65e75dd4064855-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "82d28e1d9d92f115381acb42f969c70abc57f4b5da0ad1be9ce9a3d4776588d1"
+}

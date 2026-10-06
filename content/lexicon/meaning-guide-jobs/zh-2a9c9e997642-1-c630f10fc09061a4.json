@@ -1,0 +1,31 @@
+{
+  "id": "zh-2a9c9e997642-1-c630f10fc09061a4",
+  "entry_id": "zh-2a9c9e997642-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2a9c9e997642-1",
+      "headword": "身份",
+      "kind": "word",
+      "reading": "shēnfèn",
+      "senses": [
+        {
+          "id": "zh-2a9c9e997642-1-s1",
+          "definition": "social status or position"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "犯法的人不论身份高低，都要受罚。",
+        "gloss": "status",
+        "sense_id": "zh-2a9c9e997642-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "86da01b3065debc35d68a684cd30fc3e5bb440de8e916ccdc88582b76d0050d2"
+}

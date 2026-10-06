@@ -1,0 +1,31 @@
+{
+  "id": "zh-36261fbc50b3-1-56d314204aa52e32",
+  "entry_id": "zh-36261fbc50b3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-36261fbc50b3-1",
+      "headword": "世人",
+      "kind": "word",
+      "reading": "shìrén",
+      "senses": [
+        {
+          "id": "zh-36261fbc50b3-1-s1",
+          "definition": "people; the people of the world"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "老人把三卷天书交给他，要他替上天教化百姓、救助世人；若心生别念，便会受罚。",
+        "gloss": "people",
+        "sense_id": "zh-36261fbc50b3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b18f647946f887d068706a5dfe8e8298ac11aa6ab1c85ebffc2e09d77a4ec7ed"
+}

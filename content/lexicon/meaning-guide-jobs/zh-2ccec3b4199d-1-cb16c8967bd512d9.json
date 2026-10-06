@@ -1,0 +1,31 @@
+{
+  "id": "zh-2ccec3b4199d-1-cb16c8967bd512d9",
+  "entry_id": "zh-2ccec3b4199d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2ccec3b4199d-1",
+      "headword": "非常",
+      "kind": "word",
+      "reading": "fēicháng",
+      "senses": [
+        {
+          "id": "zh-2ccec3b4199d-1-s1",
+          "definition": "very; extremely"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备离开后，张飞非常生气：“我们冒着危险救他，他竟然这样无礼！",
+        "gloss": "very; extremely",
+        "sense_id": "zh-2ccec3b4199d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4aa6dab37e122bf59e26390ae59cfa6ab8cbd0b77888ac0665cfcac2b166cdb8"
+}

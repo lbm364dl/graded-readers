@@ -1,0 +1,76 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_073-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 318,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将“被魏延射了一箭”明确表述为“射伤”，原文未明言伤势。",
+      "classification": "material",
+      "reason": "“射伤”增加了原文未明确说明的受伤事实，属于真实的无依据事实添加。",
+      "required_fix": "将“射伤”改为“被魏延射了一箭”或“遭魏延射了一箭”，不明确断言曹操受伤。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "将“被魏延射了一箭”明确表述为“射伤”，原文未明言伤势。",
+      "classification": "material",
+      "reason": "“射伤”增加了原文未明确说明的受伤事实，属于真实的无依据事实添加。",
+      "required_fix": "将“射伤”改为“被魏延射了一箭”或“遭魏延射了一箭”，不明确断言曹操受伤。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": []
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 357,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“傅士仁、糜芳分别镇守南郡和公安”按通常语序将二人职位对应写反；原文是糜芳守南郡、傅士仁守公安。"
+        ],
+        "language_problems": [],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 318,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": []
+      },
+      "passed": true
+    }
+  ]
+}

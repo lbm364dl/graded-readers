@@ -1,0 +1,90 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_026-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 909,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去关羽在汝南与龚都交锋时的具体对话及让路情节",
+      "classification": "material",
+      "reason": "对话和让路明确表现龚都与关羽确认刘备消息后的默契，也直接解释刘辟、龚都为何佯败撤走，涉及动机、关系和事件因果。",
+      "required_fix": "补回龚都提及故主刘备、劝关羽速进并主动让出汝南，关羽会意后配合掩杀的具体情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“孙干安排刘辟、龚都佯败”略显因果过强，原文是二人预先安排孙干来报信，并计划佯败",
+      "classification": "material",
+      "reason": "将安排佯败的行为主体和因果关系错误地归给孙干，改变了原文的行动者与信息传递链条。",
+      "required_fix": "改为“刘辟、龚都预先安排孙干来报信，并计划在阵上佯败”，不要表述为孙干安排二人佯败。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去关羽在汝南与龚都交锋时的具体对话及让路情节",
+      "classification": "material",
+      "reason": "对话和让路明确表现龚都与关羽确认刘备消息后的默契，也直接解释刘辟、龚都为何佯败撤走，涉及动机、关系和事件因果。",
+      "required_fix": "补回龚都提及故主刘备、劝关羽速进并主动让出汝南，关羽会意后配合掩杀的具体情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“孙干安排刘辟、龚都佯败”略显因果过强，原文是二人预先安排孙干来报信，并计划佯败",
+      "classification": "material",
+      "reason": "将安排佯败的行为主体和因果关系错误地归给孙干，改变了原文的行动者与信息传递链条。",
+      "required_fix": "改为“刘辟、龚都预先安排孙干来报信，并计划在阵上佯败”，不要表述为孙干安排二人佯败。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1057,
+      "review": {
+        "source_fidelity": 7.8,
+        "naturalness": 8.0,
+        "readability": 8.5,
+        "material_omissions": [],
+        "unsupported_additions": [
+          "“追兵将至”超出原文；原文只说蔡阳要追赶关羽，并未说明追兵已经将至。"
+        ],
+        "distortions": [
+          "“关羽向二夫人隐瞒仍未见到刘备”误述了隐瞒内容；原文是隐瞒刘备在河北的消息。",
+          "“关羽带二夫人到相府辞行”改变了原文顺序；原文是关羽先独自到相府辞曹，之后才请二夫人上车离开。"
+        ],
+        "language_problems": [
+          "“关羽向二夫人隐瞒仍未见到刘备”搭配生硬且容易产生歧义。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 909,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-8278159494939602-80c4c3b1f8638e76",
+  "entry_id": "ja-8278159494939602",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8278159494939602",
+      "headword": "か",
+      "reading": "か",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-8278159494939602-1",
+          "definition": "Marks an embedded question or expresses whether."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "どこで生まれたか分かりません。",
+        "gloss": "whether; embedded question",
+        "sense_id": "ja-8278159494939602-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fa46ad9f44f57d7f26e4cc33915200f63e039034ad4afa00530d4a9e90a9b4a3"
+}

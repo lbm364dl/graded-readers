@@ -1,0 +1,31 @@
+{
+  "id": "zh-c930571f1513-1-dfba5df8c90dbfb3",
+  "entry_id": "zh-c930571f1513-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c930571f1513-1",
+      "headword": "想要",
+      "kind": "construction",
+      "reading": "xiǎngyào",
+      "senses": [
+        {
+          "id": "zh-c930571f1513-1-s1",
+          "definition": "to want or wish to do or have something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝信任张让，叫他“阿父”，朝政逐渐败坏，天下人心想要作乱，盗贼纷纷起来。",
+        "gloss": "want to",
+        "sense_id": "zh-c930571f1513-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "63eb2b0950b47a41b5146ef2e0dcb764cba72495b4fa3dca300cfd9b7ef78835"
+}

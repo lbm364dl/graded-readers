@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "scenes": 1,
+  "chapter_cjk": 366,
+  "scene_verdicts": {
+    "scene_01": "pass"
+  },
+  "scene_attempts": {
+    "scene_01": 3
+  },
+  "unresolved_scenes": [],
+  "continuity_promotion": {
+    "promoted_at": "2026-08-26T20:42:45.204673+00:00",
+    "candidate_sha256": "3b04b86710e0144854be72ba54131890eb23f9aa89e1d09c56c4a0321e1862ce",
+    "original_backup": "/home/catalin/graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_026-hsk2/chapter.pre-continuity.txt",
+    "original_sha256": "80a75d298612022e4f76aac796e5ff808b1e7f192efbbefa5c98a7573fd0e197",
+    "annotations_invalidated": [],
+    "annotation_rerun_required": true
+  }
+}

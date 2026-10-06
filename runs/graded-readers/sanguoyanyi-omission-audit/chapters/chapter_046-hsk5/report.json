@@ -1,0 +1,92 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_046-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 948,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了鲁肃请求孔明不要揭露其早已知情、周瑜与孔明饮酒等次要细节。",
+      "classification": "material",
+      "reason": "其中孔明要求鲁肃隐瞒其早已知情，并说明周瑜可能因嫉妒加害，交代了人物关系、动机和孔明对周瑜的戒备；饮酒本身虽可压缩，但该复合 omission 含有重要信息。",
+      "required_fix": "补回孔明要求鲁肃勿向周瑜透露其早已知情，并说明担心周瑜嫉妒加害；周瑜与孔明饮酒可继续压缩。"
+    },
+    {
+      "omission_note": "省略了孔明解释通晓天文地利、预知大雾的具体原因。",
+      "classification": "material",
+      "reason": "这不仅是能力展示，也解释了孔明为何敢承诺三日造箭、为何能准确利用大雾取箭，属于关键因果和重要人物刻画。",
+      "required_fix": "补充孔明说明将领须通晓天文地利等，并指出自己三日前已算定当日有大雾，因此敢立三日期限。"
+    },
+    {
+      "omission_note": "省略了周瑜与孔明互写“火”字后的部分谨慎交代。",
+      "classification": "material",
+      "reason": "省略内容包含保守火攻机密，以及曹操虽两次中计仍不会防备、因此可以实行火攻的战略判断，删去后削弱了共同决定火攻的动机和依据。",
+      "required_fix": "补回周瑜要求保密、孔明承诺不泄密，并说明曹操不会因此预作防备，火攻可以照计实行。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“火攻与黄盖诈降的计划由此正式展开”超出了原文结尾；原文只写阚泽答应献诈降书，尚未展开后续行动。",
+      "classification": "material",
+      "reason": "这是对原文结尾事件进展的真实越界概括，暗示火攻和诈降计划已经正式展开，而原文仅写阚泽答应献诈降书，后续行动尚未发生。",
+      "required_fix": "改为“阚泽答应代写诈降书，后续行动尚待下回分解”，或删除“火攻与黄盖诈降的计划由此正式展开”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了鲁肃请求孔明不要揭露其早已知情、周瑜与孔明饮酒等次要细节。",
+      "classification": "material",
+      "reason": "其中孔明要求鲁肃隐瞒其早已知情，并说明周瑜可能因嫉妒加害，交代了人物关系、动机和孔明对周瑜的戒备；饮酒本身虽可压缩，但该复合 omission 含有重要信息。",
+      "required_fix": "补回孔明要求鲁肃勿向周瑜透露其早已知情，并说明担心周瑜嫉妒加害；周瑜与孔明饮酒可继续压缩。"
+    },
+    {
+      "omission_note": "省略了孔明解释通晓天文地利、预知大雾的具体原因。",
+      "classification": "material",
+      "reason": "这不仅是能力展示，也解释了孔明为何敢承诺三日造箭、为何能准确利用大雾取箭，属于关键因果和重要人物刻画。",
+      "required_fix": "补充孔明说明将领须通晓天文地利等，并指出自己三日前已算定当日有大雾，因此敢立三日期限。"
+    },
+    {
+      "omission_note": "省略了周瑜与孔明互写“火”字后的部分谨慎交代。",
+      "classification": "material",
+      "reason": "省略内容包含保守火攻机密，以及曹操虽两次中计仍不会防备、因此可以实行火攻的战略判断，删去后削弱了共同决定火攻的动机和依据。",
+      "required_fix": "补回周瑜要求保密、孔明承诺不泄密，并说明曹操不会因此预作防备，火攻可以照计实行。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“火攻与黄盖诈降的计划由此正式展开”超出了原文结尾；原文只写阚泽答应献诈降书，尚未展开后续行动。",
+      "classification": "material",
+      "reason": "这是对原文结尾事件进展的真实越界概括，暗示火攻和诈降计划已经正式展开，而原文仅写阚泽答应献诈降书，后续行动尚未发生。",
+      "required_fix": "改为“阚泽答应代写诈降书，后续行动尚待下回分解”，或删除“火攻与黄盖诈降的计划由此正式展开”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 948,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

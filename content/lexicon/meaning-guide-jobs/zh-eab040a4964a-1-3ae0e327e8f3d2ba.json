@@ -1,0 +1,31 @@
+{
+  "id": "zh-eab040a4964a-1-3ae0e327e8f3d2ba",
+  "entry_id": "zh-eab040a4964a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-eab040a4964a-1",
+      "headword": "两个",
+      "kind": "word",
+      "reading": "liǎng ge",
+      "senses": [
+        {
+          "id": "zh-eab040a4964a-1-s1",
+          "definition": "two; a pair of"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这时，两个商人来到庄上。",
+        "gloss": "two",
+        "sense_id": "zh-eab040a4964a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e634db1b0ba9a56bcba667f9c77f8f06a2656009b88e659a7dcf81e6ed36147c"
+}

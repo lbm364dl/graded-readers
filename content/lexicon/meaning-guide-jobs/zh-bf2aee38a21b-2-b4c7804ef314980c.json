@@ -1,0 +1,31 @@
+{
+  "id": "zh-bf2aee38a21b-2-b4c7804ef314980c",
+  "entry_id": "zh-bf2aee38a21b-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bf2aee38a21b-2",
+      "headword": "危险",
+      "kind": "word",
+      "reading": "wēixiǎn",
+      "senses": [
+        {
+          "id": "zh-bf2aee38a21b-2-s1",
+          "definition": "danger; a possibility of harm or loss"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备离开后，张飞非常生气：“我们冒着危险救他，他竟然这样无礼！",
+        "gloss": "danger",
+        "sense_id": "zh-bf2aee38a21b-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4c7061480b7c112c719b0c45555ce8c97afac0dccb2ffc902eaa4834555bf818"
+}

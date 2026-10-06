@@ -1,0 +1,37 @@
+{
+  "id": "ja-e8649c4772536c34-26c38d0f62003f88",
+  "entry_id": "ja-e8649c4772536c34",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e8649c4772536c34",
+      "headword": "茶園",
+      "reading": "ちゃえん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e8649c4772536c34-1",
+          "definition": "tea garden"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩の家の裏には、小さな茶園がある。",
+        "gloss": "tea garden",
+        "sense_id": "ja-e8649c4772536c34-1"
+      },
+      {
+        "sentence": "ある暖かい日の午後、昼ごはんの後で寝てから、吾輩は茶園を歩いた。",
+        "gloss": "tea garden",
+        "sense_id": "ja-e8649c4772536c34-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "02df1aa786892e9eb42688d0bff3255e6cea080eebbe7f7dfbb9ba8593487cc2"
+}

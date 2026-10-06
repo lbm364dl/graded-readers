@@ -1,0 +1,31 @@
+{
+  "id": "zh-89afd86741c3-1-233562e1c1c284dd",
+  "entry_id": "zh-89afd86741c3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-89afd86741c3-1",
+      "headword": "奏章",
+      "kind": "word",
+      "reading": "zòuzhāng",
+      "senses": [
+        {
+          "id": "zh-89afd86741c3-1-s1",
+          "definition": "a written report or memorial submitted to the emperor"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "memorial to the throne",
+        "sense_id": "zh-89afd86741c3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "11546a56c5630f5fd5d8c99d2eaed99266a284e8df8adc8d593fbac9fdf90fea"
+}

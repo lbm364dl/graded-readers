@@ -1,0 +1,41 @@
+{
+  "id": "zh-66add665574e-1-ad2e0dde5fa4838d",
+  "entry_id": "zh-66add665574e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-66add665574e-1",
+      "headword": "饮酒",
+      "kind": "word",
+      "reading": "yǐnjiǔ",
+      "senses": [
+        {
+          "id": "zh-66add665574e-1-s1",
+          "definition": "to drink alcohol"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备听后十分高兴，两人便到村店中饮酒。",
+        "gloss": "to drink alcohol",
+        "sense_id": "zh-66add665574e-1-s1"
+      },
+      {
+        "sentence": "正饮酒时，一个大汉推着一辆车来到店门前休息，进门便叫酒保斟酒，说要赶进城投军。",
+        "gloss": "drink alcohol",
+        "sense_id": "zh-66add665574e-1-s1"
+      },
+      {
+        "sentence": "”刘备十分高兴，便和他进村店饮酒。",
+        "gloss": "to drink alcohol",
+        "sense_id": "zh-66add665574e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9047daf72b6fbbb76f43d48c684f3c72616c5da8d78a684abce9b7deee8937b6"
+}

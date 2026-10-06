@@ -1,0 +1,31 @@
+{
+  "id": "zh-246dbc77a1bd-1-fef4f550cfe5d412",
+  "entry_id": "zh-246dbc77a1bd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-246dbc77a1bd-1",
+      "headword": "旗子",
+      "kind": "word",
+      "reading": "qízi",
+      "senses": [
+        {
+          "id": "zh-246dbc77a1bd-1-s1",
+          "definition": "flag"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这一战中，曹操杀死一万多人，夺得旗子、战鼓和许多马匹。",
+        "gloss": "flag",
+        "sense_id": "zh-246dbc77a1bd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1f709cf9d0c17283ee7564e8740529a548e1447001cd419d83520fe21515d2b4"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-a0564cf1380bc466-3e409d793dc7dfb8",
+  "entry_id": "ja-a0564cf1380bc466",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a0564cf1380bc466",
+      "headword": "つるつる",
+      "reading": "つるつる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a0564cf1380bc466-1",
+          "definition": "smooth and slick; having a smooth surface, often with no hair"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "毛があるはずの顔はつるつるで、やかんのようだった。",
+        "gloss": "smooth and hairless",
+        "sense_id": "ja-a0564cf1380bc466-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9a4905300776f1623315640724d19c59b83913dceea2575e20dd01fadb6b7422"
+}

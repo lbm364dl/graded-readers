@@ -1,0 +1,32 @@
+{
+  "id": "ja-ac1df45870da6570-70a579ce27d796e7",
+  "entry_id": "ja-ac1df45870da6570",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ac1df45870da6570",
+      "headword": "相手にする",
+      "reading": "あいてにする",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-ac1df45870da6570-1",
+          "definition": "to deal with or pay attention to someone; to treat someone as an opponent or conversational partner"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "誰も相手にせず、名前さえつけてくれない。",
+        "gloss": "without paying attention to; ignoring",
+        "sense_id": "ja-ac1df45870da6570-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d35fa5342110fdbb2d848696f61642bb174d2161b4f28d55c255015cc67e28f2"
+}

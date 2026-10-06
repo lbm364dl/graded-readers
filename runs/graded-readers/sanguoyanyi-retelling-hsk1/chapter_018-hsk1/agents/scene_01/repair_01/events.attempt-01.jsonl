@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff50e-6db0-7ff3-9c59-141f2fbf98b6"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"text\":\"孟获多次打不过蜀人，又去请乌戈国主兀突骨来帮忙。兀突骨身边有三万穿藤甲的人。藤甲很难打破，蜀人怎么打也没用。孔明叫魏延假败十五回，对方便进了盘蛇谷。马岱早在谷中备好黑油车，车中有火药，又用木石封住谷口。蛮人进谷后，蜀人点火，四面大火一起烧来，藤甲见火就着，三万人都死了。孟获来救，马岱也捉住了他。孔明先给孟获酒饭，再问他服不服。孟获见孔明七次捉住他都不杀，心中服了，认错归顺。孔明听后放他回去，仍叫他做洞主。南方各地的人都谢孔明，和蜀国相安，南方从此平定。\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":42885,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":9440,"reasoning_output_tokens":9195}}

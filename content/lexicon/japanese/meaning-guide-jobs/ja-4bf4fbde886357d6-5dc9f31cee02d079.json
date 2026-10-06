@@ -1,0 +1,32 @@
+{
+  "id": "ja-4bf4fbde886357d6-5dc9f31cee02d079",
+  "entry_id": "ja-4bf4fbde886357d6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4bf4fbde886357d6",
+      "headword": "説明できる",
+      "reading": "せつめいできる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4bf4fbde886357d6-1",
+          "definition": "to be able to explain"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが主人の絵は、黄色でも黒でも灰色でも茶色でもなく、何とも説明できない色だった。",
+        "gloss": "cannot explain",
+        "sense_id": "ja-4bf4fbde886357d6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4f0cb1ba0ed86a13a0ee247f44efc4fea7f3c813e98430427d34a8333aae9baa"
+}

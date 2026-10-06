@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_011-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 316,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "未明确写出关羽斩杀管亥、孔融与援军夹击大败黄巾并解除北海之围。",
+      "classification": "material",
+      "reason": "省略了关羽斩杀管亥、援军与孔融夹击取胜及北海解围这一关键战斗结果，改变了重要事件和后续行动的因果衔接。",
+      "required_fix": "补写关羽斩杀管亥、刘备等援军与孔融夹击大败黄巾，解除北海之围。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "未明确写出关羽斩杀管亥、孔融与援军夹击大败黄巾并解除北海之围。",
+      "classification": "material",
+      "reason": "省略了关羽斩杀管亥、援军与孔融夹击取胜及北海解围这一关键战斗结果，改变了重要事件和后续行动的因果衔接。",
+      "required_fix": "补写关羽斩杀管亥、刘备等援军与孔融夹击大败黄巾，解除北海之围。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 316,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

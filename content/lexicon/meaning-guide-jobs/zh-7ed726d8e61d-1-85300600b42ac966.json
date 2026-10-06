@@ -1,0 +1,31 @@
+{
+  "id": "zh-7ed726d8e61d-1-85300600b42ac966",
+  "entry_id": "zh-7ed726d8e61d-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7ed726d8e61d-1",
+      "headword": "看出",
+      "kind": "construction",
+      "reading": "kàn chū",
+      "senses": [
+        {
+          "id": "zh-7ed726d8e61d-1-s1",
+          "definition": "to perceive or discern something from available signs or evidence"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角看出民心已顺，民心成了起事的关键，便和张宝、张梁商议。",
+        "gloss": "to see; realize",
+        "sense_id": "zh-7ed726d8e61d-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d0ffe8d02a20bf4da0bf35eda18384d7fbcb86fdfd1703f3356fb06b850af99c"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-8e33c0870cb2-1-5392662843022876",
+  "entry_id": "zh-8e33c0870cb2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-8e33c0870cb2-1",
+      "headword": "配备",
+      "kind": "word",
+      "reading": "pèibèi",
+      "senses": [
+        {
+          "id": "zh-8e33c0870cb2-1-s1",
+          "definition": "to equip; to provide with necessary items"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人还为自己配备全身铠甲，又聚集五百多名乡勇，前去见邹靖。",
+        "gloss": "to equip",
+        "sense_id": "zh-8e33c0870cb2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5ecbd030dc4ac114e98105588c2943ee4f8eea00e38cdeda225023401853f3f7"
+}

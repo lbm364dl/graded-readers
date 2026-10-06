@@ -1,0 +1,31 @@
+{
+  "id": "zh-f9ef695d7706-1-5cb804620f1b5226",
+  "entry_id": "zh-f9ef695d7706-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f9ef695d7706-1",
+      "headword": "信号",
+      "kind": "word",
+      "reading": "xìnhào",
+      "senses": [
+        {
+          "id": "zh-f9ef695d7706-1-s1",
+          "definition": "signal"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备发出信号，两边的人一起出来。",
+        "gloss": "signal",
+        "sense_id": "zh-f9ef695d7706-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "18fedaf7e8a2842a65b018eb63460082b361577378bab048f7912f14cd572ac3"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "ja-8c456c063ebdd830-143ddc2cb1f729d4",
+  "entry_id": "ja-8c456c063ebdd830",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8c456c063ebdd830",
+      "headword": "美学者",
+      "reading": "びがくしゃ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8c456c063ebdd830-1",
+          "definition": "scholar of aesthetics; aesthetician"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある日、金縁眼鏡の美学者が訪ねて来た。",
+        "gloss": "aesthetician; scholar of aesthetics",
+        "sense_id": "ja-8c456c063ebdd830-1"
+      },
+      {
+        "sentence": "主人が写生の大切さを語り、アンドレア・デル・サルトの話まで持ち出すと、美学者は笑って言った。",
+        "gloss": "aesthetician; scholar of aesthetics",
+        "sense_id": "ja-8c456c063ebdd830-1"
+      },
+      {
+        "sentence": "美学者は少しも困らず、「別の本と間違えたと言えばいい」と笑った。",
+        "gloss": "aesthete; scholar of aesthetics",
+        "sense_id": "ja-8c456c063ebdd830-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5b9127c09285c174aecbbeead34d9fa364c0ed80052376631d360ccf39f857fe"
+}

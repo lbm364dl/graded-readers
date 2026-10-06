@@ -1,0 +1,31 @@
+{
+  "id": "zh-b30fb440024b-1-7893fe457f49bb38",
+  "entry_id": "zh-b30fb440024b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-b30fb440024b-1",
+      "headword": "依草",
+      "kind": "construction",
+      "reading": "yīcǎo",
+      "senses": [
+        {
+          "id": "zh-b30fb440024b-1-s1",
+          "definition": "rely on vegetation for cover or support"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇甫嵩、朱隽正率兵抵抗黄巾军，黄巾军战败，退入长社，依草结营。",
+        "gloss": "to rely on grass; camp among the grass",
+        "sense_id": "zh-b30fb440024b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5ce7eeeab9d396039692b4b5b6468448b2beb44713bbb3ad45776fccdc0ec7f3"
+}

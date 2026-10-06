@@ -1,0 +1,37 @@
+{
+  "id": "ja-6dfc0ca1d202a015-3aa4071d82f40c33",
+  "entry_id": "ja-6dfc0ca1d202a015",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6dfc0ca1d202a015",
+      "headword": "たりする",
+      "reading": "たりする",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-6dfc0ca1d202a015-1",
+          "definition": "to do things such as; used to give examples of actions or states"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩がそっと書斎をのぞくと、主人は昼寝をしていたり、読みかけの本に涎をたらしていたりする。",
+        "gloss": "doing things such as napping",
+        "sense_id": "ja-6dfc0ca1d202a015-1"
+      },
+      {
+        "sentence": "吾輩がそっと書斎をのぞくと、主人は昼寝をしていたり、読みかけの本に涎をたらしていたりする。",
+        "gloss": "doing things such as letting drool fall",
+        "sense_id": "ja-6dfc0ca1d202a015-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2e42447c94f1553a79138270b7d3b90f365a2e22ae9ea9ee184ac59e4e695de8"
+}

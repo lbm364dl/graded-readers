@@ -1,0 +1,31 @@
+{
+  "id": "zh-5ac231b489e0-1-b09eb1b69abb9210",
+  "entry_id": "zh-5ac231b489e0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5ac231b489e0-1",
+      "headword": "家境",
+      "kind": "word",
+      "reading": "jiājìng",
+      "senses": [
+        {
+          "id": "zh-5ac231b489e0-1-s1",
+          "definition": "family circumstances"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备住在楼桑村，家境贫寒，靠卖草鞋、织席生活。",
+        "gloss": "family circumstances",
+        "sense_id": "zh-5ac231b489e0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2eb3d7cb1e3ea7b29b624cb112b80b987a75d81e68d5a8a5e4f245560eee819a"
+}

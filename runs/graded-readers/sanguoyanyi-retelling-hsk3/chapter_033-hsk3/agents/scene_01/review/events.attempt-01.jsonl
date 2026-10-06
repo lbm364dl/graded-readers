@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff3e1-b166-7ec3-8686-7c7612f39bfe"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.95,\"naturalness\":0.95,\"readability\":0.96,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“魏军粮食和武器都坏了”略有夸大，原文主要写军器受湿、马匹缺乏草料，未明确说粮食损坏。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":28767,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1137,"reasoning_output_tokens":1034}}

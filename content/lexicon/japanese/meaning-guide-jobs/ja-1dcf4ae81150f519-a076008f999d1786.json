@@ -1,0 +1,32 @@
+{
+  "id": "ja-1dcf4ae81150f519-a076008f999d1786",
+  "entry_id": "ja-1dcf4ae81150f519",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1dcf4ae81150f519",
+      "headword": "運動",
+      "reading": "うんどう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-1dcf4ae81150f519-1",
+          "definition": "exercise; physical activity"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある小春日和の午後、昼飯のあとで少し眠り、運動をかねて茶園を歩いた。",
+        "gloss": "exercise",
+        "sense_id": "ja-1dcf4ae81150f519-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9c95624a3c22afecb8261f98f23a99b8c23ccdb8d552ff3c1b2904454dcfa1d6"
+}

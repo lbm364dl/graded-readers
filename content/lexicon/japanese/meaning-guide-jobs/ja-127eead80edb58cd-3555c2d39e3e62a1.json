@@ -1,0 +1,32 @@
+{
+  "id": "ja-127eead80edb58cd-3555c2d39e3e62a1",
+  "entry_id": "ja-127eead80edb58cd",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-127eead80edb58cd",
+      "headword": "飯櫃",
+      "reading": "めしびつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-127eead80edb58cd-1",
+          "definition": "a container for cooked rice; rice tub"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その後、朝は飯櫃の上、夜は炬燵の上、天気のよい昼は椽側で寝るようになった。",
+        "gloss": "rice chest",
+        "sense_id": "ja-127eead80edb58cd-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bda3ba0bec2c110200b293a044c7b213f7fb7de49a347782be87d9e5ef545efb"
+}

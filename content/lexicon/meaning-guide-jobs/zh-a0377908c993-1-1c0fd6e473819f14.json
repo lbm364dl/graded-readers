@@ -1,0 +1,36 @@
+{
+  "id": "zh-a0377908c993-1-1c0fd6e473819f14",
+  "entry_id": "zh-a0377908c993-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a0377908c993-1",
+      "headword": "元年",
+      "kind": "word",
+      "reading": "yuánnián",
+      "senses": [
+        {
+          "id": "zh-a0377908c993-1-s1",
+          "definition": "first year of a reign period"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "光和元年，母鸡变成公鸡；六月初一，黑气飞入宫中。",
+        "gloss": "first year",
+        "sense_id": "zh-a0377908c993-1-s1"
+      },
+      {
+        "sentence": "中平元年，疫病流行，他用符水给百姓治病，自称大贤良师。",
+        "gloss": "first year of a reign period",
+        "sense_id": "zh-a0377908c993-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "19d0ee78ce0409794726d5d4167ae8250a2beb9b29d4e8db3893b9ede430eb8a"
+}

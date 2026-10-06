@@ -1,0 +1,46 @@
+{
+  "id": "zh-7205426737a8-1-16cd35e318a4e5c9",
+  "entry_id": "zh-7205426737a8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7205426737a8-1",
+      "headword": "看见",
+      "kind": "construction",
+      "reading": "kànjiàn",
+      "senses": [
+        {
+          "id": "zh-7205426737a8-1-s1",
+          "definition": "to see; perceive visually"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备回去的路上，看见一辆车，车里关着的人正是卢植。",
+        "gloss": "see",
+        "sense_id": "zh-7205426737a8-1-s1"
+      },
+      {
+        "sentence": "两天后，他们看见董卓带领的汉军被张角打败，黄巾军正在追赶董卓。",
+        "gloss": "see",
+        "sense_id": "zh-7205426737a8-1-s1"
+      },
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，只听见喊杀声，也看见火光照亮天空。",
+        "gloss": "to see",
+        "sense_id": "zh-7205426737a8-1-s1"
+      },
+      {
+        "sentence": "三人上山，看见汉军已经失败，黄巾军从四面赶来，旗上写着“天公将军”。",
+        "gloss": "see",
+        "sense_id": "zh-7205426737a8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f2bed494d1608a6eadfb59ba96d5337ee384b089be657fdfeb24ce8ef11e1e05"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-253fb75906c6-1-282c2a96dfdccd5b",
+  "entry_id": "zh-253fb75906c6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-253fb75906c6-1",
+      "headword": "行动",
+      "kind": "word",
+      "reading": "xíngdòng",
+      "senses": [
+        {
+          "id": "zh-253fb75906c6-1-s1",
+          "definition": "to act; to take action"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角说：“民心已经向着我们，现在应当行动。",
+        "gloss": "act",
+        "sense_id": "zh-253fb75906c6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ffe2c84a98f2a2db0b5c33b39a37488ab0aae4885d899e582e6dc67f497df0d6"
+}

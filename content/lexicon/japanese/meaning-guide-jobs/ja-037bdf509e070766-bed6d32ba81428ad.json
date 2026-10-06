@@ -1,0 +1,32 @@
+{
+  "id": "ja-037bdf509e070766-bed6d32ba81428ad",
+  "entry_id": "ja-037bdf509e070766",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-037bdf509e070766",
+      "headword": "大真面目",
+      "reading": "おおまじめ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-037bdf509e070766-1",
+          "definition": "very serious; earnest"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "目を少し開けて見ると、主人は大まじめに吾輩を写生している。",
+        "gloss": "very serious; in earnest",
+        "sense_id": "ja-037bdf509e070766-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "997af29f0d19d1b3919854049eb3ca20ba94aa2d772e3c5af71b6826e7c6542e"
+}

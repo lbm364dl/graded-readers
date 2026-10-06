@@ -1,0 +1,32 @@
+{
+  "id": "ja-de5bb6db3916833b-eb7a7c68027df393",
+  "entry_id": "ja-de5bb6db3916833b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-de5bb6db3916833b",
+      "headword": "立つ",
+      "reading": "たつ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-de5bb6db3916833b-1",
+          "definition": "to stand; rise to one's feet"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "今まで我慢していた吾輩の気持ちも知らず、ただ小便に立っただけで馬鹿野郎とは、あまりにひどい。",
+        "gloss": "stood up; got up",
+        "sense_id": "ja-de5bb6db3916833b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b59f4dc55bf3b96955c204a818dacd55416ca42d82efee3cb10a074d3122134b"
+}

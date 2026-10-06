@@ -1,0 +1,31 @@
+{
+  "id": "zh-f146a8d867d6-1-c54e7636027b9b04",
+  "entry_id": "zh-f146a8d867d6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f146a8d867d6-1",
+      "headword": "埋下",
+      "kind": "construction",
+      "reading": "máixià",
+      "senses": [
+        {
+          "id": "zh-f146a8d867d6-1-s1",
+          "definition": "conceal something by putting it underground or in position for later use"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇甫嵩、朱隽商量后，决定火攻，命士兵各带一把草，暗中埋下伏兵。",
+        "gloss": "bury; lay down",
+        "sense_id": "zh-f146a8d867d6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e9414f6c3c0abd8922d88bcd59c3233f24dd7d78dd8526293a40cde600f25be8"
+}

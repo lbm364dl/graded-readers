@@ -1,0 +1,42 @@
+{
+  "id": "ja-03b74ec75211606e-a6ceda3d09a0031b",
+  "entry_id": "ja-03b74ec75211606e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-03b74ec75211606e",
+      "headword": "後で",
+      "reading": "あとで",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-03b74ec75211606e-1",
+          "definition": "afterward; later"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "後で聞くとその人間は書生で、猫をつかまえて煮て食べることもあるそうだ。",
+        "gloss": "later",
+        "sense_id": "ja-03b74ec75211606e-1"
+      },
+      {
+        "sentence": "後で、それがたばこだと知った。",
+        "gloss": "afterward; later",
+        "sense_id": "ja-03b74ec75211606e-1"
+      },
+      {
+        "sentence": "ある暖かい日の午後、昼ごはんの後で寝てから、吾輩は茶園を歩いた。",
+        "gloss": "afterward",
+        "sense_id": "ja-03b74ec75211606e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b54c787c5de29f271a6b2117cc08769b01ad9c9beae36c15785255b6b3c014cf"
+}

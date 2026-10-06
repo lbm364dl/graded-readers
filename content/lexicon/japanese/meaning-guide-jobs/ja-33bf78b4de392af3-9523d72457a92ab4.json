@@ -1,0 +1,32 @@
+{
+  "id": "ja-33bf78b4de392af3-9523d72457a92ab4",
+  "entry_id": "ja-33bf78b4de392af3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-33bf78b4de392af3",
+      "headword": "ことにする",
+      "reading": "ことにする",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-33bf78b4de392af3-1",
+          "definition": "A pattern meaning to decide to do something: verb dictionary form + ことにする."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はこの家に住むことにしました。",
+        "gloss": "decided to",
+        "sense_id": "ja-33bf78b4de392af3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6bd857c5987e4c11314c2ae6f66456f32cc73aaee18570be37ac4bd6749a7316"
+}

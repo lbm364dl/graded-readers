@@ -1,0 +1,20 @@
+{
+  "book_run_id": "wagahai-incremental-smoke",
+  "status": "complete",
+  "updated_at": "2026-08-06T17:14:36.391247+00:00",
+  "global_agent_concurrency": 1,
+  "chapter_concurrency": 1,
+  "runs": [
+    {
+      "source": "/home/usuario/hsk-graded-readers/books/japanese/wagahai_wa_neko_de_aru/chapter_02.txt",
+      "level": "n5",
+      "run_id": "wagahai-incremental-smoke/chapter_02-n5",
+      "status": "complete",
+      "chapter_cjk": 1984,
+      "japanese_chars": 1984,
+      "target_chars": 1900,
+      "attempts": 1
+    }
+  ],
+  "length_violations": []
+}

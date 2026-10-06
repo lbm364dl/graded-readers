@@ -1,0 +1,32 @@
+{
+  "id": "ja-f322a0ba9c64d348-a5c2e0d6abc73f0c",
+  "entry_id": "ja-f322a0ba9c64d348",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f322a0ba9c64d348",
+      "headword": "代言",
+      "reading": "だいげん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f322a0ba9c64d348-1",
+          "definition": "a lawyer; an advocate (archaic)"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "白君は軍人の家におり、三毛君は代言の主人を持つ。",
+        "gloss": "lawyer; advocate (archaic)",
+        "sense_id": "ja-f322a0ba9c64d348-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2374e31e75f0e8de3bd30dbd51df842d1c4649f7a8e9d413bc093d14c4c5a94e"
+}

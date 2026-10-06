@@ -1,0 +1,31 @@
+{
+  "id": "zh-58cae7ec875a-1-0b1bcfc3c530d1ed",
+  "entry_id": "zh-58cae7ec875a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-58cae7ec875a-1",
+      "headword": "首领",
+      "kind": "word",
+      "reading": "shǒulǐng",
+      "senses": [
+        {
+          "id": "zh-58cae7ec875a-1-s1",
+          "definition": "leader; person in charge of a group"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大方有一万多人，小方有六七千人，各方首领都称将军。",
+        "gloss": "leader",
+        "sense_id": "zh-58cae7ec875a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9737ff2cdfe95f31c1f340152d6450a9ea968dde25f62afbc937ba7a8afc139b"
+}

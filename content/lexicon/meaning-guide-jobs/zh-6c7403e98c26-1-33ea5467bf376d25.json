@@ -1,0 +1,31 @@
+{
+  "id": "zh-6c7403e98c26-1-33ea5467bf376d25",
+  "entry_id": "zh-6c7403e98c26-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6c7403e98c26-1",
+      "headword": "走路",
+      "kind": "word",
+      "reading": "zǒulù",
+      "senses": [
+        {
+          "id": "zh-6c7403e98c26-1-s1",
+          "definition": "to walk; to travel on foot"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "一次，有人夜里带刀走路，曹操把他抓住，按禁令用木棒责罚。",
+        "gloss": "to walk",
+        "sense_id": "zh-6c7403e98c26-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5dcef958b1ff79d7f247e70b73ea030d1078a5e712409e0874a534de5e22a85b"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-6c8c7a77cdfd-1-9f3cbc85e38f6c0d",
+  "entry_id": "zh-6c8c7a77cdfd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6c8c7a77cdfd-1",
+      "headword": "天空",
+      "kind": "word",
+      "reading": "tiānkōng",
+      "senses": [
+        {
+          "id": "zh-6c8c7a77cdfd-1-s1",
+          "definition": "sky"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "火光照亮天空，黄巾军来不及披上铠甲，也来不及给马装好马鞍，只好四处逃跑。",
+        "gloss": "sky",
+        "sense_id": "zh-6c8c7a77cdfd-1-s1"
+      },
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，只听见喊杀声，也看见火光照亮天空。",
+        "gloss": "sky",
+        "sense_id": "zh-6c8c7a77cdfd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1469860bff9640abaa04127c69fff96c867903559c55aa0c58d841f4ae76d6a0"
+}

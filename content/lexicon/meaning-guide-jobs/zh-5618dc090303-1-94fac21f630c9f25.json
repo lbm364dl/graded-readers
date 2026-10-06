@@ -1,0 +1,31 @@
+{
+  "id": "zh-5618dc090303-1-94fac21f630c9f25",
+  "entry_id": "zh-5618dc090303-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5618dc090303-1",
+      "headword": "者",
+      "kind": "particle",
+      "reading": "zhě",
+      "senses": [
+        {
+          "id": "zh-5618dc090303-1-s1",
+          "definition": "forms a noun phrase referring to a person or people characterized by the preceding action"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备率军追赶，投降者不计其数，大胜而回。",
+        "gloss": "those who; people who",
+        "sense_id": "zh-5618dc090303-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "09edb13f4ccbac5ef3305cab03ea0923b0b49574e9f8e24cb9b246943ae01f0d"
+}

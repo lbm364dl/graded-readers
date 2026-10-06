@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_040-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 615,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹军在新野起火后具体突围、赵云和糜芳、刘封连续追杀的部分细节。",
+      "classification": "material",
+      "reason": "这些战斗行动构成曹军由火场突围、连续败退至白河的具体因果链，并体现赵云、糜芳、刘封的关键军事行动；概括后虽保留结果，却弱化了战局推进。",
+      "required_fix": "补写曹军从东门突围、赵云追击，以及糜芳、刘封相继截杀曹军后，曹仁败退至白河的过程。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹军在新野起火后具体突围、赵云和糜芳、刘封连续追杀的部分细节。",
+      "classification": "material",
+      "reason": "这些战斗行动构成曹军由火场突围、连续败退至白河的具体因果链，并体现赵云、糜芳、刘封的关键军事行动；概括后虽保留结果，却弱化了战局推进。",
+      "required_fix": "补写曹军从东门突围、赵云追击，以及糜芳、刘封相继截杀曹军后，曹仁败退至白河的过程。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 615,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

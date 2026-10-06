@@ -1,0 +1,31 @@
+{
+  "id": "zh-61a20e1e1452-1-4a54161a44dec21b",
+  "entry_id": "zh-61a20e1e1452-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-61a20e1e1452-1",
+      "headword": "大将军",
+      "kind": "word",
+      "reading": "dàjiāngjūn",
+      "senses": [
+        {
+          "id": "zh-61a20e1e1452-1-s1",
+          "definition": "a senior military title"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝死后，灵帝即位，大将军窦武、太傅陈蕃一同辅佐他。",
+        "gloss": "General-in-Chief",
+        "sense_id": "zh-61a20e1e1452-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d8c8b134f6e6122ed82ed549b49afa9350ad682f12026e74639501b1167565b3"
+}

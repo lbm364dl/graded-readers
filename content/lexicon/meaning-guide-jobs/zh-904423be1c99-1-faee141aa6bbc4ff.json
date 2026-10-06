@@ -1,0 +1,41 @@
+{
+  "id": "zh-904423be1c99-1-faee141aa6bbc4ff",
+  "entry_id": "zh-904423be1c99-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-904423be1c99-1",
+      "headword": "应当",
+      "kind": "word",
+      "reading": "yīngdāng",
+      "senses": [
+        {
+          "id": "zh-904423be1c99-1-s1",
+          "definition": "should; ought to, expressing what is advisable or appropriate"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角说：“民心已经向着我们，现在应当行动。",
+        "gloss": "should",
+        "sense_id": "zh-904423be1c99-1-s1"
+      },
+      {
+        "sentence": "刘备主动说：“我们应当马上去救他们。",
+        "gloss": "should",
+        "sense_id": "zh-904423be1c99-1-s1"
+      },
+      {
+        "sentence": "刘备连忙拉住他：“这件事应当由朝廷处理，你不能冲动。",
+        "gloss": "should",
+        "sense_id": "zh-904423be1c99-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "230ee40bbd9ee58ce96d2591552a2c15a585746a29f6e9bebebd2010423f6bba"
+}

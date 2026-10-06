@@ -1,0 +1,330 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "format": {
+      "type": "string",
+      "enum": [
+        "segment-contained-annotation-v2"
+      ]
+    },
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "word"
+                ]
+              },
+              "meaning_en": {
+                "type": "string",
+                "minLength": 1
+              },
+              "lemma": {
+                "type": "string",
+                "minLength": 1
+              },
+              "lexical_kind": {
+                "type": "string",
+                "enum": [
+                  "vocabulary",
+                  "proper_name",
+                  "story_term",
+                  "grammar"
+                ]
+              },
+              "lexical_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "story_importance_en": {
+                "type": "string"
+              },
+              "form_steps": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "form": {
+                      "type": "string"
+                    },
+                    "reading": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "meaning_en": {
+                      "type": "string"
+                    },
+                    "grammar_entry_ids": {
+                      "type": "array",
+                      "minItems": 1,
+                      "maxItems": 1,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  },
+                  "required": [
+                    "form",
+                    "reading",
+                    "label",
+                    "meaning_en",
+                    "grammar_entry_ids"
+                  ]
+                }
+              },
+              "is_inflected": {
+                "type": "boolean"
+              },
+              "grammar_links": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "entry_id": {
+                      "type": "string"
+                    },
+                    "context_en": {
+                      "type": "string"
+                    },
+                    "display_form": {
+                      "type": "string"
+                    },
+                    "display_meaning_en": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "entry_id",
+                    "context_en",
+                    "display_form",
+                    "display_meaning_en"
+                  ]
+                }
+              },
+              "expression_links": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "entry_id": {
+                      "type": "string"
+                    },
+                    "form": {
+                      "type": "string"
+                    },
+                    "meaning_en": {
+                      "type": "string"
+                    },
+                    "context_en": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "entry_id",
+                    "form",
+                    "meaning_en",
+                    "context_en"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "text",
+              "type",
+              "meaning_en",
+              "lemma",
+              "lexical_kind",
+              "lexical_id",
+              "story_importance_en",
+              "form_steps",
+              "is_inflected",
+              "grammar_links",
+              "expression_links"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "punctuation"
+                ]
+              },
+              "meaning_en": {
+                "type": "string",
+                "enum": [
+                  ""
+                ]
+              },
+              "lemma": {
+                "type": "string",
+                "enum": [
+                  ""
+                ]
+              },
+              "lexical_kind": {
+                "type": "string",
+                "enum": [
+                  ""
+                ]
+              },
+              "lexical_id": {
+                "type": "string",
+                "enum": [
+                  ""
+                ]
+              },
+              "story_importance_en": {
+                "type": "string",
+                "enum": [
+                  ""
+                ]
+              },
+              "form_steps": {
+                "type": "array",
+                "maxItems": 0,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "form": {
+                      "type": "string"
+                    },
+                    "reading": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "meaning_en": {
+                      "type": "string"
+                    },
+                    "grammar_entry_ids": {
+                      "type": "array",
+                      "minItems": 1,
+                      "maxItems": 1,
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  },
+                  "required": [
+                    "form",
+                    "reading",
+                    "label",
+                    "meaning_en",
+                    "grammar_entry_ids"
+                  ]
+                }
+              },
+              "is_inflected": {
+                "type": "boolean",
+                "enum": [
+                  false
+                ]
+              },
+              "grammar_links": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "entry_id": {
+                      "type": "string"
+                    },
+                    "context_en": {
+                      "type": "string"
+                    },
+                    "display_form": {
+                      "type": "string"
+                    },
+                    "display_meaning_en": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "entry_id",
+                    "context_en",
+                    "display_form",
+                    "display_meaning_en"
+                  ]
+                },
+                "maxItems": 0
+              },
+              "expression_links": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "entry_id": {
+                      "type": "string"
+                    },
+                    "form": {
+                      "type": "string"
+                    },
+                    "meaning_en": {
+                      "type": "string"
+                    },
+                    "context_en": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "entry_id",
+                    "form",
+                    "meaning_en",
+                    "context_en"
+                  ]
+                },
+                "maxItems": 0
+              }
+            },
+            "required": [
+              "text",
+              "type",
+              "meaning_en",
+              "lemma",
+              "lexical_kind",
+              "lexical_id",
+              "story_importance_en",
+              "form_steps",
+              "is_inflected",
+              "grammar_links",
+              "expression_links"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "format",
+    "segments"
+  ]
+}

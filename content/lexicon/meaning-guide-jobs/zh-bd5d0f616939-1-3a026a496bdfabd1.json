@@ -1,0 +1,31 @@
+{
+  "id": "zh-bd5d0f616939-1-3a026a496bdfabd1",
+  "entry_id": "zh-bd5d0f616939-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bd5d0f616939-1",
+      "headword": "修",
+      "kind": "word",
+      "reading": "xiū",
+      "senses": [
+        {
+          "id": "zh-bd5d0f616939-1-s1",
+          "definition": "build; construct"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "左丰因此怀恨在心，回奏朝廷，诬陷卢植只修高墙、不肯作战。",
+        "gloss": "to build; repair",
+        "sense_id": "zh-bd5d0f616939-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0e6ea7ed3f96ef31f9d91119b22f3a80d5cae513966774c01d6e8cff9befc5c4"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-2e24b71cd81a-1-f165e0516e3084d3",
+  "entry_id": "zh-2e24b71cd81a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2e24b71cd81a-1",
+      "headword": "来信",
+      "kind": "word",
+      "reading": "láixìn",
+      "senses": [
+        {
+          "id": "zh-2e24b71cd81a-1-s1",
+          "definition": "write or send a message; write with news"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，青州太守龚景来信求救，说黄巾军围城，城快守不住了。",
+        "gloss": "send word; write with news",
+        "sense_id": "zh-2e24b71cd81a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "934b6f9f4e0b2845cad4e15b5721f23ac1fe9288a6aa946884c528acf99f221f"
+}

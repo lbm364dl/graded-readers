@@ -1,0 +1,31 @@
+{
+  "id": "zh-ca4c64d9ae27-1-d3551945c75765e4",
+  "entry_id": "zh-ca4c64d9ae27-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ca4c64d9ae27-1",
+      "headword": "父",
+      "kind": "word",
+      "reading": "fù",
+      "senses": [
+        {
+          "id": "zh-ca4c64d9ae27-1-s1",
+          "definition": "father"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备幼年丧父，侍母至孝，家贫，靠卖草鞋、织席生活。",
+        "gloss": "father",
+        "sense_id": "zh-ca4c64d9ae27-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9e3c6e772c2ea517a4e328d2aa3d6645e90d712773809efe0e4f2a231687cf21"
+}

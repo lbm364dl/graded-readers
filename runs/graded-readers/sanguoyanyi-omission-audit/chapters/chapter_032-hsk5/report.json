@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_032-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 922,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“袁氏四世公侯至此覆亡”容易造成袁氏一族已全部覆灭的误解，此时袁尚仍逃往中山。",
+      "classification": "material",
+      "reason": "“覆亡”容易把原文“四世公侯已成梦”误读为袁氏一族已经全部灭亡，弱化了袁尚仍逃往中山这一明确事实。",
+      "required_fix": "改为“袁氏四世公侯已成空梦”或“袁氏家业至此衰败”，并明确袁尚仍逃往中山。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“袁氏四世公侯至此覆亡”容易造成袁氏一族已全部覆灭的误解，此时袁尚仍逃往中山。",
+      "classification": "material",
+      "reason": "“覆亡”容易把原文“四世公侯已成梦”误读为袁氏一族已经全部灭亡，弱化了袁尚仍逃往中山这一明确事实。",
+      "required_fix": "改为“袁氏四世公侯已成空梦”或“袁氏家业至此衰败”，并明确袁尚仍逃往中山。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.5,
+    "naturalness": 8.5,
+    "readability": 8.5,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 922,
+      "review": {
+        "source_fidelity": 8.5,
+        "naturalness": 8.5,
+        "readability": 8.5,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

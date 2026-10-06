@@ -1,0 +1,32 @@
+{
+  "id": "ja-dbbc8922d1523171-74bb0041341e6525",
+  "entry_id": "ja-dbbc8922d1523171",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dbbc8922d1523171",
+      "headword": "正当だ",
+      "reading": "せいとうだ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-dbbc8922d1523171-1",
+          "definition": "proper; just; legitimate"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "力が強いことを頼みにして、猫が正当に食べられる物まで奪い、平気な顔をしているのである。",
+        "gloss": "properly; legitimately",
+        "sense_id": "ja-dbbc8922d1523171-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "993da70f017560352d1f13b263b05b3ef331229851fb80f04e78aeedc27df245"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-dca57c2662437e78-e0e0bed5e7fc143b",
+  "entry_id": "ja-dca57c2662437e78",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dca57c2662437e78",
+      "headword": "呼ぶ",
+      "reading": "よぶ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-dca57c2662437e78-1",
+          "definition": "to call; to summon"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "笹原を出ると池があり、鳴いて書生を呼んだが、誰も来なかった。",
+        "gloss": "called; summoned",
+        "sense_id": "ja-dca57c2662437e78-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9f3ca6efb83f2717d14c40cb66a9994721c9071c963828cc31909c988bb7f153"
+}

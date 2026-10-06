@@ -1,0 +1,36 @@
+{
+  "id": "zh-52a7c142ec1a-1-ee6382ccf6523e5b",
+  "entry_id": "zh-52a7c142ec1a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-52a7c142ec1a-1",
+      "headword": "刘焉",
+      "kind": "name",
+      "reading": "Liú Yān",
+      "senses": [
+        {
+          "id": "zh-52a7c142ec1a-1-s1",
+          "definition": "Liu Yan, a person’s name"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "幽州的兵不够，刘焉听从邹靖的建议。",
+        "gloss": "Liu Yan",
+        "sense_id": "zh-52a7c142ec1a-1-s1"
+      },
+      {
+        "sentence": "刘焉发布招军榜，叫人到处报名。",
+        "gloss": "Liu Yan",
+        "sense_id": "zh-52a7c142ec1a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "aec5e5579e4fb112f5bac7cd1d0cf34b0600e98a4b27559455a1b0b8c0e9655e"
+}

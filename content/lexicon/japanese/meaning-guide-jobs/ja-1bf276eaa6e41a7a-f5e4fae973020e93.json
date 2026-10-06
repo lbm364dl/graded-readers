@@ -1,0 +1,32 @@
+{
+  "id": "ja-1bf276eaa6e41a7a-f5e4fae973020e93",
+  "entry_id": "ja-1bf276eaa6e41a7a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-1bf276eaa6e41a7a",
+      "headword": "ものだ",
+      "reading": "ものだ",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-1bf276eaa6e41a7a-1",
+          "definition": "used after a description to express a characteristic or general quality; typically, the kind of thing that"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は人間と一緒に暮らし、彼らを見れば見るほど、彼らは我儘なものだと考えるようになった。",
+        "gloss": "are the kind of thing that; characteristically",
+        "sense_id": "ja-1bf276eaa6e41a7a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "734f4d8970b0edae22babf386af4452d33ce3106a59718f016d7292e546109e9"
+}

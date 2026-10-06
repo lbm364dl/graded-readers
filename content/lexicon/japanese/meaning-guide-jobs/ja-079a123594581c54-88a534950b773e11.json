@@ -1,0 +1,32 @@
+{
+  "id": "ja-079a123594581c54-88a534950b773e11",
+  "entry_id": "ja-079a123594581c54",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-079a123594581c54",
+      "headword": "起きる",
+      "reading": "おきる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-079a123594581c54-1",
+          "definition": "to happen; to occur"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そこまでは覚えているが、その後は何が起きたのか、いくら考えても分からない。",
+        "gloss": "happened",
+        "sense_id": "ja-079a123594581c54-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4813e4c1c4c63c8a684fb01e2d785e36deea02d588c0aa7574b74e34209cf89a"
+}

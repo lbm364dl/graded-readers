@@ -1,0 +1,31 @@
+{
+  "id": "zh-685ed519dc51-1-ae12d1d13df0c40b",
+  "entry_id": "zh-685ed519dc51-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-685ed519dc51-1",
+      "headword": "信奉",
+      "kind": "word",
+      "reading": "xìnfèng",
+      "senses": [
+        {
+          "id": "zh-685ed519dc51-1-s1",
+          "definition": "believe in and revere; follow as a belief"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "青、幽、徐、冀等八州百姓，家家信奉大贤良师张角。",
+        "gloss": "venerate; follow",
+        "sense_id": "zh-685ed519dc51-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e788277522b4ab8bf1f6e38625cabf7ce97d18484ced3bfc6f6a1929725bceeb"
+}

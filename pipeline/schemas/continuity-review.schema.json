@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["verdict", "issues"],
+  "properties": {
+    "verdict": {"enum": ["pass", "revise"]},
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["chapter_offset", "category", "explanation", "suggested_fix"],
+        "properties": {
+          "chapter_offset": {"type": "integer", "minimum": 0, "maximum": 1},
+          "category": {
+            "enum": ["contradiction", "duplicate", "missing_handoff", "identity", "timeline", "motivation", "abrupt_transition"]
+          },
+          "explanation": {"type": "string"},
+          "suggested_fix": {"type": "string"}
+        }
+      }
+    }
+  }
+}

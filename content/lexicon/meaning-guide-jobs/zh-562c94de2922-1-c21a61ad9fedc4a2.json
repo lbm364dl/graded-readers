@@ -1,0 +1,36 @@
+{
+  "id": "zh-562c94de2922-1-c21a61ad9fedc4a2",
+  "entry_id": "zh-562c94de2922-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-562c94de2922-1",
+      "headword": "雷雨",
+      "kind": "word",
+      "reading": "léiyǔ",
+      "senses": [
+        {
+          "id": "zh-562c94de2922-1-s1",
+          "definition": "thunderstorm; thunder and rain"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "大风、雷雨、冰雹毁坏房屋，地震和海水泛上来，百姓生活很难。",
+        "gloss": "thunderstorms",
+        "sense_id": "zh-562c94de2922-1-s1"
+      },
+      {
+        "sentence": "之后雷雨和冰雹下到半夜，许多房屋被毁。",
+        "gloss": "thunderstorm",
+        "sense_id": "zh-562c94de2922-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e5482e359ffe0638e62e1c033ab2ac6aa361c72fb8805f3b19612c14b20cb42c"
+}

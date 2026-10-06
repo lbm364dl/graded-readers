@@ -1,0 +1,31 @@
+{
+  "id": "zh-e86661db4972-1-5b9632d17588db88",
+  "entry_id": "zh-e86661db4972-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e86661db4972-1",
+      "headword": "过官",
+      "kind": "construction",
+      "reading": "guòguān",
+      "senses": [
+        {
+          "id": "zh-e86661db4972-1-s1",
+          "definition": "to have held an official post"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他的父亲刘弘曾做过官，却很早去世。",
+        "gloss": "to have held an official post",
+        "sense_id": "zh-e86661db4972-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2ddf1da9f2351435c3e6d849c04065a7b73f0d8b9f33aafe2ff599fc18ec79d2"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-455a7cc44e50-1-04d721a430bf56e9",
+  "entry_id": "zh-455a7cc44e50-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-455a7cc44e50-1",
+      "headword": "不太爱",
+      "kind": "construction",
+      "reading": "bú tài ài",
+      "senses": [
+        {
+          "id": "zh-455a7cc44e50-1-s1",
+          "definition": "to not particularly like"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备不太爱读书，性情宽和，平时少说话，喜怒不露在脸上。",
+        "gloss": "not particularly like",
+        "sense_id": "zh-455a7cc44e50-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9b4c60c2142caa57b807634de9c06c10a37e96f7fdc09dddde658c704a1455a8"
+}

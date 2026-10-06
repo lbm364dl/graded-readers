@@ -1,0 +1,32 @@
+{
+  "id": "ja-03e728baff5c3e07-276bf0ef875535cf",
+  "entry_id": "ja-03e728baff5c3e07",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-03e728baff5c3e07",
+      "headword": "飛び出す",
+      "reading": "とびだす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-03e728baff5c3e07-1",
+          "definition": "to jump or rush out"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "だが一人が目を覚ますと、「猫が来た」と泣き出し、主人が飛び出してくる。",
+        "gloss": "comes rushing out",
+        "sense_id": "ja-03e728baff5c3e07-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bcceaaa282456e690f36bf4ac3da7baaa2861d871593962569c29e794c667272"
+}

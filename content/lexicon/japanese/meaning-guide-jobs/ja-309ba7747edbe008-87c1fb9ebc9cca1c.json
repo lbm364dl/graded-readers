@@ -1,0 +1,37 @@
+{
+  "id": "ja-309ba7747edbe008-87c1fb9ebc9cca1c",
+  "entry_id": "ja-309ba7747edbe008",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-309ba7747edbe008",
+      "headword": "三毛君",
+      "reading": "みけくん",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "ja-309ba7747edbe008-1",
+          "definition": "Mike-kun, a cat's name"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "　隣の三毛君は、人間は所有権ということを理解していないと怒っている。",
+        "gloss": "Mike-kun",
+        "sense_id": "ja-309ba7747edbe008-1"
+      },
+      {
+        "sentence": "　白君は軍人の家に、三毛君は弁護士の家に、吾輩は先生の家に住んでいる。",
+        "gloss": "Mike, a cat's name",
+        "sense_id": "ja-309ba7747edbe008-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "91d475e501973c29e77127054d302c091adaee6fbab3985e782180dd72494792"
+}

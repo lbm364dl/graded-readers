@@ -1,0 +1,31 @@
+{
+  "id": "zh-bdd621401a10-1-466ddd4731b0a0ab",
+  "entry_id": "zh-bdd621401a10-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bdd621401a10-1",
+      "headword": "全身",
+      "kind": "word",
+      "reading": "quánshēn",
+      "senses": [
+        {
+          "id": "zh-bdd621401a10-1-s1",
+          "definition": "whole body; entire body"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，刘备请工匠打造双股剑，关羽打造青龙偃月刀，重八十二斤，张飞打造丈八点钢矛，并各自准备全身铠甲。",
+        "gloss": "whole body",
+        "sense_id": "zh-bdd621401a10-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6728b0e1cbfe88025259a7a8e1507acea1531d4254c2cdb8e8d4533168d1fc63"
+}

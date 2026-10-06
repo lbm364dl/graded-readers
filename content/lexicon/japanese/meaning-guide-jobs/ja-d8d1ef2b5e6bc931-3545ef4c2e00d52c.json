@@ -1,0 +1,32 @@
+{
+  "id": "ja-d8d1ef2b5e6bc931-3545ef4c2e00d52c",
+  "entry_id": "ja-d8d1ef2b5e6bc931",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d8d1ef2b5e6bc931",
+      "headword": "その後",
+      "reading": "そのご",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d8d1ef2b5e6bc931-1",
+          "definition": "after that; afterward"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はその後、黒と何回も会い、話をするようになった。",
+        "gloss": "after that",
+        "sense_id": "ja-d8d1ef2b5e6bc931-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3c12cabd37fed7c80331804e64015ccd3b0764402c72c86fa37b1fbee1ca01f4"
+}

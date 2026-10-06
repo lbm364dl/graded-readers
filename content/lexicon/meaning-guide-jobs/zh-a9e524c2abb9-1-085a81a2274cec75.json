@@ -1,0 +1,31 @@
+{
+  "id": "zh-a9e524c2abb9-1-085a81a2274cec75",
+  "entry_id": "zh-a9e524c2abb9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a9e524c2abb9-1",
+      "headword": "宗亲",
+      "kind": "word",
+      "reading": "zōngqīn",
+      "senses": [
+        {
+          "id": "zh-a9e524c2abb9-1-s1",
+          "definition": "a relative belonging to the imperial clan"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备说自己是汉室宗亲，想打败作乱的黄巾军，让百姓平安，只是力气不够。",
+        "gloss": "relative of the imperial family",
+        "sense_id": "zh-a9e524c2abb9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "43e37d9f09bc751bef8dbaf17e8d3563fc5af307e5d8d1c91ce8850e8819c31d"
+}

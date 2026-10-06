@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff37a-839c-7123-b592-9948708ba454"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.97,\"readability\":0.94,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"吴军火攻和孙韶截击的叙述顺序与原文略有颠倒：原文先有风浪、魏军撤退，孙韶随后袭击，之后才有芦苇火攻。\"],\"language_problems\":[\"篇幅明显超过500字目标的130%上限，需进一步压缩。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":35452,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1069,"reasoning_output_tokens":935}}

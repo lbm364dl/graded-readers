@@ -1,0 +1,31 @@
+{
+  "id": "zh-4b81634a3432-1-8f7958c10d1e89eb",
+  "entry_id": "zh-4b81634a3432-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4b81634a3432-1",
+      "headword": "善类",
+      "kind": "word",
+      "reading": "shànlèi",
+      "senses": [
+        {
+          "id": "zh-4b81634a3432-1-s1",
+          "definition": "good and upright people"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝禁锢善类，一贯崇信宦官。",
+        "gloss": "good and upright people",
+        "sense_id": "zh-4b81634a3432-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "715e511077d154a6790b9e7e447ab1f0f58a718ccac37a364eb0e0ee378af5af"
+}

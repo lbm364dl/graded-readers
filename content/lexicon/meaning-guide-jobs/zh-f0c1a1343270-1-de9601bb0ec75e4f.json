@@ -1,0 +1,36 @@
+{
+  "id": "zh-f0c1a1343270-1-de9601bb0ec75e4f",
+  "entry_id": "zh-f0c1a1343270-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f0c1a1343270-1",
+      "headword": "冲天",
+      "kind": "word",
+      "reading": "chōngtiān",
+      "senses": [
+        {
+          "id": "zh-f0c1a1343270-1-s1",
+          "definition": "rise high into the sky"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "二人各引兵攻打营寨，火焰冲天，黄巾军惊慌逃散，来不及上马，也来不及披甲。",
+        "gloss": "soaring into the sky",
+        "sense_id": "zh-f0c1a1343270-1-s1"
+      },
+      {
+        "sentence": "刘备带着关羽、张飞赶到颍川时，听见喊杀声，又看见仿佛冲天的火光。",
+        "gloss": "rise high into the sky",
+        "sense_id": "zh-f0c1a1343270-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5935eed7f0e2ebf5f5593e36ca07957f9c53ba9df933155b4b9b63ab4d7a6003"
+}

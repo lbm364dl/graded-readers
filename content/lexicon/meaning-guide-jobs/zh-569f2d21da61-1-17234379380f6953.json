@@ -1,0 +1,36 @@
+{
+  "id": "zh-569f2d21da61-1-17234379380f6953",
+  "entry_id": "zh-569f2d21da61-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-569f2d21da61-1",
+      "headword": "大丈夫",
+      "kind": "word",
+      "reading": "dàzhàngfu",
+      "senses": [
+        {
+          "id": "zh-569f2d21da61-1-s1",
+          "definition": "a man of courage or integrity"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞听见后说：“大丈夫不能只叹气！",
+        "gloss": "true man",
+        "sense_id": "zh-569f2d21da61-1-s1"
+      },
+      {
+        "sentence": "随后有人大声说：“大丈夫不为国家尽力，为什么长叹？",
+        "gloss": "a true man",
+        "sense_id": "zh-569f2d21da61-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4f45a98748758b5d31811ccfb1c83b1698a43afa68657d45d699189f6fbf4128"
+}

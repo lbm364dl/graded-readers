@@ -1,0 +1,41 @@
+{
+  "id": "zh-f11bf680b191-1-a03894bee1ca7b7b",
+  "entry_id": "zh-f11bf680b191-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f11bf680b191-1",
+      "headword": "禁令",
+      "kind": "word",
+      "reading": "jìnlìng",
+      "senses": [
+        {
+          "id": "zh-f11bf680b191-1-s1",
+          "definition": "a prohibition or rule forbidding something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他在县城四座城门放下十多根五颜六色的木棒，并定下严格的禁令。",
+        "gloss": "prohibition",
+        "sense_id": "zh-f11bf680b191-1-s1"
+      },
+      {
+        "sentence": "有人违反禁令，不管地位高低，都要受到处罚。",
+        "gloss": "prohibition; rule forbidding something",
+        "sense_id": "zh-f11bf680b191-1-s1"
+      },
+      {
+        "sentence": "一次，有人夜里带刀走路，曹操把他抓住，按禁令用木棒责罚。",
+        "gloss": "prohibition; rule forbidding something",
+        "sense_id": "zh-f11bf680b191-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "04872c5865e77ef1788d3e07e9b86c88a6f3edd231c00f69e31385184f9028d2"
+}

@@ -1,0 +1,37 @@
+{
+  "id": "ja-d28d312155f8ddc2-57da4f74107bf281",
+  "entry_id": "ja-d28d312155f8ddc2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d28d312155f8ddc2",
+      "headword": "鼬",
+      "reading": "いたち",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d28d312155f8ddc2-1",
+          "definition": "weasel"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、自分は三、四十匹はとった、鼬にはひどい目にあった、と得意そうに話した。",
+        "gloss": "weasel",
+        "sense_id": "ja-d28d312155f8ddc2-1"
+      },
+      {
+        "sentence": "最後に茶園で会った時、吾輩が「どうした」と聞くと、黒は「鼬の最後っ屁と、肴屋の天秤棒には、もうこりごりだ」と答えた。",
+        "gloss": "weasel",
+        "sense_id": "ja-d28d312155f8ddc2-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f64a0f5f32f7da33cf0c793cfdfcebf48cac7171edba8bd22c582817be7a8158"
+}

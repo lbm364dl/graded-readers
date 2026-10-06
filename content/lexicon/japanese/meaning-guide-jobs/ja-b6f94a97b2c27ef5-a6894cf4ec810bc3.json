@@ -1,0 +1,32 @@
+{
+  "id": "ja-b6f94a97b2c27ef5-a6894cf4ec810bc3",
+  "entry_id": "ja-b6f94a97b2c27ef5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b6f94a97b2c27ef5",
+      "headword": "急",
+      "reading": "きゅう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b6f94a97b2c27ef5-1",
+          "definition": "sudden; abrupt"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ところが、しばらくすると、書生が急に速く動き始めたのか、吾輩だけが動いたのか分からないまま、目が回り、胸が悪くなった。",
+        "gloss": "suddenly",
+        "sense_id": "ja-b6f94a97b2c27ef5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "755b46d29e11c4b811f0c74ac61c47dce74387840b4bd10b881c8380b58a6cab"
+}

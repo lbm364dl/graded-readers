@@ -1,0 +1,32 @@
+{
+  "id": "ja-d5290c9771a81f0c-a6ba9ba49f847b8b",
+  "entry_id": "ja-d5290c9771a81f0c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d5290c9771a81f0c",
+      "headword": "裏",
+      "reading": "うら",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d5290c9771a81f0c-1",
+          "definition": "the back or rear side of something; the area behind it"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩の家の裏には、小さな茶園がある。",
+        "gloss": "back; behind",
+        "sense_id": "ja-d5290c9771a81f0c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e819a87a38414ef272c2e05d56517faf4ff0020176c726bd66e459c90c707a03"
+}

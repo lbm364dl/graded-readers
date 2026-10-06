@@ -1,0 +1,31 @@
+{
+  "id": "zh-9967cbbd8156-1-8ee1b566a75b4d1a",
+  "entry_id": "zh-9967cbbd8156-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9967cbbd8156-1",
+      "headword": "多种",
+      "kind": "word",
+      "reading": "duō zhǒng",
+      "senses": [
+        {
+          "id": "zh-9967cbbd8156-1-s1",
+          "definition": "many kinds of; various"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇帝下诏询问多种灾异的原因，蔡邕上书，认为这是妇人与宦官干政导致的，言辞十分直接。",
+        "gloss": "many kinds of",
+        "sense_id": "zh-9967cbbd8156-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7ea2b0c1ad36f0de2fb7055a16a54711b572b089e80199fa746dfb7890af4728"
+}

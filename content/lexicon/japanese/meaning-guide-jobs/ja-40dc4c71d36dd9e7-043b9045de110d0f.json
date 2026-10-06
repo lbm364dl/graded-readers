@@ -1,0 +1,37 @@
+{
+  "id": "ja-40dc4c71d36dd9e7-043b9045de110d0f",
+  "entry_id": "ja-40dc4c71d36dd9e7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-40dc4c71d36dd9e7",
+      "headword": "同じ",
+      "reading": "おなじ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-40dc4c71d36dd9e7-1",
+          "definition": "the same; identical"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "特に、時々吾輩と同じ布団で寝る子供は、ひどいものである。",
+        "gloss": "same",
+        "sense_id": "ja-40dc4c71d36dd9e7-1"
+      },
+      {
+        "sentence": "便所で謡を歌うので、近所の人から「後架先生」と呼ばれても、気にせず同じ歌を繰り返していた。",
+        "gloss": "same",
+        "sense_id": "ja-40dc4c71d36dd9e7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c4ce3ad4a083cfd6f725007276670ba8dae8098936b4acbc8b7d05eabfb6739e"
+}

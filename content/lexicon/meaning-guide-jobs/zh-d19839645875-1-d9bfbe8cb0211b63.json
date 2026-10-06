@@ -1,0 +1,31 @@
+{
+  "id": "zh-d19839645875-1-d9bfbe8cb0211b63",
+  "entry_id": "zh-d19839645875-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d19839645875-1",
+      "headword": "劝",
+      "kind": "word",
+      "reading": "quàn",
+      "senses": [
+        {
+          "id": "zh-d19839645875-1-s1",
+          "definition": "persuade or urge someone to do or not do something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备连忙劝他，说不能这样做。",
+        "gloss": "urge",
+        "sense_id": "zh-d19839645875-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a92fc8cc198a6f9c146f73359d4fb55b087206b7ad1f5f864e4171acdc4201a5"
+}

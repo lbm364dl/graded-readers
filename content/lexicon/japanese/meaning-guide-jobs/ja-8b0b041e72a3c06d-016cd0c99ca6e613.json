@@ -1,0 +1,42 @@
+{
+  "id": "ja-8b0b041e72a3c06d-016cd0c99ca6e613",
+  "entry_id": "ja-8b0b041e72a3c06d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8b0b041e72a3c06d",
+      "headword": "謡",
+      "reading": "うたい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8b0b041e72a3c06d-1",
+          "definition": "traditional Japanese vocal music or chanting, especially Noh chant"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "弓に熱中したり、謡を習ったり、バイオリンを鳴らしたりもしたが、どれも上手くならなかった。",
+        "gloss": "Noh chanting",
+        "sense_id": "ja-8b0b041e72a3c06d-1"
+      },
+      {
+        "sentence": "便所で謡を歌うので、近所の人から「後架先生」と呼ばれても、気にせず同じ歌を繰り返していた。",
+        "gloss": "traditional Japanese chant",
+        "sense_id": "ja-8b0b041e72a3c06d-1"
+      },
+      {
+        "sentence": "今日から謡や俳句をやめ、絵をかく決心をしたらしい。",
+        "gloss": "Noh chanting",
+        "sense_id": "ja-8b0b041e72a3c06d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b7d0d4ba9de193688e62bd9eb477252fa395e7430daf1e41b356575d0cb8e94c"
+}

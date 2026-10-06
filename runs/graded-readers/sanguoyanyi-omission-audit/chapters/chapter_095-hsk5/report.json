@@ -1,0 +1,70 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_095-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 869,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“司马懿击退郭淮后”略有失真：原文中郭淮袭取列柳城时，司马懿已先占据该城，郭淮随后识破并入城，并非被直接击退。",
+      "classification": "material",
+      "reason": "将郭淮发现司马懿已占城并入城的情节改成司马懿击退郭淮，改变了事件关系和因果。",
+      "required_fix": "改为：郭淮袭取列柳城时发现司马懿已先占据该城，随后入城与司马懿会合。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“魏延曾出兵救援马谡”略显不准：魏延主要是截击追赶马谡的张郃，马谡已先行逃离。",
+      "classification": "material",
+      "reason": "原文中马谡已经逃走，魏延是拦截追赶马谡的张郃，并非出兵救援马谡，造成了人物行动和时间顺序错误。",
+      "required_fix": "改为：马谡逃走后，魏延截住追赶他的张郃并将其击退，随后又遭司马懿、司马昭伏击。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“司马懿击退郭淮后”略有失真：原文中郭淮袭取列柳城时，司马懿已先占据该城，郭淮随后识破并入城，并非被直接击退。",
+      "classification": "material",
+      "reason": "将郭淮发现司马懿已占城并入城的情节改成司马懿击退郭淮，改变了事件关系和因果。",
+      "required_fix": "改为：郭淮袭取列柳城时发现司马懿已先占据该城，随后入城与司马懿会合。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“魏延曾出兵救援马谡”略显不准：魏延主要是截击追赶马谡的张郃，马谡已先行逃离。",
+      "classification": "material",
+      "reason": "原文中马谡已经逃走，魏延是拦截追赶马谡的张郃，并非出兵救援马谡，造成了人物行动和时间顺序错误。",
+      "required_fix": "改为：马谡逃走后，魏延截住追赶他的张郃并将其击退，随后又遭司马懿、司马昭伏击。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9.5,
+    "naturalness": 9.2,
+    "readability": 9.3,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 869,
+      "review": {
+        "source_fidelity": 9.5,
+        "naturalness": 9.2,
+        "readability": 9.3,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

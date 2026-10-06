@@ -1,0 +1,32 @@
+{
+  "id": "ja-b64ccc36298aec03-96e09693737f8162",
+  "entry_id": "ja-b64ccc36298aec03",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b64ccc36298aec03",
+      "headword": "日が暮れる",
+      "reading": "ひがくれる",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-b64ccc36298aec03-1",
+          "definition": "for daylight to fade; for evening to fall"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "風が池の上を通り、日が暮れ始めると、腹がひどく減ってきた。",
+        "gloss": "daylight fades; evening falls",
+        "sense_id": "ja-b64ccc36298aec03-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fb077c7905da3f36ffd9acd1020291a59610434943c6e2f1fbfac85cbd3cc79c"
+}

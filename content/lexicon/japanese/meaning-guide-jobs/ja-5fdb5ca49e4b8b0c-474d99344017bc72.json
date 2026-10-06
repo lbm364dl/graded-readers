@@ -1,0 +1,32 @@
+{
+  "id": "ja-5fdb5ca49e4b8b0c-474d99344017bc72",
+  "entry_id": "ja-5fdb5ca49e4b8b0c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5fdb5ca49e4b8b0c",
+      "headword": "三",
+      "reading": "さん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5fdb5ca49e4b8b0c-1",
+          "definition": "three"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "何度も会ううち、黒は鼠を三、四十匹とったことがあると自慢した。",
+        "gloss": "three (shortened first part of the range)",
+        "sense_id": "ja-5fdb5ca49e4b8b0c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "117df0ceaf0284b970385c072e688dd0f95a139ad0961ee584bb49f19a741750"
+}

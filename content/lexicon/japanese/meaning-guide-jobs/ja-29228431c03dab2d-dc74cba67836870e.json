@@ -1,0 +1,37 @@
+{
+  "id": "ja-29228431c03dab2d-dc74cba67836870e",
+  "entry_id": "ja-29228431c03dab2d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-29228431c03dab2d",
+      "headword": "欠伸",
+      "reading": "あくび",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-29228431c03dab2d-1",
+          "definition": "a yawn"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はもう十分に寝たので欠伸がしたかったが、主人が一生懸命なので、しばらく動かずにいた。",
+        "gloss": "yawn",
+        "sense_id": "ja-29228431c03dab2d-1"
+      },
+      {
+        "sentence": "吾輩は足を前へ伸ばし、首を低くして、大きな欠伸をした。",
+        "gloss": "yawn",
+        "sense_id": "ja-29228431c03dab2d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b865982b3ab75ad4f628458fe24a4c9234a56ead7cc168c8289b3f8660fcf158"
+}

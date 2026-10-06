@@ -1,0 +1,32 @@
+{
+  "id": "ja-373bb2ab61ed3f72-9de3c4e9aea5ff70",
+  "entry_id": "ja-373bb2ab61ed3f72",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-373bb2ab61ed3f72",
+      "headword": "描く",
+      "reading": "かく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-373bb2ab61ed3f72-1",
+          "definition": "to draw or paint"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "paint; draw",
+        "sense_id": "ja-373bb2ab61ed3f72-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "57ecb0493f6569d21273d7cc5f00613bff81afe45ff1b04e896ed7256b3ae068"
+}

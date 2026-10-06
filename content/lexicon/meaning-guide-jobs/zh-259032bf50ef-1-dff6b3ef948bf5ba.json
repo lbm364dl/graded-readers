@@ -1,0 +1,31 @@
+{
+  "id": "zh-259032bf50ef-1-dff6b3ef948bf5ba",
+  "entry_id": "zh-259032bf50ef-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-259032bf50ef-1",
+      "headword": "避",
+      "kind": "word",
+      "reading": "bì",
+      "senses": [
+        {
+          "id": "zh-259032bf50ef-1-s1",
+          "definition": "to avoid or evade"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他不避有权势的人，城内外的人从此都不敢再犯禁令，曹操的威名传开。",
+        "gloss": "to avoid",
+        "sense_id": "zh-259032bf50ef-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "54e0f20bdd772e9ff4909d587d06d44546f4c67ff1a5ff940f4f1e4b3f626d6d"
+}

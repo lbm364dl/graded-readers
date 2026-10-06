@@ -1,0 +1,32 @@
+{
+  "id": "ja-883e6c3906949e43-afa76f4e35bf0c2f",
+  "entry_id": "ja-883e6c3906949e43",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-883e6c3906949e43",
+      "headword": "始める",
+      "reading": "はじめる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-883e6c3906949e43-1",
+          "definition": "start; begin"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "それでも始めると、胃が弱いのに一生懸命だった。",
+        "gloss": "start; begin",
+        "sense_id": "ja-883e6c3906949e43-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2b354b85343b0fb955eb097ddc946f54b27e3c67530a5d882b0f182c7d613ad8"
+}

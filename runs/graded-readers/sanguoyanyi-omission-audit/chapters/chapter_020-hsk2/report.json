@@ -1,0 +1,137 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_020-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 332,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操检查董承衣带、险些察觉密诏的紧张情节。",
+      "classification": "material",
+      "reason": "曹操检查衣带并险些发现密诏，构成董承面临暴露和危机的重要事件，也解释了密诏为何最终安全保留。",
+      "required_fix": "补写曹操强令董承解下衣带和锦袍检查、短暂怀疑其中有谋，最终以玩笑掩饰并归还衣带的过程。"
+    },
+    {
+      "omission_note": "省略了昌豨不肯归顺，以及王子服发现密诏并试探董承的过程。",
+      "classification": "material",
+      "reason": "昌豨拒降虽属次要细节，但王子服发现密诏并试探董承直接推动了首批义士结盟，是后续密谋形成所需的关键过程。",
+      "required_fix": "补写昌豨拒绝归顺，并补写王子服发现密诏、假称要告发董承以试探其忠心，随后表明愿共同诛曹的情节。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“准备邀刘氏宗族共议”略显超出原文；原文只是马腾建议与刘氏宗族商议。",
+      "classification": "material",
+      "reason": "“准备邀”将马腾提出建议扩大为已经准备采取行动，增加了原文未明确发生的事实。",
+      "required_fix": "改为“马腾建议与刘氏宗族商议”或“马腾提出共商”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操检查董承衣带、险些察觉密诏的紧张情节。",
+      "classification": "material",
+      "reason": "曹操检查衣带并险些发现密诏，构成董承面临暴露和危机的重要事件，也解释了密诏为何最终安全保留。",
+      "required_fix": "补写曹操强令董承解下衣带和锦袍检查、短暂怀疑其中有谋，最终以玩笑掩饰并归还衣带的过程。"
+    },
+    {
+      "omission_note": "省略了昌豨不肯归顺，以及王子服发现密诏并试探董承的过程。",
+      "classification": "material",
+      "reason": "昌豨拒降虽属次要细节，但王子服发现密诏并试探董承直接推动了首批义士结盟，是后续密谋形成所需的关键过程。",
+      "required_fix": "补写昌豨拒绝归顺，并补写王子服发现密诏、假称要告发董承以试探其忠心，随后表明愿共同诛曹的情节。"
+    },
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“准备邀刘氏宗族共议”略显超出原文；原文只是马腾建议与刘氏宗族商议。",
+      "classification": "material",
+      "reason": "“准备邀”将马腾提出建议扩大为已经准备采取行动，增加了原文未明确发生的事实。",
+      "required_fix": "改为“马腾建议与刘氏宗族商议”或“马腾提出共商”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8.7,
+    "naturalness": 8.3,
+    "readability": 9.0,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 352,
+      "review": {
+        "source_fidelity": 8.2,
+        "naturalness": 8.1,
+        "readability": 9.0,
+        "material_omissions": [
+          "省略了马腾因董承推病拒见而当面斥责、得知密诏后表明忠心，并承诺统率西凉兵作外应的过程；这解释了马腾入盟的动机，也补充了反曹谋划的重要军事支持。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“借赐董承锦袍玉带交给他”搭配生硬，且容易误解为献帝直接把血诏交给董承；宜改为“将血诏缝在玉带夹层，借赐袍带之机交给董承”。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 354,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [
+          "省略孔融劝阻曹操、杨彪获释归里的关键经过，弱化了曹操专横与孔融抗辩的刻画。"
+        ],
+        "unsupported_additions": [
+          "将王子服假称告发董承解释为“以试其忠心”，原文未明确说明这是试探动机。"
+        ],
+        "distortions": [
+          "“曹操疑杨彪与袁氏通谋”弱化了原文中曹操故意派人诬告、构陷杨彪的事实。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 329,
+      "review": {
+        "source_fidelity": 7.8,
+        "naturalness": 8.6,
+        "readability": 9.1,
+        "material_omissions": [
+          "省略曹操以车胄权领徐州、拒绝让刘备留任，并将刘备留在许昌相府附近加以控制的关键经过，削弱了曹操与刘备关系及后续刘备在许昌活动的交代。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 4,
+      "candidate_cjk": 332,
+      "review": {
+        "source_fidelity": 8.7,
+        "naturalness": 8.3,
+        "readability": 9.0,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

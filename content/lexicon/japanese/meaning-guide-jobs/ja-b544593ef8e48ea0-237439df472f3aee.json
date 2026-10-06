@@ -1,0 +1,32 @@
+{
+  "id": "ja-b544593ef8e48ea0-237439df472f3aee",
+  "entry_id": "ja-b544593ef8e48ea0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-b544593ef8e48ea0",
+      "headword": "歌う",
+      "reading": "うたう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-b544593ef8e48ea0-1",
+          "definition": "to sing"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "便所で謡を歌うので、近所の人から「後架先生」と呼ばれても、気にせず同じ歌を繰り返していた。",
+        "gloss": "sing",
+        "sense_id": "ja-b544593ef8e48ea0-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "56a58742c5f23f5f554392c1725cb4451d47233dc2b9ace22f3b316838f1db34"
+}

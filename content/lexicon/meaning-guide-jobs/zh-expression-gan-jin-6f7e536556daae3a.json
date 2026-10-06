@@ -1,0 +1,51 @@
+{
+  "id": "zh-expression-gan-jin-6f7e536556daae3a",
+  "entry_id": "zh-expression-gan-jin",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-expression-gan-jin",
+      "headword": "赶进",
+      "reading": "gǎnjìn",
+      "base_entry_id": "zh-94beea58b8a8-1",
+      "components": [
+        {
+          "entry_id": "zh-94beea58b8a8-1",
+          "role": "verb"
+        },
+        {
+          "entry_id": "zh-83a8fd743b82-1",
+          "role": "directional complement"
+        }
+      ],
+      "senses": [
+        {
+          "id": "zh-expression-gan-jin-s1",
+          "definition": "hurry into a place"
+        }
+      ],
+      "kind": "construction"
+    },
+    "examples": [
+      {
+        "sentence": "他进来要酒，说要赶进城投军。",
+        "gloss": "hurry into a place",
+        "sense_id": "zh-expression-gan-jin-s1"
+      }
+    ],
+    "linked_components": [
+      {
+        "headword": "赶",
+        "role": "verb"
+      },
+      {
+        "headword": "进",
+        "role": "directional complement"
+      }
+    ]
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3089c7d3f59ea9a1af77bb01f65a6d5fe8d293f504a9652592b33e2de65d2fee"
+}

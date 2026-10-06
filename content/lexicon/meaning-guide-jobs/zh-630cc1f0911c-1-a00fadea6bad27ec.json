@@ -1,0 +1,31 @@
+{
+  "id": "zh-630cc1f0911c-1-a00fadea6bad27ec",
+  "entry_id": "zh-630cc1f0911c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-630cc1f0911c-1",
+      "headword": "败散",
+      "kind": "word",
+      "reading": "bàisàn",
+      "senses": [
+        {
+          "id": "zh-630cc1f0911c-1-s1",
+          "definition": "to be defeated and scatter"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他急忙带兵赶去，却发现黄巾军已经败散，战事已经结束。",
+        "gloss": "to be routed and scatter",
+        "sense_id": "zh-630cc1f0911c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8a018446c3922d6fb792b9c883f07a003d233ce86a669ccbabcd5af67b751d11"
+}

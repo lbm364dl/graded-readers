@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff343-9e12-72f3-9c71-2ff81ea25c42"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.92,\"naturalness\":0.9,\"readability\":0.93,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“只带两名部下逃到汉中”略显过度具体，原文还提到随行的少数骑兵。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":34783,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":902,"reasoning_output_tokens":811}}

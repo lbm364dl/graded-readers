@@ -1,0 +1,32 @@
+{
+  "id": "ja-d281ad091fe870a6-2cacb11f66692999",
+  "entry_id": "ja-d281ad091fe870a6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d281ad091fe870a6",
+      "headword": "暮れる",
+      "reading": "くれる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d281ad091fe870a6-1",
+          "definition": "to grow dark; to become evening"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "日が暮れ、腹が減り、寒くなったので、食べ物を求めて池を左に見ながら歩いた。",
+        "gloss": "grows dark; sets",
+        "sense_id": "ja-d281ad091fe870a6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "96a65ad0bcc0db74117b36ff3307b85a7390c73d248f8be45ee6b2768702ae9f"
+}

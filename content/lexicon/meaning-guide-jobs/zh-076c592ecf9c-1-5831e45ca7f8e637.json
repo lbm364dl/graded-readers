@@ -1,0 +1,31 @@
+{
+  "id": "zh-076c592ecf9c-1-5831e45ca7f8e637",
+  "entry_id": "zh-076c592ecf9c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-076c592ecf9c-1",
+      "headword": "母鸡",
+      "kind": "word",
+      "reading": "mǔjī",
+      "senses": [
+        {
+          "id": "zh-076c592ecf9c-1-s1",
+          "definition": "hen; female chicken"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "光和元年，母鸡变成公鸡；六月初一，黑气飞入宫中。",
+        "gloss": "hen",
+        "sense_id": "zh-076c592ecf9c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b258f8a9bf0e37eac1cb7e014d4b647736536a67834d07ff34634b8056a7dabd"
+}

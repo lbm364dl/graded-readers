@@ -1,0 +1,99 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_098-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 154,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "omission_note": "未提及魏军最初坚守不战及蜀军粮尽是撤退主因的完整因果",
+      "classification": "material",
+      "reason": "The accepted scene states that Kongming withdraws, but omits that Wei’s refusal to engage and Shu’s one-month grain limit directly cause the withdrawal. This removes an important motivation and causal link.",
+      "required_fix": "Add that Wei initially refuses battle and that Shu’s dwindling supplies force Kongming to withdraw."
+    },
+    {
+      "omission_note": "略去曹真等得知空营后的追悔，以及郝昭死后魏军调防等细节",
+      "classification": "material",
+      "reason": "Cao Zhen’s regret and illness explain his decline, while the post-Hao Zhao reassignment establishes the military command and chronology leading into the later defense of Chang’an. These are more than ornamental details.",
+      "required_fix": "Add Cao Zhen’s regret after discovering the empty camp, his resulting illness, and the reassignment of Guo Huai, Sun Li, and Zhang He to defend the routes around Chang’an after Hao Zhao’s death."
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“魏延率三十骑诱王双回营”略显因果简化，原文是王双追击后因魏营起火自行回营，魏延伺机伏击",
+      "classification": "material",
+      "reason": "将王双因魏营起火自行回营简化为魏延诱其回营，改变了关键因果关系。",
+      "required_fix": "改为：王双追击魏延后，因魏营起火自行回营，魏延伺机伏击并将其斩杀。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "未提及魏军最初坚守不战及蜀军粮尽是撤退主因的完整因果",
+      "classification": "material",
+      "reason": "The accepted scene states that Kongming withdraws, but omits that Wei’s refusal to engage and Shu’s one-month grain limit directly cause the withdrawal. This removes an important motivation and causal link.",
+      "required_fix": "Add that Wei initially refuses battle and that Shu’s dwindling supplies force Kongming to withdraw."
+    },
+    {
+      "omission_note": "略去曹真等得知空营后的追悔，以及郝昭死后魏军调防等细节",
+      "classification": "material",
+      "reason": "Cao Zhen’s regret and illness explain his decline, while the post-Hao Zhao reassignment establishes the military command and chronology leading into the later defense of Chang’an. These are more than ornamental details.",
+      "required_fix": "Add Cao Zhen’s regret after discovering the empty camp, his resulting illness, and the reassignment of Guo Huai, Sun Li, and Zhang He to defend the routes around Chang’an after Hao Zhao’s death."
+    },
+    {
+      "field": "distortions",
+      "finding_note": "“魏延率三十骑诱王双回营”略显因果简化，原文是王双追击后因魏营起火自行回营，魏延伺机伏击",
+      "classification": "material",
+      "reason": "将王双因魏营起火自行回营简化为魏延诱其回营，改变了关键因果关系。",
+      "required_fix": "改为：王双追击魏延后，因魏营起火自行回营，魏延伺机伏击并将其斩杀。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 8,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 177,
+      "review": {
+        "source_fidelity": 7,
+        "naturalness": 7,
+        "readability": 8,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“曹真发现蜀营已空，后悔成病”错误地把曹真的病归因于发现空营的后悔，并造成病发时间早于郝昭之死的时间顺序；原文中曹真先因空营懊悔，后在得知王双被杀、郝昭身亡后忧成疾病。"
+        ],
+        "language_problems": [
+          "“后悔成病”搭配不自然，且表达的因果关系不准确。"
+        ],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 154,
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

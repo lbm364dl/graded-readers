@@ -1,0 +1,568 @@
+{
+  "schema_version": 1,
+  "policy_version": 3,
+  "source_fingerprint": "f0b1e1adaa4ff6bccdcacb2f59479138881624aba4f88b43e95b4dfe61b8bbc1",
+  "reviewed": true,
+  "model": "gpt-6-luna",
+  "proposal_effort": "low",
+  "review_effort": "high",
+  "chapters": {
+    "1": [
+      {
+        "first_segment": 45,
+        "last_segment": 46,
+        "text": "关起来",
+        "pinyin": "guān qǐlai",
+        "meaning_en": "lock up",
+        "explanation_en": "关 means “lock”; 起来 marks the resulting state of being shut in. Here it does not mean “get up.”"
+      },
+      {
+        "first_segment": 51,
+        "last_segment": 52,
+        "text": "即位",
+        "pinyin": "jíwèi",
+        "meaning_en": "take the throne",
+        "explanation_en": "即 + 位 (“assume” + “position”) is a compact expression for taking the imperial position, hence acceding to the throne."
+      },
+      {
+        "first_segment": 144,
+        "last_segment": 145,
+        "text": "过了",
+        "pinyin": "guòle",
+        "meaning_en": "pass; elapse",
+        "explanation_en": "过 means “pass,” and 了 marks the passage as complete; together they introduce the elapsed time 一会儿 (“a while”)."
+      },
+      {
+        "first_segment": 213,
+        "last_segment": 216,
+        "text": "有十多丈长",
+        "pinyin": "yǒu shí duō zhàng cháng",
+        "meaning_en": "was more than ten zhang in length",
+        "explanation_en": "有 introduces the extent; 十多丈 gives a length exceeding ten zhang, and 长 identifies length as the dimension. The passage gives no modern conversion for 丈."
+      },
+      {
+        "first_segment": 221,
+        "last_segment": 222,
+        "text": "下诏",
+        "pinyin": "xià zhào",
+        "meaning_en": "issue an edict",
+        "explanation_en": "下 (literally “send down”) combines with 诏 (noun, edict) in the compact expression for issuing an edict."
+      },
+      {
+        "first_segment": 236,
+        "last_segment": 237,
+        "text": "变雄",
+        "pinyin": "biàn xióng",
+        "meaning_en": "became male",
+        "explanation_en": "变 (verb, become) takes 雄 (adjective, male) as the resulting state. Here 雄 describes the chicken’s sex; it is not the noun in 雄鸡, “rooster.”"
+      },
+      {
+        "first_segment": 249,
+        "last_segment": 250,
+        "text": "看后",
+        "pinyin": "kàn hòu",
+        "meaning_en": "after reading",
+        "explanation_en": "看 means “read,” and 后 follows the event to mark that what comes next happens after the reading; 后 is not an aspect marker."
+      },
+      {
+        "first_segment": 256,
+        "last_segment": 257,
+        "text": "看了",
+        "pinyin": "kànle",
+        "meaning_en": "read",
+        "explanation_en": "看 is the verb “read”; 了 marks the reading as completed before the memorial is passed on."
+      },
+      {
+        "first_segment": 286,
+        "last_segment": 287,
+        "text": "结在一起",
+        "pinyin": "jié zài yìqǐ",
+        "meaning_en": "joined together",
+        "explanation_en": "结 means “join” or “bind,” while 在一起 describes the resulting state of being together; together they express forming a group."
+      },
+      {
+        "first_segment": 290,
+        "last_segment": 291,
+        "text": "被称为",
+        "pinyin": "bèi chēngwéi",
+        "meaning_en": "be called",
+        "explanation_en": "被 marks the passive, and 称为 means “call” or “designate as”; together they say that the subject receives a name or designation."
+      },
+      {
+        "first_segment": 334,
+        "last_segment": 335,
+        "text": "考中的",
+        "pinyin": "kǎozhòng de",
+        "meaning_en": "who passed the examination",
+        "explanation_en": "考 means “take an exam,” and 中 is the result complement meaning the attempt succeeded. 的 marks the phrase as a modifier referring to a person; the negation 没 lies outside this unit in the sentence."
+      },
+      {
+        "first_segment": 413,
+        "last_segment": 414,
+        "text": "聚集了",
+        "pinyin": "jùjí le",
+        "meaning_en": "gathered",
+        "explanation_en": "聚集 means to gather or assemble; the neutral-tone aspect marker 了 marks the gathering as a completed event."
+      },
+      {
+        "first_segment": 495,
+        "last_segment": 496,
+        "text": "成了",
+        "pinyin": "chéngle",
+        "meaning_en": "became",
+        "explanation_en": "成 is the verb “become,” and the neutral-tone 了 marks the resulting state as having come about; the following phrase names that state."
+      },
+      {
+        "first_segment": 523,
+        "last_segment": 524,
+        "text": "结交",
+        "pinyin": "jiéjiāo",
+        "meaning_en": "to establish ties with; associate with",
+        "explanation_en": "结 means to form, and 交 here refers to association; together they make a verb for establishing a relationship."
+      },
+      {
+        "first_segment": 550,
+        "last_segment": 551,
+        "text": "杀了",
+        "pinyin": "shāle",
+        "meaning_en": "killed",
+        "explanation_en": "杀 is “kill”; attached 了 marks the action as completed."
+      },
+      {
+        "first_segment": 559,
+        "last_segment": 560,
+        "text": "关进",
+        "pinyin": "guān jìn",
+        "meaning_en": "confine inside; put in",
+        "explanation_en": "关 means to shut or confine, and 进 is a directional complement indicating movement into a place. The destination 牢里 remains separate."
+      },
+      {
+        "first_segment": 591,
+        "last_segment": 592,
+        "text": "裹着",
+        "pinyin": "guǒzhe",
+        "meaning_en": "have wrapped around; wear wrapped",
+        "explanation_en": "裹 means to wrap, and 着 marks the resulting state as continuing. Together they describe something remaining wrapped around the person."
+      },
+      {
+        "first_segment": 682,
+        "last_segment": 683,
+        "text": "引出了",
+        "pinyin": "yǐnchū le",
+        "meaning_en": "brought Liu Bei forth",
+        "explanation_en": "引出 combines 引, ‘draw or bring,’ with 出, which presents someone as brought forth; 了 marks the event as completed."
+      },
+      {
+        "first_segment": 705,
+        "last_segment": 706,
+        "text": "做过官",
+        "pinyin": "zuòguo guān",
+        "meaning_en": "had served as an official",
+        "explanation_en": "做官 means serving in an official role; 官 names that role generally, without specifying a rank. The experiential 过 marks having done this before."
+      },
+      {
+        "first_segment": 836,
+        "last_segment": 837,
+        "text": "听后",
+        "pinyin": "tīng hòu",
+        "meaning_en": "after hearing this",
+        "explanation_en": "听 names the event, and 后 places the following reaction after that event; it does not mark aspect on 听."
+      },
+      {
+        "first_segment": 859,
+        "last_segment": 860,
+        "text": "看了",
+        "pinyin": "kànle",
+        "meaning_en": "read; looked at",
+        "explanation_en": "看 means “read” or “look at”; 了 marks this act as completed and attaches to the predicate."
+      },
+      {
+        "first_segment": 868,
+        "last_segment": 869,
+        "text": "有志",
+        "pinyin": "yǒu zhì",
+        "meaning_en": "have aspirations",
+        "explanation_en": "有 (“have”) takes 志 as a noun meaning “aspiration” or “resolve”; together they describe having ambition."
+      },
+      {
+        "first_segment": 890,
+        "last_segment": 891,
+        "text": "出力",
+        "pinyin": "chū lì",
+        "meaning_en": "exert effort",
+        "explanation_en": "出 means “put forth,” and 力 is the noun “strength” or “effort”; together they form the reusable expression “exert effort.”"
+      },
+      {
+        "first_segment": 902,
+        "last_segment": 903,
+        "text": "看着",
+        "pinyin": "kànzhe",
+        "meaning_en": "be looking at; be reading",
+        "explanation_en": "看 means “look at” or “read”; attached 着 presents the action as ongoing while Liu Bei sighs."
+      },
+      {
+        "first_segment": 927,
+        "last_segment": 929,
+        "text": "像雷一样",
+        "pinyin": "xiàng léi yíyàng",
+        "meaning_en": "like thunder",
+        "explanation_en": "像 introduces the comparison, and 一样 marks similarity to 雷 (“thunder”); together 像 X 一样 is a reusable pattern for “like X.”"
+      },
+      {
+        "first_segment": 1032,
+        "last_segment": 1033,
+        "text": "推着",
+        "pinyin": "tuīzhe",
+        "meaning_en": "be pushing",
+        "explanation_en": "推 is the verb “push”; 着 is a neutral-tone aspect marker that presents the pushing as ongoing or in progress."
+      },
+      {
+        "first_segment": 1091,
+        "last_segment": 1092,
+        "text": "杀了",
+        "pinyin": "shāle",
+        "meaning_en": "killed",
+        "explanation_en": "杀 is the verb “kill”; attached 了 marks the killing as a completed event."
+      },
+      {
+        "first_segment": 1165,
+        "last_segment": 1166,
+        "text": "结为兄弟",
+        "pinyin": "jiéwéi xiōngdì",
+        "meaning_en": "become brothers",
+        "explanation_en": "结为 means “form or become as”; 兄弟 names the resulting relationship, so together they describe forming a bond as brothers."
+      },
+      {
+        "first_segment": 1205,
+        "last_segment": 1206,
+        "text": "结为兄弟",
+        "pinyin": "jiéwéi xiōngdì",
+        "meaning_en": "become brothers",
+        "explanation_en": "结为 means to form or become a status, and 兄弟 names that status: they enter a brotherly relationship."
+      },
+      {
+        "first_segment": 1209,
+        "last_segment": 1210,
+        "text": "同心",
+        "pinyin": "tóngxīn",
+        "meaning_en": "share the same purpose",
+        "explanation_en": "同 means “same” and 心 here means “intention”; together they express having a shared purpose, not merely having the same heart."
+      },
+      {
+        "first_segment": 1259,
+        "last_segment": 1260,
+        "text": "祭罢",
+        "pinyin": "jì bà",
+        "meaning_en": "finish performing the sacrifice",
+        "explanation_en": "祭 is “perform a sacrifice”; the result complement 罢 marks that action as finished, setting up what happens next."
+      },
+      {
+        "first_segment": 1302,
+        "last_segment": 1303,
+        "text": "带着",
+        "pinyin": "dàizhe",
+        "meaning_en": "bring along; have along",
+        "explanation_en": "带 means “bring” and 着 presents the accompanying state: the companions are with the guests as they arrive."
+      },
+      {
+        "first_segment": 1306,
+        "last_segment": 1307,
+        "text": "赶着",
+        "pinyin": "gǎnzhe",
+        "meaning_en": "drive along",
+        "explanation_en": "赶 means “drive or urge along”; 着 presents that action as ongoing while they bring the group of horses."
+      },
+      {
+        "first_segment": 1352,
+        "last_segment": 1353,
+        "text": "听后",
+        "pinyin": "tīng hòu",
+        "meaning_en": "after hearing",
+        "explanation_en": "听 is the verb “hear”; 后 follows it to mark the time after that event."
+      },
+      {
+        "first_segment": 1418,
+        "last_segment": 1421,
+        "text": "认刘备为侄子",
+        "pinyin": "rèn Liú Bèi wéi zhízi",
+        "meaning_en": "regard Liu Bei as a nephew",
+        "explanation_en": "认…为… presents someone as having a particular identity or role: 认 means “regard/recognize,” and 为 introduces the role assigned."
+      },
+      {
+        "first_segment": 1425,
+        "last_segment": 1427,
+        "text": "没过几天",
+        "pinyin": "méi guò jǐ tiān",
+        "meaning_en": "before many days had passed",
+        "explanation_en": "没过 with a duration means that the time span has not elapsed; 几天 supplies that span. Here 过 means “elapse,” not “pass by” a place."
+      },
+      {
+        "first_segment": 1433,
+        "last_segment": 1434,
+        "text": "将领",
+        "pinyin": "jiànglǐng",
+        "meaning_en": "commander",
+        "explanation_en": "Here 将领 is a compound noun for a military commander. 将 is read jiàng in this role, not jiāng as the word for “will” or “be going to.”"
+      },
+      {
+        "first_segment": 1441,
+        "last_segment": 1442,
+        "text": "来犯",
+        "pinyin": "láifàn",
+        "meaning_en": "come to attack",
+        "explanation_en": "来 indicates movement toward the place in the narrative, and 犯 supplies the attack or incursion; together they describe an attack coming toward that place."
+      },
+      {
+        "first_segment": 1485,
+        "last_segment": 1486,
+        "text": "围着",
+        "pinyin": "wéizhe",
+        "meaning_en": "be wrapped around",
+        "explanation_en": "围 means “wrap around”; the attached state marker 着 presents the wrapping as a continuing state."
+      },
+      {
+        "first_segment": 1532,
+        "last_segment": 1533,
+        "text": "出战",
+        "pinyin": "chū zhàn",
+        "meaning_en": "go out to fight",
+        "explanation_en": "出 means “go out,” and 战 means “fight”; together they form a compact verb for going out to engage in battle."
+      },
+      {
+        "first_segment": 1544,
+        "last_segment": 1545,
+        "text": "翻身",
+        "pinyin": "fān shēn",
+        "meaning_en": "turn over",
+        "explanation_en": "翻 means “turn,” and 身 means “body”; together they form the compact verb 翻身, describing a turn of the body."
+      },
+      {
+        "first_segment": 1546,
+        "last_segment": 1547,
+        "text": "落马",
+        "pinyin": "luò mǎ",
+        "meaning_en": "fall from a horse",
+        "explanation_en": "落 means “fall,” and 马 identifies the horse; together 落马 is a compact expression for falling from horseback."
+      },
+      {
+        "first_segment": 1562,
+        "last_segment": 1565,
+        "text": "斩成两段",
+        "pinyin": "zhǎn chéng liǎng duàn",
+        "meaning_en": "cut into two pieces",
+        "explanation_en": "斩 means “cut down”; 成 marks the resulting state, and 两段 specifies that the result consists of two sections."
+      },
+      {
+        "first_segment": 1577,
+        "last_segment": 1578,
+        "text": "展现了",
+        "pinyin": "zhǎnxiàn le",
+        "meaning_en": "demonstrated",
+        "explanation_en": "展现 means “display” or “show,” and 了 marks the completed event. Together they form the predicate; 了 does not include the following object."
+      },
+      {
+        "first_segment": 1629,
+        "last_segment": 1630,
+        "text": "守不住",
+        "pinyin": "shǒu bu zhù",
+        "meaning_en": "be unable to hold",
+        "explanation_en": "守 means “defend” or “hold,” 不 marks inability in this potential construction, and 住 supplies the sense of holding or maintaining the position. Here 不 is unstressed and neutral-toned."
+      },
+      {
+        "first_segment": 1678,
+        "last_segment": 1679,
+        "text": "迎战",
+        "pinyin": "yíngzhàn",
+        "meaning_en": "meet the enemy in battle",
+        "explanation_en": "迎 (verb, meet or face) + 战 (noun, battle) combines facing an opponent with engaging in battle."
+      },
+      {
+        "first_segment": 1686,
+        "last_segment": 1687,
+        "text": "退后",
+        "pinyin": "tuìhòu",
+        "meaning_en": "move back",
+        "explanation_en": "退 (verb, retreat) + 后 (direction, back) form one predicate describing movement toward the rear."
+      },
+      {
+        "first_segment": 1690,
+        "last_segment": 1691,
+        "text": "扎营",
+        "pinyin": "zhāyíng",
+        "meaning_en": "set up camp",
+        "explanation_en": "扎 (verb, pitch or establish) + 营 (noun, camp) describe establishing a camp."
+      },
+      {
+        "first_segment": 1747,
+        "last_segment": 1748,
+        "text": "出兵",
+        "pinyin": "chūbīng",
+        "meaning_en": "send out troops",
+        "explanation_en": "出 (verb, go out or bring forth) + 兵 (noun, troops) form a compact military expression for deploying troops."
+      },
+      {
+        "first_segment": 1808,
+        "last_segment": 1809,
+        "text": "解开了",
+        "pinyin": "jiěkāi le",
+        "meaning_en": "lifted the siege",
+        "explanation_en": "解开 (verb, loosen or undo) describes removing the encirclement; attached 了 marks the completed change."
+      },
+      {
+        "first_segment": 1834,
+        "last_segment": 1835,
+        "text": "交战",
+        "pinyin": "jiāozhàn",
+        "meaning_en": "engage in battle",
+        "explanation_en": "交 (verb, engage) + 战 (noun, battle) form a compact expression for opposing sides fighting one another."
+      },
+      {
+        "first_segment": 1944,
+        "last_segment": 1945,
+        "text": "赶路",
+        "pinyin": "gǎnlù",
+        "meaning_en": "hurry along on a journey",
+        "explanation_en": "赶 means to hurry, and 路 here refers to the journey being made; together they describe traveling in haste, rather than hurrying a physical road."
+      },
+      {
+        "first_segment": 1954,
+        "last_segment": 1955,
+        "text": "交战",
+        "pinyin": "jiāozhàn",
+        "meaning_en": "engage in battle",
+        "explanation_en": "交 combines with 战 to form a compact verb for opposing sides entering combat; here 交 does not mean to hand something over."
+      },
+      {
+        "first_segment": 1994,
+        "last_segment": 1995,
+        "text": "带着",
+        "pinyin": "dàizhe",
+        "meaning_en": "taking along",
+        "explanation_en": "带 means to take or lead along, and the attached aspect marker 着 presents that accompanying action or state as continuing while they escape."
+      },
+      {
+        "first_segment": 2068,
+        "last_segment": 2069,
+        "text": "骗过",
+        "pinyin": "piànguò",
+        "meaning_en": "successfully deceive",
+        "explanation_en": "骗 means to deceive, and 过 is a result complement meaning to get past someone; here it is not the experience marker 过."
+      },
+      {
+        "first_segment": 2077,
+        "last_segment": 2078,
+        "text": "相信了",
+        "pinyin": "xiāngxìn le",
+        "meaning_en": "believed",
+        "explanation_en": "相信 means to believe, and the aspect particle 了 marks the act as having occurred. Here 了 is not a separate change-of-state marker."
+      },
+      {
+        "first_segment": 2099,
+        "last_segment": 2100,
+        "text": "举为孝廉",
+        "pinyin": "jǔwéi xiàolián",
+        "meaning_en": "be recommended as a xiaolian",
+        "explanation_en": "举 means to recommend, and 为 introduces the resulting status, 孝廉. The passive context comes from 被 before this unit."
+      },
+      {
+        "first_segment": 2103,
+        "last_segment": 2104,
+        "text": "做了",
+        "pinyin": "zuò le",
+        "meaning_en": "took up; served as",
+        "explanation_en": "做 means to take on or serve in a role here, and the aspect particle 了 marks that action as having occurred; the role itself follows."
+      },
+      {
+        "first_segment": 2190,
+        "last_segment": 2191,
+        "text": "带着",
+        "pinyin": "dàizhe",
+        "meaning_en": "lead along; have along",
+        "explanation_en": "带 is the verb “lead/take,” and 着 marks the accompanying state as continuing while they retreat."
+      },
+      {
+        "first_segment": 2227,
+        "last_segment": 2229,
+        "text": "逃了出去",
+        "pinyin": "táo le chūqu",
+        "meaning_en": "escape out",
+        "explanation_en": "逃 is “escape”; 了 marks the event as completed, and 出去 adds movement outward. Together they describe getting out by escaping."
+      },
+      {
+        "first_segment": 2248,
+        "last_segment": 2249,
+        "text": "带着",
+        "pinyin": "dàizhe",
+        "meaning_en": "bring along",
+        "explanation_en": "带 is the verb “take/bring,” and 着 marks the accompanying state as continuing while they travel."
+      },
+      {
+        "first_segment": 2316,
+        "last_segment": 2317,
+        "text": "带着",
+        "pinyin": "dài zhe",
+        "meaning_en": "take or lead along",
+        "explanation_en": "带 means “take” or “lead”; attached 着 presents the taking along as ongoing or as an accompanying state while Liu Bei returns. The names that follow remain separate."
+      },
+      {
+        "first_segment": 2425,
+        "last_segment": 2426,
+        "text": "押回",
+        "pinyin": "yā huí",
+        "meaning_en": "escort back",
+        "explanation_en": "押 is the verb “escort under guard”; 回 is a directional complement indicating movement back toward a reference point."
+      },
+      {
+        "first_segment": 2433,
+        "last_segment": 2434,
+        "text": "听完",
+        "pinyin": "tīngwán",
+        "meaning_en": "finish listening",
+        "explanation_en": "听 means “listen,” and 完 is a result complement showing that the listening reaches completion."
+      },
+      {
+        "first_segment": 2465,
+        "last_segment": 2466,
+        "text": "押走",
+        "pinyin": "yā zǒu",
+        "meaning_en": "be escorted away",
+        "explanation_en": "押 means “escort under guard”; 走 is a directional complement indicating departure. 被 marks the passive construction outside this unit."
+      },
+      {
+        "first_segment": 2521,
+        "last_segment": 2522,
+        "text": "飞马冲去",
+        "pinyin": "fēimǎ chōngqu",
+        "meaning_en": "charge at a gallop, moving away",
+        "explanation_en": "飞马冲 describes charging at a gallop; 去 is the directional complement, indicating movement away from the reference point. In this connected predicate use, 去 is unstressed and pronounced qu."
+      },
+      {
+        "first_segment": 2545,
+        "last_segment": 2546,
+        "text": "救下",
+        "pinyin": "jiùxia",
+        "meaning_en": "manage to rescue",
+        "explanation_en": "救 means “rescue,” and 下 is a result complement marking that the rescue is achieved. Here 下 is grammaticalized and unstressed, pronounced xia."
+      },
+      {
+        "first_segment": 2586,
+        "last_segment": 2588,
+        "text": "气得不得了",
+        "pinyin": "qì de bùdéliǎo",
+        "meaning_en": "be terribly angry",
+        "explanation_en": "得 introduces a degree complement: 不得了 intensifies 气, “anger,” to an extreme degree. In this construction 不得了 means “extremely,” not “unable to.”"
+      }
+    ]
+  },
+  "review_digest": "4e691db2b6dc4a9c9df93708fb884be8d008a793075f40c0097120e4d56650bb",
+  "name_argument_review": {
+    "model": "gpt-6-luna",
+    "effort": "high",
+    "previous_digest": "d74ac2b83bbb1cd1d96d0a7969e970bb48b7518e21d72f91d0e2739982acce91"
+  },
+  "coverage_review": {
+    "model": "gpt-6-luna",
+    "effort": "high",
+    "previous_digest": "c31a376dfe3ad306e61f2a67fcc08cf11ffb8747c95e14c6d6228f281b639a1b"
+  }
+}

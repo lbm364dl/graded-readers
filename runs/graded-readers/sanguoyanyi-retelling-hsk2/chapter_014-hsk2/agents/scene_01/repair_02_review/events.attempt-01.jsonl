@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff339-0854-7e51-9b83-995d7867edc0"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.93,\"naturalness\":0.88,\"readability\":0.91,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“四路人马早早在路上等着”把孔明用来震慑周瑜的侦报说成了四路军队确实已在路上埋伏，略有事实和因果夸大。\"],\"language_problems\":[\"“原来的口子又开了”说法口语化且不够明确，建议改为“旧伤口又裂开了”。\"],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":32612,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":1181,"reasoning_output_tokens":1034}}

@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_115-hsk3",
+  "level": "hsk3",
+  "target_chars": 500,
+  "candidate_cjk": 501,
+  "required_range": [
+    350,
+    650
+  ],
+  "material_findings": [
+    {
+      "omission_note": "删去了姜维屯田后的具体守将分派和魏军三路进攻汉中的详细部署。",
+      "classification": "material",
+      "reason": "这些部署建立了汉中防务的具体责任、魏军进攻路线和后续战事的因果基础，属于可能影响后续章节连贯性的关键信息。",
+      "required_fix": "补回姜维分派胡济、王含、蒋斌、蒋舒、傅僉等人守城守关的具体安排，以及邓艾由关外陇右牵制、钟会由关中进军并分三路袭取汉中的详细部署。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "删去了姜维屯田后的具体守将分派和魏军三路进攻汉中的详细部署。",
+      "classification": "material",
+      "reason": "这些部署建立了汉中防务的具体责任、魏军进攻路线和后续战事的因果基础，属于可能影响后续章节连贯性的关键信息。",
+      "required_fix": "补回姜维分派胡济、王含、蒋斌、蒋舒、傅僉等人守城守关的具体安排，以及邓艾由关外陇右牵制、钟会由关中进军并分三路袭取汉中的详细部署。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 501,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

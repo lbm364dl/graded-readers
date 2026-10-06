@@ -1,0 +1,31 @@
+{
+  "id": "zh-9b952dd4e3c8-1-f7a091145c375392",
+  "entry_id": "zh-9b952dd4e3c8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9b952dd4e3c8-1",
+      "headword": "的话",
+      "kind": "word",
+      "reading": "de huà",
+      "senses": [
+        {
+          "id": "zh-9b952dd4e3c8-1-s1",
+          "definition": "words or a statement that someone says or conveys"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他又让人传出“苍天已死，黄天当立”和“岁在甲子，天下大吉”的话，叫百姓在家门上写“甲子”。",
+        "gloss": "words; what was said",
+        "sense_id": "zh-9b952dd4e3c8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "10803815a37f57b2e7187240966cbac7ee2f76d2b150e45998a36da7d366f5ad"
+}

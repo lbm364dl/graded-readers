@@ -1,0 +1,31 @@
+{
+  "id": "zh-de333e74a7fd-1-01a96a8d8d318f61",
+  "entry_id": "zh-de333e74a7fd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-de333e74a7fd-1",
+      "headword": "苍天",
+      "kind": "word",
+      "reading": "cāngtiān",
+      "senses": [
+        {
+          "id": "zh-de333e74a7fd-1-s1",
+          "definition": "the blue sky; heaven"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他让人传播“苍天已死，黄天当立”和“岁在甲子，天下大吉”，还用白土在家门上写“甲子”。",
+        "gloss": "Blue Heaven",
+        "sense_id": "zh-de333e74a7fd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c462d82043a053dcc8d13754373f00858c53490250e03957f78ff09375602965"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-30c0cb00a732-1-b34c5ffa8a6e03ff",
+  "entry_id": "zh-30c0cb00a732-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-30c0cb00a732-1",
+      "headword": "作为",
+      "kind": "word",
+      "reading": "zuòwéi",
+      "senses": [
+        {
+          "id": "zh-30c0cb00a732-1-s1",
+          "definition": "serve or function as; be used as"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "马元义暗中带金帛，和宦官封谞结交，准备作为内应。",
+        "gloss": "to serve as",
+        "sense_id": "zh-30c0cb00a732-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f8b4a93db46bc021d9e26f76fc2b00ee06d35ce4091dffea2240d3edfbbc1568"
+}

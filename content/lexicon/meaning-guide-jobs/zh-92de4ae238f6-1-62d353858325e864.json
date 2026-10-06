@@ -1,0 +1,31 @@
+{
+  "id": "zh-92de4ae238f6-1-62d353858325e864",
+  "entry_id": "zh-92de4ae238f6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-92de4ae238f6-1",
+      "headword": "喝道",
+      "kind": "word",
+      "reading": "hèdào",
+      "senses": [
+        {
+          "id": "zh-92de4ae238f6-1-s1",
+          "definition": "shout an order or command"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他扬鞭喝道：“反国逆贼，为何还不早降？",
+        "gloss": "to shout at someone to halt",
+        "sense_id": "zh-92de4ae238f6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b647c42ad2731a50ec37f953df93a72667d9a1326bb49749303031cd2f4e80f1"
+}

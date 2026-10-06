@@ -1,0 +1,31 @@
+{
+  "id": "zh-1991715bf56b-1-f1a799c0eb5973cf",
+  "entry_id": "zh-1991715bf56b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-1991715bf56b-1",
+      "headword": "依附",
+      "kind": "word",
+      "reading": "yīfù",
+      "senses": [
+        {
+          "id": "zh-1991715bf56b-1-s1",
+          "definition": "attach oneself to or seek the support of someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "皇甫嵩说，张梁、张宝势穷力乏，必会逃往广宗依附张角。",
+        "gloss": "to rely on",
+        "sense_id": "zh-1991715bf56b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9ade0e3d2b8d0daeadd6d926e88b34b4041c0b2574a9ce15d6a786e3d772c377"
+}

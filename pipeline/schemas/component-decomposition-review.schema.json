@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["revisions"],
+  "properties": {
+    "revisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["parent_entry_id", "headword", "reason", "suggested_parts"],
+        "properties": {
+          "parent_entry_id": {"type": "string"},
+          "headword": {"type": "string"},
+          "reason": {"type": "string"},
+          "suggested_parts": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

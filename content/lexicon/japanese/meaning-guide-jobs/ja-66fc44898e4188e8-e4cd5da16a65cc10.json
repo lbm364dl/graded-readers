@@ -1,0 +1,32 @@
+{
+  "id": "ja-66fc44898e4188e8-e4cd5da16a65cc10",
+  "entry_id": "ja-66fc44898e4188e8",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-66fc44898e4188e8",
+      "headword": "理由",
+      "reading": "りゆう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-66fc44898e4188e8-1",
+          "definition": "a reason or cause"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "隣の三毛君も、また別の理由で人間に憤慨している。",
+        "gloss": "reason",
+        "sense_id": "ja-66fc44898e4188e8-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1d6796afc8a3c3f15073188d5b0a3e6aad580cee15685606b55af46a5ad12935"
+}

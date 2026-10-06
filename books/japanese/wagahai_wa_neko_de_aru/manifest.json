@@ -1,0 +1,92 @@
+{
+  "title": "吾輩は猫である",
+  "author": "夏目漱石",
+  "source": "books/japanese/wagahai_wa_neko_de_aru.txt",
+  "source_bytes": 1120767,
+  "source_sha256": "6bad4af644a8cef1e3f0f33cd3dc905ad3a9c1afeea94d790399ed6c61387326",
+  "chapter_count": 11,
+  "normalized_literary_body_bytes": 1100014,
+  "normalized_literary_body_sha256": "102c00a152fece7f908208ef2afde04667ba5fc9bfc1dd1f129a16f7ccb18383",
+  "epub": "wagahai_wa_neko_de_aru.epub",
+  "epub_bytes": 434801,
+  "epub_sha256": "e51725252a76b20b0e623be8a5c38a1afc8b7b5d18e82eb4d04e146132b0147c",
+  "chapters": [
+    {
+      "number": 1,
+      "label": "一",
+      "file": "chapter_01.txt",
+      "bytes": 40786,
+      "sha256": "b4930c8acbdb651ec335b144835801278990d5946aa46209c8e62b733fafa8e2"
+    },
+    {
+      "number": 2,
+      "label": "二",
+      "file": "chapter_02.txt",
+      "bytes": 138462,
+      "sha256": "d0ba6c46c22604ff6d3bd8135ba7a13bc7abe4295075dfe638c47aeb058146d2"
+    },
+    {
+      "number": 3,
+      "label": "三",
+      "file": "chapter_03.txt",
+      "bytes": 118137,
+      "sha256": "e199c2a45b0ac83d31239039e7ceeb8e620dd100bea5d1c1fd0a8e0b9d3ea83e"
+    },
+    {
+      "number": 4,
+      "label": "四",
+      "file": "chapter_04.txt",
+      "bytes": 80503,
+      "sha256": "bb6086e48ade1b9980761d612181e022f28cbe4ea658150efbb59a3cc0a918a0"
+    },
+    {
+      "number": 5,
+      "label": "五",
+      "file": "chapter_05.txt",
+      "bytes": 79745,
+      "sha256": "f6b396f773dc3093c8ccdb13a5b3515103251d1201b3767a17005fcd73046c86"
+    },
+    {
+      "number": 6,
+      "label": "六",
+      "file": "chapter_06.txt",
+      "bytes": 84628,
+      "sha256": "7ab5e5ac7d6458f16b18345f57da537a10a9706f940d03b00f557a16b0fb752b"
+    },
+    {
+      "number": 7,
+      "label": "七",
+      "file": "chapter_07.txt",
+      "bytes": 90936,
+      "sha256": "724b46479d35051131e00813b2f7e0290d2b4d25249d0c7a1efddd398ab0d711"
+    },
+    {
+      "number": 8,
+      "label": "八",
+      "file": "chapter_08.txt",
+      "bytes": 100461,
+      "sha256": "6b76a016c0543ca48955db233752a4a04edb635e6157fd030d564c90450f22fc"
+    },
+    {
+      "number": 9,
+      "label": "九",
+      "file": "chapter_09.txt",
+      "bytes": 95540,
+      "sha256": "fe2ecfc603e362b6be0c8222f93023df6325a5b1f7eb44c0b846d8afd144d84b"
+    },
+    {
+      "number": 10,
+      "label": "十",
+      "file": "chapter_10.txt",
+      "bytes": 118943,
+      "sha256": "c408042ddee79acf4ed5607faf1d5360319f3b6fd88c7509fd5a665bbaa95251"
+    },
+    {
+      "number": 11,
+      "label": "十一",
+      "file": "chapter_11.txt",
+      "bytes": 152044,
+      "sha256": "895aa6c43892dca287455d746a08b35c0bbf8a3aa20998f97c905f75f5a77fd7"
+    }
+  ]
+}

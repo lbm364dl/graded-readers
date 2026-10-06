@@ -1,0 +1,32 @@
+{
+  "id": "ja-7f6dcfc8a4ecb293-897a5a489eaa626b",
+  "entry_id": "ja-7f6dcfc8a4ecb293",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7f6dcfc8a4ecb293",
+      "headword": "ね",
+      "reading": "ね",
+      "kind": "particle",
+      "senses": [
+        {
+          "id": "ja-7f6dcfc8a4ecb293-1",
+          "definition": "A sentence-final particle that seeks the listener's agreement or acknowledgment, or adds a familiar, shared tone."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "「君は車屋にいるから、たくさん食べて太っているのだね」\n",
+        "gloss": "right?; you know",
+        "sense_id": "ja-7f6dcfc8a4ecb293-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e7aa818dfe5deec7b00760a48ab403456bd4f88d4622b26e61f344478a68bb96"
+}

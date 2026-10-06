@@ -1,0 +1,41 @@
+{
+  "id": "zh-c9a31a3f670b-1-e6afc96bd3fabbd8",
+  "entry_id": "zh-c9a31a3f670b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c9a31a3f670b-1",
+      "headword": "老师",
+      "kind": "word",
+      "reading": "lǎoshī",
+      "senses": [
+        {
+          "id": "zh-c9a31a3f670b-1-s1",
+          "definition": "teacher"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "事情结束后，刘备想起老师卢植。",
+        "gloss": "teacher",
+        "sense_id": "zh-c9a31a3f670b-1-s1"
+      },
+      {
+        "sentence": "”张飞听完十分生气，要杀押车的人，救下老师。",
+        "gloss": "teacher",
+        "sense_id": "zh-c9a31a3f670b-1-s1"
+      },
+      {
+        "sentence": "刘备之前跟卢植学习，听说老师正在广宗和黄巾军作战，便想去帮助他。",
+        "gloss": "teacher",
+        "sense_id": "zh-c9a31a3f670b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4fc87267644d2d587b4ea8e128a2f9eb5a65fc6d028f8adade6e580cea507a54"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-246ce4df5c50-2-2fa9b75c431ba335",
+  "entry_id": "zh-246ce4df5c50-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-246ce4df5c50-2",
+      "headword": "恭",
+      "kind": "name",
+      "reading": "gōng",
+      "senses": [
+        {
+          "id": "zh-246ce4df5c50-2-s1",
+          "definition": "Gong, an honorific title in the name of the King of Lu."
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "太守刘焉是江夏竟陵人，也是汉鲁恭王的后裔。",
+        "gloss": "respectful",
+        "sense_id": "zh-246ce4df5c50-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "eec55a61f9ff25709db0e58c74fa5c2c208c7e6949caaf9e2d3c5afcd210fab2"
+}

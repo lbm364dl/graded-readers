@@ -1,0 +1,31 @@
+{
+  "id": "zh-503214a62831-1-a6bcf78771a7c727",
+  "entry_id": "zh-503214a62831-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-503214a62831-1",
+      "headword": "说出",
+      "kind": "construction",
+      "reading": "shuōchū",
+      "senses": [
+        {
+          "id": "zh-503214a62831-1-s1",
+          "definition": "to say or express something, bringing it out in words"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备说出自己的想法。",
+        "gloss": "state",
+        "sense_id": "zh-503214a62831-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b23baf4fd74e144a3f98a67a58ee4f4cadd2370a952dd0a46bffc6450982ced8"
+}

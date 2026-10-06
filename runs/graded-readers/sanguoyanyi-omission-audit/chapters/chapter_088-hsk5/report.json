@@ -1,0 +1,78 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_088-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 1005,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "略去孟获第一次获释后编造逃脱经过及重新集结兵马的细节。",
+      "classification": "material",
+      "reason": "这不仅省略了孟获为脱身编造谎言的关键情节，也弱化了他重新召集大量兵马、形成泸水防线的规模和过程；后者是后续对峙的重要铺垫。",
+      "required_fix": "补回孟获编造杀人夺马逃脱的经过，以及他召集败兵、被释放的蛮兵和各洞酋长、集结大批兵马并据险防守的具体情节。"
+    },
+    {
+      "omission_note": "略去阿会喃奉命把守沙口，以及董荼那等人决定反抗孟获的部分劝说细节。",
+      "classification": "material",
+      "reason": "阿会喃守沙口是孟获防御部署的一环；更重要的是，酋长们基于受孔明活命之恩、担忧百姓受苦以及畏惧孔明谋略而反抗孟获，这些内容交代了叛变的动机和关系变化。",
+      "required_fix": "补回阿会喃奉命守沙口，并补写酋长们劝说董荼那、决定杀孟获投奔孔明的主要理由。"
+    },
+    {
+      "omission_note": "略去孟获获释后杀害董荼那、阿会喃的具体诱捕经过。",
+      "classification": "material",
+      "reason": "接受场景保留了杀害结果，但省略了孟获假借孔明使命诱骗二人到大寨并杀害、弃尸的具体经过，削弱了这一事件的因果链和孟获背信、残酷的重要 characterization。",
+      "required_fix": "补回孟获设伏，并派人假称孔明有使命诱骗董荼那、阿会喃到帐下后将二人杀害弃尸的经过。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "略去孟获第一次获释后编造逃脱经过及重新集结兵马的细节。",
+      "classification": "material",
+      "reason": "这不仅省略了孟获为脱身编造谎言的关键情节，也弱化了他重新召集大量兵马、形成泸水防线的规模和过程；后者是后续对峙的重要铺垫。",
+      "required_fix": "补回孟获编造杀人夺马逃脱的经过，以及他召集败兵、被释放的蛮兵和各洞酋长、集结大批兵马并据险防守的具体情节。"
+    },
+    {
+      "omission_note": "略去阿会喃奉命把守沙口，以及董荼那等人决定反抗孟获的部分劝说细节。",
+      "classification": "material",
+      "reason": "阿会喃守沙口是孟获防御部署的一环；更重要的是，酋长们基于受孔明活命之恩、担忧百姓受苦以及畏惧孔明谋略而反抗孟获，这些内容交代了叛变的动机和关系变化。",
+      "required_fix": "补回阿会喃奉命守沙口，并补写酋长们劝说董荼那、决定杀孟获投奔孔明的主要理由。"
+    },
+    {
+      "omission_note": "略去孟获获释后杀害董荼那、阿会喃的具体诱捕经过。",
+      "classification": "material",
+      "reason": "接受场景保留了杀害结果，但省略了孟获假借孔明使命诱骗二人到大寨并杀害、弃尸的具体经过，削弱了这一事件的因果链和孟获背信、残酷的重要 characterization。",
+      "required_fix": "补回孟获设伏，并派人假称孔明有使命诱骗董荼那、阿会喃到帐下后将二人杀害弃尸的经过。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1005,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

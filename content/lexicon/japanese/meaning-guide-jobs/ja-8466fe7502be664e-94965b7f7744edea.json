@@ -1,0 +1,32 @@
+{
+  "id": "ja-8466fe7502be664e-94965b7f7744edea",
+  "entry_id": "ja-8466fe7502be664e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8466fe7502be664e",
+      "headword": "鈍い",
+      "reading": "にぶい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8466fe7502be664e-1",
+          "definition": "dull; insensitive"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人間は、自分たちの都合には敏感だが、他の者の苦しみには実に鈍い。",
+        "gloss": "insensitive; dull to",
+        "sense_id": "ja-8466fe7502be664e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b1a4181eba004fa664cbd2c2c07fc48cbd3ec9cc6defbb0efa89862c6bc4ecb2"
+}

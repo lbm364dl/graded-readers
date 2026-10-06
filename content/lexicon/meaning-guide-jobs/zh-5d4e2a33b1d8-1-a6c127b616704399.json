@@ -1,0 +1,31 @@
+{
+  "id": "zh-5d4e2a33b1d8-1-a6c127b616704399",
+  "entry_id": "zh-5d4e2a33b1d8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5d4e2a33b1d8-1",
+      "headword": "冒",
+      "kind": "word",
+      "reading": "mào",
+      "senses": [
+        {
+          "id": "zh-5d4e2a33b1d8-1-s1",
+          "definition": "to face or expose oneself to (danger or difficulty)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备离开后，张飞非常生气：“我们冒着危险救他，他竟然这样无礼！",
+        "gloss": "to brave; to risk",
+        "sense_id": "zh-5d4e2a33b1d8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bbfd2aad2e44d65544d318fb0212be80fa7691f48e48fff0b6cfd647b378b52f"
+}

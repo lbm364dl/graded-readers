@@ -1,0 +1,62 @@
+{
+  "id": "ja-d718a760ae947926-a3142cb7577528c1",
+  "entry_id": "ja-d718a760ae947926",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d718a760ae947926",
+      "headword": "吾輩",
+      "reading": "わがはい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d718a760ae947926-1",
+          "definition": "I; a formal, literary first-person pronoun, traditionally masculine."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩は猫です。",
+        "gloss": "I; this speaker (old-fashioned male narrator)",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "男の人の手の上で、吾輩の目が回りました。",
+        "gloss": "I; the narrator",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "吾輩は笹原の中へ捨てられました。",
+        "gloss": "I; the narrator",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "I; the speaker",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "女の人は吾輩を何度も外へ出しましたが、吾輩は台所へ入りました。",
+        "gloss": "I; this narrator",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "I; me (literary, masculine)",
+        "sense_id": "ja-d718a760ae947926-1"
+      },
+      {
+        "sentence": "吾輩はこの家に住むことにしました。",
+        "gloss": "I; this speaker",
+        "sense_id": "ja-d718a760ae947926-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fdebe63d792e0deb95657b5087a9ceb2fa3be63545e61f4763eb5255aafbb54c"
+}

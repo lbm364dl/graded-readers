@@ -1,0 +1,32 @@
+{
+  "id": "ja-6fa7df4bd5e6b657-736a97d5305c650a",
+  "entry_id": "ja-6fa7df4bd5e6b657",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6fa7df4bd5e6b657",
+      "headword": "兄弟",
+      "reading": "きょうだい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6fa7df4bd5e6b657-1",
+          "definition": "Sibling or siblings; brothers and sisters."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "兄弟も母もいません。",
+        "gloss": "siblings",
+        "sense_id": "ja-6fa7df4bd5e6b657-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f438e04a980989929105e34b1f6c2a4e521d6708f5b7dff66979c6f0051edda0"
+}

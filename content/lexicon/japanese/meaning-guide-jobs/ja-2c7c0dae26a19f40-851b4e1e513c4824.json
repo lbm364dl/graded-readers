@@ -1,0 +1,87 @@
+{
+  "id": "ja-2c7c0dae26a19f40-851b4e1e513c4824",
+  "entry_id": "ja-2c7c0dae26a19f40",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-2c7c0dae26a19f40",
+      "headword": "という",
+      "reading": "という",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-2c7c0dae26a19f40-1",
+          "definition": "Indicates that something is said or reported to be the case."
+        },
+        {
+          "id": "ja-2c7c0dae26a19f40-2",
+          "definition": "Attaches a name or label to something; called or known as."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "誰がとったか分からないので、お金をもらうのだという。",
+        "gloss": "it is said that; reportedly",
+        "sense_id": "ja-2c7c0dae26a19f40-1"
+      },
+      {
+        "sentence": "後で聞いた話では、その人間は書生といい、人間の中でも特に悪い者だったらしい。",
+        "gloss": "called; known as",
+        "sense_id": "ja-2c7c0dae26a19f40-2"
+      },
+      {
+        "sentence": "書生は時々、猫を捕まえて煮て食べるという。",
+        "gloss": "it is said that; reportedly",
+        "sense_id": "ja-2c7c0dae26a19f40-1"
+      },
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "called; named",
+        "sense_id": "ja-2c7c0dae26a19f40-2"
+      },
+      {
+        "sentence": "吾輩が鼠をとったことはないと言うと、黒は、人間が猫のとった鼠を取り上げて交番へ持って行き、五銭をもらうという話をした。",
+        "gloss": "that; reporting that",
+        "sense_id": "ja-2c7c0dae26a19f40-1"
+      },
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "it is said that",
+        "sense_id": "ja-2c7c0dae26a19f40-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-2c7c0dae26a19f40",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "grammatical",
+    "explanation_en": "Placed after a clause, という presents its content as something said or reported. と marks the clause as quoted content, and いう means “say.”",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "と",
+        "contribution_en": "Marks the preceding clause as quoted content.",
+        "claim_ids": []
+      },
+      {
+        "text": "いう",
+        "contribution_en": "Means “say”; with と, it presents the clause as said or reported.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "9696321bfb009c232e4f396fac5bef8403ed876aae6d707c1e2a4c1cdc1a1e6b",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b5d7b1652a29055d111f1e7a92bbad2ec97eabb8053c2dc50408beec6eeb0e81"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-cee90acaac02-1-c585740f1bd32ab7",
+  "entry_id": "zh-cee90acaac02-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cee90acaac02-1",
+      "headword": "战到",
+      "kind": "construction",
+      "reading": "zhàn dào",
+      "senses": [
+        {
+          "id": "zh-cee90acaac02-1-s1",
+          "definition": "to fight until a specified time or point"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "战到天明，张梁、张宝带残兵逃走。",
+        "gloss": "fight until",
+        "sense_id": "zh-cee90acaac02-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "9c2167a50e2fd64c0f5f0013e9179a7e7db8882218511cd8598f85baa77a4c81"
+}

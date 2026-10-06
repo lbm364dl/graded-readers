@@ -1,0 +1,32 @@
+{
+  "id": "ja-f35c190429aa772f-b7ec76a42e354f60",
+  "entry_id": "ja-f35c190429aa772f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f35c190429aa772f",
+      "headword": "投稿する",
+      "reading": "とうこうする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f35c190429aa772f-1",
+          "definition": "to submit or contribute a work, such as a poem or article"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "俳句を作って雑誌へ投稿し、新体詩を書き、間違いの多い英文を作り、弓に熱中し、謡を習い、時にはヴァイオリンまで鳴らした。",
+        "gloss": "submitting; contributing",
+        "sense_id": "ja-f35c190429aa772f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "60c4af3096ba4a7ec7f4a14be846e0ff32e1f5e0a96e878c3e89ce42d1e0f716"
+}

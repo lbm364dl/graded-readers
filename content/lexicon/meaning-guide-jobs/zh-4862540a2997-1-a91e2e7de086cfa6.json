@@ -1,0 +1,31 @@
+{
+  "id": "zh-4862540a2997-1-a91e2e7de086cfa6",
+  "entry_id": "zh-4862540a2997-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4862540a2997-1",
+      "headword": "山",
+      "kind": "word",
+      "reading": "shān",
+      "senses": [
+        {
+          "id": "zh-4862540a2997-1-s1",
+          "definition": "a mountain"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "关羽和张飞各带一部分人，藏在山的两边。",
+        "gloss": "mountain",
+        "sense_id": "zh-4862540a2997-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4a143054f64bfc0ecf852a8e56a3d7a324a90f5f27652d9e947b2b82c7f3cea1"
+}

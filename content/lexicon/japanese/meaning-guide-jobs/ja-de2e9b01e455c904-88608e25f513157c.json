@@ -1,0 +1,32 @@
+{
+  "id": "ja-de2e9b01e455c904-88608e25f513157c",
+  "entry_id": "ja-de2e9b01e455c904",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-de2e9b01e455c904",
+      "headword": "ということ",
+      "reading": "ということ",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-de2e9b01e455c904-1",
+          "definition": "the fact or notion that; nominalizes a preceding phrase or clause"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "　隣の三毛君は、人間は所有権ということを理解していないと怒っている。",
+        "gloss": "the fact that; the notion that",
+        "sense_id": "ja-de2e9b01e455c904-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5a6d5cfa3574c89dd2b5c5413557cf3357594bab2ccbdbe69ce15bdacbbf1528"
+}

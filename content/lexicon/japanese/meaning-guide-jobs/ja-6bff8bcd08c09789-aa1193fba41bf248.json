@@ -1,0 +1,42 @@
+{
+  "id": "ja-6bff8bcd08c09789-aa1193fba41bf248",
+  "entry_id": "ja-6bff8bcd08c09789",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6bff8bcd08c09789",
+      "headword": "見る",
+      "reading": "みる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6bff8bcd08c09789-1",
+          "definition": "To see; to look at."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その時、初めて人を見ました。",
+        "gloss": "saw; looked at",
+        "sense_id": "ja-6bff8bcd08c09789-1"
+      },
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "while looking",
+        "sense_id": "ja-6bff8bcd08c09789-1"
+      },
+      {
+        "sentence": "主人は吾輩を見て、「家の中に置いてやれ」と言いました。",
+        "gloss": "seeing; looking at",
+        "sense_id": "ja-6bff8bcd08c09789-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8633717a182d596eb761cb2e886eee5216b722037c7a774a5552750cd96f9df8"
+}

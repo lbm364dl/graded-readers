@@ -1,0 +1,32 @@
+{
+  "id": "ja-757a1a39cfd7d958-98c279a93c956446",
+  "entry_id": "ja-757a1a39cfd7d958",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-757a1a39cfd7d958",
+      "headword": "金",
+      "reading": "かね",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-757a1a39cfd7d958-1",
+          "definition": "money"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "黒の主人はそのお金で一円五十銭ほど得たのに、黒にはろくな食べ物を与えなかったという。",
+        "gloss": "money",
+        "sense_id": "ja-757a1a39cfd7d958-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c0c2daefecc6cc00688399bdefaaee4011d960f98ad0d2fcdecb84f6f9309bc2"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-f9376c98b6cb-1-693cc938cf84b2bf",
+  "entry_id": "zh-f9376c98b6cb-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f9376c98b6cb-1",
+      "headword": "号",
+      "kind": "word",
+      "reading": "hào",
+      "senses": [
+        {
+          "id": "zh-f9376c98b6cb-1-s1",
+          "definition": "a signal or sign used to identify or indicate something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备让关羽带一千人到山左，张飞带一千人到山右，在那里埋伏，以鸣金为号。",
+        "gloss": "signal",
+        "sense_id": "zh-f9376c98b6cb-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f671f2d9fefdc7339009c313d1f99dddd779df21d2ab13960ffffb4ec23e0506"
+}

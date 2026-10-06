@@ -1,0 +1,2923 @@
+{
+  "schema_version": 2,
+  "policy_version": 5,
+  "reviewed": true,
+  "model": "gpt-6-luna",
+  "proposal_effort": "low",
+  "review_effort": "high",
+  "guides": [
+    {
+      "entry_id": "zh-component-00f0dc19cafa1161",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "十余 means more than ten: 十 gives the number ten, and 余 marks an amount beyond it.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "十",
+          "contribution_en": "ten",
+          "claim_ids": []
+        },
+        {
+          "text": "余",
+          "contribution_en": "marks an amount beyond the stated number",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "8cf73da415d09db127bb87628a36c3103a76c7c75885f0b27d2918e2337b187b",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-05fa9e756d6a3a57",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "八十 means eighty: 八 counts eight 十s, or eight tens.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "八",
+          "contribution_en": "eight; the number of tens",
+          "claim_ids": []
+        },
+        {
+          "text": "十",
+          "contribution_en": "ten; the unit being counted",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "70d5f2aae81dd6d9089bfed0cc1629d31e1e63e6cbacf673da646c086e3e9c80",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-08212d46fc32935a",
+      "claim_ids": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "structure": "proper_name",
+      "explanation_en": "公孙 is a Chinese compound surname. In older lineage usage, it could designate a ruler’s grandson: 公 placed the designation in the ruler’s lineage and status system, while 孙 marked the next descendant generation. Later accounts connect this designation with surname use, though the historical route is not established for every family.",
+      "caveat_en": "The historical parts explain an older lineage designation; they do not by themselves tell you anything specific about a person with this surname or establish that all 公孙 families share the same origin.",
+      "parts": [
+        {
+          "text": "公",
+          "contribution_en": "In the older lineage designation, places the person within a ruler’s lineage and status system.",
+          "claim_ids": [
+            "c1"
+          ]
+        },
+        {
+          "text": "孙",
+          "contribution_en": "In the older lineage designation, marks the next descendant generation.",
+          "claim_ids": [
+            "c1"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "zh-component-08212d46fc32935a",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://www.fdgwz.org.cn/Web/Show/1202",
+            "title": "趙曉龍：公孫源流考",
+            "accessed_at": "2026-09-27",
+            "summary_en": "A specialist study argues that in Western Zhou and Spring and Autumn sources 公孙某 generally functioned as a lineage status designation for descendants of rulers, rather than as a fixed hereditary surname. It discusses later surname use and competing traditions about an ancient 公孙 surname, but its reconstruction does not establish one transition shared by every surname lineage."
+          },
+          {
+            "id": "s2",
+            "url": "https://www.chineseclassic.com/content/1694",
+            "title": "儀禮注疏:卷十一：喪服第十一（下）| 數位經典",
+            "accessed_at": "2026-09-27",
+            "summary_en": "The passage says that a ruler’s son was called 公子 and a 公子’s son 公孙, and discusses their ritual status relative to the ruler. This supports the generational designation and its connection to rulerly lineage; it does not itself document the formation of later hereditary surnames."
+          },
+          {
+            "id": "s3",
+            "url": "https://zh.wikisource.org/zh-hans/%E9%80%9A%E5%BF%97/%E5%8D%B7029",
+            "title": "通志/卷029",
+            "accessed_at": "2026-09-27",
+            "summary_en": "Zheng Qiao’s surname account places 公孙 among surnames formed through rank or title lineage (以爵系为氏), while saying that the compound distinguishes lineages. In its general discussion, it describes 公子, 公孙, and later descendants who take an ancestor’s personal designation as a surname. This is a historical account of naming practice, not evidence that every 公孙 family followed one documented path."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "In the ritual designation, 孙 identifies the next descendant generation: the text gives the sequence ruler’s son as 公子 and that 公子’s son as 公孙. 公 places the designation within the ruler’s lineage and status system in this passage; the text does not support treating it as a standalone hereditary surname element or glossing it simply as ‘public’.",
+            "source_ids": [
+              "s2"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "The study argues that 公孙某 was generally a generation-and-status designation rather than a fixed surname in Western Zhou and Spring and Autumn usage. It discusses cases where later descendants are identified by an ancestor’s personal designation, consistent with 公孙 not necessarily being inherited as a surname by every generation.",
+            "source_ids": [
+              "s1",
+              "s3"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "A later surname account classifies 公孙 as a lineage surname formed through rank or title, and explains the compound as distinguishing a lineage. This supports a historical route from the designation to surname use, but is a retrospective account and does not establish that all hereditary 公孙 lineages arose through one transition.",
+            "source_ids": [
+              "s3"
+            ]
+          },
+          {
+            "id": "c4",
+            "text_en": "A tradition that the Yellow Emperor bore the surname 公孙 is reported in the historical surname literature; the specialist study treats the retrospective report as insufficient evidence for an ancient origin of the later compound surname. The opened sources do not settle the tradition’s historical reliability.",
+            "source_ids": [
+              "s1",
+              "s3"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "赵晓龙 公孙源流考 公孙 姓氏",
+            "opened_urls": [
+              "https://www.fdgwz.org.cn/Web/Show/1202"
+            ]
+          },
+          {
+            "query": "仪礼 丧服 公子之子 公孙 原文",
+            "opened_urls": [
+              "https://www.chineseclassic.com/content/1694"
+            ]
+          },
+          {
+            "query": "公孙 姓氏 起源 中国姓氏辞典 公孙氏",
+            "opened_urls": [
+              "https://www.fdgwz.org.cn/Web/Show/1202",
+              "https://www.chineseclassic.com/content/1694"
+            ]
+          },
+          {
+            "query": "公孙氏 姓氏 起源 《通志》 公子之子称公孙 姓氏研究",
+            "opened_urls": [
+              "https://zh.wikisource.org/zh-hans/%E9%80%9A%E5%BF%97/%E5%8D%B7029"
+            ]
+          },
+          {
+            "query": "公孙姓 中国姓氏大辞典 起源 春秋 各自为氏",
+            "opened_urls": []
+          },
+          {
+            "query": "赵晓龙 公孙源流考 公孙氏 汉代 姓氏 公子之子",
+            "opened_urls": [
+              "https://www.fdgwz.org.cn/Web/Show/1202"
+            ]
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://www.fdgwz.org.cn/Web/Show/1202",
+              "https://www.chineseclassic.com/content/1694",
+              "https://zh.wikisource.org/zh-hans/%E9%80%9A%E5%BF%97/%E5%8D%B7029"
+            ]
+          }
+        ],
+        "gaps": [
+          "The sources support an older lineage designation and later surname use, but do not establish a single documented transition for every hereditary 公孙 lineage; distinct families may have had different histories.",
+          "The Yellow Emperor surname tradition is reported and challenged, but its historical reliability is unresolved in the opened sources.",
+          "The study page could be opened, but repeated line-specific retrieval returned errors; its broad argument was checked through the page’s search-indexed description, so detailed claims about its supporting examples remain limited."
+        ]
+      },
+      "input_fingerprint": "53fd88c4a0f0c5930c618eefa0c07abcfd909c68946f53b80472430ef793931f",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "What is the established origin of 公孙 as a Chinese compound surname, and what contributions, if any, did 公 and 孙 make to its formation?"
+      ],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-0a8470127ad9bb3c",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "公论 is a public assessment: 论 is a judgment or opinion, and 公 frames it as shared by the public, giving the sense of a judgment regarded as fair.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "公",
+          "contribution_en": "public or shared",
+          "claim_ids": []
+        },
+        {
+          "text": "论",
+          "contribution_en": "judgment or opinion",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "076ddbab098e36e25472ca685c15dba45723787b00920c6fafb9b30bec260dcf",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-0e3a11a0809faf1c",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "协力 combines 协 (cooperate) with 力 (effort): people cooperate by pooling their effort, so they join forces and work together.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "协",
+          "contribution_en": "cooperate",
+          "claim_ids": []
+        },
+        {
+          "text": "力",
+          "contribution_en": "effort",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "74be1668d01da5b82e6527075047e35d8624e57790e02276da9a528861217f4a",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-1151aa50ada20b6d",
+      "claim_ids": [],
+      "structure": "proper_name",
+      "explanation_en": "楼桑 is a place name associated with Liu Bei.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "楼桑",
+          "contribution_en": "The complete place name.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "104dcd34c792847612b00c241a0fe963e1d14c8869a7011fb053fcd3b1b2f14b",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-1551de8c28f4db1a",
+      "claim_ids": [],
+      "structure": "proper_name",
+      "explanation_en": "世平 is a Chinese personal name that identifies a person. Its characters have common senses such as “world” or “generation” for 世 and “peaceful” or “level” for 平, but the entry does not establish a specific combined name meaning.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "世",
+          "contribution_en": "A name element with common senses including “world” and “generation.”",
+          "claim_ids": []
+        },
+        {
+          "text": "平",
+          "contribution_en": "A name element with common senses including “peaceful” and “level.”",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "a58410b767708f95d375d517f2fe81cfdd38b7d9d82702a08d0c1195e66216a8",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-18709c92df09c9dc",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "至孝 means being filial to the utmost: 孝 is devotion and respect toward one’s parents, and 至 marks the highest degree.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "至",
+          "contribution_en": "to the utmost; marks the highest degree",
+          "claim_ids": []
+        },
+        {
+          "text": "孝",
+          "contribution_en": "filial devotion and respect toward one’s parents",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "653c6a70b18f61b1b35018c1138ea04fbc68d1622eac97f0007a9ab52804735b",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-18afedef9a2060ea",
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "欺人 uses 欺 as an action directed at 人 (people or others). In this sense, it means to mistreat or bully others.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "欺",
+          "contribution_en": "to bully or mistreat",
+          "claim_ids": []
+        },
+        {
+          "text": "人",
+          "contribution_en": "people or others, as the target of the action",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "e83b6d4b4d46ad7c5818fc440addc8384f062ab702dd0214b788a3e8c328735c",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-18fb168b465d5031",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "上来 combines upward movement with 来, which marks movement toward the speaker or another reference point: to come or move up toward that point.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "上",
+          "contribution_en": "upward movement",
+          "claim_ids": []
+        },
+        {
+          "text": "来",
+          "contribution_en": "movement toward the speaker or another reference point",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "aeb13b72d5a55db493ee4d35395bc7455e5d1dcd3df2e64c7ff7ab170529e1f6",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-1e24bafaa42bbe81",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "呼风 is a verb–object expression: 呼 means “call or summon,” and 风 is what is summoned—wind.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "呼",
+          "contribution_en": "call or summon",
+          "claim_ids": []
+        },
+        {
+          "text": "风",
+          "contribution_en": "wind, the object of the calling",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "0c8af669f3812cc178fb60252e14a49a537ec89615ea177b79814153b1857c7d",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-1f96c7342d7ea7cd",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "沿海 combines 沿, “along,” and 海, “sea,” to describe somewhere along or near the sea coast; it can also describe something as coastal.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "沿",
+          "contribution_en": "along",
+          "claim_ids": []
+        },
+        {
+          "text": "海",
+          "contribution_en": "sea",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "d3a68290241a3e9063deef63545de69334d200adb4425214493ffe650c7b2bb8",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-205bf83cb6bd63d7",
+      "claim_ids": [],
+      "structure": "proper_name",
+      "explanation_en": "皇甫 is a two-character Chinese surname used as a family name as a whole.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "皇甫",
+          "contribution_en": "Together, the characters form the surname 皇甫.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "7d77579eccc1982e92882a8bc3ddfd5a14ba553fbfa7aef53998f6e84c5d1f48",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-28b2da0a54dcc116",
+      "claim_ids": [],
+      "structure": "proper_name",
+      "explanation_en": "谯郡 is the name of a historical Chinese commandery: 谯 supplies the place-name element, and 郡 identifies it as a commandery.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "谯",
+          "contribution_en": "The Qiao place-name element.",
+          "claim_ids": []
+        },
+        {
+          "text": "郡",
+          "contribution_en": "A commandery, the administrative unit named here.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "9e32ffa81c5b920468ddbb9ea42d39e737277b79a54c0e757fb271fa9b8c9765",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-2d91109d8cc528c4",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "居民 means people who live in a particular place: 居 contributes “live or reside,” and 民 contributes “people.” Together they refer to the people living there.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "居",
+          "contribution_en": "to live or reside",
+          "claim_ids": []
+        },
+        {
+          "text": "民",
+          "contribution_en": "people",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "ab3fe9b6dfc1515d367d6d3a6e95501b7a3b036f9aea1161292c24a8254e1ca9",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-33a035a941255486",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "蛇矛 is a spear with a blade shaped like a snake: 蛇 means “snake,” and 矛 means “spear.”",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "蛇",
+          "contribution_en": "snake",
+          "claim_ids": []
+        },
+        {
+          "text": "矛",
+          "contribution_en": "spear",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "aba9433bfde92c12d8b42127a69ae3536e0412e2f88061687b06f04af11a868f",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-382dc8b12e8ba7ea",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "妄动 combines 妄, which conveys rashness, with 动, meaning to act or make a move. Together, it means to act without enough thought or caution.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "妄",
+          "contribution_en": "Conveys rashness or acting without due thought.",
+          "claim_ids": []
+        },
+        {
+          "text": "动",
+          "contribution_en": "To act or make a move.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "8e3941af9efa17f25738f0ea084128100b6c70a3edd35abcc5c3cfe0c0f61d9e",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-38fd663af282bd9c",
+      "claim_ids": [],
+      "structure": "lexicalized",
+      "explanation_en": "起 suggests rising or beginning an action, and 事 refers broadly to an affair or action. In modern use, 起事 conventionally means to rise in revolt or launch an uprising; the parts cue taking action but do not by themselves specify revolt.",
+      "caveat_en": "The specific uprising meaning is conventional and cannot be derived from the parts alone.",
+      "parts": [
+        {
+          "text": "起",
+          "contribution_en": "to rise or begin",
+          "claim_ids": []
+        },
+        {
+          "text": "事",
+          "contribution_en": "affair or action",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "45276040e5ee12e8796234635ae3747e0e8b0649e4463d2cda07c04e8c5a4254",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-39bdb59fc21792ef",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "化成 means to transform into or become: 化 conveys change, and 成 presents the outcome as coming to be.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "化",
+          "contribution_en": "to change or transform",
+          "claim_ids": []
+        },
+        {
+          "text": "成",
+          "contribution_en": "to come to be as the resulting state",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "b98f8cf47693c47436da8f2f2afb1d7adda8a690fd6aa67f3f7b37aecf67e259",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-3ea69e34f969b731",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "六色 means “six colors”: 六 gives the number, and 色 means color.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "六",
+          "contribution_en": "six",
+          "claim_ids": []
+        },
+        {
+          "text": "色",
+          "contribution_en": "color",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "872475a8b7bab8a8a6a7f4107c8097b1dba54d6a3131639cc5be583506aa96ba",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-4031a5fa13eae5ec",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "仗势 means to rely on one’s power or influence: 仗 means to rely on, and 势 means power or influence.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "仗",
+          "contribution_en": "to rely on",
+          "claim_ids": []
+        },
+        {
+          "text": "势",
+          "contribution_en": "power or influence",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "9a5acae679416d2cc4104fc34e36ade9ebb8ab7b0186fde826ea8bcfc6f22618",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-47931c2b419b8094",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "Putting 四 and 五 together gives an approximate count of four or five, rather than a precise number.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "四",
+          "contribution_en": "four",
+          "claim_ids": []
+        },
+        {
+          "text": "五",
+          "contribution_en": "five",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "cb909531695749f1e751f867f1f864d970e3258afc641dafd6359d33b6ad4616",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-5135272235edf895",
+      "claim_ids": [
+        "c1",
+        "c2"
+      ],
+      "structure": "proper_name",
+      "explanation_en": "大兴 is used as a mountain name; the fuller name is 大兴山. Treat 大兴 as a name rather than reading 大 and 兴 as a description of the mountain.",
+      "caveat_en": "The characters do not provide a supported compositional meaning for the name.",
+      "parts": [],
+      "research": {
+        "entry_id": "zh-component-5135272235edf895",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://zh.wikisource.org/zh-hans/%E4%B8%89%E5%9C%8B%E6%BC%94%E7%BE%A9/%E7%AC%AC001%E5%9B%9E",
+            "title": "三国演义/第001回",
+            "accessed_at": "2026-09-26",
+            "summary_en": "The chapter says Liu Bei's force advances to the foot of 大兴山 and meets the Yellow Turban forces there. It uses the name as a mountain place-name but gives no meaning or naming explanation."
+          },
+          {
+            "id": "s2",
+            "url": "https://en.wiktionary.org/wiki/%E5%A4%A7%E8%88%88%E5%B1%B1",
+            "title": "大興山",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Wiktionary lists 大興山 as a Chinese proper noun and gives separate glosses for 大, 興, and 山 in its component table. The page does not explain the name's origin or establish that those glosses combine compositionally in this place-name."
+          },
+          {
+            "id": "s3",
+            "url": "https://www.shidianguji.com/mid-page/7597182949394497546",
+            "title": "古今圖書集成·職方典",
+            "accessed_at": "2026-09-26",
+            "summary_en": "This excerpt lists 大興山 among mountains said to be west of a county. The excerpt does not identify the county, explain the name, or identify this mountain with the one in the novel."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "In the novel passage relevant to the supplied sense, the fuller form 大兴山 names a mountain: Liu Bei's force advances to its foot before meeting the Yellow Turban forces. The passage gives no stated meaning or naming rationale for 大兴 within the name.",
+            "source_ids": [
+              "s1"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "Wiktionary lists glosses such as “big; great” for 大 and “interest; flourish” for 興 under 大興山, but its page does not show that these meanings compose to explain this mountain-name. The source evidence therefore does not support attributing those usual character meanings to the name as intended parts.",
+            "source_ids": [
+              "s2"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "古今圖書集成·職方典 separately lists a 大興山 among mountains west of a county. The excerpt neither explains the name nor establishes that this listing refers to the mountain in the novel.",
+            "source_ids": [
+              "s3"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "大兴山 三国演义 第一回 名称由来 地名",
+            "opened_urls": [
+              "https://zh.wikisource.org/zh-hans/%E4%B8%89%E5%9C%8B%E6%BC%94%E7%BE%A9/%E7%AC%AC001%E5%9B%9E"
+            ]
+          },
+          {
+            "query": "大興山 三国演义 地理考证",
+            "opened_urls": []
+          },
+          {
+            "query": "\"大興山\" 古今圖書集成",
+            "opened_urls": [
+              "https://www.shidianguji.com/mid-page/7597182949394497546"
+            ]
+          },
+          {
+            "query": "\"大兴山\" 涿州 三国 地名",
+            "opened_urls": []
+          },
+          {
+            "query": "\"大兴山\" \"钜鹿\" 三国演义",
+            "opened_urls": []
+          },
+          {
+            "query": "大兴山 地名 河北 山名 方志",
+            "opened_urls": []
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://zh.wikisource.org/zh-hans/%E4%B8%89%E5%9C%8B%E6%BC%94%E7%BE%A9/%E7%AC%AC001%E5%9B%9E",
+              "https://en.wiktionary.org/wiki/%E5%A4%A7%E8%88%88%E5%B1%B1",
+              "https://www.shidianguji.com/mid-page/7597182949394497546"
+            ]
+          }
+        ],
+        "gaps": [
+          "The opened evidence does not establish the intended meaning or origin of 大興山, or that 大 and 興 contribute their usual modern meanings compositionally.",
+          "The literary passage uses the fuller form 大兴山 while the supplied headword is 大兴. The sources do not establish whether 大兴 is an independently used short form or an abbreviation in this entry.",
+          "The historical-geographical compilation's 大興山 has not been identified as the same referent as the novel's mountain."
+        ]
+      },
+      "input_fingerprint": "ae32fc98a6e3d4adfa92d05e006e63dab8c236cb1e55f02584c0d84f279a8bdf",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "For the mountain named 大兴, what meaning, if any, is supported for the name as a whole, and do 大 and 兴 contribute their usual modern meanings within it?"
+      ],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-5eaef77ec2da1121",
+      "claim_ids": [
+        "c1",
+        "c2"
+      ],
+      "structure": "compositional",
+      "explanation_en": "黄巾 names the yellow cloth worn wrapped around the head: 黄 gives its color, and 巾 is the head cloth. Because followers of Zhang Jue’s late Han movement wore it as an identifying marker, the name also refers to the followers and their movement.",
+      "caveat_en": "When it names the group, 黄巾 refers to it through its identifying head covering; it does not describe the movement’s aims.",
+      "parts": [
+        {
+          "text": "黄",
+          "contribution_en": "Specifies the yellow color of the cloth.",
+          "claim_ids": [
+            "c1"
+          ]
+        },
+        {
+          "text": "巾",
+          "contribution_en": "Refers to the cloth worn wrapped around the head.",
+          "claim_ids": [
+            "c1"
+          ]
+        }
+      ],
+      "input_fingerprint": "a35210798a1a70c708b4fd9cf59a15afa9a29637657459c0cba2e08aa3a142ee",
+      "research": {
+        "entry_id": "zh-component-5eaef77ec2da1121",
+        "status": "supported",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=21008&la=0&powerMode=0",
+            "title": "〈黃巾〉，教育部《國語辭典簡編本》",
+            "accessed_at": "2026-09-26",
+            "summary_en": "The dictionary defines 黃巾 as the organization led by Zhang Jue during Emperor Ling’s Eastern Han reign. It says the followers wrapped yellow cloth around their heads as an identifying mark during the uprising, hence the name."
+          },
+          {
+            "id": "s2",
+            "url": "https://zh.wikisource.org/zh-hant/後漢書/卷71",
+            "title": "《後漢書》卷七十一：皇甫嵩朱儁列傳",
+            "accessed_at": "2026-09-26",
+            "summary_en": "The biography states that Zhang Jue’s followers wore 黃巾 as a marker and that people at the time called them 黃巾. This passage directly attests to the association between the head coverings and the group label."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "黃 contributes “yellow” and 巾 refers here to the cloth worn wrapped around the head. The dictionary explicitly describes the followers wrapping yellow cloth around their heads as an identifying mark, supporting this word-level composition.",
+            "source_ids": [
+              "s1",
+              "s2"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "The Hou Hanshu passage says the followers wore 黃巾 as a marker and that contemporaries called them 黃巾. This supports the supplied sense in which the name for the head coverings also identifies the followers or movement.",
+            "source_ids": [
+              "s2"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "site:dict.concised.moe.edu.tw/dictView.jsp 黃巾 教育部 國語辭典簡編本",
+            "opened_urls": [
+              "https://dict.concised.moe.edu.tw/dictView.jsp?ID=21008&la=0&powerMode=0"
+            ]
+          },
+          {
+            "query": "後漢書 卷七十一 皇甫嵩 黃巾 標幟 張角",
+            "opened_urls": [
+              "https://zh.wikisource.org/zh-hant/後漢書/卷71"
+            ]
+          },
+          {
+            "query": "《後漢書》 黃巾 「皆著黃巾為摽幟」 黃巾 得名",
+            "opened_urls": []
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://dict.concised.moe.edu.tw/dictView.jsp?ID=21008&la=0&powerMode=0",
+              "https://zh.wikisource.org/zh-hant/後漢書/卷71"
+            ]
+          }
+        ],
+        "gaps": []
+      },
+      "revision": 1,
+      "editorial_policy": 3,
+      "evidence_status": "supported",
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-5ef05c5d86f5cc74",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "皇天 means Heaven understood as an august, supreme power: 皇 adds a sense of majesty to 天, “Heaven.”",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "皇",
+          "contribution_en": "Adds a sense of majesty and supreme dignity.",
+          "claim_ids": []
+        },
+        {
+          "text": "天",
+          "contribution_en": "Means Heaven, understood here as a supreme power.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "2ae6c22d181a3d249c4a91c99fbedbe0dda9099643970a0f00ae656fc8779019",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-602ce3fccfafc46f",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "冷艳 describes striking beauty with a cool, aloof quality, often suggesting a restrained, elegant appearance.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "冷",
+          "contribution_en": "Adds a cool, aloof quality.",
+          "claim_ids": []
+        },
+        {
+          "text": "艳",
+          "contribution_en": "Conveys striking beauty.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "def869af8ed0425b0c822963a5bdc2645f2f2dea3bf6ba43c24d5647f2de2b4d",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-632a146701ca16ef",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "浩大 describes something immense in scale or extent: 浩 conveys breadth or vastness, and 大 adds the sense of being large.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "浩",
+          "contribution_en": "conveys breadth or vastness",
+          "claim_ids": []
+        },
+        {
+          "text": "大",
+          "contribution_en": "means large, reinforcing the sense of great scale",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "8c1c79d89cacdf4f75dbb1bc0047f58949ca523be6d03b5c406595fa05fb24d9",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-63369a6d550813fe",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "五六 combines 五 (“five”) and 六 (“six”) to mean about five or six.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "五",
+          "contribution_en": "five",
+          "claim_ids": []
+        },
+        {
+          "text": "六",
+          "contribution_en": "six; together with 五, it gives an approximate number around five or six",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "af7185aabf2fb7ef181dd0b47df869b62c7990acb8ce045d1e675ba134c24ce8",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-635676f7621b0f80",
+      "claim_ids": [
+        "c1"
+      ],
+      "structure": "lexicalized",
+      "explanation_en": "一会 means a short, usually unspecified stretch of time. The expression carries this meaning as a whole; its written parts do not give a clear modern breakdown of it.",
+      "caveat_en": "It does not specify an exact duration.",
+      "parts": [],
+      "research": {
+        "entry_id": "zh-component-635676f7621b0f80",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://www.fcipub.org/articleDetail/3860?periodicalId=4",
+            "title": "时间词“一会（儿）”的时点指称功能 / The Time-Position Function and Origin of “Yi hui(r)”",
+            "accessed_at": "2026-09-26",
+            "summary_en": "A 2026 study distinguishes duration and time-point uses of 一会（儿）. It explicitly adopts Yin Xiaojie’s 2010 proposal that the older expression was 一 plus the verb 会 ‘meet/gather’, meaning ‘one meeting’. The author reports Tang contexts contrasting one meeting with parting as a source for the short-duration meaning, and Song examples of duration use as evidence that 一会（儿） had lexicalized by then. These are the article’s historical analysis and reported evidence; they do not by themselves prove the derivation or settle how modern 会 contributes synchronically. The study also proposes a later path from duration to time-point use."
+          },
+          {
+            "id": "s2",
+            "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=40096&la=0&powerMode=0",
+            "title": "一會兒 — Ministry of Education Mandarin Dictionary (Concise Edition)",
+            "accessed_at": "2026-09-26",
+            "summary_en": "The Taiwan Ministry of Education dictionary defines 一會兒 as a moment or short time and gives an example of hesitating for a while. The entry confirms the target duration sense for the form with 儿, but does not analyze its components."
+          },
+          {
+            "id": "s3",
+            "url": "https://www.clshk.hk/wp-content/uploads/2025/12/%E3%80%8C%E8%AA%9E%E6%96%87%E5%BB%BA%E8%A8%AD-%E3%80%8D11%E5%AD%9F%E7%90%AE.pdf",
+            "title": "说“一会儿”",
+            "accessed_at": "2026-09-26",
+            "summary_en": "In this specialist discussion, Meng Cong analyzes 一会儿 synchronically as a numeral-plus-measure-word construction: 一 is the numeral ‘one’, and 会儿 is an indeterminate time-duration measure word. Thus this account assigns 会儿 a time-quantity function in the modern expression, rather than analyzing 会 alone as a meeting occasion. It directly concerns 一会儿, so its application to the supplied spelling 一会 without 儿 remains to be established."
+          },
+          {
+            "id": "s4",
+            "url": "https://pdf.hanspub.org/ml20240300000_34130114.pdf",
+            "title": "汉语“数-形-时量(名)”结构中形-时量的语义选择 / Semantic Selection of Adjective-Time Quantifier in Chinese “Number-Adjective-Time Quantifier (-N)” Structure",
+            "accessed_at": "2026-09-26",
+            "summary_en": "This study classifies 会儿 as an approximate time-quantity word and documents its use in duration constructions such as 一大/一小会儿. It supports a modern time-measure analysis of 会儿 in that form, but does not explain the historical origin of that function or establish whether the form without 儿 has identical internal structure."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "The supplied short-interval sense is attested for 一会儿 as a short or indeterminate time. Modern component analysis is not settled by the sources opened: one specialist account treats 一 as ‘one’ and 会儿 as a time-duration measure word, while a historical study treats an earlier 一会 as 一 plus the meeting verb 会 and describes subsequent lexicalization. The evidence does not show that modern 会 by itself synchronically means ‘short time’ or names an occasion measure.",
+            "source_ids": [
+              "s1",
+              "s2",
+              "s3",
+              "s4"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "The historical study reports a proposal that the earlier phrase meant ‘one meeting’ and that contrast with parting made the interval of a meeting seem short; it cites Tang contexts and Song duration examples, and dates lexicalization of the duration expression to the Song period. This is a proposed pathway, relying on an earlier scholar’s account. The opened evidence does not independently establish the older examples or prove that this pathway is the derivation of the modern target word.",
+            "source_ids": [
+              "s1"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "For the form 一会儿, the sources support treating 会儿 as a modern approximate time-duration measure in at least one synchronic analysis. This differs from assigning 会 alone the historical ‘meeting’ sense. The supplied headword is 一会, read yíhuì, whereas the directly consulted dictionary and most component analyses explicitly give 一会儿; whether the no-儿 form has precisely the same component analysis is not resolved here.",
+            "source_ids": [
+              "s2",
+              "s3",
+              "s4"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "一会儿 词源 会 时间 词典 一会 现代汉语",
+            "opened_urls": [
+              "https://www.fcipub.org/articleDetail/3860?periodicalId=4",
+              "https://www.fcpi.org/articleDetail/3860?kwd=%E5%B4%94%E5%AE%81&periodicalId=4",
+              "https://bkso.baidu.com/item/%E4%B8%80%E4%BC%9A/4794605?fromModule=lemma_inlink",
+              "https://www.chinesewords.org/dict/350117-428.html",
+              "https://chinodiccionario.com/zh/words/178281-a-moment-a-while",
+              "https://kmcha.com/cidian/%E4%B8%80%E4%BC%9A%E5%84%BF",
+              "https://ctext.org/dictionary.pl?char=%E4%B8%80%E6%9C%83%E5%85%92&if=en",
+              "https://ctext.org/dictionary.pl?char=%E4%B8%80%E6%9C%83&if=gb&remap=gb",
+              "https://www.cidianwang.com/cd/y/yihuier6631.htm",
+              "https://zh.wiktionary.org/zh-hans/%E4%B8%80%E6%9C%83%E5%85%92",
+              "https://zdic.net/hans/%E4%B8%80%E4%BC%9A%E5%儿",
+              "https://pdf.hanspub.org/ml20240300000_34130114.pdf",
+              "https://hyxx.ybu.edu.cn/__local/E/C8/0C/C360B5CE299E3290CEBA9E10FFE_7CC409E3_B24263.pdf",
+              "https://www.clshk.hk/wp-content/uploads/2025/12/%E3%80%8C%E8%AA%9E%E6%96%87%E5%BB%BA%E8%A8%AD-%E3%80%8D11%E5%AD%9F%E7%90%AE.pdf"
+            ]
+          },
+          {
+            "query": "殷晓杰 2010 一会儿 词汇化 一次集会 一会 短时义",
+            "opened_urls": [
+              "https://www.fcpi.org/articleDetail/3860?kwd=%E5%B4%94%E5%AE%81&periodicalId=4"
+            ]
+          },
+          {
+            "query": "陈又瑄 郑萦 2006 一会儿 语法化 一次集会",
+            "opened_urls": []
+          },
+          {
+            "query": "\"一会儿\" \"一次集会\" 殷晓杰",
+            "opened_urls": []
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://www.fcipub.org/articleDetail/3860?periodicalId=4",
+              "https://dict.concised.moe.edu.tw/dictView.jsp?ID=40096&la=0&powerMode=0",
+              "https://pdf.hanspub.org/ml20240300000_34130114.pdf",
+              "https://www.clshk.hk/wp-content/uploads/2025/12/%E3%80%8C%E8%AA%9E%E6%96%87%E5%BB%BA%E8%A8%AD-%E3%80%8D11%E5%AD%9F%E7%90%AE.pdf"
+            ]
+          }
+        ],
+        "gaps": [
+          "The opened dictionary and specialist analyses mainly cover 一会儿, while the supplied headword is 一会; direct evidence that the no-儿 spelling with this reading has the same component structure was not found.",
+          "The modern synchronic accounts differ: 会儿 is analyzed as a time-duration measure word in one specialist source, while the historical study describes an earlier 一 plus verb 会 phrase followed by lexicalization. The opened sources do not fully reconcile these analyses.",
+          "The proposed ‘one meeting’ pathway is reported by the 2026 study as an earlier scholar’s account. The primary older attestations and the cited 2010 study were not independently opened, so the derivation remains a proposal rather than a proven history."
+        ]
+      },
+      "input_fingerprint": "8800a116a644d72b0ce367fabf39d83cf240d5495203073015d25b8fcd414e1c",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "cached_research",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-64c62eb410060fb2",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "招军 means to recruit soldiers: 招 is to recruit or call in, and 军 is troops, the people being recruited.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "招",
+          "contribution_en": "to recruit or call in",
+          "claim_ids": []
+        },
+        {
+          "text": "军",
+          "contribution_en": "troops or soldiers",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "b7e6026d0bc7fee3d936b088ee22921526972f2c084e42fe4229b5dab2fe0eb7",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-694955c5691b36b9",
+      "claim_ids": [],
+      "structure": "proper_name",
+      "explanation_en": "后土 is the name of a deity who personifies the Earth.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "后土",
+          "contribution_en": "The complete name of the Earth-personifying deity.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "b0f48545a2e1b1669c87e00d3126e04fdb072b262a1f6352da637d0ec8732412",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-6ce9460f65c9403c",
+      "claim_ids": [],
+      "structure": "proper_name",
+      "explanation_en": "沛国 is the name of a historical Chinese state or administrative region. 沛 identifies it as Pei; 国 marks it as a state or territory.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "沛",
+          "contribution_en": "The place-name element Pei.",
+          "claim_ids": []
+        },
+        {
+          "text": "国",
+          "contribution_en": "Marks the named place as a state or territory.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "f9e83115f55d5b7bbc8cd2fdbfdf4596ba6e89a9e6c35a697d213b222220ae05",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-6f29f582afd482b4",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "丈八 names a length of one 丈 plus eight 尺: 丈 supplies the larger unit, while 八 counts 尺.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "丈",
+          "contribution_en": "the larger length unit 丈",
+          "claim_ids": []
+        },
+        {
+          "text": "八",
+          "contribution_en": "eight; here it counts 尺",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "765905d9e6747463ce4a757d22e69b5c240569dc1f2c59f13fa6a71a7f0dab43",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-71dc539b3f414cde",
+      "claim_ids": [],
+      "structure": "lexicalized",
+      "explanation_en": "常侍 is a conventional title for a court official who attends and serves the ruler. 常 suggests regularity, and 侍 means to attend or serve.",
+      "caveat_en": "The parts hint at regular attendance and service, but do not by themselves explain the title’s full institutional meaning.",
+      "parts": [
+        {
+          "text": "常",
+          "contribution_en": "suggests regularity",
+          "claim_ids": []
+        },
+        {
+          "text": "侍",
+          "contribution_en": "attend or serve someone",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "c7fed156fb286f39e95a9613a252abd7ddb333d6bd687dcd962cf318abecb1e8",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-73cdfd36b24d52cc",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "In lunar-month dates, 初 marks the month’s opening days and 一 gives the day number one, so 初一 means the first day of the lunar month.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "初",
+          "contribution_en": "marks the opening part of the month",
+          "claim_ids": []
+        },
+        {
+          "text": "一",
+          "contribution_en": "day number one",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "6eaa7fc5e35b3e6e6c8306cc4ca4a040a9ce1ea8f919f0238b0723b956355d59",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-7b70bf47bc9b5827",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "三十六 expresses thirty-six: 三十 is thirty, and 六 adds six more.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "三十",
+          "contribution_en": "thirty",
+          "claim_ids": []
+        },
+        {
+          "text": "六",
+          "contribution_en": "six more",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "f7daad154717e8898eda55f73b59666f36ac7738c26f409b12d6edecd01e123c",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-7de46306b2b370ec",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "自有 says that something naturally or inevitably exists, is present, or is available: 自 gives the sense of happening in its own course, and 有 says that it exists or is had.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "自",
+          "contribution_en": "in its own course; naturally",
+          "claim_ids": []
+        },
+        {
+          "text": "有",
+          "contribution_en": "to exist, be present, or be had",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "353bc12d853db2f5d278dba6dfa7f676cc0f146f3954a870b4feb585db7d2594",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-7ed2758565f9da21",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "唤雨 means to summon or call forth rain: 唤 is to call or summon, and 雨 is rain.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "唤",
+          "contribution_en": "to call or summon",
+          "claim_ids": []
+        },
+        {
+          "text": "雨",
+          "contribution_en": "rain",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "d65c05eafb7e258dd53e0c59eb753b5ee714035764116db80770e52bd9f8ef72",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-82baf83537b427bd",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "忘恩 means to forget the kindness or favors one has received: 忘 is “forget,” and 恩 is “kindness” or “favor.” Together, they describe forgetting kindness received from others.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "忘",
+          "contribution_en": "to forget",
+          "claim_ids": []
+        },
+        {
+          "text": "恩",
+          "contribution_en": "kindness or favor received",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "d9ce01e20ef00198bf1149d403855660628eb0819621f3ed3af6605a71b7e6a8",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-85474dea4dd443e6",
+      "claim_ids": [],
+      "structure": "grammatical",
+      "explanation_en": "十多 is a quantity expression meaning more than ten: 十 sets the number, and 多 indicates that the amount goes beyond it.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "十",
+          "contribution_en": "the number ten",
+          "claim_ids": []
+        },
+        {
+          "text": "多",
+          "contribution_en": "indicates an amount beyond the stated number",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "79b9c68f39a33d0d4d3c78c471c22b52487a8e31ece973c35f7f9618df1968e8",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-85dafcdda7df1d75",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "良匠 means a skilled artisan: 良 describes the 匠, or craftsperson, as good at their craft.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "良",
+          "contribution_en": "good; skilled",
+          "claim_ids": []
+        },
+        {
+          "text": "匠",
+          "contribution_en": "craftsperson; artisan",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "1f65632e705ee07b49d15b0655a722087708097f7d6a3da07232056ca3697293",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-8f1500033e3845ad",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "望风 combines 望, “watch for,” with 风 in its sense of signs or news. It refers to signs or a report indicating that an opposing force or danger is approaching.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "望",
+          "contribution_en": "watch for",
+          "claim_ids": []
+        },
+        {
+          "text": "风",
+          "contribution_en": "signs or news",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "ab618db121aab674766969872b19aeac171062389ea0f9373746a35529def907",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-9a305e0c4876debd",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "告密 means to inform on someone by reporting secret or confidential information. 告 is to tell or report, and 密 is what is secret or confidential.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "告",
+          "contribution_en": "to tell or report",
+          "claim_ids": []
+        },
+        {
+          "text": "密",
+          "contribution_en": "secret or confidential information",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "0fe096557aafd6936a4dac2dbc6efb8f94b5926074479852fcf1de2bcea6896a",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-a0ed441cee38d855",
+      "claim_ids": [
+        "c1",
+        "c2"
+      ],
+      "structure": "compositional",
+      "explanation_en": "声 contributes renown or prestige, while 势 adds force or an imposing presence. Together, 声势 describes the impressive force or presence associated with a person, group, or event.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "声",
+          "contribution_en": "Renown or prestige.",
+          "claim_ids": [
+            "c1"
+          ]
+        },
+        {
+          "text": "势",
+          "contribution_en": "Force or an imposing presence.",
+          "claim_ids": [
+            "c2"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "zh-component-a0ed441cee38d855",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://zdic.net/hans/%E5%A3%B0%E5%8A%BF",
+            "title": "声势的意思|汉典「声势」词语解释",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Defines the target sense as 声威和气势 and cites a Han-era example. It separately records 声势 as mutual military support, power and status, poetic sound and force, and a term for Sanskrit vowels. Its English translations include “momentum” for the mutual-support sense and among translations of the overall entry."
+          },
+          {
+            "id": "s2",
+            "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=35142&la=0&powerMode=0",
+            "title": "〈聲勢〉辭典檢視 - 教育部《國語辭典簡編本》2021",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Defines 聲勢 as 聲威與氣勢 and gives 虛張聲勢 as an example."
+          },
+          {
+            "id": "s3",
+            "url": "https://zdic.net/hans/%E5%A3%B0",
+            "title": "声 shēng - 汉典",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Lists sound and voice, reputation or renown, and prestige or 声威/声势 as distinct senses of 声. The page cites historical examples for some of these senses."
+          },
+          {
+            "id": "s4",
+            "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=99314&q=1&word=%E6%B0%A3%E5%8B%A2",
+            "title": "〈氣勢〉辭典檢視 - 教育部《重編國語辭典修訂本》2021",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Records 氣勢 senses including military morale and might, strength or 声势, authority or overbearing manner, bearing or style, and literary or artistic force. It does not establish “momentum” as a distinct sense of 声势."
+          },
+          {
+            "id": "s5",
+            "url": "https://zdic.net/hans/%E5%8A%BF",
+            "title": "势 shì - 汉典",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Lists power or authority, force or might, and situation or condition among senses of 势; its examples include 声势 glossed as 声威和气势."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "For the supplied modern sense, the best-supported compositional reading is that 声 contributes the conventional idea of renown, reputation, or prestige, rather than literal audible sound. This is supported by dictionaries defining the compound as 声威和气势/聲威與氣勢 and listing renown and prestige among the abstract senses of 声. The dictionaries do not specify a more precise semantic split within the fixed compound.",
+            "source_ids": [
+              "s1",
+              "s2",
+              "s3"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "势 contributes force, power, or an imposing condition or presence: these are listed senses of 势, and the dictionary entry for 气势 includes strength, authority, bearing, and style. Reading 声势 as prestige or renown together with force or imposing presence is a supported compositional interpretation, not a demonstrated historical derivation.",
+            "source_ids": [
+              "s1",
+              "s4",
+              "s5"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "声势 is also attested in older senses for mutual military support and for power or status; the dictionary cites historical texts for these uses. Those attestations establish older uses, but the sources opened do not show that either sense developed into the modern sense of 声威和气势.",
+            "source_ids": [
+              "s1"
+            ]
+          },
+          {
+            "id": "c4",
+            "text_en": "“Momentum” appears as an English rendering in the 声势 dictionary entry, including for its separate military-support sense. The Chinese definitions opened do not establish momentum as an independent contribution of 声 or as a distinct core component of the supplied modern sense; it may be a context-sensitive translation.",
+            "source_ids": [
+              "s1",
+              "s2",
+              "s4"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "声势 汉典 声威 气势",
+            "opened_urls": []
+          },
+          {
+            "query": "声势 教育部 国语辞典 聲威 氣勢",
+            "opened_urls": []
+          },
+          {
+            "query": "声 声望 声威 古汉语 字典 声势",
+            "opened_urls": []
+          },
+          {
+            "query": "声势 古代 汉语 词源 声埶",
+            "opened_urls": []
+          },
+          {
+            "query": "声势 声威 词义演变 训诂 声势 汉代 研究",
+            "opened_urls": []
+          },
+          {
+            "query": "声势 声埶 后汉书 窦宪 注 权势 词典",
+            "opened_urls": []
+          },
+          {
+            "query": "声 古汉语 声威 声望 战国策 声威天下 注势",
+            "opened_urls": []
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://zdic.net/hans/%E5%A3%B0%E5%8A%BF",
+              "https://dict.concised.moe.edu.tw/dictView.jsp?ID=35142&la=0&powerMode=0",
+              "https://zdic.net/hans/%E5%A3%B0",
+              "https://dict.revised.moe.edu.tw/dictView.jsp?ID=99314&q=1&word=%E6%B0%A3%E5%8B%A2",
+              "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E5%8B%A2",
+              "https://cd.hwxnet.com/view/jimaocnlcmkkalbc.html",
+              "https://zdic.net/hans/%E5%8A%BF",
+              "https://www.zdic.net/hans/%E5%A3%B0"
+            ]
+          }
+        ],
+        "gaps": [
+          "The opened sources support the modern compound gloss and relevant abstract senses of its characters, but do not document a specific historical pathway from literal sound or voice to renown or prestige within 声势.",
+          "The sources do not establish whether English “momentum” is suitable for any particular modern occurrence of 声势; no example context was supplied to assess that translation."
+        ]
+      },
+      "input_fingerprint": "e1e443d4989e62f7b65b8dd67d93b754b2ad158f24a391fb1cbd7180a51c29c8",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "In modern usage, what contribution does 声 make within 声势: sound or outward display, reputation, or another conventional sense?",
+        "How should the modern compound 声势 be analyzed to connect its parts to its senses of force, momentum, and imposing presence?"
+      ],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-a4781825266e4e05",
+      "claim_ids": [],
+      "structure": "overlapping",
+      "explanation_en": "部分 refers to a section or portion of a larger whole: 部 contributes the sense of a section, and 分 reinforces the idea of a part.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "部",
+          "contribution_en": "a section of a larger whole",
+          "claim_ids": []
+        },
+        {
+          "text": "分",
+          "contribution_en": "a part or share",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "83ed8524284c85b6b1f8d8c14ad1a970eeef5532448e6d85ecd7e01f621a9354",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-a492ce676222a385",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "不 negates 及 “reach, get to”: 不及 means someone does not get to reach or do something in time, so it is too late or there is no time for it.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "不",
+          "contribution_en": "Negates what follows: “not.”",
+          "claim_ids": []
+        },
+        {
+          "text": "及",
+          "contribution_en": "Means “reach” or “get to”; with 不, it describes not reaching or doing something in time.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "275ff1847504d0714f9b29504a37c5315e5ecd29d33194f8aa0aacad1b7bc85d",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-a5140ced1007d25e",
+      "claim_ids": [
+        "c1",
+        "c3",
+        "c4"
+      ],
+      "structure": "lexicalized",
+      "explanation_en": "丈夫 means a man, especially an adult male. 夫 contributes the adult-male idea; a traditional explanation connects 丈, a measure of length, with a man's stature, giving an image of a man identified by his size.",
+      "caveat_en": "The stature explanation is traditional and does not make the word’s formation fully predictable from its parts.",
+      "parts": [
+        {
+          "text": "丈",
+          "contribution_en": "Traditionally associated with a measure of length and a man's stature.",
+          "claim_ids": [
+            "c3"
+          ]
+        },
+        {
+          "text": "夫",
+          "contribution_en": "An adult male; this contributes the male-person meaning.",
+          "claim_ids": [
+            "c4"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "zh-component-a5140ced1007d25e",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=117143&la=0&powerMode=0",
+            "title": "丈夫 — Ministry of Education, Revised Mandarin Chinese Dictionary",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Distinguishes the general male-person sense, a laudatory sense for a man of valor and resolve, and the kinship sense ‘husband.’ For the general sense it records the traditional stature explanation, specifying that adult men were said to be about eight 尺 tall."
+          },
+          {
+            "id": "s2",
+            "url": "https://www.twlls.org.tw/Attachment/Journal/13.2-1.pdf",
+            "title": "再論閩南、閩東指稱男女性別的語詞來源——兼為吳守禮教授諸母、丈夫說補證",
+            "accessed_at": "2026-09-26",
+            "summary_en": "A specialist study of Min dialect terms cites classical examples of 丈夫 for adult males, including instances paired with 婦人, and analyzes a broadening from ‘adult male’ to ‘male person’ in dialect use. It reports the traditional stature explanation through Duan Yucai’s commentary, but the cited examples establish historical meanings, not by themselves the compound’s formation."
+          },
+          {
+            "id": "s3",
+            "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=9255",
+            "title": "夫 — Ministry of Education, Dictionary of Chinese Character Variants",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Records 夫 as a general term for an adult male and gives the Shuowen account of its form and meaning, including the interpretation of 一 as a hairpin. This supports the male-person contribution of 夫, but does not establish how the compound 丈夫 was formed."
+          },
+          {
+            "id": "s4",
+            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B8%88",
+            "title": "漢語多功能字庫 — 丈",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Identifies 丈 as a length unit, ten 尺, and reproduces Duan Yucai’s explanation that Zhou measures used eight 寸 to a 尺, ten 尺 to a 丈, and that a person eight 尺 tall was called 丈夫. It also records other uses of 丈, including as a term for male elders. These attest to the traditional account and meanings of 丈, not proof of the compound’s derivation."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "For the supplied sense, 丈夫 means a male person. The dictionary distinguishes this from its laudatory use for a man of valor and resolve and from its kinship use meaning ‘husband.’",
+            "source_ids": [
+              "s1"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "A specialist study cites classical uses of 丈夫 for adult males, including examples contrasted with 婦人. It also cites 丈夫子 in the Shiji and analyzes this as an extension toward referring to males generally; that is the study’s interpretation of the example, not independent proof of the compound’s formation or of the full history of the modern sense.",
+            "source_ids": [
+              "s2"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "In the traditional explanation recorded by the dictionary and by Duan Yucai, 丈 contributes the length-unit association and 夫 is associated with an adult male: the account says Zhou measures made ten 尺 a 丈 and describes an adult man as about eight 尺 tall. The dictionary’s wording ‘a man one 丈 tall’ is more categorical than that eight-尺 rationale. This is an attested traditional explanation, not proof that stature was the compound’s actual historical formation.",
+            "source_ids": [
+              "s1",
+              "s2",
+              "s3",
+              "s4"
+            ]
+          },
+          {
+            "id": "c4",
+            "text_en": "The character dictionary records 夫 as a general term for an adult male and gives the Shuowen graph interpretation involving a hairpin. This helps explain the male-person association of that component, but does not show that the graph analysis explains the lexical formation of 丈夫.",
+            "source_ids": [
+              "s3"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "site:dict.revised.moe.edu.tw/dictView.jsp 丈夫 117143",
+            "opened_urls": [
+              "https://dict.revised.moe.edu.tw/dictView.jsp?ID=117143&la=0&powerMode=0"
+            ]
+          },
+          {
+            "query": "丈夫 词源 丈 人高一丈 说文 专家",
+            "opened_urls": [
+              "https://www.twlls.org.tw/Attachment/Journal/13.2-1.pdf",
+              "https://m.ccdi.gov.cn/content/ff/1d/29590.html",
+              "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B8%88",
+              "https://dict.variants.moe.edu.tw/dictView.jsp?ID=9255"
+            ]
+          },
+          {
+            "query": "丈夫 古汉语 男子 成年男子 丈夫子 文献",
+            "opened_urls": [
+              "https://www.twlls.org.tw/Attachment/Journal/13.2-1.pdf"
+            ]
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://dict.revised.moe.edu.tw/dictView.jsp?ID=117143&la=0&powerMode=0",
+              "https://www.twlls.org.tw/Attachment/Journal/13.2-1.pdf",
+              "https://m.ccdi.gov.cn/content/ff/1d/29590.html",
+              "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E4%B8%88",
+              "https://dict.variants.moe.edu.tw/dictView.jsp?ID=9255"
+            ]
+          }
+        ],
+        "gaps": [
+          "The sources document the traditional stature explanation and the older adult-male sense, but do not prove that the word was historically formed by combining a height measure with 夫. The actual historical contribution of 丈 to the compound’s formation remains uncertain.",
+          "The specialist study’s broader semantic development concerns historical and Min dialect use. The reviewed sources do not establish a complete chronology or mechanism connecting that development to every present-day use of 丈夫 meaning ‘a man.’"
+        ]
+      },
+      "input_fingerprint": "3790f1587285ee3ea9e638199313672a21b7024521cba7c6347e7b504930482a",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "researched",
+      "research_questions": [
+        "Resolve the historical or uncertain component explanation in the draft."
+      ],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-a531d844637d6bb8",
+      "claim_ids": [],
+      "structure": "overlapping",
+      "explanation_en": "时候 means a time or period: 时 points to time, and 候 adds the sense of an occasion or point in time.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "时",
+          "contribution_en": "time",
+          "claim_ids": []
+        },
+        {
+          "text": "候",
+          "contribution_en": "an occasion or point in time",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "48ce44662cc300a2106024ab3ad39fbc855ebfe8032fbeb24db46018461cd5e9",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-a91773bc7e4a9b89",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "势 is the force or momentum of a situation; 穷 means exhausted or at an end. Together, 势穷 describes circumstances or momentum that have reached their limit.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "势",
+          "contribution_en": "The force or momentum of a situation.",
+          "claim_ids": []
+        },
+        {
+          "text": "穷",
+          "contribution_en": "Exhausted or at an end.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "2d6be3166491b89bbdd943232b78c3ac79e8bd4816af62ddf3f15825b65b4adc",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-acfc85e2a25422b8",
+      "claim_ids": [
+        "c1"
+      ],
+      "structure": "compositional",
+      "explanation_en": "远 adds the idea of distance or reach to 志, an aspiration or intention. Together, 远志 means an aim that reaches far: a far-reaching aspiration or ambition.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "远",
+          "contribution_en": "Adds distance or reach, describing how far the aspiration extends.",
+          "claim_ids": [
+            "c1"
+          ]
+        },
+        {
+          "text": "志",
+          "contribution_en": "Means an aspiration or intention; it is the aim described as far-reaching.",
+          "claim_ids": [
+            "c1"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "zh-component-acfc85e2a25422b8",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://zdic.net/hans/%E8%BF%9C%E5%BF%97",
+            "title": "远志的意思|汉典「远志」词语解释",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Defines the target sense as 远大的志向 (“a far-reaching ambition/aspiration”) and cites classical examples. It separately lists the medicinal plant and glosses the Lüshi Chunqiu usage as “desire to escape”; these senses should not be conflated."
+          },
+          {
+            "id": "s2",
+            "url": "https://www.chinulture.com/ebook/read/340617/513551?lang=zh",
+            "title": "昭公十二年全文翻译注释_春秋左传正义全集",
+            "accessed_at": "2026-09-26",
+            "summary_en": "The Zuozhuan passage says 迩身而远志. Its commentary paraphrases this as 身近而志远, and the subcommentary explains 身卑近而志高远: a low, near status contrasted with high, distant aspiration. This supports the phrase’s contextual composition, not a proven origin story for the modern lexical item."
+          },
+          {
+            "id": "s3",
+            "url": "https://agri-history.ihns.ac.cn/history/selecdoc/lscq.htm",
+            "title": "吕氏春秋·上农等四篇",
+            "accessed_at": "2026-09-26",
+            "summary_en": "The Shangnong passage links 皆有远志，无有居心 to people abandoning agriculture, becoming more mobile, and posing a concern for the state. The context suggests lack of settled attachment, but does not by itself establish a precise lexical gloss or a derivation of the supplied sense."
+          },
+          {
+            "id": "s4",
+            "url": "https://www.shidianguji.com/book/CADAL01036458/chapter/1mdu826ctsdgq",
+            "title": "吕氏春秋（四）-吕氏春秋全文原文及译文",
+            "accessed_at": "2026-09-26",
+            "summary_en": "In the passage about Jie’s oppressive rule, the text says that the common people have 远志 and dare not speak openly. Han Dian treats this occurrence as a distinct “desire to escape” sense; the surrounding context establishes oppression and disaffection but does not independently specify exactly what action they wish to take."
+          },
+          {
+            "id": "s5",
+            "url": "https://zwy.njucm.edu.cn/2019/0430/c4723a52053/pagem.htm",
+            "title": "远志",
+            "accessed_at": "2026-09-26",
+            "summary_en": "A Nanjing University of Chinese Medicine herb entry reports competing explanations for the medicinal plant name: it relays Yan Shigu’s explanation that it benefits intelligence and strengthens the will, and notes Xia Weiying’s objection that this is strained and an alternative involving the older plant name 棘菀. This discussion concerns the herb name and does not establish that the ambition sense derives from it."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "For the supplied sense, the parts contribute compositionally: 远 supplies the idea of distance or reach, while 志 supplies aspiration or intention. Han Dian defines 远志 as 远大的志向, and the Zuozhuan commentary paraphrases the relevant phrase as 身近而志远 and then 身卑近而志高远. “Far-reaching aspiration” is supported; the sources do not show that this phrase in the Zuozhuan is the unique historical source of the modern lexical item.",
+            "source_ids": [
+              "s1",
+              "s2"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "The same written form has other uses that should be kept distinct from the supplied ambition sense. Han Dian lists a medicinal plant sense and separately glosses the Lüshi Chunqiu passage about oppressed commoners as a “desire to escape.” In another Lüshi Chunqiu passage, the setting is mobile people without settled attachment; that context does not establish that this use means ambition.",
+            "source_ids": [
+              "s1",
+              "s3",
+              "s4"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "The plant-name discussion does not prove a historical derivation of the ambition word from the herb, or vice versa. The herb reference reports competing explanations for the plant’s name, while the dictionary’s aspiration definition and the Zuozhuan commentary support a direct reading of 远志 as distant/high aspiration. The connection between the senses remains unestablished by the sources opened here.",
+            "source_ids": [
+              "s1",
+              "s2",
+              "s5"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "远志 词源 本义 远志 古汉语 训诂",
+            "opened_urls": [
+              "https://zdic.net/hans/%E8%BF%9C%E5%BF%97"
+            ]
+          },
+          {
+            "query": "左传 昭公十二年 迩身而远志 注 远志",
+            "opened_urls": [
+              "https://www.wenlinshe.com/chapter/gudaiwenyi/zuo-zhuan/zhao-gong/zhao-gong-shi-er-nian.html",
+              "https://www.chinulture.com/ebook/read/340617/513551?lang=zh"
+            ]
+          },
+          {
+            "query": "吕氏春秋 众庶泯泯 皆有远志 解释",
+            "opened_urls": [
+              "https://www.shidianguji.com/book/CADAL01036458/chapter/1mdu826ctsdgq",
+              "https://agri-history.ihns.ac.cn/history/selecdoc/lscq.htm"
+            ]
+          },
+          {
+            "query": "远志 志向 词典",
+            "opened_urls": [
+              "https://zdic.net/hans/%E8%BF%9C%E5%BF%97"
+            ]
+          },
+          {
+            "query": "“远志” “远大的志向” 词典 古代词语 汉语大词典",
+            "opened_urls": [
+              "https://zdic.net/hans/%E8%BF%9C%E5%BF%97"
+            ]
+          },
+          {
+            "query": "“周公之远志” 《孔丛子》",
+            "opened_urls": []
+          },
+          {
+            "query": "“迩身而远志” 远志 词义 注释 训诂",
+            "opened_urls": []
+          },
+          {
+            "query": "远志 药名 得名 远志 本草 远志者 志能远",
+            "opened_urls": [
+              "https://zwy.njucm.edu.cn/2019/0430/c4723a52053/pagem.htm"
+            ]
+          },
+          {
+            "query": "远志 词源 药名 远大志向 本草纲目 命名",
+            "opened_urls": []
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://zdic.net/hans/%E8%BF%9C%E5%BF%97",
+              "https://www.chinulture.com/ebook/read/340617/513551?lang=zh",
+              "https://www.shidianguji.com/book/CADAL01036458/chapter/1mdu826ctsdgq",
+              "https://www.shidianguji.com/book/HY1433/chapter/1l3wfzd22lzbg",
+              "https://www.wenlinshe.com/chapter/gudaiwenyi/zuo-zhuan/zhao-gong/zhao-gong-shi-er-nian.html",
+              "https://agri-history.ihns.ac.cn/history/selecdoc/lscq.htm",
+              "https://zwy.njucm.edu.cn/2019/0430/c4723a52053/pagem.htm",
+              "https://www.shidianguji.com/book/CADAL02053702/chapter/1l37hhtcqw5ye",
+              "https://cd.hwxnet.com/view/dmkfbnkiiakcaijp.html"
+            ]
+          }
+        ],
+        "gaps": [
+          "The opened evidence supports the component reading of the ambition sense, but does not establish when 远志 became a lexicalized word in that sense or whether its history is connected to the medicinal plant name. The classical attestations alone do not prove either derivation."
+        ]
+      },
+      "input_fingerprint": "cf425c7e4de16b22763ed834659d38f0f42b336e5bd511a29b12626a2f3cdb21",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "cached_research",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-ad2f3c4019734d9e",
+      "claim_ids": [
+        "c1",
+        "c3"
+      ],
+      "structure": "lexicalized",
+      "explanation_en": "什么 is a question word used to ask what something is—its identity or nature. It refers to things, but its written parts do not add up to this meaning as a transparent modern combination.",
+      "caveat_en": "么 does not contribute the older character meaning “small” or “fine” to 什么.",
+      "parts": [],
+      "research": {
+        "entry_id": "zh-component-ad2f3c4019734d9e",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://www.rxgdyjy.sdu.edu.cn/info/1053/4179.htm",
+            "title": "冯春田论著选登：疑问代词“底”的形成问题",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Feng argues that interrogative 何物 was originally a phrase and lexicalized as a word after the Wei-Jin period. He describes a proposed sequence from 何物/何勿 to shortened 勿, with later written or sound forms including 没 and 麽; he then describes 是勿/是没 and 什摩/甚麽 as further combinations and shortened forms. This is a specialist proposal about the history of the interrogative family, not evidence that each written part contributes a separate meaning in modern 什么."
+          },
+          {
+            "id": "s2",
+            "url": "https://rxgdyjy.sdu.edu.cn/info/1053/4175.htm",
+            "title": "冯春田论著选登：汉语历史上疑问代词演变的特殊规则",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Feng presents a historical account in which 何物 lexicalized as an interrogative, shortened forms such as 勿/没 arose, and forms with 是 later developed into such spellings as 什摩/甚麽. He treats shortening and sound change as proposed historical processes, not as modern productive morpheme meanings."
+          },
+          {
+            "id": "s3",
+            "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=131339&la=1&powerMode=0",
+            "title": "甚麼 — Ministry of Education Revised Mandarin Chinese Dictionary",
+            "accessed_at": "2026-09-26",
+            "summary_en": "The Taiwan Ministry of Education dictionary records 甚麼 as an interrogative pronoun specifically referring to things and identifies 什麼 as a variant spelling. It also lists demonstrative, interrogative-adjectival, and indefinite uses; those are outside the supplied sense target."
+          },
+          {
+            "id": "s4",
+            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%BA%BC",
+            "title": "漢語多功能字庫: 麼",
+            "accessed_at": "2026-09-26",
+            "summary_en": "The Chinese University of Hong Kong character database records an older meaning of 麼 as ‘small/fine’ and says modern 麼 combines with 什 to form the interrogative word 什麼. It does not say that the old ‘small/fine’ meaning contributes to the modern interrogative."
+          },
+          {
+            "id": "s5",
+            "url": "https://www.rxgdyjy.sdu.edu.cn/info/1053/4170.htm",
+            "title": "冯春田论著选登：疑问代词“作勿”、“是勿”的形成",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Feng reviews competing accounts of 是勿. He reports Lü Shuxiang's proposal that 是勿 contracted from 是何物, but says direct supporting examples are lacking; he also reports Jiang Lansheng's proposal that 是 combined with the shortened interrogative 勿/物. Feng favors combination of 是 and 勿 in a suitable syntactic context, and discusses how later forms including 什摩 relate to the question-word family. The article says the origins had not been settled."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "For the supplied interrogative sense, the MOE dictionary directly records 甚麼 as a pronoun specifically asking about things and lists 什麼 as a variant spelling. It also records other uses of the spelling, which are not the target here.",
+            "source_ids": [
+              "s3"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "A specialist historical account treats 何物 as an older interrogative meaning ‘what’ that lexicalized as a word, and proposes shortening and sound changes through forms such as 何勿, 勿/没, and 麽. This supports a historical relationship proposed for the interrogative family; it does not by itself prove every step in the derivation of present-day 什么.",
+            "source_ids": [
+              "s1",
+              "s2"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "The proposed later development includes 是勿/是没 and spellings such as 什摩/甚麽, with subsequent shortening. A separate study records disagreement about the earlier formation of 是勿: contraction from 是何物 has been proposed, but Feng says direct examples are lacking and favors combination of 是 with shortened interrogative 勿/物. The precise route to the modern form therefore remains a historical analysis, not a transparent modern composition.",
+            "source_ids": [
+              "s1",
+              "s2",
+              "s5"
+            ]
+          },
+          {
+            "id": "c4",
+            "text_en": "The CUHK character entry records an older lexical meaning ‘small/fine’ for 麼 and separately says 麼 combines with 什 in modern 什麼. It does not establish that ‘small/fine’ contributes to the word’s present interrogative meaning.",
+            "source_ids": [
+              "s4"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "site:rxgdyjy.sdu.edu.cn/info/1053/4179.htm 疑问代词 底 形成问题 冯春田",
+            "opened_urls": [
+              "https://www.rxgdyjy.sdu.edu.cn/info/1053/4179.htm"
+            ]
+          },
+          {
+            "query": "什么 什麼 甚麼 词源 历史 疑问代词 何物",
+            "opened_urls": [
+              "https://www.rxgdyjy.sdu.edu.cn/info/1053/4170.htm",
+              "https://www.rxgdyjy.sdu.edu.cn/info/1053/4179.htm",
+              "https://rxgdyjy.sdu.edu.cn/info/1053/4175.htm"
+            ]
+          },
+          {
+            "query": "site:humanum.arts.cuhk.edu.hk/Lexis 麼 什麼 小 微",
+            "opened_urls": [
+              "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%BA%BC"
+            ]
+          },
+          {
+            "query": "冯春田 疑问代词 作勿 是勿 的形成 何物 是勿 什麽",
+            "opened_urls": [
+              "https://www.rxgdyjy.sdu.edu.cn/info/1053/4170.htm"
+            ]
+          },
+          {
+            "query": "什么 词源 是物 什物 争议 江蓝生 袁宾",
+            "opened_urls": []
+          },
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://www.rxgdyjy.sdu.edu.cn/info/1053/4179.htm",
+              "https://rxgdyjy.sdu.edu.cn/info/1053/4175.htm",
+              "https://dict.revised.moe.edu.tw/dictView.jsp?ID=131339&la=1&powerMode=0",
+              "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/search.php?word=%E9%BA%BC",
+              "https://dict.revised.moe.edu.tw/dictView.jsp?ID=150550&la=0&powerMode=0"
+            ]
+          }
+        ],
+        "gaps": [
+          "The reviewed specialist sources present historical analyses rather than a settled derivation. In particular, they disagree about how 是勿 formed, and the opened material does not independently establish a single complete chain from the older forms to every modern spelling.",
+          "The older meaning ‘small/fine’ for 麼 is documented, but no opened source connects that meaning semantically to the modern interrogative word."
+        ]
+      },
+      "input_fingerprint": "3b740db17ce9181650461451099d1a45860f66c578d874e366dc7bcf08b37ef5",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "cached_research",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-adfab3ba53089936",
+      "claim_ids": [],
+      "structure": "proper_name",
+      "explanation_en": "元起 is a Chinese personal name; the entry identifies a person but does not specify an intended meaning for the name.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "元起",
+          "contribution_en": "The complete personal name, identifying a person.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "86e78f6c888732ca238112c52e33e9ad65ea97d0222e8e8dde411500bb31b28c",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-b37d0ca6a1907eba",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "得到 combines 得, “to get,” with 到, which adds the sense of reaching or successfully attaining something. Together, it means to get or obtain something.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "得",
+          "contribution_en": "to get",
+          "claim_ids": []
+        },
+        {
+          "text": "到",
+          "contribution_en": "to reach or successfully attain",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "3f144952fc331dd95c47cb0a318cffeb8aefc6c4e137b715582f0f1724533f5e",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-b3fa709d80169dab",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "乏 conveys being short of or lacking something; with 力 “strength,” 力乏 describes having little strength or being physically exhausted.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "力",
+          "contribution_en": "strength",
+          "claim_ids": []
+        },
+        {
+          "text": "乏",
+          "contribution_en": "to be short of or lack something",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "624f7f27ebd57c9935127ab54cc57b21325d114907b393a3535180aae593d5af",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-b61fe2bc61ee64f1",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "清风 combines 清, “clear and fresh,” with 风, “wind,” to mean a fresh, clear breeze.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "清",
+          "contribution_en": "clear and fresh",
+          "claim_ids": []
+        },
+        {
+          "text": "风",
+          "contribution_en": "wind",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "58a1bba57228ac1db0a4f1e1c271239b9066e7fad3954e6447d6972a639981fc",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-c0a15fe5498654db",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "不同 means “different” or “not the same”: 不 negates 同, “the same.”",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "不",
+          "contribution_en": "negates 同",
+          "claim_ids": []
+        },
+        {
+          "text": "同",
+          "contribution_en": "the same",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "3b22de850c81d0e88726737efd77c64f02f64390607e7e2c0eb6d07351e0c0df",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-c418c0a1d8f7b8ae",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "家门 is the door or gate that serves as the entrance to a home: 家 identifies the home, and 门 is its entrance.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "家",
+          "contribution_en": "identifies the home",
+          "claim_ids": []
+        },
+        {
+          "text": "门",
+          "contribution_en": "the door or gate that provides the entrance",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "3fe78acc45f7e68e1ff1b63e173e024a07630dbb02e84ee8a91b6d123c2e187b",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-c5327c457ce9876c",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "六七 puts the neighboring counts 六 and 七 together to give an imprecise amount: about six or seven.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "六",
+          "contribution_en": "Gives the count six.",
+          "claim_ids": []
+        },
+        {
+          "text": "七",
+          "contribution_en": "Adds the neighboring count seven, making the amount approximate.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "c15f35f43b5d6fd78f0316c283d7029007ad8d744e2a7f53912bd9e0c5fa45bd",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-c5748ebd17c672ea",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "三十 combines 三 (“three”) and 十 (“ten”) to mean three tens, or thirty.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "三",
+          "contribution_en": "three",
+          "claim_ids": []
+        },
+        {
+          "text": "十",
+          "contribution_en": "ten",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "174aaa87edf5d2117c7ad4df45224250a92bc18e8cd50948cff0bcb78bdc21c7",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-ce37d7c117bc2e4a",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "十万 means one hundred thousand: 十 (ten) counts 万 (ten thousand) ten times.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "十",
+          "contribution_en": "ten; it specifies ten groups of the following unit",
+          "claim_ids": []
+        },
+        {
+          "text": "万",
+          "contribution_en": "ten thousand, the unit being counted",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "15772ad60f6343cb279c3f3f50572eec2640506d3972aa79257786fe4352d093",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-ce5759831f9bba95",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "As a verb, 飞马 describes moving swiftly on horseback: 飞 adds the sense of rapid, almost flying motion, and 马 supplies the horse.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "飞",
+          "contribution_en": "Adds the sense of moving swiftly.",
+          "claim_ids": []
+        },
+        {
+          "text": "马",
+          "contribution_en": "Identifies movement on horseback.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "5c99094880aecc8ebdec6774ec1ccb573f712d533a5da3ce19ad2a8379548640",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-cead232eba111862",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "画符 means to draw or write a talisman: 画 expresses the act, and 符 is the talisman being drawn or written.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "画",
+          "contribution_en": "to draw or write",
+          "claim_ids": []
+        },
+        {
+          "text": "符",
+          "contribution_en": "talisman",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "a3281bde053acd3e59264b3000784f4dd00348a76ed2244c8f314ef76669860b",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-cf31d9845e2aae9f",
+      "claim_ids": [],
+      "structure": "proper_name",
+      "explanation_en": "顿丘 is a Chinese place name.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "顿丘",
+          "contribution_en": "The complete name identifies a place.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "718ea6290fd8f43ae7c6556d296de5ad6b35055eddf643cd05f90f5e121fb381",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-cf46c16c67103af4",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "背义 means to act against righteousness: 背 means to go against or turn away from, and 义 is righteousness or what is right.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "背",
+          "contribution_en": "to go against or turn away from",
+          "claim_ids": []
+        },
+        {
+          "text": "义",
+          "contribution_en": "righteousness; what is right",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "4d92f7c6fac5c153fa3c25747e5b049877fc80dfd0341c6a15149c4429077a76",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-cfd1d0d37cc64ed6",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "意 is a thought or intention, and 主 contributes the sense of what is main or central. Together, 主意 is a central thought one has in mind—an idea or plan.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "主",
+          "contribution_en": "main or central",
+          "claim_ids": []
+        },
+        {
+          "text": "意",
+          "contribution_en": "a thought or intention",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "af07b4d4d3e2c64a1114ab906459af197523522c55d97b0c1b8a83bfbd8dba73",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-d1f436c322fc72a8",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "轻举 means to take action too lightly, without giving it due consideration: 轻 gives the sense of insufficient care, and 举 refers to undertaking an action.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "轻",
+          "contribution_en": "lightly, with insufficient care",
+          "claim_ids": []
+        },
+        {
+          "text": "举",
+          "contribution_en": "to undertake an action",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "4804079549efbe368fa950126955cfe9297672eacfdd3dbe2c0172cc22abcf48",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-d5f99c1e3d7d348b",
+      "claim_ids": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "structure": "overlapping",
+      "explanation_en": "朋友 is the ordinary general word for a friend: someone with whom one has a friendly relationship. 朋 contributes an association with peers or fellow members of a group, while 友 points toward friendship; together they express companionship without specifying a particular kind of relationship.",
+      "caveat_en": "The older contrast between fellow pupils (朋) and people sharing an aspiration (友) is not a fixed distinction in the modern word.",
+      "parts": [
+        {
+          "text": "朋",
+          "contribution_en": "Suggests peers or fellow members of a group.",
+          "claim_ids": [
+            "c2"
+          ]
+        },
+        {
+          "text": "友",
+          "contribution_en": "Points toward friendship and association with others.",
+          "claim_ids": [
+            "c2",
+            "c3"
+          ]
+        }
+      ],
+      "research": {
+        "entry_id": "zh-component-d5f99c1e3d7d348b",
+        "status": "partial",
+        "sources": [
+          {
+            "id": "s1",
+            "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=24184&la=0&powerMode=0",
+            "title": "朋友 : ㄆㄥˊ ㄧㄡˇ — Ministry of Education Revised Mandarin Dictionary",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Defines 朋友 as a general term for 友人 and gives examples from the Mencius and Cao Zhi. Supports the modern target sense, but does not explain the word’s formation."
+          },
+          {
+            "id": "s2",
+            "url": "https://dict.variants.moe.edu.tw/dictView.jsp?ID=20440&la=0",
+            "title": "朋 — Ministry of Education Dictionary of Chinese Character Variants",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Lists several senses of 朋, including group, people of the same kind, classmates or friends, and an ancient monetary unit. Cites Zheng Xuan’s gloss 同師曰朋、同志曰友 under the classmates/friends sense. The entry supplies character senses and an exegetical distinction, not proof of the modern compound’s derivation."
+          },
+          {
+            "id": "s3",
+            "url": "https://homeinmists.ilotus.org/FangYong/Journal02.article02.htm",
+            "title": "“朋”字的一個思想史考察——以《論語》注釋為例",
+            "accessed_at": "2026-09-26",
+            "summary_en": "Lao Yueqiang’s study traces changing interpretations of 朋 in the Analects. It reports Han exegetical distinctions between 朋 as fellow pupils and 友 as like-minded associates. It also says that in some compound uses 朋友 was treated as a semantically weighted compound leaning toward 友, while Han texts more often used 友 or 友人 for the friend sense. This concerns historical uses and interpretations, not a demonstrated path to the modern lexical meaning."
+          },
+          {
+            "id": "s4",
+            "url": "https://scholars.hsu.edu.hk/en/publications/%E8%AB%96先秦文獻所見朋友之本義及其變化/",
+            "title": "論先秦文獻所見朋友之本義及其變化 — The Hang Seng University of Hong Kong",
+            "accessed_at": "2026-09-26",
+            "summary_en": "The article record and abstract describe the author’s proposal that bronze-inscription occurrences of 朋友 initially referred to a relationship close to brothers, while uses for non-kin relations appear later. This is an abstract of a historical argument, not the full evidential discussion."
+          },
+          {
+            "id": "s5",
+            "url": "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/oraclePiece.php?piece=%E6%9C%8B&sub=1",
+            "title": "漢語多功能字庫 — 朋",
+            "accessed_at": "2026-09-26",
+            "summary_en": "A Chinese University of Hong Kong character resource reports that bronze inscriptions use the graph 倗 for 朋 in friend/peer contexts, including inscriptions interpreted as hosting or honoring friends. This supports an old attestation of related wording; it does not establish that the modern compound descends from a particular early referent."
+          }
+        ],
+        "claims": [
+          {
+            "id": "c1",
+            "text_en": "In the supplied modern sense, 朋友 is a general term for a friend; the dictionary definition does not specify a particular subtype of friendly relationship.",
+            "source_ids": [
+              "s1"
+            ]
+          },
+          {
+            "id": "c2",
+            "text_en": "A traditional Han-era exegetical gloss distinguishes 朋 as people who study under the same teacher from 友 as people who share an aspiration. This documents an older interpretive contrast, but it is not a required distinction in the supplied modern sense.",
+            "source_ids": [
+              "s2",
+              "s3"
+            ]
+          },
+          {
+            "id": "c3",
+            "text_en": "One study of Analects interpretation reports that some historical compound uses of 朋友 were analyzed as semantically weighted toward 友, and that Han texts often used 友 or 友人 for the friend sense. This supports a historical observation about usage, not a proven derivation of the modern word or an assertion that 朋 contributes nothing to it.",
+            "source_ids": [
+              "s3"
+            ]
+          },
+          {
+            "id": "c4",
+            "text_en": "A separate article abstract argues that early bronze-inscription 朋友 referred to a relationship close to brothers, with non-kin uses appearing later. A character reference independently records bronze-inscription use of 倗 in friend/peer contexts. These sources document or propose early uses, but they do not establish a single compositional pathway from those uses to the modern general friend sense.",
+            "source_ids": [
+              "s4",
+              "s5"
+            ]
+          }
+        ],
+        "searches": [
+          {
+            "query": "(direct open)",
+            "opened_urls": [
+              "https://dict.revised.moe.edu.tw/dictView.jsp?ID=24184&la=0&powerMode=0",
+              "https://dict.variants.moe.edu.tw/dictView.jsp?ID=20440&la=0",
+              "https://homeinmists.ilotus.org/FangYong/Journal02.article02.htm",
+              "https://scholars.hsu.edu.hk/en/publications/%E8%AB%96先秦文獻所見朋友之本義及其變化/",
+              "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART003050375"
+            ]
+          },
+          {
+            "query": "朋友 词源 先秦 文献 朋 友 甲骨 金文 学术; \"論先秦文獻所見朋友之本義及其變化\"; 朋友 同師曰朋 同志曰友 先秦 用法 词义演变",
+            "opened_urls": [
+              "https://www.ny.edu.hk/web/cht/hkbc_journal/HKBC_16th%20Journal/08.pdf",
+              "https://scholars.hsu.edu.hk/en/publications/%E8%AB%96先秦文獻所見朋友之本義及其變化/"
+            ]
+          },
+          {
+            "query": "site:humanum.arts.cuhk.edu.hk \"趞曹鼎\" \"倗友\"; 青铜器铭文 朋友 兄弟 本义 朋友 先秦 Lam 2018",
+            "opened_urls": [
+              "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/oraclePiece.php?piece=%E6%9C%8B&sub=1",
+              "https://humanum.arts.cuhk.edu.hk/Lexis/lexi-mf/ancient.php?start=70"
+            ]
+          }
+        ],
+        "gaps": [
+          "The sources support the modern general sense, an old exegetical contrast between 朋 and 友, and competing descriptions of early compound usage. They do not demonstrate the exact historical development or establish what semantic contribution each element makes in the modern lexical item.",
+          "The KCI page for 浅谈“朋友”一词的历史由来 could not be read in the browser, so its claims about character origins and the compound’s semantic weighting are not used. The HSU full article PDF and its alternate chapter page also could not be opened; the early ‘brothers’ interpretation is therefore reported only as the HSU record’s abstract-level claim."
+        ]
+      },
+      "input_fingerprint": "3997476e87a4c85979618419d71bd9736ce564b4f270ef4e020f202135f5fd58",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "partial",
+      "editorial_route": "cached_research",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-d9fd048e58aa7364",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "门口 combines 门, “door,” with 口, “opening,” to mean the opening or entrance at a door.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "门",
+          "contribution_en": "door",
+          "claim_ids": []
+        },
+        {
+          "text": "口",
+          "contribution_en": "opening",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "d6413f0dbb74eb8e72e7ce12ec48580fe816d03078c009a3681dba81f7f9c88a",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-df736a5ecc9d815b",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "与 links someone or something with 众, the many or other people. Together, 与众 places them in relation to other people: among the crowd, or in comparison with them.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "与",
+          "contribution_en": "with; linking someone or something to others",
+          "claim_ids": []
+        },
+        {
+          "text": "众",
+          "contribution_en": "the many; other people",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "370413f8d9f716ab3e16f64617b5874b4d18a2ed0f733eb2d95efab8c763b287",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-df76b5ba92c362af",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "偃月刀 is a bladed weapon whose blade is shaped like a crescent moon.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "偃月",
+          "contribution_en": "crescent moon; describes the blade’s shape",
+          "claim_ids": []
+        },
+        {
+          "text": "刀",
+          "contribution_en": "a bladed weapon",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "eec321ce7be8cbe4ed8299195c501ac6d088049a18615e6f3ec94d1dd9f5c8fb",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-e8ddcebd4532a5fa",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "二十 means twenty: 二 (two) before 十 (ten) forms two tens.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "二",
+          "contribution_en": "two",
+          "claim_ids": []
+        },
+        {
+          "text": "十",
+          "contribution_en": "ten",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "44a2b58e97d7f5f0f504a9dc0f41239ff6b77e06905525b84b59561a200d0eaf",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-ef3b69aa7fa131b4",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "五颜 means “five colors” as the first half of the conventional expression 五颜六色, which describes varied colors.",
+      "caveat_en": "The sense of varied colors comes from the full paired expression.",
+      "parts": [
+        {
+          "text": "五",
+          "contribution_en": "five",
+          "claim_ids": []
+        },
+        {
+          "text": "颜",
+          "contribution_en": "colors, in this expression",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "9fc66251581b6b8bd107293146069d29057cbc850615b845f66ca7e2e42e205b",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-f26575915bcb05ed",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "迎面 describes something coming directly toward someone from the front, or a direction straight toward them—head-on. 迎 contributes meeting or coming toward; 面 places that direction at the front or face.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "迎",
+          "contribution_en": "meet or come toward",
+          "claim_ids": []
+        },
+        {
+          "text": "面",
+          "contribution_en": "front or face",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "f54223e43cdc2f8f9786e09057ae2fd317d4f3b9053e0aa679d3ec416010cf52",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-f6a54536c2d01546",
+      "claim_ids": [],
+      "structure": "compositional",
+      "explanation_en": "六月 means the sixth month of the year: 六 gives the number six, and 月 means month.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "六",
+          "contribution_en": "six; here it marks the month’s place in the year",
+          "claim_ids": []
+        },
+        {
+          "text": "月",
+          "contribution_en": "month",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "334cdc7f9819f782ff617c2f366f8309b4c502026a6de58b7f9fed4062fb298b",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    },
+    {
+      "entry_id": "zh-component-f73862138cacf29a",
+      "claim_ids": [],
+      "structure": "proper_name",
+      "explanation_en": "温德 is the proper name used to designate a hall.",
+      "caveat_en": "",
+      "parts": [
+        {
+          "text": "温德",
+          "contribution_en": "The complete proper name of the hall.",
+          "claim_ids": []
+        }
+      ],
+      "input_fingerprint": "e195e63bbaf20ed81faa38702bbc38b337cd458e12652c29f678f871f5be188b",
+      "revision": 1,
+      "editorial_policy": 5,
+      "evidence_status": "reviewed_unresearched",
+      "editorial_route": "offline_review",
+      "research_questions": [],
+      "fulfilled_requests": []
+    }
+  ],
+  "review_digest": "a4535dc0f97d81caa98c9800a1c5cc69a63e8730353d4c94736c9c19af92b655"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff35b-d38a-7922-b24c-485d5daf14b3"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.97,\"naturalness\":0.98,\"readability\":0.98,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“孙权……又打败黄祖”表述略显笼统，原文中孙权最终攻破夏口并由甘宁射杀黄祖，整体结果正确。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":27890,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":99,"reasoning_output_tokens":0}}

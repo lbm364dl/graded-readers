@@ -1,0 +1,31 @@
+{
+  "id": "zh-2c467d367392-1-8c1bab0cad79ca06",
+  "entry_id": "zh-2c467d367392-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2c467d367392-1",
+      "headword": "八",
+      "kind": "word",
+      "reading": "bā",
+      "senses": [
+        {
+          "id": "zh-2c467d367392-1-s1",
+          "definition": "eight"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，刘备请工匠打造双股剑，关羽打造青龙偃月刀，重八十二斤，张飞打造丈八点钢矛，并各自准备全身铠甲。",
+        "gloss": "eight",
+        "sense_id": "zh-2c467d367392-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b0567f0ff097f68b7dd286475d06bb4efec5c211e4b67ecd7482c131e55079d2"
+}

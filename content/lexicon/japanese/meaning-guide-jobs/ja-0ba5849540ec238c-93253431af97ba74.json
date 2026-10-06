@@ -1,0 +1,32 @@
+{
+  "id": "ja-0ba5849540ec238c-93253431af97ba74",
+  "entry_id": "ja-0ba5849540ec238c",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0ba5849540ec238c",
+      "headword": "飲む",
+      "reading": "のむ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0ba5849540ec238c-1",
+          "definition": "to drink; to take in or consume"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これが人間の飲むたばこだということを、吾輩はようやくこの頃知った。",
+        "gloss": "drink; consume",
+        "sense_id": "ja-0ba5849540ec238c-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4fae0f2db0db74470257d972f0b1afe22f18bf28650c251e5cf34147318d6679"
+}

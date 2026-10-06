@@ -1,0 +1,88 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_084-hsk4",
+  "level": "hsk4",
+  "target_chars": 750,
+  "candidate_cjk": 675,
+  "required_range": [
+    525,
+    975
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "原文吴班所率蜀军“不满万余人”， adaptación写成“一万多”，数量方向可能相反。",
+      "classification": "material",
+      "reason": "“不满万余人”表示不足一万，而“一万多”表示超过一万，直接造成兵力数量方向错误。",
+      "required_fix": "将“一万多”改为“不到一万人”或“不满万余人”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "原文并非蜀军撤营后露出疲态，而是吴班退去、刘备从山谷率军经过后，陆逊判断蜀军久守而疲惫。",
+      "classification": "material",
+      "reason": "改写错误改变了事件顺序和疲惫判断的具体原因，将吴班退去误写成蜀军撤营。",
+      "required_fix": "改为吴班退去、刘备率军从山谷经过后，陆逊根据蜀军连营久守、久不得进展而兵疲意阻，判断可以破蜀。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "原文吴班所率蜀军“不满万余人”， adaptación写成“一万多”，数量方向可能相反。",
+      "classification": "material",
+      "reason": "“不满万余人”表示不足一万，而“一万多”表示超过一万，直接造成兵力数量方向错误。",
+      "required_fix": "将“一万多”改为“不到一万人”或“不满万余人”。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "原文并非蜀军撤营后露出疲态，而是吴班退去、刘备从山谷率军经过后，陆逊判断蜀军久守而疲惫。",
+      "classification": "material",
+      "reason": "改写错误改变了事件顺序和疲惫判断的具体原因，将吴班退去误写成蜀军撤营。",
+      "required_fix": "改为吴班退去、刘备率军从山谷经过后，陆逊根据蜀军连营久守、久不得进展而兵疲意阻，判断可以破蜀。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 651,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8.5,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“陆逊因此班师”把班师的原因归因于八阵图；原文明确说明他并非畏惧石阵，而是预料曹丕会趁虚袭击东吴。",
+          "“果然两天后”将原文“退兵未及二日”误写为两天之后，时间顺序不准确。"
+        ],
+        "language_problems": [],
+        "verdict": "revise"
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 675,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-142d843e7163-2-af37a7b4d31014b9",
+  "entry_id": "zh-142d843e7163-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-142d843e7163-2",
+      "headword": "当",
+      "kind": "word",
+      "reading": "dàng",
+      "senses": [
+        {
+          "id": "zh-142d843e7163-2-s1",
+          "definition": "serve as; act as"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备小时候常和乡中孩子在树下玩，对他们说：“我将来要当天子，就把这棵树当作车盖。",
+        "gloss": "become",
+        "sense_id": "zh-142d843e7163-2-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7a7713503d251578456fbf7ac57f8c51ac367f8307b259f784488fcd94c8f639"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-6044e9f095e0-1-4d766c9a265e49b2",
+  "entry_id": "zh-6044e9f095e0-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6044e9f095e0-1",
+      "headword": "前",
+      "kind": "word",
+      "reading": "qián",
+      "senses": [
+        {
+          "id": "zh-6044e9f095e0-1-s1",
+          "definition": "forward; ahead"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘焉让邹靖带刘备、张飞、关羽三人，领五百人前去迎敌。",
+        "gloss": "forward",
+        "sense_id": "zh-6044e9f095e0-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e3c034aa91d0914bbfedbf298f190ee3a75d02e69ba17ed925ed79ecb7a84963"
+}

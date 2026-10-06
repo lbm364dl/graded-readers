@@ -1,0 +1,31 @@
+{
+  "id": "zh-413c06bcef7c-1-e3625647a0476307",
+  "entry_id": "zh-413c06bcef7c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-413c06bcef7c-1",
+      "headword": "能",
+      "kind": "word",
+      "reading": "néng",
+      "senses": [
+        {
+          "id": "zh-413c06bcef7c-1-s1",
+          "definition": "can; be able to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "董卓能不能活下来，故事留下了悬念。",
+        "gloss": "can",
+        "sense_id": "zh-413c06bcef7c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3545fb179159f26bafca00acd295f10d44b7f7ca1e6a63d966274b91d0ebf449"
+}

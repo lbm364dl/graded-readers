@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_033-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 1191,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“曹丕攻入袁绍府邸”将曹丕见到府中妇人的情节改成了他攻入府邸，原文并未明确说明这一点。",
+      "classification": "material",
+      "reason": "“攻入”新增了原文没有的进攻行为，改变了曹丕进入府邸并见到妇人的情境。",
+      "required_fix": "改为“曹丕来到袁绍府邸，见两个妇人哭泣”或直接写“曹丕见两个妇人哭泣”，不要加入“攻入”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“曹丕攻入袁绍府邸”将曹丕见到府中妇人的情节改成了他攻入府邸，原文并未明确说明这一点。",
+      "classification": "material",
+      "reason": "“攻入”新增了原文没有的进攻行为，改变了曹丕进入府邸并见到妇人的情境。",
+      "required_fix": "改为“曹丕来到袁绍府邸，见两个妇人哭泣”或直接写“曹丕见两个妇人哭泣”，不要加入“攻入”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1191,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

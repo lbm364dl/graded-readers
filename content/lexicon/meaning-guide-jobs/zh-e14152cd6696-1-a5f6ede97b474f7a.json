@@ -1,0 +1,31 @@
+{
+  "id": "zh-e14152cd6696-1-a5f6ede97b474f7a",
+  "entry_id": "zh-e14152cd6696-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e14152cd6696-1",
+      "headword": "平日",
+      "kind": "word",
+      "reading": "píngrì",
+      "senses": [
+        {
+          "id": "zh-e14152cd6696-1-s1",
+          "definition": "on ordinary days; usually"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞说自己姓张，名飞，字翼德，世居涿郡，家有庄田，平日卖酒屠猪，一向喜欢结交天下豪杰。",
+        "gloss": "usually; on ordinary days",
+        "sense_id": "zh-e14152cd6696-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f22e78a85c57c5563656b64bbd287bf30e1d72f8fd789ae19b4c24403d0abaf3"
+}

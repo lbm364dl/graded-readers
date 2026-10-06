@@ -1,0 +1,32 @@
+{
+  "id": "ja-d04a5f3b608a5e59-4d61934ec8a83858",
+  "entry_id": "ja-d04a5f3b608a5e59",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d04a5f3b608a5e59",
+      "headword": "入るまま",
+      "reading": "はいるまま",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-d04a5f3b608a5e59-1",
+          "definition": "to remain in a state after doing something; to stay as one is after an action"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "学校から帰ると、書斎に入ったまま、ほとんど出て来ない。",
+        "gloss": "remain having entered; stay in",
+        "sense_id": "ja-d04a5f3b608a5e59-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "140bdc0344b8c8867413fdf2723090710f8dd0bd85ec00dea4a07060c54c28d2"
+}

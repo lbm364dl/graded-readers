@@ -1,0 +1,32 @@
+{
+  "id": "ja-fdeeb6a16c8ae477-179b04f06ddeb4c6",
+  "entry_id": "ja-fdeeb6a16c8ae477",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-fdeeb6a16c8ae477",
+      "headword": "合わせる",
+      "reading": "あわせる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-fdeeb6a16c8ae477-1",
+          "definition": "to bring together; to put into alignment"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩の主人は教師だが、吾輩と顔を合わせることはめったにない。",
+        "gloss": "put together; meet face-to-face",
+        "sense_id": "ja-fdeeb6a16c8ae477-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d4bb247ae8bad7bcebd19b71a1dc85a4a6a91840d4dcfe3eecc64fd14c6c04a3"
+}

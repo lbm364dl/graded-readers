@@ -1,0 +1,36 @@
+{
+  "id": "zh-f4853a74b7d7-1-d2ced6c0a3d49a95",
+  "entry_id": "zh-f4853a74b7d7-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f4853a74b7d7-1",
+      "headword": "精兵",
+      "kind": "word",
+      "reading": "jīngbīng",
+      "senses": [
+        {
+          "id": "zh-f4853a74b7d7-1-s1",
+          "definition": "well-trained or elite soldiers"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝廷命各地招兵，加强防守，抵抗黄巾军；又派卢植、皇甫嵩、朱俊各自率领精兵，分三路讨伐。",
+        "gloss": "elite troops",
+        "sense_id": "zh-f4853a74b7d7-1-s1"
+      },
+      {
+        "sentence": "何进上奏，朝廷命各地招兵抵抗黄巾军，又派卢植、皇甫嵩、朱俊各率精兵，分三路讨伐。",
+        "gloss": "elite troops",
+        "sense_id": "zh-f4853a74b7d7-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a9fd6272a4f5484553753d9f3cd7231f541413011fcfaf372b7e74021427b482"
+}

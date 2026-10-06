@@ -1,0 +1,32 @@
+{
+  "id": "ja-c7302a906d6ecdf7-0bf41633cc86f41f",
+  "entry_id": "ja-c7302a906d6ecdf7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c7302a906d6ecdf7",
+      "headword": "一月",
+      "reading": "ひとつき",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c7302a906d6ecdf7-1",
+          "definition": "one month; a period of one month"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が家に来て一月ほどたった給料日に、主人は水彩絵具と毛筆とワットマンという紙を買い、今日から絵をかくと決めた。",
+        "gloss": "one month",
+        "sense_id": "ja-c7302a906d6ecdf7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4252ffc88e5ed4f978dd8ef6a8eea46d5803585558d6b1589834196ed6cc4dfc"
+}

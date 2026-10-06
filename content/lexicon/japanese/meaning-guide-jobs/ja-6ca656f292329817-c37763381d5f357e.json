@@ -1,0 +1,32 @@
+{
+  "id": "ja-6ca656f292329817-c37763381d5f357e",
+  "entry_id": "ja-6ca656f292329817",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6ca656f292329817",
+      "headword": "悪くなる",
+      "reading": "わるくなる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-6ca656f292329817-1",
+          "definition": "to become bad or worse"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "すると、速く動き出し、目が変になって気分も悪くなった。",
+        "gloss": "became bad; felt ill",
+        "sense_id": "ja-6ca656f292329817-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4ac60f14f57733f273f03774578680889fbf07279c12890bf510d2bb0d1fbbdc"
+}

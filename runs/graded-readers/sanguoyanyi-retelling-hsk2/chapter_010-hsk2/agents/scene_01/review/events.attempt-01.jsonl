@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff329-9b46-7bd2-a915-418886dc5568"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.91,\"naturalness\":0.96,\"readability\":0.95,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“诸葛亮也派人打听江东和曹操的消息”将原文中诸葛亮建议刘备派人打探江东的行动主体说成了诸葛亮自己派人，属于轻微事实和因果偏差。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":32705,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":632,"reasoning_output_tokens":516}}

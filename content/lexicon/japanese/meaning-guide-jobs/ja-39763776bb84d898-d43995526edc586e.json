@@ -1,0 +1,32 @@
+{
+  "id": "ja-39763776bb84d898-d43995526edc586e",
+  "entry_id": "ja-39763776bb84d898",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-39763776bb84d898",
+      "headword": "とうとう",
+      "reading": "とうとう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-39763776bb84d898-1",
+          "definition": "finally; at last, after a period of waiting or events"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし、とうとう我慢できなくなった。",
+        "gloss": "finally; at last",
+        "sense_id": "ja-39763776bb84d898-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "de20c0fd979469504b938d39baa92f0463713f3a69cbbd0acdc57b2c510591f9"
+}

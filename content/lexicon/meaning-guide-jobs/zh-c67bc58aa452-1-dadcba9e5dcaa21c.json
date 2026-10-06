@@ -1,0 +1,31 @@
+{
+  "id": "zh-c67bc58aa452-1-dadcba9e5dcaa21c",
+  "entry_id": "zh-c67bc58aa452-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c67bc58aa452-1",
+      "headword": "毁",
+      "kind": "word",
+      "reading": "huǐ",
+      "senses": [
+        {
+          "id": "zh-c67bc58aa452-1-s1",
+          "definition": "to destroy; damage beyond use"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "之后雷雨和冰雹下到半夜，许多房屋被毁。",
+        "gloss": "to destroy",
+        "sense_id": "zh-c67bc58aa452-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "426b8c383569ae249113ad0849b015e747570708421385cfd9cb987152981cab"
+}

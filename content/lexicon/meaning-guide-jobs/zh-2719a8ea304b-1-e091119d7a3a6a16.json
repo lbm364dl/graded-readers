@@ -1,0 +1,31 @@
+{
+  "id": "zh-2719a8ea304b-1-e091119d7a3a6a16",
+  "entry_id": "zh-2719a8ea304b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2719a8ea304b-1",
+      "headword": "从",
+      "kind": "word",
+      "reading": "cóng",
+      "senses": [
+        {
+          "id": "zh-2719a8ea304b-1-s1",
+          "definition": "from"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞举矛刺中邓茂，他从马上掉下。",
+        "gloss": "from",
+        "sense_id": "zh-2719a8ea304b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "be55ccc0fdd9bf7e8f9ac6996d19229f7b4eaf6950c72436424cf6db8a1fc34d"
+}

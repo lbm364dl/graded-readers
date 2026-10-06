@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff531-f5d8-7090-a335-17fd90313424"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.94,\"naturalness\":0.95,\"readability\":0.93,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"将曹操放弃攻蜀主要归因于合肥危急，略去了蜀地已有防备这一共同原因，但不影响整体因果。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":29672,"cached_input_tokens":8960,"cache_write_input_tokens":0,"output_tokens":611,"reasoning_output_tokens":516}}

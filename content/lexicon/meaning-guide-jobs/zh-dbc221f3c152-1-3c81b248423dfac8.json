@@ -1,0 +1,31 @@
+{
+  "id": "zh-dbc221f3c152-1-3c81b248423dfac8",
+  "entry_id": "zh-dbc221f3c152-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-dbc221f3c152-1",
+      "headword": "祖父",
+      "kind": "word",
+      "reading": "zǔfù",
+      "senses": [
+        {
+          "id": "zh-dbc221f3c152-1-s1",
+          "definition": "grandfather"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "祖父刘雄，父亲刘弘；刘弘曾举孝廉，也做过官，后来早亡。",
+        "gloss": "grandfather",
+        "sense_id": "zh-dbc221f3c152-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4c3526d1bac0c74a392e613e836f7a2c3ef9b29e78ea561133d96567ccd38915"
+}

@@ -1,0 +1,97 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_007-hsk1",
+  "level": "hsk1",
+  "target_chars": 140,
+  "candidate_cjk": 182,
+  "required_range": [
+    98,
+    182
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "赵云姓名中的“麴义”误写为“曲义”，应作“麹义”。",
+      "classification": "material",
+      "reason": "“曲义”是将人物姓名中的“麴”误写为另一字，构成具体人名错误。",
+      "required_fix": "将“曲义”改为原文人物姓名“麴义”（简体可作“麹义”）。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "赵云姓名中的“麴义”误写为“曲义”，应作“麹义”。",
+      "classification": "material",
+      "reason": "“曲义”是将人物姓名中的“麴”误写为另一字，构成具体人名错误。",
+      "required_fix": "将“曲义”改为原文人物姓名“麴义”（简体可作“麹义”）。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "omissions": [],
+    "reviewer_verdict": "revise",
+    "harness_decision": "accepted_after_deterministic_length_verification"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 175,
+      "review": {
+        "source_fidelity": 7.5,
+        "naturalness": 8,
+        "readability": 8,
+        "material_omissions": [
+          "开篇遗漏孙坚被刘表围困、程普等三将救出且损失大半兵力并因此与刘表结怨，削弱了后文孙坚攻打刘表的动机和因果衔接。"
+        ],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "“攻馥”用单字代称韩馥不够自然清楚，宜改为“攻打韩馥”。"
+        ],
+        "verdict": "revise",
+        "omissions": []
+      },
+      "passed": false
+    },
+    {
+      "round": 2,
+      "candidate_cjk": 183,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": false
+    },
+    {
+      "round": 3,
+      "candidate_cjk": 182,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "omissions": [],
+        "reviewer_verdict": "revise",
+        "harness_decision": "accepted_after_deterministic_length_verification"
+      },
+      "passed": true
+    }
+  ]
+}

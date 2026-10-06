@@ -1,0 +1,31 @@
+{
+  "id": "zh-bf8eef84c004-1-7a54734d0a02ad40",
+  "entry_id": "zh-bf8eef84c004-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-bf8eef84c004-1",
+      "headword": "心口",
+      "kind": "word",
+      "reading": "xīnkǒu",
+      "senses": [
+        {
+          "id": "zh-bf8eef84c004-1-s1",
+          "definition": "chest; the area over the heart"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞挺起长矛，刺中邓茂的心口，邓茂翻身落马。",
+        "gloss": "chest; pit of the stomach",
+        "sense_id": "zh-bf8eef84c004-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "baee891de9d8a4a9a1f4b17841aede5c606c023680f3dc4bdb2a24ac2c82bd79"
+}

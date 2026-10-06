@@ -1,0 +1,26 @@
+{
+  "id": "ja-component-b77e3516d1a784c0-87f940770a1d8ce0",
+  "entry_id": "ja-component-b77e3516d1a784c0",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-component-b77e3516d1a784c0",
+      "headword": "眠い",
+      "reading": "ねむい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-component-b77e3516d1a784c0-1",
+          "definition": "Sleepy; feeling a need to sleep."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "449b1800969cf9d42790210d23fc43acd75ba3de5537b34e902159fcfe62996b"
+}

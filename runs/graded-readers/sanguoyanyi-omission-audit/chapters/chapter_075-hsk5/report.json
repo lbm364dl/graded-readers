@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_075-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 802,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“孙权接见他”原文仅说孙权大悦并仍命傅士仁守公安，未明确写孙权亲自接见。",
+      "classification": "material",
+      "reason": "这是原文未支持的具体事实，新增了孙权亲自接见傅士仁的情节。",
+      "required_fix": "删除“孙权接见他”，改为“孙权大悦，仍命他守公安”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "unsupported_additions",
+      "finding_note": "“孙权接见他”原文仅说孙权大悦并仍命傅士仁守公安，未明确写孙权亲自接见。",
+      "classification": "material",
+      "reason": "这是原文未支持的具体事实，新增了孙权亲自接见傅士仁的情节。",
+      "required_fix": "删除“孙权接见他”，改为“孙权大悦，仍命他守公安”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 802,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

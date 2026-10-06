@@ -10,3 +10,15 @@ output/*.txt
 output/*.html
 .venv/
 venv/
+runs/
+content/lexicon/*.lock
+data/korean/reviewed-lexemes.lock
+content/lexicon/japanese/*.lock
+content/lexicon/japanese/.link-batches/
+content/lexicon/japanese/pending-component-links.json
+
+# Local UI inspection captures, not product assets.
+.playwright-mcp/
+/graded-readers-home.png
+/hsk1-reader-immersion.png
+/sanguoyanyi-hsk1-huang-etymology.png

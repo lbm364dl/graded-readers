@@ -1,0 +1,31 @@
+{
+  "id": "zh-545ba49de385-1-56a1c6aa1b8739b5",
+  "entry_id": "zh-545ba49de385-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-545ba49de385-1",
+      "headword": "朝代",
+      "kind": "word",
+      "reading": "cháodài",
+      "senses": [
+        {
+          "id": "zh-545ba49de385-1-s1",
+          "definition": "dynasty; a ruling house or historical period of rule"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "朝代分合本是常事，但祸乱大约从桓帝、灵帝时开始。",
+        "gloss": "dynasty",
+        "sense_id": "zh-545ba49de385-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "faec149af3c2f2e0de316ede5bcf22919a59ed70c0c3e97168aa9cb690b0a70a"
+}

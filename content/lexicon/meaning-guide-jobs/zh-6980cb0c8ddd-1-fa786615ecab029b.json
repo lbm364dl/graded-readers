@@ -1,0 +1,31 @@
+{
+  "id": "zh-6980cb0c8ddd-1-fa786615ecab029b",
+  "entry_id": "zh-6980cb0c8ddd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6980cb0c8ddd-1",
+      "headword": "恨",
+      "kind": "word",
+      "reading": "hèn",
+      "senses": [
+        {
+          "id": "zh-6980cb0c8ddd-1-s1",
+          "definition": "to regret; to wish something were otherwise"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”刘备说自己是汉室宗亲，姓刘，名备，有志破贼救民，只恨力量不足。",
+        "gloss": "to regret",
+        "sense_id": "zh-6980cb0c8ddd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "04f62907f69d638226ef9134885aaf551f1c033d25c2a7e97920084cb517f61b"
+}

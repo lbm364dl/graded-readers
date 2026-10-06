@@ -1,0 +1,31 @@
+{
+  "id": "zh-c487e2061f99-1-f902504e181d15e6",
+  "entry_id": "zh-c487e2061f99-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c487e2061f99-1",
+      "headword": "来日",
+      "kind": "word",
+      "reading": "láirì",
+      "senses": [
+        {
+          "id": "zh-c487e2061f99-1-s1",
+          "definition": "the following day"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "来日收拾军器时，他们却没有马匹可乘。",
+        "gloss": "the following day",
+        "sense_id": "zh-c487e2061f99-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fb5b8a07e1cde9b648f8f3cb4685b57ed3dbb181e002b824601056f73eec93a6"
+}

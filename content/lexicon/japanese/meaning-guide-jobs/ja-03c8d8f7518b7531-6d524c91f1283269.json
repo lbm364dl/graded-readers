@@ -1,0 +1,52 @@
+{
+  "id": "ja-03c8d8f7518b7531-6d524c91f1283269",
+  "entry_id": "ja-03c8d8f7518b7531",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-03c8d8f7518b7531",
+      "headword": "黒",
+      "reading": "くろ",
+      "kind": "name",
+      "senses": [
+        {
+          "id": "ja-03c8d8f7518b7531-1",
+          "definition": "Kuro; a personal name"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "風で葉が二枚落ちると、黒は丸い目を開いた。",
+        "gloss": "Kuro",
+        "sense_id": "ja-03c8d8f7518b7531-1"
+      },
+      {
+        "sentence": "黒は「車屋の黒だ」と言った。",
+        "gloss": "Kuro",
+        "sense_id": "ja-03c8d8f7518b7531-1"
+      },
+      {
+        "sentence": "吾輩はその後、黒と何回も会い、話をするようになった。",
+        "gloss": "Kuro; the black cat",
+        "sense_id": "ja-03c8d8f7518b7531-1"
+      },
+      {
+        "sentence": "ある日、黒は人間の悪い話をした。",
+        "gloss": "Kuro; the black cat",
+        "sense_id": "ja-03c8d8f7518b7531-1"
+      },
+      {
+        "sentence": "黒は「人間は、格好のよい泥棒だ」と怒った。",
+        "gloss": "Kuro; the black cat's name",
+        "sense_id": "ja-03c8d8f7518b7531-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "af9c989d67d583535986c10e076fe41f8673fa518b7f9c9c4f7955945d6b307f"
+}

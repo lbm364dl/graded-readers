@@ -1,0 +1,31 @@
+{
+  "id": "zh-cd1deec9e498-1-83ba900df757e258",
+  "entry_id": "zh-cd1deec9e498-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-cd1deec9e498-1",
+      "headword": "有钱",
+      "kind": "word",
+      "reading": "yǒuqián",
+      "senses": [
+        {
+          "id": "zh-cd1deec9e498-1-s1",
+          "definition": "have money"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞说：“我有钱。",
+        "gloss": "have money",
+        "sense_id": "zh-cd1deec9e498-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b7c5e1f2f60c3cbb5441b3d6a3905a84b29f4ef6aa92e29c906fd7347a845e51"
+}

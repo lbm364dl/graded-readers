@@ -1,0 +1,36 @@
+{
+  "id": "zh-382557fee232-1-2fe4e63b01865d29",
+  "entry_id": "zh-382557fee232-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-382557fee232-1",
+      "headword": "志",
+      "kind": "word",
+      "reading": "zhì",
+      "senses": [
+        {
+          "id": "zh-382557fee232-1-s1",
+          "definition": "an aim or aspiration"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他仔细看了榜文，想到自己家贫而有志，却无力报国，不免长叹。",
+        "gloss": "ambition; aspiration",
+        "sense_id": "zh-382557fee232-1-s1"
+      },
+      {
+        "sentence": "”刘备说自己是汉室宗亲，姓刘，名备，有志破贼救民，只恨力量不足。",
+        "gloss": "aspiration",
+        "sense_id": "zh-382557fee232-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c890022c3764cb4e0ddccf171a05cdc261abe07e9eac084cc320de03a3d7c628"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-5369d3874808-1-f5c55a59c95ba74a",
+  "entry_id": "zh-5369d3874808-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-5369d3874808-1",
+      "headword": "不可",
+      "kind": "word",
+      "reading": "bùkě",
+      "senses": [
+        {
+          "id": "zh-5369d3874808-1-s1",
+          "definition": "must not; cannot"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "老人把天书三卷交给他，名为太平要术，并警告他不可生异心。",
+        "gloss": "must not",
+        "sense_id": "zh-5369d3874808-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e07a6a8b43fd6ba76569b59f6b5b612349a01e1be792e4ba488a0693bcb65029"
+}

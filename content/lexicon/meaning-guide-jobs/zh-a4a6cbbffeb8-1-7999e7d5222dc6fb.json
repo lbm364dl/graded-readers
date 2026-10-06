@@ -1,0 +1,31 @@
+{
+  "id": "zh-a4a6cbbffeb8-1-7999e7d5222dc6fb",
+  "entry_id": "zh-a4a6cbbffeb8-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-a4a6cbbffeb8-1",
+      "headword": "与众不同",
+      "kind": "expression",
+      "reading": "yǔzhòng-bùtóng",
+      "senses": [
+        {
+          "id": "zh-a4a6cbbffeb8-1-s1",
+          "definition": "be different from others; be distinctive"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "叔父觉得这孩子与众不同，常常帮助他。",
+        "gloss": "to stand out from the crowd",
+        "sense_id": "zh-a4a6cbbffeb8-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d719de99a57ab0931d7c414f01c9af17ecc1b515fe3c2b1aac96adc04dc76b75"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff540-61c8-7490-a5b8-1be69a976843"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.91,\"naturalness\":0.96,\"readability\":0.94,\"omissions\":[],\"unsupported_additions\":[\"无明显不受原文支持的新增情节。\"],\"distortions\":[\"司马懿并非“假装进军襄平”，而是主动放弃辽队营寨，直接转向襄平。\",\"原文是司马懿封贾范、伦直之墓并褒奖其子孙， adaptación称“厚葬”略有夸大。\",\"原文称司马懿请郭太后同意并下诏收回兵权，适应文概括为“请郭太后下诏”，略微简化了程序。\"],\"language_problems\":[\"篇幅明显超过750字目标的约70%—130%范围，压缩度不足。\"],\"verdict\":\"revise\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":28618,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":727,"reasoning_output_tokens":516}}

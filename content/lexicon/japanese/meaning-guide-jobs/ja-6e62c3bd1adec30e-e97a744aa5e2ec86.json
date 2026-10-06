@@ -1,0 +1,32 @@
+{
+  "id": "ja-6e62c3bd1adec30e-e97a744aa5e2ec86",
+  "entry_id": "ja-6e62c3bd1adec30e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6e62c3bd1adec30e",
+      "headword": "家の者",
+      "reading": "いえのもの",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-6e62c3bd1adec30e-1",
+          "definition": "household members; family"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "家の者は、主人を大変な勉強家だと思っているし、本人もそう見せている。",
+        "gloss": "household members; family",
+        "sense_id": "ja-6e62c3bd1adec30e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ac32d61b0ec70c9b42f917998c8f82290bad2315d5c6749f24c0fe30eb2d09a4"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-d41e171d6ad4-1-fa424db83d30da8e",
+  "entry_id": "zh-d41e171d6ad4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d41e171d6ad4-1",
+      "headword": "施",
+      "kind": "word",
+      "reading": "shī",
+      "senses": [
+        {
+          "id": "zh-d41e171d6ad4-1-s1",
+          "definition": "apply or administer (a treatment, remedy, or measure)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "百姓染上疫病时，他施符水为人治病，又自称“大贤良师”。",
+        "gloss": "administer",
+        "sense_id": "zh-d41e171d6ad4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ea10e957adb88354d770444d915d3be3f24703616a22a5917fed2f4109dac066"
+}

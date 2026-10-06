@@ -1,0 +1,37 @@
+{
+  "id": "ja-16433704ecf3a422-62abb51e6a3aa2d0",
+  "entry_id": "ja-16433704ecf3a422",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-16433704ecf3a422",
+      "headword": "友人",
+      "reading": "ゆうじん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-16433704ecf3a422-1",
+          "definition": "a friend"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ある日、美学を勉強している友人が来た。",
+        "gloss": "friend",
+        "sense_id": "ja-16433704ecf3a422-1"
+      },
+      {
+        "sentence": "主人が「自分で筆を持つと、絵は実に難しい」と言うと、友人は、室内の想像だけでは絵はかけない、自然そのものを見て写生すべきだと教えた。",
+        "gloss": "friend",
+        "sense_id": "ja-16433704ecf3a422-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "974a14313cb97a4511927be5a772702d4234ab7c1c251a9591970c0fa6192558"
+}

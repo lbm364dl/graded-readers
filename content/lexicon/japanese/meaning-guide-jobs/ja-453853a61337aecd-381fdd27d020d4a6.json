@@ -1,0 +1,32 @@
+{
+  "id": "ja-453853a61337aecd-381fdd27d020d4a6",
+  "entry_id": "ja-453853a61337aecd",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-453853a61337aecd",
+      "headword": "何度も",
+      "reading": "なんども",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-453853a61337aecd-1",
+          "definition": "Many times; repeatedly."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "女の人は吾輩を何度も外へ出しましたが、吾輩は台所へ入りました。",
+        "gloss": "many times",
+        "sense_id": "ja-453853a61337aecd-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5d8d9099f0cf57228cc2706bb4f0f02c195e2224c5486460286ef9568d01af4b"
+}

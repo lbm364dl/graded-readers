@@ -1,0 +1,31 @@
+{
+  "id": "zh-08dddeac1319-1-be630bf6f7c49064",
+  "entry_id": "zh-08dddeac1319-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-08dddeac1319-1",
+      "headword": "点",
+      "kind": "word",
+      "reading": "diǎn",
+      "senses": [
+        {
+          "id": "zh-08dddeac1319-1-s1",
+          "definition": "patterned steel"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "于是，刘备请工匠打造双股剑，关羽打造青龙偃月刀，重八十二斤，张飞打造丈八点钢矛，并各自准备全身铠甲。",
+        "gloss": "point",
+        "sense_id": "zh-08dddeac1319-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bdbda3b132803a402565e5e4983eda25454e8ceaff786c54d64109a77e7135ba"
+}

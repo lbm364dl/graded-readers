@@ -1,0 +1,46 @@
+{
+  "id": "ja-c3ed1499b56b52b9-630369e8360e2179",
+  "entry_id": "ja-c3ed1499b56b52b9",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-c3ed1499b56b52b9",
+      "headword": "話",
+      "reading": "はなし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-c3ed1499b56b52b9-1",
+          "definition": "talk; conversation"
+        },
+        {
+          "id": "ja-c3ed1499b56b52b9-2",
+          "definition": "a story, account, or matter discussed"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩はその後、黒と何回も会い、話をするようになった。",
+        "gloss": "conversation; talk",
+        "sense_id": "ja-c3ed1499b56b52b9-1"
+      },
+      {
+        "sentence": "ある日、黒は人間の悪い話をした。",
+        "gloss": "story; talk",
+        "sense_id": "ja-c3ed1499b56b52b9-2"
+      },
+      {
+        "sentence": "吾輩はその話を聞き、決して鼠をとるまいと決めた。",
+        "gloss": "story; account",
+        "sense_id": "ja-c3ed1499b56b52b9-2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5121831133f2c6c49e492845f28f885a5ad58815941263ed22acbfd790e014cd"
+}

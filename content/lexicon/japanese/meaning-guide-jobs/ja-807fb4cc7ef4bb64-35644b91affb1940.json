@@ -1,0 +1,32 @@
+{
+  "id": "ja-807fb4cc7ef4bb64-35644b91affb1940",
+  "entry_id": "ja-807fb4cc7ef4bb64",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-807fb4cc7ef4bb64",
+      "headword": "べきだ",
+      "reading": "べきだ",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-807fb4cc7ef4bb64-1",
+          "definition": "should; ought to; be expected or appropriate to do"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そして、猫が親子の愛を守り、家族として生きるには、人間と戦うべきだと主張した。",
+        "gloss": "should; ought to",
+        "sense_id": "ja-807fb4cc7ef4bb64-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a01525f90df12760f7b0bcfcb3db283db700e5f8fd3c7eee093cb15e3922d40a"
+}

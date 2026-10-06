@@ -1,0 +1,80 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_060-hsk5",
+  "level": "hsk5",
+  "target_chars": 1050,
+  "candidate_cjk": 931,
+  "required_range": [
+    735,
+    1365
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了刘备分兵守荆州、廖化来降、孟达迎接等出兵入川的过渡情节。",
+      "classification": "material",
+      "reason": "这些情节交代了刘备出兵入川时的兵力部署、荆州防守安排、廖化归降及孟达率兵迎接，影响后续行动的因果和军事背景。",
+      "required_fix": "补充刘备分兵守荆州、廖化来降以及孟达率五千兵迎接刘备的情节。"
+    },
+    {
+      "omission_note": "省略了刘璋拒绝李恢进谏及黄权劝谏时被打落门牙等细节。",
+      "classification": "material",
+      "reason": "这些内容进一步表现刘璋拒绝忠谏的态度及其对劝谏者的具体处置，强化了刘璋刚愎和局势恶化的因果链。",
+      "required_fix": "补充刘璋拒绝李恢劝谏，以及黄权因死谏被扯落两颗门牙并逐出的情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "称张松“终于得到刘备的承诺”，原文中刘备只是表示感激并说还需商议，并未承诺立即取川。",
+      "classification": "material",
+      "reason": "把刘备尚在犹豫、仅表示感激并承诺事成后厚报，改成已作出取川承诺，改变了关键决策的状态和后续因果。",
+      "required_fix": "改为“张松得到刘备的感激和事成后厚报的表示，但刘备仍未承诺立即取川，随后还需与法正、庞统商议”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了刘备分兵守荆州、廖化来降、孟达迎接等出兵入川的过渡情节。",
+      "classification": "material",
+      "reason": "这些情节交代了刘备出兵入川时的兵力部署、荆州防守安排、廖化归降及孟达率兵迎接，影响后续行动的因果和军事背景。",
+      "required_fix": "补充刘备分兵守荆州、廖化来降以及孟达率五千兵迎接刘备的情节。"
+    },
+    {
+      "omission_note": "省略了刘璋拒绝李恢进谏及黄权劝谏时被打落门牙等细节。",
+      "classification": "material",
+      "reason": "这些内容进一步表现刘璋拒绝忠谏的态度及其对劝谏者的具体处置，强化了刘璋刚愎和局势恶化的因果链。",
+      "required_fix": "补充刘璋拒绝李恢劝谏，以及黄权因死谏被扯落两颗门牙并逐出的情节。"
+    },
+    {
+      "field": "distortions",
+      "finding_note": "称张松“终于得到刘备的承诺”，原文中刘备只是表示感激并说还需商议，并未承诺立即取川。",
+      "classification": "material",
+      "reason": "把刘备尚在犹豫、仅表示感激并承诺事成后厚报，改成已作出取川承诺，改变了关键决策的状态和后续因果。",
+      "required_fix": "改为“张松得到刘备的感激和事成后厚报的表示，但刘备仍未承诺立即取川，随后还需与法正、庞统商议”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9.2,
+    "naturalness": 8.8,
+    "readability": 9.1,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 931,
+      "review": {
+        "source_fidelity": 9.2,
+        "naturalness": 8.8,
+        "readability": 9.1,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

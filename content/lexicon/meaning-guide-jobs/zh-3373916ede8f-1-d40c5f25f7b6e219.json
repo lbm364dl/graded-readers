@@ -1,0 +1,31 @@
+{
+  "id": "zh-3373916ede8f-1-d40c5f25f7b6e219",
+  "entry_id": "zh-3373916ede8f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-3373916ede8f-1",
+      "headword": "乱",
+      "kind": "word",
+      "reading": "luàn",
+      "senses": [
+        {
+          "id": "zh-3373916ede8f-1-s1",
+          "definition": "disordered; chaotic"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "许多百姓跟着他们，天下变得很乱。",
+        "gloss": "chaotic",
+        "sense_id": "zh-3373916ede8f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f47bc53fd7331146fdacc361f52bf5a412587fb149f2ceb742b7eacaf4fa5a51"
+}

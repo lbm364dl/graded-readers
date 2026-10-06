@@ -1,0 +1,41 @@
+{
+  "id": "zh-e87afcf4d5d6-1-2bf3565c026f4107",
+  "entry_id": "zh-e87afcf4d5d6-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e87afcf4d5d6-1",
+      "headword": "自称",
+      "kind": "word",
+      "reading": "zìchēng",
+      "senses": [
+        {
+          "id": "zh-e87afcf4d5d6-1-s1",
+          "definition": "to call oneself; to claim or identify oneself as something"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角日夜学习，学会呼风唤雨，自称太平道人。",
+        "gloss": "to call oneself",
+        "sense_id": "zh-e87afcf4d5d6-1-s1"
+      },
+      {
+        "sentence": "中平元年，疫病流行，他用符水给百姓治病，自称大贤良师。",
+        "gloss": "to call oneself",
+        "sense_id": "zh-e87afcf4d5d6-1-s1"
+      },
+      {
+        "sentence": "张角知道事情暴露，马上起兵，自称天公将军；张宝称地公将军，张梁称人公将军。",
+        "gloss": "to call oneself",
+        "sense_id": "zh-e87afcf4d5d6-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6ca09c1ec8ba0d07daeda45f96ecfeb17a87324c07c1911cfa42dbc04149bc16"
+}

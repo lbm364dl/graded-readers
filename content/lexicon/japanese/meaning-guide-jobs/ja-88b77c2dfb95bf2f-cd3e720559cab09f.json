@@ -1,0 +1,32 @@
+{
+  "id": "ja-88b77c2dfb95bf2f-cd3e720559cab09f",
+  "entry_id": "ja-88b77c2dfb95bf2f",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-88b77c2dfb95bf2f",
+      "headword": "弁護士",
+      "reading": "べんごし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-88b77c2dfb95bf2f-1",
+          "definition": "lawyer; attorney"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "　白君は軍人の家に、三毛君は弁護士の家に、吾輩は先生の家に住んでいる。",
+        "gloss": "lawyer; attorney",
+        "sense_id": "ja-88b77c2dfb95bf2f-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4c75343814f711756a33d0a8f8b45c0054eb5d40a63aeaff76bc7bc9c2d2a9fb"
+}

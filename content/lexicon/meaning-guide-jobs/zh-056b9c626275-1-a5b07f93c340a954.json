@@ -1,0 +1,31 @@
+{
+  "id": "zh-056b9c626275-1-a5b07f93c340a954",
+  "entry_id": "zh-056b9c626275-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-056b9c626275-1",
+      "headword": "谁",
+      "kind": "word",
+      "reading": "shéi",
+      "senses": [
+        {
+          "id": "zh-056b9c626275-1-s1",
+          "definition": "who; anyone (in a negative or unrestricted context)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "违反禁令的人，不管有没有权势，都要受罚，谁也不能例外。",
+        "gloss": "who",
+        "sense_id": "zh-056b9c626275-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "320b868c8e74365abfde85139fdb5168d196b791f05cd1d631c94dc0e9c3f5b7"
+}

@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff52d-a674-7420-a7a0-3055e66538c8"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"chapter_title\":\"姜維屯田避禍\",\"scenes\":[{\"id\":\"scene_18\",\"title\":\"退守沓中，保存兵力\",\"source_start_quote\":\"姜維逕到漢中，歇住人馬，自與使命入成都見後主。\",\"required_events\":[\"姜維奉詔退兵，回成都向後主追問原因，得知黃皓進言召回自己。\",\"姜維認為黃皓專權誤國，當面請後主除掉他，但後主袒護黃皓，姜維只得忍怒退下。\",\"郤正提醒姜維已成黃皓眼中之患，建議前往沓中屯田，既可積蓄糧食、徐圖隴右，也能遠離朝廷鬥爭、保全自身。\",\"姜維採納建議，分兵守住漢中要地，親率八萬人到沓中種麥屯田，準備日後再戰。\",\"鄧艾得知姜維屯田後上奏司馬昭，司馬昭遂決定派鄧艾牽制姜維、鍾會進攻漢中。\"],\"target_chars\":300}]}"}}
+{"type":"turn.completed","usage":{"input_tokens":33847,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":461,"reasoning_output_tokens":171}}

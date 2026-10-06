@@ -1,0 +1,32 @@
+{
+  "id": "ja-5f1331fc18a9d26d-5683031aac3fde9a",
+  "entry_id": "ja-5f1331fc18a9d26d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5f1331fc18a9d26d",
+      "headword": "叩く",
+      "reading": "たたく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5f1331fc18a9d26d-1",
+          "definition": "to hit or strike; to beat"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "先日は、物差しで吾輩の尻をひどくたたかれた。",
+        "gloss": "was hit; was beaten",
+        "sense_id": "ja-5f1331fc18a9d26d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f2aa9b71b98c012a9ac0304b68128943bed196cb4e642996f7d8726128450ff1"
+}

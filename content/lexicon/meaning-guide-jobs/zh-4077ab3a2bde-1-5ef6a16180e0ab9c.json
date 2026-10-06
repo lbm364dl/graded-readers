@@ -1,0 +1,31 @@
+{
+  "id": "zh-4077ab3a2bde-1-5ef6a16180e0ab9c",
+  "entry_id": "zh-4077ab3a2bde-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4077ab3a2bde-1",
+      "headword": "黄天",
+      "kind": "name",
+      "reading": "Huángtiān",
+      "senses": [
+        {
+          "id": "zh-4077ab3a2bde-1-s1",
+          "definition": "Yellow Heaven, as named in the slogan “苍天已死，黄天当立”"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他让人传播“苍天已死，黄天当立”和“岁在甲子，天下大吉”，还用白土在家门上写“甲子”。",
+        "gloss": "Yellow Heaven",
+        "sense_id": "zh-4077ab3a2bde-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2d3217eaa331bef4dc52c1eaf4662b8eda2a322c5fa67d76e67d0c181e44f0ae"
+}

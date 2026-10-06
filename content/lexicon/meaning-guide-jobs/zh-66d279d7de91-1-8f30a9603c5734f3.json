@@ -1,0 +1,31 @@
+{
+  "id": "zh-66d279d7de91-1-8f30a9603c5734f3",
+  "entry_id": "zh-66d279d7de91-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-66d279d7de91-1",
+      "headword": "青蛇",
+      "kind": "word",
+      "reading": "qīngshé",
+      "senses": [
+        {
+          "id": "zh-66d279d7de91-1-s1",
+          "definition": "green snake"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "殿角忽起狂风，一条大青蛇从梁上飞下，盘在椅上。",
+        "gloss": "green snake",
+        "sense_id": "zh-66d279d7de91-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "dceb02f3c9aada1309bec00ebc41cebf5086fb60eaa1d2f35fe387dc102b4d63"
+}

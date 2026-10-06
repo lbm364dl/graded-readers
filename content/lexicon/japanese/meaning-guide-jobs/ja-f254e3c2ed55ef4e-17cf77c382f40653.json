@@ -1,0 +1,32 @@
+{
+  "id": "ja-f254e3c2ed55ef4e-17cf77c382f40653",
+  "entry_id": "ja-f254e3c2ed55ef4e",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f254e3c2ed55ef4e",
+      "headword": "載せる",
+      "reading": "のせる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f254e3c2ed55ef4e-1",
+          "definition": "to put or place something on a surface"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ただ、書生の掌に載せられて、すうっと持ち上げられた時、何だかふわふわした感じがあっただけである。",
+        "gloss": "having been placed onto",
+        "sense_id": "ja-f254e3c2ed55ef4e-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d6dcbe2f5164b5e31079a1ce318949d7120d4dd190c69014177ef0689743cf14"
+}

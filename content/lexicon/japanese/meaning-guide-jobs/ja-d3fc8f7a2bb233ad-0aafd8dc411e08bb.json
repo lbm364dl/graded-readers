@@ -1,0 +1,32 @@
+{
+  "id": "ja-d3fc8f7a2bb233ad-0aafd8dc411e08bb",
+  "entry_id": "ja-d3fc8f7a2bb233ad",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d3fc8f7a2bb233ad",
+      "headword": "無名",
+      "reading": "むめい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d3fc8f7a2bb233ad-1",
+          "definition": "unknown; nameless; not famous"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この教師の家で、生涯、無名の猫として終わるつもりである。",
+        "gloss": "unknown; nameless",
+        "sense_id": "ja-d3fc8f7a2bb233ad-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0026eb462bfde7db1a4b803bcaf2d14092752593eaa3a8f6e5dd2a020ba97659"
+}

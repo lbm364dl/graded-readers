@@ -1,0 +1,37 @@
+{
+  "id": "ja-5fcdfae777ec8fcb-ac7f1ec5508463a9",
+  "entry_id": "ja-5fcdfae777ec8fcb",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5fcdfae777ec8fcb",
+      "headword": "大声",
+      "reading": "おおごえ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5fcdfae777ec8fcb-1",
+          "definition": "a loud voice"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "小さい方は特に乱暴で、「猫が来た」と夜中でも大声で泣き出す。",
+        "gloss": "loud voice",
+        "sense_id": "ja-5fcdfae777ec8fcb-1"
+      },
+      {
+        "sentence": "吾輩が「とろうと思ったが、まだ一匹もとっていない」と答えると、黒は大声で笑った。",
+        "gloss": "loud voice",
+        "sense_id": "ja-5fcdfae777ec8fcb-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2063a6831d659ae589b03785fbe92b8b618d4ee7082f2595acae9d0a6241b3ad"
+}

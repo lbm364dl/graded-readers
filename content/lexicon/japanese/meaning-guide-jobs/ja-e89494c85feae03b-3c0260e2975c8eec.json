@@ -1,0 +1,32 @@
+{
+  "id": "ja-e89494c85feae03b-3c0260e2975c8eec",
+  "entry_id": "ja-e89494c85feae03b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e89494c85feae03b",
+      "headword": "縁",
+      "reading": "えん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e89494c85feae03b-1",
+          "definition": "the veranda or porch along a house; its edge or border"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "亭主が縁の下へ入った時、大きな鼬が飛び出し、黒が泥溝へ追い込んだ。",
+        "gloss": "veranda; edge",
+        "sense_id": "ja-e89494c85feae03b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "5e9df3a1dd551199c966a6b2462df5b21baf2a10246e7c71c44afb8b02e6e026"
+}

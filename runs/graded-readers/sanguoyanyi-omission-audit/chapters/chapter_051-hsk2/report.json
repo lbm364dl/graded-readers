@@ -1,0 +1,56 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk123/chapter_051-hsk2",
+  "level": "hsk2",
+  "target_chars": 300,
+  "candidate_cjk": 338,
+  "required_range": [
+    210,
+    390
+  ],
+  "material_findings": [
+    {
+      "field": "distortions",
+      "finding_note": "“周瑜改攻彝陵”略显不准确，实际是甘宁建议并率军攻打彝陵，周瑜随后出兵救援。",
+      "classification": "material",
+      "reason": "这把攻打彝陵的行动者和先后因果从甘宁建议并率军攻打、周瑜随后救援，改成了周瑜改攻，属于错误行动者及因果顺序。",
+      "required_fix": "改为“甘宁建议并率三千兵攻打彝陵，周瑜随后出兵救援”。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "field": "distortions",
+      "finding_note": "“周瑜改攻彝陵”略显不准确，实际是甘宁建议并率军攻打彝陵，周瑜随后出兵救援。",
+      "classification": "material",
+      "reason": "这把攻打彝陵的行动者和先后因果从甘宁建议并率军攻打、周瑜随后救援，改成了周瑜改攻，属于错误行动者及因果顺序。",
+      "required_fix": "改为“甘宁建议并率三千兵攻打彝陵，周瑜随后出兵救援”。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9.5,
+    "naturalness": 9,
+    "readability": 9.5,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 338,
+      "review": {
+        "source_fidelity": 9.5,
+        "naturalness": 9,
+        "readability": 9.5,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

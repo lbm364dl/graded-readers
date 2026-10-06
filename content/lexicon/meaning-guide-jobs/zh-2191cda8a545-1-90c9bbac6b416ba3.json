@@ -1,0 +1,75 @@
+{
+  "id": "zh-2191cda8a545-1-90c9bbac6b416ba3",
+  "entry_id": "zh-2191cda8a545-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-2191cda8a545-1",
+      "headword": "送",
+      "kind": "word",
+      "reading": "sòng",
+      "senses": [
+        {
+          "id": "zh-2191cda8a545-1-s1",
+          "definition": "to send or deliver something to someone or somewhere"
+        },
+        {
+          "id": "zh-2191cda8a545-1-s2",
+          "definition": "to give something to someone"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张角暗中送金钱，联系朝中的封谞，准备做内应。",
+        "gloss": "to send",
+        "sense_id": "zh-2191cda8a545-1-s1"
+      },
+      {
+        "sentence": "老人送他三卷天书，告诫他要救人，不可生出异心。",
+        "gloss": "give",
+        "sense_id": "zh-2191cda8a545-1-s2"
+      },
+      {
+        "sentence": "张角又让弟子唐州送信，唐州却到朝廷告发。",
+        "gloss": "to send",
+        "sense_id": "zh-2191cda8a545-1-s1"
+      },
+      {
+        "sentence": "他们又派弟子唐州送信给封谞。",
+        "gloss": "send",
+        "sense_id": "zh-2191cda8a545-1-s1"
+      },
+      {
+        "sentence": "刘备奉命带兵返回，途中遇到一队汉军，正押送一辆囚车。",
+        "gloss": "to convey",
+        "sense_id": "zh-2191cda8a545-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-2191cda8a545-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "送 means to send or deliver something to a person or place.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "送",
+        "contribution_en": "Means to send or deliver something to a recipient or destination.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "7ab0b7365d8c9a56092a9639a297ea1920088a27cfcc85641b516a1266b44080",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "877438ce499a666264b90e95b97be1f42a0263f600f551f544a1c7349fd8951e"
+}

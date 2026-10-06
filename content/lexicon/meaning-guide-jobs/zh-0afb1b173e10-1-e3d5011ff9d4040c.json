@@ -1,0 +1,31 @@
+{
+  "id": "zh-0afb1b173e10-1-e3d5011ff9d4040c",
+  "entry_id": "zh-0afb1b173e10-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0afb1b173e10-1",
+      "headword": "退走",
+      "kind": "construction",
+      "reading": "tuìzǒu",
+      "senses": [
+        {
+          "id": "zh-0afb1b173e10-1-s1",
+          "definition": "to retreat by going away"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，刘备带人上前，打了一会儿便假装退走。",
+        "gloss": "retreat",
+        "sense_id": "zh-0afb1b173e10-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f30930909b29a5cf9430eb13ffb88e53a6e1a9b2ca62180e2f3b9746d7d48399"
+}

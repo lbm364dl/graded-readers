@@ -1,0 +1,32 @@
+{
+  "id": "ja-dc68b1eb0a600d22-a80913ca7646b0e2",
+  "entry_id": "ja-dc68b1eb0a600d22",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-dc68b1eb0a600d22",
+      "headword": "そうなのに",
+      "reading": "そうなのに",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-dc68b1eb0a600d22-1",
+          "definition": "although something seems or looks that way"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が「人の絵を見ると簡単そうなのに、自分で筆を持つと実に難しい」と言うと、友人は、最初から上手にはかけない、室内の想像だけでは絵にならない、と説明した。",
+        "gloss": "although it looks easy",
+        "sense_id": "ja-dc68b1eb0a600d22-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1b38790fed937bde2f87865414337325cf8fafbedfd1687f5a33ce0e46aeacde"
+}

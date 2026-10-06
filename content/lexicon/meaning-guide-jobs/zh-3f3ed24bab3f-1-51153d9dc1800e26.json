@@ -1,0 +1,79 @@
+{
+  "id": "zh-3f3ed24bab3f-1-51153d9dc1800e26",
+  "entry_id": "zh-3f3ed24bab3f-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-3f3ed24bab3f-1",
+      "headword": "起",
+      "kind": "word",
+      "reading": "qǐ",
+      "senses": [
+        {
+          "id": "zh-3f3ed24bab3f-1-s1",
+          "definition": "to begin; to start"
+        },
+        {
+          "id": "zh-3f3ed24bab3f-1-s2",
+          "definition": "to rise; to launch"
+        },
+        {
+          "id": "zh-3f3ed24bab3f-1-s3",
+          "definition": "to raise or initiate (an army or uprising)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "夜里大风忽然刮起。",
+        "gloss": "begin to; rise",
+        "sense_id": "zh-3f3ed24bab3f-1-s1"
+      },
+      {
+        "sentence": "黄巾军起兵后，曹操带着五千名士兵赶到颍川。",
+        "gloss": "to rise; launch",
+        "sense_id": "zh-3f3ed24bab3f-1-s2"
+      },
+      {
+        "sentence": "夜里大风忽起，官军一齐点火并攻入营寨，黄巾军惊慌逃散。",
+        "gloss": "to rise",
+        "sense_id": "zh-3f3ed24bab3f-1-s2"
+      },
+      {
+        "sentence": "张角得知事情败露，立刻连夜起兵，发动黄巾起事。",
+        "gloss": "raise; launch",
+        "sense_id": "zh-3f3ed24bab3f-1-s3"
+      },
+      {
+        "sentence": "夜里大风忽起，二更以后，一齐纵火。",
+        "gloss": "to arise",
+        "sense_id": "zh-3f3ed24bab3f-1-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-3f3ed24bab3f-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "起 can describe something rising or emerging, and by extension something beginning or being launched.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "起",
+        "contribution_en": "Describes rising or emerging; it can also mean beginning or launching something.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "fc5c58dd1009bbf636346914b679e45da241bb86860e15aacdd0c9a2a4a7351d",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2496eb3575ffd2a9d75b7eecc7a87f8b1044b781df7787f67f35d8559439011a"
+}

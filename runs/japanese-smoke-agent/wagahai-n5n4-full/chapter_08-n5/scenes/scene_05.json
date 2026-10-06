@@ -1,0 +1,63 @@
+{
+  "scene": {
+    "id": "scene_05",
+    "title": "余瀾と三つの助言",
+    "source_start_quote": "大事件のあった翌日、吾輩はちょっと散歩がしたくなったから表へ出た。",
+    "required_events": [
+      "吾輩は翌日、金田と鈴木の会話を盗み聞く。金田は苦沙弥への私怨から生徒を使って弱らせ、鈴木に様子を見に行かせる。金の力で世の中を動かせると吾輩は皮肉る。",
+      "鈴木は世間話を装って主人の顔色や不安を探り、金持ちや多数に逆らうな、角を立てず自分を合わせよと説く。ボールが何度も表門から取りに来るため主人は激怒する。",
+      "甘木医師は主人の胃病と肝癪を診察し、運動を勧める。主人は催眠術で治せるか尋ね、実際に試すが、眼が開かない暗示にも普通に目を開け、失敗する。",
+      "哲学者の珍客は迷亭を金魚麩、鈴木を藁で括った蒟蒻、自分を自然薯にたとえ、主人の不平を聞く。周囲を積極的に変え続けても満足は得られず、日本的な消極の修養、変えられない世の中に合わせ心だけを自由にする道を説く。",
+      "主人は三つの助言のどれを選ぶか決めず、吾輩はこのままでは済まないと結ぶ。"
+    ],
+    "target_chars": 330,
+    "source_start": 23848,
+    "source_end": 33611
+  },
+  "text": "大事件の翌日、吾輩は金田と鈴木の話を盗み聞いた。苦沙弥を私怨で恨む金田は生徒を使って弱らせ、鈴木に様子を見に行かせる。世の中を動かすのは金だ、と吾輩は皮肉る。鈴木は世間話のふりで主人の顔色と不安を探り、金持ちや大勢に逆らわず、角を立てず周りに合わせよと説く。裏の学校のボールが表門から十六回も取りに来て、主人は激怒する。甘木医師は胃病と肝癪を診て運動を勧める。主人は催眠術で治せるかと尋ね、目が開かない暗示を試すが、普通に目を開けて失敗する。次の哲学者は迷亭を金魚麩、鈴木を藁でくくった蒟蒻、自分を自然薯にたとえ、不平を聞く。そして、周囲を変え続けても満足はなく、変えられない世に合わせ、心だけを自由にする日本的な消極の修養を説く。主人は三つの助言から選ばず、吾輩は、このままでは済まないと結ぶ。",
+  "review": {
+    "source_fidelity": 8,
+    "naturalness": 9,
+    "readability": 9,
+    "omissions": [
+      "Opening encounter and the narrator's humorous justification for overhearing are heavily condensed.",
+      "Suzuki's detailed dialogue about laughter and Chrysippus is omitted.",
+      "The extensive philosopher's examples and argument contrasting Western activism with Japanese acceptance are condensed substantially.",
+      "The philosopher's specific discussion of the many complaints (今戸焼の狸, ぴん助, きしゃご) is only summarized as general grievances.",
+      "The narrator's descriptions of Kaneda, Suzuki, Amaki, and the philosopher are largely omitted."
+    ],
+    "unsupported_additions": [
+      "金田を『私怨で恨む』: the original says Kaneda feels disgust after the incident and seeks to weaken Kushami, but does not explicitly establish personal resentment as the motive.",
+      "鈴木は『世間話のふりで』主人の…不安を探り: Suzuki does investigate Kushami's condition, but『世間話のふり』and『不安』slightly sharpen the implication beyond the explicit wording."
+    ],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "大事件の翌日、吾輩は金田と鈴木の話を盗み聞いた。苦沙弥を私怨で恨む金田は生徒を使って弱らせ、鈴木に様子を見に行かせる。世の中を動かすのは金だ、と吾輩は皮肉る。鈴木は世間話のふりで主人の顔色と不安を探り、金持ちや大勢に逆らわず、角を立てず周りに合わせよと説く。裏の学校のボールが表門から十六回も取りに来て、主人は激怒する。甘木医師は胃病と肝癪を診て運動を勧める。主人は催眠術で治せるかと尋ね、目が開かない暗示を試すが、普通に目を開けて失敗する。次の哲学者は迷亭を金魚麩、鈴木を藁でくくった蒟蒻、自分を自然薯にたとえ、不平を聞く。そして、周囲を変え続けても満足はなく、変えられない世に合わせ、心だけを自由にする日本的な消極の修養を説く。主人は三つの助言から選ばず、吾輩は、このままでは済まないと結ぶ。",
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 9,
+        "readability": 9,
+        "omissions": [
+          "Opening encounter and the narrator's humorous justification for overhearing are heavily condensed.",
+          "Suzuki's detailed dialogue about laughter and Chrysippus is omitted.",
+          "The extensive philosopher's examples and argument contrasting Western activism with Japanese acceptance are condensed substantially.",
+          "The philosopher's specific discussion of the many complaints (今戸焼の狸, ぴん助, きしゃご) is only summarized as general grievances.",
+          "The narrator's descriptions of Kaneda, Suzuki, Amaki, and the philosopher are largely omitted."
+        ],
+        "unsupported_additions": [
+          "金田を『私怨で恨む』: the original says Kaneda feels disgust after the incident and seeks to weaken Kushami, but does not explicitly establish personal resentment as the motive.",
+          "鈴木は『世間話のふりで』主人の…不安を探り: Suzuki does investigate Kushami's condition, but『世間話のふり』and『不安』slightly sharpen the implication beyond the explicit wording."
+        ],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      }
+    }
+  ],
+  "resolved": true
+}

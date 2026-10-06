@@ -1,0 +1,37 @@
+{
+  "id": "ja-0eb515e38163203a-6a5f139c52a8f80d",
+  "entry_id": "ja-0eb515e38163203a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0eb515e38163203a",
+      "headword": "人",
+      "reading": "ひと",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0eb515e38163203a-1",
+          "definition": "Person; human being."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その時、初めて人を見ました。",
+        "gloss": "person; people",
+        "sense_id": "ja-0eb515e38163203a-1"
+      },
+      {
+        "sentence": "吾輩は池を左に見ながら、ゆっくり歩き、人の家へ入りました。",
+        "gloss": "person; people",
+        "sense_id": "ja-0eb515e38163203a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "fabd72881edef3c51247bdee6ff45f558ba3ad21c13a18485fbbd75ccb95643d"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-9aebebe75cb2-1-9424fc1ea2815eeb",
+  "entry_id": "zh-9aebebe75cb2-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9aebebe75cb2-1",
+      "headword": "漫山遍野",
+      "kind": "expression",
+      "reading": "mànshānbiànyě",
+      "senses": [
+        {
+          "id": "zh-9aebebe75cb2-1-s1",
+          "definition": "all over the mountains and plains; spread across a wide area"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人登上高处，只见汉军已经大败，黄巾军漫山遍野而来，旗上写着“天公将军”。",
+        "gloss": "all over the mountains and plains",
+        "sense_id": "zh-9aebebe75cb2-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e4e64e35d1ea786520d66d19a76befe8e824184aec6076a7c99e466eda23af54"
+}

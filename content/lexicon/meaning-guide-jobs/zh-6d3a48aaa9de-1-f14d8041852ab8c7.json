@@ -1,0 +1,31 @@
+{
+  "id": "zh-6d3a48aaa9de-1-f14d8041852ab8c7",
+  "entry_id": "zh-6d3a48aaa9de-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-6d3a48aaa9de-1",
+      "headword": "起身",
+      "kind": "construction",
+      "reading": "qǐshēn",
+      "senses": [
+        {
+          "id": "zh-6d3a48aaa9de-1-s1",
+          "definition": "to get up; to rise to one's feet"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "灵帝看完奏章叹气，因而起身更衣。",
+        "gloss": "stand up; rise",
+        "sense_id": "zh-6d3a48aaa9de-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0e84cf582c2528da7561ac80c52b344b7e619f62dbcae369f55c6104148f2d59"
+}

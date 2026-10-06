@@ -1,0 +1,64 @@
+{
+  "id": "zh-75527e5b5cba-2-6aceb720cb8676e2",
+  "entry_id": "zh-75527e5b5cba-2",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-75527e5b5cba-2",
+      "headword": "将",
+      "kind": "word",
+      "reading": "jiāng",
+      "senses": [
+        {
+          "id": "zh-75527e5b5cba-2-s1",
+          "definition": "to take; to use as a means of carrying out an action"
+        },
+        {
+          "id": "zh-75527e5b5cba-2-s2",
+          "definition": "will; be about to"
+        },
+        {
+          "id": "zh-75527e5b5cba-2-s3",
+          "definition": "to take or move the object as the object of the following action"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "程远志挥刀冲来，关羽纵马迎上，一刀将他斩成两段。",
+        "gloss": "then; will",
+        "sense_id": "zh-75527e5b5cba-2-s1"
+      },
+      {
+        "sentence": "皇帝命何进调兵捉住马元义，将他斩首，又把封谞等人关进牢里。",
+        "gloss": "will; then",
+        "sense_id": "zh-75527e5b5cba-2-s3"
+      },
+      {
+        "sentence": "他听说军队将到，便召校尉邹靖商议。",
+        "gloss": "will; be about to",
+        "sense_id": "zh-75527e5b5cba-2-s2"
+      },
+      {
+        "sentence": "关羽骑马迎战，挥刀将程远志斩成两段。",
+        "gloss": "将; then",
+        "sense_id": "zh-75527e5b5cba-2-s3"
+      },
+      {
+        "sentence": "次日，青州太守龚景送来文书，说黄巾军围城将陷，请求救援。",
+        "gloss": "will; be about to",
+        "sense_id": "zh-75527e5b5cba-2-s2"
+      },
+      {
+        "sentence": "桥玄曾对曹操说，天下将乱，能安定天下的人，仿佛就是他。",
+        "gloss": "will",
+        "sense_id": "zh-75527e5b5cba-2-s2"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b9bb3100844da06c80e234ac709dcab227f0a7e539bdb7e2769dab6c55cbac5a"
+}

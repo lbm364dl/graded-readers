@@ -1,0 +1,32 @@
+{
+  "id": "ja-02d0516d96b66f2d-6884cac640cf36ef",
+  "entry_id": "ja-02d0516d96b66f2d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-02d0516d96b66f2d",
+      "headword": "垂らす",
+      "reading": "たらす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-02d0516d96b66f2d-1",
+          "definition": "to let something hang down or drip; to let something droop"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "二、三ページ読むと眠くなり、本の上へ涎をたらす。",
+        "gloss": "let drool fall; drool",
+        "sense_id": "ja-02d0516d96b66f2d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8587924ae28b9b2764f5eaa7b6634a7c64d36bd073cd6699f4ecbe3ec7bf9737"
+}

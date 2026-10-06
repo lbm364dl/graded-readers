@@ -1,0 +1,31 @@
+{
+  "id": "zh-67313e22802c-1-82fbd2bd20f852ce",
+  "entry_id": "zh-67313e22802c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-67313e22802c-1",
+      "headword": "乌牛",
+      "kind": "word",
+      "reading": "wūniú",
+      "senses": [
+        {
+          "id": "zh-67313e22802c-1-s1",
+          "definition": "black ox"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "第二天，三人备好乌牛、白马等祭礼，焚香再拜，发誓虽是异姓，也要报效国家、安定百姓。",
+        "gloss": "black ox",
+        "sense_id": "zh-67313e22802c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "26dadb1fdcbaf1282af2f1e5c110dc085e077322c6d06ee4304eb160ff74f183"
+}

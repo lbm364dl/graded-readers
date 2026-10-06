@@ -1,0 +1,32 @@
+{
+  "id": "ja-f7b491cf35ebb0d1-092533da64172ebe",
+  "entry_id": "ja-f7b491cf35ebb0d1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-f7b491cf35ebb0d1",
+      "headword": "籠る",
+      "reading": "こもる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-f7b491cf35ebb0d1-1",
+          "definition": "to stay inside; to shut oneself away or remain secluded"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人は毎日学校へ行き、帰ると書斎へこもる。",
+        "gloss": "shuts himself away; stays secluded",
+        "sense_id": "ja-f7b491cf35ebb0d1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "94f990b3cd2707134c4b9f42d7743fb553e5b34fb7fbddea60b18c3848f48d20"
+}

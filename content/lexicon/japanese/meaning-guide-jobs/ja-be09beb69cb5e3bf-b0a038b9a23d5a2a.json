@@ -1,0 +1,37 @@
+{
+  "id": "ja-be09beb69cb5e3bf-b0a038b9a23d5a2a",
+  "entry_id": "ja-be09beb69cb5e3bf",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-be09beb69cb5e3bf",
+      "headword": "しかし",
+      "reading": "しかし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-be09beb69cb5e3bf-1",
+          "definition": "However; but."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "しかし、その時の吾輩には何も考えがなく、怖いとも思わなかった。",
+        "gloss": "however",
+        "sense_id": "ja-be09beb69cb5e3bf-1"
+      },
+      {
+        "sentence": "しかし主人の熱心さには感心した。",
+        "gloss": "however",
+        "sense_id": "ja-be09beb69cb5e3bf-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "aef0c20f6aa710174dc495c02e8e59f3063229ff13570b7254ae848ada084b1e"
+}

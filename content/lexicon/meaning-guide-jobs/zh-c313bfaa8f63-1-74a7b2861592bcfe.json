@@ -1,0 +1,31 @@
+{
+  "id": "zh-c313bfaa8f63-1-74a7b2861592bcfe",
+  "entry_id": "zh-c313bfaa8f63-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c313bfaa8f63-1",
+      "headword": "田",
+      "kind": "word",
+      "reading": "tián",
+      "senses": [
+        {
+          "id": "zh-c313bfaa8f63-1-s1",
+          "definition": "field or farmland"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”他家有田，也有钱，愿意出钱招募乡勇，和刘备一起做大事。",
+        "gloss": "farmland",
+        "sense_id": "zh-c313bfaa8f63-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1b1002a7cfc9dfe51be76e2123b71e6094a6ff5341276f5d8563d375e821e4fb"
+}

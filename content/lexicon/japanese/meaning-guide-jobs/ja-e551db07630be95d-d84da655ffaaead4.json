@@ -1,0 +1,32 @@
+{
+  "id": "ja-e551db07630be95d-d84da655ffaaead4",
+  "entry_id": "ja-e551db07630be95d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e551db07630be95d",
+      "headword": "我慢する",
+      "reading": "がまんする",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e551db07630be95d-1",
+          "definition": "to endure, bear, or put up with something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "苦しかったが、我慢して進むと、人間の気配がする所に出た。",
+        "gloss": "enduring; bearing it",
+        "sense_id": "ja-e551db07630be95d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6141de9df8a23018ff4fd5f2094b9565ee99234c2ae2363c7b4626236db5c8d4"
+}

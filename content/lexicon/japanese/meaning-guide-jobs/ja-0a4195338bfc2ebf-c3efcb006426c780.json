@@ -1,0 +1,32 @@
+{
+  "id": "ja-0a4195338bfc2ebf-c3efcb006426c780",
+  "entry_id": "ja-0a4195338bfc2ebf",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-0a4195338bfc2ebf",
+      "headword": "休める",
+      "reading": "やすめる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-0a4195338bfc2ebf-1",
+          "definition": "to rest or give rest to; to let something or someone rest"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "小供が騒いで昼寝のできない時や、退屈で気分がすぐれない時、吾輩はここへ来て、静かに心を休めるのが習慣だった。",
+        "gloss": "rest; relax",
+        "sense_id": "ja-0a4195338bfc2ebf-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7c2072453a167876df0d2fcd9160a61d7b80b0521fd8c10a9811d0a43adc6031"
+}

@@ -1,0 +1,134 @@
+{
+  "id": "zh-7d4ca7f48eff-1-547c8ea6d3e2a4a8",
+  "entry_id": "zh-7d4ca7f48eff-1",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "zh-7d4ca7f48eff-1",
+      "headword": "大",
+      "kind": "word",
+      "reading": "dà",
+      "senses": [
+        {
+          "id": "zh-7d4ca7f48eff-1-s1",
+          "definition": "large; big"
+        },
+        {
+          "id": "zh-7d4ca7f48eff-1-s2",
+          "definition": "great; eminent"
+        },
+        {
+          "id": "zh-7d4ca7f48eff-1-s3",
+          "definition": "to a great degree; greatly"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "殿角忽起狂风，一条大青蛇从梁上飞下，盘在椅上。",
+        "gloss": "large",
+        "sense_id": "zh-7d4ca7f48eff-1-s1"
+      },
+      {
+        "sentence": "中平元年，疫病流行，他用符水给百姓治病，自称大贤良师。",
+        "gloss": "great",
+        "sense_id": "zh-7d4ca7f48eff-1-s2"
+      },
+      {
+        "sentence": "家旁有一棵大桑树，远远看去，像一把车盖。",
+        "gloss": "big",
+        "sense_id": "zh-7d4ca7f48eff-1-s1"
+      },
+      {
+        "sentence": "殿角忽然刮起狂风，一条大青蛇从房梁上飞下来，盘在座椅上。",
+        "gloss": "large",
+        "sense_id": "zh-7d4ca7f48eff-1-s1"
+      },
+      {
+        "sentence": "楼桑村东南有一棵大桑树，高大茂盛，远看如同车盖。",
+        "gloss": "big; large",
+        "sense_id": "zh-7d4ca7f48eff-1-s1"
+      },
+      {
+        "sentence": "他身材高大，头大眼圆，胡子很长，声音像雷一样响，气势惊人。",
+        "gloss": "large",
+        "sense_id": "zh-7d4ca7f48eff-1-s1"
+      },
+      {
+        "sentence": "程远志大怒，命邓茂出战。",
+        "gloss": "very; greatly",
+        "sense_id": "zh-7d4ca7f48eff-1-s3"
+      },
+      {
+        "sentence": "三路夹击，黄巾军大败。",
+        "gloss": "greatly; badly",
+        "sense_id": "zh-7d4ca7f48eff-1-s3"
+      },
+      {
+        "sentence": "张飞听完大怒，要杀押送卢植的军人。",
+        "gloss": "greatly",
+        "sense_id": "zh-7d4ca7f48eff-1-s3"
+      },
+      {
+        "sentence": "一条大青蛇从梁上飞下，盘在座位上。",
+        "gloss": "large",
+        "sense_id": "zh-7d4ca7f48eff-1-s1"
+      },
+      {
+        "sentence": "百姓染上疫病时，他施符水为人治病，又自称“大贤良师”。",
+        "gloss": "great; highly respected",
+        "sense_id": "zh-7d4ca7f48eff-1-s2"
+      },
+      {
+        "sentence": "青、幽、徐、冀等八州百姓，家家信奉大贤良师张角。",
+        "gloss": "great",
+        "sense_id": "zh-7d4ca7f48eff-1-s2"
+      },
+      {
+        "sentence": "家住楼桑村，村东南有一棵大桑树，高五丈多，树冠仿佛车盖。",
+        "gloss": "large",
+        "sense_id": "zh-7d4ca7f48eff-1-s1"
+      },
+      {
+        "sentence": "忽然有人厉声问：“大丈夫不与国家出力，为何长叹？",
+        "gloss": "great; true",
+        "sense_id": "zh-7d4ca7f48eff-1-s2"
+      },
+      {
+        "sentence": "原来客人是来自中山的大商人张世平和苏双。",
+        "gloss": "large; major",
+        "sense_id": "zh-7d4ca7f48eff-1-s1"
+      },
+      {
+        "sentence": "程远志大怒，派邓茂出战。",
+        "gloss": "very; greatly",
+        "sense_id": "zh-7d4ca7f48eff-1-s3"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "zh-7d4ca7f48eff-1",
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "大 describes something as large in size or extent; used of a person or their standing, it can mean great or eminent.",
+    "caveat_en": "",
+    "parts": [
+      {
+        "text": "大",
+        "contribution_en": "Describes large size or extent, and can describe a person or their standing as great or eminent.",
+        "claim_ids": []
+      }
+    ],
+    "input_fingerprint": "6ee1ef777b39d5c2414c1c94416797fb94c53b2c3a8621ffc8ffd10f9ea22f38",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "37fa6d8d40592492feb4183f48b4e52409b28e97a30bc4bd837c44c25a1a48cf"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-ace2234ac53a7290-2b58ff79a45f0ca3",
+  "entry_id": "ja-ace2234ac53a7290",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-ace2234ac53a7290",
+      "headword": "教える",
+      "reading": "おしえる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-ace2234ac53a7290-1",
+          "definition": "to teach; to tell or instruct someone about something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "主人が「自分で筆を持つと、絵は実に難しい」と言うと、友人は、室内の想像だけでは絵はかけない、自然そのものを見て写生すべきだと教えた。",
+        "gloss": "taught",
+        "sense_id": "ja-ace2234ac53a7290-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8ebf01ad7044763757ceb2577e2b65fcf45f11c7c463144e3b79104c02ae632b"
+}

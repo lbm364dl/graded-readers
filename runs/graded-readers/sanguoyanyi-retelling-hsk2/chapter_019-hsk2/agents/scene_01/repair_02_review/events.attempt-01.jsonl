@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff51d-9195-7110-b819-e13832f4437b"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.95,\"naturalness\":0.92,\"readability\":0.94,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[],\"language_problems\":[\"“北方人马住处满是水”表达略显生硬，可改为“北方军队营地被水淹没”。\"],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":31948,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1073,"reasoning_output_tokens":981}}

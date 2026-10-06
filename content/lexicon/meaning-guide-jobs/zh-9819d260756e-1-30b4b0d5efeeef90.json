@@ -1,0 +1,31 @@
+{
+  "id": "zh-9819d260756e-1-30b4b0d5efeeef90",
+  "entry_id": "zh-9819d260756e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-9819d260756e-1",
+      "headword": "当时",
+      "kind": "word",
+      "reading": "dāngshí",
+      "senses": [
+        {
+          "id": "zh-9819d260756e-1-s1",
+          "definition": "at that time; then"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "当时疫病流行，很多人相信张角。",
+        "gloss": "at that time",
+        "sense_id": "zh-9819d260756e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b04c678f7b593fdbd2d6a8cb1f78f9bb65e25571f064e2884c9b789a3f52ad28"
+}

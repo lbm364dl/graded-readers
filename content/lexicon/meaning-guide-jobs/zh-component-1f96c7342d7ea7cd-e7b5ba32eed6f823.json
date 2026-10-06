@@ -1,0 +1,26 @@
+{
+  "id": "zh-component-1f96c7342d7ea7cd-e7b5ba32eed6f823",
+  "entry_id": "zh-component-1f96c7342d7ea7cd",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-component-1f96c7342d7ea7cd",
+      "headword": "沿海",
+      "reading": "yánhǎi",
+      "kind": "word",
+      "origin": "component_word",
+      "senses": [
+        {
+          "id": "zh-component-1f96c7342d7ea7cd-s1",
+          "definition": "Along or near a sea coast; coastal."
+        }
+      ]
+    },
+    "examples": [],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "41d7e8bd14cff04c597dd3d554336c65eab0df002e3f157a8357e92a96f8dd28"
+}

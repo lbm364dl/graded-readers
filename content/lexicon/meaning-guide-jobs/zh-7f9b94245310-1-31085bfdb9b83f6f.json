@@ -1,0 +1,31 @@
+{
+  "id": "zh-7f9b94245310-1-31085bfdb9b83f6f",
+  "entry_id": "zh-7f9b94245310-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-7f9b94245310-1",
+      "headword": "连礼",
+      "kind": "word",
+      "reading": "lián lǐ",
+      "senses": [
+        {
+          "id": "zh-7f9b94245310-1-s1",
+          "definition": "even courtesy or formal respect"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”董卓听后轻视他们，连礼也不行。",
+        "gloss": "even a courtesy",
+        "sense_id": "zh-7f9b94245310-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "213555caaca3d3809f9e6d0c9b8633acce9d07820a69c5797f921adc9f32d413"
+}

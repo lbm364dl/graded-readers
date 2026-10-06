@@ -1,0 +1,32 @@
+{
+  "id": "ja-e43535972eac3776-58822dc3a4d244c1",
+  "entry_id": "ja-e43535972eac3776",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e43535972eac3776",
+      "headword": "杉",
+      "reading": "すぎ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e43535972eac3776-1",
+          "definition": "a cedar tree"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "茶の木の根を一つ一つ嗅ぎながら西側の杉の垣根へ行くと、枯れた菊を押し倒し、その上で大きな猫が眠っていた。",
+        "gloss": "cedar tree",
+        "sense_id": "ja-e43535972eac3776-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "89bc18b22e8bc92221dd23018ca6fdd9536fa4c38da6fe02552a75feed4c214a"
+}

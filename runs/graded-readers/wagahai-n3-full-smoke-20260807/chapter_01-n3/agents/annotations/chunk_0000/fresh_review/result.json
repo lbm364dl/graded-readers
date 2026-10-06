@@ -1,0 +1,1 @@
+{"verdict":"revise","issues":[{"segment_text":"だが","problem":"under_grouped","explanation":"Sentence-initial 「だが」 functions as the fixed conjunction “but/however,” not as copula 「だ」 plus particle 「が」.","suggested_fix":"Merge the two segments into one word: lemma 「だが」, kana 「だが」, meaning_en “but; however”."}]}

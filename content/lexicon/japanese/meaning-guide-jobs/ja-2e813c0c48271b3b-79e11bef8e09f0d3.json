@@ -1,0 +1,32 @@
+{
+  "id": "ja-2e813c0c48271b3b-79e11bef8e09f0d3",
+  "entry_id": "ja-2e813c0c48271b3b",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-2e813c0c48271b3b",
+      "headword": "一分",
+      "reading": "いっぷん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2e813c0c48271b3b-1",
+          "definition": "one minute"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "体がむずむずして、もう一分も我慢できなくなった。",
+        "gloss": "one minute",
+        "sense_id": "ja-2e813c0c48271b3b-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "999bdf5a3a1465a1d21ffa0f18a2bc4994959bfdb83ebf2eab4e2ef98902b384"
+}

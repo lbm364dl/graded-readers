@@ -1,0 +1,32 @@
+{
+  "id": "ja-6c821135a773b7d5-b92db6c11a723e55",
+  "entry_id": "ja-6c821135a773b7d5",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-6c821135a773b7d5",
+      "headword": "任せる",
+      "reading": "まかせる",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-6c821135a773b7d5-1",
+          "definition": "to entrust something to someone or leave it to someone or something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "これはだめだと思い、目を閉じて運に任せた。",
+        "gloss": "entrusted; left it to",
+        "sense_id": "ja-6c821135a773b7d5-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2c45ac0c72b274c952f37b28399308bad88207ea5dfd5bbfbb1674c793a922d5"
+}

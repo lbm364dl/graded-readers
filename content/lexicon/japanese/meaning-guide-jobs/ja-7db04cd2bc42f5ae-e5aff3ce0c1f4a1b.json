@@ -1,0 +1,32 @@
+{
+  "id": "ja-7db04cd2bc42f5ae-e5aff3ce0c1f4a1b",
+  "entry_id": "ja-7db04cd2bc42f5ae",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-7db04cd2bc42f5ae",
+      "headword": "奥さん",
+      "reading": "おくさん",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-7db04cd2bc42f5ae-1",
+          "definition": "wife; Mrs.; madam"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "この間も、畳で爪を磨いただけなのに、奥さんがたいへん怒り、それから座敷へ入れなくなった。",
+        "gloss": "wife; Mrs.",
+        "sense_id": "ja-7db04cd2bc42f5ae-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c2fade033bfd3faf0e09b040185d85ddafc1a4c1558ec897b0ed099f3976e3f4"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-329fcec61856-1-17d18640feb06a43",
+  "entry_id": "zh-329fcec61856-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-329fcec61856-1",
+      "headword": "接受",
+      "kind": "word",
+      "reading": "jiēshòu",
+      "senses": [
+        {
+          "id": "zh-329fcec61856-1-s1",
+          "definition": "to accept or take on"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”刘备马上接受这个任务。",
+        "gloss": "accept",
+        "sense_id": "zh-329fcec61856-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "113446758576419122bf0a6796011d62c7562794b7cb157793849e7b86417999"
+}

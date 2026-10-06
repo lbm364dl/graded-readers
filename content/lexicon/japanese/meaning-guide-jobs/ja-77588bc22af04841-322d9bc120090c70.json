@@ -1,0 +1,32 @@
+{
+  "id": "ja-77588bc22af04841-322d9bc120090c70",
+  "entry_id": "ja-77588bc22af04841",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-77588bc22af04841",
+      "headword": "鳴らす",
+      "reading": "ならす",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-77588bc22af04841-1",
+          "definition": "to make a sound; play an instrument"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "弓に熱中したり、謡を習ったり、バイオリンを鳴らしたりもしたが、どれも上手くならなかった。",
+        "gloss": "playing the violin",
+        "sense_id": "ja-77588bc22af04841-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6f0cbc478a884cf652c83c26b6cc5b85bb18d556cd7b3e7816155f58ecd39508"
+}

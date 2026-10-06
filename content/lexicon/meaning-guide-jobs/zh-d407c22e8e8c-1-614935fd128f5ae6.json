@@ -1,0 +1,31 @@
+{
+  "id": "zh-d407c22e8e8c-1-614935fd128f5ae6",
+  "entry_id": "zh-d407c22e8e8c-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d407c22e8e8c-1",
+      "headword": "放归",
+      "kind": "construction",
+      "reading": "fàng guī",
+      "senses": [
+        {
+          "id": "zh-d407c22e8e8c-1-s1",
+          "definition": "send someone back to their home or place of origin"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "曹节偷看奏章后，立即告诉身边的人，于是宦官借别的事陷害蔡邕，皇帝把他放归田里。",
+        "gloss": "send back",
+        "sense_id": "zh-d407c22e8e8c-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1f41387ac110e510b5fc791f4635506ca98ea9f2dcda523063ca4f07d070788d"
+}

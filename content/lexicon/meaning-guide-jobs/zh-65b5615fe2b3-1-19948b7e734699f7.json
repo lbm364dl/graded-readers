@@ -1,0 +1,31 @@
+{
+  "id": "zh-65b5615fe2b3-1-19948b7e734699f7",
+  "entry_id": "zh-65b5615fe2b3-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-65b5615fe2b3-1",
+      "headword": "采药",
+      "kind": "construction",
+      "reading": "cǎiyào",
+      "senses": [
+        {
+          "id": "zh-65b5615fe2b3-1-s1",
+          "definition": "to gather medicinal plants"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "进山采药时，他遇到南华老仙。",
+        "gloss": "to gather medicinal herbs",
+        "sense_id": "zh-65b5615fe2b3-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0fae67398038d1a583d3d2b7ded94e9d5d113c35b739245fe3e080938378ddb5"
+}

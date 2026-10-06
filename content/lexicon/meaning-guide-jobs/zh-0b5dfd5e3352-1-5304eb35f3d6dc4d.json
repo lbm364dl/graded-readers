@@ -1,0 +1,31 @@
+{
+  "id": "zh-0b5dfd5e3352-1-5304eb35f3d6dc4d",
+  "entry_id": "zh-0b5dfd5e3352-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-0b5dfd5e3352-1",
+      "headword": "拦住",
+      "kind": "construction",
+      "reading": "lánzhù",
+      "senses": [
+        {
+          "id": "zh-0b5dfd5e3352-1-s1",
+          "definition": "stop or block someone or something from proceeding"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "那时张梁、张宝已经败退，曹操率军拦住他们，立即发动攻击。",
+        "gloss": "to block; stop",
+        "sense_id": "zh-0b5dfd5e3352-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "4f5bd9fe6932ded2712c0efe696248e1035e9a5857b40a2acb35fbe83fdb031f"
+}

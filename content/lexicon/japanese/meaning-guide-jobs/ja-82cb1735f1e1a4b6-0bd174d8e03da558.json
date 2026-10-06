@@ -1,0 +1,32 @@
+{
+  "id": "ja-82cb1735f1e1a4b6-0bd174d8e03da558",
+  "entry_id": "ja-82cb1735f1e1a4b6",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-82cb1735f1e1a4b6",
+      "headword": "誰",
+      "reading": "だれ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-82cb1735f1e1a4b6-1",
+          "definition": "who; which person"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "誰がとったか分からないので、お金をもらうのだという。",
+        "gloss": "who",
+        "sense_id": "ja-82cb1735f1e1a4b6-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a19e8bf2140a4ea97fb28f7c76b3af1027735d05478a62b91b9922fc9c0d6d41"
+}

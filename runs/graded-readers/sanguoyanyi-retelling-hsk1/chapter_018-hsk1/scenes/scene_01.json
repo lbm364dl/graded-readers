@@ -1,0 +1,101 @@
+{
+  "scene": {
+    "id": "scene_01",
+    "title": "火燒藤甲，孟獲終於歸降",
+    "source_start_quote": "兀突骨見無草木，心尚不慌",
+    "required_events": [
+      "孟獲請烏戈國主兀突骨出兵，三萬藤甲軍刀箭不入，蜀軍正面交戰屢敗。",
+      "孔明查知藤甲浸油製成，遇火必燃，便命魏延連敗十五陣，引藤甲軍追入盤蛇谷。",
+      "馬岱在谷中布置裝有火砲的黑油車，並用木石封住谷口；蠻軍入谷後，蜀軍點燃火藥，烈火四起，藤甲軍全軍覆沒。",
+      "孟獲前來接應時中伏，被馬岱活捉。孔明再次解縛相待，孟獲及祝融夫人等終於跪地認罪，承認蜀軍威德，南蠻歸服。"
+    ],
+    "target_chars": 300,
+    "source_start": 0,
+    "source_end": 28321
+  },
+  "text": "孟获多次输给孔明，就去找兀突骨帮忙。兀突骨来时，身边有很多藤甲人。藤甲很硬，怎么打也打不坏。魏延去打几回，都只能退回去。孔明知道用火就能打坏藤甲，就叫魏延一回又一回退到盘蛇谷。马岱早在谷里放好车，车里有火，又在前后路上等着。藤甲人进谷后，孔明叫人点火，四面火起。藤甲见火就着，这些人再也不能走出山谷。孟获来救，马岱也拿住了他。孔明没有动他，给他饭和水，还放他回家。孟获说：“你七次拿住我，次次都放我走；这一次，我真的服了。”孔明又放他回去，还给他南方的地。孟获和各地的人都来谢孔明。孔明回蜀后，南方从此没事，人人都能过好日子。",
+  "review": {
+    "source_fidelity": 0.96,
+    "naturalness": 0.97,
+    "readability": 0.97,
+    "omissions": [],
+    "unsupported_additions": [
+      "“人人都能过好日子”比原文“南方已定、百姓感戴”略有泛化。"
+    ],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "孟获多次打不过蜀军，就去请乌戈国主兀突骨来帮忙。兀突骨带来三万藤甲军。这些人穿着很硬的藤甲，刀砍不坏，箭也射不进。魏延带兵正面打了几次，都输了。孔明看出这是一个机会。他让魏延继续退，故意连输十五次，把藤甲军引进盘蛇谷。马岱早已在谷里放好黑油车，车里装着火药，又用木头和石头堵住谷口。蛮军进谷后，蜀军点火。大火从四面烧来，藤甲遇火就着，三万军士全死了。孟获来救他们，也中了埋伏，被马岱活捉。孔明没有杀他，反而给他吃饭喝水，还放他回去。孟获终于跪下认错，说自己服了孔明，也服了蜀军。南方的人从此不再打仗，愿意听孔明的话。",
+      "review": {
+        "source_fidelity": 0.98,
+        "naturalness": 0.98,
+        "readability": 0.98,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "mechanical readability gate: 36.12% above-level, maximum 20%; replace where natural: 万乌于仗伏兀全兵刀又反埋堵士头孔射岱己已带引意愿戈把捉故救木杀此死油活烧甲盘石砍硬突终继续而自药藤蛇被装让谷跪输连退遇骨"
+        ],
+        "verdict": "revise",
+        "harness_decision": "rejected_by_mechanical_readability_gate"
+      }
+    },
+    {
+      "stage": "repair_01",
+      "text": "孟获多次打不过蜀人，又去请乌戈国主兀突骨来帮忙。兀突骨身边有三万穿藤甲的人。藤甲很难打破，蜀人怎么打也没用。孔明叫魏延假败十五回，对方便进了盘蛇谷。马岱早在谷中备好黑油车，车中有火药，又用木石封住谷口。蛮人进谷后，蜀人点火，四面大火一起烧来，藤甲见火就着，三万人都死了。孟获来救，马岱也捉住了他。孔明先给孟获酒饭，再问他服不服。孟获见孔明七次捉住他都不杀，心中服了，认错归顺。孔明听后放他回去，仍叫他做洞主。南方各地的人都谢孔明，和蜀国相安，南方从此平定。",
+      "review": {
+        "source_fidelity": 0.98,
+        "naturalness": 0.96,
+        "readability": 0.97,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "mechanical length gate: 201 CJK, required 210-390",
+          "mechanical readability gate: 27.86% above-level, maximum 20%; replace where natural: 万乌仍便兀又各孔安定封岱归心戈捉救木杀此死油洞烧甲盘石破突药藤蛇谷败酒顺骨黑"
+        ],
+        "verdict": "revise",
+        "harness_decision": "rejected_by_mechanical_readability_gate"
+      }
+    },
+    {
+      "stage": "repair_02",
+      "text": "孟获连连败给蜀军，就请乌戈国主兀突骨来帮忙。兀突骨带三万藤甲兵前来，藤甲很硬很厚，刀箭都不能打穿，蜀军一时没有办法。孔明叫魏延假装败走十五回，引他们进山；让马岱在山中放好车和火药，再把前后路都堵住。蛮兵进山后，蜀军一齐点火，火从四面起来，藤甲遇火就着，三万兵全没了。孟获赶来帮忙，也被马岱抓住。孔明给他饭吃，问他服不服。孟获说，孔明七次抓住他都没有伤他，还愿把地还给他，他这才服了，低头认错。孔明就放他回去，还让他做首领。南方各处的人都来谢孔明，和蜀国和好，南方从此太平。",
+      "review": {
+        "source_fidelity": 0.97,
+        "naturalness": 0.95,
+        "readability": 0.96,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [
+          "mechanical length gate: 207 CJK, required 210-390",
+          "mechanical readability gate: 29.47% above-level, maximum 20%; replace where natural: 万乌伤低兀全兵刀办厚各堵处头孔岱带引愿戈才把抓此法甲硬突药藤被装让败赶连遇领首骨齐"
+        ],
+        "verdict": "revise",
+        "harness_decision": "rejected_by_mechanical_readability_gate"
+      }
+    },
+    {
+      "stage": "fresh_rewrite",
+      "text": "孟获多次输给孔明，就去找兀突骨帮忙。兀突骨来时，身边有很多藤甲人。藤甲很硬，怎么打也打不坏。魏延去打几回，都只能退回去。孔明知道用火就能打坏藤甲，就叫魏延一回又一回退到盘蛇谷。马岱早在谷里放好车，车里有火，又在前后路上等着。藤甲人进谷后，孔明叫人点火，四面火起。藤甲见火就着，这些人再也不能走出山谷。孟获来救，马岱也拿住了他。孔明没有动他，给他饭和水，还放他回家。孟获说：“你七次拿住我，次次都放我走；这一次，我真的服了。”孔明又放他回去，还给他南方的地。孟获和各地的人都来谢孔明。孔明回蜀后，南方从此没事，人人都能过好日子。",
+      "review": {
+        "source_fidelity": 0.96,
+        "naturalness": 0.97,
+        "readability": 0.97,
+        "omissions": [],
+        "unsupported_additions": [
+          "“人人都能过好日子”比原文“南方已定、百姓感戴”略有泛化。"
+        ],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      }
+    }
+  ],
+  "resolved": true
+}

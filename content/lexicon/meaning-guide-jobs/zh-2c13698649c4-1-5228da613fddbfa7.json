@@ -1,0 +1,31 @@
+{
+  "id": "zh-2c13698649c4-1-5228da613fddbfa7",
+  "entry_id": "zh-2c13698649c4-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-2c13698649c4-1",
+      "headword": "吃惊",
+      "kind": "word",
+      "reading": "chījīng",
+      "senses": [
+        {
+          "id": "zh-2c13698649c4-1-s1",
+          "definition": "be surprised; be startled"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他很吃惊，连忙下马询问。",
+        "gloss": "surprised",
+        "sense_id": "zh-2c13698649c4-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b7580002981e67d989ca5443c1d415a96b896835ddaf5d25c0e347c166d7195a"
+}

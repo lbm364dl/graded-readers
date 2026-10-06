@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"019ff576-c7af-70c2-b43f-4d19fa79db44"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"source_fidelity\":0.91,\"naturalness\":0.93,\"readability\":0.94,\"omissions\":[],\"unsupported_additions\":[],\"distortions\":[\"“姜维用八阵法围住邓艾”略显不准确，实际困住邓艾的是姜维由八阵变化出的“长蛇卷地阵”。\",\"“又让人叫孙亮离开”表述略含混，原文是孙綝废黜孙亮并将其迁为会稽王。\"],\"language_problems\":[],\"verdict\":\"pass\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":30782,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":1396,"reasoning_output_tokens":1259}}

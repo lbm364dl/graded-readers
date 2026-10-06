@@ -1,0 +1,31 @@
+{
+  "id": "zh-be0f15bc418f-1-b0e43f7e1ab6a4aa",
+  "entry_id": "zh-be0f15bc418f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-be0f15bc418f-1",
+      "headword": "想出",
+      "kind": "construction",
+      "reading": "xiǎngchū",
+      "senses": [
+        {
+          "id": "zh-be0f15bc418f-1-s1",
+          "definition": "to think of or devise (an idea, plan, or solution)"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备想出伏兵的办法。",
+        "gloss": "think up",
+        "sense_id": "zh-be0f15bc418f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7be2d92ae8ee5b9b92fe9cfc736ebe7aa77f662b8ab78beb29dcc16ffa7bc3a6"
+}

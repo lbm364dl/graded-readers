@@ -1,0 +1,32 @@
+{
+  "id": "ja-e54d9070e88c6ec1-729f11625053db1c",
+  "entry_id": "ja-e54d9070e88c6ec1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-e54d9070e88c6ec1",
+      "headword": "皮膚",
+      "reading": "ひふ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-e54d9070e88c6ec1-1",
+          "definition": "the skin of a person or animal"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "胃が弱く、皮膚は淡い黄色で、弾力のない不活発な様子を見せている。",
+        "gloss": "skin",
+        "sense_id": "ja-e54d9070e88c6ec1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "aad656c0a610e3806641a8da7cf1fd0d94274f7c3864fade8642591ec043610a"
+}

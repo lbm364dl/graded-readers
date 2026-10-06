@@ -1,0 +1,61 @@
+{
+  "id": "ja-2a73814595d73b47-d3e055d5e878051c",
+  "entry_id": "ja-2a73814595d73b47",
+  "reason": "coverage_changed",
+  "item": {
+    "entry": {
+      "id": "ja-2a73814595d73b47",
+      "headword": "何",
+      "reading": "なに",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-2a73814595d73b47-1",
+          "definition": "what; which thing"
+        },
+        {
+          "id": "ja-2a73814595d73b47-2",
+          "definition": "anything; whatever"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "「君は何だ」と言った。",
+        "gloss": "what",
+        "sense_id": "ja-2a73814595d73b47-1"
+      },
+      {
+        "sentence": "主人は俳句、新しい詩、英語、弓、歌、バイオリンなど、何にでも手を出すが、どれも上手にならない。",
+        "gloss": "what; anything",
+        "sense_id": "ja-2a73814595d73b47-2"
+      },
+      {
+        "sentence": "吾輩が近づくと、彼は丸い目を開け、「お前は何だ」と言った。",
+        "gloss": "what",
+        "sense_id": "ja-2a73814595d73b47-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": {
+    "entry_id": "ja-2a73814595d73b47",
+    "investigation_questions": [],
+    "claim_ids": [],
+    "structure": "single_component",
+    "explanation_en": "何（なに）asks what thing is meant, or which thing is meant when choosing among possibilities.",
+    "caveat_en": "",
+    "parts": [],
+    "input_fingerprint": "742a5ab4e93ffe70490ef6744b084d46e41778910e17e52b0385f11eaadec512",
+    "revision": 1,
+    "editorial_policy": 5,
+    "evidence_status": "reviewed_unresearched",
+    "editorial_route": "offline_review",
+    "research_questions": [],
+    "fulfilled_requests": []
+  },
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "78582eb71c365441c666b3132b7b269fa95d1d268167b6c6dba2eacec64020fb"
+}

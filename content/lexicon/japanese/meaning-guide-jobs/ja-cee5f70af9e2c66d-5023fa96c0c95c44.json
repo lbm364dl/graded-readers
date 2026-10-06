@@ -1,0 +1,32 @@
+{
+  "id": "ja-cee5f70af9e2c66d-5023fa96c0c95c44",
+  "entry_id": "ja-cee5f70af9e2c66d",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-cee5f70af9e2c66d",
+      "headword": "しておく",
+      "reading": "しておく",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-cee5f70af9e2c66d-1",
+          "definition": "to do something in advance or leave it in a resulting state"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "人間をそのままにしておけば、猫の生活はいつまでも安心できない、というのである。",
+        "gloss": "if one leaves it that way",
+        "sense_id": "ja-cee5f70af9e2c66d-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3a4d7747e843a67061eeca5a37c236b44cc268d0a7038d229a699e5db8cb4f5c"
+}

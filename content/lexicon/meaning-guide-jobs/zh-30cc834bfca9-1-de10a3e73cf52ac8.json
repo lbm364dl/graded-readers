@@ -1,0 +1,31 @@
+{
+  "id": "zh-30cc834bfca9-1-de10a3e73cf52ac8",
+  "entry_id": "zh-30cc834bfca9-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-30cc834bfca9-1",
+      "headword": "告知",
+      "kind": "word",
+      "reading": "gàozhī",
+      "senses": [
+        {
+          "id": "zh-30cc834bfca9-1-s1",
+          "definition": "inform; convey information"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "”刘备告知自己的志向，关羽大喜。",
+        "gloss": "to tell; inform",
+        "sense_id": "zh-30cc834bfca9-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c2479a059afa4255f3a964525743a02c222a819a5325d4e15a9d2e56e2b369ba"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-f6607a60405f-1-437ad580326a4591",
+  "entry_id": "zh-f6607a60405f-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f6607a60405f-1",
+      "headword": "归顺",
+      "kind": "word",
+      "reading": "guīshùn",
+      "senses": [
+        {
+          "id": "zh-f6607a60405f-1-s1",
+          "definition": "to submit to or yield allegiance to a ruler or authority"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他对两个弟弟说，最难得到的就是民心，如今民心已经归顺，若不趁势夺取天下，实在可惜。",
+        "gloss": "submit allegiance to",
+        "sense_id": "zh-f6607a60405f-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ea6281692763bb653481eeca6026532c4c5f76762b8a068f75a2cd6968035998"
+}

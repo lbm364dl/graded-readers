@@ -1,0 +1,31 @@
+{
+  "id": "zh-c59008249c75-1-2b3ca74956a63f83",
+  "entry_id": "zh-c59008249c75-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-c59008249c75-1",
+      "headword": "想到",
+      "kind": "construction",
+      "reading": "xiǎngdào",
+      "senses": [
+        {
+          "id": "zh-c59008249c75-1-s1",
+          "definition": "to think of; occur to"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "这天，他见到榜文，想到自己没有力量为国家出力，不能报国，不禁长叹。",
+        "gloss": "think of; remember",
+        "sense_id": "zh-c59008249c75-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "19a38a9555c5433bdb5683be1c7f3e8d7fcd0087a0cb792aa2f3afc9b1e4e140"
+}

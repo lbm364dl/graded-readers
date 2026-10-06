@@ -1,0 +1,32 @@
+{
+  "id": "ja-8aeb0559481a8d8a-dc6bc24c1fbcc275",
+  "entry_id": "ja-8aeb0559481a8d8a",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-8aeb0559481a8d8a",
+      "headword": "二",
+      "reading": "に",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-8aeb0559481a8d8a-1",
+          "definition": "the number two"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "二、三ページ読むと眠くなる。",
+        "gloss": "two",
+        "sense_id": "ja-8aeb0559481a8d8a-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8a72871fd89f7acc853ac3ca3c5ad91e51b0fb42cd0dd0da1fd7f28cf2781513"
+}

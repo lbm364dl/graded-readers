@@ -1,0 +1,32 @@
+{
+  "id": "ja-3182b6991fcffeb1-8aea5834caeb465c",
+  "entry_id": "ja-3182b6991fcffeb1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-3182b6991fcffeb1",
+      "headword": "気を長くする",
+      "reading": "きをながくする",
+      "kind": "expression",
+      "senses": [
+        {
+          "id": "ja-3182b6991fcffeb1-1",
+          "definition": "to be patient; to wait patiently"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "気を長くして、猫の時節を待つことにしよう。",
+        "gloss": "patiently; with patience",
+        "sense_id": "ja-3182b6991fcffeb1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b58eca8ec51bd25f2e70444d09ec5a1888e5d49a25fd1da98f6d36ffd10b2f4e"
+}

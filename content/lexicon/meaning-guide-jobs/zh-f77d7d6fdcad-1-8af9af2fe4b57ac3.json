@@ -1,0 +1,31 @@
+{
+  "id": "zh-f77d7d6fdcad-1-8af9af2fe4b57ac3",
+  "entry_id": "zh-f77d7d6fdcad-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-f77d7d6fdcad-1",
+      "headword": "越",
+      "kind": "construction",
+      "reading": "yuè",
+      "senses": [
+        {
+          "id": "zh-f77d7d6fdcad-1-s1",
+          "definition": "used in a paired pattern to indicate that as one thing increases or continues, another changes correspondingly; the more ..., the more ..."
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "三人都有同样的想法，越说越高兴。",
+        "gloss": "the more",
+        "sense_id": "zh-f77d7d6fdcad-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "cb7243c8cfc5d336a02b86b66f0213ef9af041a3a34095a6a423985146c17585"
+}

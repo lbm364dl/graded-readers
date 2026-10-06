@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "scope_reason_en": {
+      "type": "string",
+      "minLength": 1
+    },
+    "last_source_paragraph_index": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "beats": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "source_paragraph_index": {
+            "type": "integer"
+          },
+          "event_en": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "source_paragraph_index",
+          "event_en"
+        ]
+      }
+    }
+  },
+  "required": [
+    "title",
+    "scope_reason_en",
+    "last_source_paragraph_index",
+    "beats"
+  ]
+}

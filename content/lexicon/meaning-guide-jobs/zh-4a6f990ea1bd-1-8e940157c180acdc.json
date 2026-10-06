@@ -1,0 +1,31 @@
+{
+  "id": "zh-4a6f990ea1bd-1-8e940157c180acdc",
+  "entry_id": "zh-4a6f990ea1bd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4a6f990ea1bd-1",
+      "headword": "统天下",
+      "kind": "construction",
+      "reading": "tǒng tiānxià",
+      "senses": [
+        {
+          "id": "zh-4a6f990ea1bd-1-s1",
+          "definition": "Boundary error: the annotation bundles the predicate 统 with its object 天下; correct the upstream lexical boundary rather than treating the combined token as a separate lexical item."
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "汉朝自高祖斩白蛇起义，一统天下；后来光武中兴，传到献帝，终于分为三国。",
+        "gloss": "unify the realm",
+        "sense_id": "zh-4a6f990ea1bd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "a099c7151898e1febb667fbac8305afee51b1696050fe4e60cabd1854a181a0e"
+}

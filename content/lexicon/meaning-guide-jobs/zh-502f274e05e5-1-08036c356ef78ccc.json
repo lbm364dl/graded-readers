@@ -1,0 +1,31 @@
+{
+  "id": "zh-502f274e05e5-1-08036c356ef78ccc",
+  "entry_id": "zh-502f274e05e5-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-502f274e05e5-1",
+      "headword": "掉下",
+      "kind": "construction",
+      "reading": "diàoxià",
+      "senses": [
+        {
+          "id": "zh-502f274e05e5-1-s1",
+          "definition": "fall down from a higher place or position"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张飞举矛刺中邓茂，他从马上掉下。",
+        "gloss": "fall down",
+        "sense_id": "zh-502f274e05e5-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "d9907d4d8060d9f620c744c85ca3d887f41a8effeccd51ed9c254bbc5de92e14"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-783da85314fafe69-818e656b12206ea0",
+  "entry_id": "ja-783da85314fafe69",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-783da85314fafe69",
+      "headword": "出鱈目",
+      "reading": "でたらめ",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-783da85314fafe69-1",
+          "definition": "nonsense; something false or without a sound basis"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "「実は君、あれは出鱈目だよ。",
+        "gloss": "is nonsense; is completely unfounded",
+        "sense_id": "ja-783da85314fafe69-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "de1b18264df6e2627e7a88d9bc2730fba0e94bf9d3a32f2473209f9c62f57876"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "zh-fdf1f1adb517-1-cda74dc641a1fea9",
+  "entry_id": "zh-fdf1f1adb517-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-fdf1f1adb517-1",
+      "headword": "陈蕃",
+      "kind": "name",
+      "reading": "Chén Fān",
+      "senses": [
+        {
+          "id": "zh-fdf1f1adb517-1-s1",
+          "definition": "Chen Fan"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "桓帝死后，窦武和陈蕃共辅佐新皇帝。",
+        "gloss": "Chen Fan",
+        "sense_id": "zh-fdf1f1adb517-1-s1"
+      },
+      {
+        "sentence": "窦武、陈蕃于是商量除掉宦官，想改变这种局面。",
+        "gloss": "Chen Fan",
+        "sense_id": "zh-fdf1f1adb517-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "7bc900916e4be01189e5edbc82de05474f017052f0b47fd7b224cdadaadbf1d1"
+}

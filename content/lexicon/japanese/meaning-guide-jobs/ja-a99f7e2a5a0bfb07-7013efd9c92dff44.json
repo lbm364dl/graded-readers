@@ -1,0 +1,32 @@
+{
+  "id": "ja-a99f7e2a5a0bfb07-7013efd9c92dff44",
+  "entry_id": "ja-a99f7e2a5a0bfb07",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-a99f7e2a5a0bfb07",
+      "headword": "純粋",
+      "reading": "じゅんすい",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-a99f7e2a5a0bfb07-1",
+          "definition": "pure; unmixed"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "彼は純粋な黒猫で、体格は吾輩の倍もあった。",
+        "gloss": "pure; unmixed",
+        "sense_id": "ja-a99f7e2a5a0bfb07-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "bc69129cf12349f58eef030bfea51860e63cf1c0725252fd85085a79034fd492"
+}

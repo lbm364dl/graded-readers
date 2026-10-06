@@ -1,0 +1,32 @@
+{
+  "id": "ja-d7849c061de860d7-482407a9c935eae2",
+  "entry_id": "ja-d7849c061de860d7",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d7849c061de860d7",
+      "headword": "わざと",
+      "reading": "わざと",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d7849c061de860d7-1",
+          "definition": "deliberately; on purpose"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "そこで吾輩は、黒の方が年上だからたくさんとっただろうと、わざと尋ねた。",
+        "gloss": "deliberately; on purpose",
+        "sense_id": "ja-d7849c061de860d7-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "95fb0f767d13ef725754877853b6305acb245aee1cd25b8b9a1437d2c6f178f2"
+}

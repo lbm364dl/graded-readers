@@ -1,0 +1,71 @@
+{
+  "scene": {
+    "id": "scene_01",
+    "title": "張飛誘敵與黃忠奪山",
+    "source_start_quote": "第七十回：猛張飛智取瓦口隘，老黃忠計奪天蕩山",
+    "required_events": [
+      "張郃分兵守三寨，張飛與雷同夾擊，誘使張郃退守瓦口關。",
+      "張飛佯作終日醉酒辱罵，孔明識破其誘敵之計，令魏延送酒助勢；張郃夜襲中計，三寨盡失。",
+      "張郃設伏殺死雷同，張飛與魏延將計就計，以火攻破伏兵，並從百姓得知的小路攻取瓦口關，張郃敗逃。",
+      "張郃再攻葭萌關，黃忠自請出戰，與嚴顏夾擊大敗張郃。",
+      "黃忠連敗示弱，誘夏侯尚、韓浩驕兵深入，夜襲連奪三寨，追至天蕩山。",
+      "黃忠與嚴顏預設火伏，斬韓浩、夏侯德，奪取天蕩山，張郃等敗逃定軍山。",
+      "法正建議乘勝征漢中，玄德決定出兵；黃忠請取定軍山，孔明提醒夏侯淵強敵並欲派監軍同行，章末留懸念。"
+    ],
+    "target_chars": 140,
+    "source_start": 0,
+    "source_end": 5232
+  },
+  "text": "张郃守三寨，张飞、雷同夹击，逼其退守瓦口关。张飞假醉辱敌，孔明识破诱敌计，魏延送酒；张郃夜袭中计，三寨尽失。张郃设伏杀雷同，张飞、魏延将计用火破伏，循百姓小路取关，张郃逃。张郃攻葭萌关，黄忠请战，与严颜夹击败之。黄忠连败示弱，诱夏侯尚、韩浩深入，夜袭夺三寨，追至汉水；张郃后赴天荡山。黄忠、严颜设火伏，斩韩浩、夏侯德，夺天荡山，张郃等逃定军山。法正劝玄德征汉中，遂出兵。黄忠请取定军山，孔明称夏侯渊强敌，欲派监军同往，留悬念。",
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 8,
+    "readability": 8,
+    "omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass",
+    "reviewer_verdict": "revise",
+    "harness_decision": "accepted_omission_only_compact_adaptation"
+  },
+  "attempts": [
+    {
+      "stage": "adapt",
+      "text": "张郃分兵守三寨，张飞与雷同夹击，逼他退守瓦口关。张飞假装天天醉酒骂敌，孔明识破诱敌计，令魏延送酒助势；张郃夜袭中计，三寨全失。张郃设伏杀雷同，张飞、魏延将计就计，以火攻破伏兵，又按百姓指的小路攻取瓦口关，张郃败逃。张郃再攻葭萌关，黄忠请战，与严颜夹击大败他。黄忠连败示弱，诱夏侯尚、韩浩深入，夜袭连夺三寨，追到天荡山；又与严颜设火伏，斩韩浩、夏侯德，夺天荡山，张郃等逃往定军山。法正劝玄德乘胜征汉中，玄德出兵。黄忠请取定军山，孔明提醒夏侯渊是强敌，欲派监军同行，留下悬念。",
+      "review": {
+        "source_fidelity": 8,
+        "naturalness": 8,
+        "readability": 8,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [
+          "“追到天荡山”因果不准：黄忠追击张郃至汉水一带，张郃随后才转赴天荡山，并非被黄忠直接追到天荡山。"
+        ],
+        "language_problems": [
+          "篇幅明显超出140字目标的约70%—130%范围，压缩度不足。",
+          "mechanical length gate: 203 CJK, required 98-182"
+        ],
+        "verdict": "revise",
+        "harness_decision": "rejected_by_mechanical_length_gate"
+      }
+    },
+    {
+      "stage": "repair_01",
+      "text": "张郃守三寨，张飞、雷同夹击，逼其退守瓦口关。张飞假醉辱敌，孔明识破诱敌计，魏延送酒；张郃夜袭中计，三寨尽失。张郃设伏杀雷同，张飞、魏延将计用火破伏，循百姓小路取关，张郃逃。张郃攻葭萌关，黄忠请战，与严颜夹击败之。黄忠连败示弱，诱夏侯尚、韩浩深入，夜袭夺三寨，追至汉水；张郃后赴天荡山。黄忠、严颜设火伏，斩韩浩、夏侯德，夺天荡山，张郃等逃定军山。法正劝玄德征汉中，遂出兵。黄忠请取定军山，孔明称夏侯渊强敌，欲派监军同往，留悬念。",
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 8,
+        "readability": 8,
+        "omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass",
+        "reviewer_verdict": "revise",
+        "harness_decision": "accepted_omission_only_compact_adaptation"
+      }
+    }
+  ],
+  "resolved": true
+}

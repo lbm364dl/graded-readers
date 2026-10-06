@@ -1,0 +1,32 @@
+{
+  "id": "ja-691f06d6bc2bb279-5b64d1aafed8a9af",
+  "entry_id": "ja-691f06d6bc2bb279",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-691f06d6bc2bb279",
+      "headword": "暫く",
+      "reading": "しばらく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-691f06d6bc2bb279-1",
+          "definition": "for a while; for some time"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "翌日からしばらく、主人は毎日書斎で絵ばかりかいた。",
+        "gloss": "for a while",
+        "sense_id": "ja-691f06d6bc2bb279-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "8696f0c2a81251696254bf8a86edca1625088cef28d5c4cc201e0540d35ad8ae"
+}

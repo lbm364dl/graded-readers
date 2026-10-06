@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "source_run": "/home/usuario/hsk-graded-readers/runs/graded-readers/sanguoyanyi-full-hsk456/chapter_047-hsk6",
+  "level": "hsk6",
+  "target_chars": 1450,
+  "candidate_cjk": 1227,
+  "required_range": [
+    1014,
+    1885
+  ],
+  "material_findings": [
+    {
+      "omission_note": "省略了曹操收到蔡中、蔡和密报后，因黄盖受刑消息得到印证而暂信诈降为真的关键细节。",
+      "classification": "material",
+      "reason": "这解释了曹操为何暂时相信诈降并采取后续接应行动，涉及判断依据、因果和情节推进。",
+      "required_fix": "补充曹操收到蔡中、蔡和密报后，因黄盖受刑的消息得到印证而对诈降暂时相信的细节。"
+    },
+    {
+      "omission_note": "省略了曹操许诺庞统日后奏请天子封其为三公，以及庞统强调并非为富贵而来。",
+      "classification": "material",
+      "reason": "这段对话体现曹操对庞统的赏赐承诺及庞统不以富贵为目的的重要动机和人物 characterization。",
+      "required_fix": "补充曹操许诺奏请天子封庞统为三公，以及庞统说明自己并非为富贵而来、只为拯救百姓。"
+    }
+  ],
+  "material_omissions": [
+    {
+      "omission_note": "省略了曹操收到蔡中、蔡和密报后，因黄盖受刑消息得到印证而暂信诈降为真的关键细节。",
+      "classification": "material",
+      "reason": "这解释了曹操为何暂时相信诈降并采取后续接应行动，涉及判断依据、因果和情节推进。",
+      "required_fix": "补充曹操收到蔡中、蔡和密报后，因黄盖受刑的消息得到印证而对诈降暂时相信的细节。"
+    },
+    {
+      "omission_note": "省略了曹操许诺庞统日后奏请天子封其为三公，以及庞统强调并非为富贵而来。",
+      "classification": "material",
+      "reason": "这段对话体现曹操对庞统的赏赐承诺及庞统不以富贵为目的的重要动机和人物 characterization。",
+      "required_fix": "补充曹操许诺奏请天子封庞统为三公，以及庞统说明自己并非为富贵而来、只为拯救百姓。"
+    }
+  ],
+  "review": {
+    "source_fidelity": 9,
+    "naturalness": 9,
+    "readability": 9,
+    "material_omissions": [],
+    "unsupported_additions": [],
+    "distortions": [],
+    "language_problems": [],
+    "verdict": "pass"
+  },
+  "repair_rounds": [
+    {
+      "round": 1,
+      "candidate_cjk": 1227,
+      "review": {
+        "source_fidelity": 9,
+        "naturalness": 9,
+        "readability": 9,
+        "material_omissions": [],
+        "unsupported_additions": [],
+        "distortions": [],
+        "language_problems": [],
+        "verdict": "pass"
+      },
+      "passed": true
+    }
+  ]
+}

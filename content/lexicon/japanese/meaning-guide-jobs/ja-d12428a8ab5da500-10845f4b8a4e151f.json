@@ -1,0 +1,32 @@
+{
+  "id": "ja-d12428a8ab5da500-10845f4b8a4e151f",
+  "entry_id": "ja-d12428a8ab5da500",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-d12428a8ab5da500",
+      "headword": "わら",
+      "reading": "わら",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-d12428a8ab5da500-1",
+          "definition": "straw"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "とても明るい所で、痛いので出てみると、吾輩はわらの上から笹原へ捨てられていた。",
+        "gloss": "straw",
+        "sense_id": "ja-d12428a8ab5da500-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0e51b7db658711661382c4431d3a06beb67d7b54124a356796513be6a02870c6"
+}

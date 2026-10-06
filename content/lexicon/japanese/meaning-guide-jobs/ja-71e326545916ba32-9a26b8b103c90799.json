@@ -1,0 +1,32 @@
+{
+  "id": "ja-71e326545916ba32-9a26b8b103c90799",
+  "entry_id": "ja-71e326545916ba32",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-71e326545916ba32",
+      "headword": "寝るようになる",
+      "reading": "ねるようになる",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-71e326545916ba32-1",
+          "definition": "to come to sleep; to begin sleeping"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "その後、朝は飯櫃の上、夜は炬燵の上、天気のよい昼は椽側で寝るようになった。",
+        "gloss": "came to sleep; began sleeping",
+        "sense_id": "ja-71e326545916ba32-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "993f19fc8c902c02a59b8ef0e72b1557958955fffe5781a2c53515802b51e5a6"
+}

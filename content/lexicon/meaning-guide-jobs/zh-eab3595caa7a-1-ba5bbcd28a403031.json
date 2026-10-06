@@ -1,0 +1,31 @@
+{
+  "id": "zh-eab3595caa7a-1-ba5bbcd28a403031",
+  "entry_id": "zh-eab3595caa7a-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-eab3595caa7a-1",
+      "headword": "侍奉",
+      "kind": "word",
+      "reading": "shìfèng",
+      "senses": [
+        {
+          "id": "zh-eab3595caa7a-1-s1",
+          "definition": "serve or attend to someone, especially with respect"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "八州百姓家家侍奉他。",
+        "gloss": "to worship; serve",
+        "sense_id": "zh-eab3595caa7a-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "0919c46c8564208814353335451137c7e799ccf8446eda08951f597b82d0a9bf"
+}

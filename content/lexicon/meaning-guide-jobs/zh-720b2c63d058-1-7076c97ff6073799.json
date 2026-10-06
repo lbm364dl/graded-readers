@@ -1,0 +1,31 @@
+{
+  "id": "zh-720b2c63d058-1-7076c97ff6073799",
+  "entry_id": "zh-720b2c63d058-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-720b2c63d058-1",
+      "headword": "走出",
+      "kind": "construction",
+      "reading": "zǒuchū",
+      "senses": [
+        {
+          "id": "zh-720b2c63d058-1-s1",
+          "definition": "to go out of or emerge from a place"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "走出帐外，张飞气得握紧刀，大声说：“我们拼命救他，他却这样对待我们！",
+        "gloss": "walk out of",
+        "sense_id": "zh-720b2c63d058-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c06bd105065659157fb71b507ef77bf886e52a6df566a379b12b621889000bd8"
+}

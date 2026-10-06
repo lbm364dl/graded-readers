@@ -1,0 +1,31 @@
+{
+  "id": "zh-d4cb1ac2d877-1-646d312211b37fe9",
+  "entry_id": "zh-d4cb1ac2d877-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d4cb1ac2d877-1",
+      "headword": "追上来",
+      "kind": "construction",
+      "reading": "zhuī shànglai",
+      "senses": [
+        {
+          "id": "zh-d4cb1ac2d877-1-s1",
+          "definition": "to catch up by coming toward the speaker or reference point"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他率领打着红旗的军队追上来，挡住了黄巾军的路。",
+        "gloss": "catch up",
+        "sense_id": "zh-d4cb1ac2d877-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "6423b27be59bf0aa2d23a1c7965a58cb9e34f8a5d99bd3fab52e2f2348da1f03"
+}

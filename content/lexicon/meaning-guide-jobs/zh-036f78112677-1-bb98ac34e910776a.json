@@ -1,0 +1,36 @@
+{
+  "id": "zh-036f78112677-1-bb98ac34e910776a",
+  "entry_id": "zh-036f78112677-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-036f78112677-1",
+      "headword": "话",
+      "kind": "word",
+      "reading": "huà",
+      "senses": [
+        {
+          "id": "zh-036f78112677-1-s1",
+          "definition": "words or what someone says"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他把卢植的话告诉皇甫嵩。",
+        "gloss": "words",
+        "sense_id": "zh-036f78112677-1-s1"
+      },
+      {
+        "sentence": "刘备不太专心读书，性情宽和，话不多，喜怒很少露在脸上。",
+        "gloss": "speech",
+        "sense_id": "zh-036f78112677-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "1997ee39d7c841d8ef2f2e06ab04e9f097253e6e318706ef3f456936a9c4115d"
+}

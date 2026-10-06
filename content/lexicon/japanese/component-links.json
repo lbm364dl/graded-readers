@@ -1,0 +1,5000 @@
+{
+  "reviewed": true,
+  "bindings": [
+    {
+      "id": "ja-part-bfc78e7caf264e81",
+      "parent_entry_id": "ja-5101ef62ab8e39d5",
+      "part_index": 1,
+      "text": "の",
+      "contribution_en": "Links 男 as a description of 人.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-no-noun-modifier"
+      ]
+    },
+    {
+      "id": "ja-part-a782118d4327aca7",
+      "parent_entry_id": "ja-9ede352f72e47972",
+      "part_index": 1,
+      "text": "の",
+      "contribution_en": "Links 女 to 人 in a noun-modifying relation.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-no-noun-modifier"
+      ]
+    },
+    {
+      "id": "ja-part-b8755691e98700f7",
+      "parent_entry_id": "ja-453853a61337aecd",
+      "part_index": 2,
+      "text": "も",
+      "contribution_en": "With an interrogative quantity, presents the amount as large, yielding “many.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-particle-mo"
+      ]
+    },
+    {
+      "id": "ja-part-e3ad2b6125e839e4",
+      "parent_entry_id": "ja-33bf78b4de392af3",
+      "part_index": 0,
+      "text": "こと",
+      "contribution_en": "Turns the preceding action into something that can be chosen.",
+      "entry_id": "ja-component-4a376919546c4b91",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-6d11858543c1729a",
+      "parent_entry_id": "ja-33bf78b4de392af3",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Marks that action as the choice or outcome.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-decision-koto-ni-suru"
+      ]
+    },
+    {
+      "id": "ja-part-2e322f319220fbb2",
+      "parent_entry_id": "ja-1ad39c090e5d4a17",
+      "part_index": 0,
+      "text": "で",
+      "contribution_en": "Connects a noun or な-adjective predicate to ある, forming the copula; as the copula’s connective form, it can also link the predicate to a following clause.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-de-aru"
+      ]
+    },
+    {
+      "id": "ja-part-f1671ba1fba8a206",
+      "parent_entry_id": "ja-bf74ca6a5b8affb7",
+      "part_index": 0,
+      "text": "そこ",
+      "contribution_en": "“There” or “that situation”; it points to a place or situation already in view.",
+      "entry_id": "ja-component-9c7439d372e0949d",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-ffdf075dd243f594",
+      "parent_entry_id": "ja-bf74ca6a5b8affb7",
+      "part_index": 1,
+      "text": "で",
+      "contribution_en": "Marks the place or situation as the setting in which an event occurs.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-location-de"
+      ]
+    },
+    {
+      "id": "ja-part-7c5ba941447778fe",
+      "parent_entry_id": "ja-03b74ec75211606e",
+      "part_index": 1,
+      "text": "で",
+      "contribution_en": "Marks that time as when something happens.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-location-de"
+      ]
+    },
+    {
+      "id": "ja-part-8224de070b9f8f63",
+      "parent_entry_id": "ja-a6fe4dfb2ef9274d",
+      "part_index": 0,
+      "text": "こと",
+      "contribution_en": "Turns the preceding verb phrase into an event or action that can be talked about.",
+      "entry_id": "ja-component-4a376919546c4b91",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-02277e444c518fa1",
+      "parent_entry_id": "ja-a6fe4dfb2ef9274d",
+      "part_index": 1,
+      "text": "も",
+      "contribution_en": "Marks that event as one among other possibilities: “also” or “too.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-koto-mo-aru"
+      ]
+    },
+    {
+      "id": "ja-part-251702047096e374",
+      "parent_entry_id": "ja-940b5f38c25813d1",
+      "part_index": 1,
+      "text": "も",
+      "contribution_en": "A particle that gives 何 broad scope, yielding “anything at all” with a negative predicate.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-particle-mo"
+      ]
+    },
+    {
+      "id": "ja-part-8a50c067e2a255ab",
+      "parent_entry_id": "ja-cf865c16d3367a12",
+      "part_index": 0,
+      "text": "の",
+      "contribution_en": "Links the noun being compared to よう.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-no-youda"
+      ]
+    },
+    {
+      "id": "ja-part-6b880a69a4761077",
+      "parent_entry_id": "ja-cf865c16d3367a12",
+      "part_index": 1,
+      "text": "よう",
+      "contribution_en": "“Form” or “way”; here it provides the basis for the comparison.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-no-youda"
+      ]
+    },
+    {
+      "id": "ja-part-a495d24ae05b7ee2",
+      "parent_entry_id": "ja-cf865c16d3367a12",
+      "part_index": 2,
+      "text": "だ",
+      "contribution_en": "The plain copula, stating that something is like the noun.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-copula-da"
+      ]
+    },
+    {
+      "id": "ja-part-a3eb35a5a8c9c3d2",
+      "parent_entry_id": "ja-e1322da3914a68eb",
+      "part_index": 0,
+      "text": "真ん",
+      "contribution_en": "Prefix-like 真ん marks the position as the exact middle; ん is part of this form, not a separate meaning.",
+      "entry_id": "ja-component-9d3504686eecb360",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-21f9cddea17f6604",
+      "parent_entry_id": "ja-82cd31817af61f4f",
+      "part_index": 1,
+      "text": "と",
+      "contribution_en": "Links the preceding event as a time or condition for what follows.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-suru-to"
+      ]
+    },
+    {
+      "id": "ja-part-9b8b40d6026070a4",
+      "parent_entry_id": "ja-d9c0172f09ca931a",
+      "part_index": 0,
+      "text": "動き",
+      "contribution_en": "Move; the 連用形 of 動く used before 出す.",
+      "entry_id": "ja-component-5bf7b71571213d2a",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-0c75dee72d2a3f0b",
+      "parent_entry_id": "ja-fc06a92ffead48f6",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "marks 変 as the state that results",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-adjective-ni-naru"
+      ]
+    },
+    {
+      "id": "ja-part-5791dfe416fa2aef",
+      "parent_entry_id": "ja-fc06a92ffead48f6",
+      "part_index": 2,
+      "text": "なる",
+      "contribution_en": "become; come to be",
+      "entry_id": "ja-component-4bb011ae2722881d",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-b758a943152db519",
+      "parent_entry_id": "ja-6ca656f292329817",
+      "part_index": 0,
+      "text": "悪く",
+      "contribution_en": "The form of 悪い (“bad”) used before なる to describe the resulting state.",
+      "entry_id": "ja-897d66e918cfe509",
+      "grammar_entry_ids": [
+        "ja-grammar-i-adjective-adverbial"
+      ]
+    },
+    {
+      "id": "ja-part-8570bb1855996d87",
+      "parent_entry_id": "ja-6ca656f292329817",
+      "part_index": 1,
+      "text": "なる",
+      "contribution_en": "“Become”; indicates a change into the described state.",
+      "entry_id": "ja-component-4bb011ae2722881d",
+      "grammar_entry_ids": [
+        "ja-grammar-adjective-ku-naru"
+      ]
+    },
+    {
+      "id": "ja-part-55d018290ac5d8e3",
+      "parent_entry_id": "ja-005674689b2e845b",
+      "part_index": 1,
+      "text": "から",
+      "contribution_en": "marks where the imagined fire comes from",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-source-kara"
+      ]
+    },
+    {
+      "id": "ja-part-fed66bbb35b855af",
+      "parent_entry_id": "ja-005674689b2e845b",
+      "part_index": 3,
+      "text": "が",
+      "contribution_en": "marks 火 as what comes out",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-042c6ee59420151f",
+      "parent_entry_id": "ja-37a8c60dc7fdd957",
+      "part_index": 2,
+      "text": "さん",
+      "contribution_en": "Honorific suffix that adds respect when addressing or referring to someone.",
+      "entry_id": "ja-component-3976a94ed90f5671",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-38c68226c50e8dbd",
+      "parent_entry_id": "ja-d02d0a9457823268",
+      "part_index": 1,
+      "text": "も",
+      "contribution_en": "marks inclusion across the relevant set; with 誰, the predicate’s polarity gives “everyone” or “no one”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-particle-mo"
+      ]
+    },
+    {
+      "id": "ja-part-a0ae0f1c12dae6f8",
+      "parent_entry_id": "ja-0a5cf61cc46ebd1a",
+      "part_index": 0,
+      "text": "寒く",
+      "contribution_en": "寒い (“cold”) takes its く-form to describe the state that results.",
+      "entry_id": "ja-component-7a5e06835e4c967f",
+      "grammar_entry_ids": [
+        "ja-grammar-i-adjective-adverbial"
+      ]
+    },
+    {
+      "id": "ja-part-64cbc615820dc289",
+      "parent_entry_id": "ja-0a5cf61cc46ebd1a",
+      "part_index": 1,
+      "text": "なる",
+      "contribution_en": "Means “become” and expresses the change into that state.",
+      "entry_id": "ja-component-4bb011ae2722881d",
+      "grammar_entry_ids": [
+        "ja-grammar-adjective-ku-naru"
+      ]
+    },
+    {
+      "id": "ja-part-6c40872382609d55",
+      "parent_entry_id": "ja-b3384df0da7cbbbc",
+      "part_index": 0,
+      "text": "食べ",
+      "contribution_en": "Noun-like form of 食べる, “to eat”",
+      "entry_id": "ja-023ad11d90438c55",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-9e367d7529c58439",
+      "parent_entry_id": "ja-1c5036564461b6d7",
+      "part_index": 0,
+      "text": "におい",
+      "contribution_en": "smell or odor",
+      "entry_id": "ja-component-e622c775243ec3a8",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-14d9b6a86b98f59e",
+      "parent_entry_id": "ja-1c5036564461b6d7",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "marks the smell as the sensory quality",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-d9143fa9a8594317",
+      "parent_entry_id": "ja-4b56cab9f5391252",
+      "part_index": 0,
+      "text": "何回",
+      "contribution_en": "how many times; the number of occurrences",
+      "entry_id": "ja-component-46de2c2f78035c9f",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-9c17734030f65a1c",
+      "parent_entry_id": "ja-4b56cab9f5391252",
+      "part_index": 1,
+      "text": "も",
+      "contribution_en": "emphasizes the count as extending across multiple occurrences, giving “many times”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-particle-mo"
+      ]
+    },
+    {
+      "id": "ja-part-27e9f390e0900f1a",
+      "parent_entry_id": "ja-68468beeff439126",
+      "part_index": 0,
+      "text": "で",
+      "contribution_en": "Presents a situation as the circumstance to proceed from.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-dewa-transition"
+      ]
+    },
+    {
+      "id": "ja-part-42effb5073df63aa",
+      "parent_entry_id": "ja-68468beeff439126",
+      "part_index": 1,
+      "text": "は",
+      "contribution_en": "Sets that circumstance as the point of departure for what follows.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-dewa-transition"
+      ]
+    },
+    {
+      "id": "ja-part-0a452aad91bab679",
+      "parent_entry_id": "ja-8326d0c03c9badcf",
+      "part_index": 0,
+      "text": "投げ",
+      "contribution_en": "The combining stem of 投げる, “throw.”",
+      "entry_id": "ja-995e49350bd79508",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-9f6b5dc2d935d926",
+      "parent_entry_id": "ja-ce69526ec8122de1",
+      "part_index": 1,
+      "text": "で",
+      "contribution_en": "marks that fact or situation as the basis for what follows",
+      "entry_id": "ja-ce69526ec8122de1",
+      "grammar_entry_ids": [
+        "ja-grammar-de-cause-means"
+      ]
+    },
+    {
+      "id": "ja-part-87fa040561118a72",
+      "parent_entry_id": "ja-c3037e52fb6d0cfe",
+      "part_index": 0,
+      "text": "の",
+      "contribution_en": "Frames the preceding statement as explanatory content to be asserted.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-explanatory-no-da"
+      ]
+    },
+    {
+      "id": "ja-part-70f8174d07ab06d1",
+      "parent_entry_id": "ja-c3037e52fb6d0cfe",
+      "part_index": 1,
+      "text": "である",
+      "contribution_en": "Formally asserts that the framed content is the case.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-de-aru"
+      ]
+    },
+    {
+      "id": "ja-part-c49a24d269310bea",
+      "parent_entry_id": "ja-78c086defd72b712",
+      "part_index": 0,
+      "text": "広く",
+      "contribution_en": "The connective form of 広い, meaning “wide” or “spacious,” which is the quality being denied.",
+      "entry_id": "ja-component-11a3188f680a9763",
+      "grammar_entry_ids": [
+        "ja-grammar-i-adjective-adverbial"
+      ]
+    },
+    {
+      "id": "ja-part-ccbdcb8733ec8ecf",
+      "parent_entry_id": "ja-78c086defd72b712",
+      "part_index": 1,
+      "text": "は",
+      "contribution_en": "Marks “being wide” as the contrasted or emphasized quality.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-topic-wa"
+      ]
+    },
+    {
+      "id": "ja-part-7a62a4ce21e83f7f",
+      "parent_entry_id": "ja-76d2ce9aa58dc489",
+      "part_index": 1,
+      "text": "持ち",
+      "contribution_en": "The state or feeling one has; it presents 気 as something experienced by a person.",
+      "entry_id": "ja-9dc44f0724a6f499",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-d3205d9d6b852282",
+      "parent_entry_id": "ja-815fda67aa4efa64",
+      "part_index": 1,
+      "text": "ごはん",
+      "contribution_en": "meal",
+      "entry_id": "ja-component-4614f515a2ab6581",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-6b209ededb704231",
+      "parent_entry_id": "ja-9e5564d12b53e522",
+      "part_index": 0,
+      "text": "よう",
+      "contribution_en": "Presents the state or pattern in which the preceding action happens.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-you-ni-naru"
+      ]
+    },
+    {
+      "id": "ja-part-48641117ad864172",
+      "parent_entry_id": "ja-9e5564d12b53e522",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Marks that state as the result reached.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-you-ni-naru"
+      ]
+    },
+    {
+      "id": "ja-part-6cdc396b4143e73a",
+      "parent_entry_id": "ja-9e5564d12b53e522",
+      "part_index": 2,
+      "text": "なる",
+      "contribution_en": "Means “become” and describes a change into that state.",
+      "entry_id": "ja-component-4bb011ae2722881d",
+      "grammar_entry_ids": [
+        "ja-grammar-you-ni-naru"
+      ]
+    },
+    {
+      "id": "ja-part-853b22b02b8abe45",
+      "parent_entry_id": "ja-27e4beb2dfe75675",
+      "part_index": 0,
+      "text": "取り",
+      "contribution_en": "The taking element of 取る: to take something.",
+      "entry_id": "ja-component-8615b1fd59f5192b",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-5b144c4d9a950b3a",
+      "parent_entry_id": "ja-27e4beb2dfe75675",
+      "part_index": 1,
+      "text": "上げる",
+      "contribution_en": "Adds the idea of taking something up, helping express removing it from someone’s possession and taking control of it.",
+      "entry_id": "ja-component-c0184249f7d6abe9",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-e34e5a1d5d781e71",
+      "parent_entry_id": "ja-d7ebaf628a546651",
+      "part_index": 0,
+      "text": "の",
+      "contribution_en": "Packages the preceding clause as content for the explanatory statement.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-explanatory-no-da"
+      ]
+    },
+    {
+      "id": "ja-part-b78d5d6403f8ea21",
+      "parent_entry_id": "ja-d7ebaf628a546651",
+      "part_index": 1,
+      "text": "だ",
+      "contribution_en": "Asserts that content within the explanatory frame.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-copula-da"
+      ]
+    },
+    {
+      "id": "ja-part-29a1e486bf808180",
+      "parent_entry_id": "ja-2c7c0dae26a19f40",
+      "part_index": 0,
+      "text": "と",
+      "contribution_en": "Marks the preceding clause as quoted content.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-quotative-to"
+      ]
+    },
+    {
+      "id": "ja-part-7650a9056bb417f4",
+      "parent_entry_id": "ja-2c7c0dae26a19f40",
+      "part_index": 1,
+      "text": "いう",
+      "contribution_en": "Means “say”; with と, it presents the clause as said or reported.",
+      "entry_id": "ja-7f9393374aa35e38",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-f5d398cb19a256e3",
+      "parent_entry_id": "ja-e89b398f89e2f90c",
+      "part_index": 0,
+      "text": "とる",
+      "contribution_en": "Names the action of taking or catching.",
+      "entry_id": "ja-df6f091df26e6c3c",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-f2b7cd126c586e1e",
+      "parent_entry_id": "ja-e89b398f89e2f90c",
+      "part_index": 1,
+      "text": "まい",
+      "contribution_en": "Marks the speaker’s resolve not to perform the action.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-negative-volitional-mai"
+      ]
+    },
+    {
+      "id": "ja-part-ac402442718c9588",
+      "parent_entry_id": "ja-ccef940dc92e4944",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "Marks 目 as the subject of 回る.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-d916c4ba7da05cfe",
+      "parent_entry_id": "ja-a6bd7b9372edf0eb",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "marks 腹 as the subject of 減る",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-b3e683f7efeabd30",
+      "parent_entry_id": "ja-8ee043c63467ab74",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "Marks 気分 as the subject described by 悪い.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-0f3c821cc4354261",
+      "parent_entry_id": "ja-2c7c0dae26a19f40",
+      "part_index": 0,
+      "text": "と",
+      "contribution_en": "Marks the preceding content as quoted.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-to-iu-reportative"
+      ]
+    },
+    {
+      "id": "ja-part-dc11a88963104dcf",
+      "parent_entry_id": "ja-2c7c0dae26a19f40",
+      "part_index": 1,
+      "text": "いう",
+      "contribution_en": "Means “say”; with と, it frames content as said or reported, or presents wording as a name or label.",
+      "entry_id": "ja-7f9393374aa35e38",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-e89b97175e6b98c0",
+      "parent_entry_id": "ja-4b8a19181a3df6eb",
+      "part_index": 0,
+      "text": "じめじめ",
+      "contribution_en": "Conveys persistent dampness or clamminess.",
+      "entry_id": "ja-component-02ad1280d4b70f8e",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-20c1bc5299a17cd9",
+      "parent_entry_id": "ja-28ead39a605fa3dd",
+      "part_index": 0,
+      "text": "と",
+      "contribution_en": "Marks X as quoted content.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-to-iu-mono"
+      ]
+    },
+    {
+      "id": "ja-part-d72aa63b42346fdc",
+      "parent_entry_id": "ja-28ead39a605fa3dd",
+      "part_index": 1,
+      "text": "いう",
+      "contribution_en": "Presents X as something said or named.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-to-iu-mono"
+      ]
+    },
+    {
+      "id": "ja-part-71fc3292597e72c7",
+      "parent_entry_id": "ja-840bb415734f6696",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Marks 特 as an adverbial modifier: something is special or distinctive in particular.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noun-adverbial-ni"
+      ]
+    },
+    {
+      "id": "ja-part-bc85c508973acae1",
+      "parent_entry_id": "ja-5b22a956af840ff8",
+      "part_index": 0,
+      "text": "ふわり",
+      "contribution_en": "Describes a light, soft floating motion.",
+      "entry_id": "ja-component-26e1eae9d71b8a19",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-9a9af990f42e22b1",
+      "parent_entry_id": "ja-5b22a956af840ff8",
+      "part_index": 1,
+      "text": "と",
+      "contribution_en": "Marks the mimetic word as an adverb describing how an action happens.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-mimetic-adverbial-to"
+      ]
+    },
+    {
+      "id": "ja-part-a83f1c37f4d03e73",
+      "parent_entry_id": "ja-e331eaf9d3b0bac8",
+      "part_index": 0,
+      "text": "持ち",
+      "contribution_en": "The stem of 持つ contributes holding or supporting something.",
+      "entry_id": "ja-9dc44f0724a6f499",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-4392c27433d9d0e6",
+      "parent_entry_id": "ja-aa3a095ed2e2c213",
+      "part_index": 0,
+      "text": "落ち",
+      "contribution_en": "The coming-down or falling part of 落ちる.",
+      "entry_id": "ja-bddc2767911db9a0",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-ea589091172c6856",
+      "parent_entry_id": "ja-a9a7b14a4d388776",
+      "part_index": 1,
+      "text": "始め",
+      "contribution_en": "the start of an action",
+      "entry_id": "ja-6bff8bcd08c09789",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-6621b841918bfc55",
+      "parent_entry_id": "ja-550a6886166269c1",
+      "part_index": 0,
+      "text": "の",
+      "contribution_en": "Frames the preceding clause as an explanation or situation to be understood.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-explanatory-no-da"
+      ]
+    },
+    {
+      "id": "ja-part-549ed2e60a65d0bc",
+      "parent_entry_id": "ja-550a6886166269c1",
+      "part_index": 1,
+      "text": "だろう",
+      "contribution_en": "Marks the framed proposition as conjectural, often like “probably” or “I suppose.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-rashii-evidential"
+      ]
+    },
+    {
+      "id": "ja-part-3ffe58d37e90635a",
+      "parent_entry_id": "ja-a4d51e8196eac44e",
+      "part_index": 0,
+      "text": "はず",
+      "contribution_en": "Frames the following proposition as an expected or logically likely outcome.",
+      "entry_id": "ja-component-b89e99841ab1197e",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-7addc581a1b0dede",
+      "parent_entry_id": "ja-a4d51e8196eac44e",
+      "part_index": 1,
+      "text": "だ",
+      "contribution_en": "States that expectation plainly.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-copula-da"
+      ]
+    },
+    {
+      "id": "ja-part-50688986c26eb3bc",
+      "parent_entry_id": "ja-e01553076c363e2a",
+      "part_index": 0,
+      "text": "一度",
+      "contribution_en": "“One time”; identifies a single occasion.",
+      "entry_id": "ja-component-708353831e1f7459",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-3bfa17d908b82b85",
+      "parent_entry_id": "ja-e01553076c363e2a",
+      "part_index": 1,
+      "text": "も",
+      "contribution_en": "With a negative predicate, emphasizes that not even one occasion occurred.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-particle-mo-even"
+      ]
+    },
+    {
+      "id": "ja-part-d7307c414910e926",
+      "parent_entry_id": "ja-18f31b6bddfcaa83",
+      "part_index": 1,
+      "text": "か",
+      "contribution_en": "turns the question into an indefinite expression, “something”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-embedded-question-ka"
+      ]
+    },
+    {
+      "id": "ja-part-4a73c9c0015744ae",
+      "parent_entry_id": "ja-728553c78ecd4245",
+      "part_index": 0,
+      "text": "突き",
+      "contribution_en": "Carries the sense of thrusting or jutting in the compound.",
+      "entry_id": "ja-component-ecc8364090196a1a",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-87a8e3216990a819",
+      "parent_entry_id": "ja-e0c1ac88e819cf1f",
+      "part_index": 0,
+      "text": "だ",
+      "contribution_en": "Marks the preceding description as an assertion with the copula.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-copula-da"
+      ]
+    },
+    {
+      "id": "ja-part-272a24e5eb55432a",
+      "parent_entry_id": "ja-e0c1ac88e819cf1f",
+      "part_index": 1,
+      "text": "という",
+      "contribution_en": "Marks the preceding statement as content being stated or understood.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-to-iu-reportative"
+      ]
+    },
+    {
+      "id": "ja-part-e73025724fc8798b",
+      "parent_entry_id": "ja-e0c1ac88e819cf1f",
+      "part_index": 2,
+      "text": "こと",
+      "contribution_en": "Packages that content as a fact or matter that can be referred to.",
+      "entry_id": "ja-component-4a376919546c4b91",
+      "grammar_entry_ids": [
+        "ja-grammar-nominalizer-koto"
+      ]
+    },
+    {
+      "id": "ja-part-f3ede9806731ff19",
+      "parent_entry_id": "ja-e3434fe9c1930497",
+      "part_index": 0,
+      "text": "動き",
+      "contribution_en": "The connective form of 動く, supplying the action “move.”",
+      "entry_id": "ja-component-5bf7b71571213d2a",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-6ee3c5b7e5536be2",
+      "parent_entry_id": "ja-ca7fa8a735022e0b",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "marks 気 as the subject of つく",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-c43b430eeebe02dd",
+      "parent_entry_id": "ja-ca7fa8a735022e0b",
+      "part_index": 2,
+      "text": "つく",
+      "contribution_en": "come to be present; here, awareness comes to mind",
+      "entry_id": "ja-component-da7d8ce94a87d421",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-6a30600bedf53e29",
+      "parent_entry_id": "ja-c9292871c7ec6e4c",
+      "part_index": 0,
+      "text": "か",
+      "contribution_en": "Marks the preceding clause as an open question: “whether ...”.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-embedded-question-ka"
+      ]
+    },
+    {
+      "id": "ja-part-b5fb34bbb1f018cc",
+      "parent_entry_id": "ja-c9292871c7ec6e4c",
+      "part_index": 1,
+      "text": "と",
+      "contribution_en": "Marks the preceding question as the content of 思う.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-quotative-to"
+      ]
+    },
+    {
+      "id": "ja-part-67af4cf0007a5a74",
+      "parent_entry_id": "ja-4d863545e4292aea",
+      "part_index": 0,
+      "text": "いつ",
+      "contribution_en": "asks when",
+      "entry_id": "ja-component-9ad474ad816713ae",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-c94ed76f182c29d8",
+      "parent_entry_id": "ja-4d863545e4292aea",
+      "part_index": 1,
+      "text": "の",
+      "contribution_en": "links いつ to 間, framing the interval in terms of when",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-no-noun-modifier"
+      ]
+    },
+    {
+      "id": "ja-part-dc511e0d9e84d7c0",
+      "parent_entry_id": "ja-4d863545e4292aea",
+      "part_index": 3,
+      "text": "に",
+      "contribution_en": "locates the event within that interval",
+      "entry_id": "ja-component-e3245fc22f58420e",
+      "grammar_entry_ids": [
+        "ja-grammar-ni-time"
+      ]
+    },
+    {
+      "id": "ja-part-2982ea240fd545cf",
+      "parent_entry_id": "ja-4d863545e4292aea",
+      "part_index": 4,
+      "text": "か",
+      "contribution_en": "leaves the time open, giving the expression an indefinite sense",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-embedded-question-ka"
+      ]
+    },
+    {
+      "id": "ja-part-ec01fd426c194357",
+      "parent_entry_id": "ja-51f609ce7af3a345",
+      "part_index": 1,
+      "text": "でも",
+      "contribution_en": "Adds a concessive sense: “even with that.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noni-concessive"
+      ]
+    },
+    {
+      "id": "ja-part-4026e30ef3af85eb",
+      "parent_entry_id": "ja-0484967dcf86c14e",
+      "part_index": 0,
+      "text": "這い",
+      "contribution_en": "The combining form of 這う, “to crawl”; it describes how the upward movement is made.",
+      "entry_id": "ja-component-471c6ae1c19a546e",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-fdeed2132b35849f",
+      "parent_entry_id": "ja-0484967dcf86c14e",
+      "part_index": 1,
+      "text": "上がる",
+      "contribution_en": "“To go up”; it supplies the upward direction of the movement.",
+      "entry_id": "ja-component-d7146dd4a0bb6e03",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-b01f2df1591a4e9c",
+      "parent_entry_id": "ja-9a023af3c49e65f0",
+      "part_index": 0,
+      "text": "めったに",
+      "contribution_en": "Marks very low frequency and normally occurs with a negative predicate.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-metta-ni-negative"
+      ]
+    },
+    {
+      "id": "ja-part-268c488df1c5ba1b",
+      "parent_entry_id": "ja-70eda11805d18880",
+      "part_index": 0,
+      "text": "一日",
+      "contribution_en": "the one-day span",
+      "entry_id": "ja-component-24ca43654906e2aa",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-4f4be84396fb4c80",
+      "parent_entry_id": "ja-1bc635a2dd9fdb89",
+      "part_index": 0,
+      "text": "勉強",
+      "contribution_en": "study",
+      "entry_id": "ja-component-cc80263dc25d22ec",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-e36ae98d4c861eab",
+      "parent_entry_id": "ja-5f14dc4ccbd0aa48",
+      "part_index": 0,
+      "text": "そう",
+      "contribution_en": "points to a situation or description as “so”",
+      "entry_id": "ja-component-5a3e5b040e053178",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-a60bc38a0bd94ba5",
+      "parent_entry_id": "ja-5f14dc4ccbd0aa48",
+      "part_index": 1,
+      "text": "でも",
+      "contribution_en": "marks that pointed-to situation as the target of the denial",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noni-concessive"
+      ]
+    },
+    {
+      "id": "ja-part-0048b9670ec67e5a",
+      "parent_entry_id": "ja-6dfc0ca1d202a015",
+      "part_index": 0,
+      "text": "たり",
+      "contribution_en": "Marks an action or state as an example in a non-exhaustive list.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-tari-listing"
+      ]
+    },
+    {
+      "id": "ja-part-5c6b330c7ff4ff0a",
+      "parent_entry_id": "ja-df491a8fafc29017",
+      "part_index": 0,
+      "text": "読み",
+      "contribution_en": "Continuative stem of 読む, “read.”",
+      "entry_id": "ja-ba96deb4d4806732",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-e8ad9a5b0062878a",
+      "parent_entry_id": "ja-df491a8fafc29017",
+      "part_index": 1,
+      "text": "かける",
+      "contribution_en": "Marks the reading as started but unfinished.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-v-stem-kakeru"
+      ]
+    },
+    {
+      "id": "ja-part-061c976d4c8129a7",
+      "parent_entry_id": "ja-a779e9e0b7577c3b",
+      "part_index": 0,
+      "text": "眠く",
+      "contribution_en": "The く form of 眠い, describing the sleepy state that follows なる.",
+      "entry_id": "ja-component-b77e3516d1a784c0",
+      "grammar_entry_ids": [
+        "ja-grammar-i-adjective-adverbial"
+      ]
+    },
+    {
+      "id": "ja-part-b8517631b7504a5a",
+      "parent_entry_id": "ja-a49cb2a16916171f",
+      "part_index": 1,
+      "text": "人望",
+      "contribution_en": "Esteem or regard a person receives from others.",
+      "entry_id": "ja-component-f6bf988655d6afac",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-73bcd9f055d8619f",
+      "parent_entry_id": "ja-ac1df45870da6570",
+      "part_index": 0,
+      "text": "相手",
+      "contribution_en": "the other party one engages with, such as a partner or opponent",
+      "entry_id": "ja-component-09bed1aa792d95f3",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-bafec04ae8261e54",
+      "parent_entry_id": "ja-ac1df45870da6570",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "marks that person as the counterpart in the engagement",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-ni-evaluation-target"
+      ]
+    },
+    {
+      "id": "ja-part-fb364e7fcaa35f85",
+      "parent_entry_id": "ja-b69fa6de3681f6a3",
+      "part_index": 0,
+      "text": "もぐり",
+      "contribution_en": "The joining stem of もぐる, contributing the idea of diving, burrowing, or ducking under or into something.",
+      "entry_id": "ja-component-5ed95006aa017ecb",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-ba656de516d4865f",
+      "parent_entry_id": "ja-b69fa6de3681f6a3",
+      "part_index": 1,
+      "text": "込む",
+      "contribution_en": "Adds directed movement inward, helping express getting into a space.",
+      "entry_id": "ja-component-7fca314cadec7a61",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-7b5539a0b8706bd6",
+      "parent_entry_id": "ja-986397ea2cf69266",
+      "part_index": 0,
+      "text": "だ",
+      "contribution_en": "Plain copula that presents the preceding statement as an assertion.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-copula-da"
+      ]
+    },
+    {
+      "id": "ja-part-a31cd4660b485d23",
+      "parent_entry_id": "ja-986397ea2cf69266",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "Connects the assertion to what follows with a contrast, giving だが its “but” or “however” meaning.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-contrast-ga"
+      ]
+    },
+    {
+      "id": "ja-part-1690fb0597f5d0c4",
+      "parent_entry_id": "ja-6c054292ef39fe73",
+      "part_index": 1,
+      "text": "を",
+      "contribution_en": "Marks 目 as the object of 覚ます.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-object-wo"
+      ]
+    },
+    {
+      "id": "ja-part-d9d66f1ac5074fca",
+      "parent_entry_id": "ja-6c054292ef39fe73",
+      "part_index": 2,
+      "text": "覚ます",
+      "contribution_en": "“To awaken”; here, it describes awakening the eyes as the person becomes awake.",
+      "entry_id": "ja-component-2d41ba8e10c60236",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-ebdb450d148d5509",
+      "parent_entry_id": "ja-c9909077a01860f1",
+      "part_index": 0,
+      "text": "泣き",
+      "contribution_en": "The linking form of 泣く, contributing the action “cry.”",
+      "entry_id": "ja-c077953bae1b6adf",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-5bc62cf2f7480af3",
+      "parent_entry_id": "ja-03e728baff5c3e07",
+      "part_index": 0,
+      "text": "飛び",
+      "contribution_en": "The connective form of 飛ぶ, contributing a leap or jump.",
+      "entry_id": "ja-component-fd3834746f947b30",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-9126a0b7fcd0ba88",
+      "parent_entry_id": "ja-cf6fd4f9ed106159",
+      "part_index": 1,
+      "text": "差し",
+      "contribution_en": "The 差す element contributes the act of measuring; it appears as さし in this noun.",
+      "entry_id": "ja-component-1b42802e9f6d646e",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-7863063f77f72651",
+      "parent_entry_id": "ja-053204f9300ec67d",
+      "part_index": 1,
+      "text": "を",
+      "contribution_en": "marks 手 as the object of 出す",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-object-wo"
+      ]
+    },
+    {
+      "id": "ja-part-9d69e01ed4e2a9a3",
+      "parent_entry_id": "ja-faf0ee4634d9b486",
+      "part_index": 0,
+      "text": "上手",
+      "contribution_en": "skillful; good at something",
+      "entry_id": "ja-component-82b72f997eae81cc",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-6903c9c72483f937",
+      "parent_entry_id": "ja-faf0ee4634d9b486",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "marks the state someone becomes",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-ni-result-position"
+      ]
+    },
+    {
+      "id": "ja-part-1af4e1285af604c6",
+      "parent_entry_id": "ja-99892b503ade54c5",
+      "part_index": 0,
+      "text": "一生",
+      "contribution_en": "The spelling developed from 一所 in the older form, where it referred to one place or holding; 一生 does not reliably contribute “one’s whole life” to the modern meaning.",
+      "entry_id": "ja-component-f2f1c5e4f4fe63e3",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-be950c39d6a71bda",
+      "parent_entry_id": "ja-99892b503ade54c5",
+      "part_index": 1,
+      "text": "懸命",
+      "contribution_en": "The supplied evidence does not establish a separate modern contribution for this part; the whole expression conveys earnest effort, sometimes with desperate or life-risking force.",
+      "entry_id": "ja-component-12cbfa4988715ec9",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-04966b26fc6d7506",
+      "parent_entry_id": "ja-9945dbd0d430287d",
+      "part_index": 0,
+      "text": "給料",
+      "contribution_en": "wages or salary",
+      "entry_id": "ja-component-32a9a7a3687913d1",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-f0af66d8daf05458",
+      "parent_entry_id": "ja-c229f6937e8f4604",
+      "part_index": 0,
+      "text": "水彩",
+      "contribution_en": "Watercolor painting, using pigments with water.",
+      "entry_id": "ja-component-7703a9cd32a10983",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-c4ba8fdad7c415c8",
+      "parent_entry_id": "ja-c229f6937e8f4604",
+      "part_index": 1,
+      "text": "絵具",
+      "contribution_en": "Paint used for making pictures.",
+      "entry_id": "ja-component-6a723edb2be6b35a",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-7af3ee4cff5d3c15",
+      "parent_entry_id": "ja-024fc1d145b6370f",
+      "part_index": 0,
+      "text": "写生し",
+      "contribution_en": "写生する in its connective form: sketching from direct observation, linked to the following verb.",
+      "entry_id": "ja-component-63892edc78441017",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-2436688e978b6700",
+      "parent_entry_id": "ja-d685619020915d30",
+      "part_index": 0,
+      "text": "動かずに",
+      "contribution_en": "Means “without moving”: ずに marks not doing the action expressed by 動く.",
+      "entry_id": "ja-component-5bf7b71571213d2a",
+      "grammar_entry_ids": [
+        "ja-grammar-negative-connective-zu"
+      ]
+    },
+    {
+      "id": "ja-part-fc4b0188f5190a20",
+      "parent_entry_id": "ja-80e9a65dc84b453b",
+      "part_index": 1,
+      "text": "の",
+      "contribution_en": "Packages the statement as the content of the question.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-explanatory-no-da"
+      ]
+    },
+    {
+      "id": "ja-part-e1955acf4db3fe8f",
+      "parent_entry_id": "ja-80e9a65dc84b453b",
+      "part_index": 2,
+      "text": "か",
+      "contribution_en": "Marks the content as a question.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-embedded-question-ka"
+      ]
+    },
+    {
+      "id": "ja-part-e16aa95b14a9d952",
+      "parent_entry_id": "ja-be5a5d170c47330b",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "Marks contrast with those circumstances.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-contrast-ga"
+      ]
+    },
+    {
+      "id": "ja-part-c105d26b2e652e98",
+      "parent_entry_id": "ja-3f08d4ee4063fbeb",
+      "part_index": 1,
+      "text": "たく",
+      "contribution_en": "The form of たい used before なる; it contributes the desire to do something.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-desiderative-tai"
+      ]
+    },
+    {
+      "id": "ja-part-6e70abe6cd4f226b",
+      "parent_entry_id": "ja-2929f25a53ba32a4",
+      "part_index": 0,
+      "text": "と",
+      "contribution_en": "Marks the volitional action as what is contemplated or intended.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-v-you-to-suru"
+      ]
+    },
+    {
+      "id": "ja-part-8415850f0d437b0d",
+      "parent_entry_id": "ja-6b0fbf5db1140458",
+      "part_index": 0,
+      "text": "馬鹿",
+      "contribution_en": "“Fool” or “idiot”; the insult’s core meaning.",
+      "entry_id": "ja-component-a5dae628e87ab9bd",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-b267e803385f5d41",
+      "parent_entry_id": "ja-6b0fbf5db1140458",
+      "part_index": 1,
+      "text": "野郎",
+      "contribution_en": "A rough term of address that makes the insult more abrasive.",
+      "entry_id": "ja-component-61b171e6c6774d53",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-67e9bd84edaae0d9",
+      "parent_entry_id": "ja-ac7e2c5ee2e41d71",
+      "part_index": 0,
+      "text": "じっと",
+      "contribution_en": "Conveys keeping still or motionless.",
+      "entry_id": "ja-component-19491096001b1ba6",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-90d274e59bc5a3ca",
+      "parent_entry_id": "ja-b5e7ff69e42dd762",
+      "part_index": 0,
+      "text": "さっぱり",
+      "contribution_en": "The quality of being fresh, clean, or uncluttered.",
+      "entry_id": "ja-component-882336646f88af2a",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-6aa5fdff20b947f5",
+      "parent_entry_id": "ja-b5e7ff69e42dd762",
+      "part_index": 1,
+      "text": "と",
+      "contribution_en": "Marks the quality as the manner or state associated with する.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-mimetic-adverbial-to"
+      ]
+    },
+    {
+      "id": "ja-part-eec2c4910b48b260",
+      "parent_entry_id": "ja-ccbeba100c264bb3",
+      "part_index": 1,
+      "text": "やか",
+      "contribution_en": "Forms an adjective describing a quality or state.",
+      "entry_id": "ja-component-8aaaa730b2c25740",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-7537df7e07c0653f",
+      "parent_entry_id": "ja-f3a6045325bc2021",
+      "part_index": 1,
+      "text": "づく",
+      "contribution_en": "forms a verb meaning to come into the stated condition",
+      "entry_id": "ja-component-1a54e0bb25e64f44",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-bb42243872d4bb5a",
+      "parent_entry_id": "ja-6ef9bef7cbd872ca",
+      "part_index": 0,
+      "text": "四十",
+      "contribution_en": "The number forty.",
+      "entry_id": "ja-component-37fcd007ffc5e1bd",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-8e7fd7111afffedd",
+      "parent_entry_id": "ja-b1327e7a7a2c6a7a",
+      "part_index": 0,
+      "text": "こと",
+      "contribution_en": "Turns the preceding verb phrase into an occurrence that can be said to exist.",
+      "entry_id": "ja-component-4a376919546c4b91",
+      "grammar_entry_ids": [
+        "ja-grammar-ta-koto-ga-aru"
+      ]
+    },
+    {
+      "id": "ja-part-464a9e289158a95f",
+      "parent_entry_id": "ja-b1327e7a7a2c6a7a",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "Marks こと as the subject of ある.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-d24c61655c326fe8",
+      "parent_entry_id": "ja-d6f97ba105d25c6b",
+      "part_index": 0,
+      "text": "こと",
+      "contribution_en": "Turns the preceding verb phrase into an event or experience that can be discussed.",
+      "entry_id": "ja-component-4a376919546c4b91",
+      "grammar_entry_ids": [
+        "ja-grammar-ta-koto-wa-nai"
+      ]
+    },
+    {
+      "id": "ja-part-a31a0a680bf619f9",
+      "parent_entry_id": "ja-d6f97ba105d25c6b",
+      "part_index": 1,
+      "text": "は",
+      "contribution_en": "Marks that event or experience as the point being discussed.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-topic-wa"
+      ]
+    },
+    {
+      "id": "ja-part-d5e5bc109e4385ab",
+      "parent_entry_id": "ja-ca4d0b64a2cf83ef",
+      "part_index": 0,
+      "text": "五十",
+      "contribution_en": "fifty; gives the quantity",
+      "entry_id": "ja-component-cff531698c8c55eb",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-ac66d6582b335d10",
+      "parent_entry_id": "ja-7fca7a9ced2b3457",
+      "part_index": 1,
+      "text": "を",
+      "contribution_en": "marks 足 as the thing affected by the change",
+      "entry_id": "ja-component-011ca65462ff52a4",
+      "grammar_entry_ids": [
+        "ja-grammar-object-wo"
+      ]
+    },
+    {
+      "id": "ja-part-ea79747f2c8acc47",
+      "parent_entry_id": "ja-7fca7a9ced2b3457",
+      "part_index": 2,
+      "text": "悪くする",
+      "contribution_en": "cause to become worse or impaired",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-i-adjective-adverbial"
+      ]
+    },
+    {
+      "id": "ja-part-edcea7938e3e08e6",
+      "parent_entry_id": "ja-1a6e214e766228d5",
+      "part_index": 1,
+      "text": "やに",
+      "contribution_en": "sticky, resin-like residue; here, discharge from the eyes",
+      "entry_id": "ja-component-3068a080ea360bf9",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-8e80b3bb2225d637",
+      "parent_entry_id": "ja-d4caf5deb6fb0185",
+      "part_index": 0,
+      "text": "天秤",
+      "contribution_en": "Balance or scale; here, the arrangement for balancing loads at the pole’s ends.",
+      "entry_id": "ja-component-8f715136c1d548ee",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-51f584e1efe30e18",
+      "parent_entry_id": "ja-ef6e2c1fc0b5a63b",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "Marks 胸 as what undergoes the change.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-17d123428af38f42",
+      "parent_entry_id": "ja-ef6e2c1fc0b5a63b",
+      "part_index": 2,
+      "text": "悪くなる",
+      "contribution_en": "Become unwell; with 胸, this conventionally describes starting to feel nauseated or ill.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-adjective-ku-naru"
+      ]
+    },
+    {
+      "id": "ja-part-6ba6daa0c8a6d91a",
+      "parent_entry_id": "ja-ab9baaa9ce5df70e",
+      "part_index": 1,
+      "text": "がする",
+      "contribution_en": "が marks 音 as the subject, and する says that the sound occurs or is made",
+      "entry_id": "ja-d42d6536d342b961",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-4c17d19026a007c3",
+      "parent_entry_id": "ja-81e4f56987c10f0e",
+      "part_index": 1,
+      "text": "を",
+      "contribution_en": "marks 顔 as what is brought together",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-object-wo"
+      ]
+    },
+    {
+      "id": "ja-part-b245ef320c199e2e",
+      "parent_entry_id": "ja-6ca656f292329817",
+      "part_index": 0,
+      "text": "悪く",
+      "contribution_en": "The く-form of 悪い (“bad”), describing the state something changes into.",
+      "entry_id": "ja-897d66e918cfe509",
+      "grammar_entry_ids": [
+        "ja-grammar-i-adjective-adverbial"
+      ]
+    },
+    {
+      "id": "ja-part-42e1a5dd0cd6dd2d",
+      "parent_entry_id": "ja-80e9a65dc84b453b",
+      "part_index": 0,
+      "text": "な",
+      "contribution_en": "Linking form of the copula だ after a noun or な-adjective, before の.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-copula-da"
+      ]
+    },
+    {
+      "id": "ja-part-81a45e7091d49587",
+      "parent_entry_id": "ja-3f08d4ee4063fbeb",
+      "part_index": 0,
+      "text": "し",
+      "contribution_en": "The stem of する (“do”), which たい attaches to.",
+      "entry_id": "ja-d42d6536d342b961",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-55583d47a00f28b2",
+      "parent_entry_id": "ja-d6f97ba105d25c6b",
+      "part_index": 0,
+      "text": "こと",
+      "contribution_en": "Turns the preceding verb phrase into an experience or a state of being able or unable to act.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-ta-koto-wa-nai",
+        "ja-grammar-koto-wa-nai-possibility"
+      ]
+    },
+    {
+      "id": "ja-part-493a0c24f0431c5b",
+      "parent_entry_id": "ja-d6f97ba105d25c6b",
+      "part_index": 1,
+      "text": "は",
+      "contribution_en": "Marks that experience or state as the point being denied.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-ta-koto-wa-nai",
+        "ja-grammar-koto-wa-nai-possibility"
+      ]
+    },
+    {
+      "id": "ja-part-b8f550d32ea2143a",
+      "parent_entry_id": "ja-0beb5da943f6645b",
+      "part_index": 0,
+      "text": "見当",
+      "contribution_en": "A likely direction or approximate judgment; here, an idea, estimate, or clue.",
+      "entry_id": "ja-component-fc4ff420714aada9",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-4752c833ab3d5fd2",
+      "parent_entry_id": "ja-0beb5da943f6645b",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "Marks 見当 as the subject of 付く.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-4548ac551701d033",
+      "parent_entry_id": "ja-04690ec580149781",
+      "part_index": 0,
+      "text": "の",
+      "contribution_en": "Makes a clause or action into something that can be talked about.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-nominalizer-no"
+      ]
+    },
+    {
+      "id": "ja-part-ab0ea50286003ca2",
+      "parent_entry_id": "ja-04690ec580149781",
+      "part_index": 1,
+      "text": "は",
+      "contribution_en": "Marks that nominalized content as the topic.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-topic-wa"
+      ]
+    },
+    {
+      "id": "ja-part-13b52df52e655486",
+      "parent_entry_id": "ja-7317ec19f7f5af2f",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Makes 別 adverbial, describing how something is treated or regarded.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noun-adverbial-ni"
+      ]
+    },
+    {
+      "id": "ja-part-49173e70aa2c4926",
+      "parent_entry_id": "ja-a1c4e2b589a9c591",
+      "part_index": 1,
+      "text": "の",
+      "contribution_en": "links “hand” to the surface associated with it",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-no-noun-modifier"
+      ]
+    },
+    {
+      "id": "ja-part-741fde8ea82ce93c",
+      "parent_entry_id": "ja-a1c4e2b589a9c591",
+      "part_index": 2,
+      "text": "ひら",
+      "contribution_en": "flat surface or side; here, the inner surface of the hand",
+      "entry_id": "ja-component-4762f4b045246888",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-0859279942a2b8ae",
+      "parent_entry_id": "ja-4f5f12530c59c47e",
+      "part_index": 1,
+      "text": "だ",
+      "contribution_en": "the copula, making 何 into “what it is”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-copula-da"
+      ]
+    },
+    {
+      "id": "ja-part-d45520f83adb1dd8",
+      "parent_entry_id": "ja-4f5f12530c59c47e",
+      "part_index": 2,
+      "text": "か",
+      "contribution_en": "marks the question as unresolved, contributing the indefinite sense",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-embedded-question-ka"
+      ]
+    },
+    {
+      "id": "ja-part-aadea70de9d06e25",
+      "parent_entry_id": "ja-98bccc56bc9975c7",
+      "part_index": 0,
+      "text": "ふわふわ",
+      "contribution_en": "Evokes a soft, light, buoyant quality.",
+      "entry_id": "ja-98bccc56bc9975c7",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-53631641e1236bfb",
+      "parent_entry_id": "ja-6e70a8dbf8d887e4",
+      "part_index": 1,
+      "text": "でも",
+      "contribution_en": "adds “even” emphasis to the time expression, highlighting that something remains true up to the present",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-particle-mo-even"
+      ]
+    },
+    {
+      "id": "ja-part-0fc3da934c950c65",
+      "parent_entry_id": "ja-ad719b2dd042f03a",
+      "part_index": 1,
+      "text": "の",
+      "contribution_en": "Links the expectation to a following noun, making the preceding statement describe it.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-no-noun-modifier"
+      ]
+    },
+    {
+      "id": "ja-part-bedc6167f8e4f871",
+      "parent_entry_id": "ja-525d37168f4a15e9",
+      "part_index": 1,
+      "text": "で",
+      "contribution_en": "A distinct contribution from で is not established.",
+      "entry_id": "ja-525d37168f4a15e9",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-395fad0be85eb60f",
+      "parent_entry_id": "ja-a45d637c92f11e1e",
+      "part_index": 0,
+      "text": "で",
+      "contribution_en": "Connects a noun or な-adjective to the copula.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-na-adjective-copula-de"
+      ]
+    },
+    {
+      "id": "ja-part-74bb6d002c5877d6",
+      "parent_entry_id": "ja-a45d637c92f11e1e",
+      "part_index": 1,
+      "text": "は",
+      "contribution_en": "Marks the description as the point being denied and can add contrast.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-topic-wa"
+      ]
+    },
+    {
+      "id": "ja-part-2a7a9574a979532f",
+      "parent_entry_id": "ja-5b55176eacae762e",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Marks あまり as the degree of what follows.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noun-adverbial-ni"
+      ]
+    },
+    {
+      "id": "ja-part-5ed867bbcdfaa458",
+      "parent_entry_id": "ja-5b55176eacae762e",
+      "part_index": 2,
+      "text": "も",
+      "contribution_en": "Adds emphasis to the excessive degree.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-particle-mo-even"
+      ]
+    },
+    {
+      "id": "ja-part-be6cd82831904943",
+      "parent_entry_id": "ja-b3d597841108ab2a",
+      "part_index": 1,
+      "text": "を",
+      "contribution_en": "marks 姿 as the object of 消す",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-object-wo"
+      ]
+    },
+    {
+      "id": "ja-part-0ed50f409539cbea",
+      "parent_entry_id": "ja-b3d597841108ab2a",
+      "part_index": 2,
+      "text": "消す",
+      "contribution_en": "erase; here, make a figure or appearance disappear",
+      "entry_id": "ja-component-94963802e8bdfb67",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-58affed2c3e8faa4",
+      "parent_entry_id": "ja-fda63a44babadbab",
+      "part_index": 1,
+      "text": "まで",
+      "contribution_en": "marks the endpoint of a span; with a time reference, “until” or “up to”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-limit-made"
+      ]
+    },
+    {
+      "id": "ja-part-1b909bcfd3023cf7",
+      "parent_entry_id": "ja-d8a6f876193370da",
+      "part_index": 0,
+      "text": "這い",
+      "contribution_en": "The linking form of 這う, “crawl”; it supplies the way of moving.",
+      "entry_id": "ja-component-471c6ae1c19a546e",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-bc20ec80ab751281",
+      "parent_entry_id": "ja-45887251b1a4e64c",
+      "part_index": 0,
+      "text": "かも",
+      "contribution_en": "The first part of the construction, formed from the particles か and も; their individual contribution to its possibility meaning is not established.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-kamoshirenai"
+      ]
+    },
+    {
+      "id": "ja-part-95bbbfcca9c4af4b",
+      "parent_entry_id": "ja-45887251b1a4e64c",
+      "part_index": 1,
+      "text": "しれない",
+      "contribution_en": "The kana spelling of 知れない, formed from 知れる with negative ない; here it joins かも in the possibility construction, rather than giving the whole expression the literal meaning “may not know.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-kamoshirenai"
+      ]
+    },
+    {
+      "id": "ja-part-4c4d56a12646cf26",
+      "parent_entry_id": "ja-050266f9152b38b2",
+      "part_index": 0,
+      "text": "出して",
+      "contribution_en": "The て-form of 出す contributes the action of putting or bringing something out and links it to the attempt.",
+      "entry_id": "ja-7b670af0f888ff63",
+      "grammar_entry_ids": [
+        "ja-grammar-te-form"
+      ]
+    },
+    {
+      "id": "ja-part-dac35936c9e5916f",
+      "parent_entry_id": "ja-050266f9152b38b2",
+      "part_index": 1,
+      "text": "みる",
+      "contribution_en": "After a て-form, みる marks trying the action.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-te-miru"
+      ]
+    },
+    {
+      "id": "ja-part-b831f4ddaf53fd90",
+      "parent_entry_id": "ja-ee427cee2aaf0c21",
+      "part_index": 0,
+      "text": "暮れ",
+      "contribution_en": "The verb form of 暮れる, “to grow dark.”",
+      "entry_id": "ja-d281ad091fe870a6",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-84df1ab55036b814",
+      "parent_entry_id": "ja-5c91a97661f1fcfe",
+      "part_index": 0,
+      "text": "回り",
+      "contribution_en": "The connective form of 回る, supplying the action of going or moving around.",
+      "entry_id": "ja-d89923df7df1d8e9",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-c3d2084c08a7cb3f",
+      "parent_entry_id": "ja-b6c13b1604b6131c",
+      "part_index": 0,
+      "text": "潜り",
+      "contribution_en": "The 潜る element contributes moving under or into something, as when ducking or working one's way in.",
+      "entry_id": "ja-component-5ed95006aa017ecb",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-d1d63f2f885ffab0",
+      "parent_entry_id": "ja-51eda065618691f8",
+      "part_index": 0,
+      "text": "暗く",
+      "contribution_en": "暗い in the form used before なる, describing the resulting state as dark",
+      "entry_id": "ja-4c58f7c026c84f39",
+      "grammar_entry_ids": [
+        "ja-grammar-i-adjective-adverbial"
+      ]
+    },
+    {
+      "id": "ja-part-421b9fad3d128b93",
+      "parent_entry_id": "ja-fdd59e58d7f1e352",
+      "part_index": 1,
+      "text": "なり",
+      "contribution_en": "marks the next action as happening immediately after the preceding action",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-nari-as-soon-as"
+      ]
+    },
+    {
+      "id": "ja-part-c629e01b62e7154f",
+      "parent_entry_id": "ja-d04a5f3b608a5e59",
+      "part_index": 1,
+      "text": "まま",
+      "contribution_en": "Indicates that the resulting state continues unchanged.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-mama"
+      ]
+    },
+    {
+      "id": "ja-part-3b77ddd46cf8c10a",
+      "parent_entry_id": "ja-6e62c3bd1adec30e",
+      "part_index": 1,
+      "text": "の",
+      "contribution_en": "links the household to people associated with it",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-no-noun-modifier"
+      ]
+    },
+    {
+      "id": "ja-part-b173c283f3edcb40",
+      "parent_entry_id": "ja-937930633517e1fb",
+      "part_index": 1,
+      "text": "ほど",
+      "contribution_en": "Marks degree or extent.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-hodo-degree"
+      ]
+    },
+    {
+      "id": "ja-part-0bd7534cc2707d2e",
+      "parent_entry_id": "ja-1849272eb3e31e5b",
+      "part_index": 0,
+      "text": "よう",
+      "contribution_en": "Frames the preceding clause as a desired state or outcome.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-you-ni-purpose"
+      ]
+    },
+    {
+      "id": "ja-part-a506bb53baa610e5",
+      "parent_entry_id": "ja-1849272eb3e31e5b",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Marks that state or outcome as the aim of an action.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-you-ni-purpose"
+      ]
+    },
+    {
+      "id": "ja-part-66a8dd89f57b1e1e",
+      "parent_entry_id": "ja-65e4a0128f0d9df3",
+      "part_index": 0,
+      "text": "こと",
+      "contribution_en": "Packages the preceding verb phrase as an action or situation.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-koto-ga-ooi"
+      ]
+    },
+    {
+      "id": "ja-part-56eb729fe5afaf5e",
+      "parent_entry_id": "ja-65e4a0128f0d9df3",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "Marks that action or situation as what 多い describes.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-006d70958f9ff820",
+      "parent_entry_id": "ja-fe1e43852b18765d",
+      "part_index": 0,
+      "text": "こと",
+      "contribution_en": "Turns the preceding clause into an event or situation that can be treated as a case.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-koto-sae-aru"
+      ]
+    },
+    {
+      "id": "ja-part-8e632b56c5eacc72",
+      "parent_entry_id": "ja-fe1e43852b18765d",
+      "part_index": 1,
+      "text": "さえ",
+      "contribution_en": "Adds “even,” emphasizing that this event or situation occurs.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-sae"
+      ]
+    },
+    {
+      "id": "ja-part-09cf62d0fde95b8d",
+      "parent_entry_id": "ja-18e99cce8bd4eb89",
+      "part_index": 0,
+      "text": "黄色",
+      "contribution_en": "The color yellow.",
+      "entry_id": "ja-component-70bc69bdc9618b1c",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-f19f2b6fa5c9eeaf",
+      "parent_entry_id": "ja-3e155b62fc13def5",
+      "part_index": 1,
+      "text": "くせ",
+      "contribution_en": "Here contributes the sense “despite that”; it makes the following point contrast with the situation just mentioned.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-kuse-ni"
+      ]
+    },
+    {
+      "id": "ja-part-8aa25183b95d6250",
+      "parent_entry_id": "ja-768d64f9b3b98882",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Makes こんな describe an amount or degree.",
+      "entry_id": "ja-768d64f9b3b98882",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-5a33d67f6de90513",
+      "parent_entry_id": "ja-0bc44ce9f794a385",
+      "part_index": 0,
+      "text": "たび",
+      "contribution_en": "An occasion or instance.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-tabi-ni"
+      ]
+    },
+    {
+      "id": "ja-part-d55dbc51a0f757ac",
+      "parent_entry_id": "ja-0bc44ce9f794a385",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Marks that occasion as when the following event happens.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-tabi-ni"
+      ]
+    },
+    {
+      "id": "ja-part-bb5d40f03650e691",
+      "parent_entry_id": "ja-d23114934aa826df",
+      "part_index": 0,
+      "text": "住み",
+      "contribution_en": "Connective form of 住む, contributing the action of living or residing.",
+      "entry_id": "ja-03b0ea708234bfd6",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-b62302d25d10d48b",
+      "parent_entry_id": "ja-8d590a98d88b7721",
+      "part_index": 0,
+      "text": "追い",
+      "contribution_en": "The connective form of 追う, contributing the idea of pursuing or chasing.",
+      "entry_id": "ja-component-5202effebb7afbcc",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-adea7aa4caa6a892",
+      "parent_entry_id": "ja-8d590a98d88b7721",
+      "part_index": 1,
+      "text": "払う",
+      "contribution_en": "Contributes the idea of sweeping or brushing something away; with 追い, it gives the compound the sense of driving someone or something off.",
+      "entry_id": "ja-component-8bcc1cbc004733fd",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-7ac76e1f74e80a47",
+      "parent_entry_id": "ja-29ffc87e1d11c466",
+      "part_index": 0,
+      "text": "こと",
+      "contribution_en": "Turns the preceding content into a matter or fact.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-koto-kara"
+      ]
+    },
+    {
+      "id": "ja-part-84327bac27fb2749",
+      "parent_entry_id": "ja-29ffc87e1d11c466",
+      "part_index": 1,
+      "text": "から",
+      "contribution_en": "Marks that fact as the source or basis for a reason or conclusion.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-koto-kara"
+      ]
+    },
+    {
+      "id": "ja-part-9660c615f93e5031",
+      "parent_entry_id": "ja-247f0e34c1ffbe18",
+      "part_index": 1,
+      "text": "ほど",
+      "contribution_en": "Provides the sense of extent or degree.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-hodo-degree"
+      ]
+    },
+    {
+      "id": "ja-part-37868c7ed2dfaa83",
+      "parent_entry_id": "ja-2310563583f518ff",
+      "part_index": 0,
+      "text": "大切",
+      "contribution_en": "Describes something as valuable or important.",
+      "entry_id": "ja-component-22a7cf937b270af1",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-a17d453891d115d1",
+      "parent_entry_id": "ja-2310563583f518ff",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Marks the way something is treated.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noun-adverbial-ni"
+      ]
+    },
+    {
+      "id": "ja-part-152c6851ac7b8d41",
+      "parent_entry_id": "ja-ebfb4c53a907e8ee",
+      "part_index": 2,
+      "text": "が",
+      "contribution_en": "marks 仕方 as the subject of ない",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-973342512c01d40e",
+      "parent_entry_id": "ja-5a74984f23901c88",
+      "part_index": 1,
+      "text": "だけ",
+      "contribution_en": "to the extent; limit",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-limiting-dake"
+      ]
+    },
+    {
+      "id": "ja-part-386698f89cfefb01",
+      "parent_entry_id": "ja-71e326545916ba32",
+      "part_index": 1,
+      "text": "ようになる",
+      "contribution_en": "marks a change whereby someone comes to do the action",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-you-ni-naru"
+      ]
+    },
+    {
+      "id": "ja-part-994a4b0e8a0d1f1a",
+      "parent_entry_id": "ja-3b7ec2219ea5b9e7",
+      "part_index": 0,
+      "text": "という",
+      "contribution_en": "Marks the preceding content as what is being considered or understood.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-to-iu-wake-dewa-nai"
+      ]
+    },
+    {
+      "id": "ja-part-f8c25d2164917239",
+      "parent_entry_id": "ja-3b7ec2219ea5b9e7",
+      "part_index": 1,
+      "text": "わけ",
+      "contribution_en": "Frames that content as a reason, implication, or conclusion.",
+      "entry_id": "ja-component-c4abac44349a2dc2",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-d987bf9ce6bb62e1",
+      "parent_entry_id": "ja-3b7ec2219ea5b9e7",
+      "part_index": 2,
+      "text": "ではない",
+      "contribution_en": "Negates that framing: it is not that the preceding content is the conclusion.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-copula-negative-dewa-nai"
+      ]
+    },
+    {
+      "id": "ja-part-2b7703a9343f5c69",
+      "parent_entry_id": "ja-59d2eaeef94bb9df",
+      "part_index": 0,
+      "text": "世話",
+      "contribution_en": "Care or help.",
+      "entry_id": "ja-component-c88404c2b1b91d0d",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-ee7c95b816030084",
+      "parent_entry_id": "ja-59d2eaeef94bb9df",
+      "part_index": 1,
+      "text": "を",
+      "contribution_en": "Marks 世話 as the object of する.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-object-wo"
+      ]
+    },
+    {
+      "id": "ja-part-4fc9086d61cfd3ef",
+      "parent_entry_id": "ja-ed741287bee18f4d",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Links the manner expressed by どう to an action or state.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noun-adverbial-ni"
+      ]
+    },
+    {
+      "id": "ja-part-80829de907edbdbd",
+      "parent_entry_id": "ja-ed741287bee18f4d",
+      "part_index": 2,
+      "text": "か",
+      "contribution_en": "Makes the manner indefinite: some way or means.",
+      "entry_id": "ja-ed741287bee18f4d",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-e904f0843a42e80a",
+      "parent_entry_id": "ja-e78e3854f1cabdb1",
+      "part_index": 0,
+      "text": "入り",
+      "contribution_en": "The stem of 入る (“enter”), supplying the act of entering.",
+      "entry_id": "ja-1eb517229b171abf",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-108afa56a03e86df",
+      "parent_entry_id": "ja-cbcdfe2476156d63",
+      "part_index": 1,
+      "text": "ように",
+      "contribution_en": "frames the action as a way or state reached in the change",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-you-ni-naru"
+      ]
+    },
+    {
+      "id": "ja-part-945d9ae976f536cf",
+      "parent_entry_id": "ja-280679f2d7fc8e2d",
+      "part_index": 0,
+      "text": "逆さ",
+      "contribution_en": "upside-down or inverted position",
+      "entry_id": "ja-component-4c2e4b12f743fb7b",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-7737331f5fdb0108",
+      "parent_entry_id": "ja-280679f2d7fc8e2d",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "marks the resulting state",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-ni-result-position"
+      ]
+    },
+    {
+      "id": "ja-part-1010745d976c599c",
+      "parent_entry_id": "ja-e297267a86194ffb",
+      "part_index": 1,
+      "text": "うえ",
+      "contribution_en": "“Above” or “on top”; with その, gives the image of adding a further point on top of what was already mentioned.",
+      "entry_id": "ja-c5e0c8f4c2c41346",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-8668d0fb2aeedbd0",
+      "parent_entry_id": "ja-2b5dfc147b22ea48",
+      "part_index": 0,
+      "text": "追い",
+      "contribution_en": "The combining form of 追う contributes the central idea of pursuing a target.",
+      "entry_id": "ja-component-5202effebb7afbcc",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-48658b911497a802",
+      "parent_entry_id": "ja-2b5dfc147b22ea48",
+      "part_index": 1,
+      "text": "かける",
+      "contribution_en": "The compound conveys directed pursuit, sometimes an effort to catch up, but this contribution cannot be assigned reliably to かける alone.",
+      "entry_id": "ja-2b5dfc147b22ea48",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-600da0d606aecdee",
+      "parent_entry_id": "ja-34abadb84d065e8f",
+      "part_index": 0,
+      "text": "だけ",
+      "contribution_en": "Limits the preceding phrase to just that amount, action, or extent.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-limiting-dake"
+      ]
+    },
+    {
+      "id": "ja-part-c752f7e1b521ee37",
+      "parent_entry_id": "ja-34abadb84d065e8f",
+      "part_index": 1,
+      "text": "な",
+      "contribution_en": "The copula form used before の, linking the limited phrase to the concessive ending.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-copula-da"
+      ]
+    },
+    {
+      "id": "ja-part-f5b67d79273b9fc3",
+      "parent_entry_id": "ja-34abadb84d065e8f",
+      "part_index": 2,
+      "text": "のに",
+      "contribution_en": "Marks a concession: what follows is unexpected or contrasts with what precedes.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noni-concessive"
+      ]
+    },
+    {
+      "id": "ja-part-163f0e9d8ea1dc1c",
+      "parent_entry_id": "ja-7e4678d736ff4cb2",
+      "part_index": 1,
+      "text": "から",
+      "contribution_en": "Marks the point from which something starts.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-source-kara"
+      ]
+    },
+    {
+      "id": "ja-part-da5c4306df89e523",
+      "parent_entry_id": "ja-496d606ed654e2fa",
+      "part_index": 0,
+      "text": "入れ",
+      "contribution_en": "Potential stem of 入る: “be able to enter.”",
+      "entry_id": "ja-1eb517229b171abf",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-potential"
+      ]
+    },
+    {
+      "id": "ja-part-154373be813e84be",
+      "parent_entry_id": "ja-496d606ed654e2fa",
+      "part_index": 1,
+      "text": "なくなる",
+      "contribution_en": "Makes the ability come to be absent: “become unable to.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-potential-negative-naru"
+      ]
+    },
+    {
+      "id": "ja-part-458214fe8333a89a",
+      "parent_entry_id": "ja-68a077c93f82a962",
+      "part_index": 1,
+      "text": "の",
+      "contribution_en": "links the boards to the space, identifying it by its board flooring",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-no-noun-modifier"
+      ]
+    },
+    {
+      "id": "ja-part-dd921eda90932d6d",
+      "parent_entry_id": "ja-9496f9368e7f7994",
+      "part_index": 1,
+      "text": "も",
+      "contribution_en": "Highlights even the small amount or degree; with a negative, helps form “not even a little.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-nonexhaustive-list-mo-negative"
+      ]
+    },
+    {
+      "id": "ja-part-021e2e0beb4ed9e0",
+      "parent_entry_id": "ja-d41901effa079f98",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Marks what the mind or attention is directed toward.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-ni-action-target"
+      ]
+    },
+    {
+      "id": "ja-part-ae2a3fdf2a9ce9e9",
+      "parent_entry_id": "ja-6b1f3a134ae4c267",
+      "part_index": 0,
+      "text": "三日",
+      "contribution_en": "A count of three days.",
+      "entry_id": "ja-component-75110cd9a02274fc",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-eb632d7edd764706",
+      "parent_entry_id": "ja-aa0bd447152dab34",
+      "part_index": 0,
+      "text": "一部",
+      "contribution_en": "One complete book in the earlier book-related sense of the expression.",
+      "entry_id": "ja-component-1e4434f69135f4b5",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-b3add5ca7c3185d9",
+      "parent_entry_id": "ja-aa0bd447152dab34",
+      "part_index": 1,
+      "text": "始終",
+      "contribution_en": "The beginning and end, or the full course from beginning to end.",
+      "entry_id": "ja-component-69a06601035aa48d",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-374d6cdef048f539",
+      "parent_entry_id": "ja-1db2a14b3a403a95",
+      "part_index": 0,
+      "text": "なければ",
+      "contribution_en": "Marks the verb as a negative condition: “if the action is not done.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-obligation-nakereba-naranai"
+      ]
+    },
+    {
+      "id": "ja-part-311ef3170493122e",
+      "parent_entry_id": "ja-1db2a14b3a403a95",
+      "part_index": 1,
+      "text": "ならない",
+      "contribution_en": "Means “will not do” or “is not acceptable” here; with the negative condition, it makes the action necessary.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-obligation-nakereba-naranai"
+      ]
+    },
+    {
+      "id": "ja-part-e967817e8f34e761",
+      "parent_entry_id": "ja-309ba7747edbe008",
+      "part_index": 0,
+      "text": "三毛",
+      "contribution_en": "みけ means a calico cat and serves as the name Mike.",
+      "entry_id": "ja-component-04c7f1dc8ddede0f",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-eb2223a0ce589684",
+      "parent_entry_id": "ja-3640c6c90292981b",
+      "part_index": 0,
+      "text": "所有",
+      "contribution_en": "Owning something as one’s own.",
+      "entry_id": "ja-component-9c19b88b1a34f5ed",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-e14868aae9497932",
+      "parent_entry_id": "ja-de2e9b01e455c904",
+      "part_index": 0,
+      "text": "と",
+      "contribution_en": "Marks the preceding content as quoted or stated material.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-to-iu-reportative"
+      ]
+    },
+    {
+      "id": "ja-part-70b075362eae8d7b",
+      "parent_entry_id": "ja-de2e9b01e455c904",
+      "part_index": 1,
+      "text": "いう",
+      "contribution_en": "Presents the content marked by と as something expressed.",
+      "entry_id": "ja-7f9393374aa35e38",
+      "grammar_entry_ids": [
+        "ja-grammar-to-iu-reportative"
+      ]
+    },
+    {
+      "id": "ja-part-9216939a579ff864",
+      "parent_entry_id": "ja-de2e9b01e455c904",
+      "part_index": 2,
+      "text": "こと",
+      "contribution_en": "Turns the preceding content into an abstract matter or proposition.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-nominalizer-koto"
+      ]
+    },
+    {
+      "id": "ja-part-343458a8460e802a",
+      "parent_entry_id": "ja-0ddae203431d185b",
+      "part_index": 1,
+      "text": "刺し",
+      "contribution_en": "“Piercing,” from 刺す; names the preparation of piercing the fish through their eyes.",
+      "entry_id": "ja-component-40009a97848e3dc0",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-d4931c793e8c4c1c",
+      "parent_entry_id": "ja-b604e59aabb69539",
+      "part_index": 1,
+      "text": "も",
+      "contribution_en": "With て, forms the pattern that presents the action as permissible.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-te-mo-yoi-permission"
+      ]
+    },
+    {
+      "id": "ja-part-ce604d865d637d8b",
+      "parent_entry_id": "ja-88b77c2dfb95bf2f",
+      "part_index": 0,
+      "text": "弁護",
+      "contribution_en": "defending or advocating for someone",
+      "entry_id": "ja-component-4482553b2e8e9c85",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-d3189e5f89e7d4ab",
+      "parent_entry_id": "ja-610badd6d6d95c56",
+      "part_index": 1,
+      "text": "とか",
+      "contribution_en": "Leaves an option open, as in “or something.”",
+      "entry_id": "ja-610badd6d6d95c56",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-bbd0957860853539",
+      "parent_entry_id": "ja-4bd4a576e572b273",
+      "part_index": 0,
+      "text": "いつまで",
+      "contribution_en": "Asks “until when?” or “for how long?”",
+      "entry_id": "ja-component-9ad474ad816713ae",
+      "grammar_entry_ids": [
+        "ja-grammar-limit-made"
+      ]
+    },
+    {
+      "id": "ja-part-d96111801c2217c1",
+      "parent_entry_id": "ja-4bd4a576e572b273",
+      "part_index": 1,
+      "text": "も",
+      "contribution_en": "Marks the full duration or extent, extending it through any endpoint under consideration.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-particle-mo-even"
+      ]
+    },
+    {
+      "id": "ja-part-422e5d348e64c9e7",
+      "parent_entry_id": "ja-5a58fa546570d29b",
+      "part_index": 0,
+      "text": "こと",
+      "contribution_en": "Turns the preceding verb phrase into an action or event being considered.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-nominalizer-koto"
+      ]
+    },
+    {
+      "id": "ja-part-207d03858fef5615",
+      "parent_entry_id": "ja-5a58fa546570d29b",
+      "part_index": 1,
+      "text": "は",
+      "contribution_en": "Marks that action or event as the topic or point of comment.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-topic-wa"
+      ]
+    },
+    {
+      "id": "ja-part-5236604deb4d0cda",
+      "parent_entry_id": "ja-5a58fa546570d29b",
+      "part_index": 3,
+      "text": "まい",
+      "contribution_en": "Adds a confident negative expectation: it is not expected to exist or occur.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-negative-volitional-mai"
+      ]
+    },
+    {
+      "id": "ja-part-f35855cb561ea5ea",
+      "parent_entry_id": "ja-3182b6991fcffeb1",
+      "part_index": 1,
+      "text": "を",
+      "contribution_en": "Marks 気 as the object of する.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-object-wo"
+      ]
+    },
+    {
+      "id": "ja-part-c0ce328f9d90c30e",
+      "parent_entry_id": "ja-3182b6991fcffeb1",
+      "part_index": 2,
+      "text": "長く",
+      "contribution_en": "The adverbial form of 長い, describing the disposition as lasting over time.",
+      "entry_id": "ja-component-04a31c47c152fb3f",
+      "grammar_entry_ids": [
+        "ja-grammar-i-adjective-adverbial"
+      ]
+    },
+    {
+      "id": "ja-part-06f8a990ca719a76",
+      "parent_entry_id": "ja-d4fabdd1d59bf3f1",
+      "part_index": 0,
+      "text": "ということ",
+      "contribution_en": "Presents the preceding statement or matter as the fact being taken up.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-to-iu-reportative",
+        "ja-grammar-nominalizer-koto"
+      ]
+    },
+    {
+      "id": "ja-part-56cb0a23082e7279",
+      "parent_entry_id": "ja-d4fabdd1d59bf3f1",
+      "part_index": 1,
+      "text": "で",
+      "contribution_en": "Marks that matter as the basis or circumstance connecting to what follows.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-na-adjective-copula-de"
+      ]
+    },
+    {
+      "id": "ja-part-ac123daacdd799ff",
+      "parent_entry_id": "ja-f59fd68372f861ca",
+      "part_index": 0,
+      "text": "思い",
+      "contribution_en": "a thought",
+      "entry_id": "ja-b6ead8966f22f439",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-959d4ad0392b10e2",
+      "parent_entry_id": "ja-1f4a2f461b860022",
+      "part_index": 0,
+      "text": "わけ",
+      "contribution_en": "Frames the preceding statement as an explanation or conclusion.",
+      "entry_id": "ja-component-c4abac44349a2dc2",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-7a7b506274704ad3",
+      "parent_entry_id": "ja-1f4a2f461b860022",
+      "part_index": 1,
+      "text": "ではない",
+      "contribution_en": "Denies that the preceding statement is the explanation or conclusion; here, ではない means “is not.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-copula-negative-dewa-nai"
+      ]
+    },
+    {
+      "id": "ja-part-a1bab579ee438ce8",
+      "parent_entry_id": "ja-8c34053cc0e5d886",
+      "part_index": 1,
+      "text": "も",
+      "contribution_en": "Extends the reference across the choices; with a negative predicate, this gives the meaning “none of them.”",
+      "entry_id": "ja-891ef8fbcedf2f23",
+      "grammar_entry_ids": [
+        "ja-grammar-nonexhaustive-list-mo-negative"
+      ]
+    },
+    {
+      "id": "ja-part-9c563adbb7a37d8d",
+      "parent_entry_id": "ja-d5cdb739ac20d94b",
+      "part_index": 0,
+      "text": "上手く",
+      "contribution_en": "skilled or good at something; く-form of 上手い before なる",
+      "entry_id": "ja-component-11e55d31ca99420d",
+      "grammar_entry_ids": [
+        "ja-grammar-i-adjective-adverbial"
+      ]
+    },
+    {
+      "id": "ja-part-f10958620dc794cf",
+      "parent_entry_id": "ja-5d6c8ebff27e4964",
+      "part_index": 0,
+      "text": "後架",
+      "contribution_en": "Means a washroom in a Zen temple and, by extension, a toilet.",
+      "entry_id": "ja-component-63ca2f208e84c19f",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-27d931153afa796f",
+      "parent_entry_id": "ja-9a13f5270f72565c",
+      "part_index": 0,
+      "text": "繰り",
+      "contribution_en": "The stem of 繰る, evoking turning or working through something in sequence.",
+      "entry_id": "ja-component-3d2145d195f865d5",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-9f30647510e83128",
+      "parent_entry_id": "ja-9a13f5270f72565c",
+      "part_index": 1,
+      "text": "返す",
+      "contribution_en": "To return; here, it suggests coming back to the action or sequence.",
+      "entry_id": "ja-component-3903cf992560854e",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-b1d54e542e80b7b6",
+      "parent_entry_id": "ja-a9886336970ca8a3",
+      "part_index": 0,
+      "text": "出来",
+      "contribution_en": "come into being or be made",
+      "entry_id": "ja-520e97911d8da8df",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-cf2cbb026678af20",
+      "parent_entry_id": "ja-2a1177fe28837d80",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "An adverbial particle that gives 実 the sense “in truth.”",
+      "entry_id": "ja-component-7c95bc4bf55ce983",
+      "grammar_entry_ids": [
+        "ja-grammar-noun-adverbial-ni"
+      ]
+    },
+    {
+      "id": "ja-part-6c8083229ecb5280",
+      "parent_entry_id": "ja-a0bcc1343e5ab894",
+      "part_index": 1,
+      "text": "べき",
+      "contribution_en": "Marks the action as advisable or required.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subeki"
+      ]
+    },
+    {
+      "id": "ja-part-8c3137c1bd0c272e",
+      "parent_entry_id": "ja-a0bcc1343e5ab894",
+      "part_index": 2,
+      "text": "だ",
+      "contribution_en": "States the judgment directly.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-copula-da"
+      ]
+    },
+    {
+      "id": "ja-part-8a092f03f4087602",
+      "parent_entry_id": "ja-f01c255140ad4b66",
+      "part_index": 0,
+      "text": "大い",
+      "contribution_en": "Contributes the idea of something being great or considerable in degree.",
+      "entry_id": "ja-component-ed0354581d94e6e0",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-c7c37e7efff3bb79",
+      "parent_entry_id": "ja-f01c255140ad4b66",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Makes 大い adverbial, describing the degree to which something happens or is true.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-adjective-adverbial-ni"
+      ]
+    },
+    {
+      "id": "ja-part-ed925305e0f1296f",
+      "parent_entry_id": "ja-88d2de4748682ea6",
+      "part_index": 1,
+      "text": "の",
+      "contribution_en": "Links いつも to よう, making it the usual manner being referred to.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-no-noun-modifier"
+      ]
+    },
+    {
+      "id": "ja-part-c97097f9d70c6bb3",
+      "parent_entry_id": "ja-88d2de4748682ea6",
+      "part_index": 2,
+      "text": "ように",
+      "contribution_en": "in the manner of; like",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-no-youda"
+      ]
+    },
+    {
+      "id": "ja-part-5f547707975886e2",
+      "parent_entry_id": "ja-598d78f97ef4d6bf",
+      "part_index": 0,
+      "text": "な",
+      "contribution_en": "Links a noun or な-adjective predicate to the following reason marker.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-na-adjective-attributive"
+      ]
+    },
+    {
+      "id": "ja-part-2c1d183d85884b9f",
+      "parent_entry_id": "ja-598d78f97ef4d6bf",
+      "part_index": 1,
+      "text": "ので",
+      "contribution_en": "Marks the preceding clause as the reason for what follows.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-reason-node"
+      ]
+    },
+    {
+      "id": "ja-part-02a3d8aac6161af0",
+      "parent_entry_id": "ja-19a265108de2e210",
+      "part_index": 0,
+      "text": "我慢",
+      "contribution_en": "Endurance or tolerance: the ability to put up with something.",
+      "entry_id": "ja-component-9c789d8db225b6ac",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-8a9f2ff089719525",
+      "parent_entry_id": "ja-19a265108de2e210",
+      "part_index": 1,
+      "text": "できなくなる",
+      "contribution_en": "To become unable to do something; here, to lose the ability to endure or tolerate it.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-potential-negative-naru"
+      ]
+    },
+    {
+      "id": "ja-part-c6606b4d11440604",
+      "parent_entry_id": "ja-c66145e3e658bb1e",
+      "part_index": 0,
+      "text": "低く",
+      "contribution_en": "Low; the form of 低い used to describe the resulting state.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-i-adjective-adverbial"
+      ]
+    },
+    {
+      "id": "ja-part-32ff90660cb04d2a",
+      "parent_entry_id": "ja-1906b28dbb5cabe6",
+      "part_index": 0,
+      "text": "の",
+      "contribution_en": "Frames the preceding clause as an explanatory fact.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-explanatory-no-da"
+      ]
+    },
+    {
+      "id": "ja-part-9b3c310633b03ab6",
+      "parent_entry_id": "ja-1906b28dbb5cabe6",
+      "part_index": 1,
+      "text": "だ",
+      "contribution_en": "Asserts that framed situation.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-explanatory-no-da"
+      ]
+    },
+    {
+      "id": "ja-part-a3988d484b63f351",
+      "parent_entry_id": "ja-1906b28dbb5cabe6",
+      "part_index": 2,
+      "text": "から",
+      "contribution_en": "Marks that situation as the reason for what follows.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-reason-kara"
+      ]
+    },
+    {
+      "id": "ja-part-dd3c52799819d7da",
+      "parent_entry_id": "ja-b0e73ed863f7b104",
+      "part_index": 1,
+      "text": "を",
+      "contribution_en": "marks 用 as what is fulfilled or taken care of",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-object-wo"
+      ]
+    },
+    {
+      "id": "ja-part-82aa7c9c8557b4a2",
+      "parent_entry_id": "ja-b0e73ed863f7b104",
+      "part_index": 2,
+      "text": "足す",
+      "contribution_en": "fulfill or take care of",
+      "entry_id": "ja-component-8bfa59eeea2cbf50",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-a255c70dcc227fcd",
+      "parent_entry_id": "ja-dfe2b633139e04e3",
+      "part_index": 0,
+      "text": "歩き",
+      "contribution_en": "Continuative form of 歩く, “to walk.”",
+      "entry_id": "ja-e04c28f2bedecfee",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-15eb860feeaf2365",
+      "parent_entry_id": "ja-0e97cf4146f7d4e9",
+      "part_index": 1,
+      "text": "まで",
+      "contribution_en": "Particle marking a limit or endpoint: “up to” or “until.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-limit-made"
+      ]
+    },
+    {
+      "id": "ja-part-5b14639aea836940",
+      "parent_entry_id": "ja-81622b02b2d5ff4a",
+      "part_index": 0,
+      "text": "信じ",
+      "contribution_en": "Stem of 信じる, meaning to believe or trust.",
+      "entry_id": "ja-component-4091cca732c91871",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-19aa5c28365a0134",
+      "parent_entry_id": "ja-81622b02b2d5ff4a",
+      "part_index": 1,
+      "text": "すぎる",
+      "contribution_en": "Marks doing the action excessively.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-v-stem-sugiru"
+      ]
+    },
+    {
+      "id": "ja-part-7c55db0af09db87e",
+      "parent_entry_id": "ja-c5308e5cb4063c07",
+      "part_index": 1,
+      "text": "日和",
+      "contribution_en": "Fine weather; here, a fine day.",
+      "entry_id": "ja-component-414795e3dc90bc56",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-4d4e124725ba2785",
+      "parent_entry_id": "ja-bedf13a8ad4ae406",
+      "part_index": 0,
+      "text": "押し",
+      "contribution_en": "The combining form of 押す, meaning “push”; it supplies the action used to topple something.",
+      "entry_id": "ja-component-f15f930caf69f1f8",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-6dcc94f088529939",
+      "parent_entry_id": "ja-bedf13a8ad4ae406",
+      "part_index": 1,
+      "text": "倒す",
+      "contribution_en": "Means “topple” or “knock down”; it expresses the result of the push.",
+      "entry_id": "ja-component-0a536b1e57d0d20d",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-0434e0fab92753ec",
+      "parent_entry_id": "ja-6c65e75dd4064855",
+      "part_index": 0,
+      "text": "いびき",
+      "contribution_en": "The snoring sound, or snoring.",
+      "entry_id": "ja-component-c5cf682cb19c3339",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-70d7061210e776b1",
+      "parent_entry_id": "ja-6c65e75dd4064855",
+      "part_index": 1,
+      "text": "を",
+      "contribution_en": "Marks いびき as the object of かく.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-object-wo"
+      ]
+    },
+    {
+      "id": "ja-part-e9e928dde4e4e189",
+      "parent_entry_id": "ja-6c65e75dd4064855",
+      "part_index": 2,
+      "text": "かく",
+      "contribution_en": "With いびきを, means to produce the snoring sound.",
+      "entry_id": "ja-component-8c569136ce14fa7b",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-92e5bc9b6fb9ff33",
+      "parent_entry_id": "ja-1e1461f5610b779f",
+      "part_index": 0,
+      "text": "真っ",
+      "contribution_en": "Intensifies the following color or quality, here to the fullest degree.",
+      "entry_id": "ja-component-199ba92f4787e368",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-d562394eaa92c1fe",
+      "parent_entry_id": "ja-bbb8fb1dc0ed93f8",
+      "part_index": 1,
+      "text": "つめる",
+      "contribution_en": "This kana spelling corresponds to 詰める in the compound analysis, where it contributes carrying out the looking to a limit. The spelling 見つめる is also used for the same word as 見詰める.",
+      "entry_id": "ja-component-207b34d38e399431",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-0af245f1705be3bb",
+      "parent_entry_id": "ja-7c1fb2b52a12a77d",
+      "part_index": 1,
+      "text": "がる",
+      "contribution_en": "Makes a verb from an adjective stem, describing someone as showing signs of that quality or feeling.",
+      "entry_id": "ja-component-11916a8a81be592a",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-e4a98ff8297534eb",
+      "parent_entry_id": "ja-aab6d1afa3ab3866",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "marks the status or role assigned to someone",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-ni-suru-resulting-state"
+      ]
+    },
+    {
+      "id": "ja-part-4c4b42301f1c95f3",
+      "parent_entry_id": "ja-265820d2d0903f6a",
+      "part_index": 0,
+      "text": "付き",
+      "contribution_en": "The continuative form of 付く contributes joining or staying close to someone.",
+      "entry_id": "ja-component-da7d8ce94a87d421",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-ae6d8e04ccabc44b",
+      "parent_entry_id": "ja-265820d2d0903f6a",
+      "part_index": 1,
+      "text": "合う",
+      "contribution_en": "Adds doing something together or with one another.",
+      "entry_id": "ja-component-2f850093c9f6fe3b",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-19fac0aa3f1fff03",
+      "parent_entry_id": "ja-4a0ccaf5ca22f9c3",
+      "part_index": 0,
+      "text": "に",
+      "contribution_en": "Marks what is settled upon or determined to be the case.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-ni-determination"
+      ]
+    },
+    {
+      "id": "ja-part-1bb448b3de3ade8e",
+      "parent_entry_id": "ja-4a0ccaf5ca22f9c3",
+      "part_index": 1,
+      "text": "決まっている",
+      "contribution_en": "Means “stands decided” or “is settled,” providing the image behind the construction’s certainty.",
+      "entry_id": "ja-component-0b38de579e0e6f04",
+      "grammar_entry_ids": [
+        "ja-grammar-ni-determination",
+        "ja-grammar-teiru"
+      ]
+    },
+    {
+      "id": "ja-part-23ec4f9b02574894",
+      "parent_entry_id": "ja-d98463af7d65e8ff",
+      "part_index": 0,
+      "text": "話し",
+      "contribution_en": "The continuative form of 話す, “to speak,” which combines with 方 to name a way of doing the action.",
+      "entry_id": "ja-a397284ff5065600",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-6f7ce4094e15f536",
+      "parent_entry_id": "ja-86fd9a1dc3df13bd",
+      "part_index": 1,
+      "text": "転ぶ",
+      "contribution_en": "Adds an image of rolling or settling into a sprawled position; an actual tumble is not required.",
+      "entry_id": "ja-component-0d30bd95a1b85d6d",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-ead85d3e9fa25941",
+      "parent_entry_id": "ja-0527b971af158b72",
+      "part_index": 1,
+      "text": "たび",
+      "contribution_en": "occasion",
+      "entry_id": "ja-component-708353831e1f7459",
+      "grammar_entry_ids": [
+        "ja-grammar-tabi-ni"
+      ]
+    },
+    {
+      "id": "ja-part-062bb1ebf1f3d26e",
+      "parent_entry_id": "ja-0527b971af158b72",
+      "part_index": 2,
+      "text": "に",
+      "contribution_en": "marks the occasion as the time when something happens",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-tabi-ni"
+      ]
+    },
+    {
+      "id": "ja-part-11ace7688d02f435",
+      "parent_entry_id": "ja-369053b89d409ba4",
+      "part_index": 0,
+      "text": "おかげ",
+      "contribution_en": "A favor, help, or benefit; here it frames the cause as something that brings about the result.",
+      "entry_id": "ja-component-78ccc41743342f6d",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-9f61b52b3291f0c3",
+      "parent_entry_id": "ja-369053b89d409ba4",
+      "part_index": 1,
+      "text": "で",
+      "contribution_en": "Marks the cause or circumstance as the basis for the result.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-okage-de"
+      ]
+    },
+    {
+      "id": "ja-part-567daaaf266ea382",
+      "parent_entry_id": "ja-a1cdba18fec3c86f",
+      "part_index": 0,
+      "text": "こと",
+      "contribution_en": "Turns the preceding verb phrase into an action that can be treated as something to do.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-nominalizer-koto"
+      ]
+    },
+    {
+      "id": "ja-part-af840a2199372b27",
+      "parent_entry_id": "ja-a1cdba18fec3c86f",
+      "part_index": 1,
+      "text": "も",
+      "contribution_en": "Marks the action as an addition (“also”); under negation, it can emphasize “even.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-particle-mo-additive"
+      ]
+    },
+    {
+      "id": "ja-part-7513ab67302a4986",
+      "parent_entry_id": "ja-5adb818fe2801072",
+      "part_index": 1,
+      "text": "より",
+      "contribution_en": "than; marks what something is being compared with",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-comparative-yori"
+      ]
+    },
+    {
+      "id": "ja-part-d29715041f967a08",
+      "parent_entry_id": "ja-b42f0676df67f47e",
+      "part_index": 1,
+      "text": "つき",
+      "contribution_en": "appearance or form",
+      "entry_id": "ja-component-4fade02d8c9d7ebb",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-947c214e72e6611f",
+      "parent_entry_id": "ja-08096d965ff0a518",
+      "part_index": 1,
+      "text": "っ屁",
+      "contribution_en": "Evokes 屁 as a foul-smelling emission, forming the image behind the animal’s defensive act; this does not establish a general compound meaning for 屁.",
+      "entry_id": "ja-component-67b47b8c642688cd",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-fbc465d91288db22",
+      "parent_entry_id": "ja-b64ccc36298aec03",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "Marks 日 as the subject.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-35edc9a97fcf7259",
+      "parent_entry_id": "ja-c7ebe5b995bf6fe2",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "marks 気配 as the subject of する",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-eb50658e9c8cb12e",
+      "parent_entry_id": "ja-c26dc935eb05b039",
+      "part_index": 2,
+      "text": "な",
+      "contribution_en": "Links 平気 to the noun 顔, describing the kind of expression.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-na-adjective-attributive"
+      ]
+    },
+    {
+      "id": "ja-part-524b1fe361f5b791",
+      "parent_entry_id": "ja-c26dc935eb05b039",
+      "part_index": 4,
+      "text": "を",
+      "contribution_en": "Marks the expression as what is presented with する.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-object-wo"
+      ]
+    },
+    {
+      "id": "ja-part-9702932554511b78",
+      "parent_entry_id": "ja-c26dc935eb05b039",
+      "part_index": 5,
+      "text": "している",
+      "contribution_en": "Presents showing that expression as continuing or characteristic.",
+      "entry_id": "ja-d42d6536d342b961",
+      "grammar_entry_ids": [
+        "ja-grammar-teiru"
+      ]
+    },
+    {
+      "id": "ja-part-7328dcac9e89b45e",
+      "parent_entry_id": "ja-975b0c988eae815e",
+      "part_index": 2,
+      "text": "に",
+      "contribution_en": "marks the relationship one enters",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noun-ni-naru-status"
+      ]
+    },
+    {
+      "id": "ja-part-10dbf52256475c65",
+      "parent_entry_id": "ja-17a14609bd5e9ae4",
+      "part_index": 2,
+      "text": "に",
+      "contribution_en": "marks the experience as what someone encounters",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-ni-endured-experience"
+      ]
+    },
+    {
+      "id": "ja-part-21df41b86d1e483c",
+      "parent_entry_id": "ja-17a14609bd5e9ae4",
+      "part_index": 3,
+      "text": "あう",
+      "contribution_en": "遭う: to encounter or undergo an event, often an unwelcome one",
+      "entry_id": "ja-90f297a9ea1bf8ab",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-04926ae8047591c6",
+      "parent_entry_id": "ja-2c7c0dae26a19f40",
+      "part_index": 0,
+      "text": "と",
+      "contribution_en": "Marks the preceding words or clause as quoted content.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-quotative-to"
+      ]
+    },
+    {
+      "id": "ja-part-557b8d643c2d62b6",
+      "parent_entry_id": "ja-2c7c0dae26a19f40",
+      "part_index": 1,
+      "text": "いう",
+      "contribution_en": "Means “say”; with と, presents content as reported or wording as a name or description.",
+      "entry_id": "ja-7f9393374aa35e38",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-cf41c396d4d12c7b",
+      "parent_entry_id": "ja-b105943e2d87f9eb",
+      "part_index": 0,
+      "text": "よう",
+      "contribution_en": "Supplies the idea of a way, likeness, or appearance that serves as the basis for comparison.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-clause-youda"
+      ]
+    },
+    {
+      "id": "ja-part-858a38f094dde0ed",
+      "parent_entry_id": "ja-b105943e2d87f9eb",
+      "part_index": 1,
+      "text": "だ",
+      "contribution_en": "States that the comparison or appearance applies.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-copula-da"
+      ]
+    },
+    {
+      "id": "ja-part-b4573761d685ac9d",
+      "parent_entry_id": "ja-3e155b62fc13def5",
+      "part_index": 1,
+      "text": "くせ",
+      "contribution_en": "Its specific contribution to the contrast in this conjunction is not established.",
+      "entry_id": "ja-component-ef8d771b6fc4547f",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-9a02cab97b735d3f",
+      "parent_entry_id": "ja-0e97cf4146f7d4e9",
+      "part_index": 1,
+      "text": "まで",
+      "contribution_en": "Marks the endpoint of a span: “until” or “up to.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-limit-made"
+      ]
+    },
+    {
+      "id": "ja-part-042b02c383b2b473",
+      "parent_entry_id": "ja-1a5ce7bf008c300d",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "marks 見当 as what takes shape or becomes available",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-5f71ebecc6996b53",
+      "parent_entry_id": "ja-5cb050c029101e13",
+      "part_index": 1,
+      "text": "でも",
+      "contribution_en": "with 何, broadens the reference to whichever matter, regardless of its details",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-interrogative-demo"
+      ]
+    },
+    {
+      "id": "ja-part-460dcd0e35519863",
+      "parent_entry_id": "ja-5d19d45b9d148474",
+      "part_index": 0,
+      "text": "よう",
+      "contribution_en": "Presents a resemblance or an apparent quality or state.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-no-youda",
+        "ja-grammar-clause-youda"
+      ]
+    },
+    {
+      "id": "ja-part-d65e887a590cc444",
+      "parent_entry_id": "ja-5d19d45b9d148474",
+      "part_index": 1,
+      "text": "である",
+      "contribution_en": "The formal copula that states the resemblance or apparent quality or state.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-de-aru"
+      ]
+    },
+    {
+      "id": "ja-part-a170b4c48ee9942a",
+      "parent_entry_id": "ja-5dbc8b15eb27d6b0",
+      "part_index": 1,
+      "text": "ばかりか",
+      "contribution_en": "Adds a further point with the sense “not only … but also.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-sore-bakari-ka"
+      ]
+    },
+    {
+      "id": "ja-part-2d549b3c852d3897",
+      "parent_entry_id": "ja-ece80a5ea2f4943a",
+      "part_index": 0,
+      "text": "運び",
+      "contribution_en": "The continuative form of 運ぶ, supplying the action of carrying or transporting.",
+      "entry_id": "ja-component-9a0e31697b82d8e4",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-79ebee5d121d273c",
+      "parent_entry_id": "ja-b7ffa86ae2c585a7",
+      "part_index": 1,
+      "text": "の",
+      "contribution_en": "links 目 to 前, marking the front as that of the eyes",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-no-noun-modifier"
+      ]
+    },
+    {
+      "id": "ja-part-e733c70bad986875",
+      "parent_entry_id": "ja-a16393ad4a336e1c",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "marks 気 as the subject of 付く",
+      "entry_id": "ja-1fd0092d477c96c6",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-ca42fc6aaea26feb",
+      "parent_entry_id": "ja-03df38686b66c967",
+      "part_index": 1,
+      "text": "から",
+      "contribution_en": "Marks the point from which something begins.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-source-kara"
+      ]
+    },
+    {
+      "id": "ja-part-6eefb5116c06d142",
+      "parent_entry_id": "ja-cd2e6ba42dc25cd4",
+      "part_index": 1,
+      "text": "うち",
+      "contribution_en": "Means “within” or “during,” making the phrase refer to a point within that period.",
+      "entry_id": "ja-07aa3f4068936f30",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-bf1234413b6fe418",
+      "parent_entry_id": "ja-4e778c4fdbc46f8c",
+      "part_index": 0,
+      "text": "泣き",
+      "contribution_en": "The combining form of 泣く (なく), “to cry.”",
+      "entry_id": "ja-c077953bae1b6adf",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-6a5f093e3e9dc1c7",
+      "parent_entry_id": "ja-4e778c4fdbc46f8c",
+      "part_index": 1,
+      "text": "たい",
+      "contribution_en": "A grammatical ending that marks desire to do the verb’s action.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-desiderative-tai"
+      ]
+    },
+    {
+      "id": "ja-part-10a768b671a18de9",
+      "parent_entry_id": "ja-84d055d9e5c4d674",
+      "part_index": 1,
+      "text": "ばた",
+      "contribution_en": "side or edge, from 端（はた）; voiced here in the compound",
+      "entry_id": "ja-component-296aafbec8b6e1cd",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-0dd6ab906f2bbda2",
+      "parent_entry_id": "ja-2777fd9ffc1885a3",
+      "part_index": 2,
+      "text": "だ",
+      "contribution_en": "Plain copula, asserting that something is 乱暴.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-copula-da"
+      ]
+    },
+    {
+      "id": "ja-part-a46092a7cb167b48",
+      "parent_entry_id": "ja-ad1d812b036dfb39",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "marks the state reached",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noun-ni-naru-status"
+      ]
+    },
+    {
+      "id": "ja-part-d35283e10338d89d",
+      "parent_entry_id": "ja-ba35a88d5f910351",
+      "part_index": 1,
+      "text": "返し",
+      "contribution_en": "returning an act by doing something back",
+      "entry_id": "ja-component-3903cf992560854e",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-f29a861e0f1642af",
+      "parent_entry_id": "ja-232b83eefcd4d212",
+      "part_index": 2,
+      "text": "しい",
+      "contribution_en": "An adjective-forming suffix in this word.",
+      "entry_id": "ja-component-e3f51354a5cb5b25",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-738cd14c62c3986a",
+      "parent_entry_id": "ja-b8cb8e41e94f10f4",
+      "part_index": 0,
+      "text": "ぶら",
+      "contribution_en": "Evokes dangling or loose movement.",
+      "entry_id": "ja-component-abc5370c0670a4ce",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-ba9c7b7d1be32056",
+      "parent_entry_id": "ja-b8cb8e41e94f10f4",
+      "part_index": 1,
+      "text": "下げる",
+      "contribution_en": "Contributes putting or keeping something lower, here so it hangs down.",
+      "entry_id": "ja-component-5d1ec670c4817248",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-9bd7ba351aa142e5",
+      "parent_entry_id": "ja-3275bf896a85e17b",
+      "part_index": 1,
+      "text": "なし",
+      "contribution_en": "absence or lack; without",
+      "entry_id": "ja-component-49c0846eca3a78d7",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-431a9887a82f411b",
+      "parent_entry_id": "ja-2c39381ccbd06ff7",
+      "part_index": 1,
+      "text": "なら",
+      "contribution_en": "marks that matter or situation as the premise for what follows",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-conditional-nara"
+      ]
+    },
+    {
+      "id": "ja-part-e3ae925800c56c99",
+      "parent_entry_id": "ja-1eff43320ce18804",
+      "part_index": 1,
+      "text": "を",
+      "contribution_en": "Marks 口 as the object of きく.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-object-wo"
+      ]
+    },
+    {
+      "id": "ja-part-cbdd1ffbc467d86f",
+      "parent_entry_id": "ja-1eff43320ce18804",
+      "part_index": 2,
+      "text": "きく",
+      "contribution_en": "利く, “use”; with 口, forms the conventional expression meaning to speak.",
+      "entry_id": "ja-component-da7d8ce94a87d421",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-852acad560ada78f",
+      "parent_entry_id": "ja-e6379501f18e2d9b",
+      "part_index": 1,
+      "text": "して",
+      "contribution_en": "The te-form of する, linking the indicated manner to an action; it can also connect a following result or continuation.",
+      "entry_id": "ja-d42d6536d342b961",
+      "grammar_entry_ids": [
+        "ja-grammar-te-form"
+      ]
+    },
+    {
+      "id": "ja-part-d09c932c5ec66430",
+      "parent_entry_id": "ja-2e069150ad3df78a",
+      "part_index": 0,
+      "text": "だ",
+      "contribution_en": "Links a noun or な-adjective to the statement being reported.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-copula-da"
+      ]
+    },
+    {
+      "id": "ja-part-c84d706f3dcfae35",
+      "parent_entry_id": "ja-2e069150ad3df78a",
+      "part_index": 1,
+      "text": "そうだ",
+      "contribution_en": "Marks the preceding statement as hearsay.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-souda-hearsay"
+      ]
+    },
+    {
+      "id": "ja-part-ce81cce30c37f27f",
+      "parent_entry_id": "ja-8f39679a66d2ae80",
+      "part_index": 1,
+      "text": "活発",
+      "contribution_en": "active and lively; the quality being negated",
+      "entry_id": "ja-8f39679a66d2ae80",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-d8258060c2ff0a36",
+      "parent_entry_id": "ja-1143e3c818613f84",
+      "part_index": 1,
+      "text": "ながら",
+      "contribution_en": "marks that status as concessive, like “although” or “even though”",
+      "entry_id": "ja-200aba458d195418",
+      "grammar_entry_ids": [
+        "ja-grammar-nagara-concessive"
+      ]
+    },
+    {
+      "id": "ja-part-47d8bbe9cd5d0981",
+      "parent_entry_id": "ja-dd4d95fc646ae0b4",
+      "part_index": 2,
+      "text": "を",
+      "contribution_en": "Marks 不平 as what is expressed.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-object-wo"
+      ]
+    },
+    {
+      "id": "ja-part-e3484b04dc636fed",
+      "parent_entry_id": "ja-f5eab16d8f03a7d7",
+      "part_index": 1,
+      "text": "だけ",
+      "contribution_en": "marks the extent or limit",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-limiting-dake"
+      ]
+    },
+    {
+      "id": "ja-part-42ebe1a8bdaf0b6e",
+      "parent_entry_id": "ja-586d06daa67aaede",
+      "part_index": 0,
+      "text": "ように",
+      "contribution_en": "Marks the preceding action or state as the intended target.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-you-ni-suru"
+      ]
+    },
+    {
+      "id": "ja-part-b9cfa98600e3859e",
+      "parent_entry_id": "ja-ac25974264f49e46",
+      "part_index": 0,
+      "text": "という",
+      "contribution_en": "Presents the preceding content as a statement or description under consideration.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-to-iu-reportative"
+      ]
+    },
+    {
+      "id": "ja-part-dacb9a1e66d85410",
+      "parent_entry_id": "ja-ac25974264f49e46",
+      "part_index": 1,
+      "text": "より",
+      "contribution_en": "Marks comparison with the alternative that follows, which is presented as more fitting.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-comparative-yori"
+      ]
+    },
+    {
+      "id": "ja-part-063e0a8e3ae670dd",
+      "parent_entry_id": "ja-85ad86d5e75ebd2c",
+      "part_index": 0,
+      "text": "心地",
+      "contribution_en": "feeling or sensation",
+      "entry_id": "ja-component-ed44340be7b323f6",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-936dce8bc19809c0",
+      "parent_entry_id": "ja-9c04b94a212cabbc",
+      "part_index": 0,
+      "text": "こと",
+      "contribution_en": "Treats an action or state as a matter that can be identified or described.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-nominalizer-koto"
+      ]
+    },
+    {
+      "id": "ja-part-6137e56d4d1e7816",
+      "parent_entry_id": "ja-9c04b94a212cabbc",
+      "part_index": 1,
+      "text": "である",
+      "contribution_en": "Formally asserts that the matter is what something is or consists in.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-de-aru"
+      ]
+    },
+    {
+      "id": "ja-part-8c5abc929f7332c2",
+      "parent_entry_id": "ja-e15dbf558144e758",
+      "part_index": 0,
+      "text": "割り",
+      "contribution_en": "splitting or cutting a way through",
+      "entry_id": "ja-component-b2aa111e650e5572",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-f4610bbc3d63e327",
+      "parent_entry_id": "ja-e9bd00f3d703ca46",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "marks luck as the subject described as bad",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-de652bb923fe4ee3",
+      "parent_entry_id": "ja-1eb826a630b85eed",
+      "part_index": 0,
+      "text": "神経",
+      "contribution_en": "Nerves; this part focuses the compound on a person’s sensitivity.",
+      "entry_id": "ja-1eb826a630b85eed",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-defc4c7ba4aba87c",
+      "parent_entry_id": "ja-f33a906d32e4d277",
+      "part_index": 0,
+      "text": "うち",
+      "contribution_en": "The inside or span of a period of time.",
+      "entry_id": "ja-07aa3f4068936f30",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-80642b56c58b0f66",
+      "parent_entry_id": "ja-f33a906d32e4d277",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Marks that period as the time within which an event occurs.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-uchi-ni-temporal"
+      ]
+    },
+    {
+      "id": "ja-part-bdd7a0aedd0e3916",
+      "parent_entry_id": "ja-da3c8a318fe89dc6",
+      "part_index": 0,
+      "text": "押し",
+      "contribution_en": "The pushing action, from 押す (おす).",
+      "entry_id": "ja-component-f15f930caf69f1f8",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-2a97a12262191d37",
+      "parent_entry_id": "ja-0f9568c19cbe40a4",
+      "part_index": 1,
+      "text": "がかり",
+      "contribution_en": "Taking on or engaging in an effort, from 掛かる.",
+      "entry_id": "ja-component-fdc058c155f037a9",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-dcd37ad3af660945",
+      "parent_entry_id": "ja-9575eaa00a3b0baf",
+      "part_index": 0,
+      "text": "追い",
+      "contribution_en": "The linking form of 追う, contributing the act of chasing or pursuing.",
+      "entry_id": "ja-component-5202effebb7afbcc",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-330eb66e5c45190f",
+      "parent_entry_id": "ja-9575eaa00a3b0baf",
+      "part_index": 1,
+      "text": "回す",
+      "contribution_en": "Adds the sense of taking the pursuit around, as the chaser follows someone from place to place.",
+      "entry_id": "ja-d89923df7df1d8e9",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-01eb728ac7b93a09",
+      "parent_entry_id": "ja-e59a28d407451d3c",
+      "part_index": 0,
+      "text": "入り",
+      "contribution_en": "The verb stem of 入る, “enter.”",
+      "entry_id": "ja-1eb517229b171abf",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-ae4ff8f23f07e8db",
+      "parent_entry_id": "ja-e59a28d407451d3c",
+      "part_index": 1,
+      "text": "にくく",
+      "contribution_en": "The form of にくい, “difficult to do,” used before なる; here it makes entering difficult.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-v-nikui"
+      ]
+    },
+    {
+      "id": "ja-part-b9da268590e5ecd4",
+      "parent_entry_id": "ja-a7e78150b4dff3d9",
+      "part_index": 1,
+      "text": "向かい",
+      "contribution_en": "The facing or opposite side across that way.",
+      "entry_id": "ja-component-16be802acd08b0ca",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-b8d6e0a28334ea2b",
+      "parent_entry_id": "ja-3402415237cb8306",
+      "part_index": 1,
+      "text": "人情",
+      "contribution_en": "Human sympathy or consideration for others.",
+      "entry_id": "ja-component-f6bf988655d6afac",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-59526de483ab666e",
+      "parent_entry_id": "ja-680e9d74f9c0562f",
+      "part_index": 0,
+      "text": "出来",
+      "contribution_en": "Something coming about or happening.",
+      "entry_id": "ja-7e85ce9d7d558a9a",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-40fc5665dbb8c5a1",
+      "parent_entry_id": "ja-7d81b02395941abe",
+      "part_index": 1,
+      "text": "まま",
+      "contribution_en": "Means that the state continues unchanged.",
+      "entry_id": "ja-7d81b02395941abe",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-d49bc4399a776a8f",
+      "parent_entry_id": "ja-cee5f70af9e2c66d",
+      "part_index": 0,
+      "text": "して",
+      "contribution_en": "The て-form of する, naming the action and linking it to おく.",
+      "entry_id": "ja-d42d6536d342b961",
+      "grammar_entry_ids": [
+        "ja-grammar-te-form"
+      ]
+    },
+    {
+      "id": "ja-part-6c43712a503dcb26",
+      "parent_entry_id": "ja-cee5f70af9e2c66d",
+      "part_index": 1,
+      "text": "おく",
+      "contribution_en": "As an auxiliary, adds the sense of doing the action in advance or leaving its result in place.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-te-oku"
+      ]
+    },
+    {
+      "id": "ja-part-06c88cff54889ff1",
+      "parent_entry_id": "ja-d5979e4f11f5c7e2",
+      "part_index": 1,
+      "text": "馳走",
+      "contribution_en": "Associated with preparing hospitality and with the meal provided.",
+      "entry_id": "ja-component-f33d295eb5284929",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-61f9e14b272962dd",
+      "parent_entry_id": "ja-4e7746f32a853f73",
+      "part_index": 0,
+      "text": "頼み",
+      "contribution_en": "Reliance; something relied on.",
+      "entry_id": "ja-component-0777aee0bc15c931",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-44f634caa1c5b7d2",
+      "parent_entry_id": "ja-4e7746f32a853f73",
+      "part_index": 1,
+      "text": "にする",
+      "contribution_en": "Presents the preceding thing as what one relies on.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-ni-suru-resulting-state"
+      ]
+    },
+    {
+      "id": "ja-part-6c1e24dffd3076af",
+      "parent_entry_id": "ja-dbbc8922d1523171",
+      "part_index": 2,
+      "text": "だ",
+      "contribution_en": "plain copula stating that something is 正当",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-copula-da"
+      ]
+    },
+    {
+      "id": "ja-part-adc3063ffd5bd535",
+      "parent_entry_id": "ja-f475b6ca4b54ce6b",
+      "part_index": 2,
+      "text": "だ",
+      "contribution_en": "Marks the statement that this is the person’s condition.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-copula-da"
+      ]
+    },
+    {
+      "id": "ja-part-2e01547e4315ec19",
+      "parent_entry_id": "ja-be5fba2495f6150b",
+      "part_index": 0,
+      "text": "と",
+      "contribution_en": "Marks the preceding proposition as the content being considered.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-to-wa-kagiranai"
+      ]
+    },
+    {
+      "id": "ja-part-1b83cea4c86fef3a",
+      "parent_entry_id": "ja-be5fba2495f6150b",
+      "part_index": 1,
+      "text": "は",
+      "contribution_en": "Sets that proposition up as the point under consideration.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-to-wa-kagiranai"
+      ]
+    },
+    {
+      "id": "ja-part-e488f566faf14263",
+      "parent_entry_id": "ja-be5fba2495f6150b",
+      "part_index": 2,
+      "text": "限らない",
+      "contribution_en": "Means “is not limited to,” leaving room for the proposition not to hold.",
+      "entry_id": "ja-component-f64af8798d3ebcec",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-negative"
+      ]
+    },
+    {
+      "id": "ja-part-6637a70261324c7e",
+      "parent_entry_id": "ja-522b71df46559291",
+      "part_index": 0,
+      "text": "ため",
+      "contribution_en": "Presents the preceding noun or clause as a cause or reason.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-tame-ni-cause"
+      ]
+    },
+    {
+      "id": "ja-part-352aa7abb47d2ce1",
+      "parent_entry_id": "ja-522b71df46559291",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Marks that cause or reason in relation to what follows.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-tame-ni-cause"
+      ]
+    },
+    {
+      "id": "ja-part-9fbbc7498e548246",
+      "parent_entry_id": "ja-fc4b15b57169d36e",
+      "part_index": 1,
+      "text": "な",
+      "contribution_en": "Attributive form of the copula だ, connecting それ to のに.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-na-adjective-attributive"
+      ]
+    },
+    {
+      "id": "ja-part-baeef03fd694e7c0",
+      "parent_entry_id": "ja-fc4b15b57169d36e",
+      "part_index": 2,
+      "text": "のに",
+      "contribution_en": "Marks a concessive relation: “although” or “despite.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noni-concessive"
+      ]
+    },
+    {
+      "id": "ja-part-079f90b33b7dc917",
+      "parent_entry_id": "ja-63d230a45e38da18",
+      "part_index": 0,
+      "text": "新体",
+      "contribution_en": "new style or form",
+      "entry_id": "ja-component-763d68bf8117fbfe",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-34ce42f4778b99be",
+      "parent_entry_id": "ja-942800c6bc5075e8",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Marks what is referred to as the point to which something is added.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-ni-additional-scope"
+      ]
+    },
+    {
+      "id": "ja-part-3abf88c2ba80b05e",
+      "parent_entry_id": "ja-fd984328bd671d66",
+      "part_index": 1,
+      "text": "らしい",
+      "contribution_en": "Marks the intention as an inference: it appears to be the person's plan.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-rashii-evidential"
+      ]
+    },
+    {
+      "id": "ja-part-992a5f4d7f684889",
+      "parent_entry_id": "ja-e25d43f889dac1b3",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "marks that person as a target, recipient, or experiencer, depending on the predicate",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-ni-recipient"
+      ]
+    },
+    {
+      "id": "ja-part-8b020efb0d740554",
+      "parent_entry_id": "ja-e25d43f889dac1b3",
+      "part_index": 2,
+      "text": "も",
+      "contribution_en": "extends the scope to all possible people; with negation, this yields “no one”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-interrogative-mo-universal"
+      ]
+    },
+    {
+      "id": "ja-part-45c835d0c4ca24ce",
+      "parent_entry_id": "ja-dc68b1eb0a600d22",
+      "part_index": 1,
+      "text": "な",
+      "contribution_en": "Links そう to のに.",
+      "entry_id": "ja-5a3e5b040e053178",
+      "grammar_entry_ids": [
+        "ja-grammar-na-adjective-attributive"
+      ]
+    },
+    {
+      "id": "ja-part-ea0a3c3c22bf1a71",
+      "parent_entry_id": "ja-dc68b1eb0a600d22",
+      "part_index": 2,
+      "text": "のに",
+      "contribution_en": "Marks that what follows contrasts with what seemed likely from the preceding statement.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noni-concessive"
+      ]
+    },
+    {
+      "id": "ja-part-3ab46c0bd2825bbd",
+      "parent_entry_id": "ja-8b8306cdafc9e778",
+      "part_index": 0,
+      "text": "写す",
+      "contribution_en": "“Copy” or “reproduce”; names the action that is being recommended or expected.",
+      "entry_id": "ja-component-b938acdb867adef1",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-8cfc72dde18ceabc",
+      "parent_entry_id": "ja-8b8306cdafc9e778",
+      "part_index": 1,
+      "text": "べきだ",
+      "contribution_en": "Marks the action as something one ought or is expected to do; plain だ gives a direct, non-polite assertion.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subeki"
+      ]
+    },
+    {
+      "id": "ja-part-f851e897d08e740c",
+      "parent_entry_id": "ja-9022b0a8ded3117f",
+      "part_index": 0,
+      "text": "枯れ",
+      "contribution_en": "Withered, from 枯れる (to wither).",
+      "entry_id": "ja-af52abd873ca6897",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-0f85dfdf43a4acb0",
+      "parent_entry_id": "ja-ac70688313d77426",
+      "part_index": 1,
+      "text": "の",
+      "contribution_en": "links 気 with 毒, marking the feelings as what the poison affects",
+      "entry_id": "ja-1fd0092d477c96c6",
+      "grammar_entry_ids": [
+        "ja-grammar-no-noun-modifier"
+      ]
+    },
+    {
+      "id": "ja-part-b5b4752c4ce90f82",
+      "parent_entry_id": "ja-6d9d1ffdad0b30eb",
+      "part_index": 1,
+      "text": "並み",
+      "contribution_en": "arrangement, here the way the fur lies",
+      "entry_id": "ja-component-fa8e6f745bbf3eb8",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-2b1001312164c054",
+      "parent_entry_id": "ja-82838d9cbcc857e9",
+      "part_index": 0,
+      "text": "と",
+      "contribution_en": "Marks the preceding content as quoted or framed.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-to-wa-kagiranai"
+      ]
+    },
+    {
+      "id": "ja-part-d7f37fe9138b3acc",
+      "parent_entry_id": "ja-82838d9cbcc857e9",
+      "part_index": 1,
+      "text": "は",
+      "contribution_en": "Sets that content as the topic or focus.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-to-wa-kagiranai"
+      ]
+    },
+    {
+      "id": "ja-part-e7eb849ffc7d650b",
+      "parent_entry_id": "ja-4ec312c977873521",
+      "part_index": 0,
+      "text": "から",
+      "contribution_en": "Marks the point from which a judgment is made.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-kara-shite-basis"
+      ]
+    },
+    {
+      "id": "ja-part-4a5d4eb438ab7f93",
+      "parent_entry_id": "ja-4ec312c977873521",
+      "part_index": 1,
+      "text": "して",
+      "contribution_en": "Combines with から to highlight that point as a telling basis, often with an “even” nuance.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-kara-shite-basis"
+      ]
+    },
+    {
+      "id": "ja-part-6714a7ad6f149271",
+      "parent_entry_id": "ja-517893e221fa8388",
+      "part_index": 1,
+      "text": "とも",
+      "contribution_en": "Extends the open question across possible answers or ways, giving the sense “in any way.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-particle-mo-even"
+      ]
+    },
+    {
+      "id": "ja-part-1b01306451a992a1",
+      "parent_entry_id": "ja-4d941989cc5a54b6",
+      "part_index": 0,
+      "text": "として",
+      "contribution_en": "Frames the preceding phrase as a supposition.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-to-shitemo-concessive"
+      ]
+    },
+    {
+      "id": "ja-part-7524916bc7c38b8b",
+      "parent_entry_id": "ja-4d941989cc5a54b6",
+      "part_index": 1,
+      "text": "も",
+      "contribution_en": "Adds “even,” marking the following statement as holding despite that supposition.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-to-shitemo-concessive"
+      ]
+    },
+    {
+      "id": "ja-part-dc08f500e5e51ea7",
+      "parent_entry_id": "ja-08067b0efbd73902",
+      "part_index": 0,
+      "text": "むずむず",
+      "contribution_en": "Evokes an ongoing itchy or tingling sensation and, by extension, a restless feeling.",
+      "entry_id": "ja-08067b0efbd73902",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-90af6460164e966a",
+      "parent_entry_id": "ja-097565589b2e031a",
+      "part_index": 0,
+      "text": "だけ",
+      "contribution_en": "Limits the preceding action, event, or condition to that alone.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-limiting-dake"
+      ]
+    },
+    {
+      "id": "ja-part-bc8027b07c9a4796",
+      "parent_entry_id": "ja-097565589b2e031a",
+      "part_index": 1,
+      "text": "で",
+      "contribution_en": "Marks that preceding phrase as the means or basis for what follows.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-dake-de"
+      ]
+    },
+    {
+      "id": "ja-part-79e2382105b3ba1b",
+      "parent_entry_id": "ja-ffb1a258ce5d182a",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Forms a degree expression, applying that excess to a quality or action.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-amari-ni"
+      ]
+    },
+    {
+      "id": "ja-part-b994e99204a94c7c",
+      "parent_entry_id": "ja-407c30a6b3275da1",
+      "part_index": 1,
+      "text": "当たり",
+      "contribution_en": "falling on or reaching a place",
+      "entry_id": "ja-8c1e4bb4cd6be1ce",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-f91c7c3b0ff16d82",
+      "parent_entry_id": "ja-841f0e1aaeaedf75",
+      "part_index": 1,
+      "text": "眠り",
+      "contribution_en": "sleep; here, a bout of sleep",
+      "entry_id": "ja-841f0e1aaeaedf75",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-aad0e66165e02fcf",
+      "parent_entry_id": "ja-08df0ee00543d07e",
+      "part_index": 0,
+      "text": "長々",
+      "contribution_en": "Repeated 長 conveys considerable length or duration.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-repeated-time-noun"
+      ]
+    },
+    {
+      "id": "ja-part-c3fbc0421ef2dfe8",
+      "parent_entry_id": "ja-08df0ee00543d07e",
+      "part_index": 1,
+      "text": "と",
+      "contribution_en": "Makes 長々 modify an action or state adverbially.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-mimetic-adverbial-to"
+      ]
+    },
+    {
+      "id": "ja-part-1495fb68c4733ad7",
+      "parent_entry_id": "ja-6c9ecc12b9bc538f",
+      "part_index": 1,
+      "text": "ほど",
+      "contribution_en": "Marks the degree or amount’s extent.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-hodo-degree"
+      ]
+    },
+    {
+      "id": "ja-part-cc1ecde69be9a1d6",
+      "parent_entry_id": "ja-bc120785621f63aa",
+      "part_index": 1,
+      "text": "か",
+      "contribution_en": "Marks the possibility as a question; here the question conveys disbelief.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-rhetorical-mono-ka"
+      ]
+    },
+    {
+      "id": "ja-part-e8f86de59d0ae566",
+      "parent_entry_id": "ja-622e48761fd20c36",
+      "part_index": 0,
+      "text": "射る",
+      "contribution_en": "to shoot, evoking a piercing strike",
+      "entry_id": "ja-component-31bcbea2a1fe04e5",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-22254bb0050453a4",
+      "parent_entry_id": "ja-622e48761fd20c36",
+      "part_index": 1,
+      "text": "ように",
+      "contribution_en": "marks resemblance: “as if”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-clause-youda"
+      ]
+    },
+    {
+      "id": "ja-part-82884522a6275322",
+      "parent_entry_id": "ja-d8b80d194f8bac1a",
+      "part_index": 0,
+      "text": "打ち",
+      "contribution_en": "The combining form of 打つ, adding a sense of forceful action.",
+      "entry_id": "ja-component-339cae8fcd08dd13",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-cf28634eb2186e24",
+      "parent_entry_id": "ja-d8b80d194f8bac1a",
+      "part_index": 1,
+      "text": "負かす",
+      "contribution_en": "Means to make someone lose, forming the core idea of defeating.",
+      "entry_id": "ja-component-2f530b05f798f2f9",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-abbeeb8ff3289b76",
+      "parent_entry_id": "ja-0c15bc39bd05ed75",
+      "part_index": 0,
+      "text": "で",
+      "contribution_en": "The connective form of the copula, used here to build a negative copular predicate.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-copula-negative-dewa-nai"
+      ]
+    },
+    {
+      "id": "ja-part-324549bc86a209c2",
+      "parent_entry_id": "ja-0c15bc39bd05ed75",
+      "part_index": 1,
+      "text": "は",
+      "contribution_en": "Marks the predicate as the topic or point of contrast within the negative form.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-copula-negative-dewa-nai"
+      ]
+    },
+    {
+      "id": "ja-part-db4c279288c42b4a",
+      "parent_entry_id": "ja-0c15bc39bd05ed75",
+      "part_index": 3,
+      "text": "か",
+      "contribution_en": "Marks the phrase as a question; in this ending, the negative question can invite agreement or emphasize realization.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-rhetorical-ja-nai-ka"
+      ]
+    },
+    {
+      "id": "ja-part-ae05ed7c1db1eb30",
+      "parent_entry_id": "ja-bee99f5341cf098b",
+      "part_index": 0,
+      "text": "負け",
+      "contribution_en": "The stem of 負ける, “to lose” or “to be outdone.”",
+      "entry_id": "ja-component-bb3fb3a61cffe5f0",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-187b33c339f5d1e8",
+      "parent_entry_id": "ja-bee99f5341cf098b",
+      "part_index": 1,
+      "text": "ずに",
+      "contribution_en": "Marks the action as not happening while another action proceeds: “without doing.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-negative-connective-zu"
+      ]
+    },
+    {
+      "id": "ja-part-ed7d0478a92faac4",
+      "parent_entry_id": "ja-aab396f591575869",
+      "part_index": 1,
+      "text": "いう",
+      "contribution_en": "Links that description to the following noun in this pattern, giving the sense “of that kind.”",
+      "entry_id": "ja-7f9393374aa35e38",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-nonpast"
+      ]
+    },
+    {
+      "id": "ja-part-9a661918c0e0e638",
+      "parent_entry_id": "ja-c3b47134f98c7606",
+      "part_index": 0,
+      "text": "Vよう",
+      "contribution_en": "The verb’s volitional form presents the action as something someone might choose or intend to do.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-volitional"
+      ]
+    },
+    {
+      "id": "ja-part-eaef0053e0ed5fbf",
+      "parent_entry_id": "ja-c3b47134f98c7606",
+      "part_index": 1,
+      "text": "と",
+      "contribution_en": "Marks that contemplated action as what someone would try to do with する.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-volitional-to-suru"
+      ]
+    },
+    {
+      "id": "ja-part-deb7da47bf71253b",
+      "parent_entry_id": "ja-c3b47134f98c7606",
+      "part_index": 2,
+      "text": "は",
+      "contribution_en": "Adds contrastive emphasis to the denial of making that attempt.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-topic-wa"
+      ]
+    },
+    {
+      "id": "ja-part-3426946053b9e2b7",
+      "parent_entry_id": "ja-c3b47134f98c7606",
+      "part_index": 3,
+      "text": "しない",
+      "contribution_en": "Negates する, completing the meaning “does not try.”",
+      "entry_id": "ja-d42d6536d342b961",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-negative"
+      ]
+    },
+    {
+      "id": "ja-part-cfdcb6d2275d680e",
+      "parent_entry_id": "ja-532622ec9efb5a7d",
+      "part_index": 0,
+      "text": "不安",
+      "contribution_en": "Unease or anxiety; the state someone comes to be in.",
+      "entry_id": "ja-component-a999561153e4b53c",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-f1a8e59039d673d1",
+      "parent_entry_id": "ja-532622ec9efb5a7d",
+      "part_index": 1,
+      "text": "になる",
+      "contribution_en": "Marks becoming or coming to be in the state named before に.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-adjective-ni-naru"
+      ]
+    },
+    {
+      "id": "ja-part-0ad07ddbc51b516b",
+      "parent_entry_id": "ja-dc61a46960daa5a4",
+      "part_index": 2,
+      "text": "に",
+      "contribution_en": "marks the shared time as the circumstance of an action",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noun-adverbial-ni"
+      ]
+    },
+    {
+      "id": "ja-part-6d5f0b921c2db003",
+      "parent_entry_id": "ja-1183c3c5e9f7757e",
+      "part_index": 0,
+      "text": "たく",
+      "contribution_en": "The く form of ～たい, marking a wish to do the preceding action.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-v-taku-naru",
+        "ja-grammar-desiderative-tai"
+      ]
+    },
+    {
+      "id": "ja-part-a899ba27e5ef1df5",
+      "parent_entry_id": "ja-e5b4b2fff93b0543",
+      "part_index": 0,
+      "text": "立ち",
+      "contribution_en": "The connective form of 立つ, evoking getting up or leaving one’s position; literal getting up is not required.",
+      "entry_id": "ja-de5bb6db3916833b",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-62faa720a59a1ed7",
+      "parent_entry_id": "ja-e5b4b2fff93b0543",
+      "part_index": 1,
+      "text": "去る",
+      "contribution_en": "To go away; it makes the departure from a place explicit.",
+      "entry_id": "ja-component-5a5ad9f9acbfec94",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-a899245dceee07e9",
+      "parent_entry_id": "ja-b81462e9dacfaa51",
+      "part_index": 0,
+      "text": "たび",
+      "contribution_en": "Means “occasion”; the first occurrence begins the repeated pattern.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-repeated-time-noun"
+      ]
+    },
+    {
+      "id": "ja-part-a875b90935374a96",
+      "parent_entry_id": "ja-b81462e9dacfaa51",
+      "part_index": 1,
+      "text": "たび",
+      "contribution_en": "Repeats “occasion,” conveying many separate occasions.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-repeated-time-noun"
+      ]
+    },
+    {
+      "id": "ja-part-15df68dc106f409a",
+      "parent_entry_id": "ja-9387862c9e734c7e",
+      "part_index": 1,
+      "text": "笑い",
+      "contribution_en": "laughter",
+      "entry_id": "ja-component-f724960112f9979e",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-7c199d6a64586879",
+      "parent_entry_id": "ja-ab19ce20c9c6e8c2",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "marks what is encountered",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-ni-endured-experience"
+      ]
+    },
+    {
+      "id": "ja-part-75c66f5851fc4e18",
+      "parent_entry_id": "ja-e309d4733b3651f1",
+      "part_index": 0,
+      "text": "二百",
+      "contribution_en": "Two hundred.",
+      "entry_id": "ja-component-06fc9e416c278f55",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-06490b28e20f987d",
+      "parent_entry_id": "ja-800a1653800b6f08",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Marks the role that 相手 fills: “as an opponent.”",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noun-ni-naru-status"
+      ]
+    },
+    {
+      "id": "ja-part-d7a7bf3ca5e49270",
+      "parent_entry_id": "ja-a819d2e7f9475f40",
+      "part_index": 1,
+      "text": "掃除",
+      "contribution_en": "Means cleaning; with 大, it refers to cleaning on an extensive scale.",
+      "entry_id": "ja-component-2e199039edb98f0d",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-8dc5dfc6401b4725",
+      "parent_entry_id": "ja-ceda840199bf23b1",
+      "part_index": 0,
+      "text": "追い",
+      "contribution_en": "The linking form of 追う (おう, “to pursue”); it supplies the chasing action.",
+      "entry_id": "ja-component-5202effebb7afbcc",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-acc05b6b82ef7271",
+      "parent_entry_id": "ja-a10203c49ed241a2",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Marks the indicated degree or amount as an adverbial measure.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-ni-degree"
+      ]
+    },
+    {
+      "id": "ja-part-303f5dbfd0aa0b3a",
+      "parent_entry_id": "ja-9d77a2670f52899d",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Gives 急 an adverbial role: how something happens.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noun-adverbial-ni"
+      ]
+    },
+    {
+      "id": "ja-part-ad7a790a792c7e67",
+      "parent_entry_id": "ja-22a8813513c1c62c",
+      "part_index": 0,
+      "text": "ため息",
+      "contribution_en": "a sigh",
+      "entry_id": "ja-component-0c1e46cd7d982feb",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-c297e8527f88c37b",
+      "parent_entry_id": "ja-22a8813513c1c62c",
+      "part_index": 1,
+      "text": "を",
+      "contribution_en": "marks ため息 as the object of つく",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-object-wo"
+      ]
+    },
+    {
+      "id": "ja-part-d2d6852b5d8ce226",
+      "parent_entry_id": "ja-78ccc41743342f6d",
+      "part_index": 1,
+      "text": "かげ",
+      "contribution_en": "Also means protection, help, or benefit in modern Japanese; these meanings connect with おかげ’s helpful sense.",
+      "entry_id": "ja-component-4dfba0a465882747",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-51e0e70e17443fc3",
+      "parent_entry_id": "ja-2520fbb46ad6b26e",
+      "part_index": 0,
+      "text": "怖く",
+      "contribution_en": "怖い in its く-form, supplying the state that develops: frightened or scary.",
+      "entry_id": "ja-aef5df4e70582efc",
+      "grammar_entry_ids": [
+        "ja-grammar-i-adjective-adverbial"
+      ]
+    },
+    {
+      "id": "ja-part-c35d1734c45555c9",
+      "parent_entry_id": "ja-750889314c05ba6f",
+      "part_index": 0,
+      "text": "探し",
+      "contribution_en": "The combining form of 探す, contributing the act of searching for something.",
+      "entry_id": "ja-83cb2480739d0c16",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-64d8b2a2eb645919",
+      "parent_entry_id": "ja-fbcf492d2fce1a9a",
+      "part_index": 1,
+      "text": "で",
+      "contribution_en": "Marks that point as the setting for what follows.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-location-de"
+      ]
+    },
+    {
+      "id": "ja-part-cf00f35c1ed0a310",
+      "parent_entry_id": "ja-edc3aebadc2f76f1",
+      "part_index": 1,
+      "text": "変わらず",
+      "contribution_en": "Without changing; this contributes the sense that there is no apparent change from before.",
+      "entry_id": "ja-e90a015fc7eca7be",
+      "grammar_entry_ids": [
+        "ja-grammar-negative-connective-zu"
+      ]
+    },
+    {
+      "id": "ja-part-5620e5c0b67d0c4c",
+      "parent_entry_id": "ja-d17fc5108ddcab8d",
+      "part_index": 2,
+      "text": "眼鏡",
+      "contribution_en": "glasses",
+      "entry_id": "ja-d17fc5108ddcab8d",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-73704746f8e364ad",
+      "parent_entry_id": "ja-5f5019e722853c7a",
+      "part_index": 0,
+      "text": "持ち",
+      "contribution_en": "Carries the idea of holding or carrying something, from 持つ.",
+      "entry_id": "ja-9dc44f0724a6f499",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-027e1a0438c283db",
+      "parent_entry_id": "ja-6b92238ae2737592",
+      "part_index": 1,
+      "text": "は",
+      "contribution_en": "marks 実, “reality” or “fact,” as the topic",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-topic-wa"
+      ]
+    },
+    {
+      "id": "ja-part-849895b88a287423",
+      "parent_entry_id": "ja-2d2a2c6b166d4ac8",
+      "part_index": 1,
+      "text": "だ",
+      "contribution_en": "States that the intention or plan holds.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-copula-da"
+      ]
+    },
+    {
+      "id": "ja-part-bbaa4eae8bfc59cd",
+      "parent_entry_id": "ja-c1b99931c1b38119",
+      "part_index": 1,
+      "text": "いい",
+      "contribution_en": "Means “good” or “suitable,” evaluating the proposed action as a good or sufficient course.",
+      "entry_id": "ja-1b298fa066a3335a",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-e2d2bc4abaf72eb8",
+      "parent_entry_id": "ja-837a602c7c6a5171",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "Marks the resulting state.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noun-ni-naru-status"
+      ]
+    },
+    {
+      "id": "ja-part-fdeeebb197814951",
+      "parent_entry_id": "ja-c95dec7efee70cbe",
+      "part_index": 1,
+      "text": "差し",
+      "contribution_en": "light shining or falling in",
+      "entry_id": "ja-component-1b42802e9f6d646e",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    },
+    {
+      "id": "ja-part-5e30b0151789edc6",
+      "parent_entry_id": "ja-8a8f90020009c744",
+      "part_index": 0,
+      "text": "短く",
+      "contribution_en": "The く-form of 短い (“short”), supplying the state that changes.",
+      "entry_id": "ja-component-e013db0cf0078b5e",
+      "grammar_entry_ids": [
+        "ja-grammar-i-adjective-adverbial"
+      ]
+    },
+    {
+      "id": "ja-part-3be628ee2094fd7c",
+      "parent_entry_id": "ja-74b1b63f6839d676",
+      "part_index": 0,
+      "text": "幼稚",
+      "contribution_en": "early childhood; referring to very young children",
+      "entry_id": "ja-component-ded10977e42e9297",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-b7e112d834398961",
+      "parent_entry_id": "ja-67b16f6ef6b0d813",
+      "part_index": 0,
+      "text": "きり",
+      "contribution_en": "cutoff, limit, or endpoint",
+      "entry_id": "ja-component-349f51a8c1cf1b3a",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-082234daef24c8ee",
+      "parent_entry_id": "ja-67b16f6ef6b0d813",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "marks きり as what does not exist",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-222a443873f2d58a",
+      "parent_entry_id": "ja-f794299ded1fa671",
+      "part_index": 1,
+      "text": "が",
+      "contribution_en": "marks 気持ち as what becomes calm",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-7472b6f7fc334fd7",
+      "parent_entry_id": "ja-72fc412c0ebeb6d4",
+      "part_index": 1,
+      "text": "に",
+      "contribution_en": "marks the state that something becomes",
+      "entry_id": "ja-69bca44c707cdf61",
+      "grammar_entry_ids": [
+        "ja-grammar-noun-ni-naru-status"
+      ]
+    },
+    {
+      "id": "ja-part-977b4fa8a12e4ff3",
+      "parent_entry_id": "ja-6c794d788a7ee69b",
+      "part_index": 1,
+      "text": "と",
+      "contribution_en": "joins 骨 and 皮",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-to-coordination"
+      ]
+    },
+    {
+      "id": "ja-part-fd0d38c170314fee",
+      "parent_entry_id": "ja-6c794d788a7ee69b",
+      "part_index": 3,
+      "text": "ばかり",
+      "contribution_en": "nothing but; only",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-nothing-but-bakari"
+      ]
+    },
+    {
+      "id": "ja-part-8d95c387122996ce",
+      "parent_entry_id": "ja-004f506f32fc0b84",
+      "part_index": 1,
+      "text": "の",
+      "contribution_en": "Links 腹 to 足し, marking the addition as for the stomach.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-no-noun-modifier"
+      ]
+    },
+    {
+      "id": "ja-part-63a8fd24ab01cbc8",
+      "parent_entry_id": "ja-004f506f32fc0b84",
+      "part_index": 3,
+      "text": "に",
+      "contribution_en": "Marks the role or result that something serves as.",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-noun-ni-naru-status"
+      ]
+    },
+    {
+      "id": "ja-part-bf1eae7947c6e19f",
+      "parent_entry_id": "ja-e724ad9076f016f8",
+      "part_index": 1,
+      "text": "を",
+      "contribution_en": "marks 欲 as what is spoken of",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-object-wo"
+      ]
+    },
+    {
+      "id": "ja-part-dde4dfaff674eca1",
+      "parent_entry_id": "ja-e724ad9076f016f8",
+      "part_index": 2,
+      "text": "言えば",
+      "contribution_en": "the conditional form of 言う, “if one speaks of”",
+      "entry_id": "ja-7f9393374aa35e38",
+      "grammar_entry_ids": [
+        "ja-grammar-plain-conditional-ba"
+      ]
+    },
+    {
+      "id": "ja-part-aaa86944c622bfa3",
+      "parent_entry_id": "ja-e724ad9076f016f8",
+      "part_index": 3,
+      "text": "きり",
+      "contribution_en": "end or limit",
+      "entry_id": "ja-component-349f51a8c1cf1b3a",
+      "grammar_entry_ids": []
+    },
+    {
+      "id": "ja-part-eb0227745532e105",
+      "parent_entry_id": "ja-e724ad9076f016f8",
+      "part_index": 4,
+      "text": "が",
+      "contribution_en": "marks きり as what does not exist",
+      "entry_id": "",
+      "grammar_entry_ids": [
+        "ja-grammar-subject-ga"
+      ]
+    },
+    {
+      "id": "ja-part-0973980faec9e24f",
+      "parent_entry_id": "ja-component-0c1e46cd7d982feb",
+      "part_index": 0,
+      "text": "ため",
+      "contribution_en": "Suggests breath held or built up before release, as in 溜める.",
+      "entry_id": "ja-component-109d50e5a2769d74",
+      "grammar_entry_ids": [
+        "ja-grammar-conjunctive-stem"
+      ]
+    }
+  ],
+  "review_digest": "21eb643df517a9a81db1c7de110481329356a18ef618a85c4eb0935e4fb03750"
+}

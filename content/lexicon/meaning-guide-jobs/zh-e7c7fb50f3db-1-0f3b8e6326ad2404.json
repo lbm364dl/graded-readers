@@ -1,0 +1,31 @@
+{
+  "id": "zh-e7c7fb50f3db-1-0f3b8e6326ad2404",
+  "entry_id": "zh-e7c7fb50f3db-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-e7c7fb50f3db-1",
+      "headword": "早",
+      "kind": "word",
+      "reading": "zǎo",
+      "senses": [
+        {
+          "id": "zh-e7c7fb50f3db-1-s1",
+          "definition": "early; before the usual or expected time"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他很早失去父亲，依靠手艺养家，也一直孝顺母亲。",
+        "gloss": "early",
+        "sense_id": "zh-e7c7fb50f3db-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "43ae8065d15783f4e3a8c09df5ccc90ae37213a48b0a848557d961de50b989e2"
+}

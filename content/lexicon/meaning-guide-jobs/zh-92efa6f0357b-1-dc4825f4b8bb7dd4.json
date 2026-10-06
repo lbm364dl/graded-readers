@@ -1,0 +1,31 @@
+{
+  "id": "zh-92efa6f0357b-1-dc4825f4b8bb7dd4",
+  "entry_id": "zh-92efa6f0357b-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-92efa6f0357b-1",
+      "headword": "挡住",
+      "kind": "construction",
+      "reading": "dǎng zhù",
+      "senses": [
+        {
+          "id": "zh-92efa6f0357b-1-s1",
+          "definition": "to block or obstruct, preventing passage"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "他率领打着红旗的军队追上来，挡住了黄巾军的路。",
+        "gloss": "block",
+        "sense_id": "zh-92efa6f0357b-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "b6501c08a8b5a92aac95f0600921367e5fcaf672ba0a59cda424143df6601ecc"
+}

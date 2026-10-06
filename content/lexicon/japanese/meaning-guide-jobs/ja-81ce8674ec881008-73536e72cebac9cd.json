@@ -1,0 +1,32 @@
+{
+  "id": "ja-81ce8674ec881008-73536e72cebac9cd",
+  "entry_id": "ja-81ce8674ec881008",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-81ce8674ec881008",
+      "headword": "足し",
+      "reading": "たし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-81ce8674ec881008-1",
+          "definition": "An addition or contribution that supplements or makes up a needed amount."
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が、家なら教師の方が大きいようだと言うと、黒は「家が大きくても腹の足しにはならない」と怒り、乱暴に立ち去った。",
+        "gloss": "help; contribution",
+        "sense_id": "ja-81ce8674ec881008-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "98c45b0befedfc658070cdf228c8f4a0b57761f527b905151dbeb0fb6746e833"
+}

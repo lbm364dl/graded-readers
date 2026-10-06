@@ -1,0 +1,37 @@
+{
+  "id": "ja-4c9ffd1e48efa600-aeee81b7f2868f6a",
+  "entry_id": "ja-4c9ffd1e48efa600",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4c9ffd1e48efa600",
+      "headword": "向かう",
+      "reading": "むかう",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-4c9ffd1e48efa600-1",
+          "definition": "to head toward a destination; to face something"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "明るく、暖かそうな方へ向かって歩いた。",
+        "gloss": "heading toward",
+        "sense_id": "ja-4c9ffd1e48efa600-1"
+      },
+      {
+        "sentence": "そして、のそのそ裏へ向かった。",
+        "gloss": "headed toward",
+        "sense_id": "ja-4c9ffd1e48efa600-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "f3ca9bc75f13cb4f9e92dc7e70f92b02eb893108649d330cdce5085d2ac75ada"
+}

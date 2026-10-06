@@ -2,7 +2,11 @@ from pathlib import Path
 import json
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = PROJECT_ROOT / "data"
+# JLPT is a sub-package of the repository, while the maintained vocabulary
+# corpus is shared under <repo>/data/japanese.  The old path pointed at
+# <repo>/jlpt/data, which does not exist in a normal checkout.
+REPOSITORY_ROOT = PROJECT_ROOT.parent
+DATA_DIR = REPOSITORY_ROOT / "data" / "japanese"
 OUTPUT_DIR = PROJECT_ROOT / "output"
 READERS_DIR = PROJECT_ROOT / "readers"
 

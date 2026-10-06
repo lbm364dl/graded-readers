@@ -1,0 +1,32 @@
+{
+  "id": "ja-adb63bb5c63b5ff1-70b629036e8691e2",
+  "entry_id": "ja-adb63bb5c63b5ff1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-adb63bb5c63b5ff1",
+      "headword": "つや",
+      "reading": "つや",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-adb63bb5c63b5ff1-1",
+          "definition": "luster; sheen; gloss"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "つやのあった毛はだんだん色があせて抜け、きれいだった目には目やにがたまった。",
+        "gloss": "luster; sheen",
+        "sense_id": "ja-adb63bb5c63b5ff1-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "608a959b87cd06b08c6c75c2126c774315e2dd8ce49b59eab6a62d2acd04ccd4"
+}

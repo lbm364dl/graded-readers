@@ -1,0 +1,36 @@
+{
+  "id": "zh-4507f5dd9ebd-1-8608b92f7c86cff2",
+  "entry_id": "zh-4507f5dd9ebd-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-4507f5dd9ebd-1",
+      "headword": "死战",
+      "kind": "construction",
+      "reading": "sǐzhàn",
+      "senses": [
+        {
+          "id": "zh-4507f5dd9ebd-1-s1",
+          "definition": "fight with all one's strength, risking death"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张梁、张宝死战，才逃了出去。",
+        "gloss": "fight desperately",
+        "sense_id": "zh-4507f5dd9ebd-1-s1"
+      },
+      {
+        "sentence": "张梁、张宝死战脱身，曹操随即带兵追击。",
+        "gloss": "fight with all one's strength, risking death",
+        "sense_id": "zh-4507f5dd9ebd-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "276c8945f163ce1ea7087303df5f1aa77d0433313962241e4fd25cfd296fa197"
+}

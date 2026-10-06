@@ -1,0 +1,32 @@
+{
+  "id": "ja-cf6fd4f9ed106159-fa119ca6301e945a",
+  "entry_id": "ja-cf6fd4f9ed106159",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-cf6fd4f9ed106159",
+      "headword": "物差し",
+      "reading": "ものさし",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-cf6fd4f9ed106159-1",
+          "definition": "ruler; a graduated tool for measuring length"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "先日などは、物差しで尻をひどくたたかれた。",
+        "gloss": "ruler",
+        "sense_id": "ja-cf6fd4f9ed106159-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "e076e3aa826a248f3e3a614c5a7c36383387fe00e1c718ac4021027c4cdd4064"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "zh-52f67bbd5c24-1-ae898e6826052eca",
+  "entry_id": "zh-52f67bbd5c24-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-52f67bbd5c24-1",
+      "headword": "结在",
+      "kind": "construction",
+      "reading": "jié zài",
+      "senses": [
+        {
+          "id": "zh-52f67bbd5c24-1-s1",
+          "definition": "to join together and remain together"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "张让等十名宦官结在一起作恶，被称为“十常侍”。",
+        "gloss": "banded together",
+        "sense_id": "zh-52f67bbd5c24-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "2637214296f719318d73e77d6f8f476b5415b462d7f6880b9df3f72e93572332"
+}

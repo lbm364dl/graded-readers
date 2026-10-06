@@ -1,0 +1,32 @@
+{
+  "id": "ja-5e7ce10fe65d6442-9ef3b0b285bceaab",
+  "entry_id": "ja-5e7ce10fe65d6442",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-5e7ce10fe65d6442",
+      "headword": "気楽",
+      "reading": "きらく",
+      "kind": "word",
+      "senses": [
+        {
+          "id": "ja-5e7ce10fe65d6442-1",
+          "definition": "carefree; comfortable and at ease"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "ごちそうを食べるより、寝ている方が気楽だからである。",
+        "gloss": "because it is comfortable; because it is carefree",
+        "sense_id": "ja-5e7ce10fe65d6442-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "ca1807ba422c5c8c0a0fc1949e8387bb53115c3e904cbc18100898d932fb6659"
+}

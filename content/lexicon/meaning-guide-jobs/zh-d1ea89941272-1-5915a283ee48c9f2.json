@@ -1,0 +1,31 @@
+{
+  "id": "zh-d1ea89941272-1-5915a283ee48c9f2",
+  "entry_id": "zh-d1ea89941272-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-d1ea89941272-1",
+      "headword": "性情",
+      "kind": "word",
+      "reading": "xìngqíng",
+      "senses": [
+        {
+          "id": "zh-d1ea89941272-1-s1",
+          "definition": "temperament; disposition"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "刘备不太专心读书，性情宽和，话不多，喜怒很少露在脸上。",
+        "gloss": "temperament",
+        "sense_id": "zh-d1ea89941272-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "66a47327f0f701fa9e854471ad8caf7fdf2bef2a167b3555dbfcad190a3f21db"
+}

@@ -1,0 +1,82 @@
+{
+  "book_run_id": "sanguoyanyi-retelling-hsk3",
+  "status": "blocked",
+  "updated_at": "2026-08-12T09:57:33.321768+00:00",
+  "global_agent_concurrency": 2,
+  "chapter_concurrency": 2,
+  "runs": [
+    {
+      "source": "/home/catalin/graded-readers/runs/retelling-sources/sanguoyanyi/hsk3/chapter_003.txt",
+      "level": "hsk3",
+      "run_id": "sanguoyanyi-retelling-hsk3/chapter_003-hsk3",
+      "status": "blocked",
+      "chapter_cjk": 565,
+      "target_chars": 750,
+      "attempts": 3
+    },
+    {
+      "source": "/home/catalin/graded-readers/runs/retelling-sources/sanguoyanyi/hsk3/chapter_005.txt",
+      "level": "hsk3",
+      "run_id": "sanguoyanyi-retelling-hsk3/chapter_005-hsk3",
+      "status": "blocked",
+      "chapter_cjk": 630,
+      "target_chars": 750,
+      "attempts": 3
+    },
+    {
+      "source": "/home/catalin/graded-readers/runs/retelling-sources/sanguoyanyi/hsk3/chapter_010.txt",
+      "level": "hsk3",
+      "run_id": "sanguoyanyi-retelling-hsk3/chapter_010-hsk3",
+      "status": "complete",
+      "chapter_cjk": 716,
+      "target_chars": 750,
+      "attempts": 2
+    },
+    {
+      "source": "/home/catalin/graded-readers/runs/retelling-sources/sanguoyanyi/hsk3/chapter_025.txt",
+      "level": "hsk3",
+      "run_id": "sanguoyanyi-retelling-hsk3/chapter_025-hsk3",
+      "status": "blocked",
+      "chapter_cjk": 676,
+      "target_chars": 750,
+      "attempts": 3
+    },
+    {
+      "source": "/home/catalin/graded-readers/runs/retelling-sources/sanguoyanyi/hsk3/chapter_023.txt",
+      "level": "hsk3",
+      "run_id": "sanguoyanyi-retelling-hsk3/chapter_023-hsk3",
+      "status": "blocked",
+      "chapter_cjk": 583,
+      "target_chars": 750,
+      "attempts": 3
+    },
+    {
+      "source": "/home/catalin/graded-readers/runs/retelling-sources/sanguoyanyi/hsk3/chapter_036.txt",
+      "level": "hsk3",
+      "run_id": "sanguoyanyi-retelling-hsk3/chapter_036-hsk3",
+      "status": "complete",
+      "chapter_cjk": 674,
+      "target_chars": 750,
+      "attempts": 2
+    },
+    {
+      "source": "/home/catalin/graded-readers/runs/retelling-sources/sanguoyanyi/hsk3/chapter_037.txt",
+      "level": "hsk3",
+      "run_id": "sanguoyanyi-retelling-hsk3/chapter_037-hsk3",
+      "status": "blocked",
+      "chapter_cjk": 509,
+      "target_chars": 750,
+      "attempts": 3
+    },
+    {
+      "source": "/home/catalin/graded-readers/runs/retelling-sources/sanguoyanyi/hsk3/chapter_038.txt",
+      "level": "hsk3",
+      "run_id": "sanguoyanyi-retelling-hsk3/chapter_038-hsk3",
+      "status": "blocked",
+      "chapter_cjk": 684,
+      "target_chars": 750,
+      "attempts": 3
+    }
+  ],
+  "length_violations": []
+}

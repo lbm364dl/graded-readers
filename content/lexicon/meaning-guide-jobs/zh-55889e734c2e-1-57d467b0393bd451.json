@@ -1,0 +1,31 @@
+{
+  "id": "zh-55889e734c2e-1-57d467b0393bd451",
+  "entry_id": "zh-55889e734c2e-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-55889e734c2e-1",
+      "headword": "藏",
+      "kind": "word",
+      "reading": "cáng",
+      "senses": [
+        {
+          "id": "zh-55889e734c2e-1-s1",
+          "definition": "to put or keep something out of sight"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "关羽和张飞各带一部分人，藏在山的两边。",
+        "gloss": "hide",
+        "sense_id": "zh-55889e734c2e-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "c05ece1b6184550b62074e67f7e2021364db52795d4f8fa3fd21d1b6e3afe363"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ja-4a0ccaf5ca22f9c3-588cc55abbae2d9d",
+  "entry_id": "ja-4a0ccaf5ca22f9c3",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "ja-4a0ccaf5ca22f9c3",
+      "headword": "に決まっている",
+      "reading": "にきまっている",
+      "kind": "construction",
+      "senses": [
+        {
+          "id": "ja-4a0ccaf5ca22f9c3-1",
+          "definition": "be certain; be sure to be"
+        }
+      ],
+      "language": "japanese"
+    },
+    "examples": [
+      {
+        "sentence": "吾輩が「車屋と教師では、どちらが偉いか」と尋ねると、黒は「車屋の方が強いに決まっている。",
+        "gloss": "is definitely; is certain to be",
+        "sense_id": "ja-4a0ccaf5ca22f9c3-1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "3cee05c9615cd5232a3f4f773139c8a8bbcd3a0db3a87c04773132371af068a0"
+}

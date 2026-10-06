@@ -1,0 +1,31 @@
+{
+  "id": "zh-ca4f5ee82e28-1-23fb11c1a411b0f2",
+  "entry_id": "zh-ca4f5ee82e28-1",
+  "reason": "new_entry",
+  "item": {
+    "entry": {
+      "id": "zh-ca4f5ee82e28-1",
+      "headword": "然后",
+      "kind": "word",
+      "reading": "ránhòu",
+      "senses": [
+        {
+          "id": "zh-ca4f5ee82e28-1-s1",
+          "definition": "after that; then"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "sentence": "明日，三人在园中祭告天地，结为兄弟，同心协力救民，然后才能图大事。",
+        "gloss": "then",
+        "sense_id": "zh-ca4f5ee82e28-1-s1"
+      }
+    ],
+    "linked_components": []
+  },
+  "previous": null,
+  "requests": [],
+  "status": "reviewed",
+  "result_digest": "34eecc70f04098f3f4cb54179fbf8aef52f37ae81fa6b5c78e51e606c0922d15"
+}
