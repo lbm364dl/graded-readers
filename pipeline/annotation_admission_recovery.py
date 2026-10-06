@@ -88,6 +88,17 @@ def verify_protocol_recovery(run_dir, ledger_name, *, protocol_request=None):
  if ledger.get('semantic_round') is not None:
   from pipeline.annotation_semantic_round import verified_semantic_prior
   ledger=verified_semantic_prior(run_dir,ledger_name,ledger)
+ return _verify_protocol_recovery_core(run_dir,ledger_name,ledger,protocol_request=protocol_request)
+
+def _verify_protocol_recovery_core(run_dir,ledger_name,ledger,*,protocol_request=None):
+ """Verify recovery evidence from a ledger whose semantic prior is already authenticated.
+
+ This private core deliberately retains every recovery snapshot/request/failure
+ artifact check. Public verify_protocol_recovery authenticates semantic prior
+ authority before entering it; verify_semantic_round can reuse its own verified
+ result instead of replaying that expensive semantic parent a second time.
+ """
+ directory=checked_directory(Path(run_dir).absolute()/'annotation-admission')
  receipt=ledger.get('protocol_recovery')
  if not isinstance(receipt,dict) or type(receipt.get('version')) is not int or receipt['version']!=1:raise ValueError('Invalid protocol recovery receipt')
  snapshot=receipt.get('prior_snapshot','')

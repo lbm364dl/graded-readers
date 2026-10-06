@@ -6,6 +6,8 @@ import json
 from pathlib import Path
 import re
 import shlex
+import shutil
+import sys
 from jsonschema import ValidationError, validate
 from pipeline.worker_paths import atomic_write_managed, checked_directory
 
@@ -172,7 +174,22 @@ def build(path, prompt, schema, *, context=None, submission_repair=None):
     put_json('receipt.schema.json', RECEIPT_SCHEMA)
     put_json('validation-context.json', [{k: v[k] for k in ('chunk_text', 'language', 'surfaces', 'annotation', 'annotation_validation', 'annotation_patch_validation', 'annotation_plan_validation', 'annotation_adjudication_validation', 'annotation_research_validation', 'annotation_research_claim_revision_validation', 'lexical_request_reconciliation_validation', 'dictionary_research_revision_validation', 'dictionary_objection_accountability_validation', 'annotation_issue_targets_validation', 'annotation_run_lesson_validation', 'annotation_run_knowledge_selection_validation') if k in v} for v in contexts if isinstance(v, dict)])
     command = 'cd ' + shlex.quote(str(ROOT)) + ' && ' + shlex.quote(str(ROOT / '.venv/bin/python')) + ' -m pipeline.worker_workspace validate --workspace ' + shlex.quote(str(path.resolve())) + ' --candidate ' + shlex.quote(str(path.resolve() / 'candidate.json'))
-    put('README.txt', 'Read TASK.txt and INDEX.json. Repository root: ' + str(ROOT) + '. Repository paths in the task are relative to that root; input/reference paths in INDEX.json are relative to this workspace. Inspect relevant data and full reference entries as needed. Use your tools freely to investigate and verify. Save candidate.json and check it with:\n' + command + '\nThe local check is feedback, not independent publication approval. Submit only {"candidate_path":"candidate.json"}; do not reproduce the file contents.\n')
+    python3 = shutil.which('python3')
+    host_python_command = shlex.quote(sys.executable)
+    python3_command = shlex.quote(python3) if python3 else None
+    python_guidance = ('python3 is available at ' + python3 + '; use the shell command ' + python3_command + ' for shell scripts. '
+                       if python3 else 'python3 was not detected; use the supplied host interpreter command ' + host_python_command + ' for shell scripts. ')
+    readme = (
+        'Read TASK.txt and INDEX.json. Repository root: ' + str(ROOT) + '. '
+        'Repository paths in the task are relative to that root; from this isolated workspace, resolve a repository path such as pipeline/example.py as '
+        + str(ROOT / 'pipeline/example.py') + '. Input/reference paths in INDEX.json are relative to this workspace and must be opened exactly as written; '
+        'for example inputs/01-00-annotation.json means this workspace/inputs/01-00-annotation.json, not repository-root/inputs/.... '
+        'The host runner Python is ' + sys.executable + '; its shell command is ' + host_python_command + '. '
+        + python_guidance + 'Do not assume a python alias exists. If the stated executable is not accessible in your tool shell, report that exact limitation. '
+        'The supplied validation command below is the host-provided check. Use your tools freely to investigate and verify. '
+        'Save candidate.json and check it with:\n' + command + '\n'
+        'The local check is feedback, not independent publication approval. Submit only {"candidate_path":"candidate.json"}; do not reproduce the file contents.\n')
+    put('README.txt', readme)
     _remove_obsolete_managed_inputs(path, previous_manifest, files)
     manifest = {'version': VERSION, 'files': files}
     atomic_write_managed(path, 'manifest.json', (json.dumps(manifest, indent=2) + '\n').encode('utf-8'))

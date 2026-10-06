@@ -82,7 +82,7 @@ def verified_semantic_prior(run_dir,ledger_name,ledger,*,next_request=None):
  return prior
 
 def verify_semantic_round(run_dir,ledger_name,*,next_request=None):
- directory=_directory(run_dir,ledger_name);ledger=json.loads(checked_regular_file(directory/ledger_name).read_text());verified_semantic_prior(run_dir,ledger_name,ledger,next_request=next_request)
- from pipeline.annotation_admission_recovery import verify_protocol_recovery
- verify_protocol_recovery(run_dir,ledger_name)
+ directory=_directory(run_dir,ledger_name);ledger=json.loads(checked_regular_file(directory/ledger_name).read_text());prior=verified_semantic_prior(run_dir,ledger_name,ledger,next_request=next_request)
+ from pipeline.annotation_admission_recovery import _verify_protocol_recovery_core
+ _verify_protocol_recovery_core(run_dir,ledger_name,prior)
  return ledger['semantic_round']
