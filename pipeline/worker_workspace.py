@@ -277,7 +277,9 @@ def check(path, candidate):
             if not isinstance(input_field, str) or input_field not in input_values:
                 raise ValueError('Adjudication validation input is missing from INDEX.json')
             from pipeline.annotation_adjudication import validate_adjudication_output
-            validate_adjudication_output(value, input_values[input_field])
+            validate_adjudication_output(value, input_values[input_field],
+                run_dir=Path(adjudication_context['run_dir'])
+                if adjudication_context.get('run_dir') is not None else None)
             continue
         objection_context=context.get('dictionary_objection_accountability_validation')
         if objection_context is not None:

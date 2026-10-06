@@ -1,0 +1,120 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "approved": {
+      "type": "boolean"
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "explanation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "candidate_paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^/"
+            },
+            "uniqueItems": true,
+            "minItems": 1
+          },
+          "supporting_paths": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^/"
+            },
+            "uniqueItems": true
+          },
+          "missing_layer": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "version",
+              "anchor_paths",
+              "collection_path",
+              "identity",
+              "identity_status",
+              "identity_digest",
+              "source_interval"
+            ],
+            "properties": {
+              "version": {
+                "const": 1
+              },
+              "anchor_paths": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "collection_path": {
+                "type": "string",
+                "pattern": "^/"
+              },
+              "identity": {
+                "type": "string",
+                "minLength": 1
+              },
+              "identity_status": {
+                "enum": [
+                  "approved",
+                  "provisional",
+                  "reviewed_for_run"
+                ]
+              },
+              "identity_digest": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "source_interval": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "start",
+                  "end",
+                  "surface"
+                ],
+                "properties": {
+                  "start": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "end": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "surface": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "explanation",
+          "candidate_paths",
+          "supporting_paths"
+        ]
+      }
+    },
+    "prose_revision_reason_en": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "approved",
+    "issues",
+    "prose_revision_reason_en"
+  ]
+}

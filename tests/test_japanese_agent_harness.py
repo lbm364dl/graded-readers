@@ -81,7 +81,7 @@ async def test_japanese_semantic_repair_caller_passes_alternate_reviewed_entry(t
         async def annotation_candidate(self, index, chunk, **kwargs):
             return candidate
 
-        async def review_annotation(self, index, chunk, annotation, stage):
+        async def review_annotation(self, index, chunk, annotation, stage, **review_options):
             return ({"verdict": "revise", "issues": [{"problem": "grammar", "explanation": "Check available lessons."}]}
                     if stage == "initial" else {"verdict": "pass", "issues": []})
 
@@ -137,7 +137,7 @@ async def test_japanese_applied_semantic_review_clear_is_saved_as_distinct_adjud
         async def annotation_candidate(self, index, chunk, **kwargs):
             return copy.deepcopy(next(reversed(repaired_candidates.values()))) if repaired_candidates else copy.deepcopy(candidate)
 
-        async def review_annotation(self, index, chunk, annotation, stage):
+        async def review_annotation(self, index, chunk, annotation, stage, **review_options):
             receipts = getattr(self, "_annotation_review_receipts", None)
             if receipts is None:
                 receipts = self._annotation_review_receipts = {}
@@ -2206,7 +2206,7 @@ async def test_japanese_annotation_repairs_a_reviewed_fresh_restart():
         async def annotation_candidate(self, index, chunk, **kwargs):
             return json.loads(json.dumps(candidate))
 
-        async def review_annotation(self, index, chunk, annotation, stage):
+        async def review_annotation(self, index, chunk, annotation, stage, **review_options):
             if stage == "fresh_repair_01":
                 return {"verdict": "pass", "issues": []}
             return {
@@ -2287,7 +2287,7 @@ async def test_japanese_annotation_does_not_adopt_truncated_fresh_candidate():
                 return json.loads(json.dumps(truncated))
             return json.loads(json.dumps(complete))
 
-        async def review_annotation(self, index, chunk, annotation, stage):
+        async def review_annotation(self, index, chunk, annotation, stage, **review_options):
             if stage == "fresh_repair_01":
                 return {"verdict": "pass", "issues": []}
             return {
@@ -2342,7 +2342,7 @@ async def test_japanese_annotation_repairs_exact_but_contract_imperfect_candidat
                 ]
             return json.loads(json.dumps(valid))
 
-        async def review_annotation(self, index, chunk, annotation, stage):
+        async def review_annotation(self, index, chunk, annotation, stage, **review_options):
             if stage == "fresh_repair_01":
                 return {"verdict": "pass", "issues": []}
             return {
@@ -2387,7 +2387,7 @@ async def test_japanese_annotation_has_one_fail_closed_adjudicated_pass():
         async def annotation_candidate(self, index, chunk, **kwargs):
             return json.loads(json.dumps(candidate))
 
-        async def review_annotation(self, index, chunk, annotation, stage):
+        async def review_annotation(self, index, chunk, annotation, stage, **review_options):
             if stage == "adjudicated_final_01":
                 return {"verdict": "pass", "issues": []}
             return {

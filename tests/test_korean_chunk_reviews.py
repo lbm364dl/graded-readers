@@ -542,7 +542,7 @@ def test_checkpoint_approval_replay_preserves_original_context_with_additive_sou
             text='아이', context=current, policy=policy + ' New rule.')
     altered = copy.deepcopy(annotation)
     altered['segments'][0]['meaning_en'] = 'adult'
-    with pytest.raises(ValueError, match='policy changed'):
+    with pytest.raises(ValueError):
         reusable_checkpoint_approval(tmp_path, row, annotation=altered,
             text='아이', context=current, policy=policy)
     # Previously supplied evidence cannot be replaced by additive context.

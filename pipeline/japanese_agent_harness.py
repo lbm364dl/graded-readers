@@ -5074,7 +5074,10 @@ TEXT:\n{chunk}"""
             workspace_context={'chunk_text': chunk, 'language': 'ja'},
         )
 
-    async def review_annotation(self, index: int, chunk: str, annotation: dict[str, Any], stage: str) -> dict[str, Any]:
+    async def review_annotation(self, index: int, chunk: str, annotation: dict[str, Any], stage: str, *,
+                                candidate_linked_lexical_identity_audit_version: int | None = None,
+                                missing_layer_policy_version: int | None = None,
+                                grammar_knowledge: dict[str, Any] | None = None) -> dict[str, Any]:
         story_plan = getattr(self, "story_vocabulary_plan", {"terms": []})
         prompt = f"""Return only JSON matching the supplied schema. Independently
 audit this Japanese learner annotation. Segment text must concatenate exactly
@@ -5437,6 +5440,39 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
         carried_context, _ = bind_lifecycle_run_lessons(self, index, chunk, annotation,
             language='ja', representation='japanese-annotation', context=carried_context)
         carried_context = with_ranged_policy(carried_context, 'japanese-annotation')
+        audit_workspace = {}
+        policy_suffix = ''
+        if candidate_linked_lexical_identity_audit_version is not None:
+            if type(candidate_linked_lexical_identity_audit_version) is not int or candidate_linked_lexical_identity_audit_version != 1:
+                raise ValueError('Unsupported candidate-linked lexical identity audit version')
+            from pipeline.candidate_linked_lexical_audit import japanese_caller_audit, LEXICAL_AUDIT_GUIDANCE
+            from pipeline.japanese_dictionary_links import dictionary_entries, DICTIONARY_PATH
+            dictionary_sha256 = hashlib.sha256(DICTIONARY_PATH.read_bytes()).hexdigest()
+            audit_workspace = {'candidate_linked_lexical_identity_audit_version': 1,
+                **japanese_caller_audit(annotation, chunk, dictionary_entries(), dictionary_sha256)}
+            prompt += '\n\n' + LEXICAL_AUDIT_GUIDANCE
+            policy_suffix += '_lexical_identity_audit_v1'
+            target_context.update(audit_workspace)
+        if missing_layer_policy_version is not None:
+            if type(missing_layer_policy_version) is not int or missing_layer_policy_version != 1:
+                raise ValueError('Unsupported missing-layer policy version')
+            host_grammar_knowledge = japanese_semantic_repair_grammar_knowledge()
+            if grammar_knowledge is not None and grammar_knowledge != host_grammar_knowledge:
+                raise ValueError('Japanese grammar knowledge is not the host-authenticated registry view')
+            grammar_knowledge = host_grammar_knowledge
+            if carried_context.get('reviewed_run_lessons', {}).get('lessons'):
+                from pipeline.candidate_linked_lexical_audit import run_lesson_source_descriptors
+                grammar_knowledge = {**grammar_knowledge, 'reviewed_run_lesson_sources':
+                                     run_lesson_source_descriptors(carried_context)}
+            policy_suffix += '_missing_layer_v1'
+            target_context['missing_layer_policy_version'] = 1
+            target_context['grammar_knowledge'] = grammar_knowledge
+            target_context['annotation_issue_targets_validation'].update({
+                'missing_layer_policy_version': 1, 'grammar_knowledge': grammar_knowledge,
+                'run_dir': str(Path(self.run_dir).resolve()) if getattr(self, 'run_dir', None) else None,
+                'language': 'ja'})
+            prompt += '''\n\nMISSING-LAYER DECLARATION (version 1): When a required grammar occurrence row is absent, provide exact candidate_paths anchors and a typed missing_layer object. anchor_paths must equal candidate_paths. Use the supplied host grammar knowledge for exact identity/status/digest, and bind the exact missing source interval and collection. This reports a missing row; it does not claim the anchor value is defective.'''
+        review_stage = stage + policy_suffix
         prompt += '\n\n' + ranged_contextual_guidance(carried_context, representation='japanese-annotation')
         boundary_prompt += '\n\n' + ranged_contextual_guidance(carried_context, representation='japanese-annotation') + '\nThis specialized pass still reviews only primary segments; the ranged policy does not add overlay review to its remit.'
         if 'reviewed_run_lessons' in carried_context:
@@ -5449,32 +5485,47 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
             boundary_prompt += '\n\n' + CARRIED_RESEARCH_GUIDANCE
             target_context.update(carried_context)
         target_context.update(carried_context)
+        review_jobs = getattr(self, "_annotation_review_jobs", None)
+        if not isinstance(review_jobs, dict):
+            review_jobs = self._annotation_review_jobs = {}
+        review_jobs[(index, stage)] = [
+            f"annotations/chunk_{index:04d}/{review_stage}_review",
+            f"annotations/chunk_{index:04d}/{review_stage}_boundary_review",
+        ]
         general_review, boundary_review = await asyncio.gather(
             self.runner.call(
-                f"annotations/chunk_{index:04d}/{stage}_review", prompt,
-                SCHEMAS / "japanese-annotation-review-targets.schema.json",
+                f"annotations/chunk_{index:04d}/{review_stage}_review", prompt,
+                (Path(__file__).resolve().parent / 'schemas/japanese-annotation-review-targets-missing-layer-v1.schema.json'
+                 if missing_layer_policy_version is not None else SCHEMAS / "japanese-annotation-review-targets.schema.json"),
                 self.args.annotation_review_effort,
                 refresh=self.refresh_annotation_chunk(index),
                 workspace_context=target_context,
             ),
             self.runner.call(
-                f"annotations/chunk_{index:04d}/{stage}_boundary_review",
+                f"annotations/chunk_{index:04d}/{review_stage}_boundary_review",
                 boundary_prompt,
-                SCHEMAS / "japanese-annotation-review-targets.schema.json",
+                (Path(__file__).resolve().parent / 'schemas/japanese-annotation-review-targets-missing-layer-v1.schema.json'
+                 if missing_layer_policy_version is not None else SCHEMAS / "japanese-annotation-review-targets.schema.json"),
                 self.args.annotation_review_effort,
                 refresh=self.refresh_annotation_chunk(index),
                 workspace_context=target_context,
             ),
         )
         for raw_review in (general_review, boundary_review):
-            validate_issue_targets(raw_review, annotation, source_text=chunk,
-                                   representation="japanese-annotation", require_typed=True)
+            if missing_layer_policy_version is None:
+                validate_issue_targets(raw_review, annotation, source_text=chunk,
+                                       representation="japanese-annotation", require_typed=True)
+            else:
+                from pipeline.annotation_issue_targets import validate_issue_targets as validate_targets_v1
+                validate_targets_v1(raw_review, annotation, source_text=chunk, representation="japanese-annotation",
+                    require_typed=True, missing_layer_policy_version=1, grammar_knowledge=grammar_knowledge,
+                    run_dir=getattr(self, 'run_dir', None), language='ja')
         review_receipts = []
         run_dir = getattr(self, "run_dir", None)
         if run_dir is not None:
             for suffix, value in (("review", general_review),
                                   ("boundary_review", boundary_review)):
-                job = f"annotations/chunk_{index:04d}/{stage}_{suffix}"
+                job = f"annotations/chunk_{index:04d}/{review_stage}_{suffix}"
                 try:
                     component = bind_review_job(
                         Path(run_dir), job,
@@ -5889,7 +5940,10 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
             contract = self.annotation_contract_issues(chunk, result)
             if not self.annotation_reconstructs(chunk, result):
                 return {"verdict": "revise", "issues": contract}
-            reviewed = await self.review_annotation(index, chunk, result, stage)
+            reviewed = await self.review_annotation(index, chunk, result, stage,
+                candidate_linked_lexical_identity_audit_version=1,
+                missing_layer_policy_version=1,
+                grammar_knowledge=japanese_semantic_repair_grammar_knowledge())
             issues = list(reviewed.get("issues", []))
             seen = {
                 json.dumps(issue, ensure_ascii=False, sort_keys=True)
@@ -5913,8 +5967,9 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
             run_dir_value = getattr(self, "run_dir", None)
             if run_dir_value is None:
                 return None
-            jobs = [f"annotations/chunk_{index:04d}/{stage}_review",
-                    f"annotations/chunk_{index:04d}/{stage}_boundary_review"]
+            jobs = getattr(self, "_annotation_review_jobs", {}).get((index, stage), [
+                f"annotations/chunk_{index:04d}/{stage}_review",
+                f"annotations/chunk_{index:04d}/{stage}_boundary_review"])
             try:
                 return normal_review_receipt(
                     Path(run_dir_value), jobs, current_review, candidate, chunk)
@@ -5956,6 +6011,8 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
             repair_context = with_ranged_policy(repair_context, 'japanese-annotation')
             repair_context, _ = bind_lifecycle_run_lessons(self, index, chunk, base,
                 language='ja', representation='japanese-annotation', context=repair_context)
+            from pipeline.annotation_repair_policy_context import missing_layer_repair_context
+            repair_context = missing_layer_repair_context(repair_context, findings.get("issues", []))
             semantic = await repair_annotation(
                 self,
                 f"annotations/chunk_{index:04d}/{stage}_semantic",
@@ -6062,6 +6119,9 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                         fresh_context['reviewed_run_lessons'], candidate=result,
                         source_text=chunk, language='ja', representation='japanese-annotation',
                         context=fresh_context, current_review=findings)['references']
+                from pipeline.annotation_repair_policy_context import missing_layer_repair_context
+                fresh_context = missing_layer_repair_context(
+                    fresh_context, findings.get('issues', []))
                 from pipeline.annotation_semantic_derivation import verified_semantic_derivation
                 derivation = verified_semantic_derivation(Path(self.run_dir),
                     candidate=result, source_text=chunk, language="ja",
@@ -6179,6 +6239,10 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                 continue
             result = candidate
             findings = await review(stage)
+            # Keep prior history and carried evidence while dropping an earlier
+            # verdict's authority over this independent fresh review.
+            from pipeline.annotation_repair_policy_context import drop_stale_adjudication_authority
+            tail_adjudication_context = drop_stale_adjudication_authority(tail_adjudication_context)
             attempt_record = {"stage": stage, "annotation": result, "review": findings,
                               "semantic_repair": repair_evidence}
             proof = ordinary_receipt(stage, findings, result)
@@ -6242,6 +6306,8 @@ TEXT:\n{chunk}\n\nANNOTATION:\n{json.dumps(annotation, ensure_ascii=False, inden
                         context['reviewed_run_lessons'], candidate=result,
                         source_text=chunk, language='ja', representation='japanese-annotation',
                         context=context, current_review=findings)['references']
+                from pipeline.annotation_repair_policy_context import missing_layer_repair_context
+                context = missing_layer_repair_context(context, findings.get('issues', []))
                 from pipeline.annotation_semantic_derivation import verified_semantic_derivation
                 derivation = verified_semantic_derivation(Path(self.run_dir),
                     candidate=result, source_text=chunk, language="ja",

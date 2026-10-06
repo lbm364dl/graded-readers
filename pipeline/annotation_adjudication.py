@@ -107,7 +107,51 @@ def _versioned_instructions(policy_version: int) -> str:
     if policy_version >= 7:
         from pipeline.annotation_review_guidance import ENDING_REPLACEMENT_GUIDANCE
         instructions += '\n\n' + ENDING_REPLACEMENT_GUIDANCE
+    if policy_version >= 8:
+        instructions += '''\n\nMISSING-LAYER ADJUDICATION (version 8): A current issue may carry a host-validated `missing_layer` declaration. Its `candidate_paths` are diagnostic anchors for the absent row; they do not claim those existing scalar values are defective and do not authorize scalar edits. Classify every declared anchor exactly as supplied. The host may route the declared append only if every exact anchor is bound and actionable. Never create, alter, or infer a missing-layer declaration, identity, collection, or source interval. If the declaration or any anchor is unsupported, uncertain, incomplete, or mismatched, the host will not authorize the append.'''
     return instructions
+
+
+def _missing_layer_context_parts(context: Any) -> tuple[int | None, dict | None]:
+    if not isinstance(context, dict):
+        return None, None
+    nested = context.get('chunk_review_context')
+    nested = nested if isinstance(nested, dict) else {}
+    markers = [row['missing_layer_authority_policy_version']
+               for row in (context, nested)
+               if 'missing_layer_authority_policy_version' in row]
+    if not markers:
+        return None, None
+    if any(type(value) is not int or value != 1 for value in markers) or len(set(markers)) != 1:
+        raise AdjudicationError('Missing-layer adjudication context has an invalid or conflicting policy marker')
+    knowledge = context.get('grammar_knowledge', nested.get('grammar_knowledge'))
+    if not isinstance(knowledge, dict):
+        raise AdjudicationError('Missing-layer adjudication requires host grammar knowledge')
+    return 1, knowledge
+
+
+def _validate_missing_layer_review(*, language, representation, candidate, current_review,
+                                   context, source_text, run_dir):
+    marker, knowledge = _missing_layer_context_parts(context)
+    issues = current_review.get('issues', []) if isinstance(current_review, dict) else []
+    declarations = [issue for issue in issues if isinstance(issue, dict) and 'missing_layer' in issue]
+    if not declarations:
+        if marker is not None:
+            raise AdjudicationError('Missing-layer policy marker requires a declaration in the immutable current review')
+        return False
+    if marker != 1:
+        raise AdjudicationError('Missing-layer current review requires explicit adjudication policy version 1')
+    if not isinstance(source_text, str) or run_dir is None:
+        raise AdjudicationError('Missing-layer adjudication requires exact source text and host run directory')
+    from pipeline.annotation_issue_targets import validate_issue_targets
+    try:
+        validate_issue_targets(current_review, candidate, source_text=source_text,
+            representation=representation, require_typed=True,
+            missing_layer_policy_version=1, grammar_knowledge=knowledge,
+            run_dir=run_dir, language=language)
+    except (ValueError, TypeError, KeyError, IndexError) as exc:
+        raise AdjudicationError(f'Missing-layer current review failed host target validation: {exc}') from exc
+    return True
 
 
 INSTRUCTIONS = """Independently adjudicate the current rejected annotation review. This is a linguistic evidence review, not a vote among prior reviewers. Review every current issue exactly once. Classify it unsupported only when a supplied authoritative linguistic reference demonstrates that the current candidate field is acceptable; prior reviews, approvals, and the candidate's own explanation are never linguistic evidence. A draft lesson proposal is not an approved lesson. A source passage can ground application but is not by itself proof that a disputed linguistic analysis is valid. For an annotation category field only, an approved lexical lesson's own lexical-kind value may support the same candidate category when its headword and reading exactly match the targeted segment. Generic reference-wrapper kinds, titles, and other metadata are never linguistic evidence.
@@ -489,11 +533,17 @@ def _bound_disposition(row: dict, issue: Any, inputs: dict, observations: list[d
     canonical = None
     canonical_invalid = False
     if policy_version >= 4:
-        try:
-            canonical = issue_target_paths(issue, current, source_text=inputs.get('source_text'),
-                                           representation=inputs['representation'])
-        except IssueTargetError:
-            canonical_invalid = True
+        if policy_version == 8 and isinstance(issue, dict) and 'missing_layer' in issue:
+            # Policy 8 validates each declaration against the host knowledge,
+            # source interval, and candidate before the immutable input is
+            # written. The target paths remain those exact validated anchors.
+            canonical = issue.get('candidate_paths')
+        else:
+            try:
+                canonical = issue_target_paths(issue, current, source_text=inputs.get('source_text'),
+                                               representation=inputs['representation'])
+            except IssueTargetError:
+                canonical_invalid = True
     if canonical is not None or canonical_invalid:
         disposition = (row['disposition'] if not canonical_invalid
             and row['target_binding'] == 'exact'
@@ -533,7 +583,12 @@ def _bound_disposition(row: dict, issue: Any, inputs: dict, observations: list[d
     return disposition
 
 
-def _validate_output(output: dict, inputs: dict) -> dict:
+def _validate_output(output: dict, inputs: dict, *, run_dir=None) -> dict:
+    if inputs.get('host_binding_policy_version') == 8:
+        _validate_missing_layer_review(language=inputs['language'],
+            representation=inputs['representation'], candidate=inputs['candidate'],
+            current_review=inputs['current_review'], context=inputs['context'],
+            source_text=inputs['source_text'], run_dir=run_dir)
     validate(output, _output_schema(inputs.get('host_binding_policy_version', 1)))
     if inputs.get('host_binding_policy_version', 1) >= 6:
         return _validate_output_targets(output, inputs)
@@ -782,6 +837,38 @@ def _validate_output_targets(output: dict, inputs: dict) -> dict:
                 'target_dispositions': actionable,
                 'path_history': _prior_path_history(inputs['prior_history'], inputs['candidate'], action_paths,
                                                    inputs['source_text'], inputs['representation'])})
+    if inputs.get('host_binding_policy_version') == 8:
+        original_issues = {row['issue_id']: row['issue']
+                           for row in inputs['normalized_review']['issues']}
+        retained = []
+        for diagnosis in diagnoses:
+            original = original_issues.get(diagnosis.get('issue_id'))
+            declaration = original.get('missing_layer') if isinstance(original, dict) else None
+            if declaration is None:
+                retained.append(diagnosis)
+                continue
+            declared_anchors = declaration.get('anchor_paths')
+            target_dispositions = diagnosis.get('target_dispositions', [])
+            actionable_anchors = [row.get('path') for row in target_dispositions
+                                  if row.get('disposition') == 'actionable']
+            # A missing-layer anchor is never a scalar edit target. Only carry
+            # its original host-validated declaration when every exact anchor
+            # is actionable; mixed dispositions leave this issue nonrepairable.
+            if (isinstance(declared_anchors, list)
+                    and len(actionable_anchors) == len(declared_anchors)
+                    and set(actionable_anchors) == set(declared_anchors)
+                    and all(row.get('target_binding') == 'exact'
+                            for row in target_dispositions)):
+                retained.append({**diagnosis, 'missing_layer': copy.deepcopy(declaration)})
+            else:
+                # A partial disposition cannot authorize the grouped append.
+                # Preserve each target-level finding, but make the issue and
+                # result explicitly nonrepairable/uncertain so callers do not
+                # loop on an actionable status with no append diagnosis.
+                for classification in result['classifications']:
+                    if classification.get('issue_id') == diagnosis.get('issue_id'):
+                        classification['disposition'] = 'uncertain'
+        diagnoses = retained
     # New defects retain their independently validated exact field scope.
     diagnoses.extend(result['repair_diagnoses'])
     result['repair_diagnoses'] = diagnoses
@@ -794,17 +881,17 @@ def _validate_output_targets(output: dict, inputs: dict) -> dict:
     return result
 
 
-def validate_adjudication_output(output: dict, inputs: dict) -> dict:
+def validate_adjudication_output(output: dict, inputs: dict, *, run_dir=None) -> dict:
     """Pure, deterministic worker-workspace validation hook."""
-    return _validate_output(output, inputs)
+    return _validate_output(output, inputs, run_dir=run_dir)
 
 
 def _build_inputs(*, language: str, representation: str, candidate: Any,
                   current_review: dict, prior_history: Any, context: Any,
                   known_reference_input: dict, deterministic_gate_evidence: dict,
                   normal_review_receipt: dict, source_text: str | None,
-                  host_binding_policy_version: int = 5) -> dict:
-    if host_binding_policy_version == 7 and type(host_binding_policy_version) is not int:
+                  host_binding_policy_version: int = 5, run_dir=None) -> dict:
+    if host_binding_policy_version in {7, 8} and type(host_binding_policy_version) is not int:
         raise AdjudicationError('Unknown host binding policy version')
     normalized = normalize_review(language, current_review)
     if representation not in {'chinese-fixed', 'chinese-annotation', 'japanese-annotation',
@@ -818,6 +905,10 @@ def _build_inputs(*, language: str, representation: str, candidate: Any,
         if normal_review_receipt['review_digest'] != digest(current_review):
             raise AdjudicationError('Normal review receipt does not bind the supplied current review')
     references = _reference_index(known_reference_input)
+    if host_binding_policy_version == 8:
+        _validate_missing_layer_review(language=language, representation=representation,
+            candidate=candidate, current_review=current_review, context=context,
+            source_text=source_text, run_dir=run_dir)
     input_value = {
         'language': language, 'representation': representation,
         'candidate': candidate, 'current_review': current_review,
@@ -837,6 +928,9 @@ def _build_inputs(*, language: str, representation: str, candidate: Any,
     }
     if host_binding_policy_version in {2, 3, 4, 5, 6, 7}:
         input_value['host_binding_policy_version'] = host_binding_policy_version
+    elif host_binding_policy_version == 8:
+        input_value['host_binding_policy_version'] = 8
+        input_value['missing_layer_authority_policy_version'] = 1
     elif host_binding_policy_version != 1:
         raise AdjudicationError('Unknown host binding policy version')
     input_value['input_digest'] = digest(input_value)
@@ -1037,12 +1131,15 @@ async def _adjudicate_once(runner: Any, run_dir: Path, *, language: str,
         representation, current_review, known_reference_input)
     _validate_run_lesson_context(run_dir, context, candidate, source_text, language,
         representation, current_review, known_reference_input)
+    has_missing_layer = _validate_missing_layer_review(language=language,
+        representation=representation, candidate=candidate, current_review=current_review,
+        context=context, source_text=source_text, run_dir=run_dir)
     inputs = _build_inputs(language=language, representation=representation, candidate=candidate,
         current_review=current_review, prior_history=prior_history, context=context,
         known_reference_input=known_reference_input,
         deterministic_gate_evidence=deterministic_gate_evidence,
         normal_review_receipt=normal_review_receipt, source_text=source_text,
-        host_binding_policy_version=7)
+        host_binding_policy_version=8 if has_missing_layer else 7, run_dir=run_dir)
     run_dir = Path(run_dir)
     run_dir.mkdir(parents=True, exist_ok=True)
     preflight = _preflight_status(inputs)
@@ -1071,10 +1168,13 @@ async def _adjudicate_once(runner: Any, run_dir: Path, *, language: str,
             'run_dir': str(run_dir.resolve()), 'candidate': candidate, 'source_text': source_text,
             'language': language, 'representation': representation,
             'envelope': lesson_bound['packet'], 'lessons': lesson_bound['lessons'], 'context': context}}
+    adjudication_validation = {'input_field': 'annotation_adjudication'}
+    if inputs.get('host_binding_policy_version') == 8:
+        adjudication_validation['run_dir'] = str(run_dir.resolve())
     output = await runner.call(job, prompt, schema_path, 'low', tool_profile='research',
         workspace_context={**run_lesson_workspace, 'annotation_adjudication': inputs,
-                           'annotation_adjudication_validation': {'input_field': 'annotation_adjudication'}})
-    verified = _validate_output(output, inputs)
+                           'annotation_adjudication_validation': adjudication_validation})
+    verified = _validate_output(output, inputs, run_dir=run_dir)
     meta = json.loads((agent_dir / 'meta.json').read_text(encoding='utf-8'))
     worker_profile = meta.get('tool_profile')
     if (meta.get('return_code') != 0 or meta.get('model') != 'gpt-6-luna'
@@ -1149,30 +1249,42 @@ def _verify_adjudication_once(run_dir: Path, evidence: dict, *, language: str,
         representation, current_review, known_reference_input)
     _validate_run_lesson_context(run_dir, context, candidate, source_text, language,
         representation, current_review, known_reference_input)
-    inputs = _build_inputs(language=language, representation=representation, candidate=candidate,
-        current_review=current_review, prior_history=prior_history, context=context,
-        known_reference_input=known_reference_input,
-        deterministic_gate_evidence=deterministic_gate_evidence,
-        normal_review_receipt=normal_review_receipt, source_text=source_text,
-        host_binding_policy_version=1)
-    version_one_inputs = inputs
-    historical_instruction_replay = False
+    has_missing_layer = _validate_missing_layer_review(language=language,
+        representation=representation, candidate=candidate, current_review=current_review,
+        context=context, source_text=source_text, run_dir=run_dir)
     run_dir = Path(run_dir).resolve(strict=True)
     job = evidence.get('job') if isinstance(evidence, dict) else None
-    for version in (2, 3, 4, 5, 6, 7):
-        if isinstance(job, str) and job == f"annotation-adjudication-{inputs['input_digest']}":
+    versions = (8,) if has_missing_layer else (1, 2, 3, 4, 5, 6, 7)
+    inputs = None
+    version_one_inputs = None
+    for version in versions:
+        candidate_inputs = _build_inputs(language=language, representation=representation, candidate=candidate,
+            current_review=current_review, prior_history=prior_history, context=context,
+            known_reference_input=known_reference_input,
+            deterministic_gate_evidence=deterministic_gate_evidence,
+            normal_review_receipt=normal_review_receipt, source_text=source_text,
+            host_binding_policy_version=version, run_dir=run_dir)
+        if version == 1:
+            version_one_inputs = candidate_inputs
+        if isinstance(job, str) and job == f"annotation-adjudication-{candidate_inputs['input_digest']}":
+            inputs = candidate_inputs
             break
+    historical_instruction_replay = False
+    if inputs is None and not has_missing_layer:
         inputs = _build_inputs(language=language, representation=representation, candidate=candidate,
             current_review=current_review, prior_history=prior_history, context=context,
-            known_reference_input=known_reference_input, deterministic_gate_evidence=deterministic_gate_evidence,
-            normal_review_receipt=normal_review_receipt, source_text=source_text,
-            host_binding_policy_version=version)
-    if isinstance(job, str) and job != f"annotation-adjudication-{inputs['input_digest']}":
+            known_reference_input=known_reference_input,
+            deterministic_gate_evidence=deterministic_gate_evidence,
+            normal_review_receipt=normal_review_receipt, source_text=source_text, run_dir=run_dir,
+            host_binding_policy_version=7)
+    if (not has_missing_layer and isinstance(job, str)
+            and (inputs is None or job != f"annotation-adjudication-{inputs['input_digest']}")):
         historical = _legacy_instruction_replay_inputs(run_dir, job, version_one_inputs)
         if historical is not None:
             inputs = historical
             historical_instruction_replay = True
-    if not isinstance(job, str) or Path(job).name != job or job != f"annotation-adjudication-{inputs['input_digest']}":
+    if (inputs is None or not isinstance(job, str) or Path(job).name != job
+            or job != f"annotation-adjudication-{inputs['input_digest']}"):
         raise AdjudicationError('Adjudication job identity does not match exact inputs')
     agents_dir = run_dir / 'agents'
     if agents_dir.is_symlink():
@@ -1210,7 +1322,7 @@ def _verify_adjudication_once(run_dir: Path, evidence: dict, *, language: str,
     CodexRunner._check_tool_profile(job_dir, worker_profile, meta)
     if historical_instruction_replay:
         _verify_legacy_instruction_worker(run_dir, job, inputs, output)
-    replayed = _validate_output(output, inputs)
+    replayed = _validate_output(output, inputs, run_dir=run_dir)
     expected = {**replayed, 'job': job, 'effort': 'low', 'model': 'gpt-6-luna',
                 'tool_profile': 'research', 'worker_tool_profile': worker_profile,
                 'normal_review_receipt': normal_review_receipt,

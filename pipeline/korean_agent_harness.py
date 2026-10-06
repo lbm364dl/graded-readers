@@ -266,9 +266,19 @@ def reusable_checkpoint_approval(run_dir, row, *, annotation, text, context, pol
     old = row['review_context']
     proof = row['review']
     normal = proof.get('normal_review', proof)
+    input_path = Path(run_dir) / 'agents' / normal['job'] / 'review-input.json'
+    saved_inputs = read(input_path)
+    if saved_inputs.get('annotation') != annotation or saved_inputs.get('text') != text or saved_inputs.get('context') != old:
+        raise ValueError('Korean checkpoint immutable review input changed')
+    review_options = {}
+    for key in ('candidate_linked_lexical_identity_audit_version', 'missing_layer_policy_version',
+                'grammar_knowledge'):
+        if key in saved_inputs:
+            review_options[key] = saved_inputs[key]
     from pipeline.annotation_reference_carry import CARRY_FIELD
     from pipeline.annotation_reference_carry_callers import current_carry_eligibility
-    _, _, identity = review_request(annotation, text, old, policy, guidance_version=normal.get("complete_stage_instruction_policy_version", 1))
+    _, _, identity = review_request(annotation, text, old, policy,
+        guidance_version=normal.get("complete_stage_instruction_policy_version", 1), **review_options)
     if normal['job'] != f'annotation-local-review-{identity}':
         raise ValueError('Korean checkpoint review policy changed')
     for key in set(old) | set(context):
@@ -1456,25 +1466,28 @@ class KoreanHarness:
                             selected_primary_sources = reviewed_primary_sources(candidate_lexical_identities(semantic_base))
                             from pipeline.annotation_run_lessons import enrich_run_lesson_context
                             from pipeline.annotation_ranged_link_guidance import FIELD, marker
+                            repair_context, _ = enrich_run_lesson_context(self.run_dir, candidate=semantic_base, source_text=text,
+                                language='ko', representation='korean-flat', context={FIELD: marker('korean-flat'), 'repair_issue_origin': 'deterministic_gate', 'chunk_text': text, 'chapter_text': prose['text'],
+                                'source_start': sum(map(len, texts[:number - 1])),
+                                'candidate_gate': {'focus': focus, 'title': prose['title'],
+                                    'number': self.number, 'plan': bound_plan,
+                                    'level': self.level, 'source_id': source_id},
+                                'reviewed_source_context': reviewed_source_context,
+                                'approved_words': lexical_review_knowledge['approved_words'],
+                                'approved_grammar': list(self.grammar.values()),
+                                'grammar_knowledge': korean_semantic_repair_grammar_knowledge(
+                                    self.grammar, grammar_ids),
+                                'lexical_candidates': lexical_review_knowledge['lexical_candidates'],
+                                'reviewed_lexical_usage_evidence': reviewed_usages,
+                                **({'official_primary_sources': selected_primary_sources} if selected_primary_sources else {}),
+                                'linguistic_reference': read(LINGUISTIC_REFERENCE),
+                                'lexical_reference': read(LEXICAL_REFERENCE),
+                                **(local_adjudication_context or {})})
+                            from pipeline.annotation_repair_policy_context import missing_layer_repair_context
+                            repair_context = missing_layer_repair_context(repair_context, errors)
                             repaired = await repair_annotation(self, chunk_job, semantic_base, errors,
                                 representation='korean-flat', language='ko',
-                                context=enrich_run_lesson_context(self.run_dir, candidate=semantic_base, source_text=text,
-                                    language='ko', representation='korean-flat', context={FIELD: marker('korean-flat'), 'repair_issue_origin': 'deterministic_gate', 'chunk_text': text, 'chapter_text': prose['text'],
-                                    'source_start': sum(map(len, texts[:number - 1])),
-                                    'candidate_gate': {'focus': focus, 'title': prose['title'],
-                                        'number': self.number, 'plan': bound_plan,
-                                        'level': self.level, 'source_id': source_id},
-                                    'reviewed_source_context': reviewed_source_context,
-                                    'approved_words': lexical_review_knowledge['approved_words'],
-                                    'approved_grammar': list(self.grammar.values()),
-                                    'grammar_knowledge': korean_semantic_repair_grammar_knowledge(
-                                        self.grammar, grammar_ids),
-                                    'lexical_candidates': lexical_review_knowledge['lexical_candidates'],
-                                    'reviewed_lexical_usage_evidence': reviewed_usages,
-                                    **({'official_primary_sources': selected_primary_sources} if selected_primary_sources else {}),
-                                    'linguistic_reference': read(LINGUISTIC_REFERENCE),
-                                    'lexical_reference': read(LEXICAL_REFERENCE),
-                                    **(local_adjudication_context or {})})[0],
+                                context=repair_context,
                                 validate_candidate=lambda rebuilt: validate_chunk(rebuilt, text))
                             if repaired['status'] == 'applied':
                                 value = repaired['candidate']
@@ -1649,9 +1662,18 @@ class KoreanHarness:
                         pending=context.pop('annotation_run_knowledge_normalization',None)
                         context,_=enrich_run_lesson_context(self.run_dir,candidate=value,source_text=text,language='ko',representation='korean-flat',context=context)
                         if pending:context['annotation_run_knowledge_normalization']=pending
+                        bound_review_grammar_ids = {link['entry_id'] for link in value.get('grammar_links', [])}
+                        bound_review_grammar_knowledge = korean_semantic_repair_grammar_knowledge(
+                            self.grammar, bound_review_grammar_ids)
+                        if context.get('reviewed_run_lessons', {}).get('lessons'):
+                            from pipeline.candidate_linked_lexical_audit import run_lesson_source_descriptors
+                            bound_review_grammar_knowledge['reviewed_run_lesson_sources'] = run_lesson_source_descriptors(context)
                         review, evidence = await review_chunk(self.runner, self.run_dir,
                             annotation=value, text=text, context=context,
-                            policy=self.policy + '\n' + self.review_policy)
+                            policy=self.policy + '\n' + self.review_policy,
+                            candidate_linked_lexical_identity_audit_version=1,
+                            missing_layer_policy_version=1,
+                            grammar_knowledge=bound_review_grammar_knowledge)
                         if review['prose_revision_reason_en']:
                             raise UnannotatableProseError(review['prose_revision_reason_en'])
                         if approved(review):
@@ -1718,11 +1740,15 @@ class KoreanHarness:
                             if local_issues:
                                 prior_history.append({'stage': 'repair_followup',
                                     'annotation': local_previous, 'review': {'issues': local_issues}})
+                            from pipeline.annotation_repair_policy_context import missing_layer_adjudication_context
+                            adjudication_context = missing_layer_adjudication_context(
+                                {'chunk_review_context': context,
+                                 'review_policy': self.policy + '\n' + self.review_policy},
+                                review.get('issues', []), bound_review_grammar_knowledge)
                             replay_inputs = {
                                 'current_review': review,
                                 'prior_history': prior_history,
-                                'context': {'chunk_review_context': context,
-                                    'review_policy': self.policy + '\n' + self.review_policy},
+                                'context': adjudication_context,
                                 'known_reference_input': references,
                                 'deterministic_gate_evidence': gate,
                                 'normal_review_receipt': receipt,
@@ -1770,6 +1796,11 @@ class KoreanHarness:
                             raise ValueError(
                                 f"Korean annotation adjudication did not clear chunk {index + 1}: "
                                 f"{adjudication['status']}")
+                        # The original adjudication binding authorized only its
+                        # own repair diagnoses. Keep history and carried facts,
+                        # but do not lend that binding to fresh findings.
+                        from pipeline.annotation_repair_policy_context import drop_stale_adjudication_authority
+                        local_adjudication_context = drop_stale_adjudication_authority(local_adjudication_context)
                         local_issues, local_previous = review['issues'], value
                     raise ValueError(f'Korean annotation chunk {index + 1} failed independent review: {local_issues}')
                 from pipeline.chunk_scheduler import map_chunks, admission_indices, bounded_chunk_jobs

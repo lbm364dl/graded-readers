@@ -1,5 +1,6 @@
 """Independent occurrence reviews bound to exact chunk content and chapter context."""
 from pathlib import Path
+import json
 
 from jsonschema import validate
 
@@ -67,7 +68,9 @@ def _form_guidance_digest(version=1):
     return digest(form_stage_guidance(version))
 
 
-def review_request(annotation, text, context, policy, *, guidance_version=1):
+def review_request(annotation, text, context, policy, *, guidance_version=1,
+                   candidate_linked_lexical_identity_audit_version=None,
+                   missing_layer_policy_version=None, grammar_knowledge=None):
     selected_guidance = form_stage_guidance(guidance_version)
     from pipeline.korean_agent_harness import digest
     if any(isinstance(row, dict) and any(key in row for key in ('reviewed_run_grammar', 'reviewed_run_lessons'))
@@ -78,6 +81,32 @@ def review_request(annotation, text, context, policy, *, guidance_version=1):
     ranged_suffix = contextual_guidance(context, 'korean-flat')
     inputs = {'annotation': annotation, 'text': text, 'context': context,
               'issue_targets_version': 1}
+    if candidate_linked_lexical_identity_audit_version is not None:
+        if type(candidate_linked_lexical_identity_audit_version) is not int or candidate_linked_lexical_identity_audit_version != 1:
+            raise ValueError('Unsupported candidate-linked lexical identity audit version')
+        from pipeline.candidate_linked_lexical_audit import korean_caller_audit, LEXICAL_AUDIT_GUIDANCE
+        inputs['candidate_linked_lexical_identity_audit_version'] = 1
+        inputs.update(korean_caller_audit(annotation, text, context))
+    if missing_layer_policy_version is not None:
+        if type(missing_layer_policy_version) is not int or missing_layer_policy_version != 1:
+            raise ValueError('Unsupported missing-layer policy version')
+        if not isinstance(grammar_knowledge, dict):
+            raise ValueError('Missing-layer version 1 requires host grammar_knowledge')
+        from pipeline.korean_agent_harness import korean_semantic_repair_grammar_knowledge
+        approved_rows = context.get('approved_grammar', [])
+        if not isinstance(approved_rows, list) or any(not isinstance(row, dict) or not row.get('id') for row in approved_rows):
+            raise ValueError('Korean missing-layer knowledge must derive from exact approved_grammar context')
+        approved_by_id = {row['id']: row for row in approved_rows}
+        used_ids = {row.get('entry_id') for row in annotation.get('grammar_links', []) if row.get('entry_id')}
+        expected_knowledge = korean_semantic_repair_grammar_knowledge(approved_by_id, used_ids)
+        from pipeline.candidate_linked_lexical_audit import run_lesson_source_descriptors
+        lesson_sources = run_lesson_source_descriptors(context)
+        if lesson_sources:
+            expected_knowledge['reviewed_run_lesson_sources'] = lesson_sources
+        if grammar_knowledge != expected_knowledge:
+            raise ValueError('Korean grammar knowledge is not bound to this host context')
+        inputs['missing_layer_policy_version'] = 1
+        inputs['grammar_knowledge'] = grammar_knowledge
     if guidance_version == 2:
         inputs['complete_stage_instruction_policy_version'] = 2
     instructions = INSTRUCTIONS.replace(FORM_STAGE_EVIDENCE_GUIDANCE, selected_guidance, 1) + '\n' + ISSUE_TARGET_GUIDANCE + '''
@@ -87,6 +116,10 @@ text field; this records the source defect and does not authorize an annotation
 patch to rewrite source text. Do not invent an annotation meaning defect to
 make a prose finding fit the schema.
 '''
+    if candidate_linked_lexical_identity_audit_version is not None:
+        instructions += '\n\n' + LEXICAL_AUDIT_GUIDANCE
+    if missing_layer_policy_version is not None:
+        instructions += '''\n\nMISSING-LAYER DECLARATION (version 1): When the candidate lacks a required grammar occurrence row, identify the exact existing scalar anchor in candidate_paths and provide a typed missing_layer declaration. Its anchor_paths must equal candidate_paths; specify the exact collection_path, identity and source interval from the supplied candidate and grammar knowledge. This is a missing-row finding, not a claim that the anchor's own value is wrong. Do not invent identities or infer facts from prose.'''
     if ranged_suffix:
         instructions += '\n\n' + ranged_suffix
     if context.get('reviewed_annotation_research'):
@@ -99,7 +132,9 @@ make a prose finding fit the schema.
     return inputs, instructions, identity
 
 
-async def review_chunk(runner, run_dir, *, annotation, text, context, policy):
+async def review_chunk(runner, run_dir, *, annotation, text, context, policy,
+                       candidate_linked_lexical_identity_audit_version=None,
+                       missing_layer_policy_version=None, grammar_knowledge=None):
     from pipeline.korean_agent_harness import digest, payload, save
     if context.get('reviewed_run_lessons'):
         from pipeline.annotation_run_lessons import validate_run_lessons
@@ -110,28 +145,49 @@ async def review_chunk(runner, run_dir, *, annotation, text, context, policy):
         'candidate': annotation, 'source_text': text, 'language': 'ko', 'representation': 'korean-flat',
         'envelope': bound_run_lessons['packet'], 'lessons': bound_run_lessons['lessons'], 'context': context}}
         if context.get('reviewed_run_lessons') else {})
-    inputs, instructions, identity = review_request(annotation, text, context, policy, guidance_version=2)
+    inputs, instructions, identity = review_request(annotation, text, context, policy, guidance_version=2,
+        candidate_linked_lexical_identity_audit_version=candidate_linked_lexical_identity_audit_version,
+        missing_layer_policy_version=missing_layer_policy_version, grammar_knowledge=grammar_knowledge)
     if context.get('reviewed_annotation_research'):
         from pipeline.annotation_reference_carry import bind_carried_research
         bind_carried_research(run_dir, context['reviewed_annotation_research'], candidate=annotation,
             source_text=text, language='ko', representation='korean-flat', context=context)
     job = f'annotation-local-review-{identity}'
+    schema_path = contracts.schema_path('chunk-review-targeted')
+    if missing_layer_policy_version is not None:
+        schema_path = Path(__file__).resolve().parent / 'schemas/korean-chunk-review-targeted-missing-layer-v1.schema.json'
+    targets_validation = {'candidate': annotation, 'source_text': text,
+        'representation': 'korean-flat', 'require_typed': True}
+    if missing_layer_policy_version is not None:
+        targets_validation.update({'missing_layer_policy_version': 1,
+                                   'grammar_knowledge': grammar_knowledge,
+                                   'run_dir': str(Path(run_dir).resolve()), 'language': 'ko'})
     review = await runner.call(job, policy + '\n' + instructions + payload(**inputs),
-        contracts.schema_path('chunk-review-targeted'), 'low', tool_profile='offline',
+        schema_path, 'low', tool_profile='offline',
         workspace_context={**run_lesson_gate, 'chunk_review_input': inputs,
-            'annotation_issue_targets_validation': {'candidate': annotation,
-                'source_text': text, 'representation': 'korean-flat',
-                'require_typed': True}})
-    validate(review, contracts.CHUNK_REVIEW_TARGETED)
-    validate_issue_targets(review, annotation, source_text=text,
-                           representation='korean-flat', require_typed=True)
+            'annotation_issue_targets_validation': targets_validation})
+    validate(review, (json.loads(schema_path.read_text(encoding='utf-8'))
+                      if missing_layer_policy_version is not None else contracts.CHUNK_REVIEW_TARGETED))
+    if missing_layer_policy_version is None:
+        validate_issue_targets(review, annotation, source_text=text,
+                               representation='korean-flat', require_typed=True)
+    else:
+        from pipeline.annotation_issue_targets import validate_issue_targets as validate_targets_v1
+        validate_targets_v1(review, annotation, source_text=text, representation='korean-flat',
+            require_typed=True, missing_layer_policy_version=1, grammar_knowledge=grammar_knowledge,
+            run_dir=run_dir, language='ko')
     if review['prose_revision_reason_en'] and (review['approved'] or not review['issues']):
         raise ValueError('Korean chunk prose revision must be an explicit rejected review')
     save(run_dir / 'agents' / job / 'review-input.json', inputs)
-    return review, {'job': job, 'input_digest': digest(inputs), 'review_digest': digest(review),
+    evidence = {'job': job, 'input_digest': digest(inputs), 'review_digest': digest(review),
                     'form_review_guidance_digest': _form_guidance_digest(2),
                     'complete_stage_instruction_policy_version': 2,
                     'issue_targets_version': 1}
+    if candidate_linked_lexical_identity_audit_version is not None:
+        evidence['candidate_linked_lexical_identity_audit_version'] = 1
+    if missing_layer_policy_version is not None:
+        evidence['missing_layer_policy_version'] = 1
+    return review, evidence
 
 
 def verify_review(run_dir, evidence, *, annotation, text, chapter_text, source_start,
@@ -150,6 +206,18 @@ def verify_review(run_dir, evidence, *, annotation, text, chapter_text, source_s
         bind_carried_research(run_dir, inputs['context']['reviewed_annotation_research'], candidate=annotation,
             source_text=text, language='ko', representation='korean-flat', context=inputs['context'])
     saved_context = inputs.get('context', {})
+    audit_version = inputs.get('candidate_linked_lexical_identity_audit_version')
+    if audit_version is None:
+        if 'candidate_linked_lexical_identity_audit_version' in evidence:
+            raise ValueError('Legacy Korean review cannot claim lexical audit version 1')
+    elif type(audit_version) is int and audit_version == 1:
+        from pipeline.candidate_linked_lexical_audit import korean_caller_audit
+        expected_audit = korean_caller_audit(annotation, text, saved_context)
+        if type(evidence.get('candidate_linked_lexical_identity_audit_version')) is not int or evidence.get('candidate_linked_lexical_identity_audit_version') != 1 or any(
+                inputs.get(key) != value for key, value in expected_audit.items()):
+            raise ValueError('Korean candidate-linked lexical audit inputs changed')
+    else:
+        raise ValueError('Unsupported Korean candidate-linked lexical audit version')
     if any(isinstance(row, dict) and any(key in row for key in ('reviewed_run_grammar', 'reviewed_run_lessons'))
            for row in (saved_context, saved_context.get('chunk_review_context'))):
         from pipeline.annotation_run_lessons import validate_run_lesson_context_fields
@@ -170,10 +238,28 @@ def verify_review(run_dir, evidence, *, annotation, text, chapter_text, source_s
     version = evidence.get('issue_targets_version')
     if version not in (None, 1) or inputs.get('issue_targets_version') != version:
         raise ValueError('Korean chunk issue target version changed')
-    validate(review, contracts.CHUNK_REVIEW if version is None else contracts.CHUNK_REVIEW_TARGETED)
+    missing_layer_version = inputs.get('missing_layer_policy_version')
+    if missing_layer_version is None:
+        if 'missing_layer_policy_version' in evidence:
+            raise ValueError('Historical Korean review cannot claim missing-layer version 1')
+    elif (type(missing_layer_version) is not int or missing_layer_version != 1
+          or type(evidence.get('missing_layer_policy_version')) is not int
+          or evidence.get('missing_layer_policy_version') != 1):
+        raise ValueError('Korean missing-layer policy version changed')
+    if missing_layer_version is None:
+        validate(review, contracts.CHUNK_REVIEW if version is None else contracts.CHUNK_REVIEW_TARGETED)
+    else:
+        versioned_schema = Path(__file__).resolve().parent / 'schemas/korean-chunk-review-targeted-missing-layer-v1.schema.json'
+        validate(review, json.loads(versioned_schema.read_text(encoding='utf-8')))
     if version == 1:
-        validate_issue_targets(review, annotation, source_text=text,
-                               representation='korean-flat', require_typed=True)
+        if missing_layer_version is None:
+            validate_issue_targets(review, annotation, source_text=text,
+                                   representation='korean-flat', require_typed=True)
+        else:
+            from pipeline.annotation_issue_targets import validate_issue_targets as validate_targets_v1
+            validate_targets_v1(review, annotation, source_text=text, representation='korean-flat',
+                require_typed=True, missing_layer_policy_version=1,
+                grammar_knowledge=inputs.get('grammar_knowledge'), run_dir=run_dir, language='ko')
     if ((require_approved and not approved(review))
             or (not require_approved and approved(review))
             or review['prose_revision_reason_en']

@@ -6,6 +6,11 @@ from pathlib import Path
 
 import pytest
 
+ANNOTATION_REVIEW_SCHEMAS = {
+    "annotation-review-targets.schema.json",
+    "annotation-review-targets-missing-layer-v1.schema.json",
+}
+
 from pipeline.agent_harness import (
     CHINESE_ANNOTATION_CHUNK_POLICY,
     CHINESE_PINYIN_POLICY,
@@ -63,7 +68,7 @@ async def test_chinese_semantic_repair_caller_passes_provisional_grammar_referen
         async def annotation_candidate(self, index, chunk, **kwargs):
             return candidate
 
-        async def review_annotation(self, index, chunk, annotation, stage):
+        async def review_annotation(self, index, chunk, annotation, stage, **review_options):
             return ({"verdict": "revise", "issues": [{"problem": "meaning", "explanation": "Check gloss."}]}
                     if stage == "initial" else {"verdict": "pass", "issues": []})
 
@@ -108,7 +113,7 @@ async def test_chinese_adjudication_clears_only_after_replayed_applied_semantic_
         async def annotation_candidate(self, index, chunk, **kwargs):
             return copy.deepcopy(next(reversed(repaired_candidates.values()))) if repaired_candidates else copy.deepcopy(candidate)
 
-        async def review_annotation(self, index, chunk, annotation, stage):
+        async def review_annotation(self, index, chunk, annotation, stage, **review_options):
             from pipeline.annotation_publication import bind_review_job
             job = f"annotations/chunk_{index:04d}/{stage}_review"
             root = tmp_path / "agents" / job
@@ -1454,7 +1459,7 @@ async def test_constrained_delta_uses_one_chapter_seed_then_chunk_reviews():
                 return {"overrides": [row for row in overrides
                                       if row["index"] in allowed],
                         "grammar_overlays": []}
-            if schema.name == "annotation-review-targets.schema.json":
+            if schema.name in ANNOTATION_REVIEW_SCHEMAS:
                 return {"verdict": "pass", "issues": []}
             raise AssertionError(schema.name)
 
@@ -1464,7 +1469,7 @@ async def test_constrained_delta_uses_one_chapter_seed_then_chunk_reviews():
     )
 
     assert len([call for call in runner.calls if call[1] == "delta-annotation.schema.json"]) == 2
-    assert len([call for call in runner.calls if call[1] == "annotation-review-targets.schema.json"]) == 2
+    assert len([call for call in runner.calls if call[1] in ANNOTATION_REVIEW_SCHEMAS]) == 2
     assert "IMMUTABLE INDEXED BASELINE" not in runner.calls[0][3]
     assert all(item["resolved"] and item["reviewed"] for item in results)
     assert "".join(segment["text"] for item in results for segment in item["segments"]) == chapter
@@ -1591,7 +1596,7 @@ async def test_chapter_review_policy_uses_one_comprehensive_review_when_seed_pas
             self.calls.append((job, schema.name, effort))
             if schema.name == "delta-annotation.schema.json":
                 return {"overrides": overrides, "grammar_overlays": []}
-            if schema.name == "annotation-review-targets.schema.json":
+            if schema.name in ANNOTATION_REVIEW_SCHEMAS:
                 return {"verdict": "pass", "issues": []}
             raise AssertionError(schema.name)
 
@@ -1643,7 +1648,7 @@ async def test_chapter_review_policy_has_one_scoped_correction_and_final_review(
                 return {"overrides": overrides, "grammar_overlays": []}
             if schema.name == "fixed-annotation-correction.schema.json":
                 return correction
-            if schema.name == "annotation-review-targets.schema.json":
+            if schema.name in ANNOTATION_REVIEW_SCHEMAS:
                 return next(self.reviews)
             raise AssertionError(schema.name)
 
@@ -2002,7 +2007,7 @@ async def test_final_revise_is_exactly_remediated_with_truthful_state():
     class Runner:
         def __init__(self): self.reviews = iter([initial, final])
         async def call(self, job, prompt, schema, effort, **kwargs):
-            if schema.name == "annotation-review-targets.schema.json":
+            if schema.name in ANNOTATION_REVIEW_SCHEMAS:
                 return next(self.reviews)
             if "remediation" in job:
                 return {"patches": [{"start_index": 1, "end_index": 2, "segments": [{
@@ -2065,12 +2070,14 @@ async def test_constrained_delta_final_xhigh_self_heal_passes_after_medium_budge
         if call[1] == "fixed-annotation-correction.schema.json"
     ]
     review_calls = [
-        call for call in runner.calls if call[1] == "annotation-review-targets.schema.json"
+        call for call in runner.calls if call[1] in ANNOTATION_REVIEW_SCHEMAS
     ]
     assert [call[2] for call in correction_calls] == ["medium", "xhigh"]
     assert [call[2] for call in review_calls] == ["medium", "medium", "xhigh"]
     assert correction_calls[-1][0].endswith("constrained_delta_final_correction")
-    assert review_calls[-1][0].endswith("delta_final_review")
+    assert review_calls[-1][0].endswith(
+        "delta_final_lexical_identity_audit_v1_missing_layer_v1_review"
+    )
 
 
 @pytest.mark.asyncio
@@ -2097,7 +2104,7 @@ async def test_constrained_delta_final_xhigh_review_still_fails_closed():
         if call[1] == "fixed-annotation-correction.schema.json"
     ]
     review_calls = [
-        call for call in runner.calls if call[1] == "annotation-review-targets.schema.json"
+        call for call in runner.calls if call[1] in ANNOTATION_REVIEW_SCHEMAS
     ]
     assert len(correction_calls) == 1
     assert correction_calls[0][2] == "xhigh"

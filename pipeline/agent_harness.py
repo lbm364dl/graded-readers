@@ -2555,6 +2555,9 @@ TEXT:\n{chunk}{repair_context}"""
     async def review_annotation(
         self, index: int, chunk: str, annotation: dict[str, Any], stage: str,
         *, effort: str | None = None,
+        candidate_linked_lexical_identity_audit_version: int | None = None,
+        missing_layer_policy_version: int | None = None,
+        grammar_knowledge: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         segment_rows: list[list[Any]] = []
         cursor = 0
@@ -2656,6 +2659,40 @@ GRAMMAR OVERLAYS (existing exact offset objects):
         carried_context, _ = bind_lifecycle_run_lessons(self, index, chunk, annotation,
             language='zh', representation='chinese-annotation', context=carried_context)
         carried_context = with_ranged_policy(carried_context, 'chinese-annotation')
+        audit_workspace = {}
+        policy_suffix = ''
+        if candidate_linked_lexical_identity_audit_version is not None:
+            if type(candidate_linked_lexical_identity_audit_version) is not int or candidate_linked_lexical_identity_audit_version != 1:
+                raise ValueError('Unsupported candidate-linked lexical identity audit version')
+            from pipeline.candidate_linked_lexical_audit import chinese_caller_audit, LEXICAL_AUDIT_GUIDANCE
+            audit_workspace = {'candidate_linked_lexical_identity_audit_version': 1,
+                **chinese_caller_audit({'segments': annotation.get('segments'),
+                    'grammar_overlays': annotation.get('grammar_overlays', [])}, chunk)}
+            prompt += '\n\n' + LEXICAL_AUDIT_GUIDANCE + '\nThe index explicitly records that this representation has no stable lexical ID or approved word registry; do not infer or invent one.'
+            policy_suffix += '_lexical_identity_audit_v1'
+            carried_context.update(audit_workspace)
+        if missing_layer_policy_version is not None:
+            if type(missing_layer_policy_version) is not int or missing_layer_policy_version != 1:
+                raise ValueError('Unsupported missing-layer policy version')
+            host_grammar_knowledge = chinese_semantic_repair_grammar_knowledge(annotation)
+            if grammar_knowledge is not None and grammar_knowledge != host_grammar_knowledge:
+                raise ValueError('Chinese grammar knowledge is not derived from this immutable candidate')
+            grammar_knowledge = host_grammar_knowledge
+            if carried_context.get('reviewed_run_lessons', {}).get('lessons'):
+                from pipeline.candidate_linked_lexical_audit import run_lesson_source_descriptors
+                grammar_knowledge = {**grammar_knowledge, 'reviewed_run_lesson_sources':
+                                     run_lesson_source_descriptors(carried_context)}
+            policy_suffix += '_missing_layer_v1'
+            carried_context['missing_layer_policy_version'] = 1
+            carried_context['grammar_knowledge'] = grammar_knowledge
+            carried_context['annotation_issue_targets_validation'] = {
+                'candidate': annotation, 'source_text': chunk,
+                'representation': 'chinese-annotation', 'require_typed': True,
+                'missing_layer_policy_version': 1, 'grammar_knowledge': grammar_knowledge,
+                'run_dir': str(Path(self.run_dir).resolve()) if getattr(self, 'run_dir', None) else None,
+                'language': 'zh'}
+            prompt += '''\n\nMISSING-LAYER DECLARATION (version 1): When a required grammar occurrence row is absent, provide exact candidate_paths anchors and a typed missing_layer object. anchor_paths must equal candidate_paths. Use the supplied host grammar knowledge for exact identity/status/digest, and bind the exact missing source interval and collection. This reports a missing row; it does not claim the anchor value is defective.'''
+        review_stage = stage + policy_suffix
         prompt += '\n\n' + ranged_contextual_guidance(carried_context, representation='chinese-annotation')
         if 'reviewed_run_lessons' in carried_context:
             from pipeline.annotation_run_lessons import run_lesson_guidance
@@ -2663,17 +2700,29 @@ GRAMMAR OVERLAYS (existing exact offset objects):
         if 'reviewed_annotation_research' in carried_context:
             from pipeline.annotation_reference_carry import CARRIED_RESEARCH_GUIDANCE
             prompt += '\n\n' + CARRIED_RESEARCH_GUIDANCE
+        review_job = f"annotations/chunk_{index:04d}/{review_stage}_review"
+        review_jobs = getattr(self, "_annotation_review_jobs", None)
+        if not isinstance(review_jobs, dict):
+            review_jobs = self._annotation_review_jobs = {}
+        review_jobs[(index, stage)] = review_job
         review = await self.runner.call(
-            f"annotations/chunk_{index:04d}/{stage}_review", prompt,
-            SCHEMAS / "annotation-review-targets.schema.json",
+            review_job, prompt,
+            (Path(__file__).resolve().parent / 'schemas/annotation-review-targets-missing-layer-v1.schema.json'
+             if missing_layer_policy_version is not None else SCHEMAS / "annotation-review-targets.schema.json"),
             effort or self.args.annotation_review_effort, refresh=self.args.refresh,
             workspace_context={"annotation_issue_targets_validation": {
                 "candidate": annotation, "source_text": chunk,
                 "representation": "chinese-annotation", "require_typed": True},
                 **carried_context},
         )
-        validate_issue_targets(review, annotation, source_text=chunk,
-                               representation="chinese-annotation", require_typed=True)
+        if missing_layer_policy_version is None:
+            validate_issue_targets(review, annotation, source_text=chunk,
+                                   representation="chinese-annotation", require_typed=True)
+        else:
+            from pipeline.annotation_issue_targets import validate_issue_targets as validate_targets_v1
+            validate_targets_v1(review, annotation, source_text=chunk, representation="chinese-annotation",
+                require_typed=True, missing_layer_policy_version=1, grammar_knowledge=grammar_knowledge,
+                run_dir=getattr(self, 'run_dir', None), language='zh')
         # Retain invalid/legacy findings as audit evidence, but mutation code
         # independently validates offsets and will not grant them scope.
         review = copy.deepcopy(review)
@@ -2699,7 +2748,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
         }
         run_dir = getattr(self, "run_dir", None)
         if run_dir is not None:
-            job = f"annotations/chunk_{index:04d}/{stage}_review"
+            job = f"annotations/chunk_{index:04d}/{review_stage}_review"
             try:
                 candidate = {"segments": annotation.get("segments"),
                              "grammar_overlays": annotation.get("grammar_overlays")}
@@ -2831,6 +2880,11 @@ GRAMMAR OVERLAYS (existing exact offset objects):
             value["grammar_overlays"] = []
         return value
 
+    def annotation_review_job(self, index: int, stage: str) -> str:
+        """Return the exact versioned review job, preserving legacy callers."""
+        jobs = getattr(self, "_annotation_review_jobs", {})
+        return jobs.get((index, stage), f"annotations/chunk_{index:04d}/{stage}_review")
+
     async def annotate_chunk(self, index: int, chunk: str) -> dict[str, Any]:
         mode = getattr(self.args, "annotation_mode", "generative")
         if mode == "constrained":
@@ -2849,7 +2903,8 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                     selected=await select_and_normalize_run_knowledge(self,index,result,chunk,language='zh',representation='chinese-annotation',context={})
                     result=selected['candidate']
                 review = await self.review_annotation(
-                    index, chunk, result, "initial" if attempt == 0 else f"repair_{attempt:02d}"
+                    index, chunk, result, "initial" if attempt == 0 else f"repair_{attempt:02d}",
+                    candidate_linked_lexical_identity_audit_version=1, missing_layer_policy_version=1,
                 )
             else:
                 review = {
@@ -2864,7 +2919,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                 try:
                     attempt_record["normal_review_receipt"] = normal_review_receipt(
                         Path(self.run_dir),
-                        [f"annotations/chunk_{index:04d}/{attempt_record['stage']}_review"],
+                        [self.annotation_review_job(index, attempt_record['stage'])],
                         review, result, chunk)
                 except (OSError, ValueError, KeyError, TypeError):
                     pass
@@ -2900,7 +2955,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                         raise ValueError(str(contract))
 
                 run_dir = Path(self.run_dir)
-                review_job = f"annotations/chunk_{index:04d}/{attempt_record['stage']}_review"
+                review_job = self.annotation_review_job(index, attempt_record['stage'])
                 review_meta_path = run_dir / "agents" / review_job / "meta.json"
                 review_meta = json.loads(review_meta_path.read_text(encoding="utf-8"))
                 normalized_review_digest = evidence_digest(review)
@@ -2938,6 +2993,9 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                         adjudication_context['reviewed_run_lessons'], candidate=result,
                         source_text=chunk, language='zh', representation='chinese-annotation',
                         context=adjudication_context, current_review=review)['references']
+                from pipeline.annotation_repair_policy_context import missing_layer_repair_context
+                adjudication_context = missing_layer_repair_context(
+                    adjudication_context, review.get('issues', []))
                 policy_reference.update(lesson_references)
                 policy_reference.update(carried_references)
                 from pipeline.annotation_semantic_derivation import verified_semantic_derivation
@@ -3029,6 +3087,8 @@ GRAMMAR OVERLAYS (existing exact offset objects):
                     repair_context = with_ranged_policy(repair_context, 'chinese-annotation')
                     repair_context, _ = bind_lifecycle_run_lessons(self, index, chunk, result,
                         language='zh', representation='chinese-annotation', context=repair_context)
+                    from pipeline.annotation_repair_policy_context import missing_layer_repair_context
+                    repair_context = missing_layer_repair_context(repair_context, repair_findings["issues"])
                     semantic = await repair_annotation(
                         self,
                         f"annotations/chunk_{index:04d}/semantic_repair_{attempt + 1:02d}",
@@ -3078,7 +3138,8 @@ GRAMMAR OVERLAYS (existing exact offset objects):
             )
         )
         if self.annotation_reconstructs(chunk, result):
-            review = await self.review_annotation(index, chunk, result, "fresh")
+            review = await self.review_annotation(index, chunk, result, "fresh",
+                candidate_linked_lexical_identity_audit_version=1, missing_layer_policy_version=1)
         else:
             review = {"verdict": "revise",
                       "issues": self.annotation_contract_issues(chunk, result)}
@@ -3087,7 +3148,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
             try:
                 fresh_record["normal_review_receipt"] = normal_review_receipt(
                     Path(self.run_dir),
-                    [f"annotations/chunk_{index:04d}/fresh_review"],
+                    [self.annotation_review_job(index, 'fresh')],
                     review, result, chunk)
             except (OSError, ValueError, KeyError, TypeError):
                 pass
@@ -3499,13 +3560,14 @@ GRAMMAR OVERLAYS (existing exact offset objects):
         attempts: list[dict[str, Any]] = []
         for attempt in range(self.args.max_annotation_repairs + 1):
             stage = "initial" if attempt == 0 else f"correction_{attempt:02d}"
-            review = await self.review_annotation(index, chunk, result, stage)
+            review = await self.review_annotation(index, chunk, result, stage,
+                candidate_linked_lexical_identity_audit_version=1, missing_layer_policy_version=1)
             record = {"stage": stage, "annotation": result, "review": review}
             if getattr(self, "run_dir", None):
                 try:
                     record["normal_review_receipt"] = normal_review_receipt(
                         Path(self.run_dir),
-                        [f"annotations/chunk_{index:04d}/{stage}_review"],
+                        [self.annotation_review_job(index, stage)],
                         review, result, chunk)
                 except (OSError, ValueError, KeyError, TypeError):
                     pass
@@ -3528,13 +3590,14 @@ GRAMMAR OVERLAYS (existing exact offset objects):
         result = await self.constrained_annotation_candidate(
             index, chunk, stage="fresh", effort=self.args.annotation_final_effort
         )
-        review = await self.review_annotation(index, chunk, result, "fresh")
+        review = await self.review_annotation(index, chunk, result, "fresh",
+            candidate_linked_lexical_identity_audit_version=1, missing_layer_policy_version=1)
         record = {"stage": "fresh", "annotation": result, "review": review}
         if getattr(self, "run_dir", None):
             try:
                 record["normal_review_receipt"] = normal_review_receipt(
                     Path(self.run_dir),
-                    [f"annotations/chunk_{index:04d}/fresh_review"],
+                    [self.annotation_review_job(index, 'fresh')],
                     review, result, chunk)
             except (OSError, ValueError, KeyError, TypeError):
                 pass
@@ -3599,13 +3662,14 @@ GRAMMAR OVERLAYS (existing exact offset objects):
         result, attempts = initial, []
         for attempt in range(self.args.max_annotation_repairs + 1):
             stage = "delta_initial" if attempt == 0 else f"delta_correction_{attempt:02d}"
-            review = await self.review_annotation(index, chunk, result, stage)
+            review = await self.review_annotation(index, chunk, result, stage,
+                candidate_linked_lexical_identity_audit_version=1, missing_layer_policy_version=1)
             record = {"stage": stage, "annotation": result, "review": review}
             if getattr(self, "run_dir", None):
                 try:
                     record["normal_review_receipt"] = normal_review_receipt(
                         Path(self.run_dir),
-                        [f"annotations/chunk_{index:04d}/{stage}_review"],
+                        [self.annotation_review_job(index, stage)],
                         review, result, chunk)
                 except (OSError, ValueError, KeyError, TypeError):
                     pass
@@ -3632,6 +3696,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
         review = await self.review_annotation(
             index, chunk, result, "delta_final",
             effort=self.args.annotation_final_effort,
+            candidate_linked_lexical_identity_audit_version=1, missing_layer_policy_version=1,
         )
         record = {
             "stage": "delta_final_correction",
@@ -3644,7 +3709,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
             try:
                 record["normal_review_receipt"] = normal_review_receipt(
                     Path(self.run_dir),
-                    [f"annotations/chunk_{index:04d}/delta_final_review"],
+                    [self.annotation_review_job(index, 'delta_final')],
                     review, result, chunk)
             except (OSError, ValueError, KeyError, TypeError):
                 pass
@@ -3825,6 +3890,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
         review = await self.review_annotation(
             0, chapter, seeded, "chapter_delta_initial",
             effort=self.args.annotation_review_effort,
+            candidate_linked_lexical_identity_audit_version=1, missing_layer_policy_version=1,
         )
         attempts = [{
             "stage": "chapter_delta_initial", "annotation": seeded,
@@ -3840,6 +3906,7 @@ GRAMMAR OVERLAYS (existing exact offset objects):
             final_review = await self.review_annotation(
                 0, chapter, result, "chapter_delta_final",
                 effort=self.args.annotation_review_effort,
+                candidate_linked_lexical_identity_audit_version=1, missing_layer_policy_version=1,
             )
             self.annotation_semantic_review_calls = 2
             attempts.append({
